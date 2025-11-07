@@ -1,0 +1,9 @@
+# Image to Question Mapping
+# Generated automatically
+
+vraag_01.png -> Vraag 1
+vraag_02.png -> Vraag 2
+vraag_03.png -> Vraag 4
+vraag_04.png -> Vraag 5
+vraag_05.png -> Vraag 6
+vraag_06.png -> Vraag 14
