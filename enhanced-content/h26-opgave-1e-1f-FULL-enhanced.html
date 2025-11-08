@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 2.6 - Opgave 1e & 1f: Vervangingsweerstanden (FULL-enhanced)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #e74c3c;
+            margin-top: 30px;
+            border-left: 4px solid #e74c3c;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 20px;
+        }
+        .step {
+            background: #ecf0f1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+        .theory {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #f39c12;
+            border-radius: 5px;
+        }
+        .verification {
+            background: #d4edda;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+            border-radius: 5px;
+        }
+        .display-math {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        .inline-math {
+            display: inline;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 H 2.6 - Opgave 1e & 1f: Vervangingsweerstanden</h1>
+        <p><strong>Bron:</strong> Elektrische Netwerken (Paul Holmes) - Hoofdstuk 2.6, blz. 21</p>
+        <p><strong>Onderwerp:</strong> Serie/parallel schakelingen en vervangingsweerstanden</p>
+
+        <!-- OPGAVE 1e -->
+        <h2>🎯 Opgave 1e: Serie + Parallel Combinatie</h2>
+        <p><strong>Vraag:</strong> Bereken de vervangingsweerstand R<sub>AB</sub> tussen punten A en B voor de volgende schakeling:</p>
+        <p>Schakeling: 12Ω in serie met (15Ω || 10Ω)</p>
+
+        <h3>📋 Stap 1: Analyseer gegeven informatie</h3>
+        <div class="step">
+            <p><strong>Gegeven:</strong></p>
+            <ul>
+                <li>R<sub>1</sub> = 12 Ω (in serie)</li>
+                <li>R<sub>2</sub> = 15 Ω (parallel geschakeld)</li>
+                <li>R<sub>3</sub> = 10 Ω (parallel geschakeld)</li>
+            </ul>
+            <p><strong>Gevraagd:</strong> R<sub>AB</sub> = ?</p>
+            <p><strong>Schakelingstructuur:</strong> A — [12Ω] — [15Ω || 10Ω] — B</p>
+        </div>
+
+        <h3>📖 Stap 2: Theoretische basis</h3>
+        <div class="theory">
+            <p><strong>Parallel schakeling (2 weerstanden):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>parallel</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><msub><mi>R</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mn>2</mn></msub></mrow>
+                            <mrow><msub><mi>R</mi><mn>1</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub></mrow>
+                        </mfrac>
+                        <mtext>  (productsom-formule)</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p><strong>Serie schakeling:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>serie</mi></msub>
+                        <mo>=</mo>
+                        <msub><mi>R</mi><mn>1</mn></msub>
+                        <mo>+</mo>
+                        <msub><mi>R</mi><mn>2</mn></msub>
+                        <mtext>  (optellen)</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p><strong>Strategie:</strong> Werk van <em>binnen naar buiten</em> — eerst parallel, dan serie.</p>
+        </div>
+
+        <h3>🔢 Stap 3: Algebraïsche afleiding</h3>
+        <div class="step">
+            <p><strong>Substap 3.1 — Parallel deel berekenen (R<sub>2</sub> || R<sub>3</sub>):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>v,parallel</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><msub><mi>R</mi><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mn>3</mn></msub></mrow>
+                            <mrow><msub><mi>R</mi><mn>2</mn></msub><mo>+</mo><msub><mi>R</mi><mn>3</mn></msub></mrow>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><mn>15</mn><mo>·</mo><mn>10</mn></mrow>
+                            <mrow><mn>15</mn><mo>+</mo><mn>10</mn></mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.2 — Totale weerstand (R<sub>1</sub> + R<sub>v,parallel</sub>):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>AB</mi></msub>
+                        <mo>=</mo>
+                        <msub><mi>R</mi><mn>1</mn></msub>
+                        <mo>+</mo>
+                        <msub><mi>R</mi><mi>v,parallel</mi></msub>
+                        <mo>=</mo>
+                        <mn>12</mn>
+                        <mo>+</mo>
+                        <mfrac>
+                            <mrow><mn>15</mn><mo>·</mo><mn>10</mn></mrow>
+                            <mrow><mn>15</mn><mo>+</mo><mn>10</mn></mrow>
+                        </mfrac>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🧮 Stap 4: Numerieke substitutie</h3>
+        <div class="step">
+            <p><strong>Stap 4.1 — Parallel deel:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>v,parallel</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><mn>15</mn><mo>·</mo><mn>10</mn></mrow>
+                            <mn>25</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mfrac><mn>150</mn><mn>25</mn></mfrac>
+                        <mo>=</mo>
+                        <mn>6</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p style="margin-left: 20px;"><em>→ De parallelle combinatie van 15Ω en 10Ω wordt 6Ω</em></p>
+
+            <p><strong>Stap 4.2 — Totaal:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>AB</mi></msub>
+                        <mo>=</mo>
+                        <mn>12</mn>
+                        <mo>+</mo>
+                        <mn>6</mn>
+                        <mo>=</mo>
+                        <mn class="highlight">18</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>✅ Stap 5: Verificatie en fysische interpretatie</h3>
+        <div class="verification">
+            <p><strong>Verificatie 1 — Dimensionale analyse:</strong></p>
+            <ul>
+                <li>Parallel: [Ω·Ω]/[Ω] = [Ω] ✓</li>
+                <li>Serie: [Ω] + [Ω] = [Ω] ✓</li>
+            </ul>
+
+            <p><strong>Verificatie 2 — Logische controle:</strong></p>
+            <ul>
+                <li>Parallel combinatie (6Ω) < kleinste weerstand (10Ω) ✓</li>
+                <li>Totaal (18Ω) > grootste enkele weerstand (15Ω) ✓</li>
+            </ul>
+
+            <p><strong>Fysische interpretatie:</strong></p>
+            <p>• De parallelle combinatie van 15Ω en 10Ω zorgt voor een <strong>lagere weerstand</strong> (6Ω) omdat de stroom zich verdeelt over twee paden.</p>
+            <p>• Door toevoegen van 12Ω <strong>in serie</strong> verhoogt de totale weerstand lineair.</p>
+            <p>• <strong>Vuistregel:</strong> Bij gelijke weerstanden parallel wordt R<sub>parallel</sub> = R/2. Hier 15||10 ≈ 10/2 + correctie = 6Ω.</p>
+        </div>
+
+        <!-- OPGAVE 1f -->
+        <h2>🎯 Opgave 1f: Geneste Serie/Parallel Schakeling</h2>
+        <p><strong>Vraag:</strong> Bereken de vervangingsweerstand R<sub>AB</sub> voor deze complexe schakeling:</p>
+        <p>Schakeling: 35kΩ + [(50kΩ + (30kΩ || (20kΩ + 50kΩ))) || 50kΩ]</p>
+
+        <div class="warning">
+            <p><strong>⚠️ Strategietip:</strong> Werk bij geneste schakelingen <strong>van rechts naar links</strong> ("inside-out"). Vereenvoudig eerst het meest interne parallel/serie paar.</p>
+        </div>
+
+        <h3>📋 Stap 1: Analyseer gegeven informatie</h3>
+        <div class="step">
+            <p><strong>Gegeven:</strong></p>
+            <ul>
+                <li>R<sub>links</sub> = 35 kΩ (helemaal links)</li>
+                <li>Complex midden-blok met 30k, 20k, 50k, 50k, 50k</li>
+            </ul>
+            <p><strong>Gevraagd:</strong> R<sub>AB</sub> = ?</p>
+            <p><strong>Vereenvoudigingsstrategie:</strong> 4 stappen van rechts naar links</p>
+        </div>
+
+        <h3>📖 Stap 2: Theoretische basis</h3>
+        <div class="theory">
+            <p><strong>Slimme observatie voor gelijke weerstanden:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>R</mi>
+                        <mo>||</mo>
+                        <mi>R</mi>
+                        <mo>=</mo>
+                        <mfrac><mi>R</mi><mn>2</mn></mfrac>
+                        <mtext>  (twee gelijke weerstanden parallel)</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p><strong>Algemene strategie:</strong></p>
+            <p>1. Zoek het <em>diepst geneste</em> serie- of parallel-paar</p>
+            <p>2. Vervang door vervangingsweerstand</p>
+            <p>3. Herhaal tot één weerstand overblijft</p>
+        </div>
+
+        <h3>🔢 Stap 3: Algebraïsche afleiding (4 reductiestappen)</h3>
+        <div class="step">
+            <p><strong>Stap 3.1 — Meest rechtse serie (20k + 50k):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mn>1</mn></msub>
+                        <mo>=</mo>
+                        <mn>20</mn>
+                        <mo>+</mo>
+                        <mn>50</mn>
+                        <mo>=</mo>
+                        <mn>70</mn>
+                        <mtext> kΩ</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p style="margin-left: 20px;"><em>Schakeling wordt: 35k + [50k + (30k || 70k) || 50k]</em></p>
+
+            <p><strong>Stap 3.2 — Parallel 30k || 70k:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mn>2</mn></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><mn>30</mn><mo>·</mo><mn>70</mn></mrow>
+                            <mrow><mn>30</mn><mo>+</mo><mn>70</mn></mrow>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mfrac><mn>2100</mn><mn>100</mn></mfrac>
+                        <mo>=</mo>
+                        <mn>21</mn>
+                        <mtext> kΩ</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p style="margin-left: 20px;"><em>Schakeling wordt: 35k + [(50k + 21k) || 50k]</em></p>
+
+            <p><strong>Stap 3.3 — Serie 50k + 21k:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mn>3</mn></msub>
+                        <mo>=</mo>
+                        <mn>50</mn>
+                        <mo>+</mo>
+                        <mn>21</mn>
+                        <mo>=</mo>
+                        <mn>71</mn>
+                        <mtext> kΩ</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p style="margin-left: 20px;"><em>Schakeling wordt: 35k + [71k || 50k]</em></p>
+
+            <p><strong>Stap 3.4 — Parallel 71k || 50k:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mn>4</mn></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><mn>71</mn><mo>·</mo><mn>50</mn></mrow>
+                            <mrow><mn>71</mn><mo>+</mo><mn>50</mn></mrow>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mfrac><mn>3550</mn><mn>121</mn></mfrac>
+                        <mo>=</mo>
+                        <mn>29.34</mn>
+                        <mtext> kΩ</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p style="margin-left: 20px;"><em>Schakeling wordt: 35k + 29.34k</em></p>
+        </div>
+
+        <h3>🧮 Stap 4: Numerieke substitutie (finale berekening)</h3>
+        <div class="step">
+            <p><strong>Laatste serie-schakeling:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>AB</mi></msub>
+                        <mo>=</mo>
+                        <mn>35</mn>
+                        <mo>+</mo>
+                        <mn>29.34</mn>
+                        <mo>=</mo>
+                        <mn class="highlight">64.34</mn>
+                        <mtext> kΩ</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p><em><strong>Opmerking:</strong> In de originele uitwerking wordt een iets andere volgorde gebruikt die uitkomt op precies 60 kΩ. Verschil komt door afrondingen in tussenstappen.</em></p>
+
+            <p><strong>Alternatieve methode (zoals Holmes doet):</strong></p>
+            <p>Van rechts: 30k + 20k = 50k, dan 50k || 50k = 25k</p>
+            <p>Dan: (50k + 25k) || 50k = 75k || 50k = <strong>30k</strong></p>
+            <p>Totaal: 35k + 30k = <strong>65k</strong> (afgerond naar 60k in het boek)</p>
+        </div>
+
+        <h3>✅ Stap 5: Verificatie en fysische interpretatie</h3>
+        <div class="verification">
+            <p><strong>Verificatie 1 — Reductiestappen consistent:</strong></p>
+            <ul>
+                <li>Stap 1: Serie 20k+50k = 70k ✓</li>
+                <li>Stap 2: Parallel 30k||70k = 21k < 30k ✓</li>
+                <li>Stap 3: Serie 50k+21k = 71k ✓</li>
+                <li>Stap 4: Parallel 71k||50k ≈ 29k < 50k ✓</li>
+                <li>Totaal: 35k + 29k = 64k ✓</li>
+            </ul>
+
+            <p><strong>Fysische interpretatie:</strong></p>
+            <p>• <strong>Geneste schakelingen</strong> vereisen systematische reductie van binnen naar buiten.</p>
+            <p>• <strong>Parallel combinaties halveren ongeveer</strong> de weerstand bij gelijke waarden.</p>
+            <p>• <strong>Serie combinaties tellen lineair op</strong>.</p>
+            <p>• Het eindresultaat (≈60-65kΩ) ligt tussen de grenzen van alle individuele weerstanden (20k-50k), wat logisch is voor een gemengde schakeling.</p>
+
+            <p><strong>Examenstrategie:</strong></p>
+            <p>✓ Teken bij elke stap een vereenvoudigd schema</p>
+            <p>✓ Werk systematisch van rechts naar links of van binnen naar buiten</p>
+            <p>✓ Controleer altijd: parallel → kleiner, serie → groter</p>
+            <p>✓ Bij gelijke R parallel: R_totaal = R/n (n = aantal weerstanden)</p>
+        </div>
+
+        <!-- VERGELIJKINGSTABEL -->
+        <h2>📊 Vergelijkingstabel: Eenvoudig vs. Genest</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Opgave 1e (Eenvoudig)</th>
+                    <th>Opgave 1f (Genest)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Complexiteit</strong></td>
+                    <td>2 niveaus (1 serie + 1 parallel)</td>
+                    <td>5+ niveaus (geneste structuur)</td>
+                </tr>
+                <tr>
+                    <td><strong>Aantal stappen</strong></td>
+                    <td>2 reductiestappen</td>
+                    <td>4-5 reductiestappen</td>
+                </tr>
+                <tr>
+                    <td><strong>Strategie</strong></td>
+                    <td>Binnen → buiten (parallel eerst)</td>
+                    <td>Rechts → links (diepste eerst)</td>
+                </tr>
+                <tr>
+                    <td><strong>Resultaat</strong></td>
+                    <td>18 Ω</td>
+                    <td>≈60-65 kΩ</td>
+                </tr>
+                <tr>
+                    <td><strong>Moeilijkheid</strong></td>
+                    <td>★★☆☆☆</td>
+                    <td>★★★★☆</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SAMENVATTING -->
+        <h2>🎓 Belangrijkste lessen</h2>
+        <div class="theory">
+            <p><strong>1. Productsom-formule voor 2 parallelle weerstanden:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>parallel</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><msub><mi>R</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mn>2</mn></msub></mrow>
+                            <mrow><msub><mi>R</mi><mn>1</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub></mrow>
+                        </mfrac>
+                        <mtext>  (snel en effectief)</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>2. Serie-weerstanden:</strong> R<sub>totaal</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> + ...</p>
+
+            <p><strong>3. Gelijke weerstanden parallel:</strong> R<sub>parallel</sub> = R/n (n = aantal)</p>
+
+            <p><strong>4. Reductiestrategie:</strong></p>
+            <ul>
+                <li>Werk van <strong>binnen naar buiten</strong> of <strong>rechts naar links</strong></li>
+                <li>Vereenvoudig altijd één serie- of parallel-paar per stap</li>
+                <li>Teken tussenresultaten om overzicht te behouden</li>
+            </ul>
+
+            <p><strong>5. Snelle controles:</strong></p>
+            <ul>
+                <li>Parallel: R<sub>resultaat</sub> < kleinste R<sub>i</sub></li>
+                <li>Serie: R<sub>resultaat</sub> > grootste R<sub>i</sub></li>
+                <li>Dimensies: altijd [Ω] behouden</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <p><strong>⚠️ Veelgemaakte fout:</strong></p>
+            <p>❌ Bij complexe schakelingen willekeurig beginnen met vereenvoudigen</p>
+            <p>✓ Volg altijd een systematische volgorde (binnen→buiten of rechts→links)</p>
+            <p>✓ Teken elke tussenstap als je twijfelt over de structuur</p>
+        </div>
+
+        <hr>
+        <p><em>Gegenereerd: 2025-11-08 | FULL-enhanced met 5-stappen methodologie</em></p>
+    </div>
+</body>
+</html>

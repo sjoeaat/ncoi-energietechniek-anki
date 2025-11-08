@@ -133,16 +133,25 @@ html {
 }
 """
 
-# Hiërarchische navigatie HTML - UPDATED met alle 32 opgaven
+# Hiërarchische navigatie HTML - UPDATED met alle 38 opgaven
 NAV_HTML = """
 <nav class="nav-sidebar">
-    <h3>📑 Enhanced Opgaven (32)</h3>
+    <h3>📑 Enhanced Opgaven (38)</h3>
 
     <!-- H 1.9: Basiswetten -->
     <div class="nav-chapter">
         <div class="nav-chapter-header">H 1.9 - Kirchhoff (1)</div>
         <ul class="nav-opgaven">
             <li><a href="#h19-opgave-17">17. Spanningsbron stroom</a></li>
+        </ul>
+    </div>
+
+    <!-- H 2.6: Serie/Parallel -->
+    <div class="nav-chapter">
+        <div class="nav-chapter-header">H 2.6 - Serie/Parallel (3)</div>
+        <ul class="nav-opgaven">
+            <li><a href="#h26-opgave-1e-1f">1e & 1f. Vervangingsweerstand</a></li>
+            <li><a href="#h26-opgave-2">2. Lampen + Kabelverlies</a></li>
         </ul>
     </div>
 
@@ -162,6 +171,16 @@ NAV_HTML = """
             <li><a href="#h311-opgave-3">3. Stroom I<sub>x</sub> bepalen</a></li>
             <li><a href="#h311-opgave-4">4. Spanning U<sub>x</sub> bepalen</a></li>
             <li><a href="#h311-opgave-5">5. Bronspanning bepalen</a></li>
+        </ul>
+    </div>
+
+    <!-- H 4.4: Energie & Vermogen -->
+    <div class="nav-chapter">
+        <div class="nav-chapter-header">H 4.4 - Energie & Vermogen (3)</div>
+        <ul class="nav-opgaven">
+            <li><a href="#h44-opgave-2-6-8">2. Strijkbout energie</a></li>
+            <li><a href="#h44-opgave-2-6-8">6. Optimum belasting</a></li>
+            <li><a href="#h44-opgave-2-6-8">8. Rendement + kosten</a></li>
         </ul>
     </div>
 
@@ -227,7 +246,7 @@ NAV_HTML = """
     </div>
 
     <div class="nav-footer">
-        <small><strong>32 Enhanced Opgaven</strong> | 8 Hoofdstukken<br>5-Stappen Methodologie</small>
+        <small><strong>38 Enhanced Opgaven</strong> | 10 Hoofdstukken<br>5-Stappen Methodologie</small>
     </div>
 </nav>
 """
@@ -396,7 +415,7 @@ def create_complete_html():
     <h1>NCOI Energietechniek - Complete Enhanced Study Guide</h1>
     <p class="subtitle">Elektrische Netwerken (Holmes 3e editie)</p>
     <div class="status-banner">
-        <strong>✨ 32 FULL-Enhanced Opgaven</strong> | 5-Stappen Methodologie | 8 Hoofdstukken
+        <strong>✨ 38 FULL-Enhanced Opgaven</strong> | 5-Stappen Methodologie | 10 Hoofdstukken
     </div>
 </header>
 
@@ -409,6 +428,10 @@ def create_complete_html():
     opgaven_map = {
         'h19': [
             ('opgave-017', 'h19-opgave-17', 'H 1.9 - Opgave 17'),
+        ],
+        'h26': [
+            ('h26-opgave-1e-1f', 'h26-opgave-1e-1f', 'H 2.6 - Opgave 1e & 1f: Vervangingsweerstanden'),
+            ('h26-opgave-2', 'h26-opgave-2', 'H 2.6 - Opgave 2: Lampen met Kabelverlies'),
         ],
         'h311': [
             ('h311-opgave-1a', 'h311-opgave-1a', 'H 3.11 - Opgave 1a'),
@@ -423,6 +446,9 @@ def create_complete_html():
             ('h311-opgave-3', 'h311-opgave-3', 'H 3.11 - Opgave 3'),
             ('h311-opgave-4', 'h311-opgave-4', 'H 3.11 - Opgave 4'),
             ('h311-opgave-5', 'h311-opgave-5', 'H 3.11 - Opgave 5'),
+        ],
+        'h44': [
+            ('h44-opgave-2-6-8', 'h44-opgave-2-6-8', 'H 4.4 - Opgaven 2, 6, 8: Energie & Vermogen'),
         ],
         'h55': [
             ('h55-opgave-1', 'h55-opgave-1', 'H 5.5 - Opgave 1'),
@@ -488,7 +514,7 @@ def create_complete_html():
 
 <footer style="text-align:center; padding: 40px 20px; color: #7f8c8d; margin-top: 60px; border-top: 2px solid #ecf0f1;">
     <p><strong>NCOI Energietechniek - Enhanced Study Guide</strong></p>
-    <p>32 FULL-Enhanced Opgaven | Holmes 3e editie | 5-Stappen Methodologie</p>
+    <p>38 FULL-Enhanced Opgaven | Holmes 3e editie | 5-Stappen Methodologie</p>
     <p style="margin-top:10px; font-size:0.9em;">Gegenereerd 2025-11-08</p>
 </footer>
 
