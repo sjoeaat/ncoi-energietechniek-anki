@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 3.11 - Opgave 6-9, 15 - Geavanceerde Netwerktechnieken FULL Enhanced</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+        .exercise {
+            background: #f8f9ff;
+            border-left: 6px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        .question {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border: 2px solid #667eea;
+            margin-bottom: 20px;
+        }
+        .step {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+        .step-title {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+        .insight-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .result-box {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            color: #155724;
+        }
+        .display-math {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        math {
+            font-size: 1.2em;
+        }
+        .superposition-step {
+            background: #fff9e6;
+            border: 2px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 H 3.11 - Geavanceerde Netwerktechnieken</h1>
+
+        <div style="background: #e3f2fd; padding: 20px; margin: 20px 0; border-left: 5px solid #2196f3; border-radius: 8px;">
+            <h3 style="margin-top: 0;">🎯 Focus van deze opgaven</h3>
+            <p><strong>Kernvaardigheden:</strong></p>
+            <ul>
+                <li><strong>Superpositieprincipe:</strong> Meerdere bronnen analyseren (opgave 6)</li>
+                <li><strong>Kortsluiting-herkenning:</strong> Spanningsbronnen en hun effect (opgave 7, 8)</li>
+                <li><strong>Spanningsdeling in complexe netwerken:</strong> Multiple bronnen (opgave 9)</li>
+                <li><strong>Gestuurde bronnen:</strong> Stroom-gestuurde spanningsbron (opgave 15)</li>
+            </ul>
+        </div>
+
+        <!-- OPGAVE 6: SUPERPOSITIE MET 3 BRONNEN -->
+        <div class="exercise">
+            <h2>Opgave 6: Superpositieprincipe - Berekenen van I<sub>x</sub></h2>
+
+            <div class="question">
+                Bereken I<sub>x</sub> (stroom door R4) in dit netwerk met meerdere bronnen.<br>
+                Gebruik de <strong>handigste methode</strong>!<br><br>
+                <strong>Netwerk bevat:</strong><br>
+                • Stroombron I1 = 1A<br>
+                • Spanningsbron V1 = 5V<br>
+                • Spanningsbron V2 = 8V<br>
+                • Weerstanden: R2=3Ω, R3=6Ω, R4=4Ω, R5=12Ω, R6=6Ω
+            </div>
+
+            <div class="insight-box">
+                <strong>💡 Superpositieprincipe:</strong><br>
+                Bij meerdere bronnen kun je het effect van elke bron <strong>apart</strong> berekenen
+                en daarna alle bijdragen <strong>optellen</strong>.<br><br>
+                Werkwijze:<br>
+                1. Bron 1 actief, andere bronnen "uit": spanningsbron = kortsluiting, stroombron = onderbreking<br>
+                2. Bron 2 actief, andere bronnen "uit"<br>
+                3. etc.<br>
+                4. Totaal = som van alle bijdragen
+            </div>
+
+            <!-- VOORBEREIDING -->
+            <div class="step">
+                <div class="step-title">VOORBEREIDING: Vereenvoudig R2 en R3</div>
+                <p><strong>R2 en R3 staan parallel:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mn>23</mn></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>3</mn>
+                                    <mo>·</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                                <mrow>
+                                    <mn>3</mn>
+                                    <mo>+</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>18</mn>
+                                <mn>9</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>2</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- SUPERPOSITIE STAP 1: STROOMBRON -->
+            <div class="superposition-step">
+                <h3>SUPERPOSITIE STAP 1: Effect van stroombron I1 (V1 en V2 kortgesloten)</h3>
+
+                <p><strong>Situatie:</strong></p>
+                <ul>
+                    <li>I1 = 1A actief</li>
+                    <li>V1 = kortsluiting (0Ω)</li>
+                    <li>V2 = kortsluiting (0Ω)</li>
+                </ul>
+
+                <p><strong>Gevolg:</strong> R5 en R6 komen parallel te staan</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mn>56</mn></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>12</mn>
+                                    <mo>·</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                                <mrow>
+                                    <mn>12</mn>
+                                    <mo>+</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>72</mn>
+                                <mn>18</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>4</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p>R<sub>56</sub> + R4 = 4 + 4 = 8Ω (in serie)</p>
+                <p>Deze 8Ω staat parallel aan R<sub>23</sub> = 2Ω</p>
+
+                <p><strong>Stroomverdeling:</strong></p>
+                <p>De 1A van I1 verdeelt zich over 2Ω (R<sub>23</sub>) en 8Ω (R4+R<sub>56</sub>):</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mrow><mi>x</mi><mn>1</mn></mrow></msub>
+                            <mo>=</mo>
+                            <mn>1</mn>
+                            <mtext> A</mtext>
+                            <mo>·</mo>
+                            <mfrac>
+                                <msub><mi>R</mi><mn>23</mn></msub>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>23</mn></msub>
+                                    <mo>+</mo>
+                                    <mn>8</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>2</mn>
+                                <mrow>
+                                    <mn>2</mn>
+                                    <mo>+</mo>
+                                    <mn>8</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>0,2</mn>
+                            <mtext> A</mtext>
+                        </mrow>
+                    </math>
+                </div>
+                <p><strong>Bijdrage stroombron:</strong> I<sub>x1</sub> = +0,2 A (= +200 mA)</p>
+            </div>
+
+            <!-- SUPERPOSITIE STAP 2: SPANNINGSBRON V1 -->
+            <div class="superposition-step">
+                <h3>SUPERPOSITIE STAP 2: Effect van spanningsbron V1 = 5V (I1 onderbroken, V2 kortgesloten)</h3>
+
+                <p><strong>Situatie:</strong></p>
+                <ul>
+                    <li>V1 = 5V actief</li>
+                    <li>I1 = onderbroken (R1 doet niet mee)</li>
+                    <li>V2 = kortsluiting</li>
+                </ul>
+
+                <p><strong>Netwerkanalyse:</strong></p>
+                <p>R4 in serie met R<sub>23</sub>: 4 + 2 = 6Ω</p>
+                <p>Deze 6Ω parallel met R5 = 12Ω:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mi>b</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>12</mn>
+                                    <mo>·</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                                <mrow>
+                                    <mn>12</mn>
+                                    <mo>+</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>4</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p>R<sub>b</sub> in serie met R6: totaal = 4 + 6 = 10Ω</p>
+
+                <p><strong>Stroom door R6:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>6</mn></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>5</mn>
+                                    <mtext> V</mtext>
+                                </mrow>
+                                <mn>10</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>0,5</mn>
+                            <mtext> A</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stroomverdeling bij R5 en (R4+R<sub>23</sub>):</strong></p>
+                <p>Door de tak met R4 loopt:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mrow><mi>x</mi><mn>2</mn></mrow></msub>
+                            <mo>=</mo>
+                            <msub><mi>I</mi><mn>6</mn></msub>
+                            <mo>·</mo>
+                            <mfrac>
+                                <msub><mi>R</mi><mn>5</mn></msub>
+                                <mrow>
+                                    <mn>6</mn>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>5</mn></msub>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>0,5</mn>
+                            <mo>·</mo>
+                            <mfrac>
+                                <mn>12</mn>
+                                <mn>18</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>0,333</mn>
+                            <mtext> A</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Let op richting!</strong> Deze stroom loopt van rechts naar links (naar V1 toe), dus TEGENGESTELD aan de positieve richting.</p>
+                <p><strong>Bijdrage V1:</strong> I<sub>x2</sub> = -0,333 A (= -333 mA)</p>
+            </div>
+
+            <!-- SUPERPOSITIE STAP 3: SPANNINGSBRON V2 -->
+            <div class="superposition-step">
+                <h3>SUPERPOSITIE STAP 3: Effect van spanningsbron V2 = 8V (I1 onderbroken, V1 kortgesloten)</h3>
+
+                <p><strong>Situatie:</strong></p>
+                <ul>
+                    <li>V2 = 8V actief</li>
+                    <li>I1 = onderbroken</li>
+                    <li>V1 = kortsluiting</li>
+                </ul>
+
+                <p><strong>Netwerkanalyse:</strong></p>
+                <p>R<sub>23</sub> en R4 in serie: 2 + 4 = 6Ω</p>
+                <p>Deze 6Ω parallel met R6 = 6Ω:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mi>parallel</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>6</mn>
+                                    <mo>·</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                                <mrow>
+                                    <mn>6</mn>
+                                    <mo>+</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>3</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p>Totale weerstand: R5 + 3 = 12 + 3 = 15Ω</p>
+
+                <p><strong>Stroom door R5:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>5</mn></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>8</mn>
+                                <mn>15</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>0,533</mn>
+                            <mtext> A</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stroomverdeling:</strong> I5 verdeelt zich over 6Ω (via R6) en 6Ω (via R4+R<sub>23</sub>)</p>
+                <p>Door R4 loopt dus de helft:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mrow><mi>x</mi><mn>3</mn></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>0,533</mn>
+                                <mn>2</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>0,267</mn>
+                            <mtext> A</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Let op richting!</strong> Ook deze stroom loopt naar links (TEGENGESTELD aan positieve richting).</p>
+                <p><strong>Bijdrage V2:</strong> I<sub>x3</sub> = -0,267 A (= -267 mA)</p>
+            </div>
+
+            <!-- TOTAAL -->
+            <div class="step">
+                <div class="step-title">TOTALE STROOM I<sub>x</sub></div>
+
+                <p><strong>Superpositie: tel alle bijdragen op:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mi>x</mi></msub>
+                            <mo>=</mo>
+                            <msub><mi>I</mi><mrow><mi>x</mi><mn>1</mn></mrow></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mrow><mi>x</mi><mn>2</mn></mrow></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mrow><mi>x</mi><mn>3</mn></mrow></msub>
+                        </mrow>
+                    </math>
+                </div>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mi>x</mi></msub>
+                            <mo>=</mo>
+                            <mn>200</mn>
+                            <mo>-</mo>
+                            <mn>333</mn>
+                            <mo>-</mo>
+                            <mn>267</mn>
+                            <mo>=</mo>
+                            <mo>-</mo>
+                            <mn>400</mn>
+                            <mtext> mA</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="success-box">
+                    <strong>✓ Verificatie met MultiSim:</strong><br>
+                    De simulatie in MultiSim bevestigt: I<sub>x</sub> ≈ -400 mA<br>
+                    (Bronmateriaal bevat screenshot van simulatie)
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: I<sub>x</sub> = -400 mA = -0,4 A<br>
+                (Negatief = stroom loopt van rechts naar links)
+            </div>
+        </div>
+
+        <!-- OPGAVE 7 & 8: KORTSLUITING HERKENNING -->
+        <div class="exercise">
+            <h2>Opgave 7 & 8: Kortsluiting door Spanningsbron</h2>
+
+            <div class="question">
+                <strong>Opgave 7:</strong> Waarom doen 9Ω en 120Ω niet mee in de netwerkmeting?<br>
+                <strong>Opgave 8:</strong> Bereken Z voor de belasting (3Ω parallel aan 6Ω)
+            </div>
+
+            <div class="step">
+                <div class="step-title">OPGAVE 7: UITWERKING</div>
+
+                <p><strong>Twee cruciale observaties:</strong></p>
+
+                <p><strong>1. De 9Ω weerstand is kortgesloten door de 5V bron</strong></p>
+                <div class="warning-box">
+                    <strong>⚠️ Kortsluitregel:</strong><br>
+                    Als een weerstand <strong>parallel</strong> staat aan een ideale spanningsbron,
+                    dan wordt de weerstand "kortgesloten" - hij speelt geen rol meer in de stroomverdeling.
+                    De spanning wordt volledig bepaald door de spanningsbron (5V).
+                </div>
+
+                <p><strong>2. De 120Ω weerstand staat in serie met een stroombron</strong></p>
+                <div class="warning-box">
+                    <strong>⚠️ Serie met stroombronregel:</strong><br>
+                    Als een weerstand in serie staat met een ideale stroombron, dan heeft de weerstand
+                    GEEN invloed op de stroom die door de tak loopt (die wordt volledig bepaald door de stroombron).
+                    De weerstand veroorzaakt wel een spanningsval, maar "doet niet mee" voor stroomberekeningen.
+                </div>
+
+                <div class="insight-box">
+                    <strong>💡 Herkennen van "niet-actieve" elementen:</strong><br>
+                    <ul>
+                        <li>Weerstand <strong>parallel</strong> aan U-bron → kortgesloten, doet niet mee</li>
+                        <li>Weerstand <strong>in serie</strong> met I-bron → stroom is vast, weerstand doet niet mee voor I-berekening</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">OPGAVE 8: UITWERKING</div>
+
+                <p>Nu de 9Ω en 120Ω "niet meedoen", blijven over:</p>
+                <ul>
+                    <li>3Ω weerstand</li>
+                    <li>6Ω weerstand</li>
+                    <li>Deze twee staan parallel</li>
+                </ul>
+
+                <p><strong>Berekening:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>Z</mi>
+                            <mo>=</mo>
+                            <mn>3</mn>
+                            <mo>∥</mo>
+                            <mn>6</mn>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>3</mn>
+                                    <mo>·</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                                <mrow>
+                                    <mn>3</mn>
+                                    <mo>+</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>18</mn>
+                                <mn>9</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>2</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ OPGAVE 7: 9Ω kortgesloten door 5V-bron, 120Ω in serie met I-bron<br>
+                ✓ OPGAVE 8: Z = 2 Ω
+            </div>
+        </div>
+
+        <!-- OPGAVE 9: SPANNINGSDELING MET MEERDERE BRONNEN -->
+        <div class="exercise">
+            <h2>Opgave 9: Spanning op Punt A (Meerdere Spanningsbronnen)</h2>
+
+            <div class="question">
+                Bepaal de spanning op punt A in een netwerk met:<br>
+                • 5V spanningsbron (met - als ground = punt B)<br>
+                • 3V spanningsbron<br>
+                • Spanningsdeler van 3Ω en 6Ω<br>
+                • Stroombron (heeft geen invloed op spanning over 3V bron!)
+            </div>
+
+            <div class="step">
+                <div class="step-title">STAP 1: REFERENTIEPUNT VASTSTELLEN</div>
+
+                <p><strong>Kies referentie (ground):</strong></p>
+                <p>De <strong>min-pool</strong> van de 5V bron = punt B = 0V (ground)</p>
+
+                <p><strong>Gevolg:</strong></p>
+                <p>De <strong>plus-pool</strong> van de 3V bron = 5V + 3V = <strong>8V</strong></p>
+
+                <div class="insight-box">
+                    <strong>💡 Spanningen stapelen op!</strong><br>
+                    Als twee spanningsbronnen in serie staan, tellen hun spanningen op
+                    (let op polariteit!). Hier: 5V + 3V = 8V boven ground.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">STAP 2: SPANNING OVER 3V BRON</div>
+
+                <p><strong>Cruciale observatie:</strong></p>
+                <p>Een ideale spanningsbron handhaaft zijn spanning (3V), ongeacht wat erop aangesloten is.
+                De stroombron heeft daarom <strong>geen invloed</strong> op deze "harde" 3V.</p>
+
+                <p><strong>Spanningsdeler over 3Ω en 6Ω:</strong></p>
+                <p>Over deze spanningsdeler staat precies 3V (van de 3V-bron)</p>
+
+                <p>Spanning over 6Ω:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mrow><mn>6</mn><mi mathvariant="normal">Ω</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mn>3</mn>
+                            <mtext> V</mtext>
+                            <mo>·</mo>
+                            <mfrac>
+                                <mn>6</mn>
+                                <mrow>
+                                    <mn>3</mn>
+                                    <mo>+</mo>
+                                    <mn>6</mn>
+                                </mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>3</mn>
+                            <mo>·</mo>
+                            <mfrac>
+                                <mn>6</mn>
+                                <mn>9</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>2</mn>
+                            <mtext> V</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p>Spanning over 3Ω:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mrow><mn>3</mn><mi mathvariant="normal">Ω</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mn>3</mn>
+                            <mo>-</mo>
+                            <mn>2</mn>
+                            <mo>=</mo>
+                            <mn>1</mn>
+                            <mtext> V</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">STAP 3: SPANNING OP PUNT A</div>
+
+                <p><strong>Twee manieren om punt A te bereiken vanaf ground:</strong></p>
+
+                <p><strong>Route 1: Via 5V bron en 6Ω:</strong></p>
+                <p>U<sub>A</sub> = 5V + 2V = <strong>7V</strong></p>
+
+                <p><strong>Route 2: Via 8V (top van 3V bron) en 3Ω:</strong></p>
+                <p>U<sub>A</sub> = 8V - 1V = <strong>7V</strong></p>
+
+                <div class="success-box">
+                    <strong>✓ Beide routes geven hetzelfde antwoord!</strong><br>
+                    Dit is een goede controle dat de berekening klopt.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: Spanning op punt A = 7V
+            </div>
+        </div>
+
+        <!-- OPGAVE 15: STROOM-GESTUURDE SPANNINGSBRON -->
+        <div class="exercise">
+            <h2>Opgave 15: Stroom-gestuurde Spanningsbron</h2>
+
+            <div class="question">
+                Bereken de stroom I₁ in een netwerk met een <strong>stroom-gestuurde spanningsbron</strong>:<br>
+                • 10V onafhankelijke spanningsbron<br>
+                • R = 30Ω<br>
+                • Gestuurde spanningsbron: U<sub>gestuurd</sub> = 10,1 · I₁ (afhankelijk van I₁!)
+            </div>
+
+            <div class="insight-box">
+                <strong>💡 Wat is een gestuurde bron?</strong><br>
+                Een <strong>stroom-gestuurde spanningsbron</strong> is een spanningsbron waarvan de spanning
+                afhangt van een stroom ergens anders in het circuit.<br><br>
+                Hier: U<sub>gestuurd</sub> = 10,1 · I₁<br>
+                Als I₁ = 0,25A, dan U<sub>gestuurd</sub> = 10,1 × 0,25 = 2,525V
+            </div>
+
+            <div class="step">
+                <div class="step-title">STAP 1: KIRCHHOFF'S SPANNINGSWET TOEPASSEN</div>
+
+                <p><strong>Loop door de maas:</strong></p>
+                <p>Startend bij ground, rechtsom door de maas:</p>
+                <ul>
+                    <li>+10V (onafhankelijke bron, met de klok mee)</li>
+                    <li>-I₁ · 30Ω (spanningsval over R)</li>
+                    <li>-10,1 · I₁ (gestuurde bron, tegen de klok in)</li>
+                    <li>Terug bij ground</li>
+                </ul>
+
+                <p><strong>Kirchhoff's spanningswet (Σ U = 0):</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mn>10</mn>
+                            <mo>-</mo>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>·</mo>
+                            <mn>30</mn>
+                            <mo>-</mo>
+                            <mn>10,1</mn>
+                            <mo>·</mo>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">STAP 2: OPLOSSEN NAAR I₁</div>
+
+                <p><strong>Combineer termen met I₁:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mn>10</mn>
+                            <mo>-</mo>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>·</mo>
+                            <mo>(</mo>
+                            <mn>30</mn>
+                            <mo>+</mo>
+                            <mn>10,1</mn>
+                            <mo>)</mo>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                        </mrow>
+                    </math>
+                </div>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mn>10</mn>
+                            <mo>=</mo>
+                            <mn>40,1</mn>
+                            <mo>·</mo>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Oplossen:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>10</mn>
+                                <mn>40,1</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mn>4,01</mn>
+                            </mfrac>
+                            <mo>≈</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mn>4</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>0,25</mn>
+                            <mtext> A</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">STAP 3: VERIFICATIE & AANVULLENDE BEREKENINGEN</div>
+
+                <p><strong>Spanning van gestuurde bron:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mi>gestuurd</mi></msub>
+                            <mo>=</mo>
+                            <mn>10,1</mn>
+                            <mo>·</mo>
+                            <mn>0,25</mn>
+                            <mo>=</mo>
+                            <mn>2,525</mn>
+                            <mtext> V</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Spanning over R:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mi>R</mi></msub>
+                            <mo>=</mo>
+                            <mn>10</mn>
+                            <mo>-</mo>
+                            <mn>2,525</mn>
+                            <mo>=</mo>
+                            <mn>7,475</mn>
+                            <mtext> V</mtext>
+                            <mo>≈</mo>
+                            <mn>7,5</mn>
+                            <mtext> V</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Controle (wet van Ohm):</strong></p>
+                <p>I₁ = U<sub>R</sub> / R = 7,5 / 30 = 0,25 A ✓</p>
+
+                <div class="success-box">
+                    <strong>✓ Perfecte match!</strong> De berekening klopt.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: I₁ = 1/4 A = 0,25 A = 250 mA<br>
+                (U<sub>gestuurd</sub> = 2,5V, U<sub>R</sub> = 7,5V)
+            </div>
+        </div>
+
+        <!-- SAMENVATTING -->
+        <div style="background: #c8e6c9; padding: 25px; margin: 30px 0; border-radius: 8px; border: 3px solid #388e3c;">
+            <h2 style="margin-top: 0; color: #1b5e20;">📋 Samenvatting H 3.11 Opgaven 6-9, 15</h2>
+
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr style="background: #388e3c; color: white;">
+                    <th style="padding: 12px; border: 1px solid #fff;">Opgave</th>
+                    <th style="padding: 12px; border: 1px solid #fff;">Techniek</th>
+                    <th style="padding: 12px; border: 1px solid #fff;">Kernles</th>
+                    <th style="padding: 12px; border: 1px solid #fff;">Resultaat</th>
+                </tr>
+                <tr style="background: #e8f5e9;">
+                    <td style="padding: 10px; border: 1px solid #388e3c;">6</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">Superpositie</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">Elke bron apart, daarna optellen</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;"><strong>I<sub>x</sub> = -400mA</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">7</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">Kortsluiting</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">R ∥ U-bron → kort; R serie I-bron → doet niet mee</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;"><strong>9Ω en 120Ω niet actief</strong></td>
+                </tr>
+                <tr style="background: #e8f5e9;">
+                    <td style="padding: 10px; border: 1px solid #388e3c;">8</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">Parallel weerstand</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">3Ω ∥ 6Ω product-som</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;"><strong>Z = 2Ω</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">9</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">Spanningsdeling</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">Meerdere bronnen in serie stapelen op</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;"><strong>U<sub>A</sub> = 7V</strong></td>
+                </tr>
+                <tr style="background: #e8f5e9;">
+                    <td style="padding: 10px; border: 1px solid #388e3c;">15</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">Gestuurde bron</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;">Kirchhoff met afhankelijke spanning</td>
+                    <td style="padding: 10px; border: 1px solid #388e3c;"><strong>I₁ = 1/4 A</strong></td>
+                </tr>
+            </table>
+
+            <div class="insight-box" style="margin-top: 20px;">
+                <strong>🎓 Belangrijkste vaardigheden H 3.11:</strong>
+                <ol>
+                    <li><strong>Superpositieprincipe:</strong> Systematisch elke bron apart analyseren</li>
+                    <li><strong>Herkenning inactieve elementen:</strong> Weet wanneer een R "niet meedoet"</li>
+                    <li><strong>Spanningsbronnen in serie:</strong> Spanningen stapelen op (let op polariteit!)</li>
+                    <li><strong>Gestuurde bronnen:</strong> Afhankelijke bronnen in vergelijkingen verwerken</li>
+                    <li><strong>Verificatie:</strong> Altijd controleren met andere methode of Kirchhoff's wetten</li>
+                </ol>
+            </div>
+
+            <div style="background: #fff3e0; padding: 15px; margin-top: 20px; border-left: 4px solid #ff9800; border-radius: 5px;">
+                <h3 style="margin-top: 0; color: #e65100;">🎉 H 3.11 COMPLEET!</h3>
+                <p>Met deze 5 opgaven is Hoofdstuk 3.11 volledig geconverteerd naar FULL-enhanced formaat.</p>
+                <p><strong>Totaal H 3.11:</strong> Opgaven 1a-1d, 2a-2e, 3, 4, 5, 6, 7, 8, 9, 15 = 17 opgaven ✓</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

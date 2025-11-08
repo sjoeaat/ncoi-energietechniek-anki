@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 2.6 - Opgave 3, 4, 5 - Bewijzen & Shunt-weerstand FULL Enhanced</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+            font-size: 2em;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 35px;
+            font-size: 1.6em;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+        .exercise {
+            background: #f8f9ff;
+            border-left: 6px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border: 2px solid #667eea;
+        }
+        .step {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+        .step-title {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .step-number {
+            background: #764ba2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+        .formula-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        .insight-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .result-box {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            color: #155724;
+        }
+        .display-math {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        math {
+            font-size: 1.3em;
+        }
+        .proof-box {
+            background: #fff9e6;
+            border: 3px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .qed {
+            text-align: right;
+            font-style: italic;
+            font-weight: bold;
+            color: #ff9800;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 H 2.6 - Bewijzen & Meetinstrumenten</h1>
+
+        <!-- OPGAVE 3: BEWIJS VERKEERDE FORMULE -->
+        <div class="exercise">
+            <h2>Opgave 3: Bewijs Foutieve Formule (Dimensieanalyse)</h2>
+
+            <div class="question">
+                Bewijs dat de vervangingsweerstand van drie parallel geschakelde weerstanden R₁, R₂ en R₃
+                <strong>NIET</strong> gelijk is aan het product van die weerstanden gedeeld door de som:
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mi>v</mi></msub>
+                            <mo>≠</mo>
+                            <mfrac>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 1: GEGEVEN ANALYSEREN -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GEGEVEN INFORMATIE ANALYSEREN
+                </div>
+                <p><strong>Context:</strong></p>
+                <ul>
+                    <li>Voor twee weerstanden parallel geldt: R<sub>v</sub> = (R₁·R₂)/(R₁+R₂) ✓ (correct!)</li>
+                    <li>Sommige studenten denken dat dit patroon ook werkt voor drie weerstanden</li>
+                    <li>Dit is een veelgemaakte fout die we moeten weerleggen</li>
+                </ul>
+                <p><strong>Te bewijzen:</strong></p>
+                <p>Dat (R₁·R₂·R₃)/(R₁+R₂+R₃) NIET de juiste formule is voor drie parallelle weerstanden</p>
+            </div>
+
+            <!-- STAP 2: THEORETISCHE BASIS -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    THEORETISCHE BASIS: DIMENSIEANALYSE
+                </div>
+                <div class="insight-box">
+                    <strong>💡 Dimensieanalyse:</strong><br>
+                    Een formule kan alleen fysisch correct zijn als de eenheden aan beide kanten kloppen.
+                    Weerstand heeft eenheid Ω (Ohm). Dus de linkerkant EN rechterkant moeten beide eenheid Ω hebben.
+                </div>
+                <p><strong>Strategie:</strong></p>
+                <p>We controleren de eenheden (dimensies) van de voorgestelde formule. Als de eenheden niet kloppen,
+                kan de formule niet correct zijn.</p>
+            </div>
+
+            <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING (KORTE BEWIJS) -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    KORT BEWIJS: DIMENSIEANALYSE
+                </div>
+                <div class="proof-box">
+                    <p><strong>Analyse van de verkeerde formule:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mtext>Eenheid van </mtext>
+                                <mfrac>
+                                    <mrow>
+                                        <msub><mi>R</mi><mn>1</mn></msub>
+                                        <mo>·</mo>
+                                        <msub><mi>R</mi><mn>2</mn></msub>
+                                        <mo>·</mo>
+                                        <msub><mi>R</mi><mn>3</mn></msub>
+                                    </mrow>
+                                    <mrow>
+                                        <msub><mi>R</mi><mn>1</mn></msub>
+                                        <mo>+</mo>
+                                        <msub><mi>R</mi><mn>2</mn></msub>
+                                        <mo>+</mo>
+                                        <msub><mi>R</mi><mn>3</mn></msub>
+                                    </mrow>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <mi mathvariant="normal">Ω</mi>
+                                        <mo>·</mo>
+                                        <mi mathvariant="normal">Ω</mi>
+                                        <mo>·</mo>
+                                        <mi mathvariant="normal">Ω</mi>
+                                    </mrow>
+                                    <mi mathvariant="normal">Ω</mi>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <msup>
+                                        <mi mathvariant="normal">Ω</mi>
+                                        <mn>3</mn>
+                                    </msup>
+                                    <mi mathvariant="normal">Ω</mi>
+                                </mfrac>
+                                <mo>=</mo>
+                                <msup>
+                                    <mi mathvariant="normal">Ω</mi>
+                                    <mn>2</mn>
+                                </msup>
+                            </mrow>
+                        </math>
+                    </div>
+                    <p><strong>Conclusie:</strong></p>
+                    <p>De eenheid van de rechterkant is Ω², niet Ω!</p>
+                    <p>Omdat weerstand de eenheid Ω heeft, en deze formule de eenheid Ω² oplevert,
+                    kan dit geen weerstand zijn. <strong>De formule is dus FOUT.</strong></p>
+                    <div class="qed">Q.E.D. (quod erat demonstrandum)</div>
+                </div>
+            </div>
+
+            <!-- STAP 4: UITGEBREID BEWIJS (CORRECTE FORMULE) -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    UITGEBREID BEWIJS: CORRECTE FORMULE AFLEIDEN
+                </div>
+                <p><strong>De juiste formule voor parallelle weerstanden:</strong></p>
+                <div class="formula-box">
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mi>v</mi></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                </mfrac>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mfrac>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+
+                <p><strong>Stap 1: Breng alle termen onder dezelfde noemer (R₁·R₂·R₃):</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <mn>1</mn>
+                                <msub><mi>R</mi><mi>v</mi></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                            </mfrac>
+                            <mo>+</mo>
+                            <mfrac>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                            </mfrac>
+                            <mo>+</mo>
+                            <mfrac>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mrow>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stap 2: Tel de tellers op:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <mn>1</mn>
+                                <msub><mi>R</mi><mi>v</mi></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mrow>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stap 3: Neem de inverse om R<sub>v</sub> te vinden:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mi>v</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Dit is DUIDELIJK NIET gelijk aan:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p>De noemer is verschillend:</p>
+                <ul>
+                    <li><strong>Correct:</strong> R₂·R₃ + R₁·R₃ + R₁·R₂ (producten van paren)</li>
+                    <li><strong>Fout:</strong> R₁ + R₂ + R₃ (gewone som)</li>
+                </ul>
+
+                <div class="qed">Q.E.D. (quod erat demonstrandum)</div>
+            </div>
+
+            <!-- STAP 5: VERIFICATIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    VERIFICATIE & FYSISCHE INTERPRETATIE
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Waarom deze fout vaak gemaakt wordt:</strong><br>
+                    Voor TWEE weerstanden parallel werkt product-som wel: R<sub>v</sub> = (R₁·R₂)/(R₁+R₂) ✓<br>
+                    Studenten proberen dit patroon door te trekken naar drie weerstanden, maar dat werkt NIET!
+                </div>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische betekenis:</strong><br>
+                    De dimensieanalyse is een krachtig instrument om snel fouten te ontdekken.
+                    Als de eenheden niet kloppen (hier: Ω² in plaats van Ω), dan weet je direct dat de formule fout is,
+                    zonder ingewikkelde berekeningen te hoeven maken.
+                </div>
+
+                <div class="success-box">
+                    <strong>✓ Onthoudregel:</strong><br>
+                    De "product-som" formule werkt ALLEEN voor precies twee weerstanden parallel.<br>
+                    Voor drie of meer weerstanden: gebruik altijd de geleidingsmethode (1/R<sub>v</sub> = 1/R₁ + 1/R₂ + 1/R₃)
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ BEWEZEN: (R₁·R₂·R₃)/(R₁+R₂+R₃) is FOUT<br>
+                (Eenheid is Ω², niet Ω)
+            </div>
+        </div>
+
+        <!-- OPGAVE 4: BEWIJS GELEIDINGEN TELLEN OP -->
+        <div class="exercise">
+            <h2>Opgave 4: Bewijs - Geleidingen Tellen Op</h2>
+
+            <div class="question">
+                Bewijs dat de vervangingsgeleiding van meerdere parallel geschakelde weerstanden
+                <strong>WEL</strong> gelijk is aan de som van de individuele geleidingen:
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>G</mi><mi>v</mi></msub>
+                            <mo>=</mo>
+                            <munderover>
+                                <mo>∑</mo>
+                                <mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow>
+                                <mi>n</mi>
+                            </munderover>
+                            <msub><mi>G</mi><mi>j</mi></msub>
+                            <mo>=</mo>
+                            <msub><mi>G</mi><mn>1</mn></msub>
+                            <mo>+</mo>
+                            <msub><mi>G</mi><mn>2</mn></msub>
+                            <mo>+</mo>
+                            <mo>…</mo>
+                            <mo>+</mo>
+                            <msub><mi>G</mi><mi>n</mi></msub>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 1: GEGEVEN ANALYSEREN -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GEGEVEN INFORMATIE ANALYSEREN
+                </div>
+                <p><strong>Context:</strong></p>
+                <ul>
+                    <li>Geleiding (conductantie) G is de inverse van weerstand: G = 1/R</li>
+                    <li>Eenheid van geleiding: Siemens (S), waarbij 1 S = 1/Ω</li>
+                    <li>Hoe hoger de geleiding, hoe beter stroom kan vloeien</li>
+                </ul>
+                <p><strong>Te bewijzen:</strong></p>
+                <p>Voor parallelle weerstanden tellen de geleidingen op (in tegenstelling tot weerstanden zelf!)</p>
+            </div>
+
+            <!-- STAP 2: THEORETISCHE BASIS -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    THEORETISCHE BASIS
+                </div>
+                <p><strong>Bekende formules:</strong></p>
+                <div class="formula-box">
+                    Definitie van geleiding:
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>G</mi>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mi>R</mi>
+                                </mfrac>
+                                <mspace width="2em"/>
+                                <mtext>of</mtext>
+                                <mspace width="2em"/>
+                                <mi>G</mi>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mi>I</mi>
+                                    <mi>U</mi>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+                <div class="formula-box">
+                    Voor parallelle weerstanden:
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mi>v</mi></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                </mfrac>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mfrac>
+                                <mo>+</mo>
+                                <mo>…</mo>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mi>n</mi></msub>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING (METHODE 1) -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    BEWIJS METHODE 1: SUBSTITUTIE
+                </div>
+                <div class="proof-box">
+                    <p><strong>Startpunt - formule voor parallelle weerstanden:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mi>v</mi></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                </mfrac>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mfrac>
+                                <mo>+</mo>
+                                <mo>…</mo>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mi>n</mi></msub>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Vervang overal 1/R door G (want G = 1/R):</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>G</mi><mi>v</mi></msub>
+                                <mo>=</mo>
+                                <msub><mi>G</mi><mn>1</mn></msub>
+                                <mo>+</mo>
+                                <msub><mi>G</mi><mn>2</mn></msub>
+                                <mo>+</mo>
+                                <mo>…</mo>
+                                <mo>+</mo>
+                                <msub><mi>G</mi><mi>n</mi></msub>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p>Dit is precies wat we wilden bewijzen!</p>
+                    <div class="qed">Q.E.D.</div>
+                </div>
+            </div>
+
+            <!-- STAP 4: ALTERNATIEF BEWIJS (METHODE 2) -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    BEWIJS METHODE 2: FYSISCHE BENADERING
+                </div>
+                <div class="proof-box">
+                    <p><strong>Definitie van geleiding met stroom en spanning:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>G</mi>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mi>I</mi>
+                                    <mi>U</mi>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Bij parallelle schakeling geldt:</strong></p>
+                    <ul>
+                        <li>Alle weerstanden hebben dezelfde spanning U</li>
+                        <li>De totale stroom is de som van de deelstromen: I<sub>totaal</sub> = I₁ + I₂ + ... + I<sub>n</sub></li>
+                    </ul>
+
+                    <p><strong>Voor elk element geldt:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mn>1</mn></msub>
+                                <mo>=</mo>
+                                <mi>U</mi>
+                                <mo>·</mo>
+                                <msub><mi>G</mi><mn>1</mn></msub>
+                                <mo>,</mo>
+                                <mspace width="1em"/>
+                                <msub><mi>I</mi><mn>2</mn></msub>
+                                <mo>=</mo>
+                                <mi>U</mi>
+                                <mo>·</mo>
+                                <msub><mi>G</mi><mn>2</mn></msub>
+                                <mo>,</mo>
+                                <mspace width="1em"/>
+                                <mo>…</mo>
+                                <mo>,</mo>
+                                <mspace width="1em"/>
+                                <msub><mi>I</mi><mi>n</mi></msub>
+                                <mo>=</mo>
+                                <mi>U</mi>
+                                <mo>·</mo>
+                                <msub><mi>G</mi><mi>n</mi></msub>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Totale stroom:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mi>totaal</mi></msub>
+                                <mo>=</mo>
+                                <msub><mi>I</mi><mn>1</mn></msub>
+                                <mo>+</mo>
+                                <msub><mi>I</mi><mn>2</mn></msub>
+                                <mo>+</mo>
+                                <mo>…</mo>
+                                <mo>+</mo>
+                                <msub><mi>I</mi><mi>n</mi></msub>
+                            </mrow>
+                        </math>
+                    </div>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mi>totaal</mi></msub>
+                                <mo>=</mo>
+                                <mi>U</mi>
+                                <mo>·</mo>
+                                <msub><mi>G</mi><mn>1</mn></msub>
+                                <mo>+</mo>
+                                <mi>U</mi>
+                                <mo>·</mo>
+                                <msub><mi>G</mi><mn>2</mn></msub>
+                                <mo>+</mo>
+                                <mo>…</mo>
+                                <mo>+</mo>
+                                <mi>U</mi>
+                                <mo>·</mo>
+                                <msub><mi>G</mi><mi>n</mi></msub>
+                            </mrow>
+                        </math>
+                    </div>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mi>totaal</mi></msub>
+                                <mo>=</mo>
+                                <mi>U</mi>
+                                <mo>·</mo>
+                                <mo>(</mo>
+                                <msub><mi>G</mi><mn>1</mn></msub>
+                                <mo>+</mo>
+                                <msub><mi>G</mi><mn>2</mn></msub>
+                                <mo>+</mo>
+                                <mo>…</mo>
+                                <mo>+</mo>
+                                <msub><mi>G</mi><mi>n</mi></msub>
+                                <mo>)</mo>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Totale geleiding:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>G</mi><mi>totaal</mi></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <msub><mi>I</mi><mi>totaal</mi></msub>
+                                    <mi>U</mi>
+                                </mfrac>
+                                <mo>=</mo>
+                                <msub><mi>G</mi><mn>1</mn></msub>
+                                <mo>+</mo>
+                                <msub><mi>G</mi><mn>2</mn></msub>
+                                <mo>+</mo>
+                                <mo>…</mo>
+                                <mo>+</mo>
+                                <msub><mi>G</mi><mi>n</mi></msub>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <div class="qed">Q.E.D.</div>
+                </div>
+            </div>
+
+            <!-- STAP 5: VERIFICATIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    VERIFICATIE & FYSISCHE INTERPRETATIE
+                </div>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische betekenis:</strong><br>
+                    Geleiding meet hoe gemakkelijk stroom kan vloeien. Bij parallelle weerstanden creëer je meerdere paden voor de stroom.
+                    Elk pad voegt zijn eigen "gemak van stroomgeleiding" toe, dus de geleidingen tellen op.<br><br>
+
+                    Dit is het tegenovergestelde van serie-schakelingen, waar weerstanden optellen (elk element voegt belemmering toe).
+                </div>
+
+                <div class="success-box">
+                    <strong>✓ Belangrijke conclusie:</strong><br>
+                    <ul>
+                        <li><strong>Serie:</strong> R<sub>totaal</sub> = R₁ + R₂ + ... (weerstanden tellen op)</li>
+                        <li><strong>Parallel:</strong> G<sub>totaal</sub> = G₁ + G₂ + ... (geleidingen tellen op)</li>
+                    </ul>
+                    Het werken met geleidingen maakt parallelle schakelingen symmetrisch met serie-schakelingen!
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ BEWEZEN: G<sub>v</sub> = G₁ + G₂ + … + G<sub>n</sub><br>
+                (Geleidingen tellen op bij parallel)
+            </div>
+        </div>
+
+        <!-- OPGAVE 5: SHUNT-WEERSTAND VOOR AMPÈREMETER -->
+        <div class="exercise">
+            <h2>Opgave 5: Shunt-weerstand voor Ampèremeter</h2>
+
+            <div class="question">
+                Een ampèremeter met een weerstand van 0,7Ω geeft een volle schaaluitslag bij een spanning van 0,015V tussen de klemmen.<br><br>
+                <strong>Vraag:</strong> Hoe groot moet de parallelweerstand ('shuntweerstand') zijn voor een meetbereik van 15A?
+            </div>
+
+            <!-- STAP 1: GEGEVEN ANALYSEREN -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GEGEVEN INFORMATIE ANALYSEREN
+                </div>
+                <p><strong>Gegeven:</strong></p>
+                <ul>
+                    <li>R<sub>meter</sub> = 0,7Ω (weerstand van de meter - <em>niet relevant!</em>)</li>
+                    <li>U<sub>max</sub> = 0,015V (spanning bij volle schaaluitslag)</li>
+                    <li>I<sub>totaal</sub> = 15A (gewenst meetbereik)</li>
+                </ul>
+                <p><strong>Gevraagd:</strong></p>
+                <ul>
+                    <li>R<sub>shunt</sub> = parallelweerstand voor meetbereik uitbreiding</li>
+                </ul>
+                <div class="warning-box">
+                    <strong>⚠️ Belangrijke observatie:</strong><br>
+                    De weerstand van de meter zelf (0,7Ω) is NIET relevant voor deze vraag!
+                    Het enige dat telt is dat de meter bij 0,015V volle uitslag geeft.
+                </div>
+            </div>
+
+            <!-- STAP 2: THEORETISCHE BASIS -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    THEORETISCHE BASIS: SHUNT-PRINCIPE
+                </div>
+                <div class="insight-box">
+                    <strong>💡 Wat is een shunt?</strong><br>
+                    Een shunt is een lage weerstand parallel aan een meetinstrument. Het "shunted" (leidt af) de meeste stroom langs de meter,
+                    zodat de meter maar een klein deel van de totale stroom hoeft te meten. Zo kun je een meter met klein bereik gebruiken voor grote stromen.
+                </div>
+
+                <p><strong>Principe:</strong></p>
+                <ul>
+                    <li>De meter en shunt staan parallel → zelfde spanning (0,015V)</li>
+                    <li>De totale stroom (15A) verdeelt zich over meter en shunt</li>
+                    <li>De shunt geleidtnagenoeg de hele stroom (want R<sub>shunt</sub> << R<sub>meter</sub>)</li>
+                </ul>
+
+                <div class="formula-box">
+                    Wet van Ohm:
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>R</mi>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mi>U</mi>
+                                    <mi>I</mi>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    ALGEBRAÏSCHE AFLEIDING
+                </div>
+                <p><strong>Situatie:</strong></p>
+                <p>Bij 15A totale stroom moet de spanning over de parallelcombinatie 0,015V zijn (de meter geeft dan volle uitslag).</p>
+
+                <p><strong>Omdat meter en shunt parallel staan, geldt voor de shunt:</strong></p>
+                <ul>
+                    <li>U<sub>shunt</sub> = 0,015V (zelfde als over meter)</li>
+                    <li>I<sub>shunt</sub> ≈ 15A (bijna alle stroom gaat door de shunt)</li>
+                </ul>
+
+                <p><strong>Formule voor shunt-weerstand:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mi>shunt</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <msub><mi>U</mi><mi>shunt</mi></msub>
+                                <msub><mi>I</mi><mi>totaal</mi></msub>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 4: NUMERIEKE SUBSTITUTIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    NUMERIEKE SUBSTITUTIE
+                </div>
+                <p>Invullen van de waarden:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mi>shunt</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>0,015</mn>
+                                <mn>15</mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mi>shunt</mi></msub>
+                            <mo>=</mo>
+                            <mn>0,001</mn>
+                            <mtext> Ω</mtext>
+                            <mo>=</mo>
+                            <mn>1</mn>
+                            <mtext> mΩ</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 5: VERIFICATIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    VERIFICATIE & FYSISCHE INTERPRETATIE
+                </div>
+
+                <p><strong>Dimensiecontrole:</strong></p>
+                <p>V / A = Ω ✓</p>
+
+                <p><strong>Realiteitscontrole:</strong></p>
+                <ul>
+                    <li>R<sub>shunt</sub> = 1mΩ << 0,7Ω (shunt is veel kleiner dan meter) ✓</li>
+                    <li>Verhouding: R<sub>shunt</sub> / R<sub>meter</sub> = 0,001 / 0,7 ≈ 1/700</li>
+                    <li>Dit betekent dat bijna alle stroom (≈99,9%) door de shunt gaat ✓</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische interpretatie:</strong><br>
+                    De shunt-weerstand is extreem laag (1mΩ = 0,001Ω). Dit zorgt ervoor dat bijna de hele stroom van 15A door de shunt loopt,
+                    terwijl slechts een fractie door de meter gaat. De spanning blijft 0,015V, wat de meter precies op volle uitslag brengt.<br><br>
+
+                    <strong>Stroomverdeling:</strong><br>
+                    • Stroom door meter: I<sub>meter</sub> = 0,015V / 0,7Ω ≈ 0,021A = 21mA<br>
+                    • Stroom door shunt: I<sub>shunt</sub> ≈ 15A - 0,021A ≈ 14,979A<br>
+                    • De meter meet dus slechts 0,14% van de totale stroom!
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Praktische consideratie:</strong><br>
+                    Een shunt van 1mΩ moet <strong>zeer laag-ohmisch</strong> en <strong>stabiel</strong> zijn.
+                    Bij 15A dissipeert de shunt: P = I²·R = 15² × 0,001 = 0,225W.
+                    Kleine temperatuurveranderingen kunnen de meting beïnvloeden, dus shunts zijn vaak van speciale legeringen (manganine, constantaan).
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: R<sub>shunt</sub> = 0,001 Ω = 1 mΩ
+            </div>
+        </div>
+
+        <!-- SAMENVATTING -->
+        <div class="exercise" style="background: #fff3e0;">
+            <h2>📋 Samenvatting Opgaven 3, 4, 5</h2>
+
+            <h3>Opgave 3: Foutieve Formule</h3>
+            <p><strong>Bewezen:</strong> (R₁·R₂·R₃)/(R₁+R₂+R₃) geeft eenheid Ω², niet Ω → FOUT</p>
+            <p><strong>Les:</strong> De product-som formule werkt ALLEEN voor 2 weerstanden parallel!</p>
+
+            <h3>Opgave 4: Geleidingen Tellen Op</h3>
+            <p><strong>Bewezen:</strong> G<sub>v</sub> = G₁ + G₂ + ... (geleidingen tellen op bij parallel)</p>
+            <p><strong>Les:</strong> Werken met geleidingen (G = 1/R) maakt parallelle schakelingen veel eenvoudiger!</p>
+
+            <h3>Opgave 5: Shunt-weerstand</h3>
+            <p><strong>Berekend:</strong> R<sub>shunt</sub> = U / I<sub>totaal</sub> = 0,015 / 15 = 1mΩ</p>
+            <p><strong>Les:</strong> Een shunt is een zeer lage weerstand die het meetbereik van een ampèremeter vergroot door stroom af te leiden.</p>
+
+            <div class="insight-box" style="margin-top: 20px;">
+                <strong>🎓 Belangrijkste leerpunten:</strong>
+                <ul>
+                    <li><strong>Dimensieanalyse</strong> is krachtig om snel fouten te ontdekken</li>
+                    <li><strong>Geleidingen</strong> (G = 1/R) tellen op bij parallel (symmetrisch met serie!)</li>
+                    <li><strong>Shunts</strong> gebruiken parallelschakeling om meetbereiken uit te breiden</li>
+                    <li><strong>Meeste stroom</strong> gaat door het pad met laagste weerstand</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 2.6 - Opgave 10-13 - Kirchhoff Multiple Choice Network 1 FULL Enhanced</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+        .exercise {
+            background: #f8f9ff;
+            border-left: 6px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        .question {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border: 2px solid #667eea;
+            margin-bottom: 20px;
+        }
+        .choices {
+            margin: 20px 0;
+        }
+        .choice {
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border-left: 4px solid #ccc;
+            background: white;
+        }
+        .choice.correct {
+            border-left-color: #28a745;
+            background: #d4edda;
+            font-weight: bold;
+        }
+        .choice.incorrect {
+            border-left-color: #dc3545;
+            background: #f8d7da;
+        }
+        .step {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+        .step-title {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+        .insight-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .result-box {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            color: #155724;
+        }
+        .display-math {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        math {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 H 2.6 - Multiple Choice: Kirchhoff's Wetten (Netwerk 1)</h1>
+
+        <div style="background: #fff3cd; padding: 20px; margin: 20px 0; border-left: 5px solid #ff9800; border-radius: 8px;">
+            <h3 style="margin-top: 0;">📐 Gemeenschappelijk Netwerk voor Opgaven 10-13</h3>
+            <p><strong>Beschrijving:</strong> Een complex netwerk met meerdere bronnen (U₁, I₂, I₃) en weerstanden (R<sub>a</sub>, R<sub>b</sub>, R<sub>c</sub>, R<sub>d</sub>).</p>
+            <p><strong>Belangrijke elementen:</strong></p>
+            <ul>
+                <li>Spanningsbron U₁</li>
+                <li>Stroombronnen I₂ en I₃</li>
+                <li>Knooppunt A (waar R<sub>b</sub> en R<sub>d</sub> samenkomen)</li>
+                <li>Verschillende stroomrichtingen (let op polariteit!)</li>
+            </ul>
+            <div class="warning-box">
+                <strong>⚠️ Cruciale vaardigheid:</strong><br>
+                Deze opgaven testen je begrip van Kirchhoff's wetten in complexe netwerken met zowel spannings- als stroombronnen.
+                Let extra goed op polariteiten en stroomrichtingen!
+            </div>
+        </div>
+
+        <!-- OPGAVE 10: SPANNING OVER Ra -->
+        <div class="exercise">
+            <h2>Opgave 10: Spanning over R<sub>a</sub></h2>
+
+            <div class="question">
+                In dit netwerk is de spanning over de weerstand R<sub>a</sub> gelijk aan:
+            </div>
+
+            <div class="choices">
+                <div class="choice incorrect">
+                    <strong>a:</strong> U<sub>a</sub> = I₁ · R<sub>a</sub>
+                </div>
+                <div class="choice correct">
+                    <strong>b:</strong> U<sub>a</sub> = -I₁ · R<sub>a</sub> ✓
+                </div>
+                <div class="choice incorrect">
+                    <strong>c:</strong> U<sub>a</sub> = U₁ - I₁ · R<sub>a</sub>
+                </div>
+                <div class="choice incorrect">
+                    <strong>d:</strong> U<sub>a</sub> = U₁ + I₁ · R<sub>a</sub>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">📖 UITWERKING</div>
+
+                <p><strong>Gegeven:</strong></p>
+                <ul>
+                    <li>Stroom I₁ loopt volledig door R<sub>a</sub> (in serie)</li>
+                    <li>U<sub>a</sub> is de spanning over R<sub>a</sub> (met aangegeven polariteit)</li>
+                </ul>
+
+                <p><strong>Analyse:</strong></p>
+                <p>De spanning over een weerstand volgt altijd de wet van Ohm: U = I · R</p>
+                <p>Voor R<sub>a</sub> geldt dus: |U<sub>a</sub>| = I₁ · R<sub>a</sub></p>
+
+                <p><strong>Cruciale observatie - Polariteit:</strong></p>
+                <p>In het schema komt de stroom I₁ binnen bij het <strong>min-teken</strong> van de spanning U<sub>a</sub>.
+                Dit betekent dat de polariteit van U<sub>a</sub> TEGENGESTELD is aan de standaard stroomrichting.</p>
+
+                <div class="warning-box">
+                    <strong>⚠️ Polariteitsregel:</strong><br>
+                    Als stroom binnenkomt bij het min-teken van een spanningspijl, dan is de spanning negatief ten opzichte van de gekozen richting.
+                </div>
+
+                <p><strong>Conclusie:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mi>a</mi></msub>
+                            <mo>=</mo>
+                            <mo>-</mo>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>·</mo>
+                            <msub><mi>R</mi><mi>a</mi></msub>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="insight-box">
+                    <strong>💡 Fysische betekenis:</strong><br>
+                    De spanning over R<sub>a</sub> is negatief omdat de gekozen polariteitsrichting (van + naar -)
+                    tegengesteld is aan de werkelijke spanningsval (van - naar + in stroomrichting).
+                    Dit is puur een kwestie van tekenconventie.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ CORRECT ANTWOORD: b (U<sub>a</sub> = -I₁ · R<sub>a</sub>)
+            </div>
+        </div>
+
+        <!-- OPGAVE 11: STROOM DOOR Rb -->
+        <div class="exercise">
+            <h2>Opgave 11: Stroom door R<sub>b</sub> (Stroomverdeling)</h2>
+
+            <div class="question">
+                In dit netwerk is de stroom door de weerstand R<sub>b</sub> gelijk aan:
+            </div>
+
+            <div class="choices">
+                <div class="choice incorrect">
+                    <strong>a:</strong> I<sub>b</sub> = -I₂ · R<sub>d</sub>/R<sub>b</sub>
+                </div>
+                <div class="choice incorrect">
+                    <strong>b:</strong> I<sub>b</sub> = -I₂ · R<sub>b</sub>/(R<sub>b</sub> + R<sub>d</sub>)
+                </div>
+                <div class="choice correct">
+                    <strong>c:</strong> I<sub>b</sub> = -I₂ · R<sub>d</sub>/(R<sub>b</sub> + R<sub>d</sub>) ✓
+                </div>
+                <div class="choice incorrect">
+                    <strong>d:</strong> I<sub>b</sub> = I<sub>c</sub> · R<sub>b</sub>/(R<sub>b</sub> + R<sub>c</sub>)
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">📖 UITWERKING</div>
+
+                <p><strong>Stap 1: Kirchhoff's Stroomwet op knooppunt A</strong></p>
+                <p>Op knooppunt A komen stromen samen:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>2</mn></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>b</mi></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stap 2: Spanning over R<sub>b</sub> en R<sub>d</sub></strong></p>
+                <p>R<sub>b</sub> en R<sub>d</sub> staan parallel, dus hebben dezelfde spanning:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mi>b</mi></msub>
+                            <mo>·</mo>
+                            <msub><mi>R</mi><mi>b</mi></msub>
+                            <mo>=</mo>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                            <mo>·</mo>
+                            <msub><mi>R</mi><mi>d</mi></msub>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stap 3: Uitdrukken I<sub>d</sub> in I<sub>b</sub></strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <msub><mi>I</mi><mi>b</mi></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mi>b</mi></msub>
+                                </mrow>
+                                <msub><mi>R</mi><mi>d</mi></msub>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stap 4: Invullen in Kirchhoff's vergelijking</strong></p>
+                <p>I₂ + I<sub>b</sub> + (I<sub>b</sub>·R<sub>b</sub>)/R<sub>d</sub> = 0</p>
+                <p>I<sub>b</sub> · (R<sub>d</sub>/R<sub>d</sub> + R<sub>b</sub>/R<sub>d</sub>) = -I₂</p>
+                <p>I<sub>b</sub> · (R<sub>d</sub> + R<sub>b</sub>)/R<sub>d</sub> = -I₂</p>
+
+                <p><strong>Stap 5: Oplossen naar I<sub>b</sub></strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mi>b</mi></msub>
+                            <mo>=</mo>
+                            <mo>-</mo>
+                            <msub><mi>I</mi><mn>2</mn></msub>
+                            <mo>·</mo>
+                            <mfrac>
+                                <msub><mi>R</mi><mi>d</mi></msub>
+                                <mrow>
+                                    <msub><mi>R</mi><mi>b</mi></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mi>d</mi></msub>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="insight-box">
+                    <strong>💡 Dit is stroomverdeling!</strong><br>
+                    De formule heeft de vorm van een stroomdeler: de stroom I₂ verdeelt zich over R<sub>b</sub> en R<sub>d</sub>.
+                    Let op: I<sub>b</sub> krijgt de factor R<sub>d</sub> (niet R<sub>b</sub>!) - dit is de <strong>inverse verhouding</strong>.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ CORRECT ANTWOORD: c (I<sub>b</sub> = -I₂ · R<sub>d</sub>/(R<sub>b</sub> + R<sub>d</sub>))
+            </div>
+        </div>
+
+        <!-- OPGAVE 12: STROOM DOOR Rc -->
+        <div class="exercise">
+            <h2>Opgave 12: Stroom door R<sub>c</sub></h2>
+
+            <div class="question">
+                In dit netwerk is de stroom door de weerstand R<sub>c</sub> gelijk aan:
+            </div>
+
+            <div class="choices">
+                <div class="choice correct">
+                    <strong>a:</strong> I<sub>c</sub> = U₁/R<sub>c</sub> ✓
+                </div>
+                <div class="choice incorrect">
+                    <strong>b:</strong> I<sub>c</sub> = (U₁/R<sub>c</sub>) + I₁ + I₃
+                </div>
+                <div class="choice incorrect">
+                    <strong>c:</strong> I<sub>c</sub> = I₂ + I<sub>b</sub> + I<sub>d</sub> + I₁ + I₃
+                </div>
+                <div class="choice incorrect">
+                    <strong>d:</strong> I<sub>c</sub> = (U₁/R<sub>c</sub>) + I₂ + I<sub>b</sub> + I<sub>d</sub> + I₁ + I₃
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">📖 UITWERKING</div>
+
+                <p><strong>Observatie uit het netwerk:</strong></p>
+                <p>R<sub>c</sub> staat <strong>direct parallel</strong> aan spanningsbron U₁.</p>
+
+                <p><strong>Directe toepassing wet van Ohm:</strong></p>
+                <p>Omdat een ideale spanningsbron zijn spanning handhaaft ongeacht de belasting,
+                staat er precies U₁ over R<sub>c</sub>.</p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mi>c</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <msub><mi>U</mi><mn>1</mn></msub>
+                                <msub><mi>R</mi><mi>c</mi></msub>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="insight-box">
+                    <strong>💡 Simpel maar belangrijk!</strong><br>
+                    Deze opgave test of je herkent dat een element direct parallel aan een spanningsbron staat.
+                    In dat geval is de berekening triviaal: U = constant, dus I = U/R.<br><br>
+                    Alle andere stroombronnen (I₁, I₂, I₃) en complexe stromen (I<sub>b</sub>, I<sub>d</sub>)
+                    zijn NIET relevant voor I<sub>c</sub> - ze worden geleverd door de spanningsbron!
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Veelgemaakte fout:</strong><br>
+                    Studenten denken vaak dat ze alle stromen in het netwerk moeten optellen.
+                    Maar als een weerstand direct parallel staat aan een spanningsbron, hangt zijn stroom
+                    ALLEEN af van U en R - niet van andere elementen in het netwerk.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ CORRECT ANTWOORD: a (I<sub>c</sub> = U₁/R<sub>c</sub>)
+            </div>
+        </div>
+
+        <!-- OPGAVE 13: STROOM DOOR Rd -->
+        <div class="exercise">
+            <h2>Opgave 13: Stroom door R<sub>d</sub></h2>
+
+            <div class="question">
+                In dit netwerk is de stroom door de weerstand R<sub>d</sub> gelijk aan:
+            </div>
+
+            <div class="choices">
+                <div class="choice incorrect">
+                    <strong>a:</strong> I<sub>d</sub> = I₂ · [R<sub>b</sub> · R<sub>d</sub>/(R<sub>b</sub> + R<sub>d</sub>)]
+                </div>
+                <div class="choice incorrect">
+                    <strong>b:</strong> I<sub>d</sub> = I₂ · [R<sub>b</sub>/(R<sub>b</sub> + R<sub>d</sub>)]
+                </div>
+                <div class="choice incorrect">
+                    <strong>c:</strong> I<sub>d</sub> = I₂ · [R<sub>d</sub>/(R<sub>b</sub> + R<sub>d</sub>)]
+                </div>
+                <div class="choice correct">
+                    <strong>d:</strong> I<sub>d</sub> = -I₂ - I<sub>b</sub> ✓
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">📖 UITWERKING</div>
+
+                <p><strong>Methode: Kirchhoff's Stroomwet op knooppunt A</strong></p>
+
+                <p>Op knooppunt A komen de volgende stromen samen:</p>
+                <ul>
+                    <li>I₂ (van stroombron, naar binnen)</li>
+                    <li>I<sub>b</sub> (door R<sub>b</sub>)</li>
+                    <li>I<sub>d</sub> (door R<sub>d</sub>)</li>
+                </ul>
+
+                <p><strong>Kirchhoff's Stroomwet:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>2</mn></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>b</mi></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Oplossen naar I<sub>d</sub>:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                            <mo>=</mo>
+                            <mo>-</mo>
+                            <msub><mi>I</mi><mn>2</mn></msub>
+                            <mo>-</mo>
+                            <msub><mi>I</mi><mi>b</mi></msub>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="insight-box">
+                    <strong>💡 Directe toepassing Kirchhoff!</strong><br>
+                    Deze opgave test puur je begrip van Kirchhoff's stroomwet op een knooppunt.
+                    Geen ingewikkelde stroomverdeling, geen Ohm's wet - gewoon Σ I = 0.<br><br>
+                    De andere antwoordopties proberen je te verleiden met stroomverdeling-formules
+                    (zoals we gebruikten in opgave 11), maar die zijn hier niet nodig!
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Let op de tekens!</strong><br>
+                    De mintekens in het antwoord komen doordat I<sub>d</sub> uit het knooppunt stroomt,
+                    terwijl I₂ en I<sub>b</sub> erin stromen (of andersom, afhankelijk van de gekozen richting).
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ CORRECT ANTWOORD: d (I<sub>d</sub> = -I₂ - I<sub>b</sub>)
+            </div>
+        </div>
+
+        <!-- SAMENVATTING -->
+        <div style="background: #e8f5e9; padding: 25px; margin: 30px 0; border-radius: 8px; border: 3px solid #4caf50;">
+            <h2 style="margin-top: 0; color: #2e7d32;">📋 Samenvatting Opgaven 10-13</h2>
+
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <tr style="background: #4caf50; color: white;">
+                    <th style="padding: 12px; border: 1px solid #fff;">Opgave</th>
+                    <th style="padding: 12px; border: 1px solid #fff;">Vraag</th>
+                    <th style="padding: 12px; border: 1px solid #fff;">Kernmethode</th>
+                    <th style="padding: 12px; border: 1px solid #fff;">Correct Antwoord</th>
+                </tr>
+                <tr style="background: #f1f8f4;">
+                    <td style="padding: 10px; border: 1px solid #4caf50;">10</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">U<sub>a</sub> =?</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">Polariteit + Ohm</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;"><strong>-I₁·R<sub>a</sub></strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">11</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">I<sub>b</sub> =?</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">Stroomverdeling</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;"><strong>-I₂·R<sub>d</sub>/(R<sub>b</sub>+R<sub>d</sub>)</strong></td>
+                </tr>
+                <tr style="background: #f1f8f4;">
+                    <td style="padding: 10px; border: 1px solid #4caf50;">12</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">I<sub>c</sub> =?</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">Parallel aan U-bron</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;"><strong>U₁/R<sub>c</sub></strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">13</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">I<sub>d</sub> =?</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;">Kirchhoff knooppunt</td>
+                    <td style="padding: 10px; border: 1px solid #4caf50;"><strong>-I₂ - I<sub>b</sub></strong></td>
+                </tr>
+            </table>
+
+            <div class="insight-box" style="margin-top: 20px;">
+                <strong>🎓 Belangrijkste leerpunten:</strong>
+                <ul>
+                    <li><strong>Polariteit is cruciaal:</strong> Let op waar stroom binnenkomt (+ of -)</li>
+                    <li><strong>Stroomverdeling bij parallel:</strong> Inverse verhouding met weerstanden</li>
+                    <li><strong>Element parallel aan spanningsbron:</strong> U is constant, I = U/R</li>
+                    <li><strong>Kirchhoff op knooppunt:</strong> Directe som van stromen = 0</li>
+                    <li><strong>Niet alles is complex:</strong> Soms is het antwoord eenvoudiger dan je denkt!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
