@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 280">
+  <!-- Background -->
+  <rect width="450" height="280" fill="white"/>
+
+  <!-- Title -->
+  <text x="225" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Impedantie Driehoek</text>
+
+  <g transform="translate(100, 180)">
+    <!-- R (horizontal - weerstand) -->
+    <line x1="0" y1="0" x2="160" y2="0" stroke="#27ae60" stroke-width="3"/>
+    <text x="80" y="18" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#27ae60">R (Ω)</text>
+
+    <!-- X (vertical - reactantie) -->
+    <line x1="160" y1="0" x2="160" y2="-100" stroke="#3498db" stroke-width="3"/>
+    <text x="180" y="-50" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="start" fill="#3498db">X (Ω)</text>
+
+    <!-- Z (hypotenuse - impedantie) -->
+    <line x1="0" y1="0" x2="160" y2="-100" stroke="#e74c3c" stroke-width="3"/>
+    <text x="70" y="-65" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#e74c3c">Z (Ω)</text>
+
+    <!-- Angle φ -->
+    <path d="M 50 0 A 50 50 0 0 0 32 -20" fill="none" stroke="#f39c12" stroke-width="2"/>
+    <text x="60" y="-8" font-family="Arial, sans-serif" font-size="14" fill="#f39c12">φ</text>
+
+    <!-- Right angle indicator -->
+    <rect x="150" y="-10" width="10" height="10" fill="none" stroke="#95a5a6" stroke-width="1"/>
+
+    <!-- Vertices -->
+    <circle cx="0" cy="0" r="3" fill="#2c3e50"/>
+    <circle cx="160" cy="0" r="3" fill="#2c3e50"/>
+    <circle cx="160" cy="-100" r="3" fill="#2c3e50"/>
+
+    <!-- Labels for inductief/capacitief -->
+    <text x="180" y="-80" font-family="Arial, sans-serif" font-size="10" fill="#3498db">XL (inductief)</text>
+    <text x="180" y="-35" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">of</text>
+    <text x="180" y="-20" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">XC (capacitief)</text>
+  </g>
+
+  <!-- Formulas box -->
+  <g transform="translate(20, 40)">
+    <rect x="0" y="0" width="180" height="110" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
+    <text x="90" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Formules:</text>
+
+    <text x="10" y="40" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">Z = √(R² + X²)</text>
+    <text x="10" y="56" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">tan φ = X / R</text>
+    <text x="10" y="72" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">R = Z × cos φ</text>
+    <text x="10" y="88" font-family="Arial, sans-serif" font-size="11" fill="#3498db">X = Z × sin φ</text>
+    <text x="10" y="104" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">Z = R + jX (complex)</text>
+  </g>
+
+  <!-- Types box -->
+  <g transform="translate(250, 40)">
+    <rect x="0" y="0" width="180" height="110" fill="#fff9e6" stroke="#f39c12" stroke-width="1" rx="5"/>
+    <text x="90" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#f39c12">Reactantie types:</text>
+
+    <text x="10" y="40" font-family="Arial, sans-serif" font-size="11" fill="#3498db">XL = 2πfL (inductief)</text>
+    <text x="10" y="56" font-family="Arial, sans-serif" font-size="11" fill="#3498db">→ X &gt; 0, φ &gt; 0</text>
+    <text x="10" y="76" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">XC = 1/(2πfC) (capacitief)</text>
+    <text x="10" y="92" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">→ X &lt; 0, φ &lt; 0</text>
+  </g>
+
+  <!-- Bottom annotation -->
+  <text x="225" y="270" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d" font-style="italic">Impedantie combineert weerstand (R) en reactantie (X) in AC-circuits</text>
+</svg>

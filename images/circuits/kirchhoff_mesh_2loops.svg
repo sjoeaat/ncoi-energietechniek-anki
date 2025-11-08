@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 340">
+  <!-- Background -->
+  <rect width="500" height="340" fill="white"/>
+
+  <!-- Title -->
+  <text x="250" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Kirchhoff Maaswet (KVL)</text>
+
+  <!-- Simple circuit with 2 meshes -->
+  <g transform="translate(100, 100)">
+    <!-- Mesh 1 (left loop) -->
+    <!-- Voltage source U1 -->
+    <circle cx="30" cy="80" r="22" fill="none" stroke="#e74c3c" stroke-width="2"/>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#e74c3c">12V</text>
+    <text x="15" y="65" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">+</text>
+    <text x="15" y="100" font-family="Arial, sans-serif" font-size="11" fill="#3498db">−</text>
+
+    <!-- Top wire mesh 1 -->
+    <line x1="30" y1="58" x2="30" y2="30" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="30" y1="30" x2="140" y2="30" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- R1 (top right of mesh 1) -->
+    <path d="M 140 30 l 0 10 l 5 -5 l -10 5 l 10 5 l -10 5 l 10 5 l -10 5 l 5 -5 l 0 10"
+          fill="none" stroke="#2c3e50" stroke-width="2"/>
+    <text x="155" y="80" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">R1</text>
+    <text x="155" y="95" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">4Ω</text>
+
+    <!-- Right wire mesh 1 to mesh 2 junction -->
+    <line x1="140" y1="90" x2="140" y2="130" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- Bottom wire mesh 1 -->
+    <line x1="140" y1="130" x2="30" y2="130" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="30" y1="130" x2="30" y2="102" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- Mesh 1 current arrow (circular) -->
+    <path d="M 85 50 A 30 30 0 0 1 115 80" fill="none" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowred1)"/>
+    <defs>
+      <marker id="arrowred1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#e74c3c"/>
+      </marker>
+    </defs>
+    <text x="85" y="70" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">I1</text>
+
+    <!-- Mesh 2 (right loop) -->
+    <!-- Shared R1 already drawn -->
+
+    <!-- Top wire mesh 2 -->
+    <line x1="140" y1="30" x2="250" y2="30" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- R2 (top right of mesh 2) -->
+    <path d="M 250 30 l 0 10 l 5 -5 l -10 5 l 10 5 l -10 5 l 10 5 l -10 5 l 5 -5 l 0 10"
+          fill="none" stroke="#2c3e50" stroke-width="2"/>
+    <text x="265" y="80" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">R2</text>
+    <text x="265" y="95" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">6Ω</text>
+
+    <!-- Right side mesh 2 -->
+    <line x1="250" y1="90" x2="250" y2="130" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- Bottom wire mesh 2 -->
+    <line x1="250" y1="130" x2="140" y2="130" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- Mesh 2 current arrow -->
+    <path d="M 195 50 A 30 30 0 0 1 225 80" fill="none" stroke="#3498db" stroke-width="2" marker-end="url(#arrowblue1)"/>
+    <defs>
+      <marker id="arrowblue1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#3498db"/>
+      </marker>
+    </defs>
+    <text x="195" y="70" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">I2</text>
+
+    <!-- Voltage labels -->
+    <text x="85" y="20" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">U_R1</text>
+    <text x="195" y="20" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">U_R2</text>
+  </g>
+
+  <!-- Law box -->
+  <g transform="translate(20, 250)">
+    <rect x="0" y="0" width="220" height="70" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
+    <text x="110" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Maaswet:</text>
+
+    <text x="110" y="40" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">ΣU = 0 (rondom gesloten lus)</text>
+    <text x="110" y="58" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#e74c3c">Maas 1: +12V - U_R1 = 0</text>
+  </g>
+
+  <!-- Example box -->
+  <g transform="translate(260, 250)">
+    <rect x="0" y="0" width="220" height="70" fill="#fff9e6" stroke="#f39c12" stroke-width="1" rx="5"/>
+    <text x="110" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#f39c12">Toepassing:</text>
+
+    <text x="110" y="40" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#2c3e50">Loop door circuit → tel spanningen</text>
+    <text x="110" y="58" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">Bronnen (+), spanningsval (-)</text>
+  </g>
+
+  <!-- Bottom annotation -->
+  <text x="250" y="335" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d" font-style="italic">Spanningswet: Energie behouden in gesloten kring</text>
+</svg>

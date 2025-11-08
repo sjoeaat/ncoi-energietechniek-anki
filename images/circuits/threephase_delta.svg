@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 420">
+  <!-- Background -->
+  <rect width="450" height="420" fill="white"/>
+
+  <!-- Title -->
+  <text x="225" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Driefase Driehoek-schakeling (Δ)</text>
+
+  <!-- Delta triangle shape -->
+  <g transform="translate(225, 200)">
+    <!-- Triangle vertices at 0°, 120°, 240° -->
+    <!-- Top vertex (L1) -->
+    <circle cx="0" cy="-90" r="5" fill="#e74c3c"/>
+    <text x="0" y="-105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e74c3c">L1</text>
+
+    <!-- Bottom-left vertex (L2) -->
+    <circle cx="-78" cy="45" r="5" fill="#f39c12"/>
+    <text x="-95" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="end" fill="#f39c12">L2</text>
+
+    <!-- Bottom-right vertex (L3) -->
+    <circle cx="78" cy="45" r="5" fill="#3498db"/>
+    <text x="95" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="start" fill="#3498db">L3</text>
+
+    <!-- Phase windings (impedances) in triangle -->
+    <!-- Top side: L1 to L3 (Z12) -->
+    <line x1="0" y1="-90" x2="78" y2="45" stroke="#e74c3c" stroke-width="3"/>
+    <circle cx="39" cy="-22" r="25" fill="none" stroke="#e74c3c" stroke-width="2"/>
+    <text x="39" y="-18" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#e74c3c">Z12</text>
+
+    <!-- Left side: L1 to L2 (Z31) -->
+    <line x1="-78" y1="45" x2="0" y2="-90" stroke="#3498db" stroke-width="3"/>
+    <circle cx="-39" cy="-22" r="25" fill="none" stroke="#3498db" stroke-width="2"/>
+    <text x="-39" y="-18" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#3498db">Z31</text>
+
+    <!-- Bottom side: L2 to L3 (Z23) -->
+    <line x1="-78" y1="45" x2="78" y2="45" stroke="#f39c12" stroke-width="3"/>
+    <circle cx="0" cy="45" r="25" fill="none" stroke="#f39c12" stroke-width="2"/>
+    <text x="0" y="49" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#f39c12">Z23</text>
+
+    <!-- Current arrows (Ifase) -->
+    <text x="55" y="-40" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">If12</text>
+    <text x="-55" y="-40" font-family="Arial, sans-serif" font-size="10" fill="#3498db">If31</text>
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">If23</text>
+
+    <!-- Line currents (external arrows) -->
+    <!-- IL1 outgoing -->
+    <line x1="0" y1="-90" x2="0" y2="-130" stroke="#e74c3c" stroke-width="2.5"/>
+    <text x="15" y="-110" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">IL1</text>
+
+    <!-- IL2 outgoing -->
+    <line x1="-78" y1="45" x2="-118" y2="75" stroke="#f39c12" stroke-width="2.5"/>
+    <text x="-125" y="80" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">IL2</text>
+
+    <!-- IL3 outgoing -->
+    <line x1="78" y1="45" x2="118" y2="75" stroke="#3498db" stroke-width="2.5"/>
+    <text x="125" y="80" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">IL3</text>
+  </g>
+
+  <!-- Info box -->
+  <g transform="translate(20, 70)">
+    <rect x="0" y="0" width="160" height="105" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
+    <text x="80" y="18" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Eigenschappen:</text>
+
+    <text x="10" y="38" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• 3 fasen à 120° verschil</text>
+    <text x="10" y="54" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">• Ufase = Ulijn</text>
+    <text x="10" y="70" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">• Ilijn = √3 × Ifase</text>
+    <text x="10" y="86" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Geen neutraalpunt N</text>
+  </g>
+
+  <!-- Example box -->
+  <g transform="translate(270, 70)">
+    <rect x="0" y="0" width="160" height="105" fill="#fff9e6" stroke="#f39c12" stroke-width="1" rx="5"/>
+    <text x="80" y="18" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#f39c12">Voorbeeld 400V:</text>
+
+    <text x="10" y="38" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">Ulijn = 400V</text>
+    <text x="10" y="54" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">Ufase = 400V (zelfde!)</text>
+    <text x="10" y="70" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Ifase = 10A</text>
+    <text x="10" y="86" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Ilijn = 17.3A (√3 × 10)</text>
+  </g>
+
+  <!-- Bottom annotation -->
+  <text x="225" y="405" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d" font-style="italic">Gebruikt voor motoren en transformatoren (hogere stromen)</text>
+</svg>

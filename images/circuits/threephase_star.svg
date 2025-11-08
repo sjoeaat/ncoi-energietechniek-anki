@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 400">
+  <!-- Background -->
+  <rect width="450" height="400" fill="white"/>
+
+  <!-- Title -->
+  <text x="225" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Driefase Ster-schakeling (Y)</text>
+
+  <!-- Center point (neutral point N) -->
+  <circle cx="225" cy="200" r="5" fill="#2c3e50"/>
+  <text x="240" y="205" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">N</text>
+  <text x="225" y="225" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">(sterpunt)</text>
+
+  <!-- Phase L1 (top, 90 degrees) -->
+  <line x1="225" y1="200" x2="225" y2="80" stroke="#e74c3c" stroke-width="3"/>
+  <circle cx="225" cy="80" r="30" fill="none" stroke="#e74c3c" stroke-width="2"/>
+  <text x="225" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e74c3c">L1</text>
+  <circle cx="225" cy="50" r="5" fill="#e74c3c"/>
+  <text x="225" y="35" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#e74c3c">U1</text>
+
+  <!-- Phase L2 (bottom-left, 210 degrees) -->
+  <line x1="225" y1="200" x2="121" y2="304" stroke="#f39c12" stroke-width="3"/>
+  <circle cx="121" cy="304" r="30" fill="none" stroke="#f39c12" stroke-width="2"/>
+  <text x="121" y="309" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#f39c12">L2</text>
+  <circle cx="95" cy="330" r="5" fill="#f39c12"/>
+  <text x="80" y="350" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#f39c12">U2</text>
+
+  <!-- Phase L3 (bottom-right, 330 degrees) -->
+  <line x1="225" y1="200" x2="329" y2="304" stroke="#3498db" stroke-width="3"/>
+  <circle cx="329" cy="304" r="30" fill="none" stroke="#3498db" stroke-width="2"/>
+  <text x="329" y="309" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#3498db">L3</text>
+  <circle cx="355" cy="330" r="5" fill="#3498db"/>
+  <text x="370" y="350" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#3498db">U3</text>
+
+  <!-- Phase angle indicators (120° between phases) -->
+  <text x="165" y="140" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">0°</text>
+  <text x="130" y="260" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">-120°</text>
+  <text x="290" y="260" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">+120°</text>
+
+  <!-- Info box -->
+  <g transform="translate(20, 60)">
+    <rect x="0" y="0" width="160" height="120" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
+    <text x="80" y="18" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Eigenschappen:</text>
+
+    <text x="10" y="38" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• 3 fasen à 120° verschil</text>
+    <text x="10" y="54" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">• Ufase = Ulijn / √3</text>
+    <text x="10" y="70" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">• Ifase = Ilijn</text>
+    <text x="10" y="86" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Stroom door N = 0</text>
+    <text x="10" y="102" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d" font-style="italic">  (bij symmetrische last)</text>
+  </g>
+
+  <!-- Example values box -->
+  <g transform="translate(270, 60)">
+    <rect x="0" y="0" width="160" height="95" fill="#fff9e6" stroke="#f39c12" stroke-width="1" rx="5"/>
+    <text x="80" y="18" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#f39c12">Voorbeeld 230/400V:</text>
+
+    <text x="10" y="38" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">Ulijn (L1-L2) = 400V</text>
+    <text x="10" y="54" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">Ufase (L1-N) = 230V</text>
+    <text x="10" y="70" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">400 / √3 = 230V ✓</text>
+    <text x="10" y="86" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d" font-style="italic">Standaard NL netspanning</text>
+  </g>
+
+  <!-- Bottom annotation -->
+  <text x="225" y="385" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d" font-style="italic">Sterpunt N kan geaard worden voor veiligheid</text>
+</svg>
