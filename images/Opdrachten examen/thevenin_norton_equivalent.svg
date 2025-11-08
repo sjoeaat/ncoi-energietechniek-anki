@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="350" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="350" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="20" font-weight="bold" text-anchor="middle">Thévenin en Norton Equivalenten</text>
+
+  <!-- Thévenin (links) -->
+  <g>
+    <text x="200" y="70" font-size="18" font-weight="bold" text-anchor="middle" fill="#2196F3">Thévenin Equivalent</text>
+
+    <!-- Circuit -->
+    <!-- Voltage source -->
+    <circle cx="100" cy="180" r="40" fill="white" stroke="black" stroke-width="2"/>
+    <line x1="100" y1="140" x2="100" y2="95" stroke="black" stroke-width="2"/>
+    <line x1="100" y1="220" x2="100" y2="280" stroke="black" stroke-width="2"/>
+    <text x="90" y="170" font-size="16">+</text>
+    <text x="90" y="200" font-size="16">−</text>
+    <text x="130" y="185" font-size="16" font-weight="bold">U_th</text>
+
+    <!-- Rth resistor -->
+    <rect x="80" y="95" width="40" height="80" fill="white" stroke="black" stroke-width="2"/>
+    <path d="M 85,105 L 95,125 L 105,105 L 115,125 L 95,165" stroke="black" stroke-width="2" fill="none"/>
+    <text x="130" y="140" font-size="14" font-weight="bold">R_th</text>
+
+    <!-- Terminals -->
+    <line x1="100" y1="30" x2="100" y2="95" stroke="black" stroke-width="3"/>
+    <line x1="100" y1="280" x2="100" y2="320" stroke="black" stroke-width="3"/>
+    <circle cx="100" cy="30" r="6" fill="red" stroke="black" stroke-width="2"/>
+    <circle cx="100" cy="320" r="6" fill="black" stroke="black" stroke-width="2"/>
+    <text x="115" y="35" font-size="14" fill="red" font-weight="bold">A</text>
+    <text x="115" y="325" font-size="14" font-weight="bold">B</text>
+
+    <!-- Formulas -->
+    <text x="200" y="250" font-size="14" text-anchor="middle">U_th = spanning open klemmen</text>
+    <text x="200" y="270" font-size="14" text-anchor="middle">R_th = R bij kortgesloten bronnen</text>
+  </g>
+
+  <!-- Equivalence arrow -->
+  <g>
+    <line x1="330" y1="175" x2="370" y2="175" stroke="#4CAF50" stroke-width="4" marker-end="url(#arrow2)"/>
+    <line x1="370" y1="175" x2="330" y2="175" stroke="#4CAF50" stroke-width="4" marker-start="url(#arrow3)"/>
+    <text x="350" y="160" font-size="16" fill="#4CAF50" font-weight="bold" text-anchor="middle">=</text>
+
+    <defs>
+      <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="#4CAF50"/>
+      </marker>
+      <marker id="arrow3" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto">
+        <polygon points="10 0, 0 3, 10 6" fill="#4CAF50"/>
+      </marker>
+    </defs>
+  </g>
+
+  <!-- Norton (rechts) -->
+  <g>
+    <text x="600" y="70" font-size="18" font-weight="bold" text-anchor="middle" fill="#F44336">Norton Equivalent</text>
+
+    <!-- Terminals -->
+    <line x1="500" y1="30" x2="500" y2="95" stroke="black" stroke-width="3"/>
+    <line x1="500" y1="280" x2="500" y2="320" stroke="black" stroke-width="3"/>
+    <circle cx="500" cy="30" r="6" fill="red" stroke="black" stroke-width="2"/>
+    <circle cx="500" cy="320" r="6" fill="black" stroke="black" stroke-width="2"/>
+    <text x="515" y="35" font-size="14" fill="red" font-weight="bold">A</text>
+    <text x="515" y="325" font-size="14" font-weight="bold">B</text>
+
+    <!-- Parallel resistor Ri -->
+    <line x1="500" y1="95" x2="500" y2="135" stroke="black" stroke-width="2"/>
+    <rect x="480" y="135" width="40" height="80" fill="white" stroke="black" stroke-width="2"/>
+    <path d="M 485,145 L 495,165 L 505,145 L 515,165 L 495,205" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="500" y1="215" x2="500" y2="280" stroke="black" stroke-width="2"/>
+    <text x="530" y="180" font-size="14" font-weight="bold">R_i</text>
+
+    <!-- Current source (parallel) -->
+    <line x1="600" y1="95" x2="600" y2="280" stroke="black" stroke-width="2"/>
+    <circle cx="600" cy="187" r="50" fill="white" stroke="black" stroke-width="2"/>
+    <line x1="600" y1="95" x2="500" y2="95" stroke="black" stroke-width="2"/>
+    <line x1="600" y1="280" x2="500" y2="280" stroke="black" stroke-width="2"/>
+
+    <!-- Current arrow -->
+    <line x1="600" y1="220" x2="600" y2="155" stroke="black" stroke-width="3" marker-end="url(#arrow4)"/>
+    <text x="640" y="190" font-size="16" font-weight="bold">I_k</text>
+
+    <defs>
+      <marker id="arrow4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="black"/>
+      </marker>
+    </defs>
+
+    <!-- Formulas -->
+    <text x="600" y="250" font-size="14" text-anchor="middle">I_k = kortsluitstroom</text>
+    <text x="600" y="270" font-size="14" text-anchor="middle">R_i = R_th</text>
+  </g>
+
+  <!-- Conversion formulas -->
+  <rect x="250" y="295" width="300" height="50" fill="#FFF9C4" stroke="#FBC02D" stroke-width="2" rx="5"/>
+  <text x="400" y="318" font-size="14" font-weight="bold" text-anchor="middle">Conversie:</text>
+  <text x="400" y="338" font-size="14" text-anchor="middle">U_th = I_k · R_i     en     R_th = R_i</text>
+</svg>
