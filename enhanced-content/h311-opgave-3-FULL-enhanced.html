@@ -1,0 +1,364 @@
+<!-- H 3.11 OPGAVE 3 - ENHANCED VERSION (Stroom Ix bepalen met Thévenin) -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 3</strong></p>
+<p>Bepaal de stroom I<sub>x</sub> in dit netwerk.</p>
+
+<p><img src="media/media/image48.PNG" style="max-width:700px;" alt="H 3.11 Opgave 3 circuit diagram"></p>
+
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Spanningsbron V₁</li>
+<li>Meerdere weerstanden (R1, R2, R3, R4, R5)</li>
+<li>Weerstand van 2kΩ waardoor I<sub>x</sub> vloeit</li>
+</ul>
+
+<p><strong>Gevraagd:</strong> Bepaal I<sub>x</sub></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze opgave test het <strong>Thévenin equivalent principe</strong> toegepast op belastingsanalyse.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Concept</th>
+  <th>Toepassing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Strategie</strong></td>
+  <td>Ontkoppel de 2kΩ weerstand en vervang rest door Thévenin equivalent</td>
+</tr>
+<tr>
+  <td><strong>R<sub>i</sub></strong></td>
+  <td>Inwendige weerstand van het netwerk zonder de 2kΩ belasting</td>
+</tr>
+<tr>
+  <td><strong>U₀</strong></td>
+  <td>Open klemspanning zonder de 2kΩ belasting</td>
+</tr>
+<tr>
+  <td><strong>I<sub>x</sub></strong></td>
+  <td>Stroom door 2kΩ als belasting op Thévenin equivalent</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> Thévenin stelling (Holmes §3.11): Vervang complex netwerk door U<sub>th</sub> in serie met R<sub>th</sub>, sluit belasting aan, bereken stroom.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal inwendige weerstand R<sub>i</sub></div>
+
+<p><strong>Methode:</strong> Passiveer V₁ (kortsluiting) en bereken weerstand tussen de klemmen waar 2kΩ aansluit.</p>
+
+<p><strong>Stap 2a:</strong> Bepaal R34 (R4 en R5 in serie):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mn>4</mn><mn>5</mn></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mn>4</mn></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mn>5</mn></msub>
+    <mo>=</mo>
+    <mn>1</mn><mtext> kΩ</mtext>
+    <mo>+</mo>
+    <mn>1</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mn>2</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 2b:</strong> R45 parallel met R2:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>v</mi></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mn>2</mn></msub>
+    <mo>∥</mo>
+    <mo>(</mo>
+    <msub><mi>R</mi><mn>1</mn></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mn>3</mn></msub>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>2</mn><mtext> kΩ</mtext>
+    <mo>∥</mo>
+    <mn>2</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mn>1</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>(met R₁ = 1kΩ en R₃ = 1kΩ)</p>
+
+<p><strong>Stap 2c:</strong> Totale inwendige weerstand:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>i</mi></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mrow><mn>4</mn><mn>5</mn></mrow></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mi>v</mi></msub>
+    <mo>=</mo>
+    <mn>2</mn><mtext> kΩ</mtext>
+    <mo>+</mo>
+    <mn>1</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mn>3</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Interpretatie:</strong> De inwendige weerstand R<sub>i</sub> = 3kΩ is de weerstand die het netwerk "ziet" vanaf de klemmen waar de 2kΩ belasting aansluit.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bepaal onbelaste spanning U₀</div>
+
+<p><strong>Methode:</strong> Open circuit analyse - bepaal spanning tussen de klemmen zonder 2kΩ belasting.</p>
+
+<p><strong>Stap 3a:</strong> R4 en R5 hebben geen invloed (geen stroom door open circuit)</p>
+
+<p><strong>Stap 3b:</strong> Spanningsdeling over R2 en (R1+R3):</p>
+
+<p>De spanningsbron V₁ = 20V verdeelt zich over twee gelijke takken van elk 2kΩ:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mn>0</mn></msub>
+    <mo>=</mo>
+    <msub><mi>V</mi><mn>1</mn></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mn>2</mn></msub>
+      <mrow>
+        <mo>(</mo>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>3</mn></msub>
+        <mo>)</mo>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Met V₁ = 20V, R₁ + R₃ = 2kΩ, R₂ = 2kΩ:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mn>0</mn></msub>
+    <mo>=</mo>
+    <mn>20</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>2</mn>
+      <mrow><mn>2</mn><mo>+</mo><mn>2</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>20</mn>
+    <mo>·</mo>
+    <mfrac><mn>1</mn><mn>2</mn></mfrac>
+    <mo>=</mo>
+    <mn>10</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Interpretatie:</strong> Zonder belasting is de spanning tussen de klemmen exact de helft van de bronspanning (symmetrische spanningsdeling).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bereken stroom I<sub>x</sub></div>
+
+<p><strong>Thévenin equivalent:</strong> 10V in serie met 3kΩ en de 2kΩ belasting</p>
+
+<p><strong>Totale weerstand in de kring:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mi>t</mi><mi>o</mi><mi>t</mi></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mi>i</mi></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mrow><mi>l</mi><mi>o</mi><mi>a</mi><mi>d</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>3</mn><mtext> kΩ</mtext>
+    <mo>+</mo>
+    <mn>2</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mn>5</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Wet van Ohm:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>x</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mn>0</mn></msub>
+      <mrow>
+        <msub><mi>R</mi><mi>i</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mrow><mi>l</mi><mi>o</mi><mi>a</mi><mi>d</mi></mrow></msub>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>10</mn><mtext> V</mtext></mrow>
+      <mrow><mn>5</mn><mtext> kΩ</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2</mn><mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> De stroom I<sub>x</sub> = 2 mA</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>I</mi><mi>x</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mo>[</mo><mi>V</mi><mo>]</mo>
+      <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Verificatie via MultiSim:</strong> MultiSim simulatie bevestigt I<sub>x</sub> = 2mA ✓</p>
+
+<p><strong>Spanningsverdeling controle:</strong></p>
+<p>Spanningsval over 2kΩ belasting:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>l</mi><mi>o</mi><mi>a</mi><mi>d</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>2</mn><mtext> mA</mtext>
+    <mo>×</mo>
+    <mn>2</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mn>4</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Spanningsval over interne weerstand:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>i</mi></msub>
+    <mo>=</mo>
+    <mn>2</mn><mtext> mA</mtext>
+    <mo>×</mo>
+    <mn>3</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mn>6</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Totaal: 4V + 6V = 10V = U₀ ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Belastingseffect:</strong></p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"De 2kΩ belasting vormt 40% van de totale weerstand (2kΩ/5kΩ), dus krijgt deze 40% van de Thévenin spanning (4V van 10V). De inwendige weerstand 'eet' de overige 60%."
+</blockquote>
+
+<p><strong>Wanneer is deze methode nuttig?</strong></p>
+<ul>
+<li><strong>Verschillende belastingen testen:</strong> Eenvoudig berekenen wat I<sub>x</sub> wordt bij andere belastingsweerst anden</li>
+<li><strong>Maximum power transfer:</strong> Als R<sub>load</sub> = R<sub>i</sub> = 3kΩ, wordt maximaal vermogen overgedragen</li>
+<li><strong>Netwerkanalyse:</strong> Complexe netwerken reduceren tot eenvoudige equivalenten</li>
+</ul>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Als we de 2kΩ vervangen door 3kΩ (matching met R<sub>i</sub>):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>10</mn>
+      <mrow><mn>3</mn><mo>+</mo><mn>3</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1.67</mn><mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Vermogen in belasting bij matching:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub>
+    <mo>=</mo>
+    <msup>
+      <mrow><mo>(</mo><mn>1.67</mn><mtext> mA</mtext><mo>)</mo></mrow>
+      <mn>2</mn>
+    </msup>
+    <mo>×</mo>
+    <mn>3</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mn>8.3</mn><mtext> mW</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Dit is het <strong>maximale vermogen</strong> dat naar een belasting kan worden overgedragen!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> I<sub>x</sub> = 2 mA</p>
+
+<p><strong>Thévenin equivalent methode:</strong></p>
+<ul>
+<li>U₀ = 10V (open klemspanning)</li>
+<li>R<sub>i</sub> = 3kΩ (inwendige weerstand)</li>
+<li>I<sub>x</sub> = 10V / (3kΩ + 2kΩ) = 2mA</li>
+</ul>
+
+<p><em>Thévenin vereenvoudiging maakt belastingsanalyse triviaal!</em></p>
+</div>
+
+</div>

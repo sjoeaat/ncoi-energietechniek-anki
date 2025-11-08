@@ -1,0 +1,304 @@
+<!-- OPGAVE 17 - ENHANCED VERSION (Stroom door spanningsbron via Kirchhoff) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de spanningsbron U<sub>1</sub> gelijk aan:</p>
+
+<p><img src="media/media/image25.PNG" style="max-width:700px;" alt="Opgave 17 network diagram"></p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>c</mi></msub></mrow></semantics></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></semantics></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>+</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></semantics></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></semantics></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag test de <strong>Kirchhoff knooppuntwet (KCL)</strong> toegepast op een knooppunt met een spanningsbron.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron U₁</td>
+  <td>Ideale spanningsbron met stroom I₁</td>
+</tr>
+<tr>
+  <td>Knooppunt</td>
+  <td>Waar spanningsbron en weerstanden samenkomen</td>
+</tr>
+<tr>
+  <td>Uitgaande stromen</td>
+  <td>I₂, I<sub>c</sub>, I<sub>d</sub> door de weerstanden</td>
+</tr>
+<tr>
+  <td>Gezochte stroom</td>
+  <td>I₁ door de spanningsbron</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> Kirchhoff knooppuntwet (KCL): de som van alle stromen naar/van een knooppunt is nul (Holmes §1.8).</p>
+
+<p><strong>Belangrijk:</strong> De stroom door een spanningsbron wordt <strong>niet</strong> door de spanningsbron zelf bepaald, maar door de rest van het netwerk via KCL.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Identificeer alle stromen bij het knooppunt</div>
+
+<p>Bij het knooppunt waar U₁ aansluit zijn de volgende stromen aanwezig:</p>
+
+<ul>
+<li><math><msub><mi>I</mi><mn>1</mn></msub></math>: stroom <strong>door</strong> de spanningsbron (richting nog te bepalen)</li>
+<li><math><msub><mi>I</mi><mn>2</mn></msub></math>: stroom door R₂ (weg van knooppunt)</li>
+<li><math><msub><mi>I</mi><mi>c</mi></msub></math>: stroom door R<sub>c</sub> (weg van knooppunt)</li>
+<li><math><msub><mi>I</mi><mi>d</mi></msub></math>: stroom door R<sub>d</sub> (weg van knooppunt)</li>
+</ul>
+
+<p><strong>Tekenconventie:</strong></p>
+<ul>
+<li>Stromen <strong>naar</strong> het knooppunt: <strong>positief</strong></li>
+<li>Stromen <strong>weg van</strong> het knooppunt: <strong>negatief</strong></li>
+</ul>
+
+<p>Als we aannemen dat I₂, I<sub>c</sub> en I<sub>d</sub> <strong>weggaan</strong> van het knooppunt, dan moet I₁ <strong>naar</strong> het knooppunt stromen om de balans te behouden.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Pas Kirchhoff knooppuntwet toe</div>
+
+<p>De som van alle stromen naar een knooppunt is nul. Stel dat I₁ <strong>naar</strong> het knooppunt stroomt (positief) en I₂, I<sub>c</sub>, I<sub>d</sub> <strong>weg van</strong> het knooppunt (negatief):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Of anders geschreven met de conventie dat uitgaande stromen positief zijn:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p>waarbij I₁ de ingaande stroom is (dus negatief als stroom <strong>uit</strong> de bron komt).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Los op naar I₁</div>
+
+<p>Isoleer I₁ in de vergelijking:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Of compacter geschreven:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mo>(</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>)</mo>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>b</strong>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>I</mi><mn>1</mn></msub><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>+</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>+</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Waarom andere antwoorden fout zijn:</strong></p>
+
+<p><strong>Antwoord a:</strong> <math><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>c</mi></msub></math></p>
+<ul>
+<li>Fout: Negeert de stroom I<sub>d</sub></li>
+<li>Dit zou alleen kloppen als I<sub>d</sub> = 0, wat niet algemeen geldt</li>
+</ul>
+
+<p><strong>Antwoord c:</strong> <math><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>+</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></math></p>
+<ul>
+<li>Fout: Positief teken suggereert dat I₁ in dezelfde richting stroomt als I₂, I<sub>c</sub>, I<sub>d</sub></li>
+<li>Dit zou betekenen dat stroom uit het "niets" verschijnt - geen conservatie van lading!</li>
+</ul>
+
+<p><strong>Antwoord d:</strong> <math><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></math></p>
+<ul>
+<li>Fout: Gebruikt I<sub>b</sub> in plaats van I₂</li>
+<li>I<sub>b</sub> is niet gedefinieerd bij dit knooppunt</li>
+</ul>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel I₂ = 3A, I<sub>c</sub> = 2A, I<sub>d</sub> = 1A (alle weggaand van het knooppunt):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mo>(</mo>
+    <mn>3</mn>
+    <mo>+</mo>
+    <mn>2</mn>
+    <mo>+</mo>
+    <mn>1</mn>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>6</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Het negatieve teken betekent: I₁ stroomt <strong>naar</strong> het knooppunt (als we de conventie gebruiken dat uitgaande stromen positief zijn).</p>
+
+<p>Controle: 6A komt binnen (van U₁), 3A + 2A + 1A = 6A gaat weg → balans klopt ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Spanningsbron versus stroombron:</strong></p>
+
+<p>Cruciaal verschil:</p>
+
+<table style="width:100%; margin: 15px 0;">
+<thead>
+<tr>
+  <th>Type bron</th>
+  <th>Wat wordt afgedwongen</th>
+  <th>Wat wordt bepaald door netwerk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Spanningsbron</strong></td>
+  <td>Spanning U</td>
+  <td><strong>Stroom I</strong> (via KCL!)</td>
+</tr>
+<tr>
+  <td><strong>Stroombron</strong></td>
+  <td>Stroom I</td>
+  <td><strong>Spanning U</strong> (via KVL!)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Dit verklaart waarom:</strong></p>
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"De stroom door een spanningsbron wordt bepaald door de weerstanden en stromen in de rest van het netwerk. De spanningsbron 'levert' precies genoeg stroom om aan KCL te voldoen."
+</blockquote>
+
+<p><strong>Energetische betekenis:</strong></p>
+<p>De stroom I₁ door de spanningsbron bepaalt het vermogen dat de bron levert:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>P</mi>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mo>·</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Als I₁ negatief is (stroom gaat "tegen" de spanningsbron in), levert de bron <strong>energie</strong>. Als I₁ positief is, <strong>absorbeert</strong> de bron energie (bijvoorbeeld bij opladen van een batterij).</p>
+
+<p><strong>Praktische toepassing:</strong></p>
+<p>Dit principe wordt gebruikt in:</p>
+<ul>
+<li><strong>Stroommeters:</strong> Meet de stroom door een spanningsbron om belasting te bepalen</li>
+<li><strong>Batterijbewaking:</strong> Bepaal of batterij ontlaadt (I < 0) of oplaadt (I > 0)</li>
+<li><strong>Netwerkvermogen:</strong> Bereken hoeveel vermogen een voeding moet leveren</li>
+</ul>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> b</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></semantics></math></p>
+
+<p><em>De stroom door een spanningsbron wordt bepaald door Kirchhoff knooppuntwet toegepast op het aansluitpunt.</em></p>
+</div>
+
+</div>

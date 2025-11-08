@@ -1,0 +1,105 @@
+<!-- H 3.11 OPGAVE 2c - ENHANCED VERSION -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 2c</strong></p>
+<p>Vereenvoudig dit netwerk tot Thévenin en Norton equivalenten.</p>
+<p><img src="media/media/image41.PNG" style="max-width:700px;" alt="H 3.11 Opgave 2c"></p>
+<p><strong>Gegeven:</strong> 12V bron, 20Ω weerstand, 2A stroombron (naar beneden gericht)</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling</div>
+<p><strong>Let op:</strong> De stroombron stroomt "de verkeerde kant op" (naar beneden), wat een <strong>negatieve spanning</strong> veroorzaakt.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bereken R<sub>th</sub></div>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>20</mn><mi>Ω</mi>
+    <mo>∥</mo>
+    <mi>∞</mi>
+    <mo>=</mo>
+    <mn>20</mn><mi>Ω</mi>
+  </mrow>
+</math>
+</div>
+<p>(Stroombron heeft oneindige inwendige weerstand)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken U<sub>th</sub> (superpositie)</div>
+<p><strong>Bijdrage 12V:</strong> (stroombron open)</p>
+<p>U<sub>12V</sub> = 0V (geen stroom, geen spanningsval)</p>
+
+<p><strong>Bijdrage 2A:</strong> (12V kort)</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>2</mn><mi>A</mi></mrow></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>2</mn>
+    <mo>×</mo>
+    <mn>20</mn>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>40</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Totaal:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+    <mo>−</mo>
+    <mn>40</mn>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>40</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bereken I<sub>k</sub></div>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>−</mo><mn>40</mn></mrow>
+      <mn>20</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>2</mn><mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie</div>
+<p><strong>Fysische betekenis:</strong> De negatieve spanning en stroom betekenen dat polariteit omgekeerd is t.o.v. referentierichting. Het equivalent werkt perfect voor belastingsanalyse.</p>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Thévenin:</strong> -40V in serie met 20Ω</p>
+<p><strong>Norton:</strong> -2A parallel met 20Ω</p>
+<p><em>Negatieve tekens: stroom/spanning omgekeerd t.o.v. referentie</em></p>
+</div>
+
+</div>

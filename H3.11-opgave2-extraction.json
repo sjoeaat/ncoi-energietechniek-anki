@@ -1,0 +1,360 @@
+{
+  "chapter": "H 3.11",
+  "page": 41,
+  "exercise": "Opgave 2",
+  "title": "Vereenvoudig deze netwerken tot Thévenin en Norton equivalenten",
+  "exercise_type": "Network Simplification - Thévenin & Norton Equivalents",
+  "total_sub_exercises": 5,
+  "sub_exercises": [
+    {
+      "number": "2a",
+      "title": "Network Simplification - Two Voltage Sources with Resistors",
+      "circuit_diagram": "study-guide/media/media/image36.PNG",
+      "circuit_description": "Network with two voltage sources (12V and 3V) in series with two parallel resistors (3Ω and 6Ω)",
+      "question_text": "Vereenvoudig dit netwerk tot één spanningsbron met inwendige weerstand (Thévenin) en één stroombron met inwendige weerstand (Norton)",
+      "answer_options": null,
+      "correct_answer": null,
+      "answer_type": "calculation",
+      "solution": {
+        "approach": "Thévenin Equivalent Analysis using Superposition",
+        "step_by_step": [
+          {
+            "step": 1,
+            "description": "Bepaal inwendige weerstand Rth",
+            "calculation": "Rth = 3Ω || 6Ω = (3 × 6)/(3 + 6) = 18/9 = 2Ω"
+          },
+          {
+            "step": 2,
+            "description": "Bepaal onbelaste spanning U₀ met superpositie",
+            "details": "Method 1 (Intuitive): Set -/- as Ground = 0V. Voltage difference between 12+ and 3+ is 9V. Voltage divider of 9Ω total gives 1V/Ω. From 12+ perspective: 12 - 6 = 6V. From 3+ perspective: 3 + 3 = 6V."
+          },
+          {
+            "step": 3,
+            "description": "Alternative detailed calculation using voltage divider",
+            "calculation_part_a": "U₁₂V = 12 × (3/(6+3)) = 12 × (3/9) = 36/9 = 4V",
+            "calculation_part_b": "U₃V = 3 × (6/(3+6)) = 3 × (6/9) = 18/9 = 2V",
+            "calculation_total": "U₀ = U₁₂V + U₃V = 4 + 2 = 6V"
+          },
+          {
+            "step": 4,
+            "description": "Bepaal kortsluitstroom Ik",
+            "calculation": "Ik = U₀/Ri = 6/2 = 3A"
+          }
+        ]
+      },
+      "thevenin_equivalent": {
+        "Uth": "6V",
+        "Rth": "2Ω",
+        "Ik": "3A"
+      },
+      "norton_equivalent": {
+        "In": "3A",
+        "Rn": "2Ω"
+      }
+    },
+    {
+      "number": "2b",
+      "title": "Network with Cascaded Voltage Sources and Resistors",
+      "circuit_diagram": "study-guide/media/media/image39.PNG",
+      "circuit_description": "Network with voltage source 4V, resistor 10Ω in series, and another branch with 6V source and 18Ω resistor",
+      "question_text": "Vereenvoudig dit netwerk tot Thévenin en Norton equivalenten",
+      "answer_options": null,
+      "correct_answer": null,
+      "answer_type": "calculation",
+      "solution": {
+        "approach": "Thévenin Analysis with Superposition",
+        "key_insight": "From the output, the 4V source with R=0 is visible from the output terminals. The left branch (6V, 18Ω) behind it is not relevant.",
+        "step_by_step": [
+          {
+            "step": 1,
+            "description": "Bepaal inwendige weerstand Rth",
+            "calculation": "Rth = 10Ω (Only the visible series resistor from output perspective)"
+          },
+          {
+            "step": 2,
+            "description": "Bepaal U₀ using Superposition",
+            "details": "First: Effect of 6V with 4V shorted: U₆V = 0V (blocked by the 4V source with R=0)",
+            "calculation_part_a": "U₆V = 0V"
+          },
+          {
+            "step": 3,
+            "description": "Second: Effect of 4V with 6V shorted",
+            "calculation_part_b": "U₄V = 4V"
+          },
+          {
+            "step": 4,
+            "description": "Total open circuit voltage",
+            "note": "The 18Ω resistor will have -2V across it, meaning the current flows into the 6V source (supplying power)",
+            "calculation": "U₀ = U₆V + U₄V = 0 + 4 = 4V"
+          },
+          {
+            "step": 5,
+            "description": "Bepaal kortsluitstroom",
+            "calculation": "Ik = U₀/Ri = 4/10 = 0.4A = 400mA"
+          }
+        ]
+      },
+      "thevenin_equivalent": {
+        "Uth": "4V",
+        "Rth": "10Ω",
+        "Ik": "400mA"
+      },
+      "norton_equivalent": {
+        "In": "400mA",
+        "Rn": "10Ω"
+      }
+    },
+    {
+      "number": "2c",
+      "title": "Network with Voltage Source and Current Source",
+      "circuit_diagram": "study-guide/media/media/image41.PNG",
+      "circuit_description": "Network with 12V source, 20Ω resistor, and 2A current source (oriented downward - 'wrong way')",
+      "question_text": "Vereenvoudig dit netwerk tot Thévenin en Norton equivalenten",
+      "answer_options": null,
+      "correct_answer": null,
+      "answer_type": "calculation",
+      "solution": {
+        "approach": "Thévenin Analysis with Superposition",
+        "key_insight": "Current source flows 'the wrong way' (downward), creating negative voltage",
+        "step_by_step": [
+          {
+            "step": 1,
+            "description": "Bepaal inwendige weerstand Rth",
+            "calculation": "Rth = 20Ω || ∞ = 20Ω (Current source has infinite internal resistance)"
+          },
+          {
+            "step": 2,
+            "description": "Bepaal U₀ using Superposition - Part 1",
+            "details": "Effect of 12V with current source open",
+            "calculation": "U₁₂V = 0V (No current flows, no voltage drop)"
+          },
+          {
+            "step": 3,
+            "description": "Bepaal U₀ using Superposition - Part 2",
+            "details": "Effect of 2A current source with 12V shorted",
+            "calculation": "U₂A = -2A × 20Ω = -40V (Current flows opposite, creating negative voltage)"
+          },
+          {
+            "step": 4,
+            "description": "Total open circuit voltage",
+            "calculation": "U₀ = U₁₂V + U₂A = 0 - 40 = -40V"
+          },
+          {
+            "step": 5,
+            "description": "Bepaal kortsluitstroom",
+            "calculation": "Ik = U₀/Ri = -40/20 = -2A"
+          }
+        ]
+      },
+      "thevenin_equivalent": {
+        "Uth": "-40V",
+        "Rth": "20Ω",
+        "Ik": "-2A"
+      },
+      "norton_equivalent": {
+        "In": "-2A",
+        "Rn": "20Ω"
+      }
+    },
+    {
+      "number": "2d",
+      "title": "Complex Network with Mixed Sources",
+      "circuit_diagram": "study-guide/media/media/image43.PNG",
+      "circuit_description": "Network with 5V voltage source, two 10Ω resistors (parallel configuration), and 2A current source",
+      "question_text": "Vereenvoudig dit netwerk tot Thévenin en Norton equivalenten",
+      "answer_options": null,
+      "correct_answer": null,
+      "answer_type": "calculation",
+      "solution": {
+        "approach": "Thévenin Analysis with Two Solution Methods",
+        "method_1_intuitive": {
+          "step": 1,
+          "description": "Intuitive approach (Voltage Divider)",
+          "calculation_rth": "Rth = 10Ω || 10Ω = 5Ω",
+          "note": "Convert 2A current source to equivalent voltage source: 2A × 10Ω = 20V",
+          "calculation_voltage_divider": "Voltage divider with difference of (20-5)V = 15V across 2×10Ω. Each resistor gets 7.5V",
+          "calculation_uth": "Uth = 20V - 7.5V = 12.5V (or from bottom: 5V + 7.5V = 12.5V)",
+          "calculation_ik": "Ith = 12.5V / 5Ω = 2.5A"
+        },
+        "method_2_analytical": {
+          "step": 1,
+          "description": "Mesh equation for left loop",
+          "equation": "5V - I₁·10Ω - I₂·10Ω = 0  ... (1)"
+        },
+        "step_2": {
+          "description": "Node equation for right top node",
+          "equation": "I₁ - I₂ + 2A = 0",
+          "rearranged": "I₁ = I₂ - 2A"
+        },
+        "step_3": {
+          "description": "Substitute into equation (1)",
+          "calculation": "5 - 10(I₂-2) - 10I₂ = 0",
+          "expansion": "5 - 10I₂ + 20 - 10I₂ = 0",
+          "simplification": "25 = 20I₂",
+          "result": "I₂ = 1.25A, I₁ = -0.75A"
+        },
+        "step_4": {
+          "description": "Calculate open circuit voltage",
+          "calculation": "Uth = 5V - (-0.75A × 10Ω) = 5V + 7.5V = 12.5V",
+          "verification": "Or from right side: Uth = I₂ × 10Ω = 1.25A × 10Ω = 12.5V ✓"
+        },
+        "step_5": {
+          "description": "Calculate short circuit current",
+          "calculation": "Ik = 2A + (5V/10Ω) = 2A + 0.5A = 2.5A"
+        },
+        "method_3_superposition": {
+          "part_a": {
+            "description": "Effect of 5V with current source open",
+            "calculation": "U₅V = 5V/2 = 2.5V (voltage division across two equal 10Ω resistors)"
+          },
+          "part_b": {
+            "description": "Effect of 2A current source with 5V shorted",
+            "details": "Current divides equally (resistors are equal): 1A through each 10Ω",
+            "calculation": "U₂A = 1A × 10Ω = 10V"
+          },
+          "total": {
+            "calculation": "U₀ = U₅V + U₂A = 2.5V + 10V = 12.5V"
+          }
+        }
+      },
+      "thevenin_equivalent": {
+        "Uth": "12.5V",
+        "Rth": "5Ω",
+        "Ik": "2.5A"
+      },
+      "norton_equivalent": {
+        "In": "2.5A",
+        "Rn": "5Ω"
+      }
+    },
+    {
+      "number": "2e",
+      "title": "Complex Multi-Resistor Network with Current Source",
+      "circuit_diagram": "study-guide/media/media/image45.PNG",
+      "circuit_description": "Complex network with: 12mA current source, R1=1kΩ, R2=2kΩ, R3=3kΩ, R4=1.5kΩ, R5=2.25kΩ, and -3V voltage source",
+      "note": "No reference numbers in the book; includes MultiSim simulation for verification",
+      "question_text": "Vereenvoudig dit netwerk tot Thévenin en Norton equivalenten",
+      "answer_options": null,
+      "correct_answer": null,
+      "answer_type": "calculation",
+      "solution": {
+        "approach": "Thévenin Analysis with Two Methods",
+        "method_1_intuitive": {
+          "step": 1,
+          "description": "Replace 12mA source and 3 resistors with Thévenin",
+          "calculation": "Rth (left part) = 3kΩ || 3kΩ = 1.5kΩ"
+        },
+        "step_2": {
+          "description": "Current distribution through resistors",
+          "calculation_through_1k": "I (through 1kΩ) = (5/6) × 12mA = 10mA",
+          "calculation_through_other": "I (through 2kΩ + 3kΩ) = (1/6) × 12mA = 2mA",
+          "result_uth": "Uth (left) = 6V"
+        },
+        "step_3": {
+          "description": "Parallel Thévenin sources",
+          "details": "Two Thévenin branches with same Rth (1.5kΩ) in parallel: -3V and +6V",
+          "calculation": "Uth = 1.5V"
+        },
+        "step_4": {
+          "description": "Calculate total internal resistance",
+          "calculation": "Rth = 2.25kΩ + (1.5kΩ || 1.5kΩ) = 2.25kΩ + 0.75kΩ = 3kΩ"
+        },
+        "step_5": {
+          "description": "Calculate Norton current",
+          "calculation": "In = Uth / Rth = 1.5V / 3kΩ = 0.5mA"
+        },
+        "method_2_analytical_superposition": {
+          "part_a": {
+            "step": 1,
+            "description": "Effect of -3V with current source open",
+            "details": "Voltage division across two equal 1.5kΩ resistors",
+            "calculation": "U₋₃V = -3V / 2 = -1.5V"
+          },
+          "part_b": {
+            "step": 2,
+            "description": "Determine equivalent resistance R34",
+            "calculation": "R₃₄ = (R₃ × R₄)/(R₃ + R₄) = (3 × 1.5)/(3 + 1.5) = 4.5/4.5 = 1kΩ"
+          },
+          "part_c": {
+            "step": 3,
+            "description": "Effective series resistance",
+            "details": "R₁ + R₃₄ in series with parallel combination of R₂",
+            "calculation": "Total path = (R₁ + R₃₄) || R₂ = 3kΩ || 3kΩ = 1.5kΩ at output"
+          },
+          "part_d": {
+            "step": 4,
+            "description": "Current distribution through 12mA source",
+            "details": "1/4 of current flows through the (R₁ + R₃₄) branch",
+            "calculation": "I (through R₃₄) = 12mA / 4 = 3mA"
+          },
+          "part_e": {
+            "step": 5,
+            "description": "Effect of 12mA current source with -3V shorted",
+            "calculation": "U₁₂ₘₐ = (3mA) × (1kΩ) = 3V"
+          },
+          "part_f": {
+            "step": 6,
+            "description": "Total open circuit voltage",
+            "calculation": "U₀ = U₋₃V + U₁₂ₘₐ = -1.5V + 3V = 1.5V"
+          }
+        },
+        "internal_resistance_calculation": {
+          "step": 1,
+          "description": "Thévenin internal resistance from current source side",
+          "calculation": "R₃ || (R₁ + R₂) = 3kΩ || (2kΩ + 1kΩ) = 3kΩ || 3kΩ = 1.5kΩ"
+        },
+        "step_2": {
+          "description": "This parallels with R₄ (through V1 with R=0)",
+          "calculation": "Total: R₅ + (1.5kΩ || 1.5kΩ) = 2.25kΩ + 0.75kΩ = 3kΩ"
+        }
+      },
+      "thevenin_equivalent": {
+        "Uth": "1.5V",
+        "Rth": "3kΩ",
+        "Ik": "0.5mA"
+      },
+      "norton_equivalent": {
+        "In": "0.5mA",
+        "Rn": "3kΩ"
+      },
+      "simulation_reference": "study-guide/media/media/image46.PNG"
+    }
+  ],
+  "key_concepts": {
+    "thevenin_equivalent": {
+      "definition": "A network simplified to a single voltage source (Uth) in series with an internal resistance (Rth)",
+      "calculation_steps": [
+        "1. Open the load at the output terminals",
+        "2. Calculate Uth: open circuit voltage across the terminals",
+        "3. Calculate Ri: either by finding equivalent resistance with sources deactivated, or use Ri = Uth / Ik",
+        "4. Calculate Ik: short circuit current when terminals are shorted"
+      ]
+    },
+    "norton_equivalent": {
+      "definition": "A network simplified to a single current source (In) in parallel with an internal resistance (Rn)",
+      "relationship_to_thevenin": "In = Uth / Rth, and Rn = Rth"
+    },
+    "superposition_method": "When multiple independent sources (voltage or current) are present, calculate the effect of each source independently, then add the results",
+    "key_differences_per_exercise": {
+      "2a": "Two voltage sources with opposite polarities - tests understanding of voltage addition/subtraction",
+      "2b": "Cascaded sources where one source blocks another - tests practical circuit understanding",
+      "2c": "Current source with reversed polarity produces negative voltage - tests sign handling",
+      "2d": "Mixed sources with current source conversion - demonstrates conversion between equivalent forms",
+      "2e": "Most complex: multiple resistor networks with both voltage and current sources - comprehensive test"
+    }
+  },
+  "page_reference": "H 3.11, blz. 41",
+  "resource_images": [
+    "study-guide/media/media/image36.PNG",
+    "study-guide/media/media/image37.PNG",
+    "study-guide/media/media/image38.PNG",
+    "study-guide/media/media/image39.PNG",
+    "study-guide/media/media/image40.PNG",
+    "study-guide/media/media/image41.PNG",
+    "study-guide/media/media/image42.PNG",
+    "study-guide/media/media/image43.PNG",
+    "study-guide/media/media/image44.PNG",
+    "study-guide/media/media/image45.PNG",
+    "study-guide/media/media/image46.PNG"
+  ]
+}

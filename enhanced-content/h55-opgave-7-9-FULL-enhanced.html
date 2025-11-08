@@ -1,0 +1,379 @@
+<!-- H 5.5 OPGAVE 7-9 - ENHANCED VERSION (Vectoriële optelling van AC-signalen) -->
+
+<div class="question">
+<p><strong>H 5.5 - Opgave 7-9: Vectoriële optelling van wisselspanningen</strong></p>
+<p>Tel meerdere AC-signalen met verschillende fases vector ieel op in het complexe vlak.</p>
+
+<p><strong>Gegeven:</strong> Meerdere sinusoïdale signalen met verschillende amplitudes en fasehoeken</p>
+<p><strong>Gevraagd:</strong> Resulterende signaal na vectoriële optelling</p>
+
+<p><strong>Methode:</strong> Euler formule en complexe getallen</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Theoretische basis - Euler formule</div>
+
+<p>Deze opgaven testen het begrip van <strong>fasorrekenen</strong> en het superpositieprincipe voor AC-signalen.</p>
+
+<p><strong>Euler formule:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup><mi>e</mi><mrow><mi>i</mi><mi>φ</mi></mrow></msup>
+    <mo>=</mo>
+    <mi>cos</mi><mo>(</mo><mi>φ</mi><mo>)</mo>
+    <mo>+</mo>
+    <mi>i</mi>
+    <mo>·</mo>
+    <mi>sin</mi><mo>(</mo><mi>φ</mi><mo>)</mo>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conversie tijddomein ↔ complex:</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>Tijddomein</th>
+  <th>Complex (fasor)</th>
+  <th>Hoek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>A·cos(ωt + φ)</td>
+  <td>A·e<sup>iφ</sup></td>
+  <td>φ radialen</td>
+</tr>
+<tr>
+  <td>A·sin(ωt + φ)</td>
+  <td>A·e<sup>i(φ - π/2)</sup></td>
+  <td>φ - 90° radialen</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Waarom werkt dit?</strong> sin(x) = cos(x - π/2), dus een sinus is een cosinus met -90° faseverschuiving.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: BELANGRIJKE REGEL - Gelijknamig maken</div>
+
+<p><strong>Regel:</strong> Alle signalen moeten "gelijknamig" zijn voordat je ze op kunt tellen!</p>
+
+<blockquote style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Je kunt een cos() niet optellen bij een sin() - net zoals je appels niet bij peren kunt optellen. Eerst alles naar hetzelfde type converteren!"
+</blockquote>
+
+<p><strong>Conversiestappen:</strong></p>
+
+<p><strong>Als de uitkomst in cos() moet zijn:</strong></p>
+<ul>
+<li>Cosinus: geen aanpassing</li>
+<li>Sinus: trek π/2 af van de fasehoek φ</li>
+</ul>
+
+<p><strong>Als de uitkomst in sin() moet zijn:</strong></p>
+<ul>
+<li>Sinus: geen aanpassing</li>
+<li>Cosinus: tel π/2 op bij de fasehoek φ</li>
+</ul>
+
+<p><strong>Voorbeeld:</strong></p>
+<p>5·sin(ωt + 30°) omzetten naar cosinus:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>5</mn>
+    <mo>·</mo>
+    <mi>sin</mi><mo>(</mo><mi>ωt</mi><mo>+</mo><mn>30</mn><mo>°</mo><mo>)</mo>
+    <mo>=</mo>
+    <mn>5</mn>
+    <mo>·</mo>
+    <mi>cos</mi><mo>(</mo><mi>ωt</mi><mo>+</mo><mn>30</mn><mo>°</mo><mo>−</mo><mn>90</mn><mo>°</mo><mo>)</mo>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>=</mo>
+    <mn>5</mn>
+    <mo>·</mo>
+    <mi>cos</mi><mo>(</mo><mi>ωt</mi><mo>−</mo><mn>60</mn><mo>°</mo><mo>)</mo>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Procedure voor vectoriële optelling</div>
+
+<p><strong>Complete procedure (5 stappen):</strong></p>
+
+<p><strong>Stap 3a: Kies norm (cos of sin)</strong></p>
+<p>Besluit: alle signalen worden cosinussen (cos is de norm)</p>
+
+<p><strong>Stap 3b: Converteer alle sinussen naar cosinussen</strong></p>
+<p>Voor elke sin(ωt + φ): vervang door cos(ωt + φ - π/2)</p>
+
+<p><strong>Stap 3c: Converteer naar complex met Euler</strong></p>
+<p>Voor elk signaal A·cos(ωt + φ):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mover><mi>U</mi><mo>→</mo></mover><mi>n</mi></msub>
+    <mo>=</mo>
+    <mi>A</mi>
+    <mo>·</mo>
+    <msup><mi>e</mi><mrow><mi>i</mi><mi>φ</mi></mrow></msup>
+    <mo>=</mo>
+    <mi>A</mi>
+    <mo>·</mo>
+    <mo>[</mo>
+    <mi>cos</mi><mo>(</mo><mi>φ</mi><mo>)</mo>
+    <mo>+</mo>
+    <mi>i</mi>
+    <mo>·</mo>
+    <mi>sin</mi><mo>(</mo><mi>φ</mi><mo>)</mo>
+    <mo>]</mo>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3d: Tel alle complexe getallen op</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mover><mi>U</mi><mo>→</mo></mover><mrow><mi>t</mi><mi>o</mi><mi>t</mi></mrow></msub>
+    <mo>=</mo>
+    <munderover>
+      <mo>∑</mo>
+      <mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow>
+      <mi>N</mi>
+    </munderover>
+    <msub><mover><mi>U</mi><mo>→</mo></mover><mi>n</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3e: Converteer terug naar tijddomein</strong></p>
+<p>Bereken amplitude en fase uit het resulterende complexe getal:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>A</mi>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup><mrow><mo>(</mo><mi>Re</mi><mo>)</mo></mrow><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mrow><mo>(</mo><mi>Im</mi><mo>)</mo></mrow><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>φ</mi>
+    <mo>=</mo>
+    <mi>arctan</mi>
+    <mfrac>
+      <mi>Im</mi>
+      <mi>Re</mi>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Resultaat: A·cos(ωt + φ)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Praktijkvoorbeeld (Excel implementatie)</div>
+
+<p><strong>Voorbeeld signalen:</strong></p>
+<ul>
+<li>U₁ = 10·cos(ωt + 0°)</li>
+<li>U₂ = 5·sin(ωt + 45°)</li>
+<li>U₃ = 8·cos(ωt + 90°)</li>
+</ul>
+
+<p><strong>Stap 1: Gelijknamig maken (alles naar cos):</strong></p>
+<ul>
+<li>U₁ = 10·cos(ωt + 0°) → blijft hetzelfde</li>
+<li>U₂ = 5·sin(ωt + 45°) = 5·cos(ωt + 45° - 90°) = 5·cos(ωt - 45°)</li>
+<li>U₃ = 8·cos(ωt + 90°) → blijft hetzelfde</li>
+</ul>
+
+<p><strong>Stap 2: Complex projectie met Euler:</strong></p>
+
+<table style="width:100%; margin: 15px 0; text-align: center;">
+<thead>
+<tr>
+  <th>Signaal</th>
+  <th>φ (rad)</th>
+  <th>e<sup>iφ</sup></th>
+  <th>Re (cos φ)</th>
+  <th>Im (sin φ)</th>
+  <th>Fasor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>U₁</td>
+  <td>0</td>
+  <td>e<sup>i·0</sup> = 1</td>
+  <td>10</td>
+  <td>0</td>
+  <td>10 + 0i</td>
+</tr>
+<tr>
+  <td>U₂</td>
+  <td>-π/4</td>
+  <td>e<sup>-iπ/4</sup></td>
+  <td>3.54</td>
+  <td>-3.54</td>
+  <td>3.54 - 3.54i</td>
+</tr>
+<tr>
+  <td>U₃</td>
+  <td>π/2</td>
+  <td>e<sup>iπ/2</sup> = i</td>
+  <td>0</td>
+  <td>8</td>
+  <td>0 + 8i</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Stap 3: Optelling:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mover><mi>U</mi><mo>→</mo></mover><mrow><mi>t</mi><mi>o</mi><mi>t</mi></mrow></msub>
+    <mo>=</mo>
+    <mo>(</mo><mn>10</mn><mo>+</mo><mn>3.54</mn><mo>+</mo><mn>0</mn><mo>)</mo>
+    <mo>+</mo>
+    <mi>i</mi>
+    <mo>(</mo><mn>0</mn><mo>−</mo><mn>3.54</mn><mo>+</mo><mn>8</mn><mo>)</mo>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>=</mo>
+    <mn>13.54</mn>
+    <mo>+</mo>
+    <mn>4.46</mn><mi>i</mi>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 4: Terug naar tijddomein:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>A</mi>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup><mn>13.54</mn><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mn>4.46</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <mn>14.26</mn>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>φ</mi>
+    <mo>=</mo>
+    <mi>arctan</mi>
+    <mfrac>
+      <mn>4.46</mn>
+      <mn>13.54</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>18.2</mn><mo>°</mo>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Resultaat:</strong> U<sub>tot</sub> = 14.26·cos(ωt + 18.2°)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Controle:</strong> Is A<sub>tot</sub> ≤ ΣA<sub>i</sub>? → 14.26 ≤ (10+5+8) = 23 ✓</p>
+<p>(Bij destructieve interferentie kan de totale amplitude kleiner zijn dan de som)</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Waarom complexe getallen gebruiken?</strong></p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Complexe getallen zijn NIET abstract - ze zijn een geometrische representatie van roterende vectoren in het 2D-vlak. De reële as is 'cos', de imaginaire as is 'sin'."
+</blockquote>
+
+<p><strong>Grafische betekenis:</strong></p>
+<ul>
+<li><strong>Reële as (Re):</strong> Component in fase met referentie (0°)</li>
+<li><strong>Imaginaire as (Im):</strong> Component 90° voor op referentie</li>
+<li><strong>Amplitude |U|:</strong> Lengte van de vector</li>
+<li><strong>Fase φ:</strong> Hoek t.o.v. reële as</li>
+</ul>
+
+<p><strong>Praktische toepassingen:</strong></p>
+<ul>
+<li><strong>Driefasesystemen:</strong> Fasoren van 120° verschoven optellen</li>
+<li><strong>Filter ontwerp:</strong> Frequentierespons als complexe functie</li>
+<li><strong>Impedantie berekeningen:</strong> Z = R + jX</li>
+<li><strong>AC vermogensanalyse:</strong> S = P + jQ (complex vermogen)</li>
+</ul>
+
+<p><strong>Waarom Excel gebruiken?</strong></p>
+<p>Excel heeft de functie COMPLEX.EXP() die automatisch e<sup>iφ</sup> berekent:</p>
+<ul>
+<li>COMPLEX.EXP(0) = 1 (cos 0°)</li>
+<li>COMPLEX.EXP(π/2) = i (cos 90° = 0, sin 90° = 1)</li>
+<li>COMPLEX.EXP(-π/2) = -i (cos -90° = 0, sin -90° = -1)</li>
+</ul>
+
+<p>Dit maakt de berekeningen veel sneller en minder foutgevoelig!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Methode samenvatting:</strong></p>
+<ol>
+<li>Kies norm: cos of sin</li>
+<li>Maak alle signalen "gelijknamig"</li>
+<li>Converteer naar complex: A·e<sup>iφ</sup></li>
+<li>Tel complexe getallen op: Σ(Re + i·Im)</li>
+<li>Converteer terug: A = √(Re²+Im²), φ = arctan(Im/Re)</li>
+</ol>
+
+<p><strong>Belangrijkste valkuil:</strong> Vergeet NIET om sinussen te converteren!</p>
+
+<p><em>Euler formule is de sleutel tot eenvoudige AC-analyse!</em></p>
+</div>
+
+</div>

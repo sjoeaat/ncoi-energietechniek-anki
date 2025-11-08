@@ -1,0 +1,92 @@
+<!-- H 3.11 OPGAVE 2b - ENHANCED VERSION -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 2b</strong></p>
+<p>Vereenvoudig dit netwerk tot Thévenin en Norton equivalenten.</p>
+<p><img src="media/media/image39.PNG" style="max-width:700px;" alt="H 3.11 Opgave 2b"></p>
+<p><strong>Gegeven:</strong> 4V bron, 10Ω weerstand in serie, en tak met 6V bron + 18Ω</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling</div>
+<p><strong>Belangrijke observatie:</strong> De 4V bron met R=0 is direct zichtbaar vanaf de uitgangsklemmen. De linker tak (6V, 18Ω) staat "achter" deze bron en is NIET relevant voor de uitgang.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bereken R<sub>th</sub></div>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>10</mn><mi>Ω</mi>
+  </mrow>
+</math>
+</div>
+<p>(Alleen de zichtbare serieweerstand vanaf uitgang)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken U<sub>th</sub> (superpositie)</div>
+<p><strong>Bijdrage 6V bron:</strong> (4V kort)</p>
+<p>U<sub>6V</sub> = 0V (geblokkeerd door de 4V bron met R=0)</p>
+
+<p><strong>Bijdrage 4V bron:</strong> (6V kort)</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>4</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>4</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Totaal:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+    <mo>+</mo>
+    <mn>4</mn>
+    <mo>=</mo>
+    <mn>4</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bereken I<sub>k</sub></div>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac><mn>4</mn><mn>10</mn></mfrac>
+    <mo>=</mo>
+    <mn>0.4</mn><mtext> A</mtext>
+    <mo>=</mo>
+    <mn>400</mn><mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie</div>
+<p><strong>Let op:</strong> De 18Ω weerstand heeft -2V over zich (stroom vloeit de 6V bron IN - de bron absorbeert vermogen).</p>
+<p>Dit is fysisch correct: de 4V bron "overwint" de 6V bron via de spanningsdeler-effect.</p>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Thévenin:</strong> 4V in serie met 10Ω</p>
+<p><strong>Norton:</strong> 400mA parallel met 10Ω</p>
+</div>
+
+</div>

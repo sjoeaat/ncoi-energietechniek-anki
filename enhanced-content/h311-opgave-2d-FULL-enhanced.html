@@ -1,0 +1,104 @@
+<!-- H 3.11 OPGAVE 2d - ENHANCED VERSION -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 2d</strong></p>
+<p>Vereenvoudig dit netwerk tot Thévenin en Norton equivalenten.</p>
+<p><img src="media/media/image43.PNG" style="max-width:700px;" alt="H 3.11 Opgave 2d"></p>
+<p><strong>Gegeven:</strong> 5V spanningsbron, twee 10Ω weerstanden (parallel), 2A stroombron</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling</div>
+<p><strong>Strategie:</strong> Twee methoden mogelijk - (1) intuïtief via bron-conversie, (2) analytisch via vergelijkingen</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bereken R<sub>th</sub></div>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>10</mn><mi>Ω</mi>
+    <mo>∥</mo>
+    <mn>10</mn><mi>Ω</mi>
+    <mo>=</mo>
+    <mn>5</mn><mi>Ω</mi>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken U<sub>th</sub> (methode 1 - intuïtief)</div>
+<p><strong>Stap 3a:</strong> Converteer 2A stroombron parallel met 10Ω naar spanningsbron:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>U</mi>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mo>×</mo>
+    <mn>10</mn>
+    <mo>=</mo>
+    <mn>20</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3b:</strong> Spanningsverschil over de twee 10Ω weerstanden:</p>
+<p>Δ U = 20V - 5V = 15V over 2×10Ω → elk krijgt 7.5V</p>
+
+<p><strong>Stap 3c:</strong> Thévenin spanning:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>20</mn>
+    <mo>−</mo>
+    <mn>7.5</mn>
+    <mo>=</mo>
+    <mn>12.5</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+<p>(of van onderen: 5V + 7.5V = 12.5V)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bereken I<sub>k</sub></div>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>12.5</mn>
+      <mn>5</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2.5</mn><mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie (alternatieve methode)</div>
+<p><strong>Maas vergelijking:</strong></p>
+<p>5V - I₁·10Ω - I₂·10Ω = 0</p>
+<p>Knooppunt: I₁ - I₂ + 2A = 0 → I₁ = I₂ - 2</p>
+<p>Substitutie: 5 - 10(I₂-2) - 10I₂ = 0 → 25 = 20I₂ → I₂ = 1.25A</p>
+<p>U<sub>th</sub> = 5V - I₁·10Ω = 5V + 7.5V = 12.5V ✓</p>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Thévenin:</strong> 12.5V in serie met 5Ω</p>
+<p><strong>Norton:</strong> 2.5A parallel met 5Ω</p>
+</div>
+
+</div>

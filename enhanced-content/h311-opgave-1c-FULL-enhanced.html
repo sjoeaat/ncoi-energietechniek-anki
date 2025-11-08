@@ -1,0 +1,346 @@
+<!-- H 3.11 OPGAVE 1c - ENHANCED VERSION (Norton parameters: Ik, Rn) -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 1c</strong></p>
+<p>Bereken van het netwerk aan de klemmen AB de <strong>kortsluitstroom I<sub>k</sub></strong> en de <strong>Norton weerstand R<sub>n</sub></strong>.</p>
+
+<p><img src="media/media/image28.PNG" style="max-width:700px;" alt="H 3.11 Opgave 1c circuit diagram"></p>
+
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Netwerk met stroombronen en weerstanden</li>
+<li>Klemmen A en B gemarkeerd</li>
+</ul>
+
+<p><strong>Gevraagd:</strong></p>
+<ul>
+<li>I<sub>k</sub> (kortsluitstroom = Norton stroom)</li>
+<li>R<sub>n</sub> (Norton weerstand)</li>
+</ul>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze opgave test het begrip van <strong>Norton equivalent netwerken</strong>.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Concept</th>
+  <th>Betekenis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Norton equivalent</strong></td>
+  <td>Stroombron I<sub>n</sub> <strong>parallel</strong> met weerstand R<sub>n</sub></td>
+</tr>
+<tr>
+  <td><strong>I<sub>k</sub></strong> (Norton stroom)</td>
+  <td>Stroom door kortsluiting tussen A en B</td>
+</tr>
+<tr>
+  <td><strong>R<sub>n</sub></strong> (Norton weerstand)</td>
+  <td>Weerstand tussen A en B met gepassiveerde bronnen</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> Norton stelling (Holmes §3.11): Elk lineair netwerk kan worden vervangen door een stroombron I<sub>n</sub> parallel met een weerstand R<sub>n</sub>.</p>
+
+<p><strong>Relatie met Thévenin:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>n</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+      <msub><mi>R</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>n</mi></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bereken I<sub>k</sub> (kortsluitstroom)</div>
+
+<p><strong>Definitie:</strong> I<sub>k</sub> is de stroom die vloeit bij kortsluiting tussen A en B.</p>
+
+<p><strong>Methode voor stroombronnen:</strong></p>
+<ul>
+<li>Stroombronnen blijven actief bij kortsluiting</li>
+<li>Gebruik stroomdeling of KCL om I<sub>k</sub> te vinden</li>
+</ul>
+
+<p><strong>Voorbeeld:</strong> Netwerk met twee stroombronnen I₁ = 6A en I₂ = 2A in parallel met weerstanden.</p>
+
+<p>Bij kortsluiting tussen A en B gaan alle stromen door de kortsluiting:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mn>6</mn>
+    <mo>+</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mn>8</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>(als beide bronnen in dezelfde richting sturen)</p>
+
+<p><strong>Let op richting!</strong> Als I₂ de andere kant op gaat:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mn>6</mn>
+    <mo>−</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mn>4</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken R<sub>n</sub> (Norton weerstand)</div>
+
+<p><strong>Methode:</strong> Passiveer alle bronnen en bereken weerstand tussen A en B.</p>
+
+<p><strong>Passivering:</strong></p>
+<ul>
+<li>Spanningsbronnen → kortsluiting</li>
+<li>Stroombronnen → <strong>open circuit</strong> (oneindig hoog impedantie)</li>
+</ul>
+
+<p><strong>Voorbeeld:</strong> Als het circuit R₁ = 12Ω en R₂ = 6Ω in parallel heeft:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>n</mi></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mn>1</mn></msub>
+    <mo>∥</mo>
+    <msub><mi>R</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>·</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>n</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>12</mn><mo>·</mo><mn>6</mn></mrow>
+      <mrow><mn>12</mn><mo>+</mo><mn>6</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>72</mn>
+      <mn>18</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>4</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Converteer naar Thévenin (optioneel)</div>
+
+<p>Norton ↔ Thévenin conversie:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>n</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>n</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Voorbeeld:</strong> Met I<sub>n</sub> = 4A en R<sub>n</sub> = 4Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>4</mn>
+    <mo>·</mo>
+    <mn>4</mn>
+    <mo>=</mo>
+    <mn>16</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Dit geeft Thévenin equivalent: 16V bron in serie met 4Ω.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Test met belasting:</strong></p>
+<p>Sluit R<sub>L</sub> = 4Ω aan tussen A en B (Norton equivalent):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>n</mi></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mi>n</mi></msub>
+      <mrow>
+        <msub><mi>R</mi><mi>n</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>L</mi></msub>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>4</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>4</mn>
+      <mrow><mn>4</mn><mo>+</mo><mn>4</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Dit is precies I<sub>n</sub>/2, wat klopt bij matching! ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Norton vs Thévenin:</strong></p>
+
+<table style="width:100%; margin: 15px 0;">
+<thead>
+<tr>
+  <th>Kenmerk</th>
+  <th>Thévenin</th>
+  <th>Norton</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Brontype</td>
+  <td>Spanningsbron</td>
+  <td>Stroombron</td>
+</tr>
+<tr>
+  <td>Weerstand configuratie</td>
+  <td><strong>Serie</strong> met bron</td>
+  <td><strong>Parallel</strong> met bron</td>
+</tr>
+<tr>
+  <td>Nuttig wanneer</td>
+  <td>Belasting in serie</td>
+  <td>Belasting in parallel</td>
+</tr>
+<tr>
+  <td>Open circuit spanning</td>
+  <td>U<sub>th</sub></td>
+  <td>I<sub>n</sub> · R<sub>n</sub></td>
+</tr>
+<tr>
+  <td>Kortsluitstroom</td>
+  <td>U<sub>th</sub> / R<sub>th</sub></td>
+  <td>I<sub>n</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Wanneer Norton gebruiken?</strong></p>
+<ul>
+<li>Netwerk bevat voornamelijk <strong>stroombronnen</strong></li>
+<li>Analyse van <strong>parallelle</strong> belastingen</li>
+<li>Stroomdeling berekeningen</li>
+</ul>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Norton model wordt gebruikt in:</p>
+<ul>
+<li><strong>Transistor modellen:</strong> Output stage als stroombron</li>
+<li><strong>Zonnepanelen:</strong> Kortsluiting-stroom specificaties</li>
+<li><strong>Parallel verbindingen:</strong> Meerdere bronnen parallel</li>
+</ul>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Resultaat (voorbeeldwaarden):</strong></p>
+<ul>
+<li><strong>I<sub>k</sub> = I<sub>n</sub> = 4A</strong></li>
+<li><strong>R<sub>n</sub> = 4Ω</strong></li>
+</ul>
+
+<p><em>Norton equivalent: 4A stroombron parallel met 4Ω weerstand</em></p>
+
+<p><strong>Equivalente Thévenin:</strong> 16V bron in serie met 4Ω</p>
+</div>
+
+</div>

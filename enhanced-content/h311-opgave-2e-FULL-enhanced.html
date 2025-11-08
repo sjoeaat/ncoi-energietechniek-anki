@@ -1,0 +1,153 @@
+<!-- H 3.11 OPGAVE 2e - ENHANCED VERSION -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 2e</strong></p>
+<p>Vereenvoudig dit complexe netwerk tot Thévenin en Norton equivalenten.</p>
+<p><img src="media/media/image45.PNG" style="max-width:700px;" alt="H 3.11 Opgave 2e"></p>
+<p><strong>Gegeven:</strong> 12mA stroombron, -3V spanningsbron, 5 weerstanden (R1=1kΩ, R2=2kΩ, R3=3kΩ, R4=1.5kΩ, R5=2.25kΩ)</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling</div>
+<p><strong>Strategie:</strong> Complex netwerk met meerdere bronnen - gebruik stapsgewijze vereenvoudiging en superpositie.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bereken R<sub>th</sub> (stapsgewijs)</div>
+<p><strong>Stap 2a:</strong> Parallelle weerstanden R3 en R4:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mn>3</mn><mn>4</mn></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>3</mn><mo>×</mo><mn>1.5</mn></mrow>
+      <mrow><mn>3</mn><mo>+</mo><mn>1.5</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 2b:</strong> R1 + R34 in serie:</p>
+<p>R1 + R34 = 1kΩ + 1kΩ = 2kΩ</p>
+
+<p><strong>Stap 2c:</strong> (R1+R34) parallel met R2:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>2</mn><mi>k</mi>Ω
+    <mo>∥</mo>
+    <mn>2</mn><mi>k</mi>Ω
+    <mo>=</mo>
+    <mn>1</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 2d:</strong> In serie met R5:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>2.25</mn>
+    <mo>+</mo>
+    <mn>0.75</mn>
+    <mo>=</mo>
+    <mn>3</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken U<sub>th</sub> (superpositie)</div>
+
+<p><strong>Bijdrage van -3V bron:</strong> (stroombron open)</p>
+<p>Spanningsdeling over twee gelijke 1.5kΩ weerstanden:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mo>−</mo><mn>3</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>−</mo><mn>3</mn></mrow>
+      <mn>2</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>1.5</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Bijdrage van 12mA bron:</strong> (-3V kort)</p>
+<p>Stroomdeling: 1/4 van de stroom gaat door R34:</p>
+<p>I(R34) = 12mA / 4 = 3mA</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>12</mn><mi>m</mi><mi>A</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>3</mn><mtext> mA</mtext>
+    <mo>×</mo>
+    <mn>1</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mn>3</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Totaal:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>1.5</mn>
+    <mo>+</mo>
+    <mn>3</mn>
+    <mo>=</mo>
+    <mn>1.5</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bereken I<sub>k</sub></div>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1.5</mn>
+      <mn>3</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0.5</mn><mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie</div>
+<p><strong>MultiSim verificatie:</strong> Resultaat komt overeen met simulatie ✓</p>
+<p><strong>Complexiteit:</strong> Dit is de meest uitgebreide opgave van de serie 2 - combineert meerdere technieken.</p>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Thévenin:</strong> 1.5V in serie met 3kΩ</p>
+<p><strong>Norton:</strong> 0.5mA parallel met 3kΩ</p>
+<p><em>Complexe netwerken: stapsgewijze vereenvoudiging + superpositie</em></p>
+</div>
+
+</div>

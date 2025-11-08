@@ -1,0 +1,314 @@
+<!-- H 5.5 OPGAVE 1 - ENHANCED VERSION (Driehoekspanning - gemiddelde en effectieve waarde) -->
+
+<div class="question">
+<p><strong>H 5.5 - Opgave 1: Driehoekspanning</strong></p>
+<p>Gegeven is een driehoekspanning met een topspanning van 10V.</p>
+
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Driehoeksgolfvorm</li>
+<li>Topspanning: U<sub>top</sub> = 10V</li>
+</ul>
+
+<p><strong>Gevraagd:</strong></p>
+<ul>
+<li>a) Gemiddelde waarde U<sub>gem</sub></li>
+<li>b) Effectieve waarde U<sub>eff</sub></li>
+</ul>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze opgave test het begrip van <strong>wisselspanningsparameters</strong> voor niet-sinusoïdale signalen.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Definitie</th>
+  <th>Fysische betekenis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Topspanning</strong></td>
+  <td>Maximum waarde</td>
+  <td>Hoogste spanning die bereikt wordt</td>
+</tr>
+<tr>
+  <td><strong>Gemiddelde waarde</strong></td>
+  <td>∫u(t)dt / T</td>
+  <td>DC-component van het signaal</td>
+</tr>
+<tr>
+  <td><strong>Effectieve waarde</strong></td>
+  <td>√(∫u²(t)dt / T)</td>
+  <td>Vermogensequivalent van DC</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> Voor een symmetrische driehoekspanning zijn er vaste relaties tussen de topwaarde en de gemiddelde/effectieve waarden (Holmes §5.5, blz. 83).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal gemiddelde waarde U<sub>gem</sub></div>
+
+<p><strong>Driehoekspanning karakteristiek:</strong></p>
+<p>Een <strong>symmetrische</strong> driehoekspanning heeft:</p>
+<ul>
+<li>Lineaire stijging van 0 naar U<sub>top</sub> (helft van de periode)</li>
+<li>Lineaire daling van U<sub>top</sub> naar 0 (helft van de periode)</li>
+</ul>
+
+<p><strong>Berekening gemiddelde waarde:</strong></p>
+<p>Voor een symmetrische driehoek is de gemiddelde waarde exact de helft van de topwaarde:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>g</mi><mi>e</mi><mi>m</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mrow><mi>t</mi><mi>o</mi><mi>p</mi></mrow></msub>
+      <mn>2</mn>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Substitueer waarden:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>g</mi><mi>e</mi><mi>m</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>10</mn><mtext> V</mtext></mrow>
+      <mn>2</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>5</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fysische interpretatie:</strong> De gemiddelde waarde van 5V is de DC-component die je zou meten met een moving-coil voltmeter.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bepaal effectieve waarde U<sub>eff</sub></div>
+
+<p><strong>Definitie effectieve waarde:</strong></p>
+<p>De effectieve waarde (RMS - Root Mean Square) is de spanning die hetzelfde <strong>verwarmend vermogen</strong> levert als een gelijkspanning in een weerstand.</p>
+
+<p><strong>Formule voor driehoekspanning:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mrow><mi>t</mi><mi>o</mi><mi>p</mi></mrow></msub>
+      <msqrt><mn>3</mn></msqrt>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Substitueer waarden:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>10</mn><mtext> V</mtext></mrow>
+      <msqrt><mn>3</mn></msqrt>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>10</mn>
+      <mn>1.732</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>5.773</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fysische interpretatie:</strong> Een driehoekspanning van 10V<sub>top</sub> levert hetzelfde vermogen als een DC-spanning van 5.773V.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Afleiding van de √3 relatie (extra)</div>
+
+<p><strong>Waarom √3?</strong> Laat me de afleiding kort laten zien:</p>
+
+<p>Voor een driehoekspanning u(t) = U<sub>top</sub>·(2t/T) van 0 tot T/2:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow></msub>
+    <mo>=</mo>
+    <msqrt>
+      <mfrac>
+        <mn>1</mn>
+        <mi>T</mi>
+      </mfrac>
+      <mo>∫</mo>
+      <msup>
+        <mrow><mo>(</mo><mi>u</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>)</mo></mrow>
+        <mn>2</mn>
+      </msup>
+      <mi>d</mi><mi>t</mi>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<p>Na integratie van het kwadraat van een lineaire functie:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mrow><mi>t</mi><mi>o</mi><mi>p</mi></mrow></msub>
+    <mo>·</mo>
+    <msqrt>
+      <mfrac><mn>1</mn><mn>3</mn></mfrac>
+    </msqrt>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mrow><mi>t</mi><mi>o</mi><mi>p</mi></mrow></msub>
+      <msqrt><mn>3</mn></msqrt>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>De factor 1/3 komt van de integratie van t² over [0, T/2].</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en vergelijking met andere golfvormen</div>
+
+<p><strong>Controle:</strong></p>
+<p>U<sub>eff</sub> > U<sub>gem</sub>? → 5.773V > 5V ✓</p>
+<p>Dit klopt altijd voor wisselspanningen (tenzij DC).</p>
+
+<p><strong>Vormfactor:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>F</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow></msub>
+      <msub><mi>U</mi><mrow><mi>g</mi><mi>e</mi><mi>m</mi></mrow></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>5.773</mn>
+      <mn>5</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1.155</mn>
+  </mrow>
+</math>
+</div>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Vergelijking met andere golfvormen:</strong></p>
+
+<table style="width:100%; margin: 15px 0;">
+<thead>
+<tr>
+  <th>Golfvorm</th>
+  <th>U<sub>eff</sub> / U<sub>top</sub></th>
+  <th>U<sub>gem</sub> / U<sub>top</sub></th>
+  <th>Vormfactor F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Sinus</strong></td>
+  <td>1/√2 = 0.707</td>
+  <td>2/π = 0.637</td>
+  <td>1.11</td>
+</tr>
+<tr>
+  <td><strong>Driehoek</strong></td>
+  <td>1/√3 = 0.577</td>
+  <td>1/2 = 0.500</td>
+  <td>1.155</td>
+</tr>
+<tr>
+  <td><strong>Blok</strong></td>
+  <td>1.0</td>
+  <td>1.0</td>
+  <td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Waarom is dit belangrijk?</strong></p>
+
+<ul>
+<li><strong>Vermogensberekening:</strong> P = U<sub>eff</sub>² / R (niet U<sub>top</sub>!)</li>
+<li><strong>Meetinstrumenten:</strong> RMS-meters meten U<sub>eff</sub>, moving-coil meters meten U<sub>gem</sub></li>
+<li><strong>Schakelende voedingen:</strong> PWM driehoekcarriers hebben deze eigenschappen</li>
+</ul>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Een 10V<sub>top</sub> driehoekspanning over 100Ω weerstand:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>P</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msubsup><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow><mn>2</mn></msubsup>
+      <mi>R</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <msup><mrow><mo>(</mo><mn>5.773</mn><mo>)</mo></mrow><mn>2</mn></msup>
+      <mn>100</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>333</mn><mtext> mW</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Let op: NIET (10²/100) = 1W gebruiken - dat zou fout zijn!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoorden:</strong></p>
+<ul>
+<li><strong>a) Gemiddelde waarde:</strong> U<sub>gem</sub> = 5 V</li>
+<li><strong>b) Effectieve waarde:</strong> U<sub>eff</sub> = 5.773 V</li>
+</ul>
+
+<p><strong>Formules driehoekspanning:</strong></p>
+<ul>
+<li>U<sub>gem</sub> = U<sub>top</sub> / 2</li>
+<li>U<sub>eff</sub> = U<sub>top</sub> / √3</li>
+<li>Vormfactor F = √(4/3) ≈ 1.155</li>
+</ul>
+
+<p><em>Voor vermogensberekeningen altijd U<sub>eff</sub> gebruiken!</em></p>
+</div>
+
+</div>

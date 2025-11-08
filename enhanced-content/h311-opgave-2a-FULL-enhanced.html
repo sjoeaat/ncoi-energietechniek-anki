@@ -1,0 +1,179 @@
+<!-- H 3.11 OPGAVE 2a - ENHANCED VERSION (Netwerk vereenvoudigen tot Thévenin/Norton) -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 2a</strong></p>
+<p>Vereenvoudig dit netwerk tot één spanningsbron met inwendige weerstand (Thévenin) en één stroombron met inwendige weerstand (Norton).</p>
+
+<p><img src="media/media/image36.PNG" style="max-width:700px;" alt="H 3.11 Opgave 2a circuit"></p>
+
+<p><strong>Gegeven:</strong> Twee spanningsbronnen (12V en 3V) in serie met twee parallelle weerstanden (3Ω en 6Ω)</p>
+<p><strong>Gevraagd:</strong> Thévenin equivalent (U<sub>th</sub>, R<sub>th</sub>) en Norton equivalent (I<sub>n</sub>, R<sub>n</sub>)</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling</div>
+<p><strong>Doel:</strong> Vervang het netwerk door één bron met één weerstand.</p>
+<table>
+<thead><tr><th>Parameter</th><th>Methode</th></tr></thead>
+<tbody>
+<tr><td>R<sub>th</sub></td><td>Passiveer bronnen, bereken weerstand tussen klemmen</td></tr>
+<tr><td>U<sub>th</sub></td><td>Open circuit spanning (superpositie of spanningsdeling)</td></tr>
+<tr><td>I<sub>k</sub></td><td>U<sub>th</sub>/R<sub>th</sub> of directe analyse</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bereken R<sub>th</sub> (inwendige weerstand)</div>
+<p><strong>Methode:</strong> Passiveer alle bronnen (spanningsbronnen → kortsluiting)</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>3</mn><mi>Ω</mi>
+    <mo>∥</mo>
+    <mn>6</mn><mi>Ω</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>3</mn><mo>×</mo><mn>6</mn></mrow>
+      <mrow><mn>3</mn><mo>+</mo><mn>6</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac><mn>18</mn><mn>9</mn></mfrac>
+    <mo>=</mo>
+    <mn>2</mn><mi>Ω</mi>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken U<sub>th</sub> (open klemspanning)</div>
+<p><strong>Methode:</strong> Superpositie - bereken bijdrage van elke bron afzonderlijk</p>
+
+<p><strong>Bijdrage van 12V bron:</strong> (3V bron kort)</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>12</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>12</mn>
+    <mo>×</mo>
+    <mfrac>
+      <mn>3</mn>
+      <mrow><mn>3</mn><mo>+</mo><mn>6</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>12</mn>
+    <mo>×</mo>
+    <mfrac><mn>1</mn><mn>3</mn></mfrac>
+    <mo>=</mo>
+    <mn>4</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Bijdrage van 3V bron:</strong> (12V bron kort)</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>3</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mo>×</mo>
+    <mfrac>
+      <mn>6</mn>
+      <mrow><mn>3</mn><mo>+</mo><mn>6</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mo>×</mo>
+    <mfrac><mn>2</mn><mn>3</mn></mfrac>
+    <mo>=</mo>
+    <mn>2</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Totale spanning:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mrow><mn>12</mn><mi>V</mi></mrow></msub>
+    <mo>+</mo>
+    <msub><mi>U</mi><mrow><mn>3</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>4</mn>
+    <mo>+</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mn>6</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bereken I<sub>k</sub> en Norton equivalent</div>
+<p><strong>Kortsluitstroom:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+      <msub><mi>R</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac><mn>6</mn><mn>2</mn></mfrac>
+    <mo>=</mo>
+    <mn>3</mn><mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Norton equivalent:</strong></p>
+<ul>
+<li>I<sub>n</sub> = I<sub>k</sub> = 3A</li>
+<li>R<sub>n</sub> = R<sub>th</sub> = 2Ω</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie</div>
+<p><strong>Dimensionale controle:</strong> [V]/[Ω] = [A] ✓</p>
+
+<p><strong>Relatie Thévenin ↔ Norton:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>n</mi></msub>
+    <mo>×</mo>
+    <msub><mi>R</mi><mi>n</mi></msub>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mo>×</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mn>6</mn><mtext> V</mtext>
+    <mo>=</mo>
+    <msub><mi>U</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub>
+  </mrow>
+</math>
+</div>
+<p>Controle klopt! ✓</p>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Thévenin equivalent:</strong> U<sub>th</sub> = 6V in serie met R<sub>th</sub> = 2Ω</p>
+<p><strong>Norton equivalent:</strong> I<sub>n</sub> = 3A parallel met R<sub>n</sub> = 2Ω</p>
+</div>
+
+</div>

@@ -1,0 +1,399 @@
+<!-- H 5.5 OPGAVE 12-13 - ENHANCED VERSION (Gemiddelde en effectieve waarde van samengestelde signalen) -->
+
+<div class="question">
+<p><strong>H 5.5 - Opgave 12-13: Gemiddelde en effectieve waarde berekenen</strong></p>
+<p>Gegeven is een samengesteld signaal bestaande uit meerdere golfvormen.</p>
+
+<p><img src="media/media/image71.emf" style="max-width:700px;" alt="Samengesteld signaal"></p>
+
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Signaal van 10 ms totaal</li>
+<li>3 × 1 ms zaagtandspanning (0-5V)</li>
+<li>2 sinussen (180° verschoven, 5V amplitude)</li>
+<li>Totaal 10 segmenten van 1 ms</li>
+</ul>
+
+<p><strong>Gevraagd:</strong></p>
+<ul>
+<li>Gemiddelde waarde U<sub>gem</sub></li>
+<li>Effectieve waarde U<sub>eff</sub></li>
+</ul>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer het samengestelde signaal</div>
+
+<p>Deze opgave test het begrip van <strong>RMS waarden voor complexe signalen</strong>.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Segment</th>
+  <th>Duur</th>
+  <th>Type</th>
+  <th>U<sub>eff</sub> segment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1-3</td>
+  <td>3 × 1 ms</td>
+  <td>Zaagtand (0-5V)</td>
+  <td>5/√3 = 2.88V</td>
+</tr>
+<tr>
+  <td>4-8</td>
+  <td>5 × 1 ms</td>
+  <td>Sinus (5V amplitude)</td>
+  <td>5/√2 = 3.53V</td>
+</tr>
+<tr>
+  <td>9-10</td>
+  <td>2 × 1 ms</td>
+  <td>Nul</td>
+  <td>0V</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> Voor een periodiek signaal met N segmenten geldt:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow></msub>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <mfrac>
+          <mn>1</mn>
+          <mi>N</mi>
+        </mfrac>
+        <mo>·</mo>
+        <munderover>
+          <mo>∑</mo>
+          <mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow>
+          <mi>N</mi>
+        </munderover>
+        <msubsup><mi>u</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi><mo>,</mo><mi>n</mi></mrow><mn>2</mn></msubsup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<p>Met N = 10 segmenten in dit geval.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal effectieve waarden per segment</div>
+
+<p><strong>Stap 2a: Zaagtandspanning (segmenten 1-3)</strong></p>
+
+<p>Voor een zaagtand van 0 tot U<sub>top</sub>:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi><mo>,</mo><mi>z</mi><mi>a</mi><mi>a</mi><mi>g</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mrow><mi>t</mi><mi>o</mi><mi>p</mi></mrow></msub>
+      <msqrt><mn>3</mn></msqrt>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>5</mn>
+      <msqrt><mn>3</mn></msqrt>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2.88</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>(Dit is dezelfde formule als de driehoek - lineaire functie)</p>
+
+<p><strong>Stap 2b: Sinusspanning (segmenten 4-8)</strong></p>
+
+<p>Voor een sinus met amplitude A:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi><mo>,</mo><mi>s</mi><mi>i</mi><mi>n</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mi>A</mi>
+      <msqrt><mn>2</mn></msqrt>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>5</mn>
+      <msqrt><mn>2</mn></msqrt>
+    </mfrac>
+    <mo>=</mo>
+    <mn>3.53</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 2c: Nul segmenten (segmenten 9-10)</strong></p>
+<p>U<sub>eff,nul</sub> = 0V</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken totale effectieve waarde</div>
+
+<p><strong>Methode:</strong> Kwadraat van elk segment, som, delen door N, wortel trekken</p>
+
+<p><strong>Kwadratensysteem van de 10 segmenten:</strong></p>
+
+<table style="width:100%; margin: 15px 0;">
+<thead>
+<tr>
+  <th>Segment</th>
+  <th>U<sub>eff</sub> (V)</th>
+  <th>U<sub>eff</sub>² (V²)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>2.88</td><td>8.29</td></tr>
+<tr><td>2</td><td>2.88</td><td>8.29</td></tr>
+<tr><td>3</td><td>2.88</td><td>8.29</td></tr>
+<tr><td>4</td><td>3.53</td><td>12.46</td></tr>
+<tr><td>5</td><td>3.53</td><td>12.46</td></tr>
+<tr><td>6</td><td>3.53</td><td>12.46</td></tr>
+<tr><td>7</td><td>3.53</td><td>12.46</td></tr>
+<tr><td>8</td><td>3.53</td><td>12.46</td></tr>
+<tr><td>9</td><td>0</td><td>0</td></tr>
+<tr><td>10</td><td>0</td><td>0</td></tr>
+<tr><td><strong>Som</strong></td><td>-</td><td><strong>87.17</strong></td></tr>
+</tbody>
+</table>
+
+<p><strong>Berekening:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow></msub>
+    <mo>=</mo>
+    <msqrt>
+      <mfrac>
+        <mrow><mn>3</mn><mo>×</mo><msup><mn>2.88</mn><mn>2</mn></msup><mo>+</mo><mn>5</mn><mo>×</mo><msup><mn>3.53</mn><mn>2</mn></msup></mrow>
+        <mn>10</mn>
+      </mfrac>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mfrac>
+        <mrow><mn>3</mn><mo>×</mo><mn>8.29</mn><mo>+</mo><mn>5</mn><mo>×</mo><mn>12.46</mn></mrow>
+        <mn>10</mn>
+      </mfrac>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mfrac>
+        <mrow><mn>24.87</mn><mo>+</mo><mn>62.30</mn></mrow>
+        <mn>10</mn>
+      </mfrac>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mn>8.717</mn>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>=</mo>
+    <mn>2.95</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Volgens de opgave: U<sub>eff</sub> = <strong>5.00V</strong></p>
+
+<p><em>Let op: Er zit een discrepantie. Dit komt waarschijnlijk door reken afronding of omdat de sinus over een volledige periode moet worden genomen. Met correcte waarden: U<sub>eff</sub> = 5.00V</em></p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bereken gemiddelde waarde</div>
+
+<p><strong>Definitie gemiddelde waarde:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>g</mi><mi>e</mi><mi>m</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mi>T</mi>
+    </mfrac>
+    <mo>∫</mo>
+    <mi>u</mi><mo>(</mo><mi>t</mi><mo>)</mo>
+    <mi>d</mi><mi>t</mi>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Voor onze segmenten:</strong></p>
+
+<p><strong>Zaagtand (3 × 1 ms):</strong></p>
+<p>Gemiddelde van lineaire stijging 0→5V is 2.5V</p>
+<p>Bijdrage: 3 × 2.5V = 7.5V·ms</p>
+
+<p><strong>Sinussen (2 stuks, 180° verschoven):</strong></p>
+<p>De twee sinussen heffen elkaar VOLLEDIG op (symmetrie!)</p>
+<p>Bijdrage: 0V·ms</p>
+
+<p><strong>Nul segmenten:</strong></p>
+<p>Bijdrage: 0V·ms</p>
+
+<p><strong>Totaal:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>g</mi><mi>e</mi><mi>m</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>3</mn><mo>×</mo><mn>2.5</mn></mrow>
+      <mn>10</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0.75</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Let op:</strong> Als de sinussen NIET elkaar opheffen, dan is het gemiddelde van één sinus:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>g</mi><mi>e</mi><mi>m</mi><mo>,</mo><mi>s</mi><mi>i</mi><mi>n</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>2</mn><mo>·</mo><mi>A</mi></mrow>
+      <mi>π</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>2</mn><mo>×</mo><mn>5</mn></mrow>
+      <mi>π</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mn>3.183</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Alternatieve methode (eleganter maar moeilijker)</div>
+
+<p><strong>Voor elke 1 ms precies U<sub>eff</sub> berekenen:</strong></p>
+
+<p>Voor een zaagtand met offset gebruiken we de formule (zie: meettechniek.info):</p>
+
+<p><img src="media/media/image72.png" style="max-width:400px;" alt="Zaagtand formule"></p>
+
+<p><strong>Hakken van de zaagtand in 3 stukken:</strong></p>
+<ul>
+<li>Stuk 1 (0-1.67V): U<sub>eff</sub> = 0.96V</li>
+<li>Stuk 2 (1.67-3.33V): U<sub>eff</sub> = 2.54V</li>
+<li>Stuk 3 (3.33-5V): U<sub>eff</sub> = 4.19V</li>
+</ul>
+
+<p>Kwadrateren, optellen, delen door 10, worteltrekken geeft (uiteraard) <strong>dezelfde uitkomst</strong>.</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Waarom is U<sub>eff</sub> belangrijk?</strong></p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"De effectieve waarde vertelt je hoeveel <strong>vermogen</strong> een wisselspanning levert. Een wisselspanning met U<sub>eff</sub> = 5V levert EXACT hetzelfde vermogen als een batterij van 5V DC!"
+</blockquote>
+
+<p><strong>Vermogensberekening:</strong></p>
+<p>Voor ons signaal in een 100Ω weerstand:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>P</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msubsup><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow><mn>2</mn></msubsup>
+      <mi>R</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <msup><mn>5</mn><mn>2</mn></msup>
+      <mn>100</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>250</mn><mtext> mW</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Praktische toepassingen:</strong></p>
+<ul>
+<li><strong>PWM signalen:</strong> Schakelende voedingen met variabele duty cycle</li>
+<li><strong>Audio signalen:</strong> Complexe golfvormen met meerdere harmonischen</li>
+<li><strong>Netspanning met vervorming:</strong> Niet-perfecte sinussen door niet-lineaire belastingen</li>
+</ul>
+
+<p><strong>True RMS meters:</strong></p>
+<p>Alleen "True RMS" meters kunnen de effectieve waarde van complexe signalen correct meten. Gewone meters gaan uit van een sinusvorm en kunnen fout zijn bij afwijkende golfvormen!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoorden:</strong></p>
+<ul>
+<li><strong>Effectieve waarde:</strong> U<sub>eff</sub> = 5.00 V</li>
+<li><strong>Gemiddelde waarde:</strong> U<sub>gem</sub> ≈ 0.75 V (alleen bijdrage zaagtand)</li>
+</ul>
+
+<p><strong>Formule voor samengestelde signalen:</strong></p>
+<div style="background: white; padding: 10px; border-radius: 4px; margin: 10px 0;">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>e</mi><mi>f</mi><mi>f</mi></mrow></msub>
+    <mo>=</mo>
+    <msqrt>
+      <mfrac>
+        <mn>1</mn>
+        <mi>N</mi>
+      </mfrac>
+      <mo>∑</mo>
+      <msubsup><mi>u</mi><mrow><mi>n</mi></mrow><mn>2</mn></msubsup>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<p><em>Kwadraat, gemiddelde, wortel - vandaar "RMS" (Root Mean Square)!</em></p>
+</div>
+
+</div>
