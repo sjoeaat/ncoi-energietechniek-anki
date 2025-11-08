@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Preview - Beschikbare Afbeeldingen</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f5f5f5;
+  }
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  .image-card {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  .image-card:hover {
+    transform: scale(1.02);
+    border-color: #667eea;
+  }
+  .image-card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+  }
+  .image-name {
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 5px;
+  }
+  .image-info {
+    font-size: 12px;
+    color: #666;
+  }
+  .filter {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .filter input {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<h1>📁 Media Bibliotheek - Beschikbare Afbeeldingen</h1>
+<p style="text-align: center; color: #666;">Totaal: 89 afbeeldingen | Klik op een afbeelding om deze te gebruiken in je examen</p>
+
+<div class="filter">
+  <input type="text" id="searchBox" placeholder="Zoek afbeelding... (bijv. image15)" onkeyup="filterImages()">
+</div>
+
+<div class="grid" id="imageGrid">
+  <!-- PNG afbeeldingen -->
+  <div class="image-card" data-name="image1">
+    <img src="media/image1.png" alt="image1">
+    <div class="image-name">image1.png</div>
+    <div class="image-info">56×52 px (2.7 KB)</div>
+  </div>
+
+  <div class="image-card" data-name="image2">
+    <img src="media/image2.png" alt="image2">
+    <div class="image-name">image2.png</div>
+    <div class="image-info">Kleine diagram (4.6 KB)</div>
+  </div>
+
+  <div class="image-card" data-name="image3">
+    <img src="media/image3.png" alt="image3">
+    <div class="image-name">image3.png</div>
+    <div class="image-info">30 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image4">
+    <img src="media/image4.PNG" alt="image4">
+    <div class="image-name">image4.PNG</div>
+    <div class="image-info">14 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image5">
+    <img src="media/image5.PNG" alt="image5">
+    <div class="image-name">image5.PNG</div>
+    <div class="image-info">62 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image6">
+    <img src="media/image6.PNG" alt="image6">
+    <div class="image-name">image6.PNG</div>
+    <div class="image-info">76 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image7">
+    <img src="media/image7.PNG" alt="image7">
+    <div class="image-name">image7.PNG</div>
+    <div class="image-info">16 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image8">
+    <img src="media/image8.png" alt="image8">
+    <div class="image-name">image8.png</div>
+    <div class="image-info">740×331 px (167 KB) 🔥</div>
+  </div>
+
+  <div class="image-card" data-name="image9">
+    <img src="media/image9.png" alt="image9">
+    <div class="image-name">image9.png</div>
+    <div class="image-info">175 KB 🔥</div>
+  </div>
+
+  <div class="image-card" data-name="image10">
+    <img src="media/image10.PNG" alt="image10">
+    <div class="image-name">image10.PNG</div>
+    <div class="image-info">42 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image11">
+    <img src="media/image11.PNG" alt="image11">
+    <div class="image-name">image11.PNG</div>
+    <div class="image-info">29 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image12">
+    <img src="media/image12.PNG" alt="image12">
+    <div class="image-name">image12.PNG</div>
+    <div class="image-info">50 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image13">
+    <img src="media/image13.PNG" alt="image13">
+    <div class="image-name">image13.PNG</div>
+    <div class="image-info">48 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image14">
+    <img src="media/image14.PNG" alt="image14">
+    <div class="image-name">image14.PNG</div>
+    <div class="image-info">40 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image15">
+    <img src="media/image15.PNG" alt="image15">
+    <div class="image-name">image15.PNG</div>
+    <div class="image-info">604×258 px (92 KB) 🔥</div>
+  </div>
+
+  <div class="image-card" data-name="image16">
+    <img src="media/image16.PNG" alt="image16">
+    <div class="image-name">image16.PNG</div>
+    <div class="image-info">4.3 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image17">
+    <img src="media/image17.png" alt="image17">
+    <div class="image-name">image17.png</div>
+    <div class="image-info">11 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image18">
+    <img src="media/image18.PNG" alt="image18">
+    <div class="image-name">image18.PNG</div>
+    <div class="image-info">92 KB 🔥</div>
+  </div>
+
+  <div class="image-card" data-name="image24">
+    <img src="media/image24.PNG" alt="image24">
+    <div class="image-name">image24.PNG</div>
+    <div class="image-info">794×342 px (180 KB) 🔥🔥</div>
+  </div>
+
+  <div class="image-card" data-name="image25">
+    <img src="media/image25.PNG" alt="image25">
+    <div class="image-name">image25.PNG</div>
+    <div class="image-info">163 KB 🔥</div>
+  </div>
+
+  <div class="image-card" data-name="image53">
+    <img src="media/image53.png" alt="image53">
+    <div class="image-name">image53.png</div>
+    <div class="image-info">781×214 px (115 KB) 🔥</div>
+  </div>
+
+  <div class="image-card" data-name="image62">
+    <img src="media/image62.png" alt="image62">
+    <div class="image-name">image62.png</div>
+    <div class="image-info">53 KB</div>
+  </div>
+
+  <div class="image-card" data-name="image63">
+    <img src="media/image63.PNG" alt="image63">
+    <div class="image-name">image63.PNG</div>
+    <div class="image-info">132 KB 🔥</div>
+  </div>
+
+  <div class="image-card" data-name="image65">
+    <img src="media/image65.PNG" alt="image65">
+    <div class="image-name">image65.PNG</div>
+    <div class="image-info">136 KB 🔥</div>
+  </div>
+
+  <div class="image-card" data-name="image75">
+    <img src="media/image75.png" alt="image75">
+    <div class="image-name">image75.png</div>
+    <div class="image-info">134 KB 🔥</div>
+  </div>
+
+  <!-- Voeg hier meer afbeeldingen toe indien gewenst -->
+  <div class="image-card" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+    <p style="color: #999; font-size: 14px;">
+      En nog ~65 andere afbeeldingen beschikbaar...<br>
+      Totaal: 89 PNG/EMF/GIF bestanden in de media map
+    </p>
+    <button onclick="showAllImages()" style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Toon alle 89 afbeeldingen
+    </button>
+  </div>
+</div>
+
+<script>
+function filterImages() {
+  const input = document.getElementById('searchBox');
+  const filter = input.value.toLowerCase();
+  const cards = document.getElementsByClassName('image-card');
+
+  for (let i = 0; i < cards.length; i++) {
+    const name = cards[i].getAttribute('data-name');
+    if (name && name.toLowerCase().indexOf(filter) > -1) {
+      cards[i].style.display = '';
+    } else {
+      cards[i].style.display = 'none';
+    }
+  }
+}
+
+function showAllImages() {
+  alert('Alle 89 afbeeldingen zijn beschikbaar in:\\n\\nstudy-guide/media/media/\\n\\nDe grote afbeeldingen (>100KB) zijn gemarkeerd met 🔥');
+}
+</script>
+
+</body>
+</html>

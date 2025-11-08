@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examen Elektrische Netwerken – Paul Holmes Stijl</title>
+<style>
+  body { font-family: 'Arial', sans-serif; margin: 40px; background: #f8f8f8; color: #111; }
+  h1, h2, h3 { text-align: center; }
+  h1 { margin-bottom: 10px; }
+  .opgave { background: white; border: 1px solid #ccc; padding: 20px; margin-bottom: 25px; border-radius: 10px; }
+  .vraag { margin: 10px 0; }
+  img, svg, object { display: block; margin: 10px auto; max-width: 90%; }
+  code, pre { background: #f0f0f0; padding: 5px; border-radius: 5px; }
+  .punten { font-style: italic; color: #555; }
+  .antwoordruimte { border: 1px dashed #999; height: 120px; margin-top: 10px; }
+  .uitleg { color: #333; font-size: 0.95em; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<h1>Examen Elektrische Netwerken</h1>
+<h3>Gebaseerd op Paul Holmes – Derde Editie</h3>
+
+<section class="opgave">
+  <h2>Opgave 1 – Weerstand en aderdikte</h2>
+  <p><strong>Gegeven:</strong> R = 0,05 Ω, ρ = 1,72×10⁻⁸ Ωm, L = 50 m.</p>
+  <p class="uitleg">Gebruik de formule <code>R = ρ·L/A</code> om de vereiste aderdikte te bepalen.</p>
+  <ol>
+    <li>Schrijf de formule om naar A.</li>
+    <li>Bereken de minimale aderdikte A in mm².</li>
+  </ol>
+  <p class="punten">(5 punten)</p>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 2 – Brugschakeling met condensatoren</h2>
+  <p>Een brug bestaat uit vier identieke condensatoren van 10 μF, gevoed met 10 V bij 50 Hz. Bereken de totale stroom I<sub>tot</sub> door de bron. Geef ook aan of de brug in balans is of niet.</p>
+  <object type="image/svg+xml" data="opdracht2.drawio.svg"></object>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 3 – Niet-ideale spanningsbron</h2>
+  <p>Een accu heeft U₀ = 12 V en levert bij I = 50 A nog U = 8 V. Bepaal:</p>
+  <ol>
+    <li>De inwendige weerstand van de bron.</li>
+    <li>Het werkpunt bij een belasting van 0,33 Ω.</li>
+    <li>Teken het U–I-diagram van bron en belasting en markeer het werkpunt.</li>
+  </ol>
+  <img src="accu_werkpunt.png" alt="U–I karakteristiek van accu en startmotor" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 4 – Resonantiekring</h2>
+  <p>Een parallel L–C kring wordt gevoed door een AC-bron met variabele frequentie. Bereken de resonantiefrequentie waarbij de totale stroom nul wordt.</p>
+  <object type="image/svg+xml" data="opdracht4.drawio.svg"></object>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 5 – Ster–driehoektransformatie</h2>
+  <p>Zet een driehoek met weerstanden van 20 Ω per tak om naar een sterconfiguratie. Bereken alle equivalente weerstanden en de totale weerstand tussen twee klemmen.</p>
+  <object type="image/svg+xml" data="opdracht5.drawio.svg"></object>
+  <img src="delta_naar_ster.png" alt="Driehoek-naar-ster transformatie" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 6 – R–L schakeling</h2>
+  <p>Een kring bevat L = 10 mH en R onbekend. Gegeven: U = 10 V, I = 125 mA en φ = 45°. Bereken:</p>
+  <ul>
+    <li>De totale impedantie Z.</li>
+    <li>De waarde van R en X<sub>L</sub>.</li>
+    <li>De frequentie van de bron.</li>
+  </ul>
+  <object type="image/svg+xml" data="opdracht6.drawio.svg"></object>
+  <img src="rl_fasediagram.png" alt="RL-schakeling fasediagram" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 7 – Condensator: stroom- en spanningsverloop</h2>
+  <p>Een condensator van 100 μF wordt gevoed door een blokvormige stroombron (+1 mA / −1 mA) met T = 8 s. Teken u(t) over de condensator en verklaar de faseverschuiving tussen i(t) en u(t).</p>
+  <img src="u_t_i_t_verband.png" alt="Spanning en stroom bij condensator" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 8 – Cos φ-correctie</h2>
+  <p>Een driefasenmotor neemt 50 kW op bij cos φ = 0,75. De arbeidsfactor wordt gecorrigeerd naar 0,92. Bereken:</p>
+  <ol>
+    <li>Het oorspronkelijke blindvermogen Q₁.</li>
+    <li>Het gewenste blindvermogen Q₂.</li>
+    <li>Het vereiste condensatorblindvermogen Q<sub>c</sub>.</li>
+  </ol>
+  <img src="cos_phi_correctie.png" alt="Cos phi correctie diagram" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 9 – Complexe admittantie</h2>
+  <p>Het netwerk bestaat uit vijf takken met verschillende complexe impedanties. Bereken de totale admittantie en bepaal of het netwerk capacitief of inductief is.</p>
+  <object type="image/svg+xml" data="opdracht9.drawio.svg"></object>
+  <img src="complex_netwerk_boek.png" alt="Complex netwerk uit het boek Paul Holmes" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 10 – Driefasen-transformator Y–Δ</h2>
+  <p>Een transformator is Y–Δ geschakeld. De primaire zijde ontvangt 10 kV en heeft een verhouding N₁/N₂ = 20. Bereken:</p>
+  <ol>
+    <li>De fasespanning en lijnspanning aan de secundaire zijde.</li>
+    <li>De secundaire lijnstroom bij een vermogen van 100 kVA en cos φ = 1.</li>
+    <li>Controleer of de secundaire spanning ongeveer 230 V bedraagt.</li>
+  </ol>
+  <img src="transformator_y_delta.png" alt="Y-Delta transformator schakeling" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 11 – Ster–driehoek motorvermogen</h2>
+  <p>Een motor levert 1 kW in Y-configuratie bij een vaste lijnspanning. Bepaal het vermogen bij Δ-schakeling.</p>
+  <img src="ster_driehoek_motor.png" alt="Ster-Driehoek motor schakeling" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 12 – Modulatieprincipes in motorregeling</h2>
+  <p>Noem twee veelgebruikte modulatieprincipes bij elektromotoren en licht kort hun werking toe (zoals PWM of frequentiemodulatie).</p>
+  <img src="motor_modulatie.png" alt="PWM en FM modulatie in motorregeling" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 13 – Thevenin/Norton-equivalent</h2>
+  <p>Bepaal U₀, I<sub>k</sub> en R<sub>i</sub> en toon aan dat de Thevenin- en Norton-modellen elektrisch equivalent zijn.</p>
+  <img src="thevenin_norton.png" alt="Thevenin en Norton equivalent schema" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 14 – Effectieve waarde</h2>
+  <p>Een spanning stijgt lineair van 0 naar 10 V in 5 ms, blijft 10 V tot 10 ms en daalt daarna naar 0 V op 15 ms. Bereken de effectieve waarde van deze spanning.</p>
+  <img src="ueff_grafiek.png" alt="Ueff blokgolf spanning" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 15 – Parallelschakeling (complex netwerk)</h2>
+  <p>Bereken Y<sub>tot</sub>, I<sub>tot</sub> en geef aan of het netwerk inductief of capacitief is.</p>
+  <object type="image/svg+xml" data="opdracht15.drawio.svg"></object>
+  <img src="blz119_complex_netwerk.png" alt="Netwerk uit boek pagina 119" />
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 16 – Knooppuntanalyse</h2>
+  <p>Gebruik de knooppuntmethode om I<sub>x</sub> in het netwerk te bepalen.</p>
+  <object type="image/svg+xml" data="opdracht16.drawio.svg"></object>
+  <img src="knooppuntanalyse_schema.png" alt="Knooppuntanalyse netwerk" />
+  <div class="antwoordruimte"></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid background -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="400" fill="white"/>
+  <rect width="600" height="400" fill="url(#grid)"/>
+
+  <!-- Axes -->
+  <line x1="80" y1="320" x2="550" y2="320" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="80" y1="320" x2="80" y2="50" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Axis labels -->
+  <text x="560" y="335" font-size="18" font-weight="bold">I (A)</text>
+  <text x="55" y="45" font-size="18" font-weight="bold">U (V)</text>
+
+  <!-- Source characteristic line (blue) -->
+  <line x1="80" y1="80" x2="480" y2="320" stroke="#2196F3" stroke-width="3"/>
+  <text x="420" y="250" font-size="16" fill="#2196F3" font-weight="bold">Bronkarakteristiek</text>
+  <text x="420" y="270" font-size="14" fill="#2196F3">U = U₀ - Rᵢ·I</text>
+
+  <!-- Load characteristic line (red) -->
+  <line x1="80" y1="320" x2="400" y2="120" stroke="#F44336" stroke-width="3"/>
+  <text x="300" y="150" font-size="16" fill="#F44336" font-weight="bold">Belasting</text>
+  <text x="300" y="170" font-size="14" fill="#F44336">U = R_L·I</text>
+
+  <!-- Operating point (green dot) -->
+  <circle cx="280" cy="220" r="8" fill="#4CAF50" stroke="#2E7D32" stroke-width="2"/>
+  <text x="295" y="210" font-size="16" fill="#4CAF50" font-weight="bold">Werkpunt</text>
+  <text x="295" y="230" font-size="14" fill="#4CAF50">(I_w, U_w)</text>
+
+  <!-- Dashed lines to axes -->
+  <line x1="280" y1="220" x2="280" y2="320" stroke="#4CAF50" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="280" y1="220" x2="80" y2="220" stroke="#4CAF50" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- U₀ marker -->
+  <circle cx="80" cy="80" r="5" fill="#2196F3"/>
+  <text x="25" y="85" font-size="16" font-weight="bold">U₀</text>
+  <line x1="75" y1="80" x2="85" y2="80" stroke="black" stroke-width="2"/>
+
+  <!-- Ik marker -->
+  <circle cx="480" cy="320" r="5" fill="#2196F3"/>
+  <text x="470" y="345" font-size="16" font-weight="bold">I_k</text>
+  <line x1="480" y1="315" x2="480" y2="325" stroke="black" stroke-width="2"/>
+
+  <!-- Working point markers -->
+  <text x="285" y="340" font-size="14" font-weight="bold">I_w</text>
+  <text x="45" y="225" font-size="14" font-weight="bold">U_w</text>
+</svg>

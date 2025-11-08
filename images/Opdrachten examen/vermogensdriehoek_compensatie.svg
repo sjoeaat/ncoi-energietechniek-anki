@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="20" font-weight="bold" text-anchor="middle">Vermogensdriehoek - Cos φ Correctie</text>
+
+  <!-- VOOR compensatie (links) -->
+  <g>
+    <text x="200" y="70" font-size="16" font-weight="bold" text-anchor="middle" fill="#F44336">VOOR compensatie (cos φ = 0,75)</text>
+
+    <!-- Triangle -->
+    <line x1="50" y1="300" x2="350" y2="300" stroke="black" stroke-width="3"/>
+    <line x1="50" y1="300" x2="50" y2="100" stroke="#F44336" stroke-width="3"/>
+    <line x1="50" y1="100" x2="350" y2="300" stroke="#9C27B0" stroke-width="3"/>
+
+    <!-- Labels -->
+    <text x="200" y="325" font-size="16" font-weight="bold">P = 50 kW</text>
+    <text x="25" y="200" font-size="16" font-weight="bold" fill="#F44336">Q₁</text>
+    <text x="200" y="190" font-size="16" font-weight="bold" fill="#9C27B0">S₁</text>
+
+    <!-- Angle -->
+    <path d="M 120,300 Q 135,285 140,270" stroke="black" stroke-width="2" fill="none"/>
+    <text x="150" y="285" font-size="14">φ₁ ≈ 41,4°</text>
+    <text x="150" y="302" font-size="14">cos φ₁ = 0,75</text>
+
+    <!-- Values -->
+    <text x="200" y="350" font-size="14" fill="#666" text-anchor="middle">tan φ₁ = 0,882</text>
+    <text x="200" y="370" font-size="14" fill="#666" text-anchor="middle">Q₁ = 50 × 0,882 = 44,1 kVAr</text>
+  </g>
+
+  <!-- Arrow -->
+  <g>
+    <line x1="380" y1="200" x2="420" y2="200" stroke="#4CAF50" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="370" y="180" font-size="14" fill="#4CAF50" font-weight="bold">Compensatie</text>
+    <text x="370" y="230" font-size="12" fill="#4CAF50">Q_c = Q₁ - Q₂</text>
+
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="#4CAF50"/>
+      </marker>
+    </defs>
+  </g>
+
+  <!-- NA compensatie (rechts) -->
+  <g>
+    <text x="600" y="70" font-size="16" font-weight="bold" text-anchor="middle" fill="#4CAF50">NA compensatie (cos φ = 0,92)</text>
+
+    <!-- Triangle (smaller) -->
+    <line x1="450" y1="300" x2="750" y2="300" stroke="black" stroke-width="3"/>
+    <line x1="450" y1="300" x2="450" y2="200" stroke="#4CAF50" stroke-width="3"/>
+    <line x1="450" y1="200" x2="750" y2="300" stroke="#9C27B0" stroke-width="3"/>
+
+    <!-- Labels -->
+    <text x="600" y="325" font-size="16" font-weight="bold">P = 50 kW</text>
+    <text x="425" y="250" font-size="16" font-weight="bold" fill="#4CAF50">Q₂</text>
+    <text x="600" y="240" font-size="16" font-weight="bold" fill="#9C27B0">S₂</text>
+
+    <!-- Angle -->
+    <path d="M 520,300 Q 535,290 540,280" stroke="black" stroke-width="2" fill="none"/>
+    <text x="550" y="290" font-size="14">φ₂ ≈ 23°</text>
+    <text x="550" y="307" font-size="14">cos φ₂ = 0,92</text>
+
+    <!-- Values -->
+    <text x="600" y="350" font-size="14" fill="#666" text-anchor="middle">tan φ₂ = 0,426</text>
+    <text x="600" y="370" font-size="14" fill="#666" text-anchor="middle">Q₂ = 50 × 0,426 = 21,3 kVAr</text>
+  </g>
+
+  <!-- Result box -->
+  <rect x="250" y="260" width="300" height="60" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2" rx="5"/>
+  <text x="400" y="285" font-size="16" font-weight="bold" text-anchor="middle" fill="#2E7D32">Benodigde condensatorbank:</text>
+  <text x="400" y="310" font-size="18" font-weight="bold" text-anchor="middle" fill="#2E7D32">Q_c = 44,1 - 21,3 = 22,8 kVAr</text>
+</svg>
