@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="650" height="450" xmlns="http://www.w3.org/2000/svg">
   <!-- Grid background -->
   <defs>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e0e0e0" stroke-width="1"/>
     </pattern>
   </defs>
-  <rect width="600" height="400" fill="white"/>
-  <rect width="600" height="400" fill="url(#grid)"/>
+  <rect width="650" height="450" fill="white"/>
+  <rect width="650" height="450" fill="url(#grid)"/>
+
+  <!-- Title -->
+  <text x="325" y="30" font-size="20" font-weight="bold" text-anchor="middle">U-I Karakteristiek Niet-Ideale Bron</text>
 
   <!-- Axes -->
-  <line x1="80" y1="320" x2="550" y2="320" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
-  <line x1="80" y1="320" x2="80" y2="50" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="80" y1="370" x2="580" y2="370" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="80" y1="370" x2="80" y2="80" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
 
   <!-- Arrow markers -->
   <defs>
@@ -21,39 +24,49 @@
   </defs>
 
   <!-- Axis labels -->
-  <text x="560" y="335" font-size="18" font-weight="bold">I (A)</text>
-  <text x="55" y="45" font-size="18" font-weight="bold">U (V)</text>
+  <text x="590" y="385" font-size="18" font-weight="bold">I (A)</text>
+  <text x="55" y="75" font-size="18" font-weight="bold">U (V)</text>
 
   <!-- Source characteristic line (blue) -->
-  <line x1="80" y1="80" x2="480" y2="320" stroke="#2196F3" stroke-width="3"/>
-  <text x="420" y="250" font-size="16" fill="#2196F3" font-weight="bold">Bronkarakteristiek</text>
-  <text x="420" y="270" font-size="14" fill="#2196F3">U = U₀ - Rᵢ·I</text>
+  <line x1="80" y1="110" x2="500" y2="370" stroke="#2196F3" stroke-width="3"/>
 
   <!-- Load characteristic line (red) -->
-  <line x1="80" y1="320" x2="400" y2="120" stroke="#F44336" stroke-width="3"/>
-  <text x="300" y="150" font-size="16" fill="#F44336" font-weight="bold">Belasting</text>
-  <text x="300" y="170" font-size="14" fill="#F44336">U = R_L·I</text>
+  <line x1="80" y1="370" x2="420" y2="150" stroke="#F44336" stroke-width="3"/>
 
   <!-- Operating point (green dot) -->
-  <circle cx="280" cy="220" r="8" fill="#4CAF50" stroke="#2E7D32" stroke-width="2"/>
-  <text x="295" y="210" font-size="16" fill="#4CAF50" font-weight="bold">Werkpunt</text>
-  <text x="295" y="230" font-size="14" fill="#4CAF50">(I_w, U_w)</text>
+  <circle cx="300" cy="260" r="8" fill="#4CAF50" stroke="#2E7D32" stroke-width="2"/>
 
   <!-- Dashed lines to axes -->
-  <line x1="280" y1="220" x2="280" y2="320" stroke="#4CAF50" stroke-width="1" stroke-dasharray="5,5"/>
-  <line x1="280" y1="220" x2="80" y2="220" stroke="#4CAF50" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="300" y1="260" x2="300" y2="370" stroke="#4CAF50" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="300" y1="260" x2="80" y2="260" stroke="#4CAF50" stroke-width="1" stroke-dasharray="5,5"/>
 
   <!-- U₀ marker -->
-  <circle cx="80" cy="80" r="5" fill="#2196F3"/>
-  <text x="25" y="85" font-size="16" font-weight="bold">U₀</text>
-  <line x1="75" y1="80" x2="85" y2="80" stroke="black" stroke-width="2"/>
+  <circle cx="80" cy="110" r="5" fill="#2196F3"/>
+  <text x="25" y="115" font-size="16" font-weight="bold">U₀</text>
+  <line x1="75" y1="110" x2="85" y2="110" stroke="black" stroke-width="2"/>
 
   <!-- Ik marker -->
-  <circle cx="480" cy="320" r="5" fill="#2196F3"/>
-  <text x="470" y="345" font-size="16" font-weight="bold">I_k</text>
-  <line x1="480" y1="315" x2="480" y2="325" stroke="black" stroke-width="2"/>
+  <circle cx="500" cy="370" r="5" fill="#2196F3"/>
+  <text x="490" y="395" font-size="16" font-weight="bold">I<tspan baseline-shift="sub" font-size="11">k</tspan></text>
+  <line x1="500" y1="365" x2="500" y2="375" stroke="black" stroke-width="2"/>
 
   <!-- Working point markers -->
-  <text x="285" y="340" font-size="14" font-weight="bold">I_w</text>
-  <text x="45" y="225" font-size="14" font-weight="bold">U_w</text>
+  <text x="305" y="395" font-size="14" font-weight="bold">I<tspan baseline-shift="sub" font-size="10">w</tspan></text>
+  <text x="40" y="265" font-size="14" font-weight="bold">U<tspan baseline-shift="sub" font-size="10">w</tspan></text>
+
+  <!-- Legend boxes - NO overlap with lines! -->
+  <rect x="430" y="90" width="190" height="85" fill="#E3F2FD" stroke="#2196F3" stroke-width="2" rx="5"/>
+  <text x="525" y="110" font-size="15" fill="#1976D2" font-weight="bold" text-anchor="middle">Bronkarakteristiek</text>
+  <text x="525" y="130" font-size="13" fill="#1565C0" text-anchor="middle">U = U₀ - R<tspan baseline-shift="sub" font-size="9">i</tspan>·I</text>
+  <text x="525" y="150" font-size="12" fill="#666" text-anchor="middle">Niet-ideale bron met</text>
+  <text x="525" y="168" font-size="12" fill="#666" text-anchor="middle">inwendige weerstand</text>
+
+  <rect x="140" y="90" width="170" height="70" fill="#FFEBEE" stroke="#F44336" stroke-width="2" rx="5"/>
+  <text x="225" y="110" font-size="15" fill="#C62828" font-weight="bold" text-anchor="middle">Belastinglijn</text>
+  <text x="225" y="130" font-size="13" fill="#D32F2F" text-anchor="middle">U = R<tspan baseline-shift="sub" font-size="9">L</tspan>·I</text>
+  <text x="225" y="150" font-size="12" fill="#666" text-anchor="middle">Ohm's wet</text>
+
+  <rect x="315" y="240" width="140" height="50" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2" rx="5"/>
+  <text x="385" y="258" font-size="14" fill="#2E7D32" font-weight="bold" text-anchor="middle">Werkpunt</text>
+  <text x="385" y="278" font-size="13" fill="#388E3C" text-anchor="middle">(I<tspan baseline-shift="sub" font-size="9">w</tspan>, U<tspan baseline-shift="sub" font-size="9">w</tspan>)</text>
 </svg>
