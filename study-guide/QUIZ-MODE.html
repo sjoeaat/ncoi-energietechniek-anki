@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Quiz Mode - NCOI Energietechniek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #1e3c72;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .stats-bar {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .quiz-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            min-height: 400px;
+        }
+
+        .question-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-number {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .question-chapter {
+            opacity: 0.9;
+        }
+
+        .question-content {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .answer-section {
+            margin-top: 30px;
+        }
+
+        .answer-content {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+
+        .answer-content.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-show {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-show:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+
+        .btn-correct {
+            background: #4caf50;
+            color: white;
+        }
+
+        .btn-correct:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76,175,80,0.4);
+        }
+
+        .btn-wrong {
+            background: #f44336;
+            color: white;
+        }
+
+        .btn-wrong:hover {
+            background: #da190b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244,67,54,0.4);
+        }
+
+        .btn-next {
+            background: #ff9800;
+            color: white;
+            grid-column: span 3;
+        }
+
+        .btn-next:hover {
+            background: #fb8c00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,152,0,0.4);
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .filter-section {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .filter-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .filter-btn {
+            padding: 10px 15px;
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .filter-btn:hover {
+            border-color: #667eea;
+        }
+
+        .end-screen {
+            text-align: center;
+            padding: 50px;
+            display: none;
+        }
+
+        .end-screen.show {
+            display: block;
+        }
+
+        .end-score {
+            font-size: 4em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .restart-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        .restart-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+
+        @media (max-width: 768px) {
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-next {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Quiz Mode</h1>
+            <p>Test je kennis van Energietechniek!</p>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-number" id="currentQuestion">0</div>
+                <div class="stat-label">Vraag</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="totalQuestions">0</div>
+                <div class="stat-label">Totaal</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="correctCount">0</div>
+                <div class="stat-label">Correct</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="accuracy">0%</div>
+                <div class="stat-label">Score</div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h3 style="margin-bottom: 10px;">📚 Filter op Hoofdstuk:</h3>
+            <div class="filter-group" id="chapterFilters">
+                <button class="filter-btn active" data-filter="all">Alle Hoofdstukken</button>
+                <button class="filter-btn" data-filter="h19">H 1.9</button>
+                <button class="filter-btn" data-filter="h26">H 2.6</button>
+                <button class="filter-btn" data-filter="h311">H 3.11</button>
+                <button class="filter-btn" data-filter="h44">H 4.4</button>
+                <button class="filter-btn" data-filter="h78">H 7.8</button>
+                <button class="filter-btn" data-filter="h97">H 9.7</button>
+            </div>
+        </div>
+
+        <div class="quiz-card" id="quizCard">
+            <div class="question-header">
+                <span class="question-number" id="questionLabel">Vraag 1/10</span>
+                <span class="question-chapter" id="chapterLabel">H 1.9</span>
+            </div>
+
+            <div class="question-content" id="questionText">
+                Laden...
+            </div>
+
+            <div class="answer-section">
+                <button class="btn-show" id="showAnswerBtn" onclick="showAnswer()">
+                    📖 Toon Antwoord
+                </button>
+
+                <div class="answer-content" id="answerContent">
+                    <h3 style="margin-bottom: 15px;">✅ Antwoord:</h3>
+                    <p id="answerText"></p>
+                </div>
+
+                <div class="button-group" id="ratingButtons" style="display: none;">
+                    <button class="btn-correct" onclick="markAnswer(true)">
+                        ✓ Correct
+                    </button>
+                    <button class="btn-wrong" onclick="markAnswer(false)">
+                        ✗ Fout
+                    </button>
+                    <button class="btn-next" onclick="nextQuestion()">
+                        Volgende Vraag →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="end-screen" id="endScreen">
+            <h2 style="font-size: 2em; color: #667eea;">🎉 Quiz Voltooid!</h2>
+            <div class="end-score" id="finalScore">0%</div>
+            <p style="font-size: 1.2em; color: #666; margin-bottom: 10px;">
+                Je hebt <span id="finalCorrect">0</span> van de <span id="finalTotal">0</span> vragen goed!
+            </p>
+            <button class="restart-btn" onclick="restartQuiz()">
+                🔄 Opnieuw Beginnen
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data - SAMPLE QUESTIONS (kan uitgebreid worden met alle opgaven)
+        const questions = [
+            {
+                chapter: 'h19',
+                chapterLabel: 'H 1.9',
+                question: 'Een zaklantaarn met 3 batterijen van elk 1,5V geeft een stroom van 0,3A. Bereken de totale weerstand van de lamp.',
+                answer: 'U_totaal = 3 × 1,5V = 4,5V<br>R = U/I = 4,5V / 0,3A = <b>15 Ω</b><br><br>Fysische interpretatie: De lamp heeft een weerstand van 15Ω. Bij hogere spanning (meer batterijen) zou dezelfde lamp meer stroom trekken volgens de wet van Ohm.'
+            },
+            {
+                chapter: 'h26',
+                chapterLabel: 'H 2.6',
+                question: 'Drie weerstanden van 10Ω, 20Ω en 30Ω staan in serie. Bereken de totale weerstand.',
+                answer: 'In serie: R_totaal = R₁ + R₂ + R₃<br>R_totaal = 10 + 20 + 30 = <b>60 Ω</b><br><br>Fysische interpretatie: In een serieschakeling tellen alle weerstanden gewoon bij elkaar op. De stroom moet door alle weerstanden heen, dus de totale weerstand is de som.'
+            },
+            {
+                chapter: 'h26',
+                chapterLabel: 'H 2.6',
+                question: 'Twee weerstanden van 10Ω en 40Ω staan parallel. Bereken de totale weerstand.',
+                answer: '1/R_totaal = 1/R₁ + 1/R₂<br>1/R_totaal = 1/10 + 1/40 = 4/40 + 1/40 = 5/40<br>R_totaal = 40/5 = <b>8 Ω</b><br><br>Snelle methode: R_totaal = (R₁×R₂)/(R₁+R₂) = (10×40)/(10+40) = 400/50 = 8Ω'
+            },
+            {
+                chapter: 'h44',
+                chapterLabel: 'H 4.4',
+                question: 'Een verwarmingselement heeft een vermogen van 2000W bij 230V. Bereken de weerstand.',
+                answer: 'P = U²/R → R = U²/P<br>R = 230² / 2000<br>R = 52900 / 2000 = <b>26,45 Ω</b><br><br>Verificatie: P = U²/R = 230²/26,45 ≈ 2000W ✓'
+            },
+            {
+                chapter: 'h311',
+                chapterLabel: 'H 3.11',
+                question: 'Wat is het superpositieprincipe in netwerkanalyse?',
+                answer: '<b>Superpositieprincipe:</b><br>Analyseer elke bron (spanning/stroom) afzonderlijk terwijl andere bronnen "uit" staan:<br>• Spanningsbronnen → kortsluiten (0V)<br>• Stroombronnen → open maken (0A)<br><br>Tel daarna alle individuele bijdragen op.<br><br>Geldt alleen voor <b>lineaire</b> netwerken!'
+            },
+            {
+                chapter: 'h44',
+                chapterLabel: 'H 4.4',
+                question: 'Bij welke belastingsweerstand wordt maximaal vermogen overgedragen van een Thévenin equivalent?',
+                answer: '<b>Vermogensaanpassingstheorema:</b><br>Maximaal vermogen in de belasting treedt op wanneer:<br><b>R_belasting = R_Thévenin</b><br><br>Het rendement is dan altijd <b>50%</b> (helft in bron, helft in last).<br><br>Voor hoog rendement: R_belasting >> R_Thévenin'
+            },
+            {
+                chapter: 'h78',
+                chapterLabel: 'H 7.8',
+                question: 'Wat is de impedantie van een condensator van 10μF bij 50Hz?',
+                answer: 'Z_C = 1/(2πfC)<br>Z_C = 1/(2π × 50 × 10×10⁻⁶)<br>Z_C = 1/(3,14×10⁻³)<br>Z_C = <b>318,3 Ω</b> (capacitief, -j318,3)<br><br>Hogere frequentie → lagere impedantie!'
+            },
+            {
+                chapter: 'h97',
+                chapterLabel: 'H 9.7',
+                question: 'Een spoel van 20mH heeft bij 7950Hz een reactantie X_L. Bereken X_L.',
+                answer: 'X_L = 2πfL<br>X_L = 2π × 7950 × 20×10⁻³<br>X_L = 2π × 7950 × 0,02<br>X_L = <b>999 Ω</b> ≈ 1 kΩ (inductief, +j999)<br><br>Hogere frequentie → hogere impedantie bij spoelen!'
+            },
+            {
+                chapter: 'h19',
+                chapterLabel: 'H 1.9',
+                question: 'Wat zegt de wet van Kirchhoff (KCL) over stromen in een knooppunt?',
+                answer: '<b>Kirchhoff Knooppuntwet (KCL):</b><br>De som van alle stromen naar een knooppunt = 0<br><br>Σ I_in = Σ I_out<br><br>Dit volgt uit het <b>behoud van lading</b>: stroom kan niet zomaar verdwijnen of ontstaan in een knooppunt.'
+            },
+            {
+                chapter: 'h26',
+                chapterLabel: 'H 2.6',
+                question: 'Waarom worden twee 100Ω weerstanden parallel vaak gebruikt in plaats van één 50Ω?',
+                answer: '<b>Praktische redenen:</b><br>1. <b>Vermogenspreiding:</b> Elke weerstand draagt helft van het vermogen<br>2. <b>Beschikbaarheid:</b> 100Ω is een standaard waarde<br>3. <b>Redundantie:</b> Als één kapot gaat, werkt circuit nog (100Ω ipv 50Ω)<br>4. <b>Dissipatie:</b> Betere warmteafvoer met twee componenten'
+            }
+        ];
+
+        // Quiz state
+        let currentQuestionIndex = 0;
+        let correctAnswers = 0;
+        let answeredQuestions = 0;
+        let activeFilter = 'all';
+        let filteredQuestions = [...questions];
+
+        // Initialize
+        function init() {
+            updateFilters();
+            loadQuestion();
+            updateStats();
+        }
+
+        // Filter logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                activeFilter = this.dataset.filter;
+                applyFilter();
+            });
+        });
+
+        function applyFilter() {
+            if (activeFilter === 'all') {
+                filteredQuestions = [...questions];
+            } else {
+                filteredQuestions = questions.filter(q => q.chapter === activeFilter);
+            }
+            currentQuestionIndex = 0;
+            correctAnswers = 0;
+            answeredQuestions = 0;
+            loadQuestion();
+            updateStats();
+        }
+
+        function updateFilters() {
+            document.getElementById('totalQuestions').textContent = filteredQuestions.length;
+        }
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= filteredQuestions.length) {
+                showEndScreen();
+                return;
+            }
+
+            const q = filteredQuestions[currentQuestionIndex];
+            document.getElementById('questionLabel').textContent = `Vraag ${currentQuestionIndex + 1}/${filteredQuestions.length}`;
+            document.getElementById('chapterLabel').textContent = q.chapterLabel;
+            document.getElementById('questionText').textContent = q.question;
+            document.getElementById('answerText').innerHTML = q.answer;
+
+            // Reset UI
+            document.getElementById('answerContent').classList.remove('show');
+            document.getElementById('showAnswerBtn').style.display = 'block';
+            document.getElementById('ratingButtons').style.display = 'none';
+
+            updateProgress();
+            updateStats();
+        }
+
+        function showAnswer() {
+            document.getElementById('answerContent').classList.add('show');
+            document.getElementById('showAnswerBtn').style.display = 'none';
+            document.getElementById('ratingButtons').style.display = 'grid';
+        }
+
+        function markAnswer(isCorrect) {
+            if (isCorrect) {
+                correctAnswers++;
+            }
+            answeredQuestions++;
+            updateStats();
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+
+        function updateStats() {
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('totalQuestions').textContent = filteredQuestions.length;
+            document.getElementById('correctCount').textContent = correctAnswers;
+
+            const accuracy = answeredQuestions > 0
+                ? Math.round((correctAnswers / answeredQuestions) * 100)
+                : 0;
+            document.getElementById('accuracy').textContent = accuracy + '%';
+        }
+
+        function updateProgress() {
+            const progress = (currentQuestionIndex / filteredQuestions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function showEndScreen() {
+            document.getElementById('quizCard').style.display = 'none';
+            document.getElementById('endScreen').classList.add('show');
+
+            const finalAccuracy = answeredQuestions > 0
+                ? Math.round((correctAnswers / answeredQuestions) * 100)
+                : 0;
+
+            document.getElementById('finalScore').textContent = finalAccuracy + '%';
+            document.getElementById('finalCorrect').textContent = correctAnswers;
+            document.getElementById('finalTotal').textContent = answeredQuestions;
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            correctAnswers = 0;
+            answeredQuestions = 0;
+            document.getElementById('quizCard').style.display = 'block';
+            document.getElementById('endScreen').classList.remove('show');
+            loadQuestion();
+        }
+
+        // Start quiz
+        init();
+    </script>
+</body>
+</html>

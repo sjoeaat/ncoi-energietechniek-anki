@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📐 Formuleblad Energietechniek - NCOI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @media print {
+            body { background: white !important; }
+            .no-print { display: none; }
+            .chapter { page-break-inside: avoid; }
+        }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #1e3c72;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        .print-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+        .chapter {
+            margin: 30px 0;
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+        }
+        .chapter-title {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .formula-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .formula-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        .formula-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        .formula-table tr:hover {
+            background: #f5f5f5;
+        }
+        .formula-name {
+            font-weight: bold;
+            color: #333;
+        }
+        .formula-math {
+            font-family: "Courier New", monospace;
+            font-size: 1.1em;
+            color: #667eea;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .formula-desc {
+            color: #666;
+            font-style: italic;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📐 Formuleblad Energietechniek</h1>
+        <div class="subtitle">NCOI - Elektrische Netwerken (Holmes 3e editie)</div>
+        
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Printen / PDF Opslaan</button>
+        
+        <div class="warning-box no-print">
+            <strong>⚠️ Let op:</strong> Dit formuleblad is automatisch gegenereerd uit de studiegids.
+            Controleer altijd met het officiële NCOI formuleblad welke formules tijdens het examen beschikbaar zijn!
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 1.9 - Wet van Ohm & Kirchhoff</div>
+            <table class="formula-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Formule</th>
+                        <th style="width: 35%;">Wiskundige Notatie</th>
+                        <th style="width: 40%;">Betekenis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="formula-name">Wet van Ohm</td>
+                        <td class="formula-math">U = I · R</td>
+                        <td class="formula-desc">Spanning = Stroom × Weerstand</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Wet van Ohm (stroom)</td>
+                        <td class="formula-math">I = U / R</td>
+                        <td class="formula-desc">Stroom = Spanning / Weerstand</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Wet van Ohm (weerstand)</td>
+                        <td class="formula-math">R = U / I</td>
+                        <td class="formula-desc">Weerstand = Spanning / Stroom</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Kirchhoff Knooppuntwet (KCL)</td>
+                        <td class="formula-math">Σ I_in = Σ I_uit</td>
+                        <td class="formula-desc">Som van stromen in knooppunt = 0</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Kirchhoff Spanningswet (KVL)</td>
+                        <td class="formula-math">Σ U_maas = 0</td>
+                        <td class="formula-desc">Som van spanningen in maas = 0</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Vermogen</td>
+                        <td class="formula-math">P = U · I</td>
+                        <td class="formula-desc">Vermogen = Spanning × Stroom</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Vermogen (wet van Ohm)</td>
+                        <td class="formula-math">P = I² · R = U² / R</td>
+                        <td class="formula-desc">Alternatieve vormen</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 2.6 - Serie & Parallel</div>
+            <table class="formula-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Formule</th>
+                        <th style="width: 35%;">Wiskundige Notatie</th>
+                        <th style="width: 40%;">Betekenis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="formula-name">Serie weerstanden</td>
+                        <td class="formula-math">R_totaal = R₁ + R₂ + R₃ + ...</td>
+                        <td class="formula-desc">Weerstanden tellen op</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Parallel weerstanden</td>
+                        <td class="formula-math">1/R_totaal = 1/R₁ + 1/R₂ + 1/R₃ + ...</td>
+                        <td class="formula-desc">Reciproken tellen op</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Parallel (2 weerstanden)</td>
+                        <td class="formula-math">R_totaal = (R₁ · R₂) / (R₁ + R₂)</td>
+                        <td class="formula-desc">Product / Som</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Geleidingen parallel</td>
+                        <td class="formula-math">G_totaal = G₁ + G₂ + G₃ + ...</td>
+                        <td class="formula-desc">G = 1/R</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Spanningsdeler</td>
+                        <td class="formula-math">U_x = U_totaal · (R_x / R_totaal)</td>
+                        <td class="formula-desc">Spanning over R_x</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Stroomdeler</td>
+                        <td class="formula-math">I_x = I_totaal · (R_totaal / R_x)</td>
+                        <td class="formula-desc">Stroom door R_x</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 3.11 - Netwerk Analyse</div>
+            <table class="formula-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Formule</th>
+                        <th style="width: 35%;">Wiskundige Notatie</th>
+                        <th style="width: 40%;">Betekenis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="formula-name">Thévenin spanning</td>
+                        <td class="formula-math">U_th = U_openkleme</td>
+                        <td class="formula-desc">Open klem spanning</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Thévenin weerstand</td>
+                        <td class="formula-math">R_th = U_th / I_kortsluit</td>
+                        <td class="formula-desc">Interne weerstand</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Norton stroom</td>
+                        <td class="formula-math">I_N = I_kortsluit</td>
+                        <td class="formula-desc">Kortsluitstroom</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Norton ↔ Thévenin</td>
+                        <td class="formula-math">U_th = I_N · R_th</td>
+                        <td class="formula-desc">Omrekening</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Maasstromen</td>
+                        <td class="formula-math">Σ (R · I_maas) = Σ U_bron</td>
+                        <td class="formula-desc">Per maas</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Superpositie</td>
+                        <td class="formula-math">I_totaal = I₁ + I₂ + ... + I_n</td>
+                        <td class="formula-desc">Som van alle bronnen</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 4.4 - Energie & Vermogen</div>
+            <table class="formula-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Formule</th>
+                        <th style="width: 35%;">Wiskundige Notatie</th>
+                        <th style="width: 40%;">Betekenis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="formula-name">Energie</td>
+                        <td class="formula-math">E = P · t</td>
+                        <td class="formula-desc">Energie = Vermogen × Tijd</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Energie (Ws → kWh)</td>
+                        <td class="formula-math">E[kWh] = E[Ws] / 3.600.000</td>
+                        <td class="formula-desc">Omrekening</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Rendement</td>
+                        <td class="formula-math">η = P_nuttig / P_totaal</td>
+                        <td class="formula-desc">Rendement (0-1 of 0-100%)</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Vermogensaanpassing</td>
+                        <td class="formula-math">P_max bij R_last = R_th</td>
+                        <td class="formula-desc">Maximaal vermogen</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Vermogen bij aanpassing</td>
+                        <td class="formula-math">P_max = U_th² / (4·R_th)</td>
+                        <td class="formula-desc">Bij R_last = R_th</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Rendement bij aanpassing</td>
+                        <td class="formula-math">η = 50%</td>
+                        <td class="formula-desc">Altijd 50% bij P_max</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 5.5 - Wisselspanning</div>
+            <table class="formula-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Formule</th>
+                        <th style="width: 35%;">Wiskundige Notatie</th>
+                        <th style="width: 40%;">Betekenis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="formula-name">Effectieve waarde (sinus)</td>
+                        <td class="formula-math">U_eff = U_top / √2</td>
+                        <td class="formula-desc">RMS waarde</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Gemiddelde waarde (sinus)</td>
+                        <td class="formula-math">U_gem = 2·U_top / π</td>
+                        <td class="formula-desc">Rectified average</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Topwaarde uit effectief</td>
+                        <td class="formula-math">U_top = U_eff · √2</td>
+                        <td class="formula-desc">Peak voltage</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Frequentie</td>
+                        <td class="formula-math">f = 1 / T</td>
+                        <td class="formula-desc">Frequentie = 1 / Periode</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Hoekfrequentie</td>
+                        <td class="formula-math">ω = 2πf</td>
+                        <td class="formula-desc">rad/s</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Sinusvorm</td>
+                        <td class="formula-math">u(t) = U_top · sin(ωt + φ)</td>
+                        <td class="formula-desc">Tijddomein</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 6.8 - C & L</div>
+            <table class="formula-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Formule</th>
+                        <th style="width: 35%;">Wiskundige Notatie</th>
+                        <th style="width: 40%;">Betekenis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="formula-name">Capaciteit (Q)</td>
+                        <td class="formula-math">Q = C · U</td>
+                        <td class="formula-desc">Lading = Capaciteit × Spanning</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Capaciteit (stroom)</td>
+                        <td class="formula-math">I = C · dU/dt</td>
+                        <td class="formula-desc">Stroom door condensator</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Energie condensator</td>
+                        <td class="formula-math">E = ½ · C · U²</td>
+                        <td class="formula-desc">Opgeslagen energie</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Inductie (spanning)</td>
+                        <td class="formula-math">U = L · dI/dt</td>
+                        <td class="formula-desc">Spanning over spoel</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Energie spoel</td>
+                        <td class="formula-math">E = ½ · L · I²</td>
+                        <td class="formula-desc">Opgeslagen energie</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 7.8 & H 9.7 - RLC & Complex</div>
+            <table class="formula-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Formule</th>
+                        <th style="width: 35%;">Wiskundige Notatie</th>
+                        <th style="width: 40%;">Betekenis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="formula-name">Capacitieve reactantie</td>
+                        <td class="formula-math">X_C = 1/(2πfC)</td>
+                        <td class="formula-desc">Impedantie condensator (Ω)</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Inductieve reactantie</td>
+                        <td class="formula-math">X_L = 2πfL</td>
+                        <td class="formula-desc">Impedantie spoel (Ω)</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Impedantie condensator</td>
+                        <td class="formula-math">Z_C = -j·X_C</td>
+                        <td class="formula-desc">Complex notatie</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Impedantie spoel</td>
+                        <td class="formula-math">Z_L = +j·X_L</td>
+                        <td class="formula-desc">Complex notatie</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Impedantie serie</td>
+                        <td class="formula-math">Z = R + jX</td>
+                        <td class="formula-desc">X = X_L - X_C</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Impedantie magnitude</td>
+                        <td class="formula-math">|Z| = √(R² + X²)</td>
+                        <td class="formula-desc">Absolute waarde</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Fasehoek</td>
+                        <td class="formula-math">φ = arctan(X/R)</td>
+                        <td class="formula-desc">Faseverschuiving</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Serie RLC</td>
+                        <td class="formula-math">Z = R + j(X_L - X_C)</td>
+                        <td class="formula-desc">Totale impedantie</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Parallel (complex)</td>
+                        <td class="formula-math">1/Z = 1/Z₁ + 1/Z₂ + ...</td>
+                        <td class="formula-desc">Complexe berekening</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Resonantiefrequentie</td>
+                        <td class="formula-math">f_res = 1/(2π√(LC))</td>
+                        <td class="formula-desc">Series resonantie</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 11.7 - Vermogen (AC)</div>
+            <table class="formula-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Formule</th>
+                        <th style="width: 35%;">Wiskundige Notatie</th>
+                        <th style="width: 40%;">Betekenis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="formula-name">Schijnbaar vermogen</td>
+                        <td class="formula-math">S = U · I</td>
+                        <td class="formula-desc">Volt-Ampere (VA)</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Werkelijk vermogen</td>
+                        <td class="formula-math">P = U · I · cos(φ)</td>
+                        <td class="formula-desc">Watt (W)</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Blindvermogen</td>
+                        <td class="formula-math">Q = U · I · sin(φ)</td>
+                        <td class="formula-desc">VAR</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Vermogensdriehoek</td>
+                        <td class="formula-math">S² = P² + Q²</td>
+                        <td class="formula-desc">Pythagoras</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Arbeidsfactor</td>
+                        <td class="formula-math">cos(φ) = P / S</td>
+                        <td class="formula-desc">Power factor</td>
+                    </tr>
+                    <tr>
+                        <td class="formula-name">Blindvermogen compensatie</td>
+                        <td class="formula-math">Q_C = Q_L - Q_gewenst</td>
+                        <td class="formula-desc">Condensator toevoegen</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="text-align: center; color: #999; margin-top: 50px; padding-top: 20px; border-top: 2px solid #ddd;">
+            <p><strong>Afkortingen:</strong></p>
+            <p style="margin-top: 10px;">
+                U = Spanning (V) | I = Stroom (A) | R = Weerstand (Ω) | 
+                P = Vermogen (W) | E = Energie (J/Wh) | 
+                f = Frequentie (Hz) | ω = Hoekfrequentie (rad/s)<br>
+                C = Capaciteit (F) | L = Inductie (H) | 
+                Z = Impedantie (Ω) | X = Reactantie (Ω) | 
+                φ = Fasehoek (rad/°)<br>
+                j = Imaginaire eenheid (√-1) | 
+                S = Schijnbaar vermogen (VA) | Q = Blindvermogen (VAR)
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                Auto-gegenereerd • NCOI Energietechniek • 2025
+            </p>
+        </div>
+    </div>
+</body>
+</html>

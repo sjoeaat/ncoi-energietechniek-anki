@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Study Dashboard - NCOI Energietechniek</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .link-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102,126,234,0.3);
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102,126,234,0.5);
+        }
+
+        .link-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .link-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .link-desc {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .stats-section {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stats-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .chapter-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .chapter-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .chapter-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .chapter-info {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .difficulty-bar {
+            width: 100%;
+            height: 8px;
+            background: #ddd;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .difficulty-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50, #ffc107, #f44336);
+            border-radius: 4px;
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .tips-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .tip-item {
+            background: rgba(255,255,255,0.8);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #f57c00;
+        }
+
+        .exam-countdown {
+            background: linear-gradient(135deg, #f44336 0%, #e91e63 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .countdown-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .countdown-timer {
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .countdown-label {
+            font-size: 1em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Study Dashboard</h1>
+        <div class="subtitle">Jouw centrale hub voor NCOI Energietechniek studie</div>
+
+        <div class="exam-countdown">
+            <div class="countdown-title">⏰ Examen Countdown</div>
+            <div class="countdown-timer" id="daysToExam">?</div>
+            <div class="countdown-label">Dagen tot examen</div>
+            <div style="margin-top: 15px; font-size: 0.9em;">
+                <button onclick="setExamDate()" style="background: white; color: #f44336; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                    📅 Stel Examendatum In
+                </button>
+            </div>
+        </div>
+
+        <div class="quick-links">
+            <a href="COMPLETE-INDEX-ALL-OPGAVEN.html" class="link-card">
+                <div class="link-icon">📚</div>
+                <div class="link-title">Complete Index</div>
+                <div class="link-desc">Browse alle 84 opgaven</div>
+            </a>
+
+            <a href="QUIZ-MODE.html" class="link-card">
+                <div class="link-icon">🎯</div>
+                <div class="link-title">Quiz Mode</div>
+                <div class="link-desc">Test je kennis interactief</div>
+            </a>
+
+            <a href="PROGRESS-TRACKER.html" class="link-card">
+                <div class="link-icon">📊</div>
+                <div class="link-title">Progress Tracker</div>
+                <div class="link-desc">Track je voortgang</div>
+            </a>
+
+            <a href="FORMULEBLAD-AUTO.html" class="link-card">
+                <div class="link-icon">📐</div>
+                <div class="link-title">Formuleblad</div>
+                <div class="link-desc">52 formules voor examen</div>
+            </a>
+
+            <a href="PRINT-READY-COMPLETE-GUIDE.html" class="link-card">
+                <div class="link-icon">🖨️</div>
+                <div class="link-title">PDF Export</div>
+                <div class="link-desc">Print hele studiegids</div>
+            </a>
+
+            <a href="../generated-cards/anki-deck-KENNIS-AUTO-GENERATED.csv" class="link-card">
+                <div class="link-icon">🎴</div>
+                <div class="link-title">Anki Decks</div>
+                <div class="link-desc">Flashcards voor herhaling</div>
+            </a>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-title">📊 Repository Statistieken</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">84</div>
+                    <div class="stat-label">Totaal Opgaven</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">Hoofdstukken</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">52</div>
+                    <div class="stat-label">Formules</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Anki Kaarten</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">~29k</div>
+                    <div class="stat-label">Regels Code</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">MathML Support</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-title">📖 Hoofdstuk Overzicht</div>
+            <div class="chapter-breakdown">
+                <div class="chapter-card">
+                    <div class="chapter-name">H 1.9 - Wet van Ohm & Kirchhoff</div>
+                    <div class="chapter-info">
+                        <span>3 opgaven</span>
+                        <span>⭐ Basis</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 30%;"></div>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-name">H 2.6 - Serie & Parallel</div>
+                    <div class="chapter-info">
+                        <span>7 opgaven</span>
+                        <span>⭐⭐ Gemiddeld</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-name">H 3.11 - Netwerk Analyse</div>
+                    <div class="chapter-info">
+                        <span>13 opgaven</span>
+                        <span>⭐⭐⭐ Gevorderd</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 75%;"></div>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-name">H 4.4 - Energie & Vermogen</div>
+                    <div class="chapter-info">
+                        <span>3 opgaven</span>
+                        <span>⭐⭐ Gemiddeld</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 55%;"></div>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-name">H 5.5 - Wisselspanning</div>
+                    <div class="chapter-info">
+                        <span>3 opgaven</span>
+                        <span>⭐⭐ Gemiddeld</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-name">H 6.8 - Capaciteit & Inductie</div>
+                    <div class="chapter-info">
+                        <span>2 opgaven</span>
+                        <span>⭐⭐ Gemiddeld</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-name">H 7.8 - RLC Schakelingen</div>
+                    <div class="chapter-info">
+                        <span>7 opgaven</span>
+                        <span>⭐⭐⭐ Gevorderd</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 70%;"></div>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-name">H 9.7 - Complexe Impedantie</div>
+                    <div class="chapter-info">
+                        <span>4 opgaven</span>
+                        <span>⭐⭐⭐ Gevorderd</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-name">H 10.6 - Complex Rekenen</div>
+                    <div class="chapter-info">
+                        <span>1 opgave</span>
+                        <span>⭐⭐⭐ Gevorderd</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="chapter-card">
+                    <div class="chapter-name">H 11.7 - Vermogen (AC)</div>
+                    <div class="chapter-info">
+                        <span>1 opgave</span>
+                        <span>⭐⭐⭐ Gevorderd</span>
+                    </div>
+                    <div class="difficulty-bar">
+                        <div class="difficulty-fill" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <div class="tips-title">💡 Study Tips & Strategie</div>
+
+            <div class="tip-item">
+                <strong>🎯 Aanbevolen Volgorde:</strong> Begin met H 1.9 en H 2.6 (basis). Deze vormen de fundatie voor alles wat komt.
+            </div>
+
+            <div class="tip-item">
+                <strong>⏰ Dagelijks Ritme:</strong> 2-4 opgaven per dag = 21-42 dagen voor complete coverage. Consistency is belangrijker dan marathon sessies.
+            </div>
+
+            <div class="tip-item">
+                <strong>🔄 Spaced Repetition:</strong> Gebruik Anki decks dagelijks (15-20 min). Review oude opgaven elke 3-7 dagen.
+            </div>
+
+            <div class="tip-item">
+                <strong>📝 Active Recall:</strong> Gebruik Quiz Mode zonder antwoorden te kijken. Test jezelf VOORDAT je de uitwerking leest.
+            </div>
+
+            <div class="tip-item">
+                <strong>🎨 Fysische Interpretatie:</strong> Begrijp WHY, niet alleen WHAT. Elke opgave heeft een "fysische betekenis" sectie - lees deze altijd!
+            </div>
+
+            <div class="tip-item">
+                <strong>📐 Formuleblad:</strong> Print het formuleblad en oefen ermee. Tijdens het examen heb je ALLEEN dit blad beschikbaar.
+            </div>
+
+            <div class="tip-item">
+                <strong>🚨 Focus Gebieden:</strong> H 3.11 (Thévenin/Norton) en H 7.8 (RLC) zijn examen-kritisch. Besteed hier extra tijd aan.
+            </div>
+
+            <div class="tip-item">
+                <strong>📊 Track Progress:</strong> Gebruik de Progress Tracker om motivatie hoog te houden. Kleine successen stapelen zich op!
+            </div>
+        </div>
+
+        <div style="text-align: center; color: #999; margin-top: 50px; padding-top: 20px; border-top: 2px solid #ddd;">
+            <p style="font-size: 1.1em; font-weight: bold;">🎓 NCOI Energietechniek - Study Dashboard</p>
+            <p style="margin-top: 10px;">Elektrische Netwerken (3e editie) - Paul Holmes</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Auto-gegenereerd • Complete studiegids met 84 opgaven • 2025</p>
+        </div>
+    </div>
+
+    <script>
+        // Exam countdown functionality
+        function updateCountdown() {
+            const examDate = localStorage.getItem('ncoi_exam_date');
+            if (examDate) {
+                const exam = new Date(examDate);
+                const today = new Date();
+                const diffTime = exam - today;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+                const counterEl = document.getElementById('daysToExam');
+                if (diffDays > 0) {
+                    counterEl.textContent = diffDays;
+                    counterEl.style.color = diffDays > 14 ? 'white' : diffDays > 7 ? '#ffeb3b' : '#ff5252';
+                } else if (diffDays === 0) {
+                    counterEl.textContent = 'VANDAAG!';
+                    counterEl.style.fontSize = '2.5em';
+                } else {
+                    counterEl.textContent = 'Voorbij';
+                }
+            } else {
+                document.getElementById('daysToExam').textContent = '?';
+            }
+        }
+
+        function setExamDate() {
+            const dateInput = prompt('Voer je examendatum in (YYYY-MM-DD):\nBijvoorbeeld: 2025-12-15');
+            if (dateInput) {
+                try {
+                    const date = new Date(dateInput);
+                    if (!isNaN(date.getTime())) {
+                        localStorage.setItem('ncoi_exam_date', dateInput);
+                        updateCountdown();
+                        alert('✅ Examendatum ingesteld: ' + dateInput);
+                    } else {
+                        alert('❌ Ongeldige datum. Gebruik formaat: YYYY-MM-DD');
+                    }
+                } catch (e) {
+                    alert('❌ Fout bij verwerken datum.');
+                }
+            }
+        }
+
+        // Initialize countdown
+        updateCountdown();
+
+        // Update countdown every hour
+        setInterval(updateCountdown, 3600000);
+    </script>
+</body>
+</html>
