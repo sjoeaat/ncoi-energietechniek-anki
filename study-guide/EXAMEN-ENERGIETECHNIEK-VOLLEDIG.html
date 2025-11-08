@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Energietechniek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .exam-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .exam-header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .exam-header h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .exam-header .subtitle {
+            font-size: 1.1em;
+            color: #7f8c8d;
+        }
+
+        .exam-info {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .exam-info p {
+            margin: 5px 0;
+        }
+
+        .exam-info strong {
+            color: #2c3e50;
+        }
+
+        .question {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .question-header {
+            background: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-number {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .question-points {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .question-content {
+            border: 2px solid #3498db;
+            border-top: none;
+            padding: 25px;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .question-text {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .given-data {
+            background: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+
+        .given-data h4 {
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .given-data ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .given-data li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .given-data li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        .asked {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+
+        .asked h4 {
+            color: #856404;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .asked p {
+            color: #856404;
+            font-weight: 500;
+        }
+
+        .formula-ref {
+            background: #f8f9fa;
+            padding: 12px;
+            border-left: 4px solid #6c757d;
+            margin: 15px 0;
+            font-style: italic;
+            color: #495057;
+            border-radius: 3px;
+        }
+
+        .circuit-diagram {
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 5px;
+        }
+
+        .circuit-diagram svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .answer-space {
+            border: 2px dashed #bdc3c7;
+            min-height: 150px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 3px;
+        }
+
+        .answer-space p {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .statement-box {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #6c757d;
+        }
+
+        .statement-box strong {
+            color: #2c3e50;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .exam-container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            .question {
+                page-break-inside: avoid;
+            }
+        }
+
+        .exam-footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-container">
+        <div class="exam-header">
+            <h1>Examen Energietechniek</h1>
+            <p class="subtitle">Oefenvragen - Volledige Examenserie</p>
+        </div>
+
+        <div class="exam-info">
+            <p><strong>Tijdsduur:</strong> 3 uur</p>
+            <p><strong>Totaal aantal punten:</strong> 100</p>
+            <p><strong>Hulpmiddelen toegestaan:</strong> Rekenmachine (niet-programmeerbaar), Formuleblad Energietechniek</p>
+            <p><strong>Instructies:</strong> Laat alle berekeningen en tussenstappen zien. Geef antwoorden met de juiste eenheden en gebruik realistische afrondingen.</p>
+        </div>
+
+        <!-- VRAAG 1 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 1 - Condensator Netwerk</span>
+                <span class="question-points">6 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Het hieronder afgebeelde condensator netwerk wordt aangesloten op een spanningsbron.
+                </div>
+
+                <div class="circuit-diagram">
+                    <svg width="500" height="280" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Horizontal lines -->
+                        <line x1="50" y1="60" x2="450" y2="60" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="50" y1="220" x2="450" y2="220" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- Vertical connections -->
+                        <line x1="150" y1="60" x2="150" y2="100" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="150" y1="180" x2="150" y2="220" stroke="#2c3e50" stroke-width="2"/>
+
+                        <line x1="300" y1="60" x2="300" y2="100" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="300" y1="180" x2="300" y2="220" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- C2 capacitor -->
+                        <line x1="140" y1="100" x2="160" y2="100" stroke="#2c3e50" stroke-width="3"/>
+                        <line x1="140" y1="115" x2="160" y2="115" stroke="#2c3e50" stroke-width="3"/>
+                        <line x1="150" y1="100" x2="150" y2="115" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="150" y="90" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">C₂ = 8 μF</text>
+
+                        <!-- C3 capacitor -->
+                        <line x1="290" y1="100" x2="310" y2="100" stroke="#2c3e50" stroke-width="3"/>
+                        <line x1="290" y1="115" x2="310" y2="115" stroke="#2c3e50" stroke-width="3"/>
+                        <line x1="300" y1="100" x2="300" y2="115" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="300" y="90" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">C₃ = 12 μF</text>
+
+                        <!-- C1 capacitor (bottom) -->
+                        <line x1="150" y1="165" x2="150" y2="180" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="180" y1="165" x2="270" y2="165" stroke="#2c3e50" stroke-width="3"/>
+                        <line x1="180" y1="180" x2="270" y2="180" stroke="#2c3e50" stroke-width="3"/>
+                        <line x1="300" y1="165" x2="300" y2="180" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- Connection lines for C1 -->
+                        <line x1="150" y1="115" x2="150" y2="165" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="300" y1="115" x2="300" y2="165" stroke="#2c3e50" stroke-width="2"/>
+
+                        <text x="225" y="150" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">C₁ = 10 μF</text>
+
+                        <!-- Connection points -->
+                        <circle cx="50" cy="60" r="4" fill="#e74c3c"/>
+                        <circle cx="50" cy="220" r="4" fill="#3498db"/>
+                        <circle cx="450" cy="60" r="4" fill="#e74c3c"/>
+                        <circle cx="450" cy="220" r="4" fill="#3498db"/>
+                    </svg>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Met welke waarde verandert de vervangingscapaciteit van dit netwerk wanneer condensator C₃ doorslaat (dus een kortsluiting vormt)? Geef duidelijk aan of de vervangingscapaciteit toeneemt of afneemt.</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formules: C<sub>serie</sub> = 1/(1/C₁ + 1/C₂ + ...), C<sub>parallel</sub> = C₁ + C₂ + ...
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 2 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 2 - Kirchhoff Knooppunt</span>
+                <span class="question-points">5 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Gegeven is het hieronder afgebeelde knooppunt.
+                </div>
+
+                <div class="circuit-diagram">
+                    <svg width="500" height="320" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Central node horizontal line -->
+                        <line x1="100" y1="160" x2="400" y2="160" stroke="#2c3e50" stroke-width="3"/>
+
+                        <!-- Vertical branches -->
+                        <!-- Branch 1 (4A down) -->
+                        <line x1="160" y1="80" x2="160" y2="160" stroke="#2c3e50" stroke-width="2"/>
+                        <rect x="150" y="100" width="20" height="40" fill="none" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="160" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">4A</text>
+                        <!-- Arrow down -->
+                        <polygon points="160,95 155,85 165,85" fill="#2c3e50"/>
+
+                        <!-- Branch 2 (6A up) -->
+                        <line x1="280" y1="80" x2="280" y2="160" stroke="#2c3e50" stroke-width="2"/>
+                        <rect x="270" y="100" width="20" height="40" fill="none" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="280" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">6A</text>
+                        <!-- Arrow up -->
+                        <polygon points="280,85 275,95 285,95" fill="#2c3e50"/>
+
+                        <!-- Branch 3 (7A down) -->
+                        <line x1="160" y1="160" x2="160" y2="240" stroke="#2c3e50" stroke-width="2"/>
+                        <rect x="150" y="180" width="20" height="40" fill="none" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="160" y="260" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">7A</text>
+                        <!-- Arrow down -->
+                        <polygon points="160,175 155,165 165,165" fill="#2c3e50"/>
+
+                        <!-- Branch 4 (1A up) -->
+                        <line x1="340" y1="160" x2="340" y2="240" stroke="#2c3e50" stroke-width="2"/>
+                        <rect x="330" y="180" width="20" height="40" fill="none" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="340" y="260" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">1A</text>
+                        <!-- Arrow up -->
+                        <polygon points="340,225 335,235 345,235" fill="#2c3e50"/>
+
+                        <!-- Left branch (2A left) -->
+                        <line x1="40" y1="160" x2="100" y2="160" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="70" y="145" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">2A</text>
+                        <!-- Arrow left -->
+                        <polygon points="45,160 55,155 55,165" fill="#2c3e50"/>
+
+                        <!-- Right branch with ammeter -->
+                        <line x1="400" y1="160" x2="460" y2="160" stroke="#2c3e50" stroke-width="2"/>
+                        <circle cx="430" cy="160" r="25" fill="white" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="430" y="167" text-anchor="middle" font-size="18" font-weight="bold" fill="#2c3e50">A</text>
+                        <text x="430" y="125" text-anchor="middle" font-size="14" fill="#2c3e50">+</text>
+                        <text x="430" y="200" text-anchor="middle" font-size="14" fill="#2c3e50">-</text>
+                        <!-- Arrow right -->
+                        <polygon points="455,160 445,155 445,165" fill="#2c3e50"/>
+                    </svg>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Welke stroom geeft de ampèremeter aan? Geef ook duidelijk aan of de ampèremeter positief of juist negatief zal uitslaan.</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formule: Kirchhoff's stroomwet - ΣI<sub>in</sub> = ΣI<sub>uit</sub> (knooppuntregel)
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 3 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 3 - Toroïde Luchtspleet</span>
+                <span class="question-points">4 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    In de luchtspleet van een toroïde (zie tekening hieronder) bedraagt de magnetische flux 50 μWb.
+                </div>
+
+                <div class="circuit-diagram">
+                    <svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Toroid outer circle -->
+                        <circle cx="200" cy="150" r="100" fill="none" stroke="#34495e" stroke-width="3"/>
+                        <!-- Toroid inner circle -->
+                        <circle cx="200" cy="150" r="60" fill="none" stroke="#34495e" stroke-width="3"/>
+
+                        <!-- Windings representation -->
+                        <g id="winding-pattern">
+                            <!-- Top section windings -->
+                            <path d="M 150,70 Q 145,65 140,70" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 160,65 Q 155,60 150,65" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 170,63 Q 165,58 160,63" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 180,62 Q 175,57 170,62" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 190,61 Q 185,56 180,61" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 200,60 Q 195,55 190,60" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 210,61 Q 205,56 200,61" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 220,62 Q 215,57 210,62" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 230,63 Q 225,58 220,63" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 240,65 Q 235,60 230,65" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 250,70 Q 245,65 240,70" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+
+                            <!-- Similar patterns for other sections (simplified) -->
+                            <path d="M 270,90 Q 265,85 260,90" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 275,110 Q 270,105 265,110" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 278,130 Q 273,125 268,130" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 280,150 Q 275,145 270,150" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+
+                            <!-- Bottom section -->
+                            <path d="M 270,210 Q 265,215 260,210" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 250,228 Q 245,233 240,228" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 230,235 Q 225,240 220,235" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 210,237 Q 205,242 200,237" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 190,238 Q 185,243 180,238" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 170,237 Q 165,242 160,237" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 150,235 Q 145,240 140,235" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 130,228 Q 125,233 120,228" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+
+                            <!-- Left section -->
+                            <path d="M 110,210 Q 105,215 100,210" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 105,190 Q 100,195 95,190" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 102,170 Q 97,175 92,170" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 100,150 Q 95,155 90,150" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 102,130 Q 97,135 92,130" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 105,110 Q 100,115 95,110" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 110,90 Q 105,95 100,90" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                            <path d="M 120,75 Q 115,80 110,75" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+                        </g>
+
+                        <!-- Air gap -->
+                        <line x1="200" y1="240" x2="200" y2="260" stroke="#e74c3c" stroke-width="4"/>
+                        <text x="200" y="280" text-anchor="middle" font-size="14" font-weight="bold" fill="#e74c3c">luchtspleet (d)</text>
+
+                        <!-- Flux arrow in air gap -->
+                        <line x1="220" y1="250" x2="250" y2="250" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowred)"/>
+                        <text x="270" y="255" font-size="14" font-weight="bold" fill="#e74c3c">Φ</text>
+
+                        <!-- Arrow definition -->
+                        <defs>
+                            <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                                <path d="M0,0 L0,6 L9,3 z" fill="#e74c3c"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Magnetische flux in luchtspleet: Φ<sub>lucht</sub> = 50 μWb</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Hoe groot is de flux in het kernmateriaal? Motiveer uw antwoord.</p>
+                </div>
+
+                <div class="formula-ref">
+                    Principe: Continuïteit van magnetische flux in een gesloten magnetische kring
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor motivering en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 4 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 4 - Zelfinductie Coëfficiënt</span>
+                <span class="question-points">6 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    De stroom door een zelfinductie neemt in 300 ms lineair af van 0,65 A tot 0,25 A. Hierbij wordt een zelfinductie bronspanning geïnduceerd van 800 μV.
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Beginstroom: I₁ = 0,65 A</li>
+                        <li>Eindstroom: I₂ = 0,25 A</li>
+                        <li>Tijdsinterval: Δt = 300 ms = 0,3 s</li>
+                        <li>Geïnduceerde spanning: U<sub>L</sub> = 800 μV = 800 × 10⁻⁶ V</li>
+                        <li>Stroomverandering is lineair</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Hoe groot is de coëfficiënt van zelfinductie van deze spoel?</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formule: U<sub>L</sub> = L × (dI/dt), waarbij L de zelfinductiecoëfficiënt is in Henry [H]
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 5 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 5 - RL-Serie DC vs AC</span>
+                <span class="question-points">7 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Een ideale spoel en een zuivere Ohmse weerstand worden in serie geschakeld en daarna aangesloten aan een batterij met een bronspanning van 9 Volt. Er blijkt nu een stroom te gaan lopen van 150 mA. De inwendige weerstand van de batterij is verwaarloosbaar.
+                    <br><br>
+                    Daarna wordt deze serieschakeling aangesloten op een wisselspanningsbron waarvan de bronspanning ook 9 V bedraagt. Er blijkt nu echter een stroom van 120 mA te gaan lopen.
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Serieschakeling: Ideale spoel + Ohmse weerstand</li>
+                        <li>DC-situatie: U<sub>DC</sub> = 9 V, I<sub>DC</sub> = 150 mA</li>
+                        <li>AC-situatie: U<sub>AC</sub> = 9 V, I<sub>AC</sub> = 120 mA</li>
+                        <li>Inwendige weerstand batterij verwaarloosbaar</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Bereken de cos φ die hierbij ontstaat in de AC-situatie.</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formules: Bij DC: Z = R (spoel heeft geen weerstand), Bij AC: Z = √(R² + X<sub>L</sub>²), cos φ = R/Z
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 6 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 6 - Complexe Impedantie Parallel</span>
+                <span class="question-points">7 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Voor component Z₁ geldt een impedantie van (10 - 20j) Ω.<br>
+                    Voor component Z₂ geldt een impedantie van (10 + 20j) Ω.
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Z₁ = (10 - 20j) Ω</li>
+                        <li>Z₂ = (10 + 20j) Ω</li>
+                        <li>Componenten worden parallel geschakeld</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Bereken met behulp van de complexe rekenwijze de vervangingsimpedantie indien deze twee componenten parallel worden geschakeld.</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formule: Voor parallel: 1/Z<sub>totaal</sub> = 1/Z₁ + 1/Z₂, of Z<sub>totaal</sub> = (Z₁ × Z₂)/(Z₁ + Z₂)
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 7 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 7 - Thévenin Equivalente Schakeling</span>
+                <span class="question-points">10 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Gegeven is de hieronder afgebeelde schakeling.
+                </div>
+
+                <div class="circuit-diagram">
+                    <svg width="550" height="320" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Voltage source -->
+                        <circle cx="80" cy="160" r="30" fill="white" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="80" y="155" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">U<tspan baseline-shift="sub" font-size="9">v</tspan></text>
+                        <text x="80" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">6 V</text>
+                        <text x="65" y="135" text-anchor="middle" font-size="16" fill="#e74c3c">+</text>
+                        <text x="65" y="195" text-anchor="middle" font-size="16" fill="#3498db">-</text>
+
+                        <!-- Top line -->
+                        <line x1="80" y1="130" x2="80" y2="80" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="80" y1="80" x2="200" y2="80" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- R1 (top left) -->
+                        <rect x="200" y="70" width="60" height="20" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        <text x="230" y="84" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">R₁</text>
+                        <text x="230" y="60" text-anchor="middle" font-size="11" fill="#2c3e50">10 kΩ</text>
+
+                        <line x1="260" y1="80" x2="300" y2="80" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- Point A -->
+                        <circle cx="300" cy="80" r="4" fill="#e74c3c"/>
+                        <text x="300" y="65" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">A</text>
+
+                        <!-- R5 (horizontal between A and B) -->
+                        <rect x="320" y="70" width="60" height="20" fill="white" stroke="#e74c3c" stroke-width="3" rx="3"/>
+                        <text x="350" y="84" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">R₅</text>
+                        <text x="350" y="60" text-anchor="middle" font-size="11" fill="#e74c3c">5 kΩ</text>
+
+                        <line x1="300" y1="80" x2="320" y2="80" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="380" y1="80" x2="420" y2="80" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- Point B -->
+                        <circle cx="420" cy="80" r="4" fill="#e74c3c"/>
+                        <text x="420" y="65" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">B</text>
+
+                        <!-- R3 (top right) -->
+                        <rect x="420" y="70" width="60" height="20" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        <text x="450" y="84" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">R₃</text>
+                        <text x="450" y="60" text-anchor="middle" font-size="11" fill="#2c3e50">10 kΩ</text>
+
+                        <!-- R2 (vertical left) -->
+                        <line x1="300" y1="80" x2="300" y2="120" stroke="#2c3e50" stroke-width="2"/>
+                        <rect x="290" y="120" width="20" height="60" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        <text x="310" y="153" font-size="12" font-weight="bold" fill="#2c3e50">R₂</text>
+                        <text x="315" y="168" font-size="10" fill="#2c3e50">10 kΩ</text>
+                        <line x1="300" y1="180" x2="300" y2="240" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- R4 (vertical right) -->
+                        <line x1="420" y1="80" x2="420" y2="120" stroke="#2c3e50" stroke-width="2"/>
+                        <rect x="410" y="120" width="20" height="60" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        <text x="440" y="153" font-size="12" font-weight="bold" fill="#2c3e50">R₄</text>
+                        <text x="445" y="168" font-size="10" fill="#2c3e50">15 kΩ</text>
+                        <line x1="420" y1="180" x2="420" y2="240" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- Bottom line -->
+                        <line x1="80" y1="190" x2="80" y2="240" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="80" y1="240" x2="480" y2="240" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="480" y1="240" x2="480" y2="80" stroke="#2c3e50" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Bronspanning: U<sub>v</sub> = 6 V</li>
+                        <li>R₁ = 10 kΩ</li>
+                        <li>R₂ = 10 kΩ</li>
+                        <li>R₃ = 10 kΩ</li>
+                        <li>R₄ = 15 kΩ</li>
+                        <li>R₅ = 5 kΩ (belastingsweerstand)</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Bereken met behulp van het theorema van Thévenin de stroom door de weerstand R₅. Teken ook het Thévenin-vervangingsschema.</p>
+                </div>
+
+                <div class="formula-ref">
+                    Thévenin methode: (1) Bepaal U<sub>th</sub> = open klemspanning tussen A en B, (2) Bepaal R<sub>th</sub> = vervangingsweerstand tussen A en B (bron kortgesloten), (3) I<sub>R5</sub> = U<sub>th</sub>/(R<sub>th</sub> + R₅)
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening, Thévenin-schema en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 8 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 8 - Spanningslus (Kirchhoff)</span>
+                <span class="question-points">7 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Bereken de spanning U₃ voor de hieronder afgebeelde schakeling. Laat je berekening zien en geef de polariteit van deze spanning aan.
+                </div>
+
+                <div class="circuit-diagram">
+                    <svg width="550" height="240" xmlns="http://www.w3.org/2000/svg">
+                        <!-- R1 -->
+                        <rect x="50" y="70" width="20" height="60" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        <text x="25" y="103" font-size="11" fill="#2c3e50">R₁ = 100 Ω</text>
+
+                        <!-- U1 voltage source -->
+                        <circle cx="60" cy="160" r="25" fill="white" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="60" y="165" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c3e50">U₁=12V</text>
+                        <text x="45" y="150" font-size="14" fill="#e74c3c">-</text>
+                        <text x="45" y="180" font-size="14" fill="#3498db">+</text>
+
+                        <!-- Lines connecting R1 and U1 -->
+                        <line x1="60" y1="50" x2="60" y2="70" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="60" y1="130" x2="60" y2="135" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="60" y1="185" x2="60" y2="200" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- Top line -->
+                        <line x1="60" y1="50" x2="350" y2="50" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="205" y="40" text-anchor="middle" font-size="14" fill="#2c3e50">-</text>
+                        <text x="240" y="40" text-anchor="middle" font-size="14" fill="#e74c3c">+</text>
+
+                        <!-- R3 (horizontal middle) -->
+                        <rect x="180" y="180" width="80" height="20" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        <text x="220" y="194" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c3e50">R₃ = 50 Ω</text>
+
+                        <!-- U3 labels -->
+                        <text x="180" y="170" font-size="14" fill="#2c3e50">-</text>
+                        <text x="220" y="162" text-anchor="middle" font-size="16" font-weight="bold" fill="#e74c3c">U₃</text>
+                        <text x="260" y="170" font-size="14" fill="#e74c3c">+</text>
+
+                        <!-- U2 voltage source -->
+                        <circle cx="350" cy="125" r="25" fill="white" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="350" y="130" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c3e50">U₂=9V</text>
+                        <text x="370" y="115" font-size="14" fill="#e74c3c">+</text>
+                        <text x="370" y="145" font-size="14" fill="#3498db">-</text>
+
+                        <!-- R2 -->
+                        <rect x="430" y="70" width="20" height="60" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        <text x="465" y="103" font-size="11" fill="#2c3e50">R₂ = 100 Ω</text>
+
+                        <!-- Connecting lines -->
+                        <line x1="350" y1="50" x2="440" y2="50" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="440" y1="50" x2="440" y2="70" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="440" y1="130" x2="440" y2="200" stroke="#2c3e50" stroke-width="2"/>
+
+                        <line x1="350" y1="50" x2="350" y2="100" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="350" y1="150" x2="350" y2="200" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- Bottom line -->
+                        <line x1="60" y1="200" x2="180" y2="200" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="260" y1="200" x2="440" y2="200" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- R3 connections -->
+                        <line x1="180" y1="190" x2="180" y2="200" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="260" y1="190" x2="260" y2="200" stroke="#2c3e50" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Spanningsbron U₁ = 12 V</li>
+                        <li>Spanningsbron U₂ = 9 V</li>
+                        <li>Weerstand R₁ = 100 Ω</li>
+                        <li>Weerstand R₂ = 100 Ω</li>
+                        <li>Weerstand R₃ = 50 Ω</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Bereken de spanning U₃ en geef de polariteit van deze spanning aan.</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formule: Kirchhoff's spanningswet (maasregel) - ΣU<sub>bronnen</sub> = ΣU<sub>weerstanden</sub> in gesloten lus
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 9 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 9 - Blindvermogen Motor</span>
+                <span class="question-points">5 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Een elektromotor neemt een vermogen op van 60 kW. Het schijnbare vermogen van deze motor bedraagt 68 kVA.
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Werkelijk vermogen (arbeidsvermogen): P = 60 kW</li>
+                        <li>Schijnbaar vermogen: S = 68 kVA</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Hoe groot is de blindcomponent van dit vermogen (het blindvermogen Q)?</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formule: S² = P² + Q² (vermogensdriehoek), waarbij Q = √(S² - P²)
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 10 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 10 - Transformator Wikkelverhouding</span>
+                <span class="question-points">5 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Een transformator is ontworpen voor een primaire spanning van 6000 V en een secundaire spanning van 800 V. Het aantal windingen aan de primaire zijde van de transformator bedraagt 300.
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Primaire spanning: U₁ = 6000 V</li>
+                        <li>Secundaire spanning: U₂ = 800 V</li>
+                        <li>Aantal primaire windingen: N₁ = 300</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Wat is het aantal windingen aan de secundaire zijde (N₂)?</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formule: U₁/U₂ = N₁/N₂ (wikkelverhouding)
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 11 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 11 - Zonnepanelen Capaciteit</span>
+                <span class="question-points">7 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Voor een kantoor is een energieneutrale elektriciteitsvoorziening ontworpen, waarbij gebruik is gemaakt van zonnepanelen.
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Vermogen per paneel: 360 Wattpeak</li>
+                        <li>Oppervlakte per paneel: 2000 mm × 1000 mm = 2 m²</li>
+                        <li>Aantal geïnstalleerde zonnepanelen: 120</li>
+                        <li>Opbrengst per m² paneel op jaarbasis: 140 kWh</li>
+                        <li>Elektrische energiebehoefte op jaarbasis: 40 MWh = 40.000 kWh</li>
+                        <li>Men heeft het gevoel dat de installatie niet toereikend is</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Hoeveel panelen dienen er minimaal extra geïnstalleerd te worden om in de eigen energiebehoefte te voorzien?</p>
+                </div>
+
+                <div class="formula-ref">
+                    Bereken: (1) Huidige jaaropbrengst = aantal panelen × oppervlakte × opbrengst per m², (2) Tekort = behoefte - opbrengst, (3) Extra panelen = tekort / (opbrengst per paneel)
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 12 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 12 - Cos φ Correctie (Blindvermogencompensatie)</span>
+                <span class="question-points">8 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Een driefasenmotor met een cos φ van 0,75 neemt een vermogen op van 50 kW (230 V / 400 V). Je mag uitgaan van een symmetrische belasting. Het energiebedrijf eist dat je de cos φ verbetert zodat deze minimaal 0,92 bedraagt.
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Driefasenmotor: 230 V / 400 V</li>
+                        <li>Opgenomen vermogen: P = 50 kW</li>
+                        <li>Huidige arbeidsfactor: cos φ₁ = 0,75</li>
+                        <li>Gewenste arbeidsfactor: cos φ₂ = 0,92</li>
+                        <li>Symmetrische belasting</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Bereken het bij te schakelen blindvermogen van de condensatorbank om de vereiste cos φ-norm van 0,92 te behalen.</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formules: Q₁ = P × tan(arccos(cos φ₁)), Q₂ = P × tan(arccos(cos φ₂)), Q<sub>condensator</sub> = Q₁ - Q₂
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 13 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 13 - Spanningsverlies Driefasenkabel</span>
+                <span class="question-points">9 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Een symmetrische zuivere Ohmse belasting (R₁ = R₂ = R₃) wordt in ster aangesloten op een driefasenet 230 V / 400 V. De fasestroom bedraagt 30 A. De vijfaderige kabel (L1, L2, L3, N + PE) heeft een aderdoorsnede van 35 mm². De kabel heeft een lengte van 250 meter.
+                </div>
+
+                <div class="circuit-diagram">
+                    <svg width="400" height="280" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Star connection diagram -->
+                        <line x1="200" y1="50" x2="200" y2="120" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="180" y="45" font-size="14" font-weight="bold" fill="#2c3e50">L1</text>
+
+                        <line x1="100" y1="200" x2="160" y2="140" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="80" y="220" font-size="14" font-weight="bold" fill="#2c3e50">L2</text>
+
+                        <line x1="300" y1="200" x2="240" y2="140" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="315" y="220" font-size="14" font-weight="bold" fill="#2c3e50">L3</text>
+
+                        <!-- Resistors -->
+                        <rect x="190" y="120" width="20" height="50" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        <text x="225" y="148" font-size="12" font-weight="bold" fill="#2c3e50">R₁</text>
+
+                        <g transform="rotate(-60 200 140)">
+                            <rect x="130" y="165" width="20" height="50" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        </g>
+                        <text x="115" y="175" font-size="12" font-weight="bold" fill="#2c3e50">R₃</text>
+
+                        <g transform="rotate(60 200 140)">
+                            <rect x="250" y="165" width="20" height="50" fill="white" stroke="#2c3e50" stroke-width="2" rx="3"/>
+                        </g>
+                        <text x="265" y="175" font-size="12" font-weight="bold" fill="#2c3e50">R₂</text>
+
+                        <!-- Center point (star point) -->
+                        <circle cx="200" cy="140" r="5" fill="#2c3e50"/>
+                        <line x1="200" y1="140" x2="200" y2="180" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="210" y="165" font-size="14" font-weight="bold" fill="#2c3e50">N</text>
+                    </svg>
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Driefasenet: 230 V / 400 V (fasespanning/lijnspanning)</li>
+                        <li>Belasting: Symmetrisch in ster (R₁ = R₂ = R₃)</li>
+                        <li>Fasestroom: I<sub>fase</sub> = 30 A</li>
+                        <li>Kabellengte: l = 250 m</li>
+                        <li>Aderdoorsnede: A = 35 mm²</li>
+                        <li>Soortelijke weerstand koper: ρ = 0,0178 × 10⁻⁶ Ω·m</li>
+                        <li>Norm: Maximaal spanningsverlies 2% van fasespanning</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Bereken of er wel of niet aan de norm van 2% spanningsverlies wordt voldaan.</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formules: R<sub>draad</sub> = ρ × l / A, ΔU<sub>fase</sub> = I × R<sub>draad</sub>, Spanningsverlies % = (ΔU/U<sub>fase</sub>) × 100%
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 14 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 14 - Driefase Generator Spanningen</span>
+                <span class="question-points">6 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Gegeven is de hieronder afgebeelde schakeling. Voor de generatorspanningen geldt: |U₁₀| = |U₂₀| = |U₃₀| = 400 V.
+                </div>
+
+                <div class="circuit-diagram">
+                    <svg width="500" height="280" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Three voltage sources in star -->
+                        <circle cx="120" cy="80" r="22" fill="white" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="120" y="85" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c3e50">U₁₀</text>
+                        <text x="105" y="70" font-size="12" fill="#e74c3c">+</text>
+
+                        <circle cx="80" cy="180" r="22" fill="white" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="80" y="185" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c3e50">U₃₀</text>
+                        <text x="65" y="170" font-size="12" fill="#e74c3c">+</text>
+
+                        <circle cx="160" cy="180" r="22" fill="white" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="160" y="185" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c3e50">U₂₀</text>
+                        <text x="175" y="170" font-size="12" fill="#e74c3c">+</text>
+
+                        <!-- Center point (0) -->
+                        <circle cx="120" cy="150" r="4" fill="#2c3e50"/>
+
+                        <!-- Lines from sources to center -->
+                        <line x1="120" y1="102" x2="120" y2="150" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="95" y1="165" x2="120" y2="150" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="145" y1="165" x2="120" y2="150" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- Lines to load (right side) -->
+                        <line x1="120" y1="58" x2="120" y2="30" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="120" y1="30" x2="200" y2="30" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="140" y="20" font-size="12" fill="#2c3e50">I₁</text>
+
+                        <line x1="80" y1="158" x2="80" y2="230" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="80" y1="230" x2="300" y2="230" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="140" y="250" font-size="12" fill="#2c3e50">I₃</text>
+
+                        <line x1="160" y1="158" x2="160" y2="200" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="160" y1="200" x2="350" y2="200" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="220" y="215" font-size="12" fill="#2c3e50">I₂</text>
+
+                        <!-- Delta load (right side) -->
+                        <line x1="200" y1="30" x2="300" y2="130" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="300" y1="130" x2="350" y2="200" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="350" y1="200" x2="300" y2="230" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="300" y1="230" x2="200" y2="30" stroke="#2c3e50" stroke-width="2"/>
+
+                        <!-- Load impedances -->
+                        <rect x="235" y="60" width="15" height="35" fill="white" stroke="#2c3e50" stroke-width="1.5" rx="2"/>
+                        <text x="315" y="85" font-size="11" fill="#2c3e50">Z₁₂</text>
+
+                        <rect x="310" y="145" width="15" height="35" fill="white" stroke="#2c3e50" stroke-width="1.5" rx="2"/>
+                        <text x="340" y="165" font-size="11" fill="#2c3e50">Z₂₃</text>
+
+                        <rect x="260" y="205" width="35" height="15" fill="white" stroke="#2c3e50" stroke-width="1.5" rx="2"/>
+                        <text x="278" y="245" font-size="11" fill="#2c3e50">Z₃₁</text>
+
+                        <!-- Voltage labels for load -->
+                        <text x="230" y="25" font-size="12" font-weight="bold" fill="#e74c3c">U₁₂</text>
+                        <text x="360" y="165" font-size="12" font-weight="bold" fill="#e74c3c">U₂₃</text>
+                        <text x="320" y="245" font-size="12" font-weight="bold" fill="#e74c3c">U₃₁</text>
+                    </svg>
+                </div>
+
+                <div class="given-data">
+                    <h4>Gegeven:</h4>
+                    <ul>
+                        <li>Generatorspanningen (fasespanningen): |U₁₀| = |U₂₀| = |U₃₀| = 400 V</li>
+                        <li>Symmetrische driefasengenerator</li>
+                    </ul>
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Bereken de spanningen |U₁₂|, |U₂₃| en |U₃₁| (lijnspanningen).</p>
+                </div>
+
+                <div class="formula-ref">
+                    Formule: Voor symmetrische driefasesystemen geldt: U<sub>lijn</sub> = √3 × U<sub>fase</sub>
+                </div>
+
+                <div class="answer-space">
+                    <p>Ruimte voor berekening en antwoord</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 15 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 15 - Transformator Kern (Voor- en Nadelen)</span>
+                <span class="question-points">5 punten</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    In principe vormen twee gekoppelde spoelen een transformator. Bij een goed functionerende transformator past men echter altijd een kern toe.
+                </div>
+
+                <div class="asked">
+                    <h4>Gevraagd:</h4>
+                    <p>Benoem twee voordelen en drie nadelen van het toepassen van een kern in een transformator.</p>
+                </div>
+
+                <div class="answer-space">
+                    <p><strong>Voordelen (2):</strong></p>
+                    <br><br><br>
+                    <p><strong>Nadelen (3):</strong></p>
+                    <br><br><br><br>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRAAG 16 -->
+        <div class="question">
+            <div class="question-header">
+                <span class="question-number">Vraag 16 - Juist/Onjuist Beweringen</span>
+                <span class="question-points">10 punten (2 punten per bewering)</span>
+            </div>
+            <div class="question-content">
+                <div class="question-text">
+                    Hieronder volgen 5 beweringen. Geef per bewering aan of deze <strong>juist</strong> of <strong>onjuist</strong> is.
+                </div>
+
+                <div class="statement-box">
+                    <strong>Bewering 1:</strong><br>
+                    De koppelfactor k is altijd een positief getal dat de kwaliteit aangeeft van de magnetische koppeling tussen twee spoelen.
+                    <br><br>
+                    <span style="color: #7f8c8d;">□ Juist &nbsp;&nbsp;&nbsp; □ Onjuist</span>
+                </div>
+
+                <div class="statement-box">
+                    <strong>Bewering 2:</strong><br>
+                    Wanneer een elektromotor in ster wordt geschakeld, neemt deze meer vermogen op dan wanneer deze motor in driehoek wordt geschakeld.
+                    <br><br>
+                    <span style="color: #7f8c8d;">□ Juist &nbsp;&nbsp;&nbsp; □ Onjuist</span>
+                </div>
+
+                <div class="statement-box">
+                    <strong>Bewering 3:</strong><br>
+                    Voor het hieronder afgebeelde schema van magnetische koppeling geldt dat M positief is.
+                    <br><br>
+                    <div style="text-align: center; margin: 15px 0;">
+                        <svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Left coil L1 -->
+                            <circle cx="70" cy="75" r="35" fill="none" stroke="#2c3e50" stroke-width="2"/>
+                            <line x1="35" y1="75" x2="20" y2="75" stroke="#2c3e50" stroke-width="2"/>
+                            <line x1="105" y1="75" x2="120" y2="75" stroke="#2c3e50" stroke-width="2"/>
+                            <circle cx="20" cy="75" r="3" fill="#2c3e50"/>
+                            <circle cx="120" cy="75" r="3" fill="#2c3e50"/>
+                            <text x="20" y="60" text-anchor="middle" font-size="14" fill="#e74c3c">+</text>
+                            <text x="70" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">L₁</text>
+                            <text x="30" y="30" text-anchor="start" font-size="14" fill="#2c3e50">u₁</text>
+                            <text x="50" y="125" text-anchor="middle" font-size="14" fill="#2c3e50">i₁</text>
+                            <!-- Arrow for i1 -->
+                            <polygon points="90,125 80,120 80,130" fill="#2c3e50"/>
+
+                            <!-- Mutual inductance M -->
+                            <circle cx="150" cy="75" r="20" fill="white" stroke="#2c3e50" stroke-width="2"/>
+                            <text x="150" y="82" text-anchor="middle" font-size="18" font-weight="bold" fill="#2c3e50">M</text>
+                            <circle cx="150" cy="75" r="3" fill="#2c3e50"/>
+
+                            <!-- Right coil L2 -->
+                            <circle cx="230" cy="75" r="35" fill="none" stroke="#2c3e50" stroke-width="2"/>
+                            <line x1="195" y1="75" x2="180" y2="75" stroke="#2c3e50" stroke-width="2"/>
+                            <line x1="265" y1="75" x2="280" y2="75" stroke="#2c3e50" stroke-width="2"/>
+                            <circle cx="180" cy="75" r="3" fill="#2c3e50"/>
+                            <circle cx="280" cy="75" r="3" fill="#2c3e50"/>
+                            <text x="280" y="60" text-anchor="middle" font-size="14" fill="#e74c3c">+</text>
+                            <text x="230" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">L₂</text>
+                            <text x="270" y="30" text-anchor="end" font-size="14" fill="#2c3e50">u₂</text>
+                            <text x="210" y="125" text-anchor="middle" font-size="14" fill="#2c3e50">i₂</text>
+                            <!-- Arrow for i2 (pointing left) -->
+                            <polygon points="190,125 200,120 200,130" fill="#2c3e50"/>
+                        </svg>
+                    </div>
+                    <span style="color: #7f8c8d;">□ Juist &nbsp;&nbsp;&nbsp; □ Onjuist</span>
+                </div>
+
+                <div class="statement-box">
+                    <strong>Bewering 4:</strong><br>
+                    De eenheid Coulomb kan worden uitgedrukt in de grondeenheden elektrische stroom en tijd.
+                    <br><br>
+                    <span style="color: #7f8c8d;">□ Juist &nbsp;&nbsp;&nbsp; □ Onjuist</span>
+                </div>
+
+                <div class="statement-box">
+                    <strong>Bewering 5:</strong><br>
+                    Het blindvermogen neemt toe wanneer de cos φ afneemt.
+                    <br><br>
+                    <span style="color: #7f8c8d;">□ Juist &nbsp;&nbsp;&nbsp; □ Onjuist</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="exam-footer">
+            <p><strong>Einde examen</strong></p>
+            <p>Controleer of je alle vragen hebt beantwoord en of je alle berekeningen hebt laten zien.</p>
+        </div>
+    </div>
+</body>
+</html>

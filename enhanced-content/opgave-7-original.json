@@ -1,0 +1,9 @@
+{
+  "number": "7",
+  "chapter": "H 1.9 blz. 13",
+  "question_html": "<p>Bepaal de spanningen U<sub>1</sub> en U<sub>2</sub> in deze\nschakeling:</p>\n<p><img src=\"media/media/image21.PNG\"\nstyle=\"width:3.04565in;height:1.65896in\" /></p>",
+  "solution_html": "<p><strong>Aanpak:</strong> spanningsdeling en U<sub>1</sub> zal\nnegatief zijn, zoals het getekend is:</p>\n<p><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>U</mi><mn>2</mn></msub><mo>=</mo><mn>9</mn><mo>•</mo><mfrac><mn>100</mn><mrow><mn>100</mn><mo>+</mo><mn>50</mn></mrow></mfrac><mo>=</mo><mn>6</mn><mspace width=\"0.222em\"></mspace><mi>V</mi></mrow><annotation encoding=\"application/x-tex\">U_{2} = 9 \\bullet \\frac{100}{100 + 50} = 6\\ V</annotation></semantics></math></p>\n<p>Dan is al direct duidelijk dat 9 – 6 = 3V over R<sub>1</sub> (50 Ω)\nstaat. Omdat de polariteit van U<sub>1</sub> tegenovergesteld is, moet\nhet antwoord dus zijn U<sub>1</sub> = -3 V.</p>",
+  "images": [
+    "image21.PNG"
+  ]
+}

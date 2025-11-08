@@ -1,0 +1,247 @@
+<!-- OPGAVE 14 - ENHANCED VERSION (Spanning over weerstand met stroombron) -->
+
+<div class="question">
+<p>In dit netwerk is de spanning over de weerstand R<sub>a</sub> gelijk aan:</p>
+
+<p><img src="media/media/image25.PNG" style="max-width:700px;" alt="Opgave 14 network diagram"></p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><msub><mi>I</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub></mrow></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub></mrow></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>)</mo><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub><mo>+</mo><msub><mi>U</mi><mn>1</mn></msub></mrow></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>)</mo><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub><mo>+</mo><msub><mi>U</mi><mn>1</mn></msub></mrow></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag test het begrip van <strong>ideale stroombronnen</strong> en hun effect op stromen door serieschakelingen.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Stroombron I₁</td>
+  <td>Dwingt stroom I₁ af door de serieketen</td>
+</tr>
+<tr>
+  <td>Weerstand R<sub>a</sub></td>
+  <td>In serie met stroombron I₁</td>
+</tr>
+<tr>
+  <td>Gezochte spanning</td>
+  <td>U<sub>a</sub> over R<sub>a</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong></p>
+<ul>
+<li><strong>Ideale stroombron:</strong> Dwingt een constante stroom af, ongeacht de spanning (Holmes §1.8)</li>
+<li><strong>Serie-eigenschap:</strong> In een serieketen is de stroom door alle componenten gelijk</li>
+<li><strong>Wet van Ohm:</strong> U = I · R</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal de stroom door R<sub>a</sub></div>
+
+<p>R<sub>a</sub> staat <strong>in serie</strong> met stroombron I₁. Een ideale stroombron dwingt zijn stroom af door <strong>alle</strong> componenten in serie met de bron.</p>
+
+<p><strong>Belangrijke eigenschap van stroombronnen:</strong></p>
+<blockquote style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Een ideale stroombron in serie met een weerstand dwingt de stroom door die weerstand af, onafhankelijk van de rest van het netwerk."
+</blockquote>
+
+<p>Dus de stroom door R<sub>a</sub> is:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><msub><mi>R</mi><mi>a</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Pas de wet van Ohm toe</div>
+
+<p>Nu we weten dat de stroom door R<sub>a</sub> gelijk is aan I₁, kunnen we de <strong>wet van Ohm</strong> toepassen:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>a</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><msub><mi>R</mi><mi>a</mi></msub></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>a</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer I<sub>Ra</sub> = I₁)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>a</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>a</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>a</strong>.</p>
+
+<p><strong>Waarom hangt U<sub>a</sub> NIET af van I₂, I₃, of U₁?</strong></p>
+<p>Omdat de stroombron I₁ de stroom door R<sub>a</sub> volledig bepaalt, ongeacht wat er elders in het netwerk gebeurt. I₂, I₃ en U₁ beïnvloeden wel de <strong>spanning over de stroombron</strong> zelf, maar NIET de spanning over R<sub>a</sub>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Verificatie - waarom andere antwoorden fout zijn</div>
+
+<p><strong>Antwoord b:</strong> <math><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub></math></p>
+<ul>
+<li>Fout: Het minteken zou alleen kloppen als de spanningsreferentie omgekeerd is</li>
+<li>Meestal wordt de spanning gedefinieerd in de richting van de stroom (positief waar stroom binnenkomt)</li>
+</ul>
+
+<p><strong>Antwoord c & d:</strong> Bevatten U₁ en (I₁ - I₂) termen</p>
+<ul>
+<li>Fout: Suggereren dat de spanning over R<sub>a</sub> afhangt van andere netwerkgrootheid</li>
+<li>Dit zou alleen kloppen als R<sub>a</sub> NIET in serie met een ideale stroombron staat</li>
+<li>De term (I₁ - I₂) zou alleen relevant zijn als er een knooppunt tussen I₁ en R<sub>a</sub> is waar I₂ vertakt - wat hier niet het geval is</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>U</mi><mi>a</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>·</mo>
+    <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>V</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel I₁ = 5A en R<sub>a</sub> = 10Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>a</mi></msub>
+    <mo>=</mo>
+    <mn>5</mn>
+    <mo>·</mo>
+    <mn>10</mn>
+    <mo>=</mo>
+    <mn>50</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Deze spanning is constant, zelfs als andere stromen in het netwerk veranderen!</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Het principe van stroombron-dominantie:</strong></p>
+
+<p>Net zoals een <em>spanningsbron</em> de spanning over parallelle componenten afdwingt, dwingt een <em>stroombron</em> de stroom door seriecomponenten af:</p>
+
+<table style="width:100%; margin: 15px 0;">
+<thead>
+<tr>
+  <th>Type bron</th>
+  <th>Dwingt af</th>
+  <th>Voor configuratie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron</td>
+  <td>Spanning</td>
+  <td>Parallel componenten</td>
+</tr>
+<tr>
+  <td>Stroombron</td>
+  <td>Stroom</td>
+  <td>Serie componenten</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Praktische toepassing:</strong></p>
+<p>Stroombronnen worden gebruikt in:</p>
+<ul>
+<li><strong>LED-drivers:</strong> Constante stroom door LED ongeacht spanningsval</li>
+<li><strong>Batterij-laders:</strong> Gecontroleerde laadstroom</li>
+<li><strong>Meetinstrumenten:</strong> Stabiele stroomreferenties</li>
+</ul>
+
+<p><strong>Verschil met reële stroombron:</strong></p>
+<p>Een <strong>reële</strong> stroombron heeft een parallelle weerstand R<sub>i</sub> (uitgangsimpedantie). Dan hangt de stroom door R<sub>a</sub> wél af van de spanning over de bron:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><msub><mi>R</mi><mi>a</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mi>i</mi></msub>
+      <mrow>
+        <msub><mi>R</mi><mi>i</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>a</mi></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Maar voor een <strong>ideale</strong> bron (R<sub>i</sub> → ∞) geldt: I<sub>Ra</sub> = I₁ exact!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> a</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><msub><mi>I</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub></mrow></math></p>
+
+<p><em>Een ideale stroombron in serie met een weerstand dwingt de stroom (en daarmee de spanning) over die weerstand af.</em></p>
+</div>
+
+</div>

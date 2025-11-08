@@ -1,0 +1,45 @@
+{
+  "total_opgaven": 23,
+  "type_distribution": {
+    "kirchhoff_maas": 5,
+    "ohm": 4,
+    "kirchhoff_knoop": 5,
+    "general": 8,
+    "thevenin": 1
+  },
+  "opgaven_by_type": {
+    "kirchhoff_maas": [
+      "1",
+      "15",
+      "2",
+      "4",
+      "9"
+    ],
+    "ohm": [
+      "10",
+      "12",
+      "14",
+      "8"
+    ],
+    "kirchhoff_knoop": [
+      "11",
+      "13",
+      "16",
+      "5",
+      "6"
+    ],
+    "general": [
+      "17",
+      "1a",
+      "1b",
+      "1c",
+      "1d",
+      "1e",
+      "1f",
+      "7"
+    ],
+    "thevenin": [
+      "3"
+    ]
+  }
+}

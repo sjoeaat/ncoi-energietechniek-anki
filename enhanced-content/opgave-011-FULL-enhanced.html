@@ -1,0 +1,412 @@
+<!-- OPGAVE 11 - ENHANCED VERSION (Kirchhoff stroomverdeling - parallel weerstanden) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de weerstand R<sub>b</sub> gelijk aan:</p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mrow><mo>−</mo><mi>I</mi></mrow><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">I_{b} = {- I}_{2} \bullet R_{d}/R_{b}</annotation></semantics></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mrow><mo>−</mo><mi>I</mi></mrow><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>b</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">I_{b} = {- I}_{2} \bullet R_{b}/{(R}_{b} + R_{d})</annotation></semantics></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mrow><mo>−</mo><mi>I</mi></mrow><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">I_{b} = {- I}_{2} \bullet R_{d}/{(R}_{b} + R_{d})</annotation></semantics></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mi>I</mi><mi>c</mi></msub><mo>·</mo><msub><mi>R</mi><mi>b</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">I_{b} = I_{c} \bullet R_{b}/{(R}_{b} + R_{c})</annotation></semantics></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag test begrip van <strong>stroomverdeling in parallelgeschakelde weerstanden</strong> en de <strong>wet van Kirchhoff voor knooppunten</strong> (KCL).</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Symbool</th>
+  <th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Stroom van buitenaf</td>
+  <td><math><msub><mi>I</mi><mn>2</mn></msub></math></td>
+  <td>Stroomt naar knooppunt A</td>
+</tr>
+<tr>
+  <td>Weerstand b</td>
+  <td><math><msub><mi>R</mi><mi>b</mi></msub></math></td>
+  <td>Parallel met R<sub>d</sub></td>
+</tr>
+<tr>
+  <td>Weerstand d</td>
+  <td><math><msub><mi>R</mi><mi>d</mi></msub></math></td>
+  <td>Parallel met R<sub>b</sub></td>
+</tr>
+<tr>
+  <td>Gezochte stroom</td>
+  <td><math><msub><mi>I</mi><mi>b</mi></msub></math></td>
+  <td>Stroom door R<sub>b</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong></p>
+<ul>
+<li><strong>Kirchhoff Knooppuntwet (KCL):</strong> De som van alle stromen naar een knooppunt is nul: <math><mo>Σ</mo><mi>I</mi><mo>=</mo><mn>0</mn></math> (Holmes §1.8)</li>
+<li><strong>Wet van Ohm:</strong> Voor weerstanden geldt <math><mi>U</mi><mo>=</mo><mi>I</mi><mo>·</mo><mi>R</mi></math></li>
+<li><strong>Stroomdeling:</strong> Bij parallelschakeling verdelen stromen zich omgekeerd evenredig met de weerstandswaarden (lagere weerstand → hogere stroom)</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Pas Kirchhoff Knooppuntwet toe op knooppunt A</div>
+
+<p>Bij knooppunt A komen/gaan drie stromen:</p>
+<ul>
+<li><math><msub><mi>I</mi><mn>2</mn></msub></math>: stroomt <strong>naar</strong> knooppunt A (positief)</li>
+<li><math><msub><mi>I</mi><mi>b</mi></msub></math>: stroomt <strong>van</strong> knooppunt A weg (negatief)</li>
+<li><math><msub><mi>I</mi><mi>d</mi></msub></math>: stroomt <strong>van</strong> knooppunt A weg (negatief)</li>
+</ul>
+
+<p>De <strong>Kirchhoff knooppuntwet</strong> geeft:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fysische betekenis:</strong> Alle stroom die binnenkomt moet ook weer weggaan. De stroom I₂ splitst zich over de twee paralleltakken R<sub>b</sub> en R<sub>d</sub>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Gebruik wet van Ohm voor gelijke spanningen</div>
+
+<p>Omdat R<sub>b</sub> en R<sub>d</sub> <strong>parallel</strong> staan, geldt dat de spanning over beide weerstanden <strong>gelijk</strong> is:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Volgens de <strong>wet van Ohm</strong> kan dit geschreven worden als:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Los op naar <math><msub><mi>I</mi><mi>d</mi></msub></math>:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>I</mi><mi>b</mi></msub>
+        <mo>·</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Combineer vergelijkingen en los op naar I<sub>b</sub></div>
+
+<p>Substitueer de uitdrukking voor <math><msub><mi>I</mi><mi>d</mi></msub></math> in de Kirchhoff vergelijking:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>+</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>I</mi><mi>b</mi></msub>
+        <mo>·</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (factoriseer I<sub>b</sub>)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mi>d</mi></msub>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>+</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>I</mi><mi>b</mi></msub>
+        <mo>·</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (combineer breuken)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>·</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>R</mi><mi>d</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (isoleer I<sub>b</sub>)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>·</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>R</mi><mi>d</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (vermenigvuldig met omgekeerde breuk)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mi>d</mi></msub>
+      <mrow>
+        <msub><mi>R</mi><mi>d</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Of geschreven als:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>d</mi></msub>
+    <mi>/</mi>
+    <mo>(</mo>
+    <msub><mi>R</mi><mi>b</mi></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mi>d</mi></msub>
+    <mo>)</mo>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>c</strong>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo>
+    <mi>A</mi>
+    <mo>]</mo>
+    <mo>·</mo>
+    <mfrac>
+      <mo>[</mo><mi>Ω</mi><mo>]</mo>
+      <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo>
+    <mi>A</mi>
+    <mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Analyse van de andere antwoorden:</strong></p>
+<ul>
+<li><strong>Antwoord a:</strong> <math><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub></math> — Fout: dimensie klopt niet (geeft [A]·[Ω]/[Ω] maar zonder juiste verhouding)</li>
+<li><strong>Antwoord b:</strong> Fout: R<sub>b</sub> in teller i.p.v. R<sub>d</sub></li>
+<li><strong>Antwoord d:</strong> Fout: gebruikt I<sub>c</sub> en R<sub>c</sub> die niet relevant zijn voor deze tak</li>
+</ul>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Stroomdeling in parallelschakeling:</strong></p>
+
+<p>De formule <math><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo></math> is de <strong>stroomdelingsformule</strong>.</p>
+
+<p><strong>Belangrijke observaties:</strong></p>
+<ul>
+<li>Het <strong>minteken</strong> geeft aan dat I<sub>b</sub> de tegengestelde richting heeft t.o.v. I₂ (I₂ komt binnen, I<sub>b</sub> gaat weg)</li>
+<li><strong>Omgekeerde evenredigheid:</strong> De stroom door R<sub>b</sub> is evenredig met de <strong>andere</strong> weerstand (R<sub>d</sub>), niet met zijn eigen weerstand</li>
+<li>Als R<sub>d</sub> = 0Ω (kortsluiting): I<sub>b</sub> = 0A (alle stroom gaat door de kortsluiting)</li>
+<li>Als R<sub>d</sub> → ∞ (open keten): I<sub>b</sub> → −I₂ (alle stroom gaat door R<sub>b</sub>)</li>
+</ul>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel I₂ = 6A, R<sub>b</sub> = 2Ω, R<sub>d</sub> = 4Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>6</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>4</mn>
+      <mrow><mn>2</mn><mo>+</mo><mn>4</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>6</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>4</mn>
+      <mn>6</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>4</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>En:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>6</mn>
+    <mo>−</mo>
+    <mo>(</mo>
+    <mo>−</mo>
+    <mn>4</mn>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>2</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Controle: De lagere weerstand (R<sub>b</sub> = 2Ω) krijgt de <strong>hogere</strong> stroom (4A vs 2A). Ratio: 4A/2A = 2, wat overeenkomt met omgekeerde weerstandsverhouding 4Ω/2Ω = 2 ✓</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> c</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo></mrow></math></p>
+
+<p><em>Stroomdelingsformule voor parallelweerstanden met Kirchhoff knooppuntwet.</em></p>
+</div>
+
+</div>

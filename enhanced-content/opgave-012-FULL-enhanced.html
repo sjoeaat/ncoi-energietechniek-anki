@@ -1,0 +1,278 @@
+<!-- OPGAVE 12 - ENHANCED VERSION (Kirchhoff - Stroom door weerstand met directe spanningsbron) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de weerstand R<sub>c</sub> gelijk aan:</p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">I_{c} = U_{1}/R_{c}</annotation></semantics></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">I_{c} = (U_{1}/R_{c}) + I_{1} + I_{3}</annotation></semantics></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">I_{c} = I_{2} + I_{b} + I_{d} + I_{1} + I_{3}</annotation></semantics></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">I_{c} = (U_{1}/R_{c}) + I_{2} + I_{b} + I_{d} + I_{1} + I_{3}</annotation></semantics></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag test het begrip van <strong>directe toepassing van de wet van Ohm</strong> en het herkennen van <strong>welke elementen relevant</strong> zijn voor een specifieke tak in een complex netwerk.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Symbool</th>
+  <th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron</td>
+  <td><math><msub><mi>U</mi><mn>1</mn></msub></math></td>
+  <td>Direct parallel aan R<sub>c</sub></td>
+</tr>
+<tr>
+  <td>Weerstand c</td>
+  <td><math><msub><mi>R</mi><mi>c</mi></msub></math></td>
+  <td>Gezochte tak</td>
+</tr>
+<tr>
+  <td>Andere stromen</td>
+  <td><math><msub><mi>I</mi><mn>1</mn></msub></math>, <math><msub><mi>I</mi><mn>2</mn></msub></math>, <math><msub><mi>I</mi><mn>3</mn></msub></math>, etc.</td>
+  <td>Stromen in andere takken van het netwerk</td>
+</tr>
+<tr>
+  <td>Gezochte stroom</td>
+  <td><math><msub><mi>I</mi><mi>c</mi></msub></math></td>
+  <td>Stroom door R<sub>c</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong></p>
+<ul>
+<li><strong>Wet van Ohm:</strong> De stroom door een weerstand is <math><mi>I</mi><mo>=</mo><mi>U</mi><mi>/</mi><mi>R</mi></math> (Holmes §1.8)</li>
+<li><strong>Superponerende principe:</strong> Stromen in verschillende takken beïnvloeden elkaar NIET als de spanning over een weerstand direct door een spanningsbron wordt bepaald</li>
+<li><strong>Onafhankelijkheid:</strong> Als een weerstand direct parallel staat aan een ideale spanningsbron, hangt de stroom door die weerstand ALLEEN af van de spanning en de weerstandswaarde</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Identificeer de spanning over R<sub>c</sub></div>
+
+<p>De cruciale observatie is dat weerstand R<sub>c</sub> <strong>direct parallel</strong> staat aan spanningsbron U₁.</p>
+
+<p><strong>Wat betekent "direct parallel"?</strong></p>
+<ul>
+<li>De <strong>bovenkant</strong> van R<sub>c</sub> is verbonden met de <strong>positieve pool</strong> van U₁</li>
+<li>De <strong>onderkant</strong> van R<sub>c</sub> is verbonden met de <strong>negatieve pool</strong> van U₁</li>
+<li>Er zijn <strong>geen andere componenten</strong> tussen R<sub>c</sub> en U₁</li>
+</ul>
+
+<p>Dit betekent dat de spanning over R<sub>c</sub> <strong>exact gelijk</strong> is aan U₁:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><msub><mi>R</mi><mi>c</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fysische betekenis:</strong> Een ideale spanningsbron "dwingt" de spanning over parallelle componenten af, onafhankelijk van wat er in de rest van het netwerk gebeurt.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Pas de wet van Ohm toe</div>
+
+<p>Nu we weten dat de spanning over R<sub>c</sub> gelijk is aan U₁, kunnen we direct de <strong>wet van Ohm</strong> toepassen:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><msub><mi>R</mi><mi>c</mi></msub></msub>
+      <msub><mi>R</mi><mi>c</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer U<sub>Rc</sub> = U₁)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mn>1</mn></msub>
+      <msub><mi>R</mi><mi>c</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Of in de notatie van de vraag:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mi>/</mi>
+    <msub><mi>R</mi><mi>c</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Belangrijke conclusie:</strong> De stroom I<sub>c</sub> hangt <strong>NIET</strong> af van de stromen I₁, I₂, I₃, I<sub>b</sub> of I<sub>d</sub> in andere takken!</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Verifieer waarom andere antwoorden fout zijn</div>
+
+<p>Laten we analyseren waarom de andere antwoorden <strong>niet</strong> kloppen:</p>
+
+<p><strong>Antwoord b:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></math></p>
+<ul>
+<li>Fout: suggereert dat I₁ en I₃ <em>extra</em> door R<sub>c</sub> vloeien</li>
+<li>Dit zou alleen kloppen als I₁ en I₃ van buitenaf in de R<sub>c</sub>-tak worden geïnjecteerd, wat hier niet het geval is</li>
+</ul>
+
+<p><strong>Antwoord c:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></math></p>
+<ul>
+<li>Fout: negeert de wet van Ohm volledig</li>
+<li>Suggereert dat I<sub>c</sub> de som is van alle andere stromen, wat alleen zou kloppen bij een specifieke knooppuntconfiguratie</li>
+<li>De spanning U₁ en weerstand R<sub>c</sub> komen niet voor in de formule!</li>
+</ul>
+
+<p><strong>Antwoord d:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></math></p>
+<ul>
+<li>Fout: combineert de juiste Ohm-term met onnodige stroomtermen</li>
+<li>Zou alleen kloppen als alle genoemde stromen samenvoegen EN door R<sub>c</sub> stromen</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mo>[</mo><mi>V</mi><mo>]</mo>
+      <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo>
+    <mi>A</mi>
+    <mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Realiteitscheck met voorbeeld:</strong></p>
+<p>Stel U₁ = 12V en R<sub>c</sub> = 4Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>12</mn><mtext> V</mtext></mrow>
+      <mrow><mn>4</mn><mtext> Ω</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Deze stroom is <strong>onafhankelijk</strong> van wat er in de rest van het netwerk gebeurt. Zelfs als I₁ = 100A of I₂ = 0A, blijft I<sub>c</sub> altijd 3A zolang U₁ = 12V en R<sub>c</sub> = 4Ω.</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Het principe van spanningsbron-dominantie:</strong></p>
+
+<p>Deze opgave illustreert een fundamenteel principe in elektrische netwerken:</p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Een ideale spanningsbron dwingt de spanning over parallelle componenten af, ongeacht de stromen in andere delen van het netwerk."
+</blockquote>
+
+<p><strong>Praktische implicaties:</strong></p>
+<ul>
+<li><strong>Onafhankelijkheid:</strong> Wijzigingen in andere takken (bijv. I₁ verandert) hebben <strong>geen</strong> effect op I<sub>c</sub></li>
+<li><strong>Voorspelbaarheid:</strong> De stroom door R<sub>c</sub> is eenvoudig te berekenen zonder het hele netwerk te analyseren</li>
+<li><strong>Ontwerp:</strong> Als je een constante stroom door een component wilt, sluit deze dan direct parallel aan een vaste spanningsbron</li>
+</ul>
+
+<p><strong>Wat gebeurt er wel met de spanningsbron?</strong></p>
+<p>De <strong>totale stroom</strong> die de spanningsbron U₁ levert is de <strong>som</strong> van alle parallelle takken:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><msub><mi>U</mi><mn>1</mn></msub></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mtext>andere parallel takken</mtext></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Maar elke <strong>individuele</strong> paralleltak hangt alleen af van U₁ en zijn eigen weerstand.</p>
+
+<p><strong>Vergelijk met reële spanningsbron:</strong></p>
+<p>Bij een <strong>reële</strong> spanningsbron (met inwendige weerstand R<sub>i</sub>) zou de spanning over R<sub>c</sub> wél afhangen van de totale stroom, omdat:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><msub><mi>R</mi><mi>c</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>totaal</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>i</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Maar voor een <strong>ideale</strong> bron (R<sub>i</sub> = 0Ω) geldt deze simplificatie niet!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> a</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub></mrow></math></p>
+
+<p><em>Directe toepassing van de wet van Ohm voor een weerstand die parallel staat aan een spanningsbron.</em></p>
+</div>
+
+</div>

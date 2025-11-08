@@ -1,0 +1,207 @@
+<!-- OPGAVE 1 - ENHANCED VERSION -->
+
+<div class="question">
+<p>In een zaklantaarn zit een 4,5V-batterij. Door het lampje loopt een stroom van 0,3 A.</p>
+<p>Hoe groot is de weerstand van het lampje?</p>
+<p>Teken het netwerkschema.</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p>Uit de opgave halen we de volgende grootheden:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Grootheid</th>
+  <th>Symbool</th>
+  <th>Waarde</th>
+  <th>Eenheid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanning</td>
+  <td><math><mi>U</mi></math></td>
+  <td>4,5</td>
+  <td>V</td>
+</tr>
+<tr>
+  <td>Stroom</td>
+  <td><math><mi>I</mi></math></td>
+  <td>0,3</td>
+  <td>A</td>
+</tr>
+<tr>
+  <td>Weerstand</td>
+  <td><math><mi>R</mi></math></td>
+  <td><strong>?</strong></td>
+  <td>Ω</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Gevraagd:</strong> Bepaal de weerstand <math><mi>R</mi></math> van het lampje.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Kies de relevante natuurkundige wet</div>
+<p>Voor een lineaire weerstand waarbij spanning en stroom bekend zijn, gebruiken we de <strong>wet van Ohm</strong> (Holmes §1.8, Formuleblad 1.1):</p>
+
+<div class="display-math">
+<math display="block">
+  <mrow>
+    <mi>U</mi>
+    <mo>=</mo>
+    <mi>I</mi>
+    <mo>·</mo>
+    <mi>R</mi>
+  </mrow>
+</math>
+</div>
+
+<p>Deze fundamentele wet beschrijft het lineaire verband tussen spanning over een weerstand en de stroom erdoor. Voor ohmse weerstanden (zoals gloeilampen bij constante temperatuur) is deze relatie geldig.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Herleid de formule naar de gevraagde grootheid</div>
+<p>We willen <math><mi>R</mi></math> berekenen. Deel beide zijden door <math><mi>I</mi></math>:</p>
+
+<div class="display-math">
+<math display="block">
+  <mrow>
+    <mi>U</mi>
+    <mo>=</mo>
+    <mi>I</mi>
+    <mo>·</mo>
+    <mi>R</mi>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (deel beide zijden door <math><mi>I</mi></math>)</p>
+
+<div class="display-math">
+<math display="block">
+  <mrow>
+    <mfrac>
+      <mi>U</mi>
+      <mi>I</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mi>I</mi><mo>·</mo><mi>R</mi></mrow>
+      <mi>I</mi>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (vereenvoudig)</p>
+
+<div class="display-math">
+<math display="block">
+  <mrow>
+    <mi>R</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mi>U</mi>
+      <mi>I</mi>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Substitueer de numerieke waarden</div>
+<p>Vul de bekende waarden in (met eenheden):</p>
+
+<div class="display-math">
+<math display="block">
+  <mrow>
+    <mi>R</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>4</mn><mo>,</mo><mn>5</mn><mtext> V</mtext></mrow>
+      <mrow><mn>0</mn><mo>,</mo><mn>3</mn><mtext> A</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>15</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Controle en interpretatie</div>
+
+<p><strong>Eenhedencontrole:</strong></p>
+<div class="display-math">
+<math display="block">
+  <mrow>
+    <mo>[</mo><mi>R</mi><mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>[</mo><mi>V</mi><mo>]</mo></mrow>
+      <mrow><mo>[</mo><mi>A</mi><mo>]</mo></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>Ω</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt, want per definitie: 1 Ω = 1 V/A ✓</p>
+
+<p><strong>Realiteitscheck:</strong></p>
+<p>Een weerstand van 15 Ω is typisch voor een klein zaklantaarnlampje. Dit is een realistisch resultaat.</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+<p><strong>Vermogensdissipatie:</strong></p>
+<p>Het lampje dissipeert vermogen volgens <math><mrow><mi>P</mi><mo>=</mo><mi>U</mi><mo>·</mo><mi>I</mi></mrow></math>:</p>
+<div class="display-math">
+<math display="block">
+  <mrow>
+    <mi>P</mi>
+    <mo>=</mo>
+    <mn>4</mn><mo>,</mo><mn>5</mn>
+    <mo>·</mo>
+    <mn>0</mn><mo>,</mo><mn>3</mn>
+    <mo>=</mo>
+    <mn>1</mn><mo>,</mo><mn>35</mn>
+    <mtext> W</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Dit lage vermogen (≈1,4 W) is geschikt voor batterijvoeding en geeft voldoende licht voor een zaklantaarn zonder de batterij te snel leeg te maken.</p>
+
+<p><strong>Gedrag bij spanningswijziging:</strong></p>
+<p>Als de batterijspanning afneemt (bijv. naar 3V bij lege batterij), neemt de stroom af tot I = 3V/15Ω = 0,2A en het vermogen tot P = 0,6W. Het lampje zal dus minder fel branden.</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> De weerstand van het lampje bedraagt <strong>R = 15 Ω</strong></p>
+</div>
+
+<div class="step">
+<div class="step-header">Netwerkschema</div>
+<p>Het elektrisch schema toont:</p>
+<ul>
+<li>Spanningsbron: U = 4,5 V</li>
+<li>Weerstand (lampje): R = 15 Ω</li>
+<li>Stroom: I = 0,3 A (stroomrichting aangegeven met pijl)</li>
+</ul>
+
+<img src="media/media/image4.PNG" style="max-width:500px;" alt="Circuit diagram Opgave 1">
+
+<p><em>Het schema toont een eenvoudig seriecircuit: de batterij levert de spanning, de weerstand (lampje) begrenst de stroom.</em></p>
+</div>
+
+</div>

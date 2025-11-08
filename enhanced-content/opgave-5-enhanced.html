@@ -1,0 +1,32 @@
+<!-- OPGAVE 5 - ENHANCED VERSION -->
+<!-- Chapter: H 3.11 blz. 41 -->
+<!-- Type: kirchhoff -->
+
+<div class="question">
+<p><img src="media/media/image63.PNG"  /></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+
+<div class="enhancement-note" style="background: #fff3cd; padding: 10px; margin: 10px 0; border-left: 4px solid #ffc107;">
+<strong>⚠️ Enhancement in progress</strong><br>
+Deze opgave is geëxtraheerd uit het bronmateriaal en bevat de originele uitwerking.<br>
+Volgende stappen voor volledige enhancement:
+<ul>
+<li>Stap 1: Analyseer gegeven informatie (tabel format)</li>
+<li>Stap 2: Identificeer relevante natuurkundige wet (Holmes KIRCHHOFF formules)</li>
+<li>Stap 3: Algebraïsche afleiding (stap-voor-stap met pijlen)</li>
+<li>Stap 4: Numerieke substitutie (met eenheden)</li>
+<li>Stap 5: Verificatie & fysische interpretatie</li>
+</ul>
+</div>
+
+<div class="original-solution">
+<div class="step-header">Originele Uitwerking</div>
+<p><strong>Aanpak:</strong> van rechts naar links de totale spanning van spanningsbron U<sub>x</sub> bepalen</p> <p>Eerst maar even in MultiSim het schema tekenen en voorzien van referenties:</p> <p><img src="media/media/image64.PNG"  /></p> <p>Over weerstand R9 staat dus een spanning van <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mrow><mi>R</mi><mn>9</mn></mrow></msub><mo>=</mo><mspace width="0.222em"></mspace><mn>1</mn><mi>k</mi><mo>•</mo><mn>1</mn><mi>m</mi><mi>A</mi><mo>=</mo><mn>1</mn><mi>V</mi></mrow><annotation encoding="application/x-tex">U_{R9} = \ 1k \bullet 1mA = 1V</annotation></semantics></math></p> <p>Dezelfde stroom loopt door R7 en R8 waardoor over R4 een totale spanning van 2V staat.</p> <p>Door R4 loopt dus ook een stroom van 1 mA, zodat we direct weten (stroomwet van Kirchhoff) dat door R3 en R6 een stroom van 2 mA loopt. Over beide weerstanden dus 2V, zodat over R2 een spanning staat die gelijk is aan:</p> <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mrow><mi>R</mi><mn>2</mn></mrow></msub><mo>=</mo><mspace width="0.222em"></mspace><msub><mi>U</mi><mrow><mi>R</mi><mn>3</mn></mrow></msub><mo>+</mo><msub><mi>U</mi><mrow><mi>R</mi><mn>4</mn></mrow></msub><mo>+</mo><msub><mi>U</mi><mrow><mi>R</mi><mn>6</mn></mrow></msub><mo>=</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>6</mn><mspace width="0.222em"></mspace><mi>V</mi><mi>o</mi><mi>l</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">U_{R2} = \ U_{R3} + U_{R4} + U_{R6} = 2 + 2 + 2 = 6\ Volt</annotation></semantics></math></p> <p>Als er 6 Volt over R2 staat loopt er dus een stroom door R4 die gelijk is aan:</p> <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mrow><mi>R</mi><mn>2</mn></mrow></msub><mo mathvariant="bold">=</mo><mfrac><mn>6</mn><mrow><mn>4</mn><mi>k</mi></mrow></mfrac><mo>=</mo><mn>1</mn><mo>,</mo><mn>5</mn><mspace width="0.222em"></mspace><mi>m</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">I_{R2}\mathbf{=}\frac{6}{4k} = 1,5\ mA</annotation></semantics></math>, wat betekent dat door R1 en R5 een stroom loopt van 1,5 + 2 = 3,5 mA.</p> <p>Over beide weerstanden dus 7V, zodat de spanning die de spanningsbron levert gelijk aan:</p> <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>x</mi></msub><mo>=</mo><mspace width="0.222em"></mspace><msub><mi>U</mi><mrow><mi>R</mi><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>U</mi><mrow><mi>R</mi><mn>2</mn></mrow></msub><mo>+</mo><msub><mi>U</mi><mrow><mi>R</mi><mn>5</mn></mrow></msub><mo>=</mo><mn>7</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>7</mn><mo>=</mo><mn>20</mn><mspace width="0.222em"></mspace><mi>V</mi><mi>o</mi><mi>l</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">U_{x} = \ U_{R1} + U_{R2} + U_{R5} = 7 + 6 + 7 = 20\ Volt</annotation></semantics></math>.</p> <p>En dat klopt ook met de simulatie.</p>
+</div>
+
+
+</div>

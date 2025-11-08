@@ -1,0 +1,246 @@
+<!-- OPGAVE 16 - ENHANCED VERSION (Kirchhoff knooppunt B - complexe stroombalans) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de weerstand R<sub>c</sub> gelijk aan:</p>
+
+<p><img src="media/media/image25.PNG" style="max-width:700px;" alt="Opgave 16 network diagram"></p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>−</mo><msub><mi>I</mi><mn>3</mn></msub><mo>)</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>[</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>−</mo><msub><mi>I</mi><mn>3</mn></msub><mo>)</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo><mo>]</mo><mo>·</mo><mo>[</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>c</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo><mo>]</mo></mrow></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mn>3</mn></msub><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>)</mo></mrow></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>d</mi></msub></mrow></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag test de <strong>Kirchhoff knooppuntwet</strong> op een complex knooppunt met meerdere stromen.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Knooppunt B</td>
+  <td>Waar I₁, I₂, I<sub>c</sub> en I<sub>d</sub> samenkomen</td>
+</tr>
+<tr>
+  <td>Stroomen naar B</td>
+  <td>I₁ (van stroombron)</td>
+</tr>
+<tr>
+  <td>Stromen van B weg</td>
+  <td>I₂, I<sub>c</sub>, I<sub>d</sub></td>
+</tr>
+<tr>
+  <td>Gezochte stroom</td>
+  <td>I<sub>c</sub> door R<sub>c</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> Kirchhoff knooppuntwet (KCL): <math><mo>Σ</mo><mi>I</mi><mo>=</mo><mn>0</mn></math> voor alle stromen naar/van een knooppunt (Holmes §1.8).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Identificeer alle stromen bij knooppunt B</div>
+
+<p>Bij knooppunt B zijn de volgende stromen aanwezig (let op de richting!):</p>
+
+<ul>
+<li><math><msub><mi>I</mi><mn>1</mn></msub></math>: stroomt <strong>naar</strong> B (positief)</li>
+<li><math><msub><mi>I</mi><mn>2</mn></msub></math>: stroomt <strong>weg van</strong> B (negatief)</li>
+<li><math><msub><mi>I</mi><mi>c</mi></msub></math>: stroomt <strong>weg van</strong> B (negatief)</li>
+<li><math><msub><mi>I</mi><mi>d</mi></msub></math>: stroomt <strong>weg van</strong> B (negatief)</li>
+</ul>
+
+<p><strong>Belangrijk:</strong> In dit netwerk is I₁ de stroom van de stroombron die naar knooppunt B stroomt. De stromen I₂, I<sub>c</sub> en I<sub>d</sub> zijn de uitgaande stromen.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Pas Kirchhoff knooppuntwet toe</div>
+
+<p>De Kirchhoff knooppuntwet zegt dat de som van alle stromen naar een knooppunt nul is:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Waarbij I₂, I<sub>c</sub> en I<sub>d</sub> negatief zijn (weggaand).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Los op naar I<sub>c</sub></div>
+
+<p>Isoleer I<sub>c</sub> in de vergelijking:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>d</strong>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>I</mi><mi>c</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>−</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>−</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Waarom andere antwoorden fout zijn:</strong></p>
+
+<p><strong>Antwoord a:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>−</mo><msub><mi>I</mi><mn>3</mn></msub><mo>)</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></math></p>
+<ul>
+<li>Fout: Gebruikt I<sub>b</sub> en I₃ die niet bij knooppunt B aansluiten</li>
+<li>Dit zou mogelijk een uitdrukking zijn na substitutie van andere knooppuntvergelijkingen, maar niet de directe toepassing van KCL op knooppunt B</li>
+</ul>
+
+<p><strong>Antwoord b:</strong> Bevat stroomdelingsformule</p>
+<ul>
+<li>Fout: Stroomdeling is niet relevant voor directe Kirchhoff toepassing</li>
+</ul>
+
+<p><strong>Antwoord c:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mn>3</mn></msub><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>)</mo></math></p>
+<ul>
+<li>Fout: Negeert I₁ en I<sub>d</sub></li>
+<li>Zou alleen kloppen als I₁ + I<sub>d</sub> = 0, wat niet algemeen geldt</li>
+</ul>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel I₁ = 10A (naar B), I₂ = -3A (van B weg), I<sub>d</sub> = -2A (van B weg):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>10</mn>
+    <mo>−</mo>
+    <mo>(</mo>
+    <mo>−</mo>
+    <mn>3</mn>
+    <mo>)</mo>
+    <mo>−</mo>
+    <mo>(</mo>
+    <mo>−</mo>
+    <mn>2</mn>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>10</mn>
+    <mo>+</mo>
+    <mn>3</mn>
+    <mo>+</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>5</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Controle: 10A komt binnen, 3A + 2A + 5A = 10A gaat weg → balans klopt ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Stroombalans in complexe netwerken:</strong></p>
+
+<p>De vergelijking <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>d</mi></msub></math> vertelt ons:</p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"De stroom door R<sub>c</sub> is het restant van de binnenkomende stroom I₁ nadat I₂ en I<sub>d</sub> zijn afgetakt."
+</blockquote>
+
+<p>Of, herschreven als:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Dit zegt: "De totale binnenkomende stroom I₁ splitst zich in drie uitgaande stromen."</p>
+
+<p><strong>Belang van tekenconventie:</strong></p>
+<p>Bij complexe netwerken is het cruciaal om een <strong>consistente tekenconventie</strong> te hanteren:</p>
+<ul>
+<li>Kies één richting als positief (bijv. "naar knooppunt")</li>
+<li>Houd deze conventie aan voor ALLE stromen</li>
+<li>Negatieve uitkomsten betekenen dat de werkelijke richting tegengesteld is</li>
+</ul>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> d</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>d</mi></msub></mrow></math></p>
+
+<p><em>Directe toepassing van Kirchhoff knooppuntwet op knooppunt B.</em></p>
+</div>
+
+</div>
