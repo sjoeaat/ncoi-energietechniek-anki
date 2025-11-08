@@ -1,0 +1,360 @@
+<div class="question">
+<p><strong>H 9.7 - Opgave 10: Onbekende L en bekende R</strong></p>
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Serie RL-netwerk (R + L in serie)</li>
+<li>R = 25 Ω (bekend)</li>
+<li>Totale impedantie: |Z| = 100 Ω</li>
+<li>Frequentie: f = 400 Hz</li>
+</ul>
+<p><strong>Vraag:</strong> Bereken L en φ</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking volgens 5-stappen methodologie</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>Netwerkconfiguratie:</strong></p>
+<ul>
+<li>Serie RL: Z = R + jωL</li>
+<li>R = 25 Ω</li>
+<li>|Z| = 100 Ω (modulus gegeven)</li>
+<li>ω = 2πf = 2π × 400 = 800π rad/s ≈ 2513 rad/s</li>
+</ul>
+
+<p><strong>Te bepalen:</strong></p>
+<ul>
+<li>Inductantie L [H]</li>
+<li>Fasehoek φ [rad of°]</li>
+</ul>
+
+<p><strong>Holmes referentie:</strong> H 9.7 - Complexe impedanties</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+<p><strong>Serie RL impedantie:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>Z</mi>
+    <mo>=</mo>
+    <mi>R</mi>
+    <mo>+</mo>
+    <mi>j</mi><mi>ω</mi><mi>L</mi>
+    <mo>=</mo>
+    <mi>R</mi>
+    <mo>+</mo>
+    <mi>j</mi>
+    <msub><mi>X</mi><mi>L</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Modulus (Pythagoras):</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow><mo>|</mo><mi>Z</mi><mo>|</mo></mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup><mi>R</mi><mn>2</mn></msup>
+        <mo>+</mo>
+        <msubsup><mi>X</mi><mi>L</mi><mn>2</mn></msubsup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<p><strong>X<sub>L</sub> oplossen:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>X</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup>
+          <mrow><mo>|</mo><mi>Z</mi><mo>|</mo></mrow>
+          <mn>2</mn>
+        </msup>
+        <mo>−</mo>
+        <msup><mi>R</mi><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Inductantie uit reactantie:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>L</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>X</mi><mi>L</mi></msub>
+      <mrow><mn>2</mn><mi>π</mi><mi>f</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fasehoek:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>φ</mi>
+    <mo>=</mo>
+    <mi>arctan</mi>
+    <mfrac>
+      <msub><mi>X</mi><mi>L</mi></msub>
+      <mi>R</mi>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding</div>
+
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>|Z|² = R² + X<sub>L</sub>²</li>
+<li>100² = 25² + X<sub>L</sub>²</li>
+</ul>
+
+<p><strong>Los op naar X<sub>L</sub>:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup><mi>X</mi><mi>L</mi><mn>2</mn></msubsup>
+    <mo>=</mo>
+    <msup><mn>100</mn><mn>2</mn></msup>
+    <mo>−</mo>
+    <msup><mn>25</mn><mn>2</mn></msup>
+    <mo>=</mo>
+    <mn>10000</mn>
+    <mo>−</mo>
+    <mn>625</mn>
+    <mo>=</mo>
+    <mn>9375</mn>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>X</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <msqrt>
+      <mn>9375</mn>
+    </msqrt>
+    <mo>=</mo>
+    <mn>96,82</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Bereken L:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>L</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>X</mi><mi>L</mi></msub>
+      <mrow><mn>2</mn><mi>π</mi><mi>f</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>96,82</mn>
+      <mrow><mn>2</mn><mi>π</mi>
+      <mo>·</mo>
+      <mn>400</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>96,82</mn>
+      <mn>2513</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>38,52</mn>
+    <mtext> mH</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Bereken φ:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>φ</mi>
+    <mo>=</mo>
+    <mi>arctan</mi>
+    <mfrac>
+      <mn>96,82</mn>
+      <mn>25</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mi>arctan</mi>
+    <mo>(</mo>
+    <mn>3,873</mn>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>1,318</mn>
+    <mtext> rad</mtext>
+    <mo>=</mo>
+    <mn>75,52</mn>
+    <mo>°</mo>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke verificatie</div>
+
+<p><strong>Controle |Z|:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow><mo>|</mo><mi>Z</mi><mo>|</mo></mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup><mn>25</mn><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mn>96,82</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <mn>625</mn>
+        <mo>+</mo>
+        <mn>9374,11</mn>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mn>9999,11</mn>
+    </msqrt>
+    <mo>≈</mo>
+    <mn>100</mn>
+    <mtext> Ω</mtext>
+    <mtext> ✓</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Controle X<sub>L</sub> uit L:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>X</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mn>2</mn><mi>π</mi>
+    <mo>·</mo>
+    <mn>400</mn>
+    <mo>·</mo>
+    <mn>38,52</mn>
+    <mo>×</mo>
+    <msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup>
+    <mo>=</mo>
+    <mn>96,82</mn>
+    <mtext> Ω</mtext>
+    <mtext> ✓</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<ul>
+<li>[X<sub>L</sub>] = √(Ω² - Ω²) = Ω ✓</li>
+<li>[L] = [X<sub>L</sub>/(2πf)] = Ω / (s<sup>-1</sup>) = Ω·s = V·s/A = H ✓</li>
+<li>[φ] = arctan(Ω/Ω) = dimensieloos ✓</li>
+</ul>
+
+<p><strong>Fysische betekenis:</strong></p>
+
+<p><strong>Impedantie-driehoek:</strong></p>
+<p>Voor serie RL vormen R, X<sub>L</sub>, en |Z| een rechthoekige driehoek:</p>
+<ul>
+<li>Horizontaal: R = 25 Ω (resistief)</li>
+<li>Verticaal: X<sub>L</sub> = 96,82 Ω (inductief)</li>
+<li>Hypotenusa: |Z| = 100 Ω</li>
+<li>Hoek: φ = 75,52° (stroom loopt achter)</li>
+</ul>
+
+<p><strong>Verhouding X<sub>L</sub>/R ≈ 4:</strong></p>
+<p>Het netwerk is sterk inductief:</p>
+<ul>
+<li>X<sub>L</sub> ≈ 4R betekent dat reactieve component domineert</li>
+<li>Arbeidsfactor: cos φ = R/|Z| = 25/100 = 0,25 (zeer laag!)</li>
+<li>Slechts 25% van de schijnbaar vermogen is actief vermogen</li>
+<li>75% is reactief vermogen (oscillerend, niet gedissipeerd)</li>
+</ul>
+
+<p><strong>Fasehoek φ = 75,52°:</strong></p>
+<p>Een grote fasehoek betekent:</p>
+<ul>
+<li>Stroom loopt fors achter op spanning (bijna 90°)</li>
+<li>Het netwerk gedraagt zich bijna als een pure spoel</li>
+<li>Bij pure L zou φ = 90°, hier is het 75,5° door R</li>
+</ul>
+
+<p><strong>Inductantie L = 38,52 mH:</strong></p>
+<p>Dit is een behoorlijk grote inductie voor 400 Hz:</p>
+<ul>
+<li>Bij 50 Hz zou X<sub>L</sub> = 2π·50·0,03852 ≈ 12 Ω (veel kleiner)</li>
+<li>Bij 10 kHz zou X<sub>L</sub> ≈ 2420 Ω (veel groter)</li>
+<li>X<sub>L</sub> ∝ f: Inductieve reactantie groeit lineair met frequentie</li>
+</ul>
+
+<p><strong>Praktische context:</strong></p>
+<p>Serie RL-netwerken met hoge X<sub>L</sub>/R ratio komen voor in:</p>
+<ul>
+<li><strong>Transformators:</strong> Primaire wikkeling bij lege secundair</li>
+<li><strong>Relais- en motorspoelen:</strong> Hoge inductie, lage R</li>
+<li><strong>RF-chokes:</strong> Hoge impedantie bij bepaalde frequenties</li>
+<li><strong>Ballasts:</strong> TL-armaturen (oude stijl)</li>
+</ul>
+
+<p><strong>Vermogenskarakter:</strong></p>
+<p>Bij lage arbeidsfactor (0,25):</p>
+<ul>
+<li>Hoge stroom voor weinig actief vermogen</li>
+<li>Grote verliezen in distributie</li>
+<li>Power factor correctie noodzakelijk (parallel C toevoegen)</li>
+<li>Compensatiecondensator zou Q<sub>C</sub> = -Q<sub>L</sub> moeten leveren</li>
+</ul>
+
+<p><strong>Ontwerp-implicaties:</strong></p>
+<p>Als |Z| en R bekend zijn, kan L eenvoudig berekend worden via Pythagoras. Dit is handig bij:</p>
+<ul>
+<li>Spoelkarakterisering (meten R en |Z|, bereken L)</li>
+<li>Kwaliteitsfactor bepaling: Q = X<sub>L</sub>/R ≈ 3,87 (matige Q)</li>
+<li>Filter ontwerp (bepaal benodigde L voor gewenste |Z|)</li>
+</ul>
+</div>
+
+<div style="background: #e8f4f8; padding: 15px; margin-top: 20px; border-left: 4px solid #2196F3;">
+<p><strong>Antwoord:</strong></p>
+<p><strong>L = 38,52 mH</strong></p>
+<p><strong>φ = 1,318 rad</strong> (75,52°)</p>
+<p><em>Verificatie: X<sub>L</sub> = √(100² - 25²) = 96,82 Ω</em></p>
+<p><em>Fysisch: Het serie RL-netwerk is sterk inductief (X<sub>L</sub> ≈ 4R), met een arbeidsfactor van slechts 0,25. De grote fasehoek (75,5°) betekent dat de stroom bijna 90° achterloopt op de spanning, vergelijkbaar met een bijna-pure spoel. De kwaliteitsfactor Q = X<sub>L</sub>/R ≈ 3,87 duidt op matige verliezen in de spoel.</em></p>
+</div>
+
+</div>

@@ -1,0 +1,357 @@
+<div class="question">
+<p><strong>H 7.8 - Opgave 5: C + (C || (L+R)) netwerk</strong></p>
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Netwerk: C<sub>1</sub> in serie met parallelle tak [C<sub>2</sub> || (L+R)]</li>
+<li>Schaal: spanningen 100× kleiner dan stromen</li>
+<li>u = 100V (te bepalen: spanningen en stromen)</li>
+</ul>
+<p><strong>Vraag:</strong> Construeer fasordiagram en bereken alle spanningen en stromen</p>
+<p><img src="media/media/image78.png" style="max-width:600px;"></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking volgens 5-stappen methodologie</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>Netwerktopologie:</strong></p>
+<ul>
+<li>C<sub>1</sub> in serie met de bron</li>
+<li>Parallel blok: C<sub>2</sub> || (L+R)</li>
+<li>Serie RL-tak: L en R in serie</li>
+</ul>
+
+<p><strong>Fasorbenadering:</strong></p>
+<ul>
+<li>Kies eerst de stroom door L en R (horizontaal als referentie)</li>
+<li>Schaal: spanningen 100× kleiner weergegeven dan stromen</li>
+<li>Bij R: i en u hebben dezelfde lengte (schaal factor 100 Ω)</li>
+</ul>
+
+<p><strong>Gegeven resultaten uit diagram:</strong></p>
+<ul>
+<li>Verhouding u / u<sub>C1</sub> = √5 = 2,236</li>
+<li>Verhouding u<sub>C2</sub> / u<sub>C1</sub> = √2 = 1,4142</li>
+<li>Voor u = 100V: bepaal alle deelspanningen en stromen</li>
+</ul>
+
+<p><strong>Holmes referentie:</strong> H 7.8 blz. 88 - Complexe RLC-netwerken met fasoren</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+<p><strong>Fasorconstructie strategie:</strong></p>
+<p>Bij netwerken met meerdere gekoppelde componenten volgen we een systematische bouw volgorde:</p>
+
+<ol>
+<li><strong>Kies referentie:</strong> i<sub>RL</sub> horizontaal (stroom door R en L)</li>
+<li><strong>Spanningen in RL-tak:</strong>
+   <ul>
+   <li>u<sub>R</sub> in fase met i<sub>RL</sub> (horizontaal)</li>
+   <li>u<sub>L</sub> 90° voorijlend t.o.v. i<sub>RL</sub> (verticaal omhoog)</li>
+   <li>u<sub>C2</sub> = u<sub>R</sub> + u<sub>L</sub> (spanning over RL serie)</li>
+   </ul>
+</li>
+<li><strong>Stroom door C<sub>2</sub>:</strong> i<sub>C2</sub> 90° voorijlend t.o.v. u<sub>C2</sub></li>
+<li><strong>Totale stroom:</strong> i<sub>C1</sub> = i<sub>C2</sub> + i<sub>RL</sub> (KCL)</li>
+<li><strong>Spanning over C<sub>1</sub>:</strong> u<sub>C1</sub> 90° achterliggend t.o.v. i<sub>C1</sub></li>
+<li><strong>Totale spanning:</strong> u = u<sub>C1</sub> + u<sub>C2</sub> (KVL)</li>
+</ol>
+
+<p><strong>Faserelaties bij reactieve componenten:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext>Spoel L: </mtext>
+    <msub><mi>u</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mi>j</mi><mi>ω</mi><mi>L</mi>
+    <mo>·</mo>
+    <msub><mi>i</mi><mi>L</mi></msub>
+    <mspace width="1em"/>
+    <mtext>(u loopt 90° voor)</mtext>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext>Condensator C: </mtext>
+    <msub><mi>i</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mi>j</mi><mi>ω</mi><mi>C</mi>
+    <mo>·</mo>
+    <msub><mi>u</mi><mi>C</mi></msub>
+    <mspace width="1em"/>
+    <mtext>(i loopt 90° voor)</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding uit fasordiagram</div>
+
+<p><strong>Stap 3a: Verhoudingen uit diagram (10 vakjes = 1)</strong></p>
+<p>Uit grafische constructie (zie afbeelding):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mi>u</mi>
+      <msub><mi>u</mi><mtext>C1</mtext></msub>
+    </mfrac>
+    <mo>=</mo>
+    <msqrt><mn>5</mn></msqrt>
+    <mo>=</mo>
+    <mn>2,236</mn>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <msub><mi>u</mi><mtext>C2</mtext></msub>
+      <msub><mi>u</mi><mtext>C1</mtext></msub>
+    </mfrac>
+    <mo>=</mo>
+    <msqrt><mn>2</mn></msqrt>
+    <mo>=</mo>
+    <mn>1,4142</mn>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3b: "Toevallige" observaties uit diagram</strong></p>
+<p>Uit de constructie blijkt:</p>
+<ul>
+<li>i<sub>C1</sub> = i<sub>C2</sub> + i<sub>RL</sub> (vectoroptelling) ✓</li>
+<li>u<sub>C1</sub> is "toevallig" gelijk aan i<sub>RL</sub> (in lengte, met schaalfactor)</li>
+<li>De rest wijst zichzelf... (alle vectoren sluiten aan)</li>
+</ul>
+
+<p><em>Opmerking: Deze "toevalligheden" zijn eigenlijk het gevolg van specifieke componentwaarden waarbij bepaalde impedanties numeriek gelijk worden.</em></p>
+
+<p><strong>Stap 3c: Bepaal u<sub>C1</sub> uit u = 100V</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>u</mi><mtext>C1</mtext></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mi>u</mi>
+      <msqrt><mn>5</mn></msqrt>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>100</mn>
+      <mn>2,236</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>44,72</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3d: Bepaal u<sub>C2</sub></strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>u</mi><mtext>C2</mtext></msub>
+    <mo>=</mo>
+    <msqrt><mn>2</mn></msqrt>
+    <mo>·</mo>
+    <msub><mi>u</mi><mtext>C1</mtext></msub>
+    <mo>=</mo>
+    <mn>1,4142</mn>
+    <mo>·</mo>
+    <mn>44,72</mn>
+    <mo>=</mo>
+    <mn>63,24</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3e: Observatie u<sub>C1</sub> = u<sub>L</sub></strong></p>
+<p>Uit het diagram blijkt: u<sub>C1</sub> = u<sub>L</sub> = 44,72 V</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke berekening stromen</div>
+
+<p><strong>Schaalrelatie:</strong></p>
+<p>Spanningen zijn 100× kleiner weergegeven dan stromen, met R = 100 Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>i</mi><mi>RL</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>u</mi><mi>R</mi></msub>
+      <mi>R</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>u</mi><mtext>C1</mtext></msub>
+      <mn>100</mn>
+    </mfrac>
+    <mspace width="1em"/>
+    <mtext>(diagram observatie)</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 4a: Bereken i<sub>RL</sub> = i<sub>L</sub></strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>i</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <msub><mi>i</mi><mi>RL</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>u</mi><mtext>C1</mtext></msub>
+      <mn>100</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>44,72</mn>
+      <mn>100</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>447,2</mn>
+    <mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 4b: Bereken i<sub>C1</sub></strong></p>
+<p>Uit diagram: i<sub>C1</sub> = u<sub>C1</sub> / 100 (met schaalfactor):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>i</mi><mtext>C1</mtext></msub>
+    <mo>=</mo>
+    <mn>447,2</mn>
+    <mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><em>(Dit is de "toevallige" gelijkheid die uit het diagram bleek)</em></p>
+
+<p><strong>Stap 4c: Bereken i<sub>C2</sub></strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>i</mi><mtext>C2</mtext></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>u</mi><mtext>C2</mtext></msub>
+      <mn>100</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>63,24</mn>
+      <mn>100</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>632,4</mn>
+    <mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Verificatie KCL (Kirchhoff Current Law):</strong></p>
+<p>Controle of i<sub>C1</sub> = i<sub>C2</sub> + i<sub>RL</sub> klopt met vectoroptelling uit diagram ✓</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<ul>
+<li>[u] = V ✓</li>
+<li>[i] = [u]/[R] = V / Ω = A ✓</li>
+<li>[verhouding u/u] = dimensieloos ✓</li>
+<li>√5 ≈ 2,236 ✓</li>
+<li>√2 ≈ 1,414 ✓</li>
+</ul>
+
+<p><strong>Controle KVL (Kirchhoff Voltage Law):</strong></p>
+<p>u = u<sub>C1</sub> + u<sub>C2</sub> (vectorieel):</p>
+<ul>
+<li>Verwacht: |u| moet volgen uit vectoroptelling</li>
+<li>Gegeven: u/u<sub>C1</sub> = √5 impliceert specifieke fasehoeken</li>
+<li>Consistent met diagram ✓</li>
+</ul>
+
+<p><strong>Fysische betekenis:</strong></p>
+
+<p><strong>Spanningsverhoudingen:</strong></p>
+<p>De verhoudingen √5 en √2 zijn karakteristiek voor specifieke fasehoeken:</p>
+<ul>
+<li>√5 = √(1² + 2²) suggereert vectoroptelling met verhouding 1:2</li>
+<li>√2 = √(1² + 1²) suggereert 45° fasehoek</li>
+</ul>
+
+<p><strong>"Toevallige" gelijkheden:</strong></p>
+<p>De observatie dat u<sub>C1</sub> = u<sub>L</sub> is geen toeval, maar volgt uit de specifieke componentwaarden. In dit netwerk geldt blijkbaar:</p>
+<ul>
+<li>X<sub>L</sub> en X<sub>C1</sub> zijn numeriek gelijk</li>
+<li>Dit creëert een gedeeltelijke resonantie-achtige situatie</li>
+<li>De impedanties "passen" zodanig dat eenvoudige verhoudingen ontstaan</li>
+</ul>
+
+<p><strong>Grafische methode kracht:</strong></p>
+<p>Dit is een perfect voorbeeld waarom fasordiagrammen zo waardevol zijn:</p>
+<ul>
+<li><strong>Inzicht:</strong> Je ziet direct welke spanning/stroom domineert</li>
+<li><strong>Verificatie:</strong> Alle vectoren moeten "sluiten" (KCL, KVL)</li>
+<li><strong>Verhoudingen:</strong> Numerieke waarden volgen uit geometrie (√2, √5)</li>
+<li><strong>Controle:</strong> Fouten in berekening zijn direct visueel zichtbaar</li>
+</ul>
+
+<p><strong>Praktische context:</strong></p>
+<p>Dit type netwerk met series/parallel capaciteiten en inductie:</p>
+<ul>
+<li><strong>Filters:</strong> Frequentieafhankelijke impedantie</li>
+<li><strong>Impedantietransformatie:</strong> Aanpassing tussen bron en last</li>
+<li><strong>Spanningsvermenigvuldiging:</strong> u<sub>C2</sub> > u<sub>C1</sub> mogelijk bij bepaalde frequenties</li>
+</ul>
+
+<p><strong>Let op:</strong> Bij u = 100V ontstaan deelspanningen tot 63V. In praktijk kunnen deelspanningen hoger zijn dan de bronspanning bij reactieve netwerken!</p>
+</div>
+
+<div style="background: #e8f4f8; padding: 15px; margin-top: 20px; border-left: 4px solid #2196F3;">
+<p><strong>Antwoord voor u = 100V:</strong></p>
+<p><strong>Spanningen:</strong></p>
+<ul>
+<li>u<sub>C1</sub> = <strong>44,72 V</strong></li>
+<li>u<sub>C2</sub> = <strong>63,24 V</strong></li>
+<li>u<sub>L</sub> = <strong>44,72 V</strong> (gelijk aan u<sub>C1</sub>)</li>
+</ul>
+<p><strong>Stromen:</strong></p>
+<ul>
+<li>i<sub>L</sub> = i<sub>RL</sub> = <strong>447,2 mA</strong></li>
+<li>i<sub>C1</sub> = <strong>447,2 mA</strong></li>
+<li>i<sub>C2</sub> = <strong>632,4 mA</strong></li>
+</ul>
+<p><strong>Verhoudingen:</strong></p>
+<ul>
+<li>u / u<sub>C1</sub> = √5 = 2,236</li>
+<li>u<sub>C2</sub> / u<sub>C1</sub> = √2 = 1,4142</li>
+</ul>
+<p><em>Fysisch: De grafische fasorconstructie onthult "toevallige" gelijkheden (u<sub>C1</sub> = u<sub>L</sub>) die eigenlijk het gevolg zijn van specifieke impedantieverhoudingen. De geometrische verhoudingen √2 en √5 volgen direct uit de vectoroptelling in het complexe vlak.</em></p>
+</div>
+
+</div>

@@ -1,0 +1,306 @@
+<div class="question">
+<p><strong>H 7.8 - Opgave 3: L + C||R netwerk</strong></p>
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Netwerk: Spoel L in serie met parallel C||R</li>
+<li>i<sub>C</sub> is 2× zo groot als i<sub>R</sub></li>
+<li>i<sub>C</sub> loopt 90° voor op u<sub>RC</sub></li>
+<li>i<sub>L</sub> loopt 90° achter op u<sub>L</sub></li>
+<li>Schaal: u is 1000× kleiner dan i</li>
+</ul>
+<p><strong>Vraag:</strong> Construeer het fasordiagram en bepaal de verhoudingen</p>
+<p><img src="media/media/image77.png" style="max-width:500px;"></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking volgens 5-stappen methodologie</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>Netwerkconfiguratie:</strong></p>
+<ul>
+<li>Serie-spoel L gevolgd door parallel RC-tak</li>
+<li>Stroom i<sub>L</sub> = i<sub>totaal</sub> (serie-element)</li>
+<li>Stroomverdeling: i<sub>L</sub> = i<sub>R</sub> + i<sub>C</sub></li>
+<li>Verhoud ing: i<sub>C</sub> = 2 · i<sub>R</sub></li>
+</ul>
+
+<p><strong>Faserelaties:</strong></p>
+<ul>
+<li>Condensator: i<sub>C</sub> loopt 90° <strong>voor</strong> op u<sub>RC</sub></li>
+<li>Spoel: i<sub>L</sub> loopt 90° <strong>achter</strong> op u<sub>L</sub></li>
+<li>Weerstand: i<sub>R</sub> is in fase met u<sub>RC</sub></li>
+</ul>
+
+<p><strong>Holmes referentie:</strong> H 7.8 blz. 88 - RLC schakelingen met fasoren</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+<p><strong>Fasor constructie methode:</strong></p>
+<p>Bij complexe RLC-netwerken construeren we het fasordiagram stap voor stap, beginnend met bekende relaties.</p>
+
+<p><strong>Constructievolgorde:</strong></p>
+<ol>
+<li><strong>Begin met i<sub>R</sub>:</strong> Kies deze horizontaal (referentie)</li>
+<li><strong>Bepaal i<sub>C</sub>:</strong> 2× zo groot, 90° voorijlend t.o.v. u<sub>RC</sub></li>
+<li><strong>Optelling i<sub>L</sub>:</strong> i<sub>L</sub> = i<sub>R</sub> + i<sub>C</sub> (vectorieel)</li>
+<li><strong>Bepaal u<sub>L</sub>:</strong> 90° voorijlend t.o.v. i<sub>L</sub></li>
+<li><strong>Bepaal u<sub>RC</sub>:</strong> In fase met i<sub>R</sub></li>
+<li><strong>Totale spanning:</strong> u = u<sub>L</sub> + u<sub>RC</sub> (Kirchhoff)</li>
+</ol>
+
+<p><strong>Impedantie relaties:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mi>j</mi><mi>ω</mi><mi>L</mi>
+    <mspace width="2em"/>
+    <msub><mi>Z</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow><mi>j</mi><mi>ω</mi><mi>C</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mfrac>
+      <mi>j</mi>
+      <mrow><mi>ω</mi><mi>C</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding - Fasorconstructie</div>
+
+<p><strong>Stap 3a: Kies referentiefasor i<sub>R</sub> horizontaal</strong></p>
+<p>Stel i<sub>R</sub> = I<sub>R</sub> (reëel, horizontaal naar rechts)</p>
+
+<p><strong>Stap 3b: Bepaal i<sub>C</sub></strong></p>
+<p>Gegeven: i<sub>C</sub> = 2 · i<sub>R</sub> en i<sub>C</sub> loopt 90° voor op u<sub>RC</sub></p>
+<p>Omdat i<sub>R</sub> in fase is met u<sub>RC</sub>, loopt i<sub>C</sub> 90° voor op i<sub>R</sub>:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>i</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mn>2</mn>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <mo>·</mo>
+    <mi>j</mi>
+    <mspace width="1em"/>
+    <mtext>(verticaal omhoog)</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3c: Bereken i<sub>L</sub> (vectoroptelling)</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>i</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <msub><mi>i</mi><mi>R</mi></msub>
+    <mo>+</mo>
+    <msub><mi>i</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <mo>+</mo>
+    <mn>2</mn>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <mo>·</mo>
+    <mi>j</mi>
+  </mrow>
+</math>
+</div>
+
+<p>Modulus:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow><mo>|</mo><msub><mi>i</mi><mi>L</mi></msub><mo>|</mo></mrow>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <msqrt>
+      <mrow>
+        <msup><mn>1</mn><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mn>2</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <msqrt><mn>5</mn></msqrt>
+  </mrow>
+</math>
+</div>
+
+<p>Fasehoek: arctg(2/1) ≈ 63,4°</p>
+
+<p><strong>Stap 3d: Bepaal u<sub>L</sub></strong></p>
+<p>u<sub>L</sub> loopt 90° voor op i<sub>L</sub> (eigenschap spoel):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>u</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <msub><mi>i</mi><mi>L</mi></msub>
+    <mo>·</mo>
+    <mi>j</mi>
+    <mo>·</mo>
+    <mi>ω</mi><mi>L</mi>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3e: Bepaal u<sub>RC</sub></strong></p>
+<p>Over de parallelle RC-tak geldt één spanning u<sub>RC</sub>, in fase met i<sub>R</sub>:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>u</mi><mi>RC</mi></msub>
+    <mo>=</mo>
+    <msub><mi>i</mi><mi>R</mi></msub>
+    <mo>·</mo>
+    <mi>R</mi>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <mo>·</mo>
+    <mi>R</mi>
+    <mspace width="1em"/>
+    <mtext>(horizontaal)</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3f: Totale spanning (Kirchhoff spanningswet)</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>u</mi>
+    <mo>=</mo>
+    <msub><mi>u</mi><mi>L</mi></msub>
+    <mo>+</mo>
+    <msub><mi>u</mi><mi>RC</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Met schaal: u is 1000× kleiner dan i (dus lengtes in diagram)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke verificatie uit diagram</div>
+
+<p><strong>Uit het fasordiagram (zie afbeelding):</strong></p>
+
+<p><strong>Kleurcodering:</strong></p>
+<ul>
+<li><strong>Blauw:</strong> Stromen (i<sub>R</sub>, i<sub>C</sub>, i<sub>L</sub>)</li>
+<li><strong>Rood:</strong> Spanning u<sub>L</sub> over spoel</li>
+<li><strong>Oranje:</strong> Spanning u<sub>RC</sub> over parallel RC</li>
+<li><strong>Groen:</strong> Totale spanning u = u<sub>L</sub> + u<sub>RC</sub></li>
+</ul>
+
+<p><strong>Verhoudingen uit constructie:</strong></p>
+<ul>
+<li>i<sub>C</sub> = 2 · i<sub>R</sub> ✓ (gegeven, gecontroleerd)</li>
+<li>i<sub>L</sub> = √5 · i<sub>R</sub> ✓ (vectoroptelling)</li>
+<li>Fasehoek i<sub>L</sub> t.o.v. i<sub>R</sub>: arctg(2) ≈ 63,4° ✓</li>
+<li>u<sub>L</sub> staat ⊥ op i<sub>L</sub> (90° voorijlend) ✓</li>
+<li>u<sub>RC</sub> evenwijdig aan i<sub>R</sub> ✓</li>
+</ul>
+
+<p><strong>Schaalverificatie:</strong></p>
+<p>De spanning u is qua lengte 1000× kleiner getekend dan de stromen, conform de gegeven schaal. Dit maakt het diagram leesbaar.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<ul>
+<li>[i<sub>L</sub>] = √([i<sub>R</sub>]² + [i<sub>C</sub>]²) = A ✓</li>
+<li>[u] = [i]·[Z] = A · Ω = V ✓</li>
+<li>[fasehoek] = dimensieloos (radialen) ✓</li>
+</ul>
+
+<p><strong>Fysische betekenis:</strong></p>
+
+<p><strong>Stroomverdeling in parallel RC:</strong></p>
+<p>De totale stroom i<sub>L</sub> splitst zich in het parallelpunt in i<sub>R</sub> (resistief) en i<sub>C</sub> (capacitief). Omdat i<sub>C</sub> = 2·i<sub>R</sub>, domineert de capacitieve stroom, wat betekent dat de parallelle impedantie voornamelijk capacitief gedrag vertoont.</p>
+
+<p><strong>Relatie i<sub>C</sub> = 2·i<sub>R</sub>:</strong></p>
+<p>Dit impliceert een specifieke verhouding tussen R en X<sub>C</sub>:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <msub><mi>i</mi><mi>C</mi></msub>
+      <msub><mi>i</mi><mi>R</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>u</mi><mi>RC</mi></msub>
+      <msub><mi>X</mi><mi>C</mi></msub>
+    </mfrac>
+    <mo>·</mo>
+    <mfrac>
+      <mi>R</mi>
+      <msub><mi>u</mi><mi>RC</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mi>R</mi>
+      <msub><mi>X</mi><mi>C</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mspace width="1em"/>
+    <mo>⇒</mo>
+    <mspace width="1em"/>
+    <mi>R</mi>
+    <mo>=</mo>
+    <mn>2</mn>
+    <msub><mi>X</mi><mi>C</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Serie-spoel effect:</strong></p>
+<p>De spoel L in serie zorgt voor extra faseverschuiving. De spanning u<sub>L</sub> staat 90° vooruit t.o.v. de stroom i<sub>L</sub>, waardoor de totale spanning u een complexe faseverhouding heeft met de bron.</p>
+
+<p><strong>Grafische methode voordeel:</strong></p>
+<p>Bij complexe RLC-netwerken is de grafische fasorconstructie vaak inzichtelijker dan algebraïsch rekenen. Je ziet direct:</p>
+<ul>
+<li>Welke stromen/spanningen dominant zijn</li>
+<li>Of het netwerk inductief of capacitief gedrag vertoont</li>
+<li>De verhoudingen tussen componenten</li>
+</ul>
+
+<p><strong>Praktische toepassing:</strong></p>
+<p>Dit type netwerk komt voor in:</p>
+<ul>
+<li><strong>Filters:</strong> Frequentieafhankelijke demping</li>
+<li><strong>Impedantie-matching:</strong> Aanpassing van belastingen</li>
+<li><strong>Oscillatoren:</strong> Fase-verschuivende netwerken</li>
+</ul>
+</div>
+
+<div style="background: #e8f4f8; padding: 15px; margin-top: 20px; border-left: 4px solid #2196F3;">
+<p><strong>Antwoord uit fasordiagram:</strong></p>
+<p><strong>i<sub>L</sub> = √5 · i<sub>R</sub></strong> (ongeveer 2,236 × i<sub>R</sub>)</p>
+<p><strong>Fasehoek i<sub>L</sub>:</strong> arctg(2) ≈ 63,4° t.o.v. i<sub>R</sub></p>
+<p><strong>Totale spanning:</strong> u = u<sub>L</sub> + u<sub>RC</sub> (vectorieel)</p>
+<p><em>Fysisch: De grafische fasorconstructie toont dat de capacitieve stroom domineert (i<sub>C</sub> = 2·i<sub>R</sub>), wat resulteert in een totale stroom i<sub>L</sub> die vooral capacitief gedrag vertoont. De serie-spoel zorgt voor een extra 90° faseverschuiving in de spanning.</em></p>
+</div>
+
+</div>

@@ -1,0 +1,587 @@
+<div class="question">
+<p><strong>H 7.8 - Opgave 7: R + C||L netwerk</strong></p>
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>R = 1000 Ω in serie</li>
+<li>Parallel: L = 20 mH || C</li>
+<li>C = 10 nF</li>
+<li>f = 7950 Hz</li>
+</ul>
+<p><strong>Vraag:</strong> Bereken de totale impedantie |Z|</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking volgens 5-stappen methodologie</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>Netwerktopologie:</strong></p>
+<ul>
+<li>Weerstand R = 1000 Ω in serie met de bron</li>
+<li>Parallel LC-tak: L en C parallel geschakeld</li>
+<li>L = 20 mH = 20 × 10<sup>-3</sup> H</li>
+<li>C = 10 nF = 10 × 10<sup>-9</sup> F</li>
+<li>Frequentie: f = 7950 Hz</li>
+</ul>
+
+<p><strong>Te berekenen:</strong></p>
+<ul>
+<li>Totale impedantie Z<sub>totaal</sub></li>
+<li>Modulus |Z<sub>totaal</sub>|</li>
+</ul>
+
+<p><strong>Holmes referentie:</strong> H 7.8 blz. 88 - RLC schakelingen met complexe impedanties</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+<p><strong>Complexe impedanties:</strong></p>
+
+<p><strong>Inductieve reactantie:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mi>j</mi><mi>ω</mi><mi>L</mi>
+    <mo>=</mo>
+    <mi>j</mi>
+    <mo>·</mo>
+    <mn>2</mn><mi>π</mi><mi>f</mi>
+    <mo>·</mo>
+    <mi>L</mi>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Capacitieve reactantie:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow><mi>j</mi><mi>ω</mi><mi>C</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mi>j</mi>
+    <mfrac>
+      <mn>1</mn>
+      <mrow><mi>ω</mi><mi>C</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mi>j</mi>
+    <mfrac>
+      <mn>1</mn>
+      <mrow><mn>2</mn><mi>π</mi><mi>f</mi><mi>C</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Parallel LC impedantie:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>LC</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>Z</mi><mi>L</mi></msub>
+        <mo>·</mo>
+        <msub><mi>Z</mi><mi>C</mi></msub>
+      </mrow>
+      <mrow>
+        <msub><mi>Z</mi><mi>L</mi></msub>
+        <mo>+</mo>
+        <msub><mi>Z</mi><mi>C</mi></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Totale impedantie (serie):</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>totaal</mi></msub>
+    <mo>=</mo>
+    <mi>R</mi>
+    <mo>+</mo>
+    <msub><mi>Z</mi><mi>LC</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Hoekfrequentie:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>ω</mi>
+    <mo>=</mo>
+    <mn>2</mn><mi>π</mi><mi>f</mi>
+    <mo>=</mo>
+    <mn>2</mn><mi>π</mi>
+    <mo>·</mo>
+    <mn>7950</mn>
+    <mtext> rad/s</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding</div>
+
+<p><strong>Stap 3a: Bereken Z<sub>L</sub></strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mi>j</mi>
+    <mo>·</mo>
+    <mn>2</mn><mi>π</mi>
+    <mo>·</mo>
+    <mn>7950</mn>
+    <mo>·</mo>
+    <mn>20</mn>
+    <mo>×</mo>
+    <msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mi>j</mi>
+    <mo>·</mo>
+    <mn>2</mn>
+    <mo>·</mo>
+    <mn>3,14159</mn>
+    <mo>·</mo>
+    <mn>7950</mn>
+    <mo>·</mo>
+    <mn>0,020</mn>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mn>999</mn>
+    <mi>j</mi>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3b: Bereken Z<sub>C</sub></strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mi>j</mi>
+    <mfrac>
+      <msup><mn>10</mn><mn>9</mn></msup>
+      <mrow>
+        <mn>2</mn><mi>π</mi>
+        <mo>·</mo>
+        <mn>7950</mn>
+        <mo>·</mo>
+        <mn>10</mn>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mi>j</mi>
+    <mfrac>
+      <msup><mn>10</mn><mn>9</mn></msup>
+      <mrow>
+        <mn>2</mn>
+        <mo>·</mo>
+        <mn>3,14159</mn>
+        <mo>·</mo>
+        <mn>79500</mn>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>2002</mn>
+    <mi>j</mi>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3c: Bereken Z<sub>LC</sub> (parallel)</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>LC</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mn>999</mn><mi>j</mi>
+        <mo>·</mo>
+        <mo>(</mo><mo>−</mo><mn>2002</mn><mi>j</mi><mo>)</mo>
+      </mrow>
+      <mrow>
+        <mn>999</mn><mi>j</mi>
+        <mo>+</mo>
+        <mo>(</mo><mo>−</mo><mn>2002</mn><mi>j</mi><mo>)</mo>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Numerator:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>999</mn><mi>j</mi>
+    <mo>·</mo>
+    <mo>(</mo><mo>−</mo><mn>2002</mn><mi>j</mi><mo>)</mo>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>999</mn>
+    <mo>·</mo>
+    <mn>2002</mn>
+    <mo>·</mo>
+    <msup><mi>j</mi><mn>2</mn></msup>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>1999998</mn>
+    <mo>·</mo>
+    <mo>(</mo><mo>−</mo><mn>1</mn><mo>)</mo>
+    <mo>=</mo>
+    <mn>1999998</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Denominator:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>999</mn><mi>j</mi>
+    <mo>−</mo>
+    <mn>2002</mn><mi>j</mi>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>1003</mn><mi>j</mi>
+  </mrow>
+</math>
+</div>
+
+<p>Resultaat:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>LC</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1999998</mn>
+      <mrow><mo>−</mo><mn>1003</mn><mi>j</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1999998</mn>
+      <mrow><mo>−</mo><mn>1003</mn><mi>j</mi></mrow>
+    </mfrac>
+    <mo>·</mo>
+    <mfrac>
+      <mi>j</mi>
+      <mi>j</mi>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>LC</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>1999998</mn><mi>j</mi></mrow>
+      <mrow><mo>−</mo><mn>1003</mn><msup><mi>j</mi><mn>2</mn></msup></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>1999998</mn><mi>j</mi></mrow>
+      <mn>1003</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1994,17</mn>
+    <mi>j</mi>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3d: Bereken Z<sub>totaal</sub></strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>totaal</mi></msub>
+    <mo>=</mo>
+    <mi>R</mi>
+    <mo>+</mo>
+    <msub><mi>Z</mi><mi>LC</mi></msub>
+    <mo>=</mo>
+    <mn>1000</mn>
+    <mo>+</mo>
+    <mn>1994,17</mn>
+    <mi>j</mi>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke substitutie - Modulus berekenen</div>
+
+<p><strong>Modulus formule:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow><mo>|</mo><mi>Z</mi><mo>|</mo></mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup>
+          <mtext>Re</mtext>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <msup>
+          <mtext>Im</mtext>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Berekening:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow><mo>|</mo><msub><mi>Z</mi><mi>totaal</mi></msub><mo>|</mo></mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup><mn>1000</mn><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mn>1994,17</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow><mo>|</mo><msub><mi>Z</mi><mi>totaal</mi></msub><mo>|</mo></mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <mn>1000000</mn>
+        <mo>+</mo>
+        <mn>3976713,79</mn>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow><mo>|</mo><msub><mi>Z</mi><mi>totaal</mi></msub><mo>|</mo></mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mn>4976713,79</mn>
+    </msqrt>
+    <mo>=</mo>
+    <mn>2230,58</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Afgerond:</strong> |Z| ≈ <strong>2230 Ω</strong></p>
+
+<p><strong>Alternatieve notatie (uit bron):</strong></p>
+<p>|Z| ≈ <strong>1000√5 Ω</strong> = 1000 × 2,236 = 2236 Ω</p>
+
+<p><em>Opmerking bron: "vreemde afronding, het is niet exact een veelvoud van √5"</em></p>
+<p>Inderdaad: 2230,58 ≠ 2236,07. Het verschil is ~0,24%, wat binnen afrondingsfout van Z<sub>L</sub> en Z<sub>C</sub> ligt.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<ul>
+<li>[Z<sub>L</sub>] = [2πfL] = s<sup>-1</sup> · s · Ω = Ω ✓</li>
+<li>[Z<sub>C</sub>] = [1/(2πfC)] = (s<sup>-1</sup> · F)<sup>-1</sup> = Ω ✓</li>
+<li>[Z<sub>LC</sub>] = [Z · Z / Z] = Ω ✓</li>
+<li>[|Z|] = √(Ω² + Ω²) = Ω ✓</li>
+</ul>
+
+<p><strong>Sanity checks:</strong></p>
+<ul>
+<li>X<sub>L</sub> ≈ 999 Ω ✓ (inductief)</li>
+<li>X<sub>C</sub> ≈ 2002 Ω ✓ (capacitief, groter dan X<sub>L</sub>)</li>
+<li>Z<sub>LC</sub> ≈ +1994j Ω ✓ (positief imaginair = netto inductief gedrag)</li>
+<li>|Z| > R ✓ (door reactieve component)</li>
+</ul>
+
+<p><strong>Fysische betekenis:</strong></p>
+
+<p><strong>Parallel LC bij deze frequentie:</strong></p>
+<p>Bij f = 7950 Hz zijn X<sub>L</sub> en X<sub>C</sub> niet gelijk (geen resonantie):</p>
+<ul>
+<li>X<sub>L</sub> = 999 Ω (klein, spoel gedraagt zich als kortsluiting trend)</li>
+<li>X<sub>C</sub> = 2002 Ω (groot, condensator gedraagt zich als open kring trend)</li>
+<li>Netto gedrag: <strong>inductief</strong> (Z<sub>LC</sub> = +1994j Ω)</li>
+</ul>
+
+<p><strong>Resonantiefrequentie vergelijking:</strong></p>
+<p>Bij resonantie zou gelden: X<sub>L</sub> = X<sub>C</sub>, dus:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>f</mi><mi>res</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>2</mn><mi>π</mi>
+        <msqrt>
+          <mrow><mi>L</mi><mi>C</mi></mrow>
+        </msqrt>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>2</mn><mi>π</mi>
+        <msqrt>
+          <mrow>
+            <mn>20</mn>
+            <mo>×</mo>
+            <msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup>
+            <mo>·</mo>
+            <mn>10</mn>
+            <mo>×</mo>
+            <msup><mn>10</mn><mrow><mo>−</mo><mn>9</mn></mrow></msup>
+          </mrow>
+        </msqrt>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>f</mi><mi>res</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>2</mn><mi>π</mi>
+        <msqrt>
+          <mrow>
+            <mn>200</mn>
+            <mo>×</mo>
+            <msup><mn>10</mn><mrow><mo>−</mo><mn>12</mn></mrow></msup>
+          </mrow>
+        </msqrt>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>2</mn><mi>π</mi>
+        <mo>·</mo>
+        <mn>14,14</mn>
+        <mo>×</mo>
+        <msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup>
+      </mrow>
+    </mfrac>
+    <mo>≈</mo>
+    <mn>11,25</mn>
+    <mtext> kHz</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Bij f = 7950 Hz zitten we <strong>onder</strong> f<sub>res</sub>, daarom X<sub>C</sub> > X<sub>L</sub> en gedraagt de parallel LC zich netto inductief.</p>
+
+<p><strong>Serie R + inductieve LC:</strong></p>
+<p>De totale impedantie Z = 1000 + 1994j Ω heeft:</p>
+<ul>
+<li><strong>Re(Z) = 1000 Ω:</strong> Dissipatie in R</li>
+<li><strong>Im(Z) = +1994 Ω:</strong> Reactieve energie-opslag (netto inductief)</li>
+<li><strong>Fasehoek:</strong> φ = arctg(1994/1000) ≈ 63,4° (stroom loopt achter op spanning)</li>
+</ul>
+
+<p><strong>Praktische toepassing:</strong></p>
+<p>Dit type netwerk (serie R met parallel LC) wordt gebruikt in:</p>
+<ul>
+<li><strong>Selectieve filters:</strong> Hoge impedantie bij f<sub>res</sub>, lage impedantie elders</li>
+<li><strong>Impedantietransformatie:</strong> Van lage naar hoge impedantie</li>
+<li><strong>Afstemcircuits:</strong> Radio-ontvangst, frequentieselectie</li>
+</ul>
+
+<p><strong>Let op √5 benadering:</strong></p>
+<p>De bron suggereert |Z| ≈ 1000√5, maar dit is een benadering. Het exacte antwoord 2230,58 Ω wijkt 0,24% af van 2236 Ω. Bij examen: gebruik exacte berekening, niet symbolische benaderingen tenzij expliciet gevraagd.</p>
+</div>
+
+<div style="background: #e8f4f8; padding: 15px; margin-top: 20px; border-left: 4px solid #2196F3;">
+<p><strong>Antwoord:</strong></p>
+<p><strong>Z<sub>totaal</sub> = 1000 + 1994,17j Ω</strong></p>
+<p><strong>|Z| = 2230 Ω</strong> (of met meer precisie: 2230,58 Ω)</p>
+<p><em>Benadering: |Z| ≈ 1000√5 = 2236 Ω (0,24% verschil)</em></p>
+<p><em>Fysisch: Bij f = 7950 Hz gedraagt de parallel LC-tak zich netto inductief (X<sub>C</sub> > X<sub>L</sub>), omdat we onder de resonantiefrequentie (~11,25 kHz) zitten. De totale impedantie heeft een resistief deel (R = 1 kΩ) en een inductief deel (X<sub>L,eff</sub> ≈ 2 kΩ), wat resulteert in een fasehoek van ~63°.</em></p>
+</div>
+
+</div>
