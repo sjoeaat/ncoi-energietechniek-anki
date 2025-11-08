@@ -1,55 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
   <!-- Background -->
-  <rect width="500" height="300" fill="white"/>
+  <rect width="900" height="650" fill="white"/>
 
   <!-- Title -->
-  <text x="250" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Vermogensdriehoek</text>
+  <text x="450" y="40" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#333">Vermogensdriehoek (P-Q-S)</text>
 
-  <!-- Triangle base point -->
-  <g transform="translate(80, 200)">
+  <!-- Main triangle -->
+  <g transform="translate(120, 450)">
     <!-- P axis (horizontal - werkzaam vermogen) -->
-    <line x1="0" y1="0" x2="250" y2="0" stroke="#27ae60" stroke-width="3"/>
-    <text x="125" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#27ae60">P (W)</text>
-    <text x="125" y="38" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#27ae60">Werkzaam vermogen</text>
+    <line x1="0" y1="0" x2="400" y2="0" stroke="#27ae60" stroke-width="5"/>
+    <polygon points="400,0 390,5 390,-5" fill="#27ae60"/>
+
+    <text x="200" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#27ae60">P (Watt)</text>
+    <text x="200" y="60" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#27ae60">Werkzaam vermogen</text>
 
     <!-- Q axis (vertical - blindvermogen) -->
-    <line x1="250" y1="0" x2="250" y2="-120" stroke="#3498db" stroke-width="3"/>
-    <text x="270" y="-55" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="start" fill="#3498db">Q (var)</text>
-    <text x="270" y="-40" font-family="Arial, sans-serif" font-size="13" text-anchor="start" fill="#3498db">Blindvermogen</text>
+    <line x1="400" y1="0" x2="400" y2="-240" stroke="#3498db" stroke-width="5"/>
+    <polygon points="400,-240 395,-230 405,-230" fill="#3498db"/>
+
+    <text x="470" y="-110" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="start" fill="#3498db">Q (var)</text>
+    <text x="470" y="-85" font-family="Arial, sans-serif" font-size="18" text-anchor="start" fill="#3498db">Blindvermogen</text>
 
     <!-- S (hypotenuse - schijnbaar vermogen) -->
-    <line x1="0" y1="0" x2="250" y2="-120" stroke="#e74c3c" stroke-width="3"/>
-    <text x="105" y="-80" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#e74c3c">S (VA)</text>
-    <text x="105" y="-63" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#e74c3c">Schijnbaar vermogen</text>
+    <line x1="0" y1="0" x2="400" y2="-240" stroke="#e74c3c" stroke-width="5"/>
+    <polygon points="400,-240 395,-232 392,-240" fill="#e74c3c"/>
+
+    <text x="165" y="-145" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#e74c3c">S (VA)</text>
+    <text x="165" y="-120" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#e74c3c">Schijnbaar vermogen</text>
 
     <!-- Angle φ (fase hoek) -->
-    <path d="M 50 0 A 50 50 0 0 0 35.4 -17" fill="none" stroke="#f39c12" stroke-width="2"/>
-    <text x="65" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#f39c12">φ</text>
+    <path d="M 80 0 A 80 80 0 0 0 56.6 -33.9" fill="none" stroke="#f39c12" stroke-width="3"/>
+    <text x="110" y="-15" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f39c12">φ</text>
 
     <!-- Right angle indicator -->
-    <rect x="240" y="-10" width="10" height="10" fill="none" stroke="#95a5a6" stroke-width="1"/>
+    <rect x="385" y="-15" width="15" height="15" fill="none" stroke="#95a5a6" stroke-width="2"/>
 
     <!-- Dots at vertices -->
-    <circle cx="0" cy="0" r="4" fill="#2c3e50"/>
-    <circle cx="250" cy="0" r="4" fill="#2c3e50"/>
-    <circle cx="250" cy="-120" r="4" fill="#2c3e50"/>
+    <circle cx="0" cy="0" r="6" fill="#2c3e50"/>
+    <circle cx="400" cy="0" r="6" fill="#2c3e50"/>
+    <circle cx="400" cy="-240" r="6" fill="#2c3e50"/>
+  </g>
 
-    <!-- Formulas box -->
-    <g transform="translate(290, -120)">
-      <rect x="0" y="0" width="140" height="105" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
-      <text x="70" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Formules:</text>
+  <!-- Formulas box -->
+  <g transform="translate(580, 180)">
+    <rect x="0" y="0" width="280" height="240" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="8"/>
+    <text x="140" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">Formules:</text>
 
-      <text x="10" y="38" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">S = √(P² + Q²)</text>
-      <text x="10" y="54" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">P = S × cos φ</text>
-      <text x="10" y="70" font-family="Arial, sans-serif" font-size="11" fill="#3498db">Q = S × sin φ</text>
-      <text x="10" y="86" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">cos φ = P/S</text>
-      <text x="10" y="100" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">tan φ = Q/P</text>
-    </g>
+    <!-- S formule -->
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e74c3c">S = √(P² + Q²)</text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="15" fill="#7f8c8d">of: S = U × I</text>
 
-    <!-- cos φ annotation -->
-    <text x="125" y="-135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#f39c12" font-style="italic">cos φ = arbeidsfactor</text>
+    <!-- P formule -->
+    <text x="20" y="125" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#27ae60">P = S × cos φ</text>
+    <text x="20" y="150" font-family="Arial, sans-serif" font-size="15" fill="#7f8c8d">of: P = U × I × cos φ</text>
+
+    <!-- Q formule -->
+    <text x="20" y="180" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498db">Q = S × sin φ</text>
+    <text x="20" y="205" font-family="Arial, sans-serif" font-size="15" fill="#7f8c8d">of: Q = U × I × sin φ</text>
+
+    <!-- cos φ formule -->
+    <text x="20" y="230" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f39c12">cos φ = P/S</text>
+  </g>
+
+  <!-- Interpretation box -->
+  <g transform="translate(580, 440)">
+    <rect x="0" y="0" width="280" height="160" fill="#fff9e6" stroke="#f39c12" stroke-width="2" rx="8"/>
+    <text x="140" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#f39c12">Betekenis:</text>
+
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">• cos φ = arbeidsfactor</text>
+    <text x="20" y="85" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">• φ &gt; 0: inductief (L)</text>
+    <text x="20" y="110" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">• φ &lt; 0: capacitief (C)</text>
+    <text x="20" y="135" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">• φ = 0: puur resistief (R)</text>
   </g>
 
   <!-- Bottom annotation -->
-  <text x="250" y="280" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d" font-style="italic">Inductief (Q &gt; 0): stroom ijlt achter op spanning</text>
+  <text x="450" y="630" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#7f8c8d" font-style="italic">Inductief: stroom ijlt achter (motoren, spoelen) | Capacitief: stroom ijlt voor (condensatoren)</text>
 </svg>

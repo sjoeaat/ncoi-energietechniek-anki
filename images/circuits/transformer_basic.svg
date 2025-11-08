@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Background -->
+  <rect width="600" height="400" fill="white"/>
+
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Transformator - Wikkelverhouding</text>
+
+  <!-- Iron core (vertical bars) -->
+  <rect x="270" y="100" width="15" height="200" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2"/>
+  <rect x="315" y="100" width="15" height="200" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2"/>
+
+  <!-- Primary coil (left side - fewer windings) -->
+  <g transform="translate(180, 150)">
+    <!-- AC source -->
+    <circle cx="-50" cy="50" r="25" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+    <text x="-50" y="55" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#e74c3c">~</text>
+    <text x="-50" y="-15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#e74c3c">U1</text>
+
+    <!-- Wires to primary coil -->
+    <line x1="-50" y1="25" x2="-50" y2="0" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="-50" y1="0" x2="0" y2="0" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- Primary windings (N1 = 4 loops shown) -->
+    <path d="M 0 0 c 0 -12 15 -12 15 0 c 0 12 15 12 15 0 c 0 -12 15 -12 15 0 c 0 12 15 12 15 0 c 0 -12 15 -12 15 0 c 0 12 15 12 15 0"
+          fill="none" stroke="#e74c3c" stroke-width="3"/>
+
+    <!-- Bottom wire -->
+    <line x1="90" y1="0" x2="90" y2="100" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="0" y1="100" x2="90" y2="100" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="0" y1="100" x2="-50" y2="100" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="-50" y1="100" x2="-50" y2="75" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- N1 label -->
+    <text x="45" y="-20" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#e74c3c">N1 (primair)</text>
+    <text x="45" y="120" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#7f8c8d">bijv. 100 windingen</text>
+  </g>
+
+  <!-- Secondary coil (right side - more windings) -->
+  <g transform="translate(330, 140)">
+    <!-- Secondary windings (N2 = 8 loops shown) -->
+    <path d="M 0 0 c 0 -10 12 -10 12 0 c 0 10 12 10 12 0 c 0 -10 12 -10 12 0 c 0 10 12 10 12 0 c 0 -10 12 -10 12 0 c 0 10 12 10 12 0 c 0 -10 12 -10 12 0 c 0 10 12 10 12 0 c 0 -10 12 -10 12 0 c 0 10 12 10 12 0 c 0 -10 12 -10 12 0 c 0 10 12 10 12 0"
+          fill="none" stroke="#3498db" stroke-width="3"/>
+
+    <!-- Top wire to load -->
+    <line x1="0" y1="0" x2="-20" y2="0" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="-20" y1="0" x2="-20" y2="50" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="-20" y1="50" x2="-50" y2="50" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- Bottom wire from load -->
+    <line x1="144" y1="0" x2="164" y2="0" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="164" y1="0" x2="164" y2="110" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="164" y1="110" x2="-20" y2="110" stroke="#2c3e50" stroke-width="2.5"/>
+    <line x1="-20" y1="110" x2="-50" y2="110" stroke="#2c3e50" stroke-width="2.5"/>
+
+    <!-- Load resistor -->
+    <path d="M -50 50 l -8 6 l -8 -12 l -8 12 l -8 -12 l -8 12 l -8 -12 l -8 6"
+          fill="none" stroke="#2c3e50" stroke-width="2.5"/>
+    <text x="-80" y="40" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#2c3e50">Rload</text>
+
+    <!-- U2 label -->
+    <text x="-35" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="end" fill="#3498db">U2</text>
+
+    <!-- N2 label -->
+    <text x="72" y="-20" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#3498db">N2 (secundair)</text>
+    <text x="72" y="130" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#7f8c8d">bijv. 200 windingen</text>
+  </g>
+
+  <!-- Formulas box -->
+  <g transform="translate(50, 320)">
+    <rect x="0" y="0" width="500" height="70" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="5"/>
+    <text x="250" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Wikkelverhouding:</text>
+
+    <text x="20" y="50" font-family="Arial, sans-serif" font-size="15" fill="#2c3e50">n = N2/N1 = U2/U1 = I1/I2</text>
+    <text x="300" y="50" font-family="Arial, sans-serif" font-size="15" fill="#7f8c8d">Voorbeeld: n = 200/100 = 2 (spanning omhoog)</text>
+  </g>
+</svg>
