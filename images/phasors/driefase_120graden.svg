@@ -31,16 +31,23 @@
           fill="none" stroke="#f39c12" stroke-width="3" stroke-dasharray="8,4"/>
     <text x="610" y="105" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#f39c12">L2</text>
 
-    <!-- L3 (blue - 240° lag) -->
-    <path d="M 0 80 Q 37.5 20, 75 20 T 150 80 Q 187.5 140, 225 140 T 300 80 Q 337.5 20, 375 20 T 450 80"
-          fill="none" stroke="#3498db" stroke-width="3" stroke-dasharray="3,3"/>
+    <!-- L3 (blue - 240° lag, peak at x=375) -->
+    <path d="M 0 110 Q 37.5 140, 75 110 T 150 20 Q 187.5 20, 225 80 T 300 140 Q 337.5 110, 375 80 T 450 20 Q 487.5 50, 525 80 T 600 110"
+          fill="none" stroke="#3498db" stroke-width="3" stroke-dasharray="4,6"/>
     <text x="610" y="125" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#3498db">L3</text>
 
     <!-- Phase shift indicators -->
+    <!-- L1 to L2: 120° -->
     <line x1="75" y1="165" x2="75" y2="175" stroke="#e74c3c" stroke-width="2"/>
     <line x1="225" y1="165" x2="225" y2="175" stroke="#f39c12" stroke-width="2"/>
     <line x1="75" y1="170" x2="225" y2="170" stroke="#f39c12" stroke-width="2"/>
     <text x="150" y="190" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#f39c12">120°</text>
+
+    <!-- L2 to L3: 120° -->
+    <line x1="225" y1="165" x2="225" y2="175" stroke="#f39c12" stroke-width="2"/>
+    <line x1="75" y1="165" x2="75" y2="175" stroke="#3498db" stroke-width="2"/>
+    <line x1="225" y1="173" x2="75" y2="173" stroke="#3498db" stroke-width="2"/>
+    <text x="150" y="185" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#3498db">120°</text>
   </g>
 
   <!-- Phasor diagram (vector domain) -->

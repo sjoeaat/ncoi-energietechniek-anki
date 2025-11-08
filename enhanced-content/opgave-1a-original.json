@@ -1,0 +1,9 @@
+{
+  "number": "1a",
+  "chapter": "H 1.9 blz. 13",
+  "question_html": "<p><img src=\"media/media/image10.PNG\"\nstyle=\"width:3.10278in;height:0.59514in\" /></p>",
+  "solution_html": "<p>Een serieschakeling van weerstanden betekent dat de totale weerstand\nbij elkaar opgeteld mag worden:\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub><mo>=</mo><mn>2000</mn><mo>+</mo><mn>300</mn><mo>+</mo><mn>200</mn><mo>=</mo><mn>2500</mn><mspace width=\"0.222em\"></mspace><mi mathvariant=\"normal\">Ω</mi></mrow><annotation encoding=\"application/x-tex\">R_{AB} = 2000 + 300 + 200 = 2500\\ \\mathrm{\\Omega}</annotation></semantics></math></p>",
+  "images": [
+    "image10.PNG"
+  ]
+}

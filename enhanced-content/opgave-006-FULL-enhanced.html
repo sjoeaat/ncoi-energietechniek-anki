@@ -1,0 +1,474 @@
+<!-- OPGAVE 6 - OPGAVE 3 ENHANCED (Spoel definitieformule: di/dt) -->
+
+<div class="question">
+<p><strong>Opgave 3:</strong> Een spoel van L = 100 mH wordt aangesloten op een spanning van U = 10V.</p>
+<p>Bepaal hoe snel de stroom toeneemt (di/dt) en bereken de stroom na 1 ms en na 1 s.</p>
+<p><img src="media/media/image74.png" style="max-width:450px;" alt="Spoel diagram"></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p>Uit de opgave halen we de volgende grootheden:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Grootheid</th>
+  <th>Symbool</th>
+  <th>Waarde</th>
+  <th>Eenheid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Inductie</td>
+  <td><math><mi>L</mi></math></td>
+  <td>100</td>
+  <td>mH</td>
+</tr>
+<tr>
+  <td>Aangelegde spanning</td>
+  <td><math><mi>U</mi></math></td>
+  <td>10</td>
+  <td>V</td>
+</tr>
+<tr>
+  <td>Stroomverandering</td>
+  <td><math><mfrac><mrow><mi>d</mi><mi>i</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></math></td>
+  <td><strong>?</strong></td>
+  <td>A/s</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Gevraagd:</strong></p>
+<ul>
+<li>Bepaal de stroomveranderingssnelheid di/dt</li>
+<li>Bereken de stroom na 1 ms</li>
+<li>Bereken de stroom na 1 s</li>
+</ul>
+
+<p><strong>Theoretische basis:</strong> Een spoel verzet zich tegen <strong>stroomverandering</strong>. De spanning over een spoel is evenredig met de snelheid waarmee de stroom verandert (Holmes §6.7, Formuleblad 3.2).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Kies de relevante natuurkundige wet</div>
+<p>Voor een spoel waarbij spanning en inductie bekend zijn, gebruiken we de <strong>definitieformule van de spoel</strong> (Holmes §6.7, Formuleblad 3.2):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>u</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mi>L</mi>
+    <mo>·</mo>
+    <mfrac>
+      <mrow><mi>d</mi><msub><mi>i</mi><mi>L</mi></msub></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Deze fundamentele wet beschrijft dat de spanning over een spoel evenredig is met de <strong>tijdsafgeleide van de stroom</strong>. Hoe sneller de stroom probeert te veranderen, hoe groter de tegenwerkende spanning.</p>
+
+<p><strong>Fysische betekenis:</strong></p>
+<ul>
+<li>Als di/dt groot is (snelle stroomverandering) → grote spanning</li>
+<li>Als di/dt = 0 (constante stroom, DC) → u<sub>L</sub> = 0 (spoel gedraagt zich als kortsluiting)</li>
+<li>Als di/dt negatief (stroom neemt af) → negatieve spanning (spoel probeert stroom te behouden)</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Herleid de formule naar de gevraagde grootheid</div>
+<p>We willen <strong>di/dt</strong> berekenen. Deel beide zijden door L:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>U</mi>
+    <mo>=</mo>
+    <mi>L</mi>
+    <mo>·</mo>
+    <mfrac>
+      <mrow><mi>d</mi><mi>i</mi></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (deel beide zijden door L)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mrow><mi>d</mi><mi>i</mi></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mi>U</mi>
+      <mi>L</mi>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Belangrijke conclusie:</strong> Voor een constante spanning is di/dt ook constant! Dit betekent dat de stroom <strong>lineair</strong> toeneemt met de tijd.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Substitueer de numerieke waarden</div>
+<p>Vul de bekende waarden in (met eenheden):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mrow><mi>d</mi><mi>i</mi></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>10</mn><mtext> V</mtext></mrow>
+      <mrow><mn>100</mn><mtext> mH</mtext></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (converteer mH naar H)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mrow><mi>d</mi><mi>i</mi></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>10</mn>
+      <mrow><mn>0,1</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mtext> A/s</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Interpretatie:</strong> De stroom neemt toe met 100 Ampère per seconde. Dit is een zeer snelle stijging!</p>
+
+<p><strong>Integreren om stroom te vinden:</strong></p>
+
+<p>Omdat di/dt constant is, geldt voor de stroom als functie van tijd (bij i(0) = 0):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>i</mi>
+    <mo>(</mo>
+    <mi>t</mi>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mi>d</mi><mi>i</mi></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+    <mo>·</mo>
+    <mi>t</mi>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mo>·</mo>
+    <mi>t</mi>
+    <mtext> [A]</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Na t = 1 ms:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>i</mi>
+    <mo>(</mo>
+    <mn>1</mn>
+    <mtext> ms</mtext>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mo>·</mo>
+    <mn>0,001</mn>
+    <mo>=</mo>
+    <mn>0,1</mn>
+    <mtext> A</mtext>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Na t = 1 s:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>i</mi>
+    <mo>(</mo>
+    <mn>1</mn>
+    <mtext> s</mtext>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mo>·</mo>
+    <mn>1</mn>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Waarschuwing:</strong> In de praktijk zal een stroom van 100A niet worden bereikt omdat:</p>
+<ul>
+<li>Elke spoel heeft inwendige weerstand (R<sub>spoel</sub>)</li>
+<li>De draad zou oververhit raken</li>
+<li>De spanning bron heeft een beperkte stroomlevering</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Controle en interpretatie</div>
+
+<p><strong>Eenhedencontrole:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo>
+    <mfrac>
+      <mrow><mi>d</mi><mi>i</mi></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+    <mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>[</mo><mi>V</mi><mo>]</mo></mrow>
+      <mrow><mo>[</mo><mi>H</mi><mo>]</mo></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>[</mo><mi>V</mi><mo>]</mo></mrow>
+      <mrow><mo>[</mo><mi>V</mi><mo>·</mo><mi>s</mi><mo>/</mo><mi>A</mi><mo>]</mo></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo>
+    <mi>A</mi>
+    <mo>/</mo>
+    <mi>s</mi>
+    <mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Realiteitscheck:</strong></p>
+<ul>
+<li>di/dt = 100 A/s is zeer hoog voor een kleine spoel (100 mH)</li>
+<li>Na 1 ms: 100 mA is redelijk</li>
+<li>Na 1 s: 100 A is extreem hoog (in praktijk onrealistisch zonder extra weerstand)</li>
+</ul>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Energie-opslag in de spoel:</strong></p>
+<p>De energie opgeslagen in een spoel is gegeven door:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>W</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+    <mo>·</mo>
+    <mi>L</mi>
+    <mo>·</mo>
+    <msup>
+      <mi>i</mi>
+      <mn>2</mn>
+    </msup>
+  </mrow>
+</math>
+</div>
+
+<p>Na 1 ms (i = 0,1 A):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>W</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+    <mo>·</mo>
+    <mn>0,1</mn>
+    <mo>·</mo>
+    <msup>
+      <mrow><mo>(</mo><mn>0,1</mn><mo>)</mo></mrow>
+      <mn>2</mn>
+    </msup>
+    <mo>=</mo>
+    <mn>0,0005</mn>
+    <mtext> J</mtext>
+    <mo>=</mo>
+    <mn>0,5</mn>
+    <mtext> mJ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Na 1 s (i = 100 A - theoretisch):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>W</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+    <mo>·</mo>
+    <mn>0,1</mn>
+    <mo>·</mo>
+    <msup>
+      <mrow><mo>(</mo><mn>100</mn><mo>)</mo></mrow>
+      <mn>2</mn>
+    </msup>
+    <mo>=</mo>
+    <mn>500</mn>
+    <mtext> J</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Dit is een enorme hoeveelheid energie (vergelijkbaar met het laten vallen van een gewicht van 50 kg vanaf 1 meter hoogte)!</p>
+
+<p><strong>Vermogen tijdens opladen:</strong></p>
+
+<p>Het momentane vermogen is:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>P</mi>
+    <mo>(</mo>
+    <mi>t</mi>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mi>U</mi>
+    <mo>·</mo>
+    <mi>i</mi>
+    <mo>(</mo>
+    <mi>t</mi>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>10</mn>
+    <mo>·</mo>
+    <mn>100</mn>
+    <mi>t</mi>
+    <mo>=</mo>
+    <mn>1000</mn>
+    <mi>t</mi>
+    <mtext> [W]</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Na 1 ms: P = 1000 × 0,001 = 1 W</p>
+<p>Na 1 s: P = 1000 × 1 = 1000 W (1 kW!)</p>
+
+<p>Het vermogen neemt <strong>lineair</strong> toe met de tijd. Dit verklaart waarom in de praktijk altijd een serieweerstand nodig is om de stroom te begrenzen.</p>
+
+<p><strong>Praktische situatie (met R<sub>spoel</sub> = 1 Ω):</strong></p>
+
+<p>In een realistisch scenario heeft de spoel een inwendige weerstand. Dan geldt:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>i</mi>
+    <mo>(</mo>
+    <mi>t</mi>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mi>U</mi>
+      <mi>R</mi>
+    </mfrac>
+    <mo>·</mo>
+    <mrow>
+      <mo>(</mo>
+      <mn>1</mn>
+      <mo>-</mo>
+      <msup>
+        <mi>e</mi>
+        <mrow>
+          <mo>-</mo>
+          <mi>t</mi>
+          <mo>/</mo>
+          <mi>τ</mi>
+        </mrow>
+      </msup>
+      <mo>)</mo>
+    </mrow>
+  </mrow>
+</math>
+</div>
+
+<p>Met tijdconstante τ = L/R = 0,1/1 = 0,1 s = 100 ms</p>
+
+<p>Dan bereikt de stroom na lange tijd een maximum van I<sub>max</sub> = 10V / 1Ω = 10A, wat veel realistischer is.</p>
+
+<p><strong>Vergelijking met condensator:</strong></p>
+<p>Een spoel is het "duaal" van een condensator:</p>
+<ul>
+<li><strong>Condensator:</strong> i<sub>C</sub> = C · du/dt (stroom evenredig met spanningsverandering)</li>
+<li><strong>Spoel:</strong> u<sub>L</sub> = L · di/dt (spanning evenredig met stroomverandering)</li>
+</ul>
+
+<p>Beiden slaan energie op, maar op verschillende manieren:</p>
+<ul>
+<li><strong>Condensator:</strong> elektrisch veld (W = ½CU²)</li>
+<li><strong>Spoel:</strong> magnetisch veld (W = ½LI²)</li>
+</ul>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoorden:</strong></p>
+<ul>
+<li><strong>di/dt = 100 A/s</strong> (stroomveranderingssnelheid)</li>
+<li><strong>i(1 ms) = 100 mA</strong></li>
+<li><strong>i(1 s) = 100 A</strong> (theoretisch, in praktijk beperkt door weerstand)</li>
+</ul>
+
+<p><strong>Algemene formule:</strong></p>
+<p>i(t) = (U/L) · t = 100 · t [A] voor ideale spoel</p>
+
+<p><em>Grafiek:</em></p>
+<p><img src="media/media/image74.png" style="max-width:450px;" alt="Stroom vs tijd grafiek"></p>
+</div>
+
+</div>

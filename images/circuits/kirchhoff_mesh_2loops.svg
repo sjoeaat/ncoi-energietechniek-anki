@@ -72,22 +72,24 @@
     <text x="195" y="20" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">U_R2</text>
   </g>
 
-  <!-- Law box -->
-  <g transform="translate(20, 250)">
-    <rect x="0" y="0" width="220" height="70" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
+  <!-- Law box - UITGEBREID met Maas 2 -->
+  <g transform="translate(20, 240)">
+    <rect x="0" y="0" width="220" height="90" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
     <text x="110" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Maaswet:</text>
 
-    <text x="110" y="40" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">ΣU = 0 (rondom gesloten lus)</text>
-    <text x="110" y="58" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#e74c3c">Maas 1: +12V - U_R1 = 0</text>
+    <text x="110" y="38" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">ΣU = 0 (rondom gesloten lus)</text>
+    <text x="110" y="56" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#e74c3c">Maas 1: +12V - U_R1 = 0</text>
+    <text x="110" y="73" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#3498db">Maas 2: +U_R1 - U_R2 = 0</text>
   </g>
 
-  <!-- Example box -->
-  <g transform="translate(260, 250)">
-    <rect x="0" y="0" width="220" height="70" fill="#fff9e6" stroke="#f39c12" stroke-width="1" rx="5"/>
+  <!-- Example box - AANGEPAST aan grotere Law box -->
+  <g transform="translate(260, 240)">
+    <rect x="0" y="0" width="220" height="90" fill="#fff9e6" stroke="#f39c12" stroke-width="1" rx="5"/>
     <text x="110" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#f39c12">Toepassing:</text>
 
-    <text x="110" y="40" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#2c3e50">Loop door circuit → tel spanningen</text>
-    <text x="110" y="58" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">Bronnen (+), spanningsval (-)</text>
+    <text x="110" y="43" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#2c3e50">Loop door circuit → tel spanningen</text>
+    <text x="110" y="60" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">Bronnen (+), spanningsval (-)</text>
+    <text x="110" y="77" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">Kies maasrichting (bijv. met klok mee)</text>
   </g>
 
   <!-- Bottom annotation -->

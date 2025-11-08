@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(code --version)",
+      "Bash(git -C \"C:\\Users\\sjoerd.van.der.heide\\Documents\\GitHub\\ncoi-energietechniek-anki\" checkout scripts/parse_uitwerkingen_to_structured.py)",
+      "Bash(start \"\" \"C:\\Users\\sjoerd.van.der.heide\\Documents\\GitHub\\ncoi-energietechniek-anki\\study-guide\\uitwerkingen-complete-guide.html\")",
+      "Bash(playwright install:*)",
+      "Bash(test:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

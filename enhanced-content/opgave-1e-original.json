@@ -1,0 +1,9 @@
+{
+  "number": "1e",
+  "chapter": "H 1.9 blz. 13",
+  "question_html": "<p><img src=\"media/media/image14.PNG\"\nstyle=\"width:3.34104in;height:1.19935in\" /></p>",
+  "solution_html": "<p><strong>Aanpak:</strong> eerst vervangingsweerstand van 2 parallelle\nweerstanden bereken en dan optellen bij die van 12Ω.</p>\n<p><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>R</mi><mi>v</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>•</mo><msub><mi>R</mi><mn>2</mn></msub></mrow><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>15</mn><mo>•</mo><mn>10</mn></mrow><mrow><mn>15</mn><mo>+</mo><mn>10</mn></mrow></mfrac><mo>=</mo><mfrac><mn>150</mn><mn>25</mn></mfrac><mo>=</mo><mn>6</mn><mspace width=\"0.222em\"></mspace><mi mathvariant=\"normal\">Ω</mi></mrow><annotation encoding=\"application/x-tex\">R_{v} = \\frac{R_{1} \\bullet R_{2}}{R_{1} + R_{2}} = \\frac{15 \\bullet 10}{15 + 10} = \\frac{150}{25} = 6\\ \\mathrm{\\Omega}</annotation></semantics></math>\nDus\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub><mo>=</mo><mn>12</mn><mo>+</mo><mn>6</mn><mo>=</mo><mn>18</mn><mspace width=\"0.222em\"></mspace><mi mathvariant=\"normal\">Ω</mi></mrow><annotation encoding=\"application/x-tex\">R_{AB} = 12 + 6 = 18\\ \\mathrm{\\Omega}</annotation></semantics></math></p>",
+  "images": [
+    "image14.PNG"
+  ]
+}

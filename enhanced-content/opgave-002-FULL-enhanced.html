@@ -1,0 +1,446 @@
+<!-- OPGAVE 2a - ENHANCED VERSION (Thévenin/Norton Equivalents) -->
+
+<div class="question">
+<p>Vereenvoudig dit netwerk tot:</p>
+<ul>
+<li>Één spanningsbron met inwendige weerstand (Thévenin equivalent)</li>
+<li>Één stroombron met inwendige weerstand (Norton equivalent)</li>
+</ul>
+<p><img src="media/media/image36.PNG" style="max-width:500px;" alt="Opgave 2a network diagram"></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p>Uit het schema halen we de volgende componenten:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Component</th>
+  <th>Symbool</th>
+  <th>Waarde</th>
+  <th>Eenheid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron 1</td>
+  <td><math><msub><mi>U</mi><mn>1</mn></msub></math></td>
+  <td>12</td>
+  <td>V</td>
+</tr>
+<tr>
+  <td>Spanningsbron 2</td>
+  <td><math><msub><mi>U</mi><mn>2</mn></msub></math></td>
+  <td>3</td>
+  <td>V</td>
+</tr>
+<tr>
+  <td>Weerstand 1</td>
+  <td><math><msub><mi>R</mi><mn>1</mn></msub></math></td>
+  <td>6</td>
+  <td>Ω</td>
+</tr>
+<tr>
+  <td>Weerstand 2</td>
+  <td><math><msub><mi>R</mi><mn>2</mn></msub></math></td>
+  <td>3</td>
+  <td>Ω</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Gevraagd:</strong></p>
+<ul>
+<li>Thévenin equivalent: <math><msub><mi>U</mi><mi>th</mi></msub></math> en <math><msub><mi>R</mi><mi>th</mi></msub></math></li>
+<li>Norton equivalent: <math><msub><mi>I</mi><mi>k</mi></msub></math> en <math><msub><mi>R</mi><mi>i</mi></msub></math></li>
+</ul>
+
+<p><strong>Theoretische basis:</strong> Het Thévenin/Norton equivalent vereenvoudigt een complex lineair netwerk met meerdere bronnen tot één enkele equivalente bron. Dit is cruciaal voor netwerk analyse (Holmes §3.11, Formuleblad 9.1-9.2).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal de inwendige weerstand R<sub>th</sub></div>
+
+<p>Bij het bepalen van de <strong>inwendige weerstand</strong> (Thévenin weerstand) vervangen we alle <strong>ideale spanningsbronnen door kortsluitingen</strong>. Hierdoor ontstaat een puur resistief netwerk.</p>
+
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Vervang U₁ = 12V door kortsluiting (0Ω)</li>
+<li>Vervang U₂ = 3V door kortsluiting (0Ω)</li>
+<li>Bereken de equivalente weerstand tussen de uitgangsklemmen</li>
+</ol>
+
+<p>Het resultaat: R₁ (6Ω) en R₂ (3Ω) staan nu parallel:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>th</mi></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mn>1</mn></msub>
+    <mo>∥</mo>
+    <msub><mi>R</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>·</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer waarden)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>th</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>6</mn><mo>·</mo><mn>3</mn></mrow>
+      <mrow><mn>6</mn><mo>+</mo><mn>3</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>18</mn>
+      <mn>9</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fysische betekenis:</strong> De inwendige weerstand bepaalt hoeveel spanning "verloren" gaat als er stroom wordt afgenomen. Een lagere R<sub>th</sub> betekent een "stijvere" bron die beter in staat is spanning te leveren onder belasting.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bepaal de open klemspanning U<sub>th</sub> (met superpositie)</div>
+
+<p>De <strong>Thévenin spanning</strong> is de spanning over de open klemmen (onbelast). We gebruiken het <strong>superpositieprincipe</strong>: bereken de bijdrage van elke bron afzonderlijk en tel op.</p>
+
+<p><strong>Deel A: Bijdrage van U₁ = 12V (met U₂ kortgesloten)</strong></p>
+
+<p>Als U₂ = 0V (kortgesloten), ontstaat een spanningsdeler van 12V over R₁ (6Ω) en R₂ (3Ω) in serie:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>12</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mn>2</mn></msub>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer waarden)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>12</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>12</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>3</mn>
+      <mrow><mn>6</mn><mo>+</mo><mn>3</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>12</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>3</mn>
+      <mn>9</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>4</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Deel B: Bijdrage van U₂ = 3V (met U₁ kortgesloten)</strong></p>
+
+<p>Nu berekenen we de spanningsdeling van 3V over R₂ (3Ω) en R₁ (6Ω):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>3</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>2</mn></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mn>1</mn></msub>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer waarden)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>3</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>6</mn>
+      <mrow><mn>3</mn><mo>+</mo><mn>6</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>6</mn>
+      <mn>9</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Deel C: Superpositie - optellen van beide bijdragen</strong></p>
+
+<p>Beide spanningen zijn in dezelfde richting (beide positief t.o.v. referentie), dus tellen we op:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>th</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mrow><mn>12</mn><mi>V</mi></mrow></msub>
+    <mo>+</mo>
+    <msub><mi>U</mi><mrow><mn>3</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>4</mn>
+    <mo>+</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mn>6</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bepaal de kortsluitstroom I<sub>k</sub> (Norton)</div>
+
+<p>De <strong>kortsluitstroom</strong> I<sub>k</sub> is de stroom die vloeit als we de uitgangsklemmen kortsluiten. Deze kunnen we nu eenvoudig berekenen met de wet van Ohm, gebruikmakend van het Thévenin equivalent:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>th</mi></msub>
+      <msub><mi>R</mi><mi>th</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer numerieke waarden)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>6</mn><mtext> V</mtext></mrow>
+      <mrow><mn>2</mn><mtext> Ω</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Let op:</strong> Voor het Norton equivalent geldt: R<sub>i</sub> (Norton) = R<sub>th</sub> (Thévenin) = 2Ω. De inwendige weerstand is identiek voor beide representaties!</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en interpretatie</div>
+
+<p><strong>Eenhedencontrole:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>I</mi><mi>k</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>[</mo><mi>V</mi><mo>]</mo></mrow>
+      <mrow><mo>[</mo><mi>Ω</mi><mo>]</mo></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Realiteitscheck:</strong></p>
+<ul>
+<li>R<sub>th</sub> = 2Ω is logisch: tussen 3Ω (kleinste) en 6Ω (grootste), dichter bij 3Ω omdat parallel schakeling</li>
+<li>U<sub>th</sub> = 6V ligt tussen 3V en 12V, wat verwacht is bij superpositie</li>
+<li>I<sub>k</sub> = 3A is realistisch voor 6V over 2Ω</li>
+</ul>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Thévenin vs Norton - Twee perspectieven op hetzelfde netwerk:</strong></p>
+
+<p><strong>Thévenin model</strong> (spanningsbron perspectief):</p>
+<ul>
+<li>Ideale spanningsbron: U<sub>th</sub> = 6V</li>
+<li>Serie-weerstand: R<sub>th</sub> = 2Ω</li>
+<li>Bij onbelaste uitgang: U<sub>out</sub> = 6V, I = 0A</li>
+<li>Bij kortgesloten uitgang: U<sub>out</sub> = 0V, I = 3A</li>
+</ul>
+
+<p><strong>Norton model</strong> (stroombron perspectief):</p>
+<ul>
+<li>Ideale stroombron: I<sub>k</sub> = 3A</li>
+<li>Parallel-weerstand: R<sub>i</sub> = 2Ω</li>
+<li>Bij onbelaste uitgang: alle stroom door R<sub>i</sub>, U<sub>out</sub> = 3A × 2Ω = 6V</li>
+<li>Bij kortgesloten uitgang: alle stroom door kortsluiting, I<sub>out</sub> = 3A</li>
+</ul>
+
+<p><strong>Praktische toepassing:</strong></p>
+<p>Stel we sluiten een belastingsweerstand R<sub>load</sub> = 4Ω aan:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>load</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>th</mi></msub>
+      <mrow>
+        <msub><mi>R</mi><mi>th</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>load</mi></msub>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>6</mn>
+      <mrow><mn>2</mn><mo>+</mo><mn>4</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Spanning over belasting:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>load</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>load</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>load</mi></msub>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mo>·</mo>
+    <mn>4</mn>
+    <mo>=</mo>
+    <mn>4</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Vermogen in belasting:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>P</mi><mi>load</mi></msub>
+    <mo>=</mo>
+    <msup>
+      <msub><mi>I</mi><mi>load</mi></msub>
+      <mn>2</mn>
+    </msup>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>load</mi></msub>
+    <mo>=</mo>
+    <msup>
+      <mn>1</mn>
+      <mn>2</mn>
+    </msup>
+    <mo>·</mo>
+    <mn>4</mn>
+    <mo>=</mo>
+    <mn>4</mn>
+    <mtext> W</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Maximum power transfer:</strong> De maximale vermogensoverdracht treedt op wanneer R<sub>load</sub> = R<sub>th</sub> = 2Ω. Dan is:</p>
+<ul>
+<li>I = 6V / 4Ω = 1,5A</li>
+<li>P<sub>max</sub> = (1,5A)² × 2Ω = 4,5W</li>
+</ul>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Thévenin equivalent:</strong></p>
+<ul>
+<li>U<sub>th</sub> = <strong>6 V</strong></li>
+<li>R<sub>th</sub> = <strong>2 Ω</strong></li>
+</ul>
+
+<p><strong>Norton equivalent:</strong></p>
+<ul>
+<li>I<sub>k</sub> = <strong>3 A</strong></li>
+<li>R<sub>i</sub> = <strong>2 Ω</strong></li>
+</ul>
+
+<p><em>Schema's:</em></p>
+<p><img src="media/media/image38.PNG" style="max-width:700px;" alt="Thévenin en Norton equivalenten"></p>
+</div>
+
+</div>

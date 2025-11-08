@@ -1,0 +1,442 @@
+<!-- OPGAVE 7 - ENHANCED VERSION (Spanningsdeling met polariteit) -->
+
+<div class="question">
+<p>Bepaal de spanningen U<sub>1</sub> en U<sub>2</sub> in deze schakeling:</p>
+<p><img src="media/media/image21.PNG" style="max-width:450px;" alt="Opgave 7 voltage divider"></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p>Uit het schema halen we de volgende componenten:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Component</th>
+  <th>Symbool</th>
+  <th>Waarde</th>
+  <th>Eenheid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron</td>
+  <td><math><msub><mi>U</mi><mi>bron</mi></msub></math></td>
+  <td>9</td>
+  <td>V</td>
+</tr>
+<tr>
+  <td>Weerstand R<sub>1</sub></td>
+  <td><math><msub><mi>R</mi><mn>1</mn></msub></math></td>
+  <td>50</td>
+  <td>Ω</td>
+</tr>
+<tr>
+  <td>Weerstand R<sub>2</sub></td>
+  <td><math><msub><mi>R</mi><mn>2</mn></msub></math></td>
+  <td>100</td>
+  <td>Ω</td>
+</tr>
+<tr>
+  <td>Spanning U<sub>1</sub></td>
+  <td><math><msub><mi>U</mi><mn>1</mn></msub></math></td>
+  <td><strong>?</strong></td>
+  <td>V</td>
+</tr>
+<tr>
+  <td>Spanning U<sub>2</sub></td>
+  <td><math><msub><mi>U</mi><mn>2</mn></msub></math></td>
+  <td><strong>?</strong></td>
+  <td>V</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Gevraagd:</strong> Bepaal de spanningen U₁ en U₂, rekening houdend met de aangegeven polariteiten in het schema.</p>
+
+<p><strong>Belangrijk:</strong> Let goed op de <strong>referentierichtingen</strong> van de spanningen! Deze bepalen het teken van het antwoord.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Kies de relevante natuurkundige wet</div>
+<p>Voor een spanningsdeler met twee serieweerstanden gebruiken we de <strong>spanningsdeelregel</strong> (Holmes §2.5, Formuleblad 2.3):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>i</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>totaal</mi></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mi>i</mi></msub>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>De spanning over een weerstand is evenredig met zijn aandeel in de totale weerstand.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken eerst U<sub>2</sub> (over R<sub>2</sub>)</div>
+
+<p>De spanning over R₂ (100 Ω) berekenen we met de spanningsdeler:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>R</mi><mn>2</mn></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>bron</mi></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mn>2</mn></msub>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer waarden)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>R</mi><mn>2</mn></mrow></msub>
+    <mo>=</mo>
+    <mn>9</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>100</mn>
+      <mrow><mn>50</mn><mo>+</mo><mn>100</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>9</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>100</mn>
+      <mn>150</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>9</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>2</mn>
+      <mn>3</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>6</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Polariteit van U₂:</strong> De polariteit van U₂ in het schema komt overeen met de fysische spanningsval over R₂ (+ aan de bovenkant, - aan de onderkant). Dus:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mo>+</mo>
+    <mn>6</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bereken U<sub>1</sub> (over R<sub>1</sub>) met polariteit</div>
+
+<p><strong>Methode 1: Direct berekenen</strong></p>
+
+<p>We weten dat de spanning over R₁ gelijk is aan:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>R</mi><mn>1</mn></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>bron</mi></msub>
+    <mo>-</mo>
+    <msub><mi>U</mi><mrow><mi>R</mi><mn>2</mn></mrow></msub>
+    <mo>=</mo>
+    <mn>9</mn>
+    <mo>-</mo>
+    <mn>6</mn>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Polariteit van U₁:</strong> Dit is waar het interessant wordt! In het schema is U₁ <strong>tegenovergesteld</strong> getekend aan de fysische spanningsval.</p>
+
+<p>De fysische spanningsval over R₁ is:</p>
+<ul>
+<li>+ aan de bovenkant (bij de positieve pool van de bron)</li>
+<li>- aan de onderkant (bij het knooppunt met R₂)</li>
+</ul>
+
+<p>Maar U₁ in het schema is getekend met:</p>
+<ul>
+<li>+ aan de onderkant</li>
+<li>- aan de bovenkant</li>
+</ul>
+
+<p>Dit is <strong>tegenovergesteld</strong> aan de werkelijke spanningsval, dus moet het teken negatief zijn:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mo>=</mo>
+    <mo>-</mo>
+    <mn>3</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Methode 2: Via spanningsdeler (ter verificatie)</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>R</mi><mn>1</mn></mrow></msub>
+    <mo>=</mo>
+    <mn>9</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>50</mn>
+      <mn>150</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>9</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mn>3</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Maar met tegengestelde polariteit: U₁ = -3V ✓</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Controle en interpretatie</div>
+
+<p><strong>Eenhedencontrole:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>U</mi><mn>1</mn></msub><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>V</mi><mo>]</mo>
+    <mspace width="1em"></mspace>
+    <mo>[</mo><msub><mi>U</mi><mn>2</mn></msub><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>V</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Maasregel van Kirchhoff verificatie:</strong></p>
+
+<p>Lopen we rond de maas met de referentierichtingen zoals getekend:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>bron</mi></msub>
+    <mo>+</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mo>-</mo>
+    <msub><mi>U</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer waarden)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>9</mn>
+    <mo>+</mo>
+    <mo>(</mo>
+    <mo>-</mo>
+    <mn>3</mn>
+    <mo>)</mo>
+    <mo>-</mo>
+    <mn>6</mn>
+    <mo>=</mo>
+    <mn>9</mn>
+    <mo>-</mo>
+    <mn>3</mn>
+    <mo>-</mo>
+    <mn>6</mn>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Perfect! De som van alle spanningen in de maas is nul ✓</p>
+
+<p><strong>Realiteitscheck:</strong></p>
+<ul>
+<li>U₂ = 6V is 2/3 van 9V, wat klopt want R₂ = 100Ω is 2/3 van 150Ω totaal</li>
+<li>|U₁| = 3V is 1/3 van 9V, wat klopt want R₁ = 50Ω is 1/3 van 150Ω totaal</li>
+<li>Som van absolute waarden: |U₁| + |U₂| = 3 + 6 = 9V = U<sub>bron</sub> ✓</li>
+</ul>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Waarom is U₁ negatief?</strong></p>
+
+<p>De <strong>referentierichting</strong> (de richting van de pijl bij U₁ in het schema) bepaalt het teken van de spanning. Als de werkelijke spanningsval tegenovergesteld is aan de referentierichting, krijg je een negatieve waarde.</p>
+
+<p><strong>Analogie:</strong> Stel je loopt bergop (werkelijke richting), maar je kompas wijst bergaf (referentierichting). Dan meet je een "negatieve hoogte" ten opzichte van je referentie.</p>
+
+<p><strong>Spanningsverhouding:</strong></p>
+<p>De verhouding tussen de spanningen is:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <msub><mi>U</mi><mn>2</mn></msub>
+      <mrow><mo>|</mo><msub><mi>U</mi><mn>1</mn></msub><mo>|</mo></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>6</mn>
+      <mn>3</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>R</mi><mn>2</mn></msub>
+      <msub><mi>R</mi><mn>1</mn></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>100</mn>
+      <mn>50</mn>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Dit bevestigt de spanningsdeelregel: spanningen verdelen zich proportioneel aan de weerstanden.</p>
+
+<p><strong>Stroomberekening (bonus):</strong></p>
+
+<p>De stroom door het circuit is:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>I</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>bron</mi></msub>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>9</mn>
+      <mn>150</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0,06</mn>
+    <mtext> A</mtext>
+    <mo>=</mo>
+    <mn>60</mn>
+    <mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Verificatie via U₁:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>I</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>|</mo><msub><mi>U</mi><mn>1</mn></msub><mo>|</mo></mrow>
+      <msub><mi>R</mi><mn>1</mn></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>3</mn>
+      <mn>50</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0,06</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Klopt! ✓</p>
+
+<p><strong>Vermogensverdeling:</strong></p>
+<ul>
+<li>P<sub>R1</sub> = I² × R₁ = (0,06)² × 50 = 0,18 W</li>
+<li>P<sub>R2</sub> = I² × R₂ = (0,06)² × 100 = 0,36 W</li>
+<li>P<sub>totaal</sub> = 0,18 + 0,36 = 0,54 W</li>
+</ul>
+
+<p>Verificatie: P<sub>bron</sub> = U × I = 9 × 0,06 = 0,54 W ✓</p>
+
+<p><strong>Belangrijke les:</strong></p>
+<p>Bij netwerkanalyse is het <strong>essentieel</strong> om referentierichtingen consistent te hanteren. Een negatief antwoord betekent niet "fout" - het betekent simpelweg dat de werkelijke richting tegenovergesteld is aan de gekozen referentie!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoorden:</strong></p>
+<ul>
+<li><strong>U₁ = -3 V</strong> (negatief vanwege tegengestelde polariteit)</li>
+<li><strong>U₂ = +6 V</strong> (positief, polariteit komt overeen)</li>
+</ul>
+
+<p><strong>Verificatie:</strong> U<sub>bron</sub> + U₁ - U₂ = 9 - 3 - 6 = 0 ✓</p>
+
+<p><em>Diagram:</em></p>
+<p><img src="media/media/image21.PNG" style="max-width:450px;" alt="Circuit met spanningen"></p>
+</div>
+
+</div>

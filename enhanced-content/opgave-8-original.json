@@ -1,0 +1,9 @@
+{
+  "number": "8",
+  "chapter": "H 1.9 blz. 13",
+  "question_html": "<p>Bereken de weerstand in dit netwerk:</p>\n<p><img src=\"media/media/image22.PNG\"\nstyle=\"width:3.37478in;height:1.82659in\" /></p>",
+  "solution_html": "<p>Hier komt het er op aan dat je de juiste vergelijking met 1 onbekende\nopstelt.</p>\n<p>Maar eenvoudiger is het als je doorziet dat over de 10||R gewoon\ndezelfde, makkelijk te berekenen spanning staat:</p>\n<p>De spanningsval over 1 Ohm met 2A is 2V. Dus is de spanning over\n10||R 10V.</p>\n<p>Omdat de stroom door 10 Ohm dus 1A, moet de andere 1A door de R gaan,\nen is dus</p>\n<p>R = 10 Ohm.</p>",
+  "images": [
+    "image22.PNG"
+  ]
+}

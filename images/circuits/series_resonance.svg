@@ -59,9 +59,9 @@
     <line x1="0" y1="80" x2="200" y2="80" stroke="#95a5a6" stroke-width="1.5"/>
     <line x1="100" y1="0" x2="100" y2="85" stroke="#95a5a6" stroke-width="1.5"/>
 
-    <!-- Labels -->
-    <text x="200" y="95" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">f</text>
-    <text x="85" y="10" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Z</text>
+    <!-- Labels - EENHEID TOEGEVOEGD -->
+    <text x="200" y="95" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">f (Hz)</text>
+    <text x="82" y="10" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Z (Ω)</text>
 
     <!-- Resonance curve (V-shape) -->
     <path d="M 20 10 L 100 75 L 180 10" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
@@ -83,7 +83,7 @@
     <text x="10" y="40" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">• XL = XC → heffen elkaar op</text>
     <text x="10" y="56" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">• Z = R (minimaal!)</text>
     <text x="10" y="72" font-family="Arial, sans-serif" font-size="11" fill="#3498db">• I = maximaal (= U/R)</text>
-    <text x="10" y="88" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">• UC en UL zeer hoog!</text>
+    <text x="10" y="88" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">• UC en UL zeer hoog (Q × Ubron)!</text>
     <text x="10" y="104" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">• cos φ = 1 (zuiver ohmisch)</text>
   </g>
 

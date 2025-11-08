@@ -1,0 +1,32 @@
+<!-- OPGAVE 9 - ENHANCED VERSION -->
+<!-- Chapter: H 1.9 blz. 13 -->
+<!-- Type: ohm_basic -->
+
+<div class="question">
+<p>Een schakeling bestaat uit een parallelschakeling van een weerstand van 5 kΩ en een onbekende weerstand R<sub>x</sub>. In serie met deze schakeling staat nog een onbekende weerstand R<sub>y</sub>. Als de totale schakeling aangesloten is op een 100 volt spanningsbron, moet de bron 10 mA leveren. De deelstroom door de weerstand van 5 kΩ moet dan 2 mA zijn.</p> <p>Ontwerp deze schakeling:</p> <p>Hint: pak dit probleem systematisch aan:</p> <p>- <em>analyse</em> (lezen, schema, verwachting, formules)</p> <p>- <em>oplossingsmethode</em> (maak een plan)</p> <p>- <em>uitwerking</em></p> <p>- <em>controle</em> (klopt de uitkomst met de schatting?)</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+
+<div class="enhancement-note" style="background: #fff3cd; padding: 10px; margin: 10px 0; border-left: 4px solid #ffc107;">
+<strong>⚠️ Enhancement in progress</strong><br>
+Deze opgave is geëxtraheerd uit het bronmateriaal en bevat de originele uitwerking.<br>
+Volgende stappen voor volledige enhancement:
+<ul>
+<li>Stap 1: Analyseer gegeven informatie (tabel format)</li>
+<li>Stap 2: Identificeer relevante natuurkundige wet (Holmes OHM_BASIC formules)</li>
+<li>Stap 3: Algebraïsche afleiding (stap-voor-stap met pijlen)</li>
+<li>Stap 4: Numerieke substitutie (met eenheden)</li>
+<li>Stap 5: Verificatie & fysische interpretatie</li>
+</ul>
+</div>
+
+<div class="original-solution">
+<div class="step-header">Originele Uitwerking</div>
+<p>Er zijn 3 verschillende benaderingen uitgewerkt. Kies voor jezelf een aanpak die je het makkelijkste ligt. Bij veel opgaven leiden meerdere wegen naar Rome…</p> <p>De intuïtieve manier verloopt als volgt:</p> <p><img src="media/media/image23.png"  /></p> <p>U over Rx = 2 mA x 5k = 10V. en I door Rx = 10-2=8mA 🡺</p> <p>Rx = 10V/8 mA = 1250 Ohm.</p> <p>U over Ry = 100V - 10V = 90V 🡺 Ry = 90V/10 mA = 9kOhm.</p> <p>Dit is hier de snelste manier.</p> <p>======</p> <p>De meer analytische manier verloopt als volgt.</p> <p>Vul bekende zaken in: dus U over Rx = 2 mA x 5k = 10V</p> <p>Er zijn 2 eisen, dus er zijn dan nog 2 vergelijkingen met 2 onbekenden.</p> <p>V1 = 100V = Ry.Iy + 10V = Ry.10 mV + 10 V <em>(1)</em></p> <p>It (door Rx) = 10 - 2 mA = 8 mA = Ux / Rx = 10/Rx. <em>(2)</em></p> <p>Uit (1) volgt 90V = Rx.10mV 🡺 Rx = 90/10k = 9k.</p> <p>Uit (2) volgt Rx = 10V/8 mA = 1250 Ohm</p> <p><strong>Alternatieve aanpak:</strong></p> <p>Parallelweerstand berekenen, want ingangsstroom is 10 mA en stroom door andere weerstand is 2 mA. Daarna is serieweerstand te berekenen omdat totale weerstand te berekenen is omdat U=100 V en I = 10mA.</p> <p>De spanning over de parallelschakeling is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>p</mi></msub><mo>=</mo><mn>2</mn><mo>•</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup><mo>•</mo><mn>5</mn><mo>•</mo><msup><mn>10</mn><mn>3</mn></msup><mo>=</mo><mn>10</mn><mspace width="0.222em"></mspace><mi>V</mi></mrow><annotation encoding="application/x-tex">U_{p} = 2 \bullet 10^{- 3} \bullet 5 \bullet 10^{3} = 10\ V</annotation></semantics></math> en de stroom door R<sub>x</sub> = 10 – 2 = 8 mA</p> <p>Dus <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>x</mi></msub><mo>=</mo><mfrac><msub><mi>U</mi><mi>p</mi></msub><msub><mi>I</mi><mi>x</mi></msub></mfrac><mo>=</mo><mfrac><mn>10</mn><mrow><mn>8</mn><mo>•</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>1250</mn><mspace width="0.222em"></mspace><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>25</mn><mspace width="0.222em"></mspace><mi>k</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">R_{x} = \frac{U_{p}}{I_{x}} = \frac{10}{8 \bullet 10^{- 3}} = 1250\ \mathrm{\Omega} = 1,25\ k\mathrm{\Omega}</annotation></semantics></math></p> <p>Nu weten we ook dat de spanning over R<sub>y</sub> gelijk is aan 100 – 10 = 90 V en dat de stroom erdoorheen 10 mA is. Dus moet de weerstand gelijk zijn aan:</p> <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>y</mi></msub><mo>=</mo><mfrac><mn>90</mn><mrow><mn>10</mn><mo>•</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>9000</mn><mspace width="0.222em"></mspace><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>9</mn><mspace width="0.222em"></mspace><mi>k</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">R_{y} = \frac{90}{10 \bullet 10^{- 3}} = 9000\ \mathrm{\Omega} = 9\ k\mathrm{\Omega}</annotation></semantics></math></p> <p><strong>Opgave 10, 11, 12 en 13:</strong></p> <p>De volgende vier vragen hebben alle betrekking op onderstaand netwerk.</p> <p><img src="media/media/image24.PNG"  /></p>
+</div>
+
+
+</div>

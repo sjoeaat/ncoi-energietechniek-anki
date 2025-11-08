@@ -1,0 +1,9 @@
+{
+  "number": "1c",
+  "chapter": "H 1.9 blz. 13",
+  "question_html": "<p><img src=\"media/media/image12.PNG\"\nstyle=\"width:2.42775in;height:0.85929in\" /></p>",
+  "solution_html": "<p><strong>Aanpak:</strong> Eerste bovenste weerstanden in serie bij\nelkaar optellen: 150+300 = 450 Ω.</p>\n<p>Daarna deze 450 Ω parallel aan 450 Ω, dus dat wordt de helft = 225\nΩ</p>\n<p>Of:\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>•</mo><msub><mi>R</mi><mn>2</mn></msub></mrow><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>450</mn><mo>•</mo><mn>450</mn></mrow><mrow><mn>450</mn><mo>+</mo><mn>450</mn></mrow></mfrac><mo>=</mo><mfrac><mn>202500</mn><mn>900</mn></mfrac><mo>=</mo><mn>225</mn><mspace width=\"0.222em\"></mspace><mi mathvariant=\"normal\">Ω</mi></mrow><annotation encoding=\"application/x-tex\">R_{AB} = \\frac{R_{1} \\bullet R_{2}}{R_{1} + R_{2}} = \\frac{450 \\bullet 450}{450 + 450} = \\frac{202500}{900} = 225\\ \\mathrm{\\Omega}</annotation></semantics></math></p>",
+  "images": [
+    "image12.PNG"
+  ]
+}

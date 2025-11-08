@@ -47,8 +47,9 @@
       <text x="-20" y="80" font-family="Arial, sans-serif" font-size="13" text-anchor="end" fill="#f39c12">IC</text>
     </g>
 
-    <!-- Total current (very small at resonance) -->
-    <text x="5" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="end" fill="#e74c3c">I → 0</text>
+    <!-- Total current (very small at resonance) - VERDUIDELIJKT -->
+    <text x="5" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="end" fill="#e74c3c">I ≈ 0</text>
+    <text x="5" y="90" font-family="Arial, sans-serif" font-size="10" text-anchor="end" fill="#7f8c8d">(minimaal)</text>
   </g>
 
   <!-- Impedance vs frequency graph -->
