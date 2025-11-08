@@ -27,7 +27,8 @@ Deze repository bevat een uitgebreide studiegids voor het NCOI vak **Energietech
 | **Regels code** | ~29.000+ |
 | **Hoofdstukken** | 11 (H 1.9 t/m H 11.7) |
 | **Anki kaarten** | 15 (auto-generated) |
-| **Scripts** | 2 (index + Anki generator) |
+| **Interactive Tools** | 9 (Dashboard, Index, Quiz, Exam, Progress, Analyzer, Schedule, Formula, PDF) |
+| **Scripts** | 4 (index, Anki, PDF, formula) |
 
 ### Coverage per Hoofdstuk
 
@@ -82,12 +83,12 @@ ncoi-energietechniek-anki/
 
 ## 🚀 Quick Start
 
-### 1️⃣ Browse Opgaven (Interactive)
+### 🎯 Start met Study Dashboard
 
-Open de **master index** in je browser:
+**De centrale hub voor alle study tools:**
 
 ```bash
-firefox study-guide/COMPLETE-INDEX-ALL-OPGAVEN.html
+firefox study-guide/STUDY-DASHBOARD.html
 ```
 
 Of via Python server:
@@ -95,7 +96,15 @@ Of via Python server:
 ```bash
 cd study-guide
 python3 -m http.server 8000
-# Browse naar: http://localhost:8000/COMPLETE-INDEX-ALL-OPGAVEN.html
+# Browse naar: http://localhost:8000/STUDY-DASHBOARD.html
+```
+
+### 1️⃣ Browse Opgaven (Interactive)
+
+Open de **master index** met search & filter:
+
+```bash
+firefox study-guide/COMPLETE-INDEX-ALL-OPGAVEN.html
 ```
 
 ### 2️⃣ Genereer Nieuwe Index
@@ -126,6 +135,100 @@ Dit creëert:
 5. ⚠️ **BELANGRIJK**: Zet "Allow HTML in fields" AAN!
 6. Field mapping: Front→Front, Back→Back, Tags→Tags
 7. Klik Import
+
+---
+
+## 🛠️ Interactive Study Tools (9 tools)
+
+**Volledige documentatie:** Zie [TOOLS-GUIDE.md](TOOLS-GUIDE.md) voor complete gebruiksaanwijzingen.
+
+### 🎯 Study Dashboard
+**Locatie:** `study-guide/STUDY-DASHBOARD.html`
+
+Centrale hub met:
+- Quick links naar alle 9 tools
+- Exam countdown timer (configureerbaar)
+- Repository statistieken
+- Hoofdstuk overzicht met difficulty ratings
+- Study tips & strategie
+
+### 📚 Complete Index (met Search & Filter)
+**Locatie:** `study-guide/COMPLETE-INDEX-ALL-OPGAVEN.html`
+
+- Browse alle 84 opgaven
+- **Live search** (zoek op keywords)
+- **Chapter filters** (H 1.9, H 2.6, etc.)
+- Real-time statistics
+- Responsive grid layout
+
+### 🎯 Quiz Mode
+**Locatie:** `study-guide/QUIZ-MODE.html`
+
+- Interactieve self-testing
+- 10 sample vragen (expandable)
+- Chapter filtering
+- Progress tracking
+- Answer reveal/hide
+- Statistics dashboard
+
+### ⏱️ Exam Simulator
+**Locatie:** `study-guide/EXAM-SIMULATOR.html`
+
+- Echte exam condities simulatie
+- Configureerbaar (10-30 vragen, 1-3 min/vraag)
+- Difficulty levels (basis/gemiddeld/gevorderd)
+- Timer met warning animation
+- Automatische grading (≥55% = GESLAAGD)
+- Gedetailleerde review
+
+### 📊 Progress Tracker
+**Locatie:** `study-guide/PROGRESS-TRACKER.html`
+
+- Track alle 84 opgaven (checkbox per opgave)
+- Real-time statistics (voltooid/remaining/percentage)
+- Geschatte dagen (2 opgaven/dag)
+- Motivational messages bij milestones
+- Export/import voortgang (JSON)
+- LocalStorage persistence
+
+### 🎯 Weak Spots Analyzer
+**Locatie:** `study-guide/WEAK-SPOTS-ANALYZER.html`
+
+- Self-assessment tool (44 skills, 10 hoofdstukken)
+- 3-point rating (zwak/ok/sterk)
+- Priority lijst (top 5 zwakste punten)
+- Heatmap visualisatie per hoofdstuk
+- Gepersonaliseerde aanbevelingen
+- Automatische week planning
+- Export analyse
+
+### 📅 Study Schedule Generator
+**Locatie:** `study-guide/STUDY-SCHEDULE.html`
+
+- Gepersonaliseerd studieplan
+- Configureerbaar (examendatum, intensiteit, studiestijl)
+- Visuele calendar view (week grid)
+- Auto-distributie 84 opgaven
+- Exam prep week (laatste 7 dagen)
+- Print-friendly
+
+### 📐 Formuleblad (Auto-Generated)
+**Locatie:** `study-guide/FORMULEBLAD-AUTO.html`
+
+- 52 formules verdeeld over 8 hoofdstukken
+- 3-kolom layout (naam, notatie, betekenis)
+- Print-friendly CSS
+- Afkortingen legenda
+- Perfect voor examen voorbereiding
+
+### 🖨️ PDF Export
+**Locatie:** `study-guide/PRINT-READY-COMPLETE-GUIDE.html`
+
+- Alle 44 enhanced opgaven in één document
+- Table of contents met links
+- Print-optimized CSS
+- Page-break optimization
+- Ready voor PDF generatie
 
 ---
 
