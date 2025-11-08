@@ -1,0 +1,551 @@
+<div class="question">
+<p><strong>H 9.7 - Opgave 9: Spoel in serie met R || (R + C)</strong></p>
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Spoel: L = 10 mH in serie met bron</li>
+<li>Parallel blok: R<sub>1</sub> = 100 Ω || [R<sub>2</sub> = 50 Ω + C = 5 μF in serie]</li>
+<li>Frequentie: f = 1 kHz</li>
+</ul>
+<p><strong>Vraag:</strong> Bereken totale impedantie |Z| en fasehoek φ</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking volgens 5-stappen methodologie</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>Netwerktopologie:</strong></p>
+<ul>
+<li>Serie-element: L = 10 mH = 0,010 H</li>
+<li>Parallel rechts: R<sub>1</sub> || (R<sub>2</sub> + C)</li>
+<li>R<sub>1</sub> = 100 Ω</li>
+<li>R<sub>2</sub> = 50 Ω</li>
+<li>C = 5 μF = 5 × 10<sup>-6</sup> F</li>
+<li>f = 1000 Hz → ω = 2π × 1000 = 2000π rad/s</li>
+</ul>
+
+<p><strong>Te berekenen:</strong></p>
+<ul>
+<li>Totale impedantie Z<sub>totaal</sub></li>
+<li>Modulus |Z|</li>
+<li>Fasehoek φ</li>
+</ul>
+
+<p><strong>Holmes referentie:</strong> H 9.7 blz. 120 - Complexe RLC-netwerken</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+<p><strong>Complex impedantieberekening stappenplan:</strong></p>
+<ol>
+<li>Bereken Z<sub>L</sub> = jωL</li>
+<li>Bereken Z<sub>C</sub> = 1/(jωC) = -j/(ωC)</li>
+<li>Bereken Z<sub>rechts</sub> = R<sub>1</sub> || (R<sub>2</sub> + Z<sub>C</sub>)</li>
+<li>Bereken Z<sub>totaal</sub> = Z<sub>L</sub> + Z<sub>rechts</sub></li>
+<li>Modulus en fasehoek bepalen</li>
+</ol>
+
+<p><strong>Parallel impedantie formule:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>Z</mi><mn>1</mn></msub>
+        <mo>·</mo>
+        <msub><mi>Z</mi><mn>2</mn></msub>
+      </mrow>
+      <mrow>
+        <msub><mi>Z</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>Z</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Complex delen (rationaliseren):</strong></p>
+<p>Bij deling door complex getal a + bj: vermenigvuldig teller en noemer met complex toegevoegde (a - bj)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding</div>
+
+<p><strong>Stap 3a: Bereken Z<sub>L</sub></strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mi>j</mi>
+    <mo>·</mo>
+    <mn>2</mn><mi>π</mi>
+    <mo>·</mo>
+    <mn>1000</mn>
+    <mo>·</mo>
+    <mn>10</mn>
+    <mo>×</mo>
+    <msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mi>j</mi>
+    <mo>·</mo>
+    <mn>2</mn><mi>π</mi>
+    <mo>·</mo>
+    <mn>10</mn>
+    <mo>=</mo>
+    <mn>62,8318531</mn><mi>j</mi>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3b: Bereken Z<sub>C</sub></strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mi>j</mi>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>2</mn><mi>π</mi>
+        <mo>·</mo>
+        <mn>1000</mn>
+        <mo>·</mo>
+        <mn>5</mn>
+        <mo>×</mo>
+        <msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mi>j</mi>
+    <mfrac>
+      <msup><mn>10</mn><mn>6</mn></msup>
+      <mrow>
+        <mn>2</mn><mi>π</mi>
+        <mo>·</mo>
+        <mn>1000</mn>
+        <mo>·</mo>
+        <mn>5</mn>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>31,83098862</mn><mi>j</mi>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3c: Bereken Z<sub>50Ω+C</sub> (serie)</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mrow><mn>50</mn><mo>+</mo><mi>C</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>50</mn>
+    <mo>+</mo>
+    <mo>(</mo>
+    <mo>−</mo>
+    <mn>31,83</mn><mi>j</mi>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>50</mn>
+    <mo>−</mo>
+    <mn>31,83</mn><mi>j</mi>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3d: Bereken Z<sub>rechts</sub> = 100 || (50 - 31,83j)</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>rechts</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mn>100</mn>
+        <mo>·</mo>
+        <mo>(</mo>
+        <mn>50</mn>
+        <mo>−</mo>
+        <mn>31,83</mn><mi>j</mi>
+        <mo>)</mo>
+      </mrow>
+      <mrow>
+        <mn>100</mn>
+        <mo>+</mo>
+        <mn>50</mn>
+        <mo>−</mo>
+        <mn>31,83</mn><mi>j</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Teller:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>100</mn>
+    <mo>·</mo>
+    <mo>(</mo>
+    <mn>50</mn>
+    <mo>−</mo>
+    <mn>31,83</mn><mi>j</mi>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>5000</mn>
+    <mo>−</mo>
+    <mn>3183</mn><mi>j</mi>
+  </mrow>
+</math>
+</div>
+
+<p>Noemer:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>150</mn>
+    <mo>−</mo>
+    <mn>31,83</mn><mi>j</mi>
+  </mrow>
+</math>
+</div>
+
+<p>Rationaliseren (vermenigvuldig met complex toegevoegde):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>rechts</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mo>(</mo>
+        <mn>5000</mn>
+        <mo>−</mo>
+        <mn>3183</mn><mi>j</mi>
+        <mo>)</mo>
+        <mo>·</mo>
+        <mo>(</mo>
+        <mn>150</mn>
+        <mo>+</mo>
+        <mn>31,83</mn><mi>j</mi>
+        <mo>)</mo>
+      </mrow>
+      <mrow>
+        <mo>(</mo>
+        <mn>150</mn>
+        <mo>−</mo>
+        <mn>31,83</mn><mi>j</mi>
+        <mo>)</mo>
+        <mo>·</mo>
+        <mo>(</mo>
+        <mn>150</mn>
+        <mo>+</mo>
+        <mn>31,83</mn><mi>j</mi>
+        <mo>)</mo>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Noemer (reëel):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup><mn>150</mn><mn>2</mn></msup>
+    <mo>+</mo>
+    <msup><mn>31,83</mn><mn>2</mn></msup>
+    <mo>=</mo>
+    <mn>22500</mn>
+    <mo>+</mo>
+    <mn>1013,15</mn>
+    <mo>=</mo>
+    <mn>23513,15</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Teller:</p>
+<ul>
+<li>Reëel deel: 5000 × 150 + 3183 × 31,83 = 750000 + 101292,89 = 851292,89</li>
+<li>Imaginair deel: 5000 × 31,83 - 3183 × 150 = 159150 - 477450 = -318300</li>
+</ul>
+
+<p>Resultaat:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>rechts</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mn>851292,89</mn>
+        <mo>−</mo>
+        <mn>318300</mn><mi>j</mi>
+      </mrow>
+      <mn>23513,15</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>36,20</mn>
+    <mo>−</mo>
+    <mn>13,54</mn><mi>j</mi>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3e: Bereken Z<sub>totaal</sub> = Z<sub>L</sub> + Z<sub>rechts</sub></strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>totaal</mi></msub>
+    <mo>=</mo>
+    <mn>62,83</mn><mi>j</mi>
+    <mo>+</mo>
+    <mn>36,20</mn>
+    <mo>−</mo>
+    <mn>13,54</mn><mi>j</mi>
+    <mo>=</mo>
+    <mn>36,20</mn>
+    <mo>+</mo>
+    <mn>49,29</mn><mi>j</mi>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke berekening modulus en fase</div>
+
+<p><strong>Modulus:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow><mo>|</mo><mi>Z</mi><mo>|</mo></mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup>
+          <mtext>Re</mtext>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <msup>
+          <mtext>Im</mtext>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup><mn>36,20</mn><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mn>49,29</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow><mo>|</mo><mi>Z</mi><mo>|</mo></mrow>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <mn>1310,44</mn>
+        <mo>+</mo>
+        <mn>2429,51</mn>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mn>3739,95</mn>
+    </msqrt>
+    <mo>=</mo>
+    <mn>61,2</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fasehoek:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math#MathML">
+  <mrow>
+    <mi>φ</mi>
+    <mo>=</mo>
+    <mi>arctan</mi>
+    <mfrac>
+      <mtext>Im</mtext>
+      <mtext>Re</mtext>
+    </mfrac>
+    <mo>=</mo>
+    <mi>arctan</mi>
+    <mfrac>
+      <mn>49,29</mn>
+      <mn>36,20</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mi>arctan</mi>
+    <mo>(</mo>
+    <mn>1,3614</mn>
+    <mo>)</mo>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>φ</mi>
+    <mo>=</mo>
+    <mn>0,9373</mn>
+    <mtext> rad</mtext>
+    <mo>=</mo>
+    <mn>53,7</mn>
+    <mo>°</mo>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<ul>
+<li>[Z<sub>L</sub>] = [ωL] = s<sup>-1</sup> · H = s<sup>-1</sup> · (V·s/A) = V/A = Ω ✓</li>
+<li>[Z<sub>C</sub>] = [1/(ωC)] = (s<sup>-1</sup> · F)<sup>-1</sup> = (s<sup>-1</sup> · A·s/V)<sup>-1</sup> = V/A = Ω ✓</li>
+<li>[|Z|] = √(Ω² + Ω²) = Ω ✓</li>
+<li>[φ] = dimensieloos (radialen) ✓</li>
+</ul>
+
+<p><strong>Sanity checks:</strong></p>
+<ul>
+<li>X<sub>L</sub> ≈ 62,8 Ω ✓</li>
+<li>X<sub>C</sub> ≈ 31,8 Ω ✓</li>
+<li>Z<sub>rechts</sub> heeft Re > 0, Im < 0 ✓ (netto capacitief in parallel blok)</li>
+<li>Z<sub>totaal</sub> heeft Im > 0 ✓ (netto inductief door serie-L)</li>
+<li>|Z| > |Re| ✓</li>
+<li>φ > 0 ✓ (inductief gedrag dominant)</li>
+</ul>
+
+<p><strong>Fysische betekenis:</strong></p>
+
+<p><strong>Netwerk karakter - Netto inductief:</strong></p>
+<p>De totale impedantie Z = 36,20 + 49,29j Ω heeft:</p>
+<ul>
+<li><strong>Re(Z) = 36,20 Ω:</strong> Dissipatie (beide R-en)</li>
+<li><strong>Im(Z) = +49,29 Ω:</strong> Netto inductief (X<sub>L</sub> > X<sub>C,eff</sub>)</li>
+<li><strong>φ = 53,7° > 0:</strong> Stroom loopt achter op spanning</li>
+</ul>
+
+<p><strong>Parallel blok effect:</strong></p>
+<p>Het parallelle blok Z<sub>rechts</sub> = 36,20 - 13,54j Ω heeft:</p>
+<ul>
+<li>Capacitief karakter (Im < 0)</li>
+<li>Dit komt door de C in de (R+C)-tak</li>
+<li>De 100Ω parallel-R verhoogt het resistieve deel</li>
+</ul>
+
+<p><strong>Serie-L dominant:</strong></p>
+<p>Ondanks het capacitieve parallel blok (Im = -13,54 Ω), is de serie-spoel (X<sub>L</sub> = +62,83 Ω) dominant, waardoor het totale netwerk inductief gedraagt:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext>Im</mtext>
+    <mo>(</mo>
+    <msub><mi>Z</mi><mi>totaal</mi></msub>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>62,83</mn>
+    <mo>−</mo>
+    <mn>13,54</mn>
+    <mo>=</mo>
+    <mn>49,29</mn>
+    <mtext> Ω</mtext>
+    <mspace width="1em"/>
+    <mo>></mo>
+    <mn>0</mn>
+    <mspace width="1em"/>
+    <mtext>(inductief)</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Vermogenskarakter:</strong></p>
+<ul>
+<li><strong>Arbeidsfactor:</strong> cos φ = Re(Z)/|Z| = 36,20/61,2 ≈ 0,592 (achterblijvend)</li>
+<li><strong>Reactief vermogen:</strong> Positief (netwerk absorbeert reactief vermogen als inductieve last)</li>
+<li><strong>Vermogens</strong>driehoek: P = 59,2%, Q = 80,5% (inductief), S = 100%</li>
+</ul>
+
+<p><strong>Frequentieafhankelijkheid:</strong></p>
+<p>Bij f = 1 kHz:</p>
+<ul>
+<li>X<sub>L</sub> = 2πfL ∝ f (lineair met frequentie)</li>
+<li>X<sub>C</sub> = 1/(2πfC) ∝ 1/f (omgekeerd evenredig)</li>
+<li>Bij hogere f: X<sub>L</sub> ↑, X<sub>C</sub> ↓ → meer inductief</li>
+<li>Bij lagere f: X<sub>L</sub> ↓, X<sub>C</sub> ↑ → meer capacitief</li>
+</ul>
+
+<p><strong>Praktische context:</strong></p>
+<p>Dit type netwerk (serie-L met parallel RC-blok) komt voor in:</p>
+<ul>
+<li><strong>Filters:</strong> Frequentieafhankelijke impedantie-transformatie</li>
+<li><strong>Impedantie-matching:</strong> Aanpassing tussen bron en last</li>
+<li><strong>Audio-crossovers:</strong> Weef/mid-range scheidingsfilters</li>
+<li><strong>RF-circuits:</strong> Aanpassingsnetwerken voor antennes</li>
+</ul>
+
+<p><strong>Ontwerpoverwegingen:</strong></p>
+<p>De complexe impedantieberekening vereist:</p>
+<ul>
+<li>Zorgvuldig rationaliseren bij complexe deling</li>
+<li>Correcte behandeling van j² = -1</li>
+<li>Aandacht voor reëel/imaginair delen bij optellen</li>
+<li>Spreadsheet of calculator voor nauwkeurigheid</li>
+</ul>
+</div>
+
+<div style="background: #e8f4f8; padding: 15px; margin-top: 20px; border-left: 4px solid #2196F3;">
+<p><strong>Antwoord:</strong></p>
+<p><strong>Z<sub>totaal</sub> = 36,20 + 49,29j Ω</strong></p>
+<p><strong>|Z| = 61,2 Ω</strong></p>
+<p><strong>φ = 0,9373 rad</strong> (53,7°)</p>
+<p><em>Fysisch: Het netwerk gedraagt zich netto inductief (φ > 0) doordat de serie-spoel (X<sub>L</sub> ≈ 63 Ω) domineert over het capacitieve effect in het parallelle blok (X<sub>C,eff</sub> ≈ 14 Ω). De totale impedantie heeft een resistief deel van 36 Ω (dissipatie) en een inductief deel van 49 Ω (energie-opslag), resulterend in een arbeidsfactor van ongeveer 0,59 (achterblijvend).</em></p>
+</div>
+
+</div>

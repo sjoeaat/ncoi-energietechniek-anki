@@ -1,0 +1,186 @@
+<div class="question">
+<p><strong>H 7.8 - Opgave 2: De Wienbrug</strong></p>
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Wienbrug netwerk met R en C componenten</li>
+<li>u<sub>midden</sub> in het midden van het netwerkje = ½ u</li>
+<li>Vraag: Bepaal de stroom i en de fasehoek</li>
+</ul>
+<p><img src="media/media/image76.png" style="max-width:500px;"></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking volgens 5-stappen methodologie</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>Gegeven netwerk:</strong></p>
+<ul>
+<li>Wienbrug configuratie met twee RC-takken</li>
+<li>Spanning in midden: u<sub>midden</sub> = ½ u (vast)</li>
+<li>Symmetrische opbouw suggereert mogelijke balansconditie</li>
+</ul>
+
+<p><strong>Te bepalen:</strong></p>
+<ul>
+<li>Stroom i door de middenlijn</li>
+<li>Fasehoek φ tussen stroom en spanning</li>
+</ul>
+
+<p><strong>Holmes referentie:</strong> H 7.8 blz. 88 - R, C en L schakelingen (complexe netwerken)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+<p><strong>Wienbrug principe:</strong></p>
+<p>Een Wienbrug is in balans wanneer de spanningen in het middelpunt identiek zijn (zowel amplitude als fase). In dat geval is i = 0.</p>
+
+<p><strong>Knooppuntenregel (KCL):</strong></p>
+<p>Bij het middenpunt geldt: i = i<sub>links</sub> - i<sub>rechts</sub></p>
+
+<p><strong>Strategie:</strong></p>
+<ol>
+<li>Bereken stromen door linker RC-tak (i<sub>links</sub>)</li>
+<li>Bereken stromen door rechter RC-tak (i<sub>rechts</sub>)</li>
+<li>Bepaal verschilstroom i = i<sub>links</sub> - i<sub>rechts</sub></li>
+<li>Controleer of brug in balans is</li>
+</ol>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding</div>
+
+<p><strong>Stromen door beide takken:</strong></p>
+<p>Het middenpunt staat vast op u<sub>midden</sub> = ½ u. De stromen naar beneden door R en C worden bepaald door het spanningsverschil:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>i</mi><mi>links</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>u</mi><mi>midden</mi></msub>
+      <msub><mi>Z</mi><mi>RC,links</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>i</mi><mi>rechts</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>u</mi><mi>midden</mi></msub>
+      <msub><mi>Z</mi><mi>RC,rechts</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Balansconditie:</strong></p>
+<p>De Wienbrug is in balans wanneer:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>i</mi><mi>links</mi></msub>
+    <mo>=</mo>
+    <msub><mi>i</mi><mi>rechts</mi></msub>
+    <mspace width="1em"/>
+    <mo>⇒</mo>
+    <mspace width="1em"/>
+    <mi>i</mi>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Gevraagde stroom:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>i</mi>
+    <mo>=</mo>
+    <msub><mi>i</mi><mi>links</mi></msub>
+    <mo>−</mo>
+    <msub><mi>i</mi><mi>rechts</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Als de brug symmetrisch is en in balans, dan zijn beide stromen gelijk (zowel amplitude als fase), en is het verschil nul.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke substitutie en berekening</div>
+
+<p><strong>Analyse met knooppuntenregel:</strong></p>
+<p>Teken de stromen i<sub>links</sub> en i<sub>rechts</sub> naar beneden door R en C, waarbij u<sub>midden</sub> vast staat (= ½ u).</p>
+
+<p><strong>Overschot/tekort bepaling:</strong></p>
+<ul>
+<li>Overschot linkse middenknooppunt = i<sub>links</sub> - i<sub>rechts</sub></li>
+<li>Tekort rechtse middenknooppunt = i<sub>rechts</sub> - i<sub>links</sub></li>
+<li>Deze zijn (uiteraard) aan elkaar gelijk in grootte</li>
+</ul>
+
+<p><strong>Resultaat uit grafische analyse:</strong></p>
+<p>Uit de fasorgrafiek blijkt dat de stromen exact gelijk zijn (symmetrie), zodat:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>i</mi>
+    <mo>=</mo>
+    <mn>0</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fasehoek:</strong></p>
+<p>Antwoord uit grafiek: <strong>φ = ¾π radialen</strong> (tussen spanning en resulterende stroom)</p>
+
+<p><em>Opmerking: Bij perfecte balans is de stroom door de middenlijn exact nul.</em></p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<ul>
+<li>[i] = [u]/[Z] = V / Ω = A ✓</li>
+<li>[φ] = radialen (dimensieloos) ✓</li>
+</ul>
+
+<p><strong>Fysische betekenis:</strong></p>
+<p><strong>Wienbrug in balans:</strong> De Wienbrug is een klassieke meetopstelling om frequenties te bepalen of componentwaarden te meten. Bij de balansfrequentie is de stroom door de middenlijn exact nul, onafhankelijk van de bronspanning.</p>
+
+<p><strong>Praktische toepassing:</strong></p>
+<ul>
+<li><strong>Oscillatoren:</strong> Wien-brug oscillatoren gebruiken deze balansconditie voor frequentiestabilisatie</li>
+<li><strong>Metingen:</strong> Bij bekende componenten kan een onbekende waarde worden bepaald</li>
+<li><strong>Frequentieselectie:</strong> De balans is frequentieafhankelijk (via Z<sub>C</sub> = 1/jωC)</li>
+</ul>
+
+<p><strong>Fasehoek interpretatie:</strong></p>
+<p>De fasehoek van ¾π rad (135°) tussen spanning en stroom in de takken is karakteristiek voor RC-netwerken bij specifieke frequenties. De C zorgt voor 90° fasevoorijling, de R voor een extra verschuiving.</p>
+
+<p><strong>Symmetrieconditie:</strong></p>
+<p>Bij een symmetrische Wienbrug geldt: als de impedanties links en rechts identiek zijn (of voldoen aan de balansconditie), dan compenseert de linkerstroom exact de rechterstroom in het middenpunt. Dit is de basis van alle brugmetingen (Wheatstone, Maxwell, Wein, etc.).</p>
+
+<p><strong>Controle:</strong></p>
+<p>De gegeven conditie u<sub>midden</sub> = ½ u bevestigt de symmetrie: beide spanningsdelers geven exact dezelfde verhouding, wat alleen mogelijk is bij perfecte balans.</p>
+</div>
+
+<div style="background: #e8f4f8; padding: 15px; margin-top: 20px; border-left: 4px solid #2196F3;">
+<p><strong>Antwoord:</strong></p>
+<p><strong>i = 0 A</strong> (Wienbrug in balans)</p>
+<p><strong>φ = ¾π rad</strong> (135° tussen spanning en takstromen)</p>
+<p><em>Fysisch: Bij een gebalanceerde Wienbrug compenseert de stroom uit de linkertak exact de stroom naar de rechtertak, zodat er geen netto stroom door de middenlijn loopt. Dit principe wordt gebruikt in precisie-oscillatoren en meetbruggen.</em></p>
+</div>
+
+</div>

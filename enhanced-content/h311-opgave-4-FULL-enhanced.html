@@ -1,0 +1,467 @@
+<!-- H 3.11 OPGAVE 4 - ENHANCED VERSION (Spanning Ux bepalen met Thévenin en Superpositie) -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 4</strong></p>
+<p>Bepaal de spanning U<sub>x</sub> in dit netwerk.</p>
+
+<p><img src="media/media/image53.png" style="max-width:700px;" alt="H 3.11 Opgave 4 circuit diagram"></p>
+
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Spanningsbron: 60V</li>
+<li>Stroombron: 1mA</li>
+<li>Meerdere weerstanden (R₁=60kΩ, R₂=30kΩ, R₃=10kΩ, R₄=70kΩ)</li>
+</ul>
+
+<p><strong>Gevraagd:</strong> Bepaal spanning U<sub>x</sub></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze opgave test <strong>meerdere analysemethoden</strong> voor complexe netwerken met gemengde bronnen.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Methode</th>
+  <th>Voordeel</th>
+  <th>Wanneer gebruiken</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Snelle Thévenin</strong></td>
+  <td>Minimaal aantal stappen</td>
+  <td>Als vereenvoudiging duidelijk is</td>
+</tr>
+<tr>
+  <td><strong>Superpositie</strong></td>
+  <td>Systematisch, altijd correct</td>
+  <td>Bij twijfel over topologie</td>
+</tr>
+<tr>
+  <td><strong>Knooppunt/Maas</strong></td>
+  <td>Volledig analytisch</td>
+  <td>Verificatie of complexe circuits</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> We gebruiken zowel Thévenin vereenvoudiging als het superpositieprincipe om het antwoord te vinden en te verifiëren.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: METHODE 1 - Snelle Thévenin benadering</div>
+
+<p><strong>Strategie:</strong> Vervang linker- en rechterdeel door Thévenin equivalenten</p>
+
+<p><strong>Stap 2a: Linker deel (60V bron met R₁ en R₂)</strong></p>
+
+<p>Inwendige weerstand (gezien vanaf middenklemmmen):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mrow><mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi><mi>s</mi></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mn>1</mn></msub>
+    <mo>∥</mo>
+    <msub><mi>R</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>60</mn><mo>×</mo><mn>30</mn></mrow>
+      <mrow><mn>60</mn><mo>+</mo><mn>30</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>20</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Thévenin spanning (spanningsdeling):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi><mi>s</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>60</mn>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mn>2</mn></msub>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>60</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>30</mn>
+      <mn>90</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>20</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 2b: Rechter deel (1mA stroombron met R₃ en R₄)</strong></p>
+
+<p>Inwendige weerstand:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mrow><mi>r</mi><mi>e</mi><mi>c</mi><mi>h</mi><mi>t</mi><mi>s</mi></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mn>3</mn></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mn>4</mn></msub>
+    <mo>=</mo>
+    <mn>10</mn>
+    <mo>+</mo>
+    <mn>70</mn>
+    <mo>=</mo>
+    <mn>80</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Thévenin spanning (stroombron × R₄, negatief omdat omgekeerde polariteit):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>r</mi><mi>e</mi><mi>c</mi><mi>h</mi><mi>t</mi><mi>s</mi></mrow></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>1</mn><mtext> mA</mtext>
+    <mo>×</mo>
+    <mn>70</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>70</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 2c: Spanningsdeling tussen twee Thévenin bronnen</strong></p>
+
+<p>Totaal spanningsverschil: 20V - (-70V) = 90V over 20kΩ + 80kΩ = 100kΩ</p>
+
+<p>Spanningsval over de 20kΩ (links):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mi>d</mi><mi>i</mi><mi>v</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>90</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>20</mn>
+      <mn>100</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>18</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Spanning U<sub>x</sub> (gemeten vanaf linker Thévenin bron):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>x</mi></msub>
+    <mo>=</mo>
+    <mn>20</mn>
+    <mo>−</mo>
+    <mn>18</mn>
+    <mo>=</mo>
+    <mn>2</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie methode 1:</strong> U<sub>x</sub> = 2V ✓</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: METHODE 2 - Superpositie (gedetailleerd)</div>
+
+<p><strong>Principe:</strong> Bereken afzonderlijk de bijdrage van elke bron, tel op.</p>
+
+<p><strong>Stap 3a: Bijdrage van 60V bron (1mA stroombron open)</strong></p>
+
+<p>Vervangweerstand rechts:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mi>r</mi><mi>e</mi><mi>c</mi><mi>h</mi><mi>t</mi><mi>s</mi></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mn>2</mn></msub>
+    <mo>∥</mo>
+    <mo>(</mo>
+    <msub><mi>R</mi><mn>3</mn></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mn>4</mn></msub>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>30</mn>
+    <mo>∥</mo>
+    <mn>80</mn>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>30</mn><mo>×</mo><mn>80</mn></mrow>
+      <mrow><mn>30</mn><mo>+</mo><mn>80</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>21.82</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Spanningsdeling:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>60</mn><mi>V</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>60</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>21.82</mn>
+      <mrow><mn>60</mn><mo>+</mo><mn>21.82</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>16</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3b: Bijdrage van 1mA stroombron (60V kort)</strong></p>
+
+<p>Vervangweerstand links:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mrow><mn>1</mn><mn>2</mn></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mn>1</mn></msub>
+    <mo>∥</mo>
+    <msub><mi>R</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mn>20</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Stroomdeling (stroom door R₃):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><msub><mi>R</mi><mn>3</mn></msub></msub>
+    <mo>=</mo>
+    <mn>1</mn><mtext> mA</mtext>
+    <mo>×</mo>
+    <mfrac>
+      <mn>7</mn>
+      <mn>10</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0.7</mn><mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Spanning (negatief omdat stroom omgekeerde richting):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mrow><mn>1</mn><mi>m</mi><mi>A</mi></mrow></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>0.7</mn><mtext> mA</mtext>
+    <mo>×</mo>
+    <mn>20</mn><mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>14</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3c: Totale spanning (superpositie)</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>x</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mrow><mn>60</mn><mi>V</mi></mrow></msub>
+    <mo>+</mo>
+    <msub><mi>U</mi><mrow><mn>1</mn><mi>m</mi><mi>A</mi></mrow></msub>
+    <mo>=</mo>
+    <mn>16</mn>
+    <mo>−</mo>
+    <mn>14</mn>
+    <mo>=</mo>
+    <mn>2</mn><mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie methode 2:</strong> U<sub>x</sub> = 2V ✓ (bevestigt methode 1!)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Thévenin parameters van het complete netwerk</div>
+
+<p><strong>Inwendige weerstand R<sub>i</sub>:</strong></p>
+
+<p>Beide bronnen passiveren:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>i</mi></msub>
+    <mo>=</mo>
+    <mo>(</mo>
+    <msub><mi>R</mi><mn>1</mn></msub>
+    <mo>∥</mo>
+    <msub><mi>R</mi><mn>2</mn></msub>
+    <mo>)</mo>
+    <mo>∥</mo>
+    <mo>(</mo>
+    <msub><mi>R</mi><mn>3</mn></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mn>4</mn></msub>
+    <mo>)</mo>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>=</mo>
+    <mn>20</mn>
+    <mo>∥</mo>
+    <mn>80</mn>
+    <mo>=</mo>
+    <mn>16</mn><mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Kortsluitstroom I<sub>k</sub>:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mn>0</mn></msub>
+      <msub><mi>R</mi><mi>i</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>2</mn>
+      <mn>16</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>125</mn><mtext> μA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Thévenin equivalent van het complete netwerk:</strong> 2V in serie met 16kΩ</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Verificatie via MultiSim:</strong> Simulatie bevestigt U<sub>x</sub> = 2V ✓</p>
+
+<p><strong>Dimensionale controle:</strong> Alle berekeningen geven spanning in [V] ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Waarom twee methoden?</strong></p>
+
+<table style="width:100%; margin: 15px 0;">
+<thead>
+<tr>
+  <th>Aspect</th>
+  <th>Snelle Thévenin</th>
+  <th>Superpositie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Snelheid</strong></td>
+  <td>Zeer snel (3-4 stappen)</td>
+  <td>Langzamer (6-8 stappen)</td>
+</tr>
+<tr>
+  <td><strong>Inzicht</strong></td>
+  <td>Vereist topologie-herkenning</td>
+  <td>Systematisch, altijd werkt</td>
+</tr>
+<tr>
+  <td><strong>Foutgevoeligheid</strong></td>
+  <td>Hoger (kan stap overslaan)</td>
+  <td>Lager (elke bron apart)</td>
+</tr>
+<tr>
+  <td><strong>Leren</strong></td>
+  <td>Goed voor ervaren analisten</td>
+  <td>Goed voor beginners</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Belang van negatieve spanningen:</strong></p>
+<blockquote style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"De stroombron veroorzaakt -70V: dit betekent dat de stroombron de spanning 'omkeert' t.o.v. de referentiepolariteit. Zonder correcte tekenbehandeling krijg je 88V in plaats van 2V!"
+</blockquote>
+
+<p><strong>Praktische betekenis:</strong></p>
+<p>De kleine resulterende spanning (2V) ontstaat door <strong>bijna complete compensatie</strong> van twee grote bronnen:</p>
+<ul>
+<li>Linker deel levert +20V</li>
+<li>Rechter deel trekt -18V weg</li>
+<li>Netto resultaat: slechts 2V</li>
+</ul>
+
+<p>Dit komt vaak voor in:</p>
+<ul>
+<li><strong>Differentiaalversterkers:</strong> Klein verschilsignaal versterken</li>
+<li><strong>Stroombroncompensatie:</strong> Offset-correctie circuits</li>
+<li><strong>Meettechniek:</strong> Bridge circuits (Wheatstone)</li>
+</ul>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> U<sub>x</sub> = 2 V</p>
+
+<p><strong>Verificatie met 2 methoden:</strong></p>
+<ul>
+<li>Snelle Thévenin: Links (20V, 20kΩ) + Rechts (-70V, 80kΩ) → 2V</li>
+<li>Superpositie: 60V bijdrage (16V) + 1mA bijdrage (-14V) → 2V</li>
+<li>Thévenin equivalent totaal: 2V, 16kΩ</li>
+</ul>
+
+<p><em>Twee onafhankelijke methoden bevestigen hetzelfde antwoord - hoge betrouwbaarheid!</em></p>
+</div>
+
+</div>

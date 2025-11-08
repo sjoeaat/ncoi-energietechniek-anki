@@ -1,0 +1,817 @@
+<div class="question">
+<p><strong>H 11.7 - Vermogen berekeningen</strong></p>
+
+<p><strong>Opgave 3: LR netwerk vermogen</strong></p>
+<ul>
+<li>Gegeven: U = 150 V (top), I = 4 A (top)</li>
+<li>Fasehoek: φ = π/3 rad (60°)</li>
+<li>Vraag: Bereken S, P, en Q</li>
+</ul>
+
+<p><strong>Opgave 5: Compenseren blindvermogen met C</strong></p>
+<ul>
+<li>Gegeven: P = 600 W, cos φ<sub>oud</sub> = 0,75</li>
+<li>Doel: Verbeteren naar cos φ<sub>nieuw</sub> = 0,99</li>
+<li>Netspanning: U = 220 V (effectief), f = 50 Hz</li>
+<li>Vraag: Bepaal benodigde C voor compensatie</li>
+</ul>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking volgens 5-stappen methodologie</div>
+
+<!-- OPGAVE 3 -->
+<div class="opgave-section" style="border-top: 3px solid #2196F3; padding-top: 20px; margin-top: 30px;">
+<h3>Opgave 3: LR netwerk vermogen</h3>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>U<sub>top</sub> = 150 V</li>
+<li>I<sub>top</sub> = 4 A</li>
+<li>φ = π/3 rad = 60°</li>
+<li>LR-netwerk (inductief → φ > 0)</li>
+</ul>
+
+<p><strong>Te berekenen:</strong></p>
+<ul>
+<li>S: Schijnbaar vermogen [VA]</li>
+<li>P: Actief vermogen [W]</li>
+<li>Q: Reactief vermogen [VAR]</li>
+</ul>
+
+<p><strong>Holmes referentie:</strong> H 11.7 blz. 145 - Vermogensdriehoek</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+
+<p><strong>Effectieve waarden:</strong></p>
+<p>Voor sinusoïdale signalen:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>eff</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>top</mi></msub>
+      <msqrt><mn>2</mn></msqrt>
+    </mfrac>
+    <mspace width="2em"/>
+    <msub><mi>I</mi><mi>eff</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>I</mi><mi>top</mi></msub>
+      <msqrt><mn>2</mn></msqrt>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Vermogensdriehoek:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>S</mi>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>eff</mi></msub>
+    <mo>·</mo>
+    <msub><mi>I</mi><mi>eff</mi></msub>
+    <mtext> [VA]</mtext>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>P</mi>
+    <mo>=</mo>
+    <mi>S</mi>
+    <mo>·</mo>
+    <mi>cos</mi>
+    <mo>(</mo>
+    <mi>φ</mi>
+    <mo>)</mo>
+    <mtext> [W]</mtext>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>Q</mi>
+    <mo>=</mo>
+    <mi>S</mi>
+    <mo>·</mo>
+    <mi>sin</mi>
+    <mo>(</mo>
+    <mi>φ</mi>
+    <mo>)</mo>
+    <mtext> [VAR]</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Alternatief (rechtstreeks met top-waarden):</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>S</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+    <msub><mi>U</mi><mi>top</mi></msub>
+    <mo>·</mo>
+    <msub><mi>I</mi><mi>top</mi></msub>
+    <mtext> [VA]</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding</div>
+
+<p><strong>Methode 1: Via effectieve waarden</strong></p>
+
+<p>Effectieve spanning:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>eff</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>150</mn>
+      <msqrt><mn>2</mn></msqrt>
+    </mfrac>
+    <mo>=</mo>
+    <mn>106,07</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Effectieve stroom:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>eff</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>4</mn>
+      <msqrt><mn>2</mn></msqrt>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2,828</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Schijnbaar vermogen:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>S</mi>
+    <mo>=</mo>
+    <mn>106,07</mn>
+    <mo>·</mo>
+    <mn>2,828</mn>
+    <mo>=</mo>
+    <mn>300</mn>
+    <mtext> VA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Methode 2: Direct met top-waarden (uit bron)</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>S</mi>
+    <mo>=</mo>
+    <mn>0,5</mn>
+    <mo>·</mo>
+    <msub><mi>U</mi><mi>top</mi></msub>
+    <mo>·</mo>
+    <msub><mi>I</mi><mi>top</mi></msub>
+    <mo>=</mo>
+    <mn>0,5</mn>
+    <mo>·</mo>
+    <mn>150</mn>
+    <mo>·</mo>
+    <mn>4</mn>
+    <mo>=</mo>
+    <mn>300</mn>
+    <mtext> VA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Actief vermogen:</strong></p>
+<p>cos(π/3) = cos(60°) = 0,5</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>P</mi>
+    <mo>=</mo>
+    <mi>S</mi>
+    <mo>·</mo>
+    <mi>cos</mi>
+    <mo>(</mo>
+    <mi>φ</mi>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>300</mn>
+    <mo>·</mo>
+    <mn>0,5</mn>
+    <mo>=</mo>
+    <mn>150</mn>
+    <mtext> W</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Reactief vermogen:</strong></p>
+<p>sin(π/3) = sin(60°) = √3/2 ≈ 0,866</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>Q</mi>
+    <mo>=</mo>
+    <mi>S</mi>
+    <mo>·</mo>
+    <mi>sin</mi>
+    <mo>(</mo>
+    <mi>φ</mi>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>300</mn>
+    <mo>·</mo>
+    <mn>0,866</mn>
+    <mo>=</mo>
+    <mn>260</mn>
+    <mtext> VAR (inductief)</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke verificatie</div>
+
+<p><strong>Controle vermogensdriehoek:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup><mi>S</mi><mn>2</mn></msup>
+    <mo>=</mo>
+    <msup><mi>P</mi><mn>2</mn></msup>
+    <mo>+</mo>
+    <msup><mi>Q</mi><mn>2</mn></msup>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msqrt>
+      <mrow>
+        <msup><mn>150</mn><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mn>260</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <mn>22500</mn>
+        <mo>+</mo>
+        <mn>67600</mn>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mn>90100</mn>
+    </msqrt>
+    <mo>=</mo>
+    <mn>300,17</mn>
+    <mtext> VA</mtext>
+    <mtext> ✓</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><em>(Kleine afwijking door afronding sin(π/3))</em></p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<ul>
+<li>[S] = [U · I] = V · A = VA ✓</li>
+<li>[P] = [S · cos φ] = VA · 1 = W ✓</li>
+<li>[Q] = [S · sin φ] = VA · 1 = VAR ✓</li>
+</ul>
+
+<p><strong>Fysische betekenis:</strong></p>
+
+<p><strong>Arbeidsfactor cos φ = 0,5:</strong></p>
+<p>Bij φ = 60°:</p>
+<ul>
+<li>Slechts 50% van schijnbaar vermogen is actief (nuttig)</li>
+<li>50% is reactief (oscilerend, niet gedissipeerd)</li>
+<li>Zeer lage arbeidsfactor → inefficiënte vermogensoverdracht!</li>
+</ul>
+
+<p><strong>Vermogensdriehoek:</strong></p>
+<ul>
+<li><strong>Horizontaal:</strong> P = 150 W (actief, gedissipeerd in R)</li>
+<li><strong>Verticaal:</strong> Q = 260 VAR (reactief, opgeslagen in L)</li>
+<li><strong>Hypotenusa:</strong> S = 300 VA (schijnbaar, totale stroom×spanning)</li>
+<li><strong>Hoek:</strong> φ = 60° (grote fasehoek!)</li>
+</ul>
+
+<p><strong>Praktische implicaties:</strong></p>
+<p>Voor 150 W actief vermogen:</p>
+<ul>
+<li>Stroomsterkte: 2,83 A (effectief)</li>
+<li>Schijnbaar vermogen: 300 VA</li>
+<li>Kabels, zekeringen, transformatoren moeten 300 VA aankunnen</li>
+<li>Verliezen in kabel: I²R (gebaseerd op 2,83 A, niet op P/U)</li>
+</ul>
+
+<p><strong>Let op eenheden (waarschuwing uit bron):</strong></p>
+<p><em>"vergeet de dimensies er nooit bij te schrijven op je examen!"</em></p>
+<ul>
+<li>S in [VA] (Volt-Ampère)</li>
+<li>P in [W] (Watt)</li>
+<li>Q in [VAR] (Volt-Ampère Reactief)</li>
+</ul>
+</div>
+</div>
+
+<!-- OPGAVE 5 -->
+<div class="opgave-section" style="border-top: 3px solid #2196F3; padding-top: 20px; margin-top: 30px;">
+<h3>Opgave 5: Compenseren blindvermogen met C</h3>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>Initiële situatie:</strong></p>
+<ul>
+<li>P = 600 W (actief vermogen, blijft constant)</li>
+<li>cos φ<sub>oud</sub> = 0,75 (arbeidsfactor)</li>
+<li>U = 220 V (netspanning, effectief)</li>
+<li>f = 50 Hz (netfrequentie)</li>
+</ul>
+
+<p><strong>Gewenste situatie:</strong></p>
+<ul>
+<li>cos φ<sub>nieuw</sub> = 0,99</li>
+<li>P = 600 W (onveranderd)</li>
+</ul>
+
+<p><strong>Te bepalen:</strong></p>
+<p>Capaciteit C voor compensatie [μF]</p>
+
+<p><strong>Holmes referentie:</strong> H 11.7 - Power factor correctie</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+
+<p><strong>Vermogensdriehoek - Oude situatie:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>S</mi><mi>oud</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mi>P</mi>
+      <mrow><mi>cos</mi><msub><mi>φ</mi><mi>oud</mi></msub></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Q</mi><mi>oud</mi></msub>
+    <mo>=</mo>
+    <msub><mi>S</mi><mi>oud</mi></msub>
+    <mo>·</mo>
+    <mi>sin</mi>
+    <mo>(</mo>
+    <msub><mi>φ</mi><mi>oud</mi></msub>
+    <mo>)</mo>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msubsup><mi>S</mi><mi>oud</mi><mn>2</mn></msubsup>
+        <mo>−</mo>
+        <msup><mi>P</mi><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Vermogensdriehoek - Nieuwe situatie:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>S</mi><mi>nieuw</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mi>P</mi>
+      <mrow><mi>cos</mi><msub><mi>φ</mi><mi>nieuw</mi></msub></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Q</mi><mi>nieuw</mi></msub>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msubsup><mi>S</mi><mi>nieuw</mi><mn>2</mn></msubsup>
+        <mo>−</mo>
+        <msup><mi>P</mi><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Benodigde compensatie:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Q</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <msub><mi>Q</mi><mi>oud</mi></msub>
+    <mo>−</mo>
+    <msub><mi>Q</mi><mi>nieuw</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Capaciteit uit reactief vermogen:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Q</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msup><mi>U</mi><mn>2</mn></msup>
+      <msub><mi>X</mi><mi>C</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <msup><mi>U</mi><mn>2</mn></msup>
+    <mo>·</mo>
+    <mn>2</mn><mi>π</mi><mi>f</mi><mi>C</mi>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>C</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>Q</mi><mi>C</mi></msub>
+      <mrow>
+        <msup><mi>U</mi><mn>2</mn></msup>
+        <mo>·</mo>
+        <mn>2</mn><mi>π</mi><mi>f</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding</div>
+
+<p><strong>Stap 3a: Bereken S<sub>oud</sub> en Q<sub>oud</sub></strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>S</mi><mi>oud</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>600</mn>
+      <mn>0,75</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>800</mn>
+    <mtext> VA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Fasehoek:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>φ</mi><mi>oud</mi></msub>
+    <mo>=</mo>
+    <mi>arccos</mi>
+    <mo>(</mo>
+    <mn>0,75</mn>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>0,723</mn>
+    <mtext> rad</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Reactief vermogen:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Q</mi><mi>oud</mi></msub>
+    <mo>=</mo>
+    <msub><mi>S</mi><mi>oud</mi></msub>
+    <mo>·</mo>
+    <mi>sin</mi>
+    <mo>(</mo>
+    <mn>0,723</mn>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mn>800</mn>
+    <mo>·</mo>
+    <mn>0,661438</mn>
+    <mo>=</mo>
+    <mn>529,15</mn>
+    <mtext> VAR</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3b: Bereken S<sub>nieuw</sub> en Q<sub>nieuw</sub></strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>S</mi><mi>nieuw</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>600</mn>
+      <mn>0,99</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>606,06</mn>
+    <mtext> VA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Reactief vermogen:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Q</mi><mi>nieuw</mi></msub>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup><mn>606,06</mn><mn>2</mn></msup>
+        <mo>−</mo>
+        <msup><mn>600</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <mn>367312,68</mn>
+        <mo>−</mo>
+        <mn>360000</mn>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mn>7312,68</mn>
+    </msqrt>
+    <mo>=</mo>
+    <mn>85,50</mn>
+    <mtext> VAR</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3c: Benodigde compensatie</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Q</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <msub><mi>Q</mi><mi>oud</mi></msub>
+    <mo>−</mo>
+    <msub><mi>Q</mi><mi>nieuw</mi></msub>
+    <mo>=</mo>
+    <mn>529,15</mn>
+    <mo>−</mo>
+    <mn>85,50</mn>
+    <mo>=</mo>
+    <mn>443,65</mn>
+    <mtext> VAR</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Stap 3d: Bereken C</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>C</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>Q</mi><mi>C</mi></msub>
+      <mrow>
+        <msup><mi>U</mi><mn>2</mn></msup>
+        <mo>·</mo>
+        <mn>2</mn><mi>π</mi><mi>f</mi>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>443,65</mn>
+      <mrow>
+        <msup><mn>220</mn><mn>2</mn></msup>
+        <mo>·</mo>
+        <mn>2</mn><mi>π</mi>
+        <mo>·</mo>
+        <mn>50</mn>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>C</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mn>443,65</mn>
+      <mrow>
+        <mn>48400</mn>
+        <mo>·</mo>
+        <mn>314,16</mn>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>443,65</mn>
+      <mn>15205344</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>29,18</mn>
+    <mo>×</mo>
+    <msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup>
+    <mtext> F</mtext>
+    <mo>=</mo>
+    <mn>29,18</mn>
+    <mtext> μF</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke verificatie en praktische keuze</div>
+
+<p><strong>Berekend:</strong> C = 29,18 μF</p>
+
+<p><strong>Opmerking uit bron:</strong></p>
+<p>"(het boek rondt te veel af). Of ze nemen, zoals in een eerdere opgave, een C van de E12 reeks. Dan moet je kiezen tussen 27 of 33 μF."</p>
+
+<p><strong>E12-reeks waarden rond 29 μF:</strong></p>
+<ul>
+<li>27 μF (E12 standaard): Ondercompenseert licht</li>
+<li>33 μF (E12 standaard): Overcompenseert licht</li>
+</ul>
+
+<p><strong>Praktische keuze:</strong></p>
+<p>Kies <strong>27 μF</strong> (veilig, lichte ondercompensatie beter dan overcompensatie)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<ul>
+<li>[Q] = [S · sin φ] = VA ✓ (ook wel VAR genoemd)</li>
+<li>[C] = [Q/(U²·2πf)] = VAR / (V² · s<sup>-1</sup>) = (V·A) / (V² · s<sup>-1</sup>) = A·s/V = F ✓</li>
+</ul>
+
+<p><strong>Fysische betekenis:</strong></p>
+
+<p><strong>Waarom compenseren?</strong></p>
+<p>Bij cos φ = 0,75:</p>
+<ul>
+<li>Voor 600 W actief vermogen is 800 VA schijnbaar vermogen nodig</li>
+<li>Stroom: I = S/U = 800/220 = 3,64 A</li>
+<li>Kabelverliezen: P<sub>verlies</sub> = I² · R<sub>kabel</sub></li>
+</ul>
+
+<p>Na compensatie (cos φ = 0,99):</p>
+<ul>
+<li>Schijnbaar vermogen: 606 VA (25% reductie!)</li>
+<li>Stroom: I = 606/220 = 2,75 A (24% minder)</li>
+<li>Kabelverliezen: Gereduceerd met (3,64/2,75)² = 1,75× (43% besparing!)</li>
+</ul>
+
+<p><strong>Hoe werkt compensatie?</strong></p>
+<p>De condensator levert het reactieve vermogen:</p>
+<ul>
+<li>Inductieve last (motor, trafo) vraagt Q<sub>L</sub> = 529 VAR</li>
+<li>Condensator levert Q<sub>C</sub> = 444 VAR (lokaal)</li>
+<li>Net nog maar Q<sub>netto</sub> = 85 VAR van netwerk nodig</li>
+<li>Netwerk hoeft alleen nog P (600 W) + kleine Q (85 VAR) te leveren</li>
+</ul>
+
+<p><strong>Vermogensdriehoeken vergelijken:</strong></p>
+
+<p><strong>Voor compensatie:</strong></p>
+<ul>
+<li>P = 600 W (horizontaal)</li>
+<li>Q = 529 VAR (verticaal omhoog, inductief)</li>
+<li>S = 800 VA (hypotenusa)</li>
+<li>φ = 41,4° (arccos 0,75)</li>
+</ul>
+
+<p><strong>Na compensatie:</strong></p>
+<ul>
+<li>P = 600 W (onveranderd)</li>
+<li>Q = 85 VAR (sterk gereduceerd!)</li>
+<li>S = 606 VA (veel kleiner)</li>
+<li>φ = 8,1° (arccos 0,99, bijna unitair)</li>
+</ul>
+
+<p><strong>Economische voordelen:</strong></p>
+<ul>
+<li><strong>Lagere stroomsterktes:</strong> Dunner kabels mogelijk</li>
+<li><strong>Minder verliezen:</strong> I²R-verliezen dalen fors</li>
+<li><strong>Vermeden boetes:</strong> Energiebedrijven rekenen extra voor lage cos φ</li>
+<li><strong>Hogere capaciteit:</strong> Zelfde installatie kan meer actief vermogen leveren</li>
+</ul>
+
+<p><strong>Praktische implementatie:</strong></p>
+<ul>
+<li>Parallel C over de last (motor, installatie)</li>
+<li>Bij 230V netspanning: C ≈ 29 μF</li>
+<li>Standaard: 27 μF of 33 μF condensatorbatterij</li>
+<li>Let op: C moet spanningsklasse ≥ 400V AC hebben!</li>
+</ul>
+
+<p><strong>Historische context:</strong></p>
+<p>In Nederland verplicht energiebedrijven industriële afnemers een minimale cos φ van 0,85 te handhaven. Bij lagere waarden worden toeslag berekend. Compensatie tot 0,95-0,99 is daarom standaard in industrie.</p>
+</div>
+</div>
+
+<div style="background: #e8f4f8; padding: 15px; margin-top: 20px; border-left: 4px solid #2196F3;">
+<p><strong>Antwoorden:</strong></p>
+
+<p><strong>Opgave 3:</strong></p>
+<ul>
+<li><strong>S = 300 VA</strong></li>
+<li><strong>P = 150 W</strong></li>
+<li><strong>Q = 260 VAR (inductief)</strong></li>
+</ul>
+<p><em>Bij φ = 60°: cos φ = 0,5 (zeer lage arbeidsfactor!)</em></p>
+
+<p><strong>Opgave 5:</strong></p>
+<p><strong>C = 29,18 μF</strong> (theoretisch)</p>
+<p><strong>C = 27 μF</strong> (E12-reeks, praktisch)</p>
+<p><em>Compensatie: Q<sub>C</sub> = 444 VAR nodig</em></p>
+
+<p><em>Fysisch: Vermogenscompensatie reduceert het schijnbaar vermogen van 800 VA naar 606 VA (24% reductie), wat resulteert in 24% lagere stroomsterkte en 43% minder kabelverliezen. De parallel geschakelde condensator (29 μF bij 220V, 50Hz) levert het reactieve vermogen lokaal, zodat het elektriciteitsnet alleen nog het actieve vermogen (600 W) plus een klein restant reactief vermogen (85 VAR) hoeft te leveren. Dit verhoogt de arbeidsfactor van 0,75 naar 0,99 (bijna unitair).</em></p>
+</div>
+
+</div>

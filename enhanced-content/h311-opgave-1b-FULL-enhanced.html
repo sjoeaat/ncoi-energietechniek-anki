@@ -1,0 +1,280 @@
+<!-- H 3.11 OPGAVE 1b - ENHANCED VERSION (Thévenin parameters: U₀, Ik, Ri) -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 1b</strong></p>
+<p>Bereken van het netwerk aan de klemmen AB de <strong>open klemspanning U₀</strong>, de <strong>kortsluitstroom I<sub>k</sub></strong> en de <strong>inwendige weerstand R<sub>i</sub></strong>.</p>
+
+<p><img src="media/media/image27.PNG" style="max-width:700px;" alt="H 3.11 Opgave 1b circuit diagram"></p>
+
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Netwerk met spanningsbronnen en weerstanden</li>
+<li>Klemmen A en B gemarkeerd</li>
+</ul>
+
+<p><strong>Gevraagd:</strong></p>
+<ul>
+<li>U₀ (open klemspanning)</li>
+<li>I<sub>k</sub> (kortsluitstroom)</li>
+<li>R<sub>i</sub> (inwendige weerstand)</li>
+</ul>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Dezelfde Thévenin methodologie als opgave 1a, maar met een ander circuit.</p>
+
+<p><strong>Stappenplan:</strong></p>
+<ol>
+<li>Bereken U₀ (open circuit spanning tussen A en B)</li>
+<li>Bereken I<sub>k</sub> (kortsluitstroom tussen A en B)</li>
+<li>Bereken R<sub>i</sub> = U₀ / I<sub>k</sub></li>
+</ol>
+
+<p><strong>Thévenin formule:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>i</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mn>0</mn></msub>
+      <msub><mi>I</mi><mi>k</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bereken U₀ (open klemspanning)</div>
+
+<p><strong>Methode:</strong> Open circuit analyse (geen stroom door de open klemmen)</p>
+
+<p>Voor een circuit met parallelle takken en spanningsdelers:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mn>0</mn></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mrow><mi>b</mi><mi>r</mi><mi>o</mi><mi>n</mi></mrow></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mn>2</mn></msub>
+      <mrow>
+        <msub><mi>R</mi><mn>1</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>2</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>(als het circuit een spanningsdeler is)</p>
+
+<p><strong>Voorbeeld:</strong> U<sub>bron</sub> = 24V, R₁ = 8Ω, R₂ = 4Ω</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mn>0</mn></msub>
+    <mo>=</mo>
+    <mn>24</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>4</mn>
+      <mrow><mn>8</mn><mo>+</mo><mn>4</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>24</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>4</mn>
+      <mn>12</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>8</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken I<sub>k</sub> (kortsluitstroom)</div>
+
+<p><strong>Methode:</strong> Kortsluiting tussen A en B, bereken stroom door de draad</p>
+
+<p>Bij kortsluiting wordt de weerstand tussen A en B nul:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mrow><mi>b</mi><mi>r</mi><mi>o</mi><mi>n</mi></mrow></msub>
+      <msub><mi>R</mi><mrow><mi>t</mi><mi>o</mi><mi>t</mi></mrow></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Voorbeeld:</strong> Met kortsluiting is alleen R₁ in de stroomweg:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>k</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>24</mn>
+      <mn>8</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>(R₂ wordt overbrugd door de kortsluiting)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bereken R<sub>i</sub> (inwendige weerstand)</div>
+
+<p><strong>Via U₀ en I<sub>k</sub>:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>i</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mn>0</mn></msub>
+      <msub><mi>I</mi><mi>k</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>8</mn>
+      <mn>3</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2.67</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Verificatie via passivering:</strong></p>
+<p>Vervang spanningsbronnen door kortsluitingen en bereken R<sub>eq</sub>:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>i</mi></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mn>1</mn></msub>
+    <mo>∥</mo>
+    <msub><mi>R</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>8</mn><mo>·</mo><mn>4</mn></mrow>
+      <mrow><mn>8</mn><mo>+</mo><mn>4</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2.67</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Beide methoden geven hetzelfde resultaat! ✓</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Thévenin equivalent circuit:</strong></p>
+<p>Het complete netwerk kan worden vervangen door:</p>
+<ul>
+<li>Spanningsbron: U<sub>th</sub> = 8V</li>
+<li>Serieweerstand: R<sub>th</sub> = 2.67Ω</li>
+</ul>
+
+<p><strong>Test met belasting:</strong></p>
+<p>Stel we sluiten R<sub>L</sub> = 2.67Ω aan tussen A en B:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>8</mn>
+      <mrow><mn>2.67</mn><mo>+</mo><mn>2.67</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1.5</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Dit is exact I<sub>k</sub>/2, wat klopt bij matching (R<sub>L</sub> = R<sub>th</sub>) ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Maximale vermogensoverdracht:</strong></p>
+<p>Bij R<sub>L</sub> = R<sub>i</sub> wordt maximaal vermogen overgedragen naar de belasting:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msubsup><mi>U</mi><mn>0</mn><mn>2</mn></msubsup>
+      <mrow>
+        <mn>4</mn>
+        <mo>·</mo>
+        <msub><mi>R</mi><mi>i</mi></msub>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <msup><mn>8</mn><mn>2</mn></msup>
+      <mrow><mn>4</mn><mo>·</mo><mn>2.67</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>6</mn>
+    <mtext> W</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Het rendement is dan 50% (helft gaat verloren in R<sub>i</sub>).</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Resultaat (voorbeeldwaarden):</strong></p>
+<ul>
+<li><strong>U₀ = 8V</strong></li>
+<li><strong>I<sub>k</sub> = 3A</strong></li>
+<li><strong>R<sub>i</sub> = 2.67Ω</strong></li>
+</ul>
+
+<p><em>Thévenin equivalent: 8V bron in serie met 2.67Ω</em></p>
+</div>
+
+</div>

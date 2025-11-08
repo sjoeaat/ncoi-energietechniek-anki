@@ -1,0 +1,648 @@
+<div class="question">
+<p><strong>H 9.7 - Opgave 11 & 12</strong></p>
+
+<p><strong>Opgave 11: 3 dB punt C wegens 45°</strong></p>
+<ul>
+<li>RC-netwerk (hoogdoorlaatfilter)</li>
+<li>3 dB punt bij 45° faseverschuiving</li>
+<li>R = 50 Ω</li>
+<li>Vraag: Bepaal C</li>
+</ul>
+
+<p><strong>Opgave 12: Bereken R en L van spoel</strong></p>
+<ul>
+<li>Serie RL (spoel met wikkelweerstand)</li>
+<li>Twee meetpunten met verschillende belastingen</li>
+<li>Gegeven: U<sub>spoel</sub> = 9,7V en 10V onder verschillende condities</li>
+<li>Vraag: Bereken R en L van de spoel</li>
+</ul>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking volgens 5-stappen methodologie</div>
+
+<!-- OPGAVE 11 -->
+<div class="opgave-section" style="border-top: 3px solid #2196F3; padding-top: 20px; margin-top: 30px;">
+<h3>Opgave 11: 3 dB punt RC-filter</h3>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>RC hoogdoorlaatfilter:</strong></p>
+<ul>
+<li>Serie RC: condensator blokkeert DC, doorlaat AC</li>
+<li>3 dB punt: -3 dB demping = factor 1/√2 ≈ 0,707</li>
+<li>Bij 3 dB punt: faseverschuiving = 45°</li>
+<li>R = 50 Ω</li>
+<li>Gegeven: "De stroom moet voorlopen op de spanning, dus er moet een C zitten"</li>
+</ul>
+
+<p><strong>Holmes referentie:</strong> H 9.7 - RC-filters en 3dB punten</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+<p><strong>3 dB punt conditie:</strong></p>
+<p>Bij het 3 dB punt (hoekfrequentie) geldt voor een RC-filter:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>X</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mi>R</mi>
+    <mspace width="2em"/>
+    <mtext>(bij 45° faseverschuiving)</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Uitleg:</strong></p>
+<p>Bij 45° faseverschuiving in een RC-serie is Z = R - jR (gelijke resistieve en capacitieve delen), wat resulteert in:</p>
+<ul>
+<li>|Z| = R√2</li>
+<li>Verzwakking = R/(R√2) = 1/√2 ≈ 0,707 = -3 dB</li>
+<li>φ = arctan(-R/R) = arctan(-1) = -45°</li>
+</ul>
+
+<p><strong>Capacitantie uit X<sub>C</sub>:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>C</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow><mn>2</mn><mi>π</mi><mi>f</mi><mi>R</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding</div>
+
+<p><strong>Bij 3 dB punt geldt:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>C</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>50</mn><mi>j</mi>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Dus:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mn>1</mn>
+      <mrow><mn>2</mn><mi>π</mi><mi>f</mi><mi>C</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>50</mn>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Oplossen naar C:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>C</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow><mn>2</mn><mi>π</mi><mi>f</mi>
+      <mo>·</mo>
+      <mn>50</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow><mn>100</mn><mi>π</mi><mi>f</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><em>Opmerking: Frequentie f is niet expliciet gegeven in de vraag, maar de formule toont de relatie. Bron geeft: C = 0,318 μF.</em></p>
+
+<p><strong>Als we f afleien uit bron-antwoord:</strong></p>
+<p>C = 0,318 μF, R = 50 Ω:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>f</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow><mn>2</mn><mi>π</mi><mi>R</mi><mi>C</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>2</mn><mi>π</mi>
+        <mo>·</mo>
+        <mn>50</mn>
+        <mo>·</mo>
+        <mn>0,318</mn>
+        <mo>×</mo>
+        <msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup>
+      </mrow>
+    </mfrac>
+    <mo>≈</mo>
+    <mn>10</mn>
+    <mtext> kHz</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke conclusie</div>
+
+<p><strong>Antwoord volgens bron:</strong></p>
+<p><strong>C = 0,318 μF</strong></p>
+
+<p><strong>Bij deze C-waarde en R = 50 Ω:</strong></p>
+<ul>
+<li>3 dB punt (f<sub>-3dB</sub>) ≈ 10 kHz</li>
+<li>Tijdconstante τ = RC = 50 × 0,318×10<sup>-6</sup> = 15,9 μs</li>
+<li>Hoekfrequentie ω<sub>c</sub> = 1/τ = 1/(RC) ≈ 62,9 krad/s</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Fysische betekenis 3 dB punt:</strong></p>
+<p>Het 3 dB punt is de hoekfrequentie waar:</p>
+<ul>
+<li>Uitgangsvermogen = ½ × ingangsvermogen (-3 dB)</li>
+<li>Uitgangsspanning = 1/√2 ×  ingangsspanning (≈ 0,707)</li>
+<li>Faseverschuiving = 45°</li>
+<li>X<sub>C</sub> = R (gelijke resistieve en reactieve delen)</li>
+</ul>
+
+<p><strong>RC hoogdoorlaatfilter:</strong></p>
+<ul>
+<li>f < f<sub>-3dB</sub>: Sterk gedempt (C blokkeert)</li>
+<li>f = f<sub>-3dB</sub>: -3 dB demping (overgang)</li>
+<li>f > f<sub>-3dB</sub>: Minimaal gedempt (C doorlaat)</li>
+</ul>
+</div>
+</div>
+
+<!-- OPGAVE 12 -->
+<div class="opgave-section" style="border-top: 3px solid #2196F3; padding-top: 20px; margin-top: 30px;">
+<h3>Opgave 12: R en L van spoel bepalen</h3>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p><strong>Meetopstelling:</strong></p>
+<ul>
+<li>Spoel (L + R<sub>spoel</sub> in serie, intern)</li>
+<li>Externe weerstand: R<sub>ext</sub> = 10 Ω in serie</li>
+<li>Stroom: I = 0,15 A = 150 mA</li>
+<li>Twee condities:</li>
+</ul>
+
+<p><strong>Conditie 1:</strong></p>
+<ul>
+<li>U<sub>spoel</sub> = 9,7 V (spanning over L + R<sub>spoel</sub>)</li>
+</ul>
+
+<p><strong>Conditie 2:</strong></p>
+<ul>
+<li>U<sub>totaal</sub> = 10 V (over alles: R<sub>ext</sub> + L + R<sub>spoel</sub>)</li>
+<li>Dit impliceert: U<sub>ext</sub> = I × R<sub>ext</sub> = 0,15 × 10 = 1,5 V</li>
+</ul>
+
+<p><strong>Holmes referentie:</strong> H 9.7 - Spoelkarakterisering</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal toe te passen theorie</div>
+
+<p><strong>Impedantie-driehoeken opstellen:</strong></p>
+
+<p><strong>Voor spoel alleen:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup><mi>U</mi><mi>spoel</mi><mn>2</mn></msubsup>
+    <mo>=</mo>
+    <msubsup><mi>U</mi><mi>R</mi><mn>2</mn></msubsup>
+    <mo>+</mo>
+    <msubsup><mi>U</mi><mi>L</mi><mn>2</mn></msubsup>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Voor totale schakeling:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup><mi>U</mi><mi>totaal</mi><mn>2</mn></msubsup>
+    <mo>=</mo>
+    <msup>
+      <mrow>
+        <mo>(</mo>
+        <msub><mi>U</mi><mi>R,ext</mi></msub>
+        <mo>+</mo>
+        <msub><mi>U</mi><mi>R,spoel</mi></msub>
+        <mo>)</mo>
+      </mrow>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msubsup><mi>U</mi><mi>L</mi><mn>2</mn></msubsup>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Algebraïsche afleiding</div>
+
+<p><strong>Gegeven spanningen:</strong></p>
+<ul>
+<li>U<sub>spoel</sub> = 9,7 V</li>
+<li>U<sub>totaal</sub> = 10 V</li>
+<li>U<sub>R,ext</sub> = 1,5 V</li>
+</ul>
+
+<p><strong>Opstellen vergelijkingen:</strong></p>
+
+<p><strong>Vergelijking 1 (alleen spoel):</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup><mi>U</mi><mi>R</mi><mn>2</mn></msubsup>
+    <mo>+</mo>
+    <msubsup><mi>U</mi><mi>L</mi><mn>2</mn></msubsup>
+    <mo>=</mo>
+    <msup><mn>9,7</mn><mn>2</mn></msup>
+    <mo>=</mo>
+    <mn>94,09</mn>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Vergelijking 2 (totaal):</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mrow>
+        <mo>(</mo>
+        <msub><mi>U</mi><mi>R</mi></msub>
+        <mo>+</mo>
+        <mn>1,5</mn>
+        <mo>)</mo>
+      </mrow>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msubsup><mi>U</mi><mi>L</mi><mn>2</mn></msubsup>
+    <mo>=</mo>
+    <msup><mn>10</mn><mn>2</mn></msup>
+    <mo>=</mo>
+    <mn>100</mn>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Elimineer U<sub>L</sub>²:</strong></p>
+<p>Van vergelijking 2: U<sub>L</sub>² = 100 - (U<sub>R</sub> + 1,5)²</p>
+<p>Van vergelijking 1: U<sub>L</sub>² = 9,7² - U<sub>R</sub>²</p>
+
+<p>Gelijkstellen:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>100</mn>
+    <mo>−</mo>
+    <msup>
+      <mrow>
+        <mo>(</mo>
+        <msub><mi>U</mi><mi>R</mi></msub>
+        <mo>+</mo>
+        <mn>1,5</mn>
+        <mo>)</mo>
+      </mrow>
+      <mn>2</mn>
+    </msup>
+    <mo>=</mo>
+    <msup><mn>9,7</mn><mn>2</mn></msup>
+    <mo>−</mo>
+    <msubsup><mi>U</mi><mi>R</mi><mn>2</mn></msubsup>
+  </mrow>
+</math>
+</div>
+
+<p>Uitwerken:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>100</mn>
+    <mo>−</mo>
+    <msubsup><mi>U</mi><mi>R</mi><mn>2</mn></msubsup>
+    <mo>−</mo>
+    <mn>3</mn><msub><mi>U</mi><mi>R</mi></msub>
+    <mo>−</mo>
+    <mn>2,25</mn>
+    <mo>=</mo>
+    <mn>94,09</mn>
+    <mo>−</mo>
+    <msubsup><mi>U</mi><mi>R</mi><mn>2</mn></msubsup>
+  </mrow>
+</math>
+</div>
+
+<p>Vereenvoudigen (U<sub>R</sub>² valt weg):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>100</mn>
+    <mo>−</mo>
+    <mn>3</mn><msub><mi>U</mi><mi>R</mi></msub>
+    <mo>−</mo>
+    <mn>2,25</mn>
+    <mo>=</mo>
+    <mn>94,09</mn>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>3</mn><msub><mi>U</mi><mi>R</mi></msub>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mo>−</mo>
+    <mn>2,25</mn>
+    <mo>−</mo>
+    <mn>94,09</mn>
+    <mo>=</mo>
+    <mn>3,66</mn>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Oplossing U<sub>R</sub>:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>R</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>3,66</mn>
+      <mn>3</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1,22</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Bereken R<sub>spoel</sub>:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>spoel</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>R</mi></msub>
+      <mi>I</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1,22</mn>
+      <mn>0,15</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>8,13</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Bereken U<sub>L</sub>:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <msup><mn>9,7</mn><mn>2</mn></msup>
+        <mo>−</mo>
+        <msup><mn>1,22</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <mn>94,09</mn>
+        <mo>−</mo>
+        <mn>1,49</mn>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mn>92,60</mn>
+    </msqrt>
+    <mo>=</mo>
+    <mn>9,623</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Bereken X<sub>L</sub> en L:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>Z</mi><mi>L</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>L</mi></msub>
+      <mi>I</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>9,623</mn>
+      <mn>0,15</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>64,15</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Bij f = 100 kHz (blijkt uit bron):</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>L</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>Z</mi><mi>L</mi></msub>
+      <mrow><mn>2</mn><mi>π</mi><mi>f</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>64,15</mn>
+      <mrow>
+        <mn>2</mn><mi>π</mi>
+        <mo>·</mo>
+        <mn>100000</mn>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>102</mn>
+    <mtext> μH</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke verificatie</div>
+
+<p><strong>Controle vergelijking 1:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msqrt>
+      <mrow>
+        <msup><mn>1,22</mn><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mn>9,623</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mn>94,10</mn>
+    </msqrt>
+    <mo>=</mo>
+    <mn>9,70</mn>
+    <mtext> V</mtext>
+    <mtext> ✓</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Controle vergelijking 2:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msqrt>
+      <mrow>
+        <msup>
+          <mrow>
+            <mo>(</mo>
+            <mn>1,22</mn>
+            <mo>+</mo>
+            <mn>1,5</mn>
+            <mo>)</mo>
+          </mrow>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <msup><mn>9,623</mn><mn>2</mn></msup>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mrow>
+        <mn>7,40</mn>
+        <mo>+</mo>
+        <mn>92,60</mn>
+      </mrow>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mn>100</mn>
+    </msqrt>
+    <mo>=</mo>
+    <mn>10</mn>
+    <mtext> V</mtext>
+    <mtext> ✓</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Fysische betekenis:</strong></p>
+
+<p><strong>Spoelkarakterisering methode:</strong></p>
+<p>Door metingen met en zonder externe R kunnen we de interne parameters van een spoel bepalen:</p>
+<ul>
+<li>R<sub>spoel</sub> = wikkelweerstand (koperverliezen)</li>
+<li>L = inductantie (energieopslag in magneetveld)</li>
+</ul>
+
+<p><strong>Kwaliteitsfactor spoel:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>Q</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>X</mi><mi>L</mi></msub>
+      <msub><mi>R</mi><mi>spoel</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>64,15</mn>
+      <mn>8,13</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>7,89</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Q ≈ 8 is een redelijke kwaliteitsfactor voor een kleine spoel bij 100 kHz.</p>
+
+<p><strong>Praktische toepassing:</strong></p>
+<p>Deze meetmethode wordt gebruikt voor:</p>
+<ul>
+<li>Spoelkarakterisering in productie</li>
+<li>Kwaliteitscontrole van RF-spoelen</li>
+<li>Bepalen van verliezen in transformatoren</li>
+<li>Filter-ontwerp (Q bepaalt bandbreedte)</li>
+</ul>
+</div>
+</div>
+
+<div style="background: #e8f4f8; padding: 15px; margin-top: 20px; border-left: 4px solid #2196F3;">
+<p><strong>Antwoorden:</strong></p>
+
+<p><strong>Opgave 11:</strong></p>
+<p><strong>C = 0,318 μF</strong></p>
+<p><em>Bij R = 50 Ω geeft dit 3 dB punt bij ~10 kHz (X<sub>C</sub> = R = 50 Ω)</em></p>
+
+<p><strong>Opgave 12:</strong></p>
+<p><strong>R<sub>spoel</sub> = 8,13 Ω</strong></p>
+<p><strong>L = 102 μH</strong> (bij f = 100 kHz)</p>
+<p><em>Kwaliteitsfactor: Q = X<sub>L</sub>/R ≈ 7,89</em></p>
+
+<p><em>Fysisch: Bij het 3 dB punt van een RC-filter zijn de resistieve en reactieve delen gelijk (X<sub>C</sub> = R), wat resulteert in 45° faseverschuiving en 1/√2 verzwakking. De spoelkarakterisering gebruikt twee meetpunten om zowel de wikkelweerstand (8,13 Ω) als de inductantie (102 μH) te bepalen, wat een kwaliteitsfactor Q ≈ 8 geeft - typisch voor kleine RF-spoelen.</em></p>
+</div>
+
+</div>

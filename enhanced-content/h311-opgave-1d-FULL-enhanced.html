@@ -1,0 +1,306 @@
+<!-- H 3.11 OPGAVE 1d - ENHANCED VERSION (Superpositie methode) -->
+
+<div class="question">
+<p><strong>H 3.11 - Opgave 1d</strong></p>
+<p>Gebruik de <strong>superpositie methode</strong> om de stroom door weerstand R te bepalen.</p>
+
+<p><img src="media/media/image29.PNG" style="max-width:700px;" alt="H 3.11 Opgave 1d circuit diagram"></p>
+
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Circuit met meerdere bronnen (spanning en/of stroom)</li>
+<li>Weerstand R waarin de stroom gezocht wordt</li>
+</ul>
+
+<p><strong>Gevraagd:</strong> Stroom door R met superpositie methode</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze opgave test het <strong>superpositieprincipe</strong>.</p>
+
+<p><strong>Superpositieprincipe:</strong> In een lineair netwerk met meerdere bronnen is de totale respons gelijk aan de som van de responsies veroorzaakt door elke bron afzonderlijk.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Stap</th>
+  <th>Actie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Laat één bron actief, passiveer de rest</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Bereken de stroom door R door die ene bron</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Herhaal voor alle bronnen</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Tel alle bijdragen op (let op tekens!)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Passivering:</strong></p>
+<ul>
+<li><strong>Spanningsbron</strong> → kortsluiting (U = 0)</li>
+<li><strong>Stroombron</strong> → open circuit (I = 0)</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bijdrage van spanningsbron U₁</div>
+
+<p><strong>Stap 2a:</strong> Passiveer alle bronnen behalve U₁</p>
+<ul>
+<li>U₁ blijft actief</li>
+<li>Andere spanningsbronnen → kortsluiting</li>
+<li>Stroombronnen → open circuit</li>
+</ul>
+
+<p><strong>Stap 2b:</strong> Bereken stroom I<sub>R,U₁</sub></p>
+
+<p><strong>Voorbeeld:</strong> U₁ = 12V, netwerk vereenvoudigt tot R in serie met R₁:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mrow><mi>R</mi><mo>,</mo><msub><mi>U</mi><mn>1</mn></msub></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mn>1</mn></msub>
+      <mrow>
+        <mi>R</mi>
+        <mo>+</mo>
+        <msub><mi>R</mi><mn>1</mn></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Stel R = 6Ω en R₁ = 3Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mrow><mi>R</mi><mo>,</mo><msub><mi>U</mi><mn>1</mn></msub></mrow></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mn>12</mn>
+      <mrow><mn>6</mn><mo>+</mo><mn>3</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1.33</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Richting:</strong> Noteer de stroomrichting (bijvoorbeeld: van links naar rechts)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bijdrage van stroombron I₁</div>
+
+<p><strong>Stap 3a:</strong> Passiveer alle bronnen behalve I₁</p>
+<ul>
+<li>I₁ blijft actief</li>
+<li>Spanningsbronnen → kortsluiting</li>
+</ul>
+
+<p><strong>Stap 3b:</strong> Bereken stroom I<sub>R,I₁</sub></p>
+
+<p><strong>Stroomdeling:</strong> De stroombron I₁ verdeelt zich over parallelle takken:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mrow><mi>R</mi><mo>,</mo><msub><mi>I</mi><mn>1</mn></msub></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mrow><mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi></mrow></msub>
+      <mrow>
+        <mi>R</mi>
+        <mo>+</mo>
+        <msub><mi>R</mi><mrow><mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi></mrow></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Voorbeeld:</strong> I₁ = 2A verdeelt zich over R = 6Ω en R₂ = 3Ω in parallel:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mrow><mi>R</mi><mo>,</mo><msub><mi>I</mi><mn>1</mn></msub></mrow></msub>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>3</mn>
+      <mrow><mn>6</mn><mo>+</mo><mn>3</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0.67</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Richting:</strong> Bepaal de stroomrichting door R (kan omgekeerd zijn t.o.v. stap 2!)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Superponeer alle bijdragen</div>
+
+<p><strong>Let op tekens:</strong> Houd rekening met stroomrichting!</p>
+
+<p>Als beide bijdragen in <strong>dezelfde richting</strong> door R gaan:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mrow><mi>R</mi><mo>,</mo><msub><mi>U</mi><mn>1</mn></msub></mrow></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mrow><mi>R</mi><mo>,</mo><msub><mi>I</mi><mn>1</mn></msub></mrow></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Voorbeeld (zelfde richting):</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <mo>=</mo>
+    <mn>1.33</mn>
+    <mo>+</mo>
+    <mn>0.67</mn>
+    <mo>=</mo>
+    <mn>2.00</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Als bijdragen in <strong>tegengestelde richting</strong> zijn:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mrow><mi>R</mi><mo>,</mo><msub><mi>U</mi><mn>1</mn></msub></mrow></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mrow><mi>R</mi><mo>,</mo><msub><mi>I</mi><mn>1</mn></msub></mrow></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Voorbeeld (tegengesteld):</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <mo>=</mo>
+    <mn>1.33</mn>
+    <mo>−</mo>
+    <mn>0.67</mn>
+    <mo>=</mo>
+    <mn>0.66</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>(richting: van links naar rechts)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Verificatie met KVL/KCL:</strong></p>
+<p>Controleer het resultaat door directe analyse van het complete circuit (zonder superpositie).</p>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>I</mi><mi>R</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>+</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Waarom werkt superpositie?</strong></p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"In een lineair netwerk geldt I = U/R en P = I²R. De stroom-spanningsrelatie is lineair, dus responsies van verschillende bronnen kunnen worden opgeteld."
+</blockquote>
+
+<p><strong>Wanneer superpositie NIET werkt:</strong></p>
+<ul>
+<li><strong>Niet-lineaire elementen:</strong> Diodes, transistors in verzadiging</li>
+<li><strong>Vermogen berekenen:</strong> P ≠ Σ P<sub>i</sub> (want P = I²R is niet-lineair in I)</li>
+<li><strong>AC + DC:</strong> Effectieve waarden kunnen niet gesuperponeerd worden</li>
+</ul>
+
+<p><strong>Voordelen van superpositie:</strong></p>
+<ul>
+<li>Complexe netwerken vereenvoudigen</li>
+<li>Inzicht in bijdrage van elke bron</li>
+<li>Foutanalyse: wat als één bron faalt?</li>
+</ul>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Superpositie wordt gebruikt in:</p>
+<ul>
+<li><strong>Audio versterkers:</strong> Signaal + voedingsspanning opgelegd</li>
+<li><strong>Sensoren:</strong> Meet-signaal + offset spanning</li>
+<li><strong>Netwerkanalyse:</strong> Combinatie van meerdere inputs</li>
+</ul>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Resultaat (voorbeeld met zelfde richting):</strong></p>
+<ul>
+<li>Bijdrage U₁: I<sub>R,U₁</sub> = 1.33A</li>
+<li>Bijdrage I₁: I<sub>R,I₁</sub> = 0.67A</li>
+<li><strong>Totaal: I<sub>R</sub> = 2.00A</strong></li>
+</ul>
+
+<p><em>Superpositie: Tel bijdragen van elke bron afzonderlijk op (let op tekens!)</em></p>
+</div>
+
+</div>

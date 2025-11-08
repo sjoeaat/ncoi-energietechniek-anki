@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 4.4 - Opgave 2, 6, 8: Energie & Vermogen (FULL-enhanced)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #e74c3c;
+            margin-top: 30px;
+            border-left: 4px solid #e74c3c;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 20px;
+        }
+        .step {
+            background: #ecf0f1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+        .theory {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #f39c12;
+            border-radius: 5px;
+        }
+        .verification {
+            background: #d4edda;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+            border-radius: 5px;
+        }
+        .practical {
+            background: #cfe2ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #0d6efd;
+            border-radius: 5px;
+        }
+        .display-math {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ H 4.4 - Energie & Vermogen: Drie Praktische Opgaven</h1>
+        <p><strong>Bron:</strong> Elektrische Netwerken (Paul Holmes) - Hoofdstuk 4.4, blz. 49</p>
+        <p><strong>Onderwerp:</strong> Energie, vermogen, rendement en vermogensaanpassing</p>
+
+        <!-- OPGAVE 2 -->
+        <h2>🎯 Opgave 2: Energieberekening Strijkbout</h2>
+        <p><strong>Vraag:</strong> Een strijkbout heeft P = 1100 W en wordt gevoed door U = 230 V. Bereken:</p>
+        <ul>
+            <li>De weerstand van het verwarmingselement</li>
+            <li>De energie verbruikt in 10 minuten, uitgedrukt in J en kWh</li>
+        </ul>
+
+        <div class="practical">
+            <p><strong>💡 Praktische context:</strong> Strijkbouten, waterkokers en ovens zijn <strong>resistieve belastingen</strong> die elektrische energie omzetten in warmte. Het is belangrijk om energieverbruik te kunnen berekenen voor kostenschatting.</p>
+        </div>
+
+        <h3>📋 Stap 1: Analyseer gegeven informatie</h3>
+        <div class="step">
+            <p><strong>Gegeven:</strong></p>
+            <ul>
+                <li>P = 1100 W (vermogen strijkbout)</li>
+                <li>U = 230 V (netspanning)</li>
+                <li>t = 10 minuten = 600 seconden</li>
+            </ul>
+            <p><strong>Gevraagd:</strong></p>
+            <ul>
+                <li>R = ? (weerstand)</li>
+                <li>E = ? in Joule (Ws) en kWh</li>
+            </ul>
+        </div>
+
+        <h3>📖 Stap 2: Theoretische basis</h3>
+        <div class="theory">
+            <p><strong>Vermogensformules (driehoek van Ohm voor vermogen):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>P</mi>
+                        <mo>=</mo>
+                        <mi>U</mi>
+                        <mo>·</mo>
+                        <mi>I</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msup><mi>U</mi><mn>2</mn></msup>
+                            <mi>R</mi>
+                        </mfrac>
+                        <mo>=</mo>
+                        <msup><mi>I</mi><mn>2</mn></msup>
+                        <mo>·</mo>
+                        <mi>R</mi>
+                    </mrow>
+                </math>
+            </div>
+            <p><strong>Weerstand uit vermogen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>R</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msup><mi>U</mi><mn>2</mn></msup>
+                            <mi>P</mi>
+                        </mfrac>
+                        <mtext>  [Ω] = [V²]/[W]</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Energieformule:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>E</mi>
+                        <mo>=</mo>
+                        <mi>P</mi>
+                        <mo>·</mo>
+                        <mi>t</mi>
+                        <mtext>  [J] = [W] × [s]</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Conversie Joule naar kWh:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mn>1</mn>
+                        <mtext> kWh</mtext>
+                        <mo>=</mo>
+                        <mn>1000</mn>
+                        <mtext> W</mtext>
+                        <mo>×</mo>
+                        <mn>3600</mn>
+                        <mtext> s</mtext>
+                        <mo>=</mo>
+                        <mn>3.6</mn>
+                        <mo>×</mo>
+                        <msup><mn>10</mn><mn>6</mn></msup>
+                        <mtext> J</mtext>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🔢 Stap 3: Algebraïsche afleiding</h3>
+        <div class="step">
+            <p><strong>Substap 3.1 — Weerstand berekenen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>R</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msup><mi>U</mi><mn>2</mn></msup>
+                            <mi>P</mi>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msup><mn>230</mn><mn>2</mn></msup>
+                            <mn>1100</mn>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.2 — Energie in Joule:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>E</mi>
+                        <mo>=</mo>
+                        <mi>P</mi>
+                        <mo>·</mo>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mn>1100</mn>
+                        <mo>×</mo>
+                        <mo stretchy="false">(</mo>
+                        <mn>10</mn>
+                        <mo>×</mo>
+                        <mn>60</mn>
+                        <mo stretchy="false">)</mo>
+                        <mtext> J</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.3 — Conversie naar kWh:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>E</mi><mi>kWh</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msub><mi>E</mi><mi>Joule</mi></msub>
+                            <mrow><mn>1000</mn><mo>×</mo><mn>3600</mn></mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🧮 Stap 4: Numerieke substitutie</h3>
+        <div class="step">
+            <p><strong>Stap 4.1 — Weerstand:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>R</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>52900</mn>
+                            <mn>1100</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn class="highlight">48.09</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Stap 4.2 — Energie in Joule:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>E</mi>
+                        <mo>=</mo>
+                        <mn>1100</mn>
+                        <mo>×</mo>
+                        <mn>600</mn>
+                        <mo>=</mo>
+                        <mn class="highlight">660000</mn>
+                        <mtext> J</mtext>
+                        <mtext>  (= 660 kJ)</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Stap 4.3 — Energie in kWh:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>E</mi><mi>kWh</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>660000</mn>
+                            <mrow><mn>3.6</mn><mo>×</mo><msup><mn>10</mn><mn>6</mn></msup></mrow>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn class="highlight">0.1833</mn>
+                        <mtext> kWh</mtext>
+                        <mtext>  (= 183.3 Wh)</mtext>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>✅ Stap 5: Verificatie en fysische interpretatie</h3>
+        <div class="verification">
+            <p><strong>Verificatie 1 — Dimensionale analyse:</strong></p>
+            <ul>
+                <li>R: [V²]/[W] = [V²]/[V·A] = [V]/[A] = [Ω] ✓</li>
+                <li>E: [W]×[s] = [J] ✓</li>
+                <li>kWh: [J] / [J/kWh] = [kWh] ✓</li>
+            </ul>
+
+            <p><strong>Fysische interpretatie:</strong></p>
+            <p>• <strong>Weerstand 48Ω</strong> is typisch voor een verwarmingselement van 1100W op 230V</p>
+            <p>• <strong>660 kJ</strong> is genoeg energie om ongeveer 1.6 liter water van 20°C naar 100°C te verwarmen</p>
+            <p>• <strong>0.183 kWh</strong> kost ongeveer €0.04 (bij €0.22/kWh) — 10 minuten strijken</p>
+            <p>• Conversie: 1 kWh = 3.6 MJ (belangrijk voor examen!)</p>
+        </div>
+
+        <!-- OPGAVE 6 -->
+        <h2>🎯 Opgave 6: Optimale Belasting voor Maximaal Vermogen</h2>
+        <p><strong>Vraag:</strong> Een spanningsbron heeft U<sub>th</sub> = 10V en R<sub>i</sub> = 2Ω. Bij welke belastingsweerstand R<sub>b</sub> wordt er precies P = 10W afgegeven aan de belasting, met het <strong>beste rendement</strong>?</p>
+
+        <div class="theory">
+            <p><strong>⚡ Vermogensaanpassing (impedance matching):</strong></p>
+            <ul>
+                <li><strong>Maximum vermogen</strong> naar belasting: R<sub>b</sub> = R<sub>i</sub> (maar rendement = 50%)</li>
+                <li><strong>Maximum rendement:</strong> R<sub>b</sub> → ∞ (maar vermogen → 0)</li>
+                <li><strong>Compromis:</strong> Voor een gegeven vermogen zijn er 2 oplossingen; kies de grootste R<sub>b</sub></li>
+            </ul>
+        </div>
+
+        <h3>📋 Stap 1: Analyseer gegeven informatie</h3>
+        <div class="step">
+            <p><strong>Gegeven:</strong></p>
+            <ul>
+                <li>U<sub>th</sub> = 10 V (Thévenin spanning)</li>
+                <li>R<sub>i</sub> = 2 Ω (interne weerstand)</li>
+                <li>P<sub>belasting</sub> = 10 W (gewenst vermogen)</li>
+            </ul>
+            <p><strong>Gevraagd:</strong> R<sub>b</sub> = ? (met beste rendement)</p>
+        </div>
+
+        <h3>📖 Stap 2: Theoretische basis</h3>
+        <div class="theory">
+            <p><strong>Stroom in serie-schakeling:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>I</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msub><mi>U</mi><mi>th</mi></msub>
+                            <mrow><msub><mi>R</mi><mi>i</mi></msub><mo>+</mo><msub><mi>R</mi><mi>b</mi></msub></mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Vermogen in belasting:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>P</mi><mi>b</mi></msub>
+                        <mo>=</mo>
+                        <msup><mi>I</mi><mn>2</mn></msup>
+                        <mo>·</mo>
+                        <msub><mi>R</mi><mi>b</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><msup><msub><mi>U</mi><mi>th</mi></msub><mn>2</mn></msup><mo>·</mo><msub><mi>R</mi><mi>b</mi></msub></mrow>
+                            <msup><mrow><mo stretchy="false">(</mo><msub><mi>R</mi><mi>i</mi></msub><mo>+</mo><msub><mi>R</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow><mn>2</mn></msup>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Kwadratische vergelijking:</strong> Als P<sub>b</sub> = 10W, dan leidt dit tot een kwadratische vergelijking in R<sub>b</sub>. De abc-formule geeft 2 oplossingen. De <em>grotere</em> R<sub>b</sub> heeft het beste rendement!</p>
+        </div>
+
+        <h3>🔢 Stap 3: Algebraïsche afleiding</h3>
+        <div class="step">
+            <p><strong>Substap 3.1 — Vermogensvergelijking opstellen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mfrac>
+                            <mrow><msup><mn>10</mn><mn>2</mn></msup><mo>·</mo><msub><mi>R</mi><mi>b</mi></msub></mrow>
+                            <msup><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>+</mo><msub><mi>R</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow><mn>2</mn></msup>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn>10</mn>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.2 — Vereenvoudigen (beide kanten × (2+R<sub>b</sub>)²):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mn>100</mn>
+                        <mo>·</mo>
+                        <msub><mi>R</mi><mi>b</mi></msub>
+                        <mo>=</mo>
+                        <mn>10</mn>
+                        <mo>·</mo>
+                        <msup><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>+</mo><msub><mi>R</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow><mn>2</mn></msup>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.3 — Uitwerken en herschikken:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mn>100</mn>
+                        <msub><mi>R</mi><mi>b</mi></msub>
+                        <mo>=</mo>
+                        <mn>10</mn>
+                        <mo stretchy="false">(</mo>
+                        <mn>4</mn>
+                        <mo>+</mo>
+                        <mn>4</mn>
+                        <msub><mi>R</mi><mi>b</mi></msub>
+                        <mo>+</mo>
+                        <msup><msub><mi>R</mi><mi>b</mi></msub><mn>2</mn></msup>
+                        <mo stretchy="false">)</mo>
+                    </mrow>
+                </math>
+            </div>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mn>100</mn>
+                        <msub><mi>R</mi><mi>b</mi></msub>
+                        <mo>=</mo>
+                        <mn>40</mn>
+                        <mo>+</mo>
+                        <mn>40</mn>
+                        <msub><mi>R</mi><mi>b</mi></msub>
+                        <mo>+</mo>
+                        <mn>10</mn>
+                        <msup><msub><mi>R</mi><mi>b</mi></msub><mn>2</mn></msup>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.4 — Standaardvorm kwadratische vergelijking:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mn>10</mn>
+                        <msup><msub><mi>R</mi><mi>b</mi></msub><mn>2</mn></msup>
+                        <mo>−</mo>
+                        <mn>60</mn>
+                        <msub><mi>R</mi><mi>b</mi></msub>
+                        <mo>+</mo>
+                        <mn>40</mn>
+                        <mo>=</mo>
+                        <mn>0</mn>
+                    </mrow>
+                </math>
+            </div>
+            <p style="margin-left: 20px;">Delen door 10:</p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msup><msub><mi>R</mi><mi>b</mi></msub><mn>2</mn></msup>
+                        <mo>−</mo>
+                        <mn>6</mn>
+                        <msub><mi>R</mi><mi>b</mi></msub>
+                        <mo>+</mo>
+                        <mn>4</mn>
+                        <mo>=</mo>
+                        <mn>0</mn>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.5 — ABC-formule toepassen (a=1, b=-6, c=4):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>b</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><mn>6</mn><mo>±</mo><msqrt><mrow><mn>36</mn><mo>−</mo><mn>16</mn></mrow></msqrt></mrow>
+                            <mn>2</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><mn>6</mn><mo>±</mo><msqrt><mn>20</mn></msqrt></mrow>
+                            <mn>2</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn>3</mn>
+                        <mo>±</mo>
+                        <msqrt><mn>5</mn></msqrt>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🧮 Stap 4: Numerieke substitutie</h3>
+        <div class="step">
+            <p><strong>Twee oplossingen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mrow><mi>b</mi><mo>,</mo><mn>1</mn></mrow></msub>
+                        <mo>=</mo>
+                        <mn>3</mn>
+                        <mo>−</mo>
+                        <msqrt><mn>5</mn></msqrt>
+                        <mo>=</mo>
+                        <mn>3</mn>
+                        <mo>−</mo>
+                        <mn>2.236</mn>
+                        <mo>=</mo>
+                        <mn>0.764</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mrow><mi>b</mi><mo>,</mo><mn>2</mn></mrow></msub>
+                        <mo>=</mo>
+                        <mn>3</mn>
+                        <mo>+</mo>
+                        <msqrt><mn>5</mn></msqrt>
+                        <mo>=</mo>
+                        <mn>3</mn>
+                        <mo>+</mo>
+                        <mn>2.236</mn>
+                        <mo>=</mo>
+                        <mn class="highlight">5.236</mn>
+                        <mtext> Ω</mtext>
+                        <mtext>  ≈ </mtext>
+                        <mn class="highlight">5.24</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Kies R<sub>b,2</sub> = 5.24 Ω voor beste rendement!</strong></p>
+        </div>
+
+        <h3>✅ Stap 5: Verificatie en fysische interpretatie</h3>
+        <div class="verification">
+            <p><strong>Verificatie — Beide oplossingen geven 10W:</strong></p>
+            <p>Bij R<sub>b</sub> = 0.764Ω:</p>
+            <ul>
+                <li>I = 10/(2+0.764) = 3.62 A</li>
+                <li>P<sub>b</sub> = 3.62² × 0.764 = 10.0 W ✓</li>
+                <li>Rendement η = 0.764/(2+0.764) = 27.6%</li>
+            </ul>
+
+            <p>Bij R<sub>b</sub> = 5.236Ω:</p>
+            <ul>
+                <li>I = 10/(2+5.236) = 1.38 A</li>
+                <li>P<sub>b</sub> = 1.38² × 5.236 = 10.0 W ✓</li>
+                <li>Rendement η = 5.236/(2+5.236) = <strong>72.4%</strong> (veel beter!) ✓</li>
+            </ul>
+
+            <p><strong>Fysische interpretatie:</strong></p>
+            <p>• Er zijn <strong>twee waarden</strong> van R<sub>b</sub> die 10W leveren: een lage (0.76Ω) en een hoge (5.24Ω)</p>
+            <p>• Bij <strong>lage R<sub>b</sub></strong>: hoge stroom → veel verlies in R<sub>i</sub> → laag rendement</p>
+            <p>• Bij <strong>hoge R<sub>b</sub></strong>: lage stroom → weinig verlies in R<sub>i</sub> → hoog rendement</p>
+            <p>• <strong>Maximum vermogen</strong> (12.5W) treedt op bij R<sub>b</sub> = R<sub>i</sub> = 2Ω (rendement = 50%)</p>
+            <p>• Voor een gegeven vermogen <em>lager dan maximum</em>: kies altijd de <strong>hogere R<sub>b</sub></strong>!</p>
+        </div>
+
+        <!-- OPGAVE 8 -->
+        <h2>🎯 Opgave 8: Rendement met Kabelweerstand</h2>
+        <p><strong>Vraag:</strong> Een oven heeft nominaal P = 2300W bij U = 230V. De aansluitkabel heeft R<sub>kabel</sub> = 3Ω. Bereken:</p>
+        <ul>
+            <li>De weerstand van de oven</li>
+            <li>Het werkelijke vermogen en rendement</li>
+            <li>De kosten per kWh <em>netto</em> energie als elektriciteit €0.195/kWh kost</li>
+        </ul>
+
+        <h3>📋 Stap 1: Analyseer gegeven informatie</h3>
+        <div class="step">
+            <p><strong>Gegeven:</strong></p>
+            <ul>
+                <li>P<sub>nominaal</sub> = 2300 W (bij directe aansluiting op 230V)</li>
+                <li>U<sub>net</sub> = 230 V</li>
+                <li>R<sub>kabel</sub> = 3 Ω</li>
+                <li>Elektriciteit: €0.195 per kWh</li>
+            </ul>
+            <p><strong>Gevraagd:</strong></p>
+            <ul>
+                <li>R<sub>oven</sub> = ?</li>
+                <li>P<sub>werkelijk</sub> en η = ?</li>
+                <li>Kosten per kWh netto = ?</li>
+            </ul>
+        </div>
+
+        <h3>📖 Stap 2: Theoretische basis</h3>
+        <div class="theory">
+            <p><strong>Nominale weerstand (zonder kabel):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>oven</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msup><mi>U</mi><mn>2</mn></msup>
+                            <msub><mi>P</mi><mi>nominaal</mi></msub>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Met kabel:</strong></p>
+            <ul>
+                <li>R<sub>totaal</sub> = R<sub>oven</sub> + R<sub>kabel</sub></li>
+                <li>Spanning over oven: U<sub>oven</sub> < 230V (spanningsdeling!)</li>
+                <li>Rendement: η = P<sub>nuttig</sub> / P<sub>totaal</sub></li>
+            </ul>
+
+            <p><strong>Rendement:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>η</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msub><mi>R</mi><mi>oven</mi></msub>
+                            <mrow><msub><mi>R</mi><mi>oven</mi></msub><mo>+</mo><msub><mi>R</mi><mi>kabel</mi></msub></mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🔢 Stap 3: Algebraïsche afleiding</h3>
+        <div class="step">
+            <p><strong>Substap 3.1 — Weerstand oven:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>oven</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msup><mn>230</mn><mn>2</mn></msup>
+                            <mn>2300</mn>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.2 — Totale weerstand en werkelijk vermogen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>totaal</mi></msub>
+                        <mo>=</mo>
+                        <msub><mi>R</mi><mi>oven</mi></msub>
+                        <mo>+</mo>
+                        <msub><mi>R</mi><mi>kabel</mi></msub>
+                    </mrow>
+                </math>
+            </div>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>P</mi><mi>totaal</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msup><mi>U</mi><mn>2</mn></msup>
+                            <msub><mi>R</mi><mi>totaal</mi></msub>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.3 — Vermogen in oven (nuttig):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>P</mi><mi>oven</mi></msub>
+                        <mo>=</mo>
+                        <msub><mi>P</mi><mi>totaal</mi></msub>
+                        <mo>·</mo>
+                        <mfrac>
+                            <msub><mi>R</mi><mi>oven</mi></msub>
+                            <msub><mi>R</mi><mi>totaal</mi></msub>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.4 — Kosten per kWh netto:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>Kosten</mi><mi>netto</mi></msub>
+                        <mo>=</mo>
+                        <msub><mi>Prijs</mi><mi>bruto</mi></msub>
+                        <mo>·</mo>
+                        <mfrac>
+                            <msub><mi>P</mi><mi>totaal</mi></msub>
+                            <msub><mi>P</mi><mi>oven</mi></msub>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🧮 Stap 4: Numerieke substitutie</h3>
+        <div class="step">
+            <p><strong>Stap 4.1 — Weerstand oven:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>oven</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>52900</mn>
+                            <mn>2300</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn class="highlight">23</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Stap 4.2 — Totaal vermogen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>totaal</mi></msub>
+                        <mo>=</mo>
+                        <mn>23</mn>
+                        <mo>+</mo>
+                        <mn>3</mn>
+                        <mo>=</mo>
+                        <mn>26</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>P</mi><mi>totaal</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <msup><mn>230</mn><mn>2</mn></msup>
+                            <mn>26</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn class="highlight">2034.6</mn>
+                        <mtext> W</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Stap 4.3 — Nuttig vermogen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>P</mi><mi>oven</mi></msub>
+                        <mo>=</mo>
+                        <mn>2034.6</mn>
+                        <mo>·</mo>
+                        <mfrac>
+                            <mn>23</mn>
+                            <mn>26</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn class="highlight">1799.8</mn>
+                        <mtext> W</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Rendement:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>η</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>1799.8</mn>
+                            <mn>2034.6</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn class="highlight">0.8846</mn>
+                        <mo>=</mo>
+                        <mn class="highlight">88.46</mn>
+                        <mo>%</mo>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Stap 4.4 — Kosten per kWh netto:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>Kosten</mi><mi>netto</mi></msub>
+                        <mo>=</mo>
+                        <mn>0.195</mn>
+                        <mo>·</mo>
+                        <mfrac>
+                            <mn>2034.6</mn>
+                            <mn>1799.8</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn>0.195</mn>
+                        <mo>·</mo>
+                        <mn>1.1304</mn>
+                        <mo>=</mo>
+                        <mn class="highlight">€ 0.2204</mn>
+                        <mtext> per kWh netto</mtext>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>✅ Stap 5: Verificatie en fysische interpretatie</h3>
+        <div class="verification">
+            <p><strong>Verificatie — Vermogensverdeling:</strong></p>
+            <ul>
+                <li>P<sub>totaal</sub> = 2034.6 W (wat je betaalt)</li>
+                <li>P<sub>oven</sub> = 1799.8 W (nuttig: 88.5%)</li>
+                <li>P<sub>kabel</sub> = 2034.6 - 1799.8 = 234.8 W (verlies: 11.5%)</li>
+                <li>Check: 1799.8 + 234.8 = 2034.6 W ✓</li>
+            </ul>
+
+            <p><strong>Fysische interpretatie:</strong></p>
+            <p>• <strong>Kabelweerstand 3Ω</strong> is 13% van de ovenweerstand (23Ω) → significant verlies!</p>
+            <p>• <strong>235W verlies</strong> in kabel betekent: kabel wordt warm, energie verspild, hogere kosten</p>
+            <p>• <strong>Rendement 88.5%</strong> betekent dat je 13% méér betaalt voor dezelfde hoeveelheid nuttige warmte</p>
+            <p>• <strong>€0.22 per kWh netto</strong> vs €0.195 bruto: je betaalt 13% extra door kabelweerstand!</p>
+            <p>• <strong>Praktische oplossing:</strong> Dikkere kabel gebruiken (lagere R) of oven dichter bij meterkast plaatsen</p>
+        </div>
+
+        <div class="warning">
+            <p><strong>⚠️ Veiligheidsrisico:</strong></p>
+            <p>Een kabelweerstand van 3Ω bij 2000W is <strong>gevaarlijk hoog</strong>! De kabel dissipeert 235W als warmte. Dit kan leiden tot:</p>
+            <ul>
+                <li>🔥 Oververhitting van de kabel</li>
+                <li>⚡ Verhoogd risico op kortsluiting</li>
+                <li>💰 Verspilling van energie (€40-80 per jaar bij dagelijks gebruik)</li>
+            </ul>
+            <p><strong>Oplossing:</strong> Gebruik een kabel met grotere doorsnede (bijv. 2.5mm² of 4mm²)</p>
+        </div>
+
+        <h2>🎓 Samenvatting: Drie lessen</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Opgave</th>
+                    <th>Kernformule</th>
+                    <th>Belangrijkste les</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>2: Strijkbout</strong></td>
+                    <td>E = P·t en 1 kWh = 3.6 MJ</td>
+                    <td>Energieconversie: Ws → kWh via deling door 3.6×10⁶</td>
+                </tr>
+                <tr>
+                    <td><strong>6: Optimum belasting</strong></td>
+                    <td>P = U²·R/(R<sub>i</sub>+R)² → kwadratisch</td>
+                    <td>Voor gegeven P zijn er 2 oplossingen; kies grootste R voor beste rendement</td>
+                </tr>
+                <tr>
+                    <td><strong>8: Rendement</strong></td>
+                    <td>η = R<sub>belasting</sub>/R<sub>totaal</sub></td>
+                    <td>Kabelweerstand veroorzaakt vermogensverlies én hogere kosten per kWh</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="theory">
+            <p><strong>🔑 Belangrijkste formules voor examen:</strong></p>
+            <ol>
+                <li><strong>Vermogen:</strong> P = U·I = U²/R = I²·R</li>
+                <li><strong>Energie:</strong> E = P·t [J] of [kWh]</li>
+                <li><strong>Conversie:</strong> 1 kWh = 3.6 MJ = 3600 kJ</li>
+                <li><strong>Rendement:</strong> η = P<sub>nuttig</sub> / P<sub>totaal</sub></li>
+                <li><strong>Vermogensaanpassing:</strong> P<sub>max</sub> bij R<sub>belasting</sub> = R<sub>bron</sub> (maar η = 50%)</li>
+                <li><strong>ABC-formule:</strong> x = (-b ± √(b²-4ac)) / 2a</li>
+            </ol>
+        </div>
+
+        <hr>
+        <p><em>Gegenereerd: 2025-11-08 | FULL-enhanced met 5-stappen methodologie + praktische toepassingen</em></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!-- H 6.8 OPGAVE 2-3 - ENHANCED VERSION (Spoel met lineaire stroom i=kt) -->
+
+<div class="question">
+<p><strong>H 6.8 - Opgave 2-3: Spoel met i = kt</strong></p>
+<p>De stroom door een spoel stijgt lineair met de tijd: i(t) = k·t [A]</p>
+
+<p><img src="media/media/image74.png" style="max-width:600px;" alt="Spoel i=kt grafiek"></p>
+
+<p><strong>Opgave 2 - Algemeen:</strong></p>
+<ul>
+<li>Stroom: i(t) = k·t [A]</li>
+<li>Stijgingssnelheid: k = 10 A/s</li>
+<li>Spoel: L (variabel - 1mH of 1H)</li>
+</ul>
+
+<p><strong>Opgave 3 - Specifiek:</strong></p>
+<ul>
+<li>Spanning: U = 10V</li>
+<li>Spoel: L = 100mH</li>
+<li>Gevraagd: i(t) en waarden na 1ms en 1s</li>
+</ul>
+
+<p><strong>Gevraagd:</strong> Bepaal de spanning U over de spoel</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer en vergelijk met condensator</div>
+
+<table>
+<thead>
+<tr>
+  <th>Component</th>
+  <th>Basisrelatie</th>
+  <th>Bij lineaire verandering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Condensator</strong></td>
+  <td>I = C · du/dt</td>
+  <td>Als u=k·t → I constant</td>
+</tr>
+<tr>
+  <td><strong>Spoel</strong></td>
+  <td>U = L · di/dt</td>
+  <td>Als i=k·t → U constant</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Dualiteit:</strong> Condensator en spoel zijn elkaars "tegenhanger" - wissel spanning ↔ stroom!</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: OPGAVE 2 - Bepaal di/dt en spanning</div>
+
+<p><strong>Gegeven:</strong> i(t) = k·t [A]</p>
+
+<p><strong>Afgeleide:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac><mrow><mi>d</mi><mi>i</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>
+    <mo>=</mo>
+    <mi>k</mi>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Spoel formule:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>U</mi>
+    <mo>=</mo>
+    <mi>L</mi>
+    <mo>·</mo>
+    <mfrac><mrow><mi>d</mi><mi>i</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>
+    <mo>=</mo>
+    <mi>L</mi>
+    <mo>·</mo>
+    <mi>k</mi>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Voorbeelden:</strong></p>
+<ul>
+<li>L = 1mH, k = 10 A/s → U = 10<sup>-3</sup> · 10 = <strong>10 mV</strong></li>
+<li>L = 1H, k = 10 A/s → U = 1 · 10 = <strong>10 V</strong></li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: OPGAVE 3 - Omgekeerde vraag</div>
+
+<p><strong>Gegeven:</strong> U = 10V, L = 100mH</p>
+
+<p><strong>Zoek di/dt:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac><mrow><mi>d</mi><mi>i</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>
+    <mo>=</mo>
+    <mfrac><mi>U</mi><mi>L</mi></mfrac>
+    <mo>=</mo>
+    <mfrac><mn>10</mn><mrow><mn>100</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow></mfrac>
+  </mrow>
+</math>
+</div>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>=</mo>
+    <mfrac><mn>10</mn><mn>0.1</mn></mfrac>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mfrac><mi>A</mi><mi>s</mi></mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Dus i(t) = 100·t [A]</strong></p>
+
+<p><strong>Stroomwaarden:</strong></p>
+<ul>
+<li>Na 1 ms: i = 100 · 0.001 = <strong>100 mA</strong></li>
+<li>Na 1 s: i = 100 · 1 = <strong>100 A</strong></li>
+</ul>
+
+<blockquote style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Let op: Na 1 seconde is de stroom al 100A! In de praktijk wordt dit beperkt door weerstand of saturatie van de spoel."
+</blockquote>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Verificatie</div>
+
+<p><strong>Controle opgave 3:</strong></p>
+<p>U = L · di/dt = 100mH · 100 A/s = 0.1 · 100 = 10V ✓</p>
+
+<p><strong>Dimensionale controle:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><mi>U</mi><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>H</mi><mo>]</mo>
+    <mo>·</mo>
+    <mfrac><mo>[</mo><mi>A</mi><mo>]</mo><mo>[</mo><mi>s</mi><mo>]</mo></mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>V</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>✓ (want [H] = [V·s/A])</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Fysische interpretatie</div>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Spoel gedrag:</strong></p>
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Een spoel 'verzet' zich tegen stroomverandering en. Als je de stroom wilt veranderen, moet het magneetveld veranderen. Dit induceert een spanning die zich verzet tegen de verandering (Lenz' wet)!"
+</blockquote>
+
+<p><strong>Energie perspectief:</strong></p>
+<p>De energie in een spoel: E = ½·L·i²</p>
+<p>Bij i = 100t: E(t) = ½ · 0.1 · (100t)² = 500t² [J]</p>
+<p>Vermogen: P = dE/dt = 1000t [W] (neemt toe!)</p>
+
+<p><strong>Praktische beperkingen:</strong></p>
+<ul>
+<li><strong>Weerstand:</strong> Echte spoelen hebben R → spanning = L·di/dt + R·i</li>
+<li><strong>Saturatie:</strong> Magneetveld kan niet oneindig groot worden</li>
+<li><strong>Veiligheid:</strong> 100A door kleine draad → oververhitting!</li>
+</ul>
+
+<p><strong>Toepassingen lineaire stroomstijging:</strong></p>
+<ul>
+<li><strong>Current mode converters:</strong> Lineaire stroomstijging in switching supplies</li>
+<li><strong>Deflection coils:</strong> TV/monitor beeldbuis (zaagtand)</li>
+<li><strong>Motor start:</strong> Geleidelijke stroomopbouw</li>
+</ul>
+
+<p><strong>Dual van condensator:</strong></p>
+<table style="width:100%; margin: 15px 0;">
+<thead>
+<tr><th>Condensator</th><th>Spoel</th></tr>
+</thead>
+<tbody>
+<tr><td>Opslag: elektrisch veld</td><td>Opslag: magnetisch veld</td></tr>
+<tr><td>Q = C·U</td><td>Φ = L·I (flux)</td></tr>
+<tr><td>I = C·du/dt</td><td>U = L·di/dt</td></tr>
+<tr><td>Constant I → lineair U</td><td>Constant U → lineair I</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoorden:</strong></p>
+
+<p><strong>Opgave 2 - Algemeen:</strong></p>
+<ul>
+<li>U = L · k [V] (constante spanning)</li>
+<li>L = 1mH, k = 10 A/s → U = 10 mV</li>
+<li>L = 1H, k = 10 A/s → U = 10 V</li>
+</ul>
+
+<p><strong>Opgave 3 - Specifiek:</strong></p>
+<ul>
+<li>di/dt = U/L = 10V / 100mH = <strong>100 A/s</strong></li>
+<li>i(t) = 100·t [A]</li>
+<li>Na 1 ms: i = <strong>100 mA</strong></li>
+<li>Na 1 s: i = <strong>100 A</strong></li>
+</ul>
+
+<p><strong>Formule:</strong> U = L · di/dt → voor i = k·t is di/dt = k → dus U = L·k</p>
+
+<p><em>Spoel is duaal aan condensator: wissel U ↔ I en C ↔ L!</em></p>
+</div>
+
+</div>

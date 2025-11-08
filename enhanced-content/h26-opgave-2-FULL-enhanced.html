@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 2.6 - Opgave 2: Lampen met Kabelverlies (FULL-enhanced)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #e74c3c;
+            margin-top: 30px;
+            border-left: 4px solid #e74c3c;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 20px;
+        }
+        .step {
+            background: #ecf0f1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+        .theory {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #f39c12;
+            border-radius: 5px;
+        }
+        .verification {
+            background: #d4edda;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+            border-radius: 5px;
+        }
+        .practical {
+            background: #cfe2ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #0d6efd;
+            border-radius: 5px;
+        }
+        .display-math {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        .inline-math {
+            display: inline;
+        }
+        .circuit-diagram {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #dee2e6;
+            border-radius: 5px;
+            text-align: center;
+            font-family: monospace;
+        }
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💡 H 2.6 - Opgave 2: Parallelle Lampen met Kabelverlies</h1>
+        <p><strong>Bron:</strong> Elektrische Netwerken (Paul Holmes) - Hoofdstuk 2.6, blz. 21</p>
+        <p><strong>Onderwerp:</strong> Praktische toepassing van serie/parallel schakelingen met kabelweerstand</p>
+
+        <h2>🎯 Opgavebeschrijving</h2>
+        <p><strong>Vraag:</strong> Twee lampen zijn parallel geschakeld, en via twee draden van ieder 6 meter verbonden met een (net-)spanning van 230 V. De weerstand van iedere lamp is 150 Ω; de draad heeft een weerstand van 2 Ω/m.</p>
+        <p><strong>Teken het netwerkschema; bereken daarna de vervangingsweerstand van het netwerk.</strong></p>
+
+        <div class="practical">
+            <p><strong>🏠 Praktische context:</strong> Dit is een realistische situatie in woningen. Kabels hebben altijd enige weerstand, wat leidt tot:</p>
+            <ul>
+                <li>Spanningsverlies over de kabel</li>
+                <li>Vermogensverlies (warmte in kabel)</li>
+                <li>Minder spanning over de lampen dan de netspanning</li>
+            </ul>
+            <p><em>Bij lange kabels of hoge stromen kan dit significant zijn!</em></p>
+        </div>
+
+        <h3>📋 Stap 1: Analyseer gegeven informatie</h3>
+        <div class="step">
+            <p><strong>Gegeven:</strong></p>
+            <ul>
+                <li>U<sub>net</sub> = 230 V (netspanning)</li>
+                <li>R<sub>lamp1</sub> = R<sub>lamp2</sub> = 150 Ω (gelijke lampen)</li>
+                <li>Kabellengte heen = 6 meter</li>
+                <li>Kabellengte terug = 6 meter</li>
+                <li>Kabelweerstand = 2 Ω/m</li>
+            </ul>
+
+            <p><strong>Gevraagd:</strong></p>
+            <ul>
+                <li>Netwerkschema</li>
+                <li>R<sub>totaal</sub> van het netwerk</li>
+            </ul>
+
+            <p><strong>Schematische structuur:</strong></p>
+            <div class="circuit-diagram">
+<pre>
+    ┌─────[R₃=12Ω]─────┬──────┬─────[R₄=12Ω]─────┐
+230V│                  │      │                   │230V
+    │                [150Ω] [150Ω]                │
+    │                  │      │                   │
+    └──────────────────┴──────┴───────────────────┘
+
+    R₃ = heenkabel (6m × 2Ω/m)
+    R₄ = retourkabel (6m × 2Ω/m)
+    Lampen parallel tussen de kabels
+</pre>
+            </div>
+        </div>
+
+        <h3>📖 Stap 2: Theoretische basis</h3>
+        <div class="theory">
+            <p><strong>Kabelweerstand berekenen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>kabel</mi></msub>
+                        <mo>=</mo>
+                        <mi>lengte</mi>
+                        <mo>×</mo>
+                        <msub><mi>R</mi><mi>per meter</mi></msub>
+                        <mtext>  [Ω] = [m] × [Ω/m]</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Twee gelijke weerstanden parallel:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>parallel</mi></msub>
+                        <mo>=</mo>
+                        <mfrac><mi>R</mi><mn>2</mn></mfrac>
+                        <mtext>  (snelle formule bij gelijke R)</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Totale weerstand (serie-structuur):</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>totaal</mi></msub>
+                        <mo>=</mo>
+                        <msub><mi>R</mi><mi>kabel,heen</mi></msub>
+                        <mo>+</mo>
+                        <msub><mi>R</mi><mi>lampen,parallel</mi></msub>
+                        <mo>+</mo>
+                        <msub><mi>R</mi><mi>kabel,terug</mi></msub>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Fysica:</strong> In een serie-schakeling (van bron naar bron) loopt dezelfde stroom door alle componenten. De kabelweerstand zit <em>in serie</em> met de lampenweerstand.</p>
+        </div>
+
+        <h3>🔢 Stap 3: Algebraïsche afleiding</h3>
+        <div class="step">
+            <p><strong>Substap 3.1 — Kabelweerstand berekenen:</strong></p>
+            <p>Heenkabel (R<sub>3</sub>):</p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mn>3</mn></msub>
+                        <mo>=</mo>
+                        <mn>6</mn>
+                        <mtext> m</mtext>
+                        <mo>×</mo>
+                        <mn>2</mn>
+                        <mtext> Ω/m</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p>Retourkabel (R<sub>4</sub>):</p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mn>4</mn></msub>
+                        <mo>=</mo>
+                        <mn>6</mn>
+                        <mtext> m</mtext>
+                        <mo>×</mo>
+                        <mn>2</mn>
+                        <mtext> Ω/m</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>Substap 3.2 — Parallelle lampen vereenvoudigen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>v,lampen</mi></msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><msub><mi>R</mi><mi>lamp1</mi></msub><mo>·</mo><msub><mi>R</mi><mi>lamp2</mi></msub></mrow>
+                            <mrow><msub><mi>R</mi><mi>lamp1</mi></msub><mo>+</mo><msub><mi>R</mi><mi>lamp2</mi></msub></mrow>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><mn>150</mn><mo>·</mo><mn>150</mn></mrow>
+                            <mrow><mn>150</mn><mo>+</mo><mn>150</mn></mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+            <p style="margin-left: 20px;"><em>Of sneller: R<sub>v,lampen</sub> = 150/2</em></p>
+
+            <p><strong>Substap 3.3 — Totale vervangingsweerstand:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>totaal</mi></msub>
+                        <mo>=</mo>
+                        <msub><mi>R</mi><mn>3</mn></msub>
+                        <mo>+</mo>
+                        <msub><mi>R</mi><mi>v,lampen</mi></msub>
+                        <mo>+</mo>
+                        <msub><mi>R</mi><mn>4</mn></msub>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🧮 Stap 4: Numerieke substitutie</h3>
+        <div class="step">
+            <p><strong>Stap 4.1 — Kabelweerstanden:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mn>3</mn></msub>
+                        <mo>=</mo>
+                        <msub><mi>R</mi><mn>4</mn></msub>
+                        <mo>=</mo>
+                        <mn>6</mn>
+                        <mo>×</mo>
+                        <mn>2</mn>
+                        <mo>=</mo>
+                        <mn>12</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p style="margin-left: 20px;"><em>→ Elke kabel (heen + terug) heeft 12Ω weerstand</em></p>
+
+            <p><strong>Stap 4.2 — Parallelle lampen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>v,lampen</mi></msub>
+                        <mo>=</mo>
+                        <mfrac><mn>150</mn><mn>2</mn></mfrac>
+                        <mo>=</mo>
+                        <mn>75</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+            <p style="margin-left: 20px;"><em>→ Twee lampen parallel halveren de weerstand</em></p>
+
+            <p><strong>Stap 4.3 — Totaal:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>R</mi><mi>totaal</mi></msub>
+                        <mo>=</mo>
+                        <mn>12</mn>
+                        <mo>+</mo>
+                        <mn>75</mn>
+                        <mo>+</mo>
+                        <mn>12</mn>
+                        <mo>=</mo>
+                        <mn class="highlight">99</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>✅ Stap 5: Verificatie en fysische interpretatie</h3>
+        <div class="verification">
+            <p><strong>Verificatie 1 — Dimensionale analyse:</strong></p>
+            <ul>
+                <li>R<sub>kabel</sub>: [m] × [Ω/m] = [Ω] ✓</li>
+                <li>R<sub>parallel</sub>: [Ω]/[1] = [Ω] ✓</li>
+                <li>R<sub>totaal</sub>: [Ω] + [Ω] + [Ω] = [Ω] ✓</li>
+            </ul>
+
+            <p><strong>Verificatie 2 — Logische controle:</strong></p>
+            <ul>
+                <li>R<sub>lampen,parallel</sub> (75Ω) < R<sub>enkele lamp</sub> (150Ω) ✓</li>
+                <li>R<sub>totaal</sub> (99Ω) > R<sub>lampen</sub> (75Ω) vanwege kabelweerstand ✓</li>
+                <li>Kabelweerstand totaal = 24Ω is 24% van lampenweerstand 75Ω ✓</li>
+            </ul>
+
+            <p><strong>Verificatie 3 — Stroom en vermogen berekenen:</strong></p>
+            <p>Met R<sub>totaal</sub> = 99Ω en U = 230V:</p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>I</mi>
+                        <mo>=</mo>
+                        <mfrac><mi>U</mi><msub><mi>R</mi><mi>totaal</mi></msub></mfrac>
+                        <mo>=</mo>
+                        <mfrac><mn>230</mn><mn>99</mn></mfrac>
+                        <mo>=</mo>
+                        <mn>2.32</mn>
+                        <mtext> A</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p>Spanningsverlies over kabels:</p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>U</mi><mi>kabels</mi></msub>
+                        <mo>=</mo>
+                        <mi>I</mi>
+                        <mo>×</mo>
+                        <mo stretchy="false">(</mo>
+                        <msub><mi>R</mi><mn>3</mn></msub>
+                        <mo>+</mo>
+                        <msub><mi>R</mi><mn>4</mn></msub>
+                        <mo stretchy="false">)</mo>
+                        <mo>=</mo>
+                        <mn>2.32</mn>
+                        <mo>×</mo>
+                        <mn>24</mn>
+                        <mo>=</mo>
+                        <mn>55.7</mn>
+                        <mtext> V</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p>Spanning over lampen:</p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>U</mi><mi>lampen</mi></msub>
+                        <mo>=</mo>
+                        <mn>230</mn>
+                        <mo>−</mo>
+                        <mn>55.7</mn>
+                        <mo>=</mo>
+                        <mn>174.3</mn>
+                        <mtext> V</mtext>
+                        <mtext>  (24% verlies!)</mtext>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h2>🔬 Fysische Interpretatie</h2>
+        <div class="practical">
+            <p><strong>1. Kabelverlies is significant:</strong></p>
+            <ul>
+                <li>Van de 230V netspanning komt maar 174V aan bij de lampen</li>
+                <li>56V (24%) gaat verloren in de kabels als warmte</li>
+                <li>De lampen branden dus <strong>minder fel</strong> dan bedoeld</li>
+            </ul>
+
+            <p><strong>2. Vermogensverlies:</strong></p>
+            <p>Totaal vermogen:</p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>P</mi><mi>totaal</mi></msub>
+                        <mo>=</mo>
+                        <mi>U</mi>
+                        <mo>·</mo>
+                        <mi>I</mi>
+                        <mo>=</mo>
+                        <mn>230</mn>
+                        <mo>·</mo>
+                        <mn>2.32</mn>
+                        <mo>=</mo>
+                        <mn>534</mn>
+                        <mtext> W</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p>Verlies in kabels:</p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub><mi>P</mi><mi>kabels</mi></msub>
+                        <mo>=</mo>
+                        <msup><mi>I</mi><mn>2</mn></msup>
+                        <mo>·</mo>
+                        <msub><mi>R</mi><mi>kabels</mi></msub>
+                        <mo>=</mo>
+                        <msup><mn>2.32</mn><mn>2</mn></msup>
+                        <mo>·</mo>
+                        <mn>24</mn>
+                        <mo>=</mo>
+                        <mn>129</mn>
+                        <mtext> W</mtext>
+                        <mtext>  (24% verlies!)</mtext>
+                    </mrow>
+                </math>
+            </div>
+
+            <p><strong>3. Praktische consequenties:</strong></p>
+            <ul>
+                <li>⚡ Bij <strong>lange kabels</strong> wordt weerstand hoger → meer verlies</li>
+                <li>🔥 Kabels worden <strong>warm</strong> door vermogensverlies</li>
+                <li>💰 Je <strong>betaalt</strong> voor energie die in warmte verdwijnt</li>
+                <li>💡 Lampen geven <strong>minder licht</strong> door lagere spanning</li>
+            </ul>
+
+            <p><strong>4. Oplossingen in de praktijk:</strong></p>
+            <ul>
+                <li>✓ Dikkere kabels gebruiken (lagere R per meter)</li>
+                <li>✓ Kortere kabellengtes</li>
+                <li>✓ Hogere spanningen gebruiken (bij zelfde vermogen: lagere stroom → minder I²R verlies)</li>
+            </ul>
+        </div>
+
+        <h2>📊 Kabelverlies bij verschillende lengtes</h2>
+        <table style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+            <thead>
+                <tr style="background-color: #3498db; color: white;">
+                    <th style="border: 1px solid #ddd; padding: 12px;">Kabellengte (heen+terug)</th>
+                    <th style="border: 1px solid #ddd; padding: 12px;">R<sub>kabels</sub></th>
+                    <th style="border: 1px solid #ddd; padding: 12px;">R<sub>totaal</sub></th>
+                    <th style="border: 1px solid #ddd; padding: 12px;">% verlies</th>
+                    <th style="border: 1px solid #ddd; padding: 12px;">Commentaar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 12px;">2 × 3m = 6m</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">12 Ω</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">87 Ω</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">14%</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">✓ Acceptabel</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="border: 1px solid #ddd; padding: 12px;">2 × 6m = 12m</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">24 Ω</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">99 Ω</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">24%</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">⚠️ Hoog (deze opgave)</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 12px;">2 × 12m = 24m</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">48 Ω</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">123 Ω</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">39%</td>
+                    <td style="border: 1px solid #ddd; padding: 12px;">❌ Onaanvaardbaar</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning">
+            <p><strong>⚠️ Examentip:</strong></p>
+            <p><strong>Vergeet kabels niet!</strong> In praktische opgaven hebben kabels altijd weerstand. Denk aan:</p>
+            <ul>
+                <li>Heenkabel én retourkabel beide meetellen</li>
+                <li>R<sub>kabel</sub> = lengte × R<sub>per meter</sub></li>
+                <li>Kabels staan in <em>serie</em> met de belasting</li>
+                <li>Vermogensverlies = I² × R<sub>kabel</sub></li>
+            </ul>
+        </div>
+
+        <h2>🎓 Samenvatting</h2>
+        <div class="theory">
+            <p><strong>Belangrijkste formules:</strong></p>
+            <ol>
+                <li><strong>Kabelweerstand:</strong> R = lengte × R<sub>per meter</sub></li>
+                <li><strong>Twee gelijke R parallel:</strong> R<sub>v</sub> = R/2</li>
+                <li><strong>Serie-schakeling:</strong> R<sub>totaal</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub></li>
+                <li><strong>Spanningsverlies:</strong> ΔU = I × R<sub>kabel</sub></li>
+                <li><strong>Vermogensverlies:</strong> P = I² × R<sub>kabel</sub></li>
+            </ol>
+
+            <p><strong>Praktische wijsheid:</strong></p>
+            <p>✓ Kabelverlies is evenredig met <strong>kabellengte</strong> en <strong>stroom²</strong></p>
+            <p>✓ Bij hogere spanningen is stroom lager → minder verlies (daarom hoogspanning bij transport)</p>
+            <p>✓ Dikke kabels (lagere R/m) zijn duurder maar verliezen minder energie</p>
+        </div>
+
+        <hr>
+        <p><em>Gegenereerd: 2025-11-08 | FULL-enhanced met 5-stappen methodologie + praktische berekeningen</em></p>
+    </div>
+</body>
+</html>

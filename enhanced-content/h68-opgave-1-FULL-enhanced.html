@@ -1,0 +1,266 @@
+<!-- H 6.8 OPGAVE 1 - ENHANCED VERSION (Condensator met lineaire spanning u=kt) -->
+
+<div class="question">
+<p><strong>H 6.8 - Opgave 1: Condensator met u = kt</strong></p>
+<p>De spanning over een condensator stijgt lineair met de tijd: u(t) = k·t [V]</p>
+
+<p><img src="media/media/image73.png" style="max-width:600px;" alt="Condensator u=kt grafiek"></p>
+
+<p><strong>Gegeven:</strong></p>
+<ul>
+<li>Spanning: u(t) = k·t [V]</li>
+<li>Stijgingssnelheid: k = 10 V/s (voorbeeld)</li>
+<li>Condensator: C (variabel - 1μF of 1F)</li>
+</ul>
+
+<p><strong>Gevraagd:</strong> Bepaal de stroom I door de condensator</p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze opgave test het begrip van de <strong>fundamentele condensatorrelatie</strong>.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Concept</th>
+  <th>Formule</th>
+  <th>Betekenis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Condensator stroom-spanning</strong></td>
+  <td>I = C · du/dt</td>
+  <td>Stroom is evenredig met spanningsverandering</td>
+</tr>
+<tr>
+  <td><strong>Lineaire spanning</strong></td>
+  <td>u(t) = k·t</td>
+  <td>Constante stijgingssnelheid</td>
+</tr>
+<tr>
+  <td><strong>Afgeleide</strong></td>
+  <td>du/dt = k</td>
+  <td>Constante waarde!</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> Bij een condensator is de stroom evenredig met de <strong>snelheid</strong> waarmee de spanning verandert, niet de spanning zelf! (Holmes §6.8, blz. 77)</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal du/dt</div>
+
+<p><strong>Gegeven:</strong> u(t) = k·t</p>
+
+<p><strong>Afgeleide naar de tijd:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mrow><mi>d</mi><mi>u</mi></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mi>d</mi>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+    <mo>(</mo><mi>k</mi><mo>·</mo><mi>t</mi><mo>)</mo>
+    <mo>=</mo>
+    <mi>k</mi>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> De afgeleide van een lineaire functie is de helling → <strong>constant</strong>!</p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Als de spanning lineair stijgt, is de spanningsverandering per seconde constant. Daarom is de stroom door een condensator ook constant!"
+</blockquote>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bereken de stroom I</div>
+
+<p><strong>Condensator formule:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>I</mi>
+    <mo>=</mo>
+    <mi>C</mi>
+    <mo>·</mo>
+    <mfrac>
+      <mrow><mi>d</mi><mi>u</mi></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Substitueer du/dt = k:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>I</mi>
+    <mo>=</mo>
+    <mi>C</mi>
+    <mo>·</mo>
+    <mi>k</mi>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> De stroom is <strong>constant</strong> en gelijk aan C·k [A]</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Numerieke voorbeelden</div>
+
+<p><strong>Voorbeeld 1: C = 1μF, k = 10 V/s</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>I</mi>
+    <mo>=</mo>
+    <mn>1</mn><mi>μF</mi>
+    <mo>·</mo>
+    <mn>10</mn>
+    <mfrac>
+      <mi>V</mi>
+      <mi>s</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mo>×</mo>
+    <msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup>
+    <mo>·</mo>
+    <mn>10</mn>
+    <mo>=</mo>
+    <mn>10</mn><mi>μA</mi>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Voorbeeld 2: C = 1F, k = 10 V/s</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>I</mi>
+    <mo>=</mo>
+    <mn>1</mn><mi>F</mi>
+    <mo>·</mo>
+    <mn>10</mn>
+    <mfrac>
+      <mi>V</mi>
+      <mi>s</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mn>10</mn><mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Interpretatie:</strong> Een super condensator (1F) bij dezelfde spanningsverandering trekt 1 miljoen keer meer stroom dan een kleine condensator (1μF)!</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><mi>I</mi><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>F</mi><mo>]</mo>
+    <mo>·</mo>
+    <mfrac>
+      <mo>[</mo><mi>V</mi><mo>]</mo>
+      <mo>[</mo><mi>s</mi><mo>]</mo>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt! ✓ (want [F] = [A·s/V])</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Wat gebeurt er fysisch?</strong></p>
+
+<blockquote style="border-left: 4px solid #27ae60; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Een condensator 'verzet' zich tegen spanningsveranderingen. Als je de spanning probeert te veranderen, moet er lading verschuiven (Q = C·U). De snelheid waarmee lading verschuift IS de stroom!"
+</blockquote>
+
+<p><strong>Lading perspectief:</strong></p>
+<p>De lading op een condensator is Q = C·u = C·k·t (lineair stijgend)</p>
+<p>De stroom is de ladingverandering per tijd:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>I</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mi>d</mi><mi>Q</mi></mrow>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mi>d</mi>
+      <mrow><mi>d</mi><mi>t</mi></mrow>
+    </mfrac>
+    <mo>(</mo><mi>C</mi><mo>·</mo><mi>k</mi><mo>·</mo><mi>t</mi><mo>)</mo>
+    <mo>=</mo>
+    <mi>C</mi>
+    <mo>·</mo>
+    <mi>k</mi>
+  </mrow>
+</math>
+</div>
+
+<p>Zelfde resultaat! ✓</p>
+
+<p><strong>Waarom is de stroom constant?</strong></p>
+<p>Bij een lineaire spanningsstijging verandert de spanning met <strong>dezelfde snelheid</strong> op elk moment. Daarom is de benodigde ladingstroom ook constant.</p>
+
+<p><strong>Praktische toepassingen:</strong></p>
+<ul>
+<li><strong>Integrator circuits:</strong> Constante stroom → lineaire spanning (dit is het omgekeerde!)</li>
+<li><strong>Zaagtandgeneratoren:</strong> Constante stroom door C geeft zaagtandspanning</li>
+<li><strong>Timer circuits:</strong> RC-tijdconstante met lineaire lading/ontlading</li>
+<li><strong>Supercapacitors:</strong> Grote C waarden voor energieopslag (elektrische auto's)</li>
+</ul>
+
+<p><strong>Vergelijking met batterij:</strong></p>
+<p>Een batterij levert <strong>constante spanning</strong> bij variabele stroom.<br>
+Een ideale stroombron + condensator levert <strong>lineaire spanning</strong> bij constante stroom!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong></p>
+<p><strong>Algemeen:</strong> I = C · k [A] (constante stroom)</p>
+
+<p><strong>Voorbeelden:</strong></p>
+<ul>
+<li>C = 1μF, k = 10 V/s → I = 10μA</li>
+<li>C = 1F, k = 10 V/s → I = 10A</li>
+</ul>
+
+<p><strong>Belangrijkste inzicht:</strong></p>
+<p><em>Bij een condensator bepaalt de snelheid van spanningsverandering (du/dt) de stroom, niet de spanning zelf!</em></p>
+
+<p><strong>Formule:</strong> I = C · du/dt → voor u = k·t is du/dt = k → dus I = C·k</p>
+</div>
+
+</div>
