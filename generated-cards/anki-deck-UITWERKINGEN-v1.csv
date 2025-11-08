@@ -1,0 +1,435 @@
+Front,Back,Tags
+"<b>Hoofdstuk 1.9</b><br><br>Bij een knooppunt geldt:
+en
+[zie formule]
+[zie formule]
+Bereken  , en .
+[zie formule]
+[zie formule]
+[zie formule]<br><br><img src='opgave_268.png' style='max-width:600px;'><br><img src='opgave_269.png' style='max-width:600px;'><br><img src='opgave_270.png' style='max-width:600px;'><br>","<b>Uitwerking:</b><br><br>Stroomwet van Kirchhoff: De som van alle stromen naar een knooppunt is gelijk aan de som van stromen vanaf dat knooppunt.
+Dus in de afbeelding zijn de binnenkomende stromen:   , en  en de uitgaande stroom .
+[formule]
+[formule]
+[formule]
+[formule]
+Dus:
+Verder is   en  Als we dat invullen in de eerste vergelijking levert dat op:
+[formule]
+[formule]
+dus
+[formule]
+[formule]
+Dus kunnen we nu de andere stromen uitrekenen:
+en
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;kirchhoff;niveau-gemiddeld;h1-9;berekening;netwerk-analyse
+"<b>Hoofdstuk 1.9</b><br><br>Spanningswet van Kirchhoff: De som van alle spanningen in een gesloten kring is nul.
+Dus in de afbeelding moet gelden als we rechtsom kijken:
+Invullen gegeven waarden:","<b>Uitwerking:</b><br><br>Zie schema hiernaast met simulatie.
+Dus in de afbeelding moet gelden: als we linksom kijken in de richting van  (let op de stroomrichting en de polariteit van de stroommeter):
+[formule]
+Invullen gegeven waarden:
+Tip: als weerstanden in kΩ dan stromen in mA en krijg je eenvoudiger formules.<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;kirchhoff;niveau-gemiddeld;h1-9;berekening;netwerk-analyse
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de spanning over de weerstand  gelijk aan:
+[zie formule]
+a:
+[zie formule]
+b:
+[zie formule]
+c:
+[zie formule]
+d:
+[zie formule]","<b>Uitwerking:</b><br><br>De stroom  staat getekend dat die de weerstand  ingaat bij de – van . Dus is alleen antwoord b: juist.
+[formule]
+[formule]
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;niveau-gemiddeld;h1-9;berekening
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de stroom door de weerstand  gelijk aan:
+[zie formule]
+a:
+[zie formule]
+b:
+[zie formule]
+c:
+[zie formule]
+d:
+[zie formule]","<b>Uitwerking:</b><br><br>Laat je niet gek maken! Over  staat gewoon de spanning van de spanningsbron . Dus is alleen antwoord a: juist.
+[formule]
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;niveau-gemiddeld;h1-9;berekening
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de stroom door de weerstand  gelijk aan:
+[zie formule]
+a:
+[zie formule]
+b:
+[zie formule]
+c:
+[zie formule]
+d:
+[zie formule]","<b>Uitwerking:</b><br><br>Dit moet je oplossen met de stroomwet van Kirchhoff, want je kijkt naar het knooppunt tussen U1 en de stroombron I2. De maas rechtsboven kun je vergeten omdat de spanningsbron U1 de stromen  en  levert. Dan zijn de inkomende stromen  en  en de uitgaande stromen  en .
+[formule]
+[formule]
+[formule]
+[formule]
+[formule]
+[formule]
+=>
+[formule]
+[formule]
+Dus is alleen antwoord d: juist.
+H 2.6. blz. 21<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;kirchhoff;niveau-gemiddeld;h1-9;berekening;netwerk-analyse
+"<b>Hoofdstuk 1.9</b><br><br>Twee lampen zijn parallel geschakeld, en via twee draden van ieder 6 meter verbonden met een (net-)spanning van 230 V. De weerstand van iedere lamp is 150 Ω; de draad heeft een weerstand van 2 Ω/m.
+Teken het netwerkschema; bereken daarna de vervangingsweerstand van het netwerk,","<b>Uitwerking:</b><br><br>R3 en R4 zijn de weerstanden van de draad van 6 meter. De weerstand van de draad is 2 Ω/m, Dus .
+[formule]
+De beide lampen staan parallel, dus de totale weerstand van de lampen = 150/2 = 75 Ω.
+Dus:
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;netwerk-analyse;niveau-gemiddeld;h1-9
+"<b>Hoofdstuk 1.9</b><br><br>Bewijs dat de vervangingsweerstand van drie parallel geschakelde weerstanden  niet gelijk is aan het product van die weerstanden gedeeld door de som:
+[zie formule]","<b>Uitwerking:</b><br><br>De dimensie van de formule is (Ohm)3/Ohm, dus Ohm2. En dus kan dit geen weerstand zijn. Dus moet de formule fout zijn.
+Onderstaand een uitvoeriger bewijs:
+Voor de vervangingsweerstand geldt:
+Eerst moet alles onder dezelfde noemer worden gebracht, dus :
+[formule]
+Dus:  q.e.d.
+[formule]
+(Latijn: quod erat demonstrandum = hetgeen bewezen diende te worden)<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;netwerk-analyse;niveau-gemiddeld;h1-9
+<b>Hoofdstuk 1.9</b><br><br>Bewijs dat de vervangingsgeleiding van meerdere parallel geschakelde weerstanden wel gelijk is aan:,"<b>Uitwerking:</b><br><br>Op pagina 17 staat dat de Geleiding  en dat voor parallel schakeling van weerstanden geldt:
+[formule]
+[formule]
+Als we overal in de formule voor de geleiding 1/R invullen ontstaat inderdaad die van de weerstanden. Q.e.d.
+Een alternatieve benadering is deze:
+Voor G geldt: G = I/U. Als ik G1, G2, …..  en Gn parallel schakel, dan geldt dat de U's gelijk zijn en de I's opgeteld worden, dus geldt voor de parallel schakeling van die geleidingen dat Itotaal = I1 + I2 + …. In = U.( G1 + G2 + ….. Gn)
+Dit betekent dat Itotaal/U = Gtotaal = G1 + G2 + ….. Gn.    Q.e.d.<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;netwerk-analyse;inductie;niveau-gemiddeld;h1-9
+"<b>Hoofdstuk 1.9</b><br><br>Een ampèremeter met een weerstand van 0,7 Ω geeft een volle schaaluitslag bij een spanning van 0,015 V tussen de klemmen. Hoe groot moet de parallelweerstand (‘shuntweerstand’) zijn voor een meetbereik van 15 A?","<b>Uitwerking:</b><br><br>De meter heeft een weerstand van 0,7 Ω, maar dat is helemaal niet van belang voor deze vraag. Het enige gegeven dat belangrijk is, is dat de meter een volle uitslag geeft bij 0,015 V. Dus die spanning moet over de ampèremeter staan als 15 A door de meter vloeit. Over de te bepalen parallelweerstand staat dan dus ook 0,015V (zie schema). Dan is het niet meer zo moeilijk om de weerstandswaarde van R2 te bepalen:
+= 1 mΩ
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;netwerk-analyse;niveau-gemiddeld;h1-9
+"<b>Hoofdstuk 1.9</b><br><br>Eerst een recht-toe-recht-aan benadering. Hier kun je eerst de vervangingsweerstand van de 3 parallel weerstanden uitrekenen (via de geleiding). Maar dat kan hier ook met een handig, snel trucje: Het KGV is 60 Ohm. Er staan dan 6 + 3 + 2 = 11 weerstanden van 60 Ohm parallel  R = 60/11 Ohm. U is dan 12 mA . 60/11 = 720/11 Volt. Vervolgens reken je de stromen uit. Per R van 60 Ohm is I = 720/11/60 = 12/11 mA.
+Dus I1 = -  6.12/11 = - 6,54 mA (let op het teken!)
+Dus I2 = + 3.12/11 = 3,27 mA
+Dus I3 = + 2.12/11 = 2,18 mA
+Veel sneller gaat het zo: de verhoudingen van de stromen is als 1/10:1/20:1/30 (van links naar rechts). Dus ook als (KGV) 6:3:2. De som daarvan is 11. Dus stromen verhouden zich als 6/11, 3/11 en 2/11 van het geheel.
+De stroom in het geheel is 12 mA.
+Dus I1 = - 6/11.12 mA = - 6,54 mA,
+I2 = 3/11.12 = 3,27 mA en
+I3 = 2/11.12 = 2,18 mA.
+Een veel gemaakte fout is, dat je denkt dat de stromen zich verhouden als 10:20:30, dus 1:2:3. Dat is dus fout. Het is juist 1/10:1/20:1/30.
+Dat blijkt uit het volgende deel van deze opgave:
+Als R2 = 15 Ohm dan worden de stroomverhoudingen: 1/10:1/15:1/30 oftewel 3:2:1.
+De som is 6. Dus worden de stromen nu -3/6, 2/6 resp. 1/6 x 12 mA =
+- 6, 4, 2 mA.
+Een alternatieve aanpak kan ook zo:
+Eerst de totale vervangingsweerstand bepalen en dan weet je de spanning. Daarna 3x de wet van Ohm toepassen:
+Dus
+[zie formule]
+De spanning over alle weerstanden is dus gelijk aan:<br><br><img src='opgave_446.png' style='max-width:600px;'><br><img src='opgave_447.png' style='max-width:600px;'><br><img src='opgave_448.png' style='max-width:600px;'><br>","<b>Uitwerking:</b><br><br>Aanpak: eerst de totale vervangingsweerstand bepalen en dan weet je de spanning. Daarna 3x de wet van Ohm toepassen:
+Dus
+[formule]
+De spanning over alle weerstanden is dus gelijk aan:<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;netwerk-analyse;niveau-gemiddeld;h1-9
+<b>Hoofdstuk 1.9</b><br><br>Bepaal de spanningen U1 en U2 in deze schakeling:,"<b>Uitwerking:</b><br><br>Aanpak: spanningsdeling en U1 zal negatief zijn, zoals het getekend is:
+Dan is al direct duidelijk dat 9 – 6 = 3V over R1 (50 Ω) staat. Omdat de polariteit van U1 tegenovergesteld is, moet het antwoord dus zijn U1 = -3 V.<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;niveau-gemiddeld;h1-9
+<b>Hoofdstuk 1.9</b><br><br>Bereken de weerstand in dit netwerk:,"<b>Uitwerking:</b><br><br>Hier komt het er op aan dat je de juiste vergelijking met 1 onbekende opstelt.
+Maar eenvoudiger is het als je doorziet dat over de 10||R gewoon dezelfde, makkelijk te berekenen spanning staat:
+De spanningsval over 1 Ohm met 2A is 2V. Dus is de spanning over 10||R 10V.
+Omdat de stroom door 10 Ohm dus 1A, moet de andere 1A door de R gaan, en is dus
+R = 10 Ohm.<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;niveau-gemiddeld;h1-9
+"<b>Hoofdstuk 1.9</b><br><br>Een schakeling bestaat uit een parallelschakeling van een weerstand van 5 kΩ en een onbekende weerstand Rx. In serie met deze schakeling staat nog een onbekende weerstand Ry. Als de totale schakeling aangesloten is op een 100 volt spanningsbron, moet de bron 10 mA leveren. De deelstroom door de weerstand van 5 kΩ moet dan 2 mA zijn.
+Ontwerp deze schakeling:
+Hint: pak dit probleem systematisch aan:
+- analyse (lezen, schema, verwachting, formules)
+- oplossingsmethode (maak een plan)
+- uitwerking
+- controle (klopt de uitkomst met de schatting?)","<b>Uitwerking:</b><br><br>Er zijn 3 verschillende benaderingen uitgewerkt. Kies voor jezelf een aanpak die je het makkelijkste ligt. Bij veel opgaven leiden meerdere wegen naar Rome…
+De intuïtieve manier verloopt als volgt:
+U over Rx = 2 mA x 5k = 10V. en I door Rx = 10-2=8mA
+Rx = 10V/8 mA = 1250 Ohm.
+U over Ry = 100V - 10V = 90V  Ry = 90V/10 mA = 9kOhm.
+Dit is hier de snelste manier.
+======
+De meer analytische manier verloopt als volgt.
+Vul bekende zaken in: dus U over Rx = 2 mA x 5k = 10V
+Er zijn 2 eisen, dus er zijn dan nog 2 vergelijkingen met 2 onbekenden.
+V1 = 100V = Ry.Iy + 10V = Ry.10 mV + 10 V (1)
+It (door Rx) = 10 - 2 mA = 8 mA = Ux / Rx = 10/Rx. (2)
+Uit (1) volgt 90V = Rx.10mV  Rx = 90/10k = 9k.
+Uit (2) volgt Rx = 10V/8 mA = 1250 Ohm
+Alternatieve aanpak:
+Parallelweerstand berekenen, want ingangsstroom is 10 mA en stroom door andere weerstand is 2 mA. Daarna is serieweerstand te berekenen omdat totale weerstand te berekenen is omdat U=100 V en I = 10mA.
+De spanning over de parallelschakeling is  en de stroom door Rx = 10 – 2 = 8 mA
+[formule]
+Dus
+[formule]
+Nu weten we ook dat de spanning over Ry gelijk is aan 100 – 10 = 90 V en dat de stroom erdoorheen 10 mA is. Dus moet de weerstand gelijk zijn aan:
+Opgave 10, 11, 12 en 13:
+De volgende vier vragen hebben alle betrekking op onderstaand netwerk.<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;netwerk-analyse;niveau-gemiddeld;h1-9
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de spanning over de weerstand Ra gelijk aan:
+a:
+[zie formule]
+b:
+[zie formule]
+c:
+[zie formule]
+d:
+[zie formule]","<b>Uitwerking:</b><br><br>In ieder geval loopt de stroom I1 volledig door de weerstand Ra, dus de spanning over de weerstand Ra is gelijk aan . Maar de stroom I1 komt wel binnen bij het min-teken van de spanning  waardoor er nog een min-teken voor gezet moet worden en het antwoord dus b: moet zijn:
+[formule]
+[formule]
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;niveau-gemiddeld;h1-9;berekening
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de stroom door de weerstand Rb gelijk aan:
+a:
+[zie formule]
+b:
+[zie formule]
+c:
+[zie formule]
+d:
+[zie formule]","<b>Uitwerking:</b><br><br>Als we naar knooppunt A kijken dan volgt uit de stroomwet van Kirchhoff dat:
+en de spanning over Rb gelijk is aan die over Rd. dus volgens de wet van Ohm blijkt dat:
+[formule]
+[formule]
+Omdat we  moeten weten zetten we de laatste formule om naar  en vullen die in de eerste in:  dan wordt de eerste vergelijking:
+[formule]
+[formule]
+[formule]
+dus antwoord c: is juist
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;kirchhoff;niveau-gemiddeld;h1-9;berekening;netwerk-analyse
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de stroom door de weerstand Rc gelijk aan:
+a:
+[zie formule]
+b: )
+[zie formule]
+[zie formule]
+c:
+[zie formule]
+d: )
+[zie formule]
+[zie formule]","<b>Uitwerking:</b><br><br>Over Rc staat gewoon de spanning U1. Dat betekent dat volgens de wet van Ohm moet gelden dat  dus antwoord a: is juist.
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;niveau-gemiddeld;h1-9;berekening
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de stroom door de weerstand Rd gelijk aan:
+a:
+[zie formule]
+b:
+[zie formule]
+c:
+[zie formule]
+d:
+[zie formule]","<b>Uitwerking:</b><br><br>Als we naar knooppunt A kijken dan volgt uit de stroomwet van Kirchhoff dat:
+=>  wat antwoord d: is.
+[formule]
+[formule]
+Opgave 14, 15, 16 en 17:<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;kirchhoff;niveau-gemiddeld;h1-9;berekening;netwerk-analyse
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de spanning over de weerstand Ra gelijk aan:
+a:
+[zie formule]
+b:
+[zie formule]
+c:
+[zie formule]
+d:
+[zie formule]","<b>Uitwerking:</b><br><br>Omdat in serie met weerstand  een stroombron is geplaatst weet je zeker dat de stroom  door de weerstand  vloeit en is de spanning over  dus gelijk aan:
+[formule]
+[formule]
+[formule]
+[formule]
+dus antwoord a: is het juiste antwoord.
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;netwerk-analyse;niveau-gemiddeld;h1-9;berekening
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de stroom door de weerstand Rb gelijk aan:
+a:
+[zie formule]
+b:
+[zie formule]
+c:
+[zie formule]
+d:
+[zie formule]","<b>Uitwerking:</b><br><br>Over de weerstand  staat een spanning die gelijk is aan omdat dat een ideale spanningsbron is. Dus is de stroom , waarmee antwoord a: dus juist is.
+[formule]
+[formule]
+[formule]
+Andere oplossing is de superpositiemethode waarbij alle stroombronnen open zijn en allen de maas ,  overblijft.
+[formule]
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;kirchhoff;niveau-gevorderd;h1-9;berekening;netwerk-analyse
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk is de stroom door de weerstand Rc gelijk aan:
+a:
+[zie formule]
+b:
+[zie formule]
+c: )
+[zie formule]
+d:
+[zie formule]","<b>Uitwerking:</b><br><br>Aanpak: de stroomwet van Kirchhoff gebruiken op knooppunt B:
+dus antwoord d: is juist.
+[formule]<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;kirchhoff;niveau-gemiddeld;h1-9;berekening;netwerk-analyse
+"<b>Hoofdstuk 1.9</b><br><br>In dit netwerk levert de spanningsbron U1 een stroom die gelijk is aan:
+a:
+[zie formule]
+b: )
+[zie formule]
+[zie formule]
+c: )
+[zie formule]
+[zie formule]
+d: )
+[zie formule]
+[zie formule]","<b>Uitwerking:</b><br><br>Aanpak: de stroomwet van Kirchhoff gebruiken op knooppunt A:
+=>
+[formule]
+[formule]
+Dit is dus antwoord c: omdat  (zie ook opgave 15)
+[formule]
+)
+[formule]
+[formule]
+Hieronder is een simulatie in MultiSim gemaakt met enkel waarden, zodat je de uitwerkingen van opgave 14 t/m 17 ook kunt controleren.<br><i>Bron: Holmes Hoofdstuk 1.9, blz. 13</i>",uitwerkingen;holmes;basiswetten;kirchhoff;niveau-gemiddeld;h1-9;berekening;netwerk-analyse
+"<b>Hoofdstuk 3.11</b><br><br>Aanpak Ri bepalen: Norton: inwendige weerstand 2 weerstanden 10 kΩ in serie met omdat stroombron een oneindig hoge weerstand heeft; dus Ri = 10 + 10 = 20 kΩ.
+Aanpak Ik bepalen: Norton: kortsluiten klemmen levert een parallelschakeling van de twee weerstanden op. Omdat de weerstanden gelijk zijn zal de 10 mA gelijk worden verdeeld over de twee takken en is
+[zie formule]
+Aanpak U0 bepalen: Norton vervangingsschema nemen en klemspanning berekenen:
+Wet van ohm:
+Dus totaal:
+U0 = 100 V	Ik = 5 mA	Ri = 20 kΩ<br><br><img src='opgave_535.png' style='max-width:600px;'><br><img src='opgave_536.png' style='max-width:600px;'><br><img src='opgave_537.png' style='max-width:600px;'><br>","<b>Uitwerking:</b><br><br>Aanpak Ri bepalen: Thévenin: inwendige weerstand  10 Ω en 5 Ω parallel omdat beide spanningsbronnen kortsluitingen vormen; dus
+[formule]
+Aanpak U0 bepalen: Superpositie: eerst klemspanning berekenen ten gevolge van 10V met kortgesloten 40V: dat is een spanningsdeling:
+Daarna klemspanning berekenen ten gevolge van 40V met kortgesloten 10V: dat is een spanningsdeling:
+Dus de klemspanning
+[formule]
+Aanpak Ik bepalen: Thévenin vervangingsschema nemen en klemmen kortsluiten.
+Wet van ohm:
+Dus totaal:
+U0 = 20 V	Ik = 6 A		Ri = 3,33 Ω
+Een meer intuïtieve manier:
+Ga uit van - en -   = 0V. Dan is er 30V verschil over + en +.
+De R-deler 5/10 Ohm maakt daar 10 resp. 20V van.
+Dus is Uth = 10V + 10V = 20V.
+Ikortsluit = 10V/5 Ohm + 40V/10 Ohm = 2A + 4A = 6A.
+Rth = 5 || 10 Ohm = 3,33 Ohm.
+Een meer analytische benadering:
+Je kunt ook netjes de maaswet toepassen. Dat moet als het ingewikkeld is. Bij simpele opgaven kun je het antwoord ""zo aflezen uit het schema"", zoals ik boven heb beredeneerd. Mits je de basics van circuits begrijpt. Snapt wat er gebeurt, dat stroom van + naar - loopt. En snapt wat een spanningsdeler is.
+De maaswet berekening verloopt als volgt:
+10V + 5.I + 10.I - 40V = 0.
+15.I = 30V
+I = 2A.
+U5Ohm = 2A . 5 Ohm = 10V.
+Uth = 10V + 10V = 20V.
+Je moet dan nog een Thévenin schema tekenen met een Uth = 20V en Rth = 3,33 Ohm.
+En een Norton schema met I = 6A en R = 3,33 Ohm. Die geeft zonder belasting ook netjes 20V.
+De uitwendige karakteristiek is dan:
+Bij vereenvoudigen gaat het er om dat je Uth, Ith en Rth berekent.
+Het standaard recept is: bepaal U bij onbelast netwerk. Bepaal I bij kortsluiting. Of bepaal de R. Als je er 2 hebt, heb je ze alle drie. Dat levert je de Uth, Ith en Rth op.<br><br><b>Stappenplan & Berekeningen:</b><br><br><img src='opgave_624.png' style='max-width:600px;'><br><img src='opgave_625.png' style='max-width:600px;'><br><img src='opgave_626.png' style='max-width:600px;'><br><img src='opgave_627.png' style='max-width:600px;'><br><img src='opgave_628.png' style='max-width:600px;'><br><img src='opgave_629.png' style='max-width:600px;'><br><img src='opgave_630.png' style='max-width:600px;'><br><img src='opgave_631.png' style='max-width:600px;'><br><img src='opgave_632.png' style='max-width:600px;'><br><img src='opgave_633.png' style='max-width:600px;'><br><br><i>Bron: Holmes Hoofdstuk 3.11, blz. 41</i>",uitwerkingen;holmes;basiswetten;kirchhoff;thevenin-norton;netwerk-analyse;transformatoren;niveau-gevorderd;h3-11;berekening;netwerk-analyse;examen-kritisch
+"<b>Hoofdstuk 3.11</b><br><br>Opgave 2.d
+Je ""ziet"" daar vanuit de uitgang 10 Ohm || 10 Ohm = 5 Ohm.
+Dus Rth = 5 Ohm.
+Er zijn nu 2 oplossingen:
+Je kunt nu eerst het rechterdeel (10 ohm en stroombron) vervangen/vereenvoudigen door een spanningsborn van 2.10 = 20V (+ boven) in serie met 10 Ohm.
+Nu volgt (zie opgave a.) een spanningsdeler van 2 x 10 Ohm en een verschil van 20-5 = 15V. Dus over elke R 7,5. Dus Uth = 20-7,5 = 12,5V of Uth = 5+7,5=12,5V,
+Tenslotte is Ith = 12,5/5 = 2,5A.
+De meer analytische oplossing gaat als volgt:
+Voor de linkermaas geldt: 5V - I1.10 - I2.10 = 0   (1)
+En voor de knoop rechtsboven geldt: I1 - I2+ 2A = 0
+Dus I1 = I2 - 2A.  Invullen in (1) levert
+5 - 10.I2 + 20 - 10.I2 = 0
+20 + 5 = 25A =  20. I2.
+I2 = 25/20 = 1,25 A.
+Dus I1 = - 0,75 A
+Dus Uth = 5V - (-0,75 . 10 ) = 12,5V
+of vanaf onder rechts geredeneerd:
+Uth = I2.10 = 10 . 1,25 = 12,5V
+Nu de kortsluitstroom: Die is 2A + 5V/10 Ohm = 2,5A
+Nog een alternatief:
+Aanpak Ri bepalen: Thévenin: door de stroombron is de linkertak alleen van belang voor de Ri en is de inwendige weerstand dus gelijk de parallelschakeling van de twee weerstanden van 10 Ω, dus 5 Ω.
+Aanpak U0 bepalen: Superpositie: eerst klemspanning berekenen ten gevolge van 5V met open stroombron: dat is dus gelijk aan de spanningsdeling over twee gelijke weerstanden, dus de helft van de 5V :
+[zie formule]
+Daarna klemspanning berekenen ten gevolge van de stroombron van 2 A met kortgesloten 5V: omdat beide weerstanden gelijk zijn, zal de stroom dus ook gelijk verdeeld worden , dus 1 A door weerstand van 10 Ω (of de totale weerstand is 5 Ω waar 2 A door loopt), dus
+.
+[zie formule]
+Dus de klemspanning
+[zie formule]
+Aanpak Ik bepalen: Thévenin vervangingsschema nemen en klemmen kortsluiten.
+Wet van ohm:
+Klopt ook met Norton equivalent (rechts)
+[zie formule]
+Dus totaal: 	U0 = 12,5 V	Ik = 2,5 A	Ri = 5 Ω","<b>Uitwerking:</b><br><br>Omdat in het boek geen referentienummers zijn aangegeven is hieronder het schema getekend in MultiSim (met de simulatie):
+Opgave 2.e
+Vervang eerst de 12 mA bron + 3 x R door Thévenin.
+Rth = 3k || 3 k = 1k5.
+I (door 1 k) = 5/6 x 12 mA = 10 mA en I (door 2+3k) =1/6 x 12 mA = 2 mA  Uth = 6V.
+Twee Th bronnen van 1k5 met zelfde Rth parallel van -3V en +6V levert
+Uth = 1,5V. Rth = 2,25k + (1k5 || 1k5) = 2,25k + 0,75k = 3k. En dat is het antwoord.
+In Norton: In = 1,5V/3k = 0,5 mA. En dat is het Norton antwoord.
+Alternatief:
+Aanpak Ri bepalen: Thévenin: door de stroombron is de linkertak de weerstand gelijk aan
+R3 // (R1 + R2), dus 3k // (2k + 1k), dus 3k // 3k = 1,5 k Ω. En deze staat weer parallel aan R4 (doordat V1 een inwendige weerstand van 0 heeft) en daardoor is de totale inwendige weerstand gelijk aan R5 + 1,5k // 1,5 k = 2,25 k + 0,75 k = 3 kΩ.
+Aanpak U0 bepalen: Superpositie: eerst klemspanning berekenen ten gevolge van -3V met open stroombron: dat is dus gelijk aan de spanningsdeling over twee gelijke weerstanden van 1,5 kΩ, omdat de vervangingsweerstand van linkerdeel gelijk is aan 1,5 kΩ. Dus de helft van de -3V :
+[formule]
+Daarna klemspanning berekenen ten gevolge van de stroombron van 12 mA met kortgesloten 3V: daardoor staan R3 en R4 parallel wat een weerstand wordt van:
+Deze  staat in serie met  zodat parallel aan  een weerstand van 2k + 1k = 3k staat.
+[formule]
+[formule]
+[formule]
+[formule]
+Dat betekent dat ¼ van de stroom van de stroombron (12 mA) door de weerstand  en dus ook  loopt. En dat bepaalt de uitgangsspanning tussen de klemmen A en B. Kortom:
+[formule]
+[formule]
+Dus de klemspanning
+[formule]
+Aanpak Ik bepalen: Thévenin vervangingsschema nemen en klemmen kortsluiten.
+Wet van ohm:
+Klopt ook met Norton equivalent (rechts)
+[formule]
+Dus totaal:	U0 = 1,5 V	Ik = 0,5 mA	Ri = 3 kΩ<br><i>Bron: Holmes Hoofdstuk 3.11, blz. 41</i>",uitwerkingen;holmes;basiswetten;kirchhoff;thevenin-norton;netwerk-analyse;niveau-gevorderd;h3-11;berekening;netwerk-analyse;examen-kritisch
+<b>Hoofdstuk 3.11</b><br><br>Bepaal de stroom Ix in dit netwerk:,"<b>Uitwerking:</b><br><br>Aanpak: Omdat het in dit hoofdstuk gaat om Thévenin, zullen we dit dan ook maar volgens die methode gaan berekenen, dus eerst de weerstand waardoor Ix stroomt losknippen en een vervangingsschema tekenen en vervolgens de weerstand van 2k weer aansluiten als belasting.
+[formule]
+Aanpak Ri bepalen: Thévenin: inwendige weerstand zijn de  2 weerstanden R4 en R5 in serie met de vervangingsweerstand van R2 // (R1 + R3). Die laatste is dus 2kΩ // (1kΩ + 1kΩ) is dus 2kΩ // 2 kΩ en dus 1 kΩ. De totale inwendige weerstand is dan dus
+Ri = R4 + R5 + Rv = 1 + 1+ 1= 3 kΩ.
+Aanpak U0 bepalen: Thévenin: R4 en R5 bepalen niet de onbelaste spanning op de klemmen omdat er geen stroom loopt. Dus is de Thévenin-spanning  gelijk aan de spanning over R2 en die is de helft van de spanning V1 omdat R1 en R3 samen ook 2 kΩ is.
+.
+[formule]
+Aanpak Ix bepalen: Thévenin vervangingsschema nemen en op de klemmen de weerstand van 2 kΩ aansluiten en de stroom berekenen.
+Totale weerstand is gelijk aan Ri + R12 = 3kΩ + 2kΩ = 5 kΩ.
+Wet van ohm:
+(en dit klopt ook met de simulatie).
+[formule]
+Voor de volledigheid is ook het originele schema in MultiSim gesimuleerd, waaruit ook blijkt dat de gevraagde stroom gelijk is aan 2 mA.<br><i>Bron: Holmes Hoofdstuk 3.11, blz. 41</i>",uitwerkingen;holmes;basiswetten;thevenin-norton;netwerk-analyse;niveau-gevorderd;h3-11;examen-kritisch
+<b>Hoofdstuk 3.11</b><br><br>Bepaal de spanning Ux in dit netwerk:,"<b>Uitwerking:</b><br><br>De i.h.a. snelste benadering is, om de linker bron en de rechterbron te vervangen door 2 Thévenin spanningsbronnen. Maar kijk wel goed uit, of je dit zonder (teken +/-) fouten doet…
+Links: Z = 30k||60k = 20k. U = 60V.  30k/90k = 20V
+Rechts: Z = 10k + 70k = 80k. U = 70k. -1 mA = -70V
+Als je die parallel schakelt geldt Z = 20k||80k = 16k. Maar dat gebruik je verder niet. Dat is de Z van Ux. Maar kan in een andere opgave wel gevraagd worden natuurlijk…..
+Er is een spanningsdeler van +20V naar - 70V via 20k en 80k.
+Udeler_bovenkant = 90V.  20k/(20k+80k) = 18V.
+Uonbelast = 20V - 18V = 2V
+Op alternatieve wijze kan het ook zo:
+Ook hier weer een schema met referenties en simulatie in MultiSim:
+Het antwoord is hier al zichtbaar, maar ook hier zullen we Thévenin gaan gebruiken om op dit juiste antwoord te komen.
+Aanpak UAB bepalen: Superpositie: eerst klemspanning berekenen ten gevolge van V1 met open stroombron: dat is dus gelijk aan de spanningsdeling over de parallelschakeling van R2//(R3 + R4). Dit is
+[formule]
+De spanningsdeling met R1 levert dan een bijdrage van :
+Daarna klemspanning berekenen ten gevolge van de stroombron van 1 mA met kortgesloten V1: daardoor staan R1 en R2 parallel wat een weerstand wordt van:
+Dat betekent dat 7/10 van de stroom van de stroombron (1 mA) door de weerstand  en dus ook  loopt. En dat bepaalt de uitgangsspanning tussen de klemmen A en B. Kortom:
+[formule]
+[formule]
+Dus de klemspanning
+[formule]
+Dit was al voldoende uitwerking, maar voor de volledigheid voegen we ook de berekening voor Thévenin nog uit:
+Aanpak Ri bepalen: Thévenin: aan de linkerkant staat R1 parallel aan R2 en aan de rechterkant is de weerstand gelijk aan R3 + R4 = 10 + 70 = 80 kΩ. Aan de linkerkant is de vervangingswaarde:
+De totale inwendige weerstand is dan dus Rlinks // Rrechts
+Aanpak Ik bepalen: Thévenin vervangingsschema nemen de kortsluitstroom berekenen.
+Totale weerstand is gelijk aan Ri + R12 = 3kΩ + 2kΩ = 5 kΩ.
+Wet van ohm:
+(en dit klopt ook met de simulatie).
+[formule]
+Voor de volledigheid is ook het originele schema in MultiSim gesimuleerd met kortsluitstroom.
+Een nog andere manier verloopt zo (superpositie):
+Volgens uitleg pagina 34 boek bouw deze schakelingen zelf ook op in Multisim!
+De primaire benadering is dat je R2 = 30k ziet als een belasting van de twee bronnen links en rechts. En we passen superpositie toe: eerst de rechtse bron, dan de linkse.
+Stap 1.
+Berekenen de open klemspanning.
+R2 is ontkoppeld. S is open en de stroombron staat aan. De Spanningsbron is kortgesloten.
+De stroom die door S3 en R1, R3 loopt is 0,5 mA (zie je Multisim).
+Dit komt omdat de stroom twee parallel geschakelde ketens met elk een weerstand van 70k voorziet van stroom. ½ =0,5 mA
+We schakelen vervolgens de stroombron uit en schakelen de spanningsbron in en bepalen de stroom die veroorzaakt wordt door deze spanningsbron.
+Deze stroom is 60 volt gedeeld door de totale weerstand 140k geeft 0,429 mA.
+De totale stroom veroorzaakt door beide bronnen is: 0,5 + 0,429 = 0,929 mA
+We bereken nu de open spanning waar R2 zat en die is. U0 = 60 V – (UR1) 60 x 0,929 = 4,3 Volt. Zie ook Multisim aanwijzing XMM1.
+Stap 2.
+Bereken de inwendige weerstand gezien vanuit R2.
+Hiervoor sluiten we de spanningsbron kort en halen de stroom bron uit het circuit. XMM1 is nu een Ohm meter geworden.
+XMM1 meet een weerstand waarde van 60k//80K (R1 // ( R3 + R4) geeft 34,29k
+We krijgen dan onderstaand vervangings-schema.
+Stap 3
+Bereken de spanning over R2 (R12) geeft (4,3 / 64,28) x 30 = 2 Volt
+Multisim check.
+Alle routes zijn op je examen natuurlijk goed…. Neem die die je het beste ligt.<br><i>Bron: Holmes Hoofdstuk 3.11, blz. 41</i>",uitwerkingen;holmes;basiswetten;thevenin-norton;netwerk-analyse;transformatoren;niveau-gevorderd;h3-11;berekening;examen-kritisch

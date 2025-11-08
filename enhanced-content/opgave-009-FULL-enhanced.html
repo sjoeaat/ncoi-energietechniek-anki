@@ -1,0 +1,533 @@
+<!-- OPGAVE 9 - ENHANCED VERSION (System design: Rx en Ry bepalen) -->
+
+<div class="question">
+<p>Een schakeling bestaat uit een parallelschakeling van een weerstand van 5 kΩ en een onbekende weerstand R<sub>x</sub>. In serie met deze schakeling staat nog een onbekende weerstand R<sub>y</sub>. Als de totale schakeling aangesloten is op een 100 volt spanningsbron, moet de bron 10 mA leveren. De deelstroom door de weerstand van 5 kΩ moet dan 2 mA zijn.</p>
+
+<p>Ontwerp deze schakeling:</p>
+
+<p><strong>Hint:</strong> Pak dit probleem systematisch aan:</p>
+<ul>
+<li><em>Analyse</em> (lezen, schema, verwachting, formules)</li>
+<li><em>Oplossingsmethode</em> (maak een plan)</li>
+<li><em>Uitwerking</em></li>
+<li><em>Controle</em> (klopt de uitkomst met de schatting?)</li>
+</ul>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie en teken schema</div>
+<p>Uit de opgave halen we de volgende grootheden:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Grootheid</th>
+  <th>Symbool</th>
+  <th>Waarde</th>
+  <th>Eenheid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron</td>
+  <td><math><msub><mi>U</mi><mi>bron</mi></msub></math></td>
+  <td>100</td>
+  <td>V</td>
+</tr>
+<tr>
+  <td>Totale stroom</td>
+  <td><math><msub><mi>I</mi><mi>totaal</mi></msub></math></td>
+  <td>10</td>
+  <td>mA</td>
+</tr>
+<tr>
+  <td>Bekende parallelweerstand</td>
+  <td><math><msub><mi>R</mi><mn>5</mn></msub></math></td>
+  <td>5</td>
+  <td>kΩ</td>
+</tr>
+<tr>
+  <td>Stroom door R<sub>5</sub></td>
+  <td><math><msub><mi>I</mi><mn>5</mn></msub></math></td>
+  <td>2</td>
+  <td>mA</td>
+</tr>
+<tr>
+  <td>Onbekende parallelweerstand</td>
+  <td><math><msub><mi>R</mi><mi>x</mi></msub></math></td>
+  <td><strong>?</strong></td>
+  <td>kΩ</td>
+</tr>
+<tr>
+  <td>Onbekende serieweerstand</td>
+  <td><math><msub><mi>R</mi><mi>y</mi></msub></math></td>
+  <td><strong>?</strong></td>
+  <td>kΩ</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Schema:</strong></p>
+<p><img src="media/media/image23.png" style="max-width:400px;" alt="Circuit diagram opgave 9"></p>
+
+<p><strong>Gevraagd:</strong> Bepaal R<sub>x</sub> en R<sub>y</sub>.</p>
+
+<p><strong>Verwachting:</strong> Omdat er 2 mA door 5 kΩ loopt bij 10 mA totaal, moet er 8 mA door R<sub>x</sub> lopen. Dit suggereert dat R<sub>x</sub> kleiner is dan 5 kΩ (lagere weerstand trekt meer stroom).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Kies de oplossingsmethode (intuïtief)</div>
+<p>We volgen de meest <strong>directe</strong> benadering:</p>
+
+<ol>
+<li>Bereken de spanning over de parallelschakeling via R<sub>5</sub></li>
+<li>Gebruik stroomwet van Kirchhoff voor stroom door R<sub>x</sub></li>
+<li>Bereken R<sub>x</sub> via wet van Ohm</li>
+<li>Bepaal R<sub>y</sub> via maasregel</li>
+</ol>
+
+<p>Dit is de snelste route naar de oplossing.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bepaal de spanning over de parallelschakeling</div>
+
+<p>We weten dat door R<sub>5</sub> = 5 kΩ een stroom van 2 mA loopt. De spanning over R<sub>5</sub> (en dus over de hele parallelschakeling, want parallel = zelfde spanning) is:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>5</mn></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mn>5</mn></msub>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer waarden)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mtext> mA</mtext>
+    <mo>·</mo>
+    <mn>5</mn>
+    <mtext> kΩ</mtext>
+    <mo>=</mo>
+    <mn>10</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Belangrijke conclusie:</strong> Er staat 10V over de parallelschakeling.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Bepaal stroom door R<sub>x</sub> en bereken R<sub>x</sub></div>
+
+<p><strong>Stroomwet van Kirchhoff bij het knooppunt:</strong></p>
+
+<p>De totale stroom splitst zich in twee takken:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>totaal</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>5</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>x</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (los op naar I<sub>x</sub>)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>x</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>totaal</mi></msub>
+    <mo>-</mo>
+    <msub><mi>I</mi><mn>5</mn></msub>
+    <mo>=</mo>
+    <mn>10</mn>
+    <mo>-</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mn>8</mn>
+    <mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Bereken R<sub>x</sub> met de wet van Ohm:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>x</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>parallel</mi></msub>
+      <msub><mi>I</mi><mi>x</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer waarden)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>x</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>10</mn><mtext> V</mtext></mrow>
+      <mrow><mn>8</mn><mtext> mA</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>10</mn>
+      <mrow><mn>8</mn><mo>·</mo><msup><mn>10</mn><mrow><mo>-</mo><mn>3</mn></mrow></msup></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1250</mn>
+    <mtext> Ω</mtext>
+    <mo>=</mo>
+    <mn>1,25</mn>
+    <mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Verificatie verwachting:</strong> R<sub>x</sub> = 1,25 kΩ is inderdaad kleiner dan R<sub>5</sub> = 5 kΩ ✓</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Bepaal R<sub>y</sub> via maasregel van Kirchhoff</div>
+
+<p><strong>Spanning over R<sub>y</sub>:</strong></p>
+
+<p>De totale spanning (100V) verdeelt zich over R<sub>y</sub> (in serie) en de parallelschakeling:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>bron</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>y</mi></msub>
+    <mo>+</mo>
+    <msub><mi>U</mi><mi>parallel</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (los op naar U<sub>y</sub>)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>y</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>bron</mi></msub>
+    <mo>-</mo>
+    <msub><mi>U</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mo>-</mo>
+    <mn>10</mn>
+    <mo>=</mo>
+    <mn>90</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Bereken R<sub>y</sub> met de wet van Ohm:</strong></p>
+
+<p>Door R<sub>y</sub> loopt de totale stroom van 10 mA:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>y</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>y</mi></msub>
+      <msub><mi>I</mi><mi>totaal</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer waarden)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>y</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>90</mn><mtext> V</mtext></mrow>
+      <mrow><mn>10</mn><mtext> mA</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>90</mn>
+      <mrow><mn>10</mn><mo>·</mo><msup><mn>10</mn><mrow><mo>-</mo><mn>3</mn></mrow></msup></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>9000</mn>
+    <mtext> Ω</mtext>
+    <mo>=</mo>
+    <mn>9</mn>
+    <mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 6: Controle en verificatie</div>
+
+<p><strong>Eenhedencontrole:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>R</mi><mi>x</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>[</mo><mi>V</mi><mo>]</mo></mrow>
+      <mrow><mo>[</mo><mi>A</mi><mo>]</mo></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    <mspace width="2em"></mspace>
+    <mo>[</mo><msub><mi>R</mi><mi>y</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>[</mo><mi>V</mi><mo>]</mo></mrow>
+      <mrow><mo>[</mo><mi>A</mi><mo>]</mo></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>Ω</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Verificatie via totale weerstand:</strong></p>
+
+<p>Eerst de vervangingsweerstand van de parallelschakeling:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>R</mi><mn>5</mn></msub>
+        <mo>·</mo>
+        <msub><mi>R</mi><mi>x</mi></msub>
+      </mrow>
+      <mrow>
+        <msub><mi>R</mi><mn>5</mn></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>x</mi></msub>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>5</mn><mo>·</mo><mn>1,25</mn></mrow>
+      <mrow><mn>5</mn><mo>+</mo><mn>1,25</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>6,25</mn>
+      <mn>6,25</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Totale weerstand:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>totaal</mi></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mi>y</mi></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <mn>9</mn>
+    <mo>+</mo>
+    <mn>1</mn>
+    <mo>=</mo>
+    <mn>10</mn>
+    <mtext> kΩ</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Check via wet van Ohm:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>I</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>bron</mi></msub>
+      <msub><mi>R</mi><mi>totaal</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>100</mn><mtext> V</mtext></mrow>
+      <mrow><mn>10</mn><mtext> kΩ</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>10</mn>
+    <mtext> mA</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Perfect! Dit komt exact overeen met de opgave ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Spanningsverdeling:</strong></p>
+<ul>
+<li>90V (90%) valt weg over R<sub>y</sub> = 9 kΩ</li>
+<li>10V (10%) over de parallelschakeling = 1 kΩ</li>
+</ul>
+
+<p>Dit is logisch: R<sub>y</sub> is 9× groter dan R<sub>parallel</sub>, dus krijgt 9× meer spanning.</p>
+
+<p><strong>Stroomverdeling in parallelle tak:</strong></p>
+<p>De 10 mA verdeelt zich als:</p>
+<ul>
+<li>2 mA door R<sub>5</sub> = 5 kΩ (20%)</li>
+<li>8 mA door R<sub>x</sub> = 1,25 kΩ (80%)</li>
+</ul>
+
+<p>Verhouding: 8/2 = 4, wat omgekeerd evenredig is aan weerstandsverhouding: 5/1,25 = 4 ✓</p>
+
+<p><strong>Vermogensbalans:</strong></p>
+
+<p>Totaal vermogen van bron:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>P</mi><mi>bron</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>bron</mi></msub>
+    <mo>·</mo>
+    <mi>I</mi>
+    <mo>=</mo>
+    <mn>100</mn>
+    <mo>·</mo>
+    <mn>10</mn>
+    <mtext> mW</mtext>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mtext> W</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Vermogens in weerstanden:</p>
+<ul>
+<li>P<sub>Ry</sub> = U² / R = 90² / 9000 = 0,9 W (90% van totaal)</li>
+<li>P<sub>R5</sub> = I² × R = (2 mA)² × 5 kΩ = 0,02 W = 20 mW (2%)</li>
+<li>P<sub>Rx</sub> = I² × R = (8 mA)² × 1,25 kΩ = 0,08 W = 80 mW (8%)</li>
+</ul>
+
+<p>Totaal: 900 + 20 + 80 = 1000 mW = 1 W ✓</p>
+
+<p><strong>Ontwerpoverwegingen:</strong></p>
+<p>In deze schakeling dient R<sub>y</sub> als een <strong>ballastweerstand</strong> die:</p>
+<ul>
+<li>De stroom beperkt tot 10 mA</li>
+<li>Het grootste deel van de spanning "opeet" (90V)</li>
+<li>Het grootste deel van het vermogen dissipeert (0,9W)</li>
+</ul>
+
+<p>Dit patroon zie je vaak in LED-circuits, waar een serieweerstand de stroom begrenst.</p>
+
+<p><strong>Alternatieve oplossingsmethode (algebraïsch):</strong></p>
+
+<p>We hadden ook een stelsel van vergelijkingen kunnen opstellen:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>bron</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>totaal</mi></msub>
+    <mo>·</mo>
+    <mrow><mo>(</mo>
+      <msub><mi>R</mi><mi>y</mi></msub>
+      <mo>+</mo>
+      <msub><mi>R</mi><mi>parallel</mi></msub>
+    <mo>)</mo></mrow>
+  </mrow>
+</math>
+</div>
+
+<p>En</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>5</mn></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mn>5</mn></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>x</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>x</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Met drie vergelijkingen en drie onbekenden (R<sub>x</sub>, R<sub>y</sub>, I<sub>x</sub>) is het stelsel oplosbaar, maar de intuïtieve methode is veel sneller!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoorden:</strong></p>
+<ul>
+<li><strong>R<sub>x</sub> = 1,25 kΩ = 1250 Ω</strong></li>
+<li><strong>R<sub>y</sub> = 9 kΩ = 9000 Ω</strong></li>
+</ul>
+
+<p><strong>Schakeling ontwerp:</strong></p>
+<ul>
+<li>Parallelschakeling: 5 kΩ ∥ 1,25 kΩ = 1 kΩ</li>
+<li>Serie met: 9 kΩ</li>
+<li>Totaal: 10 kΩ bij 100V → 10 mA ✓</li>
+</ul>
+
+<p><em>Circuit diagram:</em></p>
+<p><img src="media/media/image23.png" style="max-width:400px;" alt="Complete circuit with values"></p>
+</div>
+
+</div>

@@ -1,0 +1,447 @@
+<!-- OPGAVE 8 - ENHANCED VERSION (Parallel weerstand met stroombron) -->
+
+<div class="question">
+<p>Bereken de weerstand R in dit netwerk:</p>
+<p><img src="media/media/image22.PNG" style="max-width:450px;" alt="Opgave 8 current source circuit"></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+<p>Uit het schema halen we de volgende componenten:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Component</th>
+  <th>Symbool</th>
+  <th>Waarde</th>
+  <th>Eenheid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Stroombron</td>
+  <td><math><msub><mi>I</mi><mi>bron</mi></msub></math></td>
+  <td>2</td>
+  <td>A</td>
+</tr>
+<tr>
+  <td>Serieweerstand</td>
+  <td><math><msub><mi>R</mi><mi>serie</mi></msub></math></td>
+  <td>1</td>
+  <td>Ω</td>
+</tr>
+<tr>
+  <td>Bekende parallelweerstand</td>
+  <td><math><msub><mi>R</mi><mn>10</mn></msub></math></td>
+  <td>10</td>
+  <td>Ω</td>
+</tr>
+<tr>
+  <td>Onbekende parallelweerstand</td>
+  <td><math><mi>R</mi></math></td>
+  <td><strong>?</strong></td>
+  <td>Ω</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Gevraagd:</strong> Bepaal de waarde van weerstand R.</p>
+
+<p><strong>Strategie:</strong> Dit probleem kunnen we op twee manieren aanpakken:</p>
+<ol>
+<li><strong>Intuïtief:</strong> Redeneren via spanningen en stromen (snelste methode)</li>
+<li><strong>Algebraïsch:</strong> Vergelijkingen opstellen en oplossen</li>
+</ol>
+
+<p>We volgen eerst de intuïtieve methode, zoals in de originele uitwerking.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal de spanning over de parallelschakeling</div>
+
+<p><strong>Belangrijk inzicht:</strong> De hele stroom van 2A loopt door de serieweerstand van 1Ω. Dit veroorzaakt een spanningsval die we kunnen berekenen.</p>
+
+<p><strong>Spanning over de serieweerstand:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>serie</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>bron</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>serie</mi></msub>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mtext> A</mtext>
+    <mo>·</mo>
+    <mn>1</mn>
+    <mtext> Ω</mtext>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Spanning over de parallelschakeling (10Ω ∥ R):</strong></p>
+
+<p>Als we veronderstellen dat de totale spanning van de stroombron (inwendige spanning) 12V is (uit het schema), dan is de spanning over de parallelschakeling:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>totaal</mi></msub>
+    <mo>-</mo>
+    <msub><mi>U</mi><mi>serie</mi></msub>
+    <mo>=</mo>
+    <mn>12</mn>
+    <mo>-</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mn>10</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fysische betekenis:</strong> Van de 12V bronspanning valt 2V weg over de serieweerstand, dus blijft er 10V over voor de parallelschakeling.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Bepaal de stroom door de 10Ω weerstand</div>
+
+<p>Nu we de spanning over de parallelschakeling kennen (10V), kunnen we de stroom door de bekende 10Ω weerstand berekenen:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>10</mn></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>parallel</mi></msub>
+      <msub><mi>R</mi><mn>10</mn></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>10</mn><mtext> V</mtext></mrow>
+      <mrow><mn>10</mn><mtext> Ω</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Dit is de sleutel tot de oplossing!</strong> Van de 2A totale stroom loopt 1A door de 10Ω weerstand.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Pas de stroomwet van Kirchhoff toe</div>
+
+<p>Bij het knooppunt waar de parallelschakeling begint, moet de som van alle stromen nul zijn (Holmes §1.8):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>bron</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>10</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>R</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (los op naar I<sub>R</sub>)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>R</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>bron</mi></msub>
+    <mo>-</mo>
+    <msub><mi>I</mi><mn>10</mn></msub>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mo>-</mo>
+    <mn>1</mn>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Door weerstand R loopt ook 1A.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Bereken R met de wet van Ohm</div>
+
+<p>We weten nu:</p>
+<ul>
+<li>Spanning over R: U<sub>parallel</sub> = 10V</li>
+<li>Stroom door R: I<sub>R</sub> = 1A</li>
+</ul>
+
+<p>De wet van Ohm geeft:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>R</mi>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mi>parallel</mi></msub>
+      <msub><mi>I</mi><mi>R</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>10</mn><mtext> V</mtext></mrow>
+      <mrow><mn>1</mn><mtext> A</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>10</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 6: Controle en interpretatie</div>
+
+<p><strong>Eenhedencontrole:</strong></p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><mi>R</mi><mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mo>[</mo><mi>V</mi><mo>]</mo></mrow>
+      <mrow><mo>[</mo><mi>A</mi><mo>]</mo></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>Ω</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Realiteitscheck via parallelle weerstand:</strong></p>
+
+<p>De vervangingsweerstand van 10Ω ∥ 10Ω moet zijn:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mn>10</mn>
+        <mo>·</mo>
+        <mn>10</mn>
+      </mrow>
+      <mrow>
+        <mn>10</mn>
+        <mo>+</mo>
+        <mn>10</mn>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>100</mn>
+      <mn>20</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>5</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Verificatie via totale weerstand:</strong></p>
+
+<p>Totale weerstand van het circuit:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>R</mi><mi>totaal</mi></msub>
+    <mo>=</mo>
+    <msub><mi>R</mi><mi>serie</mi></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mn>5</mn>
+    <mo>=</mo>
+    <mn>6</mn>
+    <mtext> Ω</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Voor een stroombron van 2A betekent dit een totale spanning van:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>totaal</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>bron</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>totaal</mi></msub>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mo>·</mo>
+    <mn>6</mn>
+    <mo>=</mo>
+    <mn>12</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Dit komt overeen met onze aanname! ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Symmetrie in het netwerk:</strong></p>
+<p>Het blijkt dat R = 10Ω, dus <strong>beide parallelle weerstanden zijn gelijk</strong>. Dit verklaart waarom de stroom zich precies 50-50 verdeelt (1A door elk).</p>
+
+<p><strong>Algemene regel voor gelijke parallelle weerstanden:</strong></p>
+<p>Als twee gelijke weerstanden R parallel staan, is:</p>
+<ul>
+<li>Vervangingsweerstand: R<sub>eq</sub> = R/2</li>
+<li>Stroomverdeling: I door elke weerstand = I<sub>totaal</sub>/2</li>
+<li>Spanningen: identiek (zoals altijd bij parallel)</li>
+</ul>
+
+<p><strong>Vermogensbalans:</strong></p>
+
+<p>Totaal geleverd vermogen door stroombron:</p>
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>P</mi><mi>bron</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>totaal</mi></msub>
+    <mo>·</mo>
+    <msub><mi>I</mi><mi>bron</mi></msub>
+    <mo>=</mo>
+    <mn>12</mn>
+    <mo>·</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mn>24</mn>
+    <mtext> W</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Vermogens in de weerstanden:</p>
+<ul>
+<li>P<sub>serie</sub> = I² × R = 2² × 1 = 4 W</li>
+<li>P<sub>10Ω</sub> = I² × R = 1² × 10 = 10 W</li>
+<li>P<sub>R</sub> = I² × R = 1² × 10 = 10 W</li>
+</ul>
+
+<p>Totaal: 4 + 10 + 10 = 24 W ✓</p>
+
+<p>De vermogensbalans klopt perfect!</p>
+
+<p><strong>Efficiëntie van de overdracht:</strong></p>
+<p>Van de 24W geleverd door de bron:</p>
+<ul>
+<li>4W (17%) verloren in serieweerstand</li>
+<li>20W (83%) nuttig gedissipeerd in de parallelle weerstanden</li>
+</ul>
+
+<p><strong>Wat als R ≠ 10Ω?</strong></p>
+
+<p>Als R een andere waarde had, bijvoorbeeld R = 20Ω:</p>
+<ul>
+<li>R<sub>parallel</sub> = (10 × 20)/(10 + 20) = 200/30 = 6,67Ω</li>
+<li>I<sub>10Ω</sub> = 10V/10Ω = 1A (blijft gelijk)</li>
+<li>I<sub>20Ω</sub> = 10V/20Ω = 0,5A</li>
+<li>I<sub>totaal</sub> = 1 + 0,5 = 1,5A (niet meer 2A!)</li>
+</ul>
+
+<p>Dus alleen bij R = 10Ω klopt de totale stroom van 2A.</p>
+
+<p><strong>Alternatieve oplossingsmethode (algebraïsch):</strong></p>
+
+<p>We kunnen ook een vergelijking opstellen:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>bron</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>parallel</mi></msub>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mrow><mn>10</mn><mo>·</mo><mi>R</mi></mrow>
+      <mrow><mn>10</mn><mo>+</mo><mi>R</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>En we weten dat U<sub>parallel</sub> = 10V, dus:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>10</mn>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mrow><mn>10</mn><mo>·</mo><mi>R</mi></mrow>
+      <mrow><mn>10</mn><mo>+</mo><mi>R</mi></mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Los op: 5(10 + R) = 10R → 50 + 5R = 10R → 50 = 5R → R = 10Ω ✓</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> De weerstand R bedraagt <strong>10 Ω</strong></p>
+
+<p><strong>Stroomverdeling:</strong></p>
+<ul>
+<li>I<sub>totaal</sub> = 2 A (door serieweerstand)</li>
+<li>I<sub>10Ω</sub> = 1 A (door bekende weerstand)</li>
+<li>I<sub>R</sub> = 1 A (door onbekende weerstand)</li>
+</ul>
+
+<p><strong>Spanningen:</strong></p>
+<ul>
+<li>U<sub>serie</sub> = 2 V (over 1Ω)</li>
+<li>U<sub>parallel</sub> = 10 V (over beide 10Ω weerstanden)</li>
+</ul>
+
+<p><em>Circuit diagram:</em></p>
+<p><img src="media/media/image22.PNG" style="max-width:450px;" alt="Circuit with solution"></p>
+</div>
+
+</div>

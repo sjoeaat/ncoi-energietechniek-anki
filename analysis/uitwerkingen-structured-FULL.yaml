@@ -1,0 +1,82 @@
+- id: 1a
+  chapter_ref: &id001
+    chapter: 1
+    section: 9
+    page: 13
+  opgave: ''
+  opgave_images: []
+  uitwerking: 'Een serieschakeling van weerstanden betekent dat de totale weerstand
+    bij elkaar opgeteld mag worden:
+
+    **[FORMULE]:** `[FORMULA]`'
+  uitwerking_images: []
+  formulas_count: 1
+  domains:
+  - basiswetten
+  - netwerk-analyse
+  difficulty: gemiddeld
+- id: 1b
+  chapter_ref: *id001
+  opgave: ''
+  opgave_images: []
+  uitwerking: 'Parallelschakeling van 2 weerstanden:
+
+    **[FORMULE]:** `[FORMULA]`'
+  uitwerking_images: []
+  formulas_count: 1
+  domains:
+  - basiswetten
+  - netwerk-analyse
+  difficulty: gemiddeld
+- id: 1c
+  chapter_ref: *id001
+  opgave: ''
+  opgave_images: []
+  uitwerking: 'Aanpak: Eerste bovenste weerstanden in serie bij elkaar optellen: 150+300
+    = 450 Ω.
+
+    Daarna deze 450 Ω parallel aan 450 Ω, dus dat wordt de helft = 225 Ω
+
+    Of:
+
+    **[FORMULE]:** `[FORMULA]`'
+  uitwerking_images: []
+  formulas_count: 1
+  domains:
+  - basiswetten
+  - netwerk-analyse
+  difficulty: gemiddeld
+- id: 1d
+  chapter_ref: *id001
+  opgave: ''
+  opgave_images: []
+  uitwerking: '3 weerstanden parallel; dan handiger om de “geleidingsvariant” te nemen:
+
+    dit kun je gewoon uitrekenen op de rekenmachine, maar wij gaan hieronder de noemers
+    gelijkmaken:
+
+    **[FORMULE]:** `[FORMULA]`'
+  uitwerking_images: []
+  formulas_count: 1
+  domains:
+  - basiswetten
+  - netwerk-analyse
+  difficulty: gemiddeld
+- id: 1e
+  chapter_ref: *id001
+  opgave: ''
+  opgave_images: []
+  uitwerking: 'Aanpak: eerst vervangingsweerstand van 2 parallelle weerstanden bereken
+    en dan optellen bij die van 12Ω.
+
+    Dus
+
+    **[FORMULE]:** `[FORMULA]`
+
+    **[FORMULE]:** `[FORMULA]`'
+  uitwerking_images: []
+  formulas_count: 2
+  domains:
+  - basiswetten
+  - netwerk-analyse
+  difficulty: gemiddeld

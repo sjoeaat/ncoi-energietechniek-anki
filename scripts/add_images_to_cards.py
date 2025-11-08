@@ -252,30 +252,30 @@ def insert_image(content, image_file, placement_type='front', extra_image=None):
     if not image_file:
         return content
 
-    # Template voor image
+    # Template voor image - FIXED: gebruik single quotes om CSV escaping te vermijden
     if extra_image:
         # Side-by-side voor vergelijkingen (bijv. ster + driehoek)
-        img_html = f'''
-<div style="display:flex; gap:15px; justify-content:center; margin:15px 0;">
-  <div style="text-align:center;">
-    <img src="{image_file}" style="max-width:280px;">
+        img_html = f"""
+<div style='display:flex; gap:15px; justify-content:center; margin:15px 0;'>
+  <div style='text-align:center;'>
+    <img src='{image_file}' style='max-width:280px;'>
   </div>
-  <div style="text-align:center;">
-    <img src="{extra_image}" style="max-width:280px;">
+  <div style='text-align:center;'>
+    <img src='{extra_image}' style='max-width:280px;'>
   </div>
 </div>
-'''
+"""
     else:
         # Enkele image
-        img_html = f'<img src="{image_file}" style="max-width:600px;">'
+        img_html = f"<img src='{image_file}' style='max-width:600px;'>"
 
     # Placement strategie
     if placement_type == 'front':
-        # Image bovenaan (circuit eerst, dan vraag)
+        # Vraag eerst, dan image als context
         if '<img' not in content:  # Voorkom dubbele images
-            return img_html + '<br><br>' + content
+            return content + '<br><br>' + img_html
     else:  # back
-        # Image onderaan (uitleg eerst, dan diagram)
+        # Uitleg eerst, dan diagram ter verduidelijking
         if '<img' not in content:
             return content + '<br><br>' + img_html
 
