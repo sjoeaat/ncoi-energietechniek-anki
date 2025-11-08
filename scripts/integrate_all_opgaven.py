@@ -17,7 +17,7 @@ NAV_CSS = """
     position: fixed;
     top: 80px;
     right: 20px;
-    width: 300px;
+    width: 320px;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
     background: white;
@@ -26,7 +26,7 @@ NAV_CSS = """
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 1000;
-    font-size: 0.9em;
+    font-size: 0.85em;
 }
 
 .nav-sidebar h3 {
@@ -38,7 +38,7 @@ NAV_CSS = """
 }
 
 .nav-chapter {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .nav-chapter-header {
@@ -63,17 +63,17 @@ NAV_CSS = """
 }
 
 .nav-opgaven li {
-    margin: 4px 0;
+    margin: 3px 0;
 }
 
 .nav-opgaven a {
     display: block;
-    padding: 6px 10px;
+    padding: 5px 10px;
     color: #34495e;
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.2s;
-    font-size: 0.95em;
+    font-size: 0.92em;
 }
 
 .nav-opgaven a:hover {
@@ -92,7 +92,7 @@ NAV_CSS = """
 }
 
 body {
-    margin-right: 340px;
+    margin-right: 360px;
 }
 
 @media (max-width: 1400px) {
@@ -133,10 +133,10 @@ html {
 }
 """
 
-# Hiërarchische navigatie HTML (aangepast voor daadwerkelijke opgaven)
+# Hiërarchische navigatie HTML - UPDATED met alle 32 opgaven
 NAV_HTML = """
 <nav class="nav-sidebar">
-    <h3>📑 Enhanced Opgaven</h3>
+    <h3>📑 Enhanced Opgaven (32)</h3>
 
     <!-- H 1.9: Basiswetten -->
     <div class="nav-chapter">
@@ -171,7 +171,7 @@ NAV_HTML = """
         <ul class="nav-opgaven">
             <li><a href="#h55-opgave-1">1. Driehoekspanning</a></li>
             <li><a href="#h55-opgave-7-9">7-9. Vectoriële optelling</a></li>
-            <li><a href="#h55-opgave-12-13">12-13. Gemiddelde & effectieve waarde</a></li>
+            <li><a href="#h55-opgave-12-13">12-13. Gem. & eff. waarde</a></li>
         </ul>
     </div>
 
@@ -184,8 +184,50 @@ NAV_HTML = """
         </ul>
     </div>
 
+    <!-- H 7.8: RLC schakelingen -->
+    <div class="nav-chapter">
+        <div class="nav-chapter-header">H 7.8 - RLC Schakelingen (7)</div>
+        <ul class="nav-opgaven">
+            <li><a href="#h78-opgave-2">2. De Wienbrug</a></li>
+            <li><a href="#h78-opgave-3">3. L + C||R fasordiagram</a></li>
+            <li><a href="#h78-opgave-5">5. C + (C || (L+R))</a></li>
+            <li><a href="#h78-opgave-7">7. R + C||L impedantie</a></li>
+            <li><a href="#h78-opgave-8">8. Gelijke warmte (ω=1/RC)</a></li>
+            <li><a href="#h78-opgave-9">9. RC en stroombronnen</a></li>
+            <li><a href="#h78-opgave-12-13">12-13. Fasoren</a></li>
+        </ul>
+    </div>
+
+    <!-- H 9.7: Complexe netwerken -->
+    <div class="nav-chapter">
+        <div class="nav-chapter-header">H 9.7 - Complexe Netwerken (4)</div>
+        <ul class="nav-opgaven">
+            <li><a href="#h97-opgave-9">9. Spoel + R||(R+C)</a></li>
+            <li><a href="#h97-opgave-10">10. Onbekende L bepalen</a></li>
+            <li><a href="#h97-opgave-11-12">11. 3dB punt RC-filter</a></li>
+            <li><a href="#h97-opgave-11-12">12. R en L van spoel</a></li>
+        </ul>
+    </div>
+
+    <!-- H 10.6: Complex rekenen -->
+    <div class="nav-chapter">
+        <div class="nav-chapter-header">H 10.6 - Complex Rekenen (1)</div>
+        <ul class="nav-opgaven">
+            <li><a href="#h106-opgave-5">5. LC-Wienbrug</a></li>
+        </ul>
+    </div>
+
+    <!-- H 11.7: Vermogen -->
+    <div class="nav-chapter">
+        <div class="nav-chapter-header">H 11.7 - Vermogen (2)</div>
+        <ul class="nav-opgaven">
+            <li><a href="#h117-opgave-3">3. LR netwerk S/P/Q</a></li>
+            <li><a href="#h117-opgave-5">5. Compensatie C</a></li>
+        </ul>
+    </div>
+
     <div class="nav-footer">
-        <small>18 Enhanced Opgaven | 4 Hoofdstukken</small>
+        <small><strong>32 Enhanced Opgaven</strong> | 8 Hoofdstukken<br>5-Stappen Methodologie</small>
     </div>
 </nav>
 """
@@ -354,7 +396,7 @@ def create_complete_html():
     <h1>NCOI Energietechniek - Complete Enhanced Study Guide</h1>
     <p class="subtitle">Elektrische Netwerken (Holmes 3e editie)</p>
     <div class="status-banner">
-        <strong>✨ 18 FULL-Enhanced Opgaven</strong> | 5-Stappen Methodologie | Volledige Uitwerkingen
+        <strong>✨ 32 FULL-Enhanced Opgaven</strong> | 5-Stappen Methodologie | 8 Hoofdstukken
     </div>
 </header>
 
@@ -391,8 +433,29 @@ def create_complete_html():
             ('h68-opgave-1', 'h68-opgave-1', 'H 6.8 - Opgave 1'),
             ('h68-opgave-2-3', 'h68-opgave-2-3', 'H 6.8 - Opgaven 2-3'),
         ],
+        'h78': [
+            ('h78-opgave-2', 'h78-opgave-2', 'H 7.8 - Opgave 2: De Wienbrug'),
+            ('h78-opgave-3', 'h78-opgave-3', 'H 7.8 - Opgave 3: L + C||R'),
+            ('h78-opgave-5', 'h78-opgave-5', 'H 7.8 - Opgave 5: C + (C || (L+R))'),
+            ('h78-opgave-7', 'h78-opgave-7', 'H 7.8 - Opgave 7: R + C||L'),
+            ('h78-opgave-8', 'h78-opgave-8', 'H 7.8 - Opgave 8: Gelijke warmte'),
+            ('h78-opgave-9', 'h78-opgave-9', 'H 7.8 - Opgave 9: RC en stroombronnen'),
+            ('h78-opgave-12-13', 'h78-opgave-12-13', 'H 7.8 - Opgaven 12-13: Fasoren'),
+        ],
+        'h97': [
+            ('h97-opgave-9', 'h97-opgave-9', 'H 9.7 - Opgave 9: Spoel + R||(R+C)'),
+            ('h97-opgave-10', 'h97-opgave-10', 'H 9.7 - Opgave 10: Onbekende L'),
+            ('h97-opgave-11-12', 'h97-opgave-11-12', 'H 9.7 - Opgaven 11-12'),
+        ],
+        'h106': [
+            ('h106-opgave-5', 'h106-opgave-5', 'H 10.6 - Opgave 5: LC-Wienbrug'),
+        ],
+        'h117': [
+            ('h117-opgave-3-5', 'h117-opgave-3-5', 'H 11.7 - Opgaven 3 & 5'),
+        ],
     }
 
+    total_count = 0
     for chapter, opgaven in opgaven_map.items():
         html += f'\n<!-- ========== {chapter.upper()} ========== -->\n\n'
 
@@ -415,12 +478,19 @@ def create_complete_html():
 
 '''
                 print(f"✅ Added {filename}")
+                total_count += 1
             else:
                 print(f"⚠️  Warning: {filepath} not found")
 
     # Close HTML
     html += """
 </div>
+
+<footer style="text-align:center; padding: 40px 20px; color: #7f8c8d; margin-top: 60px; border-top: 2px solid #ecf0f1;">
+    <p><strong>NCOI Energietechniek - Enhanced Study Guide</strong></p>
+    <p>32 FULL-Enhanced Opgaven | Holmes 3e editie | 5-Stappen Methodologie</p>
+    <p style="margin-top:10px; font-size:0.9em;">Gegenereerd 2025-11-08</p>
+</footer>
 
 </body>
 </html>
@@ -431,8 +501,8 @@ def create_complete_html():
         f.write(html)
 
     print(f"\n✨ Successfully created {FINAL_HTML}")
-    print(f"📊 Total opgaven integrated: 18")
-    print(f"📁 File size: {len(html)} characters")
+    print(f"📊 Total opgaven integrated: {total_count}")
+    print(f"📁 File size: {len(html):,} characters ({len(html)//1024} KB)")
     print(f"\n💡 Open in browser to view the complete enhanced study guide!")
 
 if __name__ == '__main__':
