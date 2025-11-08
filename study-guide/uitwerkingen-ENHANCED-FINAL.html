@@ -212,9 +212,123 @@
             .opgave { page-break-inside: avoid; box-shadow: none; }
             .banner { display: none; }
         }
+
+        /* Navigation Sidebar */
+        .nav-sidebar {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 250px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+        }
+
+        .nav-sidebar h3 {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .nav-sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-sidebar li {
+            margin: 8px 0;
+        }
+
+        .nav-sidebar a {
+            display: block;
+            padding: 8px 12px;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.95em;
+        }
+
+        .nav-sidebar a:hover {
+            background: #e8f4f8;
+            color: #3498db;
+            transform: translateX(-3px);
+        }
+
+        .nav-sidebar a.active {
+            background: #3498db;
+            color: white;
+        }
+
+        /* Adjust main content to make room for sidebar */
+        body {
+            margin-right: 290px;
+        }
+
+        /* Hide sidebar on small screens */
+        @media (max-width: 1200px) {
+            .nav-sidebar {
+                display: none;
+            }
+            body {
+                margin-right: 60px;
+            }
+        }
+
+        @media print {
+            .nav-sidebar { display: none; }
+            body { margin-right: 0; }
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Highlight target opgave */
+        .opgave:target {
+            animation: highlight 1.5s ease;
+        }
+
+        @keyframes highlight {
+            0% { background-color: #fff3cd; }
+            100% { background-color: white; }
+        }
+
     </style>
 </head>
 <body>
+
+<nav class="nav-sidebar">
+    <h3>📑 Navigatie</h3>
+    <ul>
+        <li><a href="#opgave-1">Opgave 1</a></li>
+        <li><a href="#opgave-2">Opgave 2</a></li>
+        <li><a href="#opgave-3">Opgave 3</a></li>
+        <li><a href="#opgave-4">Opgave 4</a></li>
+        <li><a href="#opgave-5">Opgave 5</a></li>
+        <li><a href="#opgave-6">Opgave 6</a></li>
+        <li><a href="#opgave-7">Opgave 7</a></li>
+        <li><a href="#opgave-8">Opgave 8</a></li>
+        <li><a href="#opgave-9">Opgave 9</a></li>
+        <li><a href="#opgave-10">Opgave 10</a></li>
+        <li><a href="#opgave-11">Opgave 11 <span class="enhanced-badge">NIEUW</span></a></li>
+        <li><a href="#opgave-12">Opgave 12 <span class="enhanced-badge">NIEUW</span></a></li>
+        <li><a href="#opgave-13">Opgave 13 <span class="enhanced-badge">NIEUW</span></a></li>
+        <li><a href="#opgave-14">Opgave 14 <span class="enhanced-badge">NIEUW</span></a></li>
+        <li><a href="#opgave-15">Opgave 15 <span class="enhanced-badge">NIEUW</span></a></li>
+        <li><a href="#opgave-16">Opgave 16 <span class="enhanced-badge">NIEUW</span></a></li>
+    </ul>
+</nav>
+
 
 <header>
     <h1>Uitwerkingen Opgaven Energietechniek</h1>
@@ -227,9 +341,9 @@
 <div class="banner">
     <h3>✨ Enhanced Professional Edition</h3>
     <p style="margin-top: 8px; font-size: 1.05em;">
-        <strong>Opgaven 1-10:</strong> Fully enhanced met 5-stappen methodologie, Holmes §X.Y referenties, Formuleblad citaties,
+        <strong>Opgaven 1-16:</strong> Fully enhanced met 5-stappen methodologie, Holmes §X.Y referenties, Formuleblad citaties,
         dimensionale analyse, en fysische interpretatie<br>
-        <strong>Overige opgaven (11+):</strong> Complete originele uitwerkingen met alle formules en circuit diagrams
+        <strong>Alle 16 opgaven:</strong> Volledig uitgewerkt met 5-stappen methodologie met alle formules en circuit diagrams
     </p>
     <p style="margin-top: 10px; font-size: 0.95em; opacity: 0.9;">
         10 professionele opgaven dekken: Ohm, Kirchhoff, Thévenin/Norton, Superpositie, Inductantie, Spanningsdeling,
@@ -6393,6 +6507,1701 @@ href="https://de.wikipedia.org/wiki/Steinmetzschaltung">https://de.wikipedia.org
 <p>Φ</p>
 <p>≈</p>
 <p>μ</p>
+
+
+
+<!-- ========== NEWLY ADDED ENHANCED OPGAVEN 11-16 ========== -->
+
+
+<div class="opgave" id="opgave-11">
+<div class="opgave-header">Opgave 11</div>
+<div class="chapter-ref">H 1.9 blz. 13 (Holmes - Elektrische Netwerken)</div>
+
+<!-- OPGAVE 11 - ENHANCED VERSION (Kirchhoff stroomverdeling - parallel weerstanden) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de weerstand R<sub>b</sub> gelijk aan:</p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mrow><mo>−</mo><mi>I</mi></mrow><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">I_{b} = {- I}_{2} \bullet R_{d}/R_{b}</annotation></semantics></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mrow><mo>−</mo><mi>I</mi></mrow><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>b</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">I_{b} = {- I}_{2} \bullet R_{b}/{(R}_{b} + R_{d})</annotation></semantics></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mrow><mo>−</mo><mi>I</mi></mrow><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">I_{b} = {- I}_{2} \bullet R_{d}/{(R}_{b} + R_{d})</annotation></semantics></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mi>I</mi><mi>c</mi></msub><mo>·</mo><msub><mi>R</mi><mi>b</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">I_{b} = I_{c} \bullet R_{b}/{(R}_{b} + R_{c})</annotation></semantics></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag test begrip van <strong>stroomverdeling in parallelgeschakelde weerstanden</strong> en de <strong>wet van Kirchhoff voor knooppunten</strong> (KCL).</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Symbool</th>
+  <th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Stroom van buitenaf</td>
+  <td><math><msub><mi>I</mi><mn>2</mn></msub></math></td>
+  <td>Stroomt naar knooppunt A</td>
+</tr>
+<tr>
+  <td>Weerstand b</td>
+  <td><math><msub><mi>R</mi><mi>b</mi></msub></math></td>
+  <td>Parallel met R<sub>d</sub></td>
+</tr>
+<tr>
+  <td>Weerstand d</td>
+  <td><math><msub><mi>R</mi><mi>d</mi></msub></math></td>
+  <td>Parallel met R<sub>b</sub></td>
+</tr>
+<tr>
+  <td>Gezochte stroom</td>
+  <td><math><msub><mi>I</mi><mi>b</mi></msub></math></td>
+  <td>Stroom door R<sub>b</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong></p>
+<ul>
+<li><strong>Kirchhoff Knooppuntwet (KCL):</strong> De som van alle stromen naar een knooppunt is nul: <math><mo>Σ</mo><mi>I</mi><mo>=</mo><mn>0</mn></math> (Holmes §1.8)</li>
+<li><strong>Wet van Ohm:</strong> Voor weerstanden geldt <math><mi>U</mi><mo>=</mo><mi>I</mi><mo>·</mo><mi>R</mi></math></li>
+<li><strong>Stroomdeling:</strong> Bij parallelschakeling verdelen stromen zich omgekeerd evenredig met de weerstandswaarden (lagere weerstand → hogere stroom)</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Pas Kirchhoff Knooppuntwet toe op knooppunt A</div>
+
+<p>Bij knooppunt A komen/gaan drie stromen:</p>
+<ul>
+<li><math><msub><mi>I</mi><mn>2</mn></msub></math>: stroomt <strong>naar</strong> knooppunt A (positief)</li>
+<li><math><msub><mi>I</mi><mi>b</mi></msub></math>: stroomt <strong>van</strong> knooppunt A weg (negatief)</li>
+<li><math><msub><mi>I</mi><mi>d</mi></msub></math>: stroomt <strong>van</strong> knooppunt A weg (negatief)</li>
+</ul>
+
+<p>De <strong>Kirchhoff knooppuntwet</strong> geeft:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fysische betekenis:</strong> Alle stroom die binnenkomt moet ook weer weggaan. De stroom I₂ splitst zich over de twee paralleltakken R<sub>b</sub> en R<sub>d</sub>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Gebruik wet van Ohm voor gelijke spanningen</div>
+
+<p>Omdat R<sub>b</sub> en R<sub>d</sub> <strong>parallel</strong> staan, geldt dat de spanning over beide weerstanden <strong>gelijk</strong> is:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Volgens de <strong>wet van Ohm</strong> kan dit geschreven worden als:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Los op naar <math><msub><mi>I</mi><mi>d</mi></msub></math>:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>I</mi><mi>b</mi></msub>
+        <mo>·</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Combineer vergelijkingen en los op naar I<sub>b</sub></div>
+
+<p>Substitueer de uitdrukking voor <math><msub><mi>I</mi><mi>d</mi></msub></math> in de Kirchhoff vergelijking:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>+</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>I</mi><mi>b</mi></msub>
+        <mo>·</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (factoriseer I<sub>b</sub>)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mi>d</mi></msub>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>+</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>I</mi><mi>b</mi></msub>
+        <mo>·</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (combineer breuken)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>·</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>R</mi><mi>d</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (isoleer I<sub>b</sub>)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>·</mo>
+    <mfrac>
+      <mrow>
+        <msub><mi>R</mi><mi>d</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+      <msub><mi>R</mi><mi>d</mi></msub>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (vermenigvuldig met omgekeerde breuk)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mi>d</mi></msub>
+      <mrow>
+        <msub><mi>R</mi><mi>d</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>b</mi></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Of geschreven als:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>d</mi></msub>
+    <mi>/</mi>
+    <mo>(</mo>
+    <msub><mi>R</mi><mi>b</mi></msub>
+    <mo>+</mo>
+    <msub><mi>R</mi><mi>d</mi></msub>
+    <mo>)</mo>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>c</strong>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo>
+    <mi>A</mi>
+    <mo>]</mo>
+    <mo>·</mo>
+    <mfrac>
+      <mo>[</mo><mi>Ω</mi><mo>]</mo>
+      <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo>
+    <mi>A</mi>
+    <mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Analyse van de andere antwoorden:</strong></p>
+<ul>
+<li><strong>Antwoord a:</strong> <math><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub></math> — Fout: dimensie klopt niet (geeft [A]·[Ω]/[Ω] maar zonder juiste verhouding)</li>
+<li><strong>Antwoord b:</strong> Fout: R<sub>b</sub> in teller i.p.v. R<sub>d</sub></li>
+<li><strong>Antwoord d:</strong> Fout: gebruikt I<sub>c</sub> en R<sub>c</sub> die niet relevant zijn voor deze tak</li>
+</ul>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Stroomdeling in parallelschakeling:</strong></p>
+
+<p>De formule <math><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo></math> is de <strong>stroomdelingsformule</strong>.</p>
+
+<p><strong>Belangrijke observaties:</strong></p>
+<ul>
+<li>Het <strong>minteken</strong> geeft aan dat I<sub>b</sub> de tegengestelde richting heeft t.o.v. I₂ (I₂ komt binnen, I<sub>b</sub> gaat weg)</li>
+<li><strong>Omgekeerde evenredigheid:</strong> De stroom door R<sub>b</sub> is evenredig met de <strong>andere</strong> weerstand (R<sub>d</sub>), niet met zijn eigen weerstand</li>
+<li>Als R<sub>d</sub> = 0Ω (kortsluiting): I<sub>b</sub> = 0A (alle stroom gaat door de kortsluiting)</li>
+<li>Als R<sub>d</sub> → ∞ (open keten): I<sub>b</sub> → −I₂ (alle stroom gaat door R<sub>b</sub>)</li>
+</ul>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel I₂ = 6A, R<sub>b</sub> = 2Ω, R<sub>d</sub> = 4Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>6</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>4</mn>
+      <mrow><mn>2</mn><mo>+</mo><mn>4</mn></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>6</mn>
+    <mo>·</mo>
+    <mfrac>
+      <mn>4</mn>
+      <mn>6</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>4</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>En:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>6</mn>
+    <mo>−</mo>
+    <mo>(</mo>
+    <mo>−</mo>
+    <mn>4</mn>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>2</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Controle: De lagere weerstand (R<sub>b</sub> = 2Ω) krijgt de <strong>hogere</strong> stroom (4A vs 2A). Ratio: 4A/2A = 2, wat overeenkomt met omgekeerde weerstandsverhouding 4Ω/2Ω = 2 ✓</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> c</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo></mrow></math></p>
+
+<p><em>Stroomdelingsformule voor parallelweerstanden met Kirchhoff knooppuntwet.</em></p>
+</div>
+
+</div>
+
+
+</div>
+
+<div class="opgave" id="opgave-12">
+<div class="opgave-header">Opgave 12</div>
+<div class="chapter-ref">H 1.9 blz. 13 (Holmes - Elektrische Netwerken)</div>
+
+<!-- OPGAVE 12 - ENHANCED VERSION (Kirchhoff - Stroom door weerstand met directe spanningsbron) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de weerstand R<sub>c</sub> gelijk aan:</p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">I_{c} = U_{1}/R_{c}</annotation></semantics></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">I_{c} = (U_{1}/R_{c}) + I_{1} + I_{3}</annotation></semantics></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">I_{c} = I_{2} + I_{b} + I_{d} + I_{1} + I_{3}</annotation></semantics></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">I_{c} = (U_{1}/R_{c}) + I_{2} + I_{b} + I_{d} + I_{1} + I_{3}</annotation></semantics></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag test het begrip van <strong>directe toepassing van de wet van Ohm</strong> en het herkennen van <strong>welke elementen relevant</strong> zijn voor een specifieke tak in een complex netwerk.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Symbool</th>
+  <th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron</td>
+  <td><math><msub><mi>U</mi><mn>1</mn></msub></math></td>
+  <td>Direct parallel aan R<sub>c</sub></td>
+</tr>
+<tr>
+  <td>Weerstand c</td>
+  <td><math><msub><mi>R</mi><mi>c</mi></msub></math></td>
+  <td>Gezochte tak</td>
+</tr>
+<tr>
+  <td>Andere stromen</td>
+  <td><math><msub><mi>I</mi><mn>1</mn></msub></math>, <math><msub><mi>I</mi><mn>2</mn></msub></math>, <math><msub><mi>I</mi><mn>3</mn></msub></math>, etc.</td>
+  <td>Stromen in andere takken van het netwerk</td>
+</tr>
+<tr>
+  <td>Gezochte stroom</td>
+  <td><math><msub><mi>I</mi><mi>c</mi></msub></math></td>
+  <td>Stroom door R<sub>c</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong></p>
+<ul>
+<li><strong>Wet van Ohm:</strong> De stroom door een weerstand is <math><mi>I</mi><mo>=</mo><mi>U</mi><mi>/</mi><mi>R</mi></math> (Holmes §1.8)</li>
+<li><strong>Superponerende principe:</strong> Stromen in verschillende takken beïnvloeden elkaar NIET als de spanning over een weerstand direct door een spanningsbron wordt bepaald</li>
+<li><strong>Onafhankelijkheid:</strong> Als een weerstand direct parallel staat aan een ideale spanningsbron, hangt de stroom door die weerstand ALLEEN af van de spanning en de weerstandswaarde</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Identificeer de spanning over R<sub>c</sub></div>
+
+<p>De cruciale observatie is dat weerstand R<sub>c</sub> <strong>direct parallel</strong> staat aan spanningsbron U₁.</p>
+
+<p><strong>Wat betekent "direct parallel"?</strong></p>
+<ul>
+<li>De <strong>bovenkant</strong> van R<sub>c</sub> is verbonden met de <strong>positieve pool</strong> van U₁</li>
+<li>De <strong>onderkant</strong> van R<sub>c</sub> is verbonden met de <strong>negatieve pool</strong> van U₁</li>
+<li>Er zijn <strong>geen andere componenten</strong> tussen R<sub>c</sub> en U₁</li>
+</ul>
+
+<p>Dit betekent dat de spanning over R<sub>c</sub> <strong>exact gelijk</strong> is aan U₁:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><msub><mi>R</mi><mi>c</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Fysische betekenis:</strong> Een ideale spanningsbron "dwingt" de spanning over parallelle componenten af, onafhankelijk van wat er in de rest van het netwerk gebeurt.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Pas de wet van Ohm toe</div>
+
+<p>Nu we weten dat de spanning over R<sub>c</sub> gelijk is aan U₁, kunnen we direct de <strong>wet van Ohm</strong> toepassen:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><msub><mi>R</mi><mi>c</mi></msub></msub>
+      <msub><mi>R</mi><mi>c</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer U<sub>Rc</sub> = U₁)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mn>1</mn></msub>
+      <msub><mi>R</mi><mi>c</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Of in de notatie van de vraag:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mi>/</mi>
+    <msub><mi>R</mi><mi>c</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Belangrijke conclusie:</strong> De stroom I<sub>c</sub> hangt <strong>NIET</strong> af van de stromen I₁, I₂, I₃, I<sub>b</sub> of I<sub>d</sub> in andere takken!</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Verifieer waarom andere antwoorden fout zijn</div>
+
+<p>Laten we analyseren waarom de andere antwoorden <strong>niet</strong> kloppen:</p>
+
+<p><strong>Antwoord b:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></math></p>
+<ul>
+<li>Fout: suggereert dat I₁ en I₃ <em>extra</em> door R<sub>c</sub> vloeien</li>
+<li>Dit zou alleen kloppen als I₁ en I₃ van buitenaf in de R<sub>c</sub>-tak worden geïnjecteerd, wat hier niet het geval is</li>
+</ul>
+
+<p><strong>Antwoord c:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></math></p>
+<ul>
+<li>Fout: negeert de wet van Ohm volledig</li>
+<li>Suggereert dat I<sub>c</sub> de som is van alle andere stromen, wat alleen zou kloppen bij een specifieke knooppuntconfiguratie</li>
+<li>De spanning U₁ en weerstand R<sub>c</sub> komen niet voor in de formule!</li>
+</ul>
+
+<p><strong>Antwoord d:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>I</mi><mn>1</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></math></p>
+<ul>
+<li>Fout: combineert de juiste Ohm-term met onnodige stroomtermen</li>
+<li>Zou alleen kloppen als alle genoemde stromen samenvoegen EN door R<sub>c</sub> stromen</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mo>[</mo><mi>V</mi><mo>]</mo>
+      <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo>
+    <mi>A</mi>
+    <mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Realiteitscheck met voorbeeld:</strong></p>
+<p>Stel U₁ = 12V en R<sub>c</sub> = 4Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>12</mn><mtext> V</mtext></mrow>
+      <mrow><mn>4</mn><mtext> Ω</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>3</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Deze stroom is <strong>onafhankelijk</strong> van wat er in de rest van het netwerk gebeurt. Zelfs als I₁ = 100A of I₂ = 0A, blijft I<sub>c</sub> altijd 3A zolang U₁ = 12V en R<sub>c</sub> = 4Ω.</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Het principe van spanningsbron-dominantie:</strong></p>
+
+<p>Deze opgave illustreert een fundamenteel principe in elektrische netwerken:</p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Een ideale spanningsbron dwingt de spanning over parallelle componenten af, ongeacht de stromen in andere delen van het netwerk."
+</blockquote>
+
+<p><strong>Praktische implicaties:</strong></p>
+<ul>
+<li><strong>Onafhankelijkheid:</strong> Wijzigingen in andere takken (bijv. I₁ verandert) hebben <strong>geen</strong> effect op I<sub>c</sub></li>
+<li><strong>Voorspelbaarheid:</strong> De stroom door R<sub>c</sub> is eenvoudig te berekenen zonder het hele netwerk te analyseren</li>
+<li><strong>Ontwerp:</strong> Als je een constante stroom door een component wilt, sluit deze dan direct parallel aan een vaste spanningsbron</li>
+</ul>
+
+<p><strong>Wat gebeurt er wel met de spanningsbron?</strong></p>
+<p>De <strong>totale stroom</strong> die de spanningsbron U₁ levert is de <strong>som</strong> van alle parallelle takken:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><msub><mi>U</mi><mn>1</mn></msub></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mtext>andere parallel takken</mtext></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Maar elke <strong>individuele</strong> paralleltak hangt alleen af van U₁ en zijn eigen weerstand.</p>
+
+<p><strong>Vergelijk met reële spanningsbron:</strong></p>
+<p>Bij een <strong>reële</strong> spanningsbron (met inwendige weerstand R<sub>i</sub>) zou de spanning over R<sub>c</sub> wél afhangen van de totale stroom, omdat:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><msub><mi>R</mi><mi>c</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>totaal</mi></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>i</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Maar voor een <strong>ideale</strong> bron (R<sub>i</sub> = 0Ω) geldt deze simplificatie niet!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> a</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>c</mi></msub></mrow></math></p>
+
+<p><em>Directe toepassing van de wet van Ohm voor een weerstand die parallel staat aan een spanningsbron.</em></p>
+</div>
+
+</div>
+
+
+</div>
+
+<div class="opgave" id="opgave-13">
+<div class="opgave-header">Opgave 13</div>
+<div class="chapter-ref">H 1.9 blz. 13 (Holmes - Elektrische Netwerken)</div>
+
+<!-- OPGAVE 13 - ENHANCED VERSION (Kirchhoff knooppuntwet - directe toepassing) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de weerstand R<sub>d</sub> gelijk aan:</p>
+
+<p><img src="media/media/image25.PNG" style="max-width:700px;" alt="Opgave 13-16 network diagram"></p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub><mo>=</mo><msub><mi>I</mi><mn>2</mn></msub><mo>·</mo><mo>[</mo><msub><mi>R</mi><mi>b</mi></msub><mo>·</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo><mo>]</mo></mrow></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub><mo>=</mo><msub><mi>I</mi><mn>2</mn></msub><mo>·</mo><mo>[</mo><msub><mi>R</mi><mi>b</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo><mo>]</mo></mrow></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub><mo>=</mo><msub><mi>I</mi><mn>2</mn></msub><mo>·</mo><mo>[</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>b</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo><mo>]</mo></mrow></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>b</mi></msub></mrow></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de gegeven informatie</div>
+
+<p>Deze vraag test de <strong>directe toepassing van de Kirchhoff knooppuntwet</strong> zonder verdere vereenvoudiging.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Knooppunt A</td>
+  <td>Waar I₂, I<sub>b</sub> en I<sub>d</sub> samenkomen</td>
+</tr>
+<tr>
+  <td>I₂</td>
+  <td>Stroom van buitenaf naar knooppunt A</td>
+</tr>
+<tr>
+  <td>I<sub>b</sub></td>
+  <td>Stroom door R<sub>b</sub> (van A weg)</td>
+</tr>
+<tr>
+  <td>I<sub>d</sub></td>
+  <td>Gezochte stroom door R<sub>d</sub> (van A weg)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> Kirchhoff knooppuntwet (KCL): <math><mo>Σ</mo><mi>I</mi><mo>=</mo><mn>0</mn></math> voor alle stromen naar/van een knooppunt (Holmes §1.8).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Pas Kirchhoff knooppuntwet toe op knooppunt A</div>
+
+<p>Bij knooppunt A gelden de volgende stroomrichtingen:</p>
+<ul>
+<li>I₂ stroomt <strong>naar</strong> knooppunt A → <strong>positief</strong></li>
+<li>I<sub>b</sub> stroomt <strong>weg van</strong> knooppunt A → <strong>negatief</strong></li>
+<li>I<sub>d</sub> stroomt <strong>weg van</strong> knooppunt A → <strong>negatief</strong></li>
+</ul>
+
+<p>De Kirchhoff knooppuntwet geeft:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Waarbij I<sub>b</sub> en I<sub>d</sub> negatief zijn omdat ze van het knooppunt weg stromen.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Los op naar I<sub>d</sub></div>
+
+<p>Isoleer I<sub>d</sub> in de vergelijking:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>d</strong>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Verificatie - waarom andere antwoorden fout zijn</div>
+
+<p><strong>Antwoord a, b en c:</strong> Deze gebruiken <strong>stroomdelingsformules</strong>, wat suggereert dat je eerst de parallelle weerstandscombinatie moet berekenen.</p>
+
+<p>Maar de vraag vraagt <strong>directe relatie</strong> tussen I<sub>d</sub>, I₂ en I<sub>b</sub> via Kirchhoff, NIET via stroomdeling.</p>
+
+<p>Als je wél stroomdeling zou gebruiken (opgave 11 stijl), zou je eerst I<sub>b</sub> moeten uitdrukken in termen van I₂ en R<sub>b</sub>/R<sub>d</sub>, en dan I<sub>d</sub> berekenen. Dat is NIET wat deze vraag vraagt.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>I</mi><mi>d</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>−</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel I₂ = 6A stroomt naar knooppunt A, en I<sub>b</sub> = -4A (weggaand):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>6</mn>
+    <mo>−</mo>
+    <mo>(</mo>
+    <mo>−</mo>
+    <mn>4</mn>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>6</mn>
+    <mo>+</mo>
+    <mn>4</mn>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>2</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Controle: 6A komt binnen, 4A + 2A = 6A gaat weg → balans klopt ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Kirchhoff als stroombalans:</strong></p>
+
+<p>De vergelijking <math><msub><mi>I</mi><mi>d</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>b</mi></msub></math> zegt fysisch:</p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"De stroom door R<sub>d</sub> (weggaand van A) is gelijk aan de netto stroom die NIET door R<sub>b</sub> gaat, nadat I₂ is binnengekomen."
+</blockquote>
+
+<p><strong>Alternatieve interpretatie:</strong></p>
+<p>Herschrijf de vergelijking als:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Dit zegt: "De totale binnenkomende stroom I₂ splitst zich in twee uitgaande stromen: I<sub>b</sub> en I<sub>d</sub>".</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> d</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>b</mi></msub></mrow></math></p>
+
+<p><em>Directe toepassing van Kirchhoff knooppuntwet op knooppunt A.</em></p>
+</div>
+
+</div>
+
+
+</div>
+
+<div class="opgave" id="opgave-14">
+<div class="opgave-header">Opgave 14</div>
+<div class="chapter-ref">H 1.9 blz. 13 (Holmes - Elektrische Netwerken)</div>
+
+<!-- OPGAVE 14 - ENHANCED VERSION (Spanning over weerstand met stroombron) -->
+
+<div class="question">
+<p>In dit netwerk is de spanning over de weerstand R<sub>a</sub> gelijk aan:</p>
+
+<p><img src="media/media/image25.PNG" style="max-width:700px;" alt="Opgave 14 network diagram"></p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><msub><mi>I</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub></mrow></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub></mrow></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>)</mo><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub><mo>+</mo><msub><mi>U</mi><mn>1</mn></msub></mrow></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>)</mo><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub><mo>+</mo><msub><mi>U</mi><mn>1</mn></msub></mrow></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag test het begrip van <strong>ideale stroombronnen</strong> en hun effect op stromen door serieschakelingen.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Stroombron I₁</td>
+  <td>Dwingt stroom I₁ af door de serieketen</td>
+</tr>
+<tr>
+  <td>Weerstand R<sub>a</sub></td>
+  <td>In serie met stroombron I₁</td>
+</tr>
+<tr>
+  <td>Gezochte spanning</td>
+  <td>U<sub>a</sub> over R<sub>a</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong></p>
+<ul>
+<li><strong>Ideale stroombron:</strong> Dwingt een constante stroom af, ongeacht de spanning (Holmes §1.8)</li>
+<li><strong>Serie-eigenschap:</strong> In een serieketen is de stroom door alle componenten gelijk</li>
+<li><strong>Wet van Ohm:</strong> U = I · R</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal de stroom door R<sub>a</sub></div>
+
+<p>R<sub>a</sub> staat <strong>in serie</strong> met stroombron I₁. Een ideale stroombron dwingt zijn stroom af door <strong>alle</strong> componenten in serie met de bron.</p>
+
+<p><strong>Belangrijke eigenschap van stroombronnen:</strong></p>
+<blockquote style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"Een ideale stroombron in serie met een weerstand dwingt de stroom door die weerstand af, onafhankelijk van de rest van het netwerk."
+</blockquote>
+
+<p>Dus de stroom door R<sub>a</sub> is:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><msub><mi>R</mi><mi>a</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+  </mrow>
+</math>
+</div>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Pas de wet van Ohm toe</div>
+
+<p>Nu we weten dat de stroom door R<sub>a</sub> gelijk is aan I₁, kunnen we de <strong>wet van Ohm</strong> toepassen:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>a</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><msub><mi>R</mi><mi>a</mi></msub></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>a</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer I<sub>Ra</sub> = I₁)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>a</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>·</mo>
+    <msub><mi>R</mi><mi>a</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>a</strong>.</p>
+
+<p><strong>Waarom hangt U<sub>a</sub> NIET af van I₂, I₃, of U₁?</strong></p>
+<p>Omdat de stroombron I₁ de stroom door R<sub>a</sub> volledig bepaalt, ongeacht wat er elders in het netwerk gebeurt. I₂, I₃ en U₁ beïnvloeden wel de <strong>spanning over de stroombron</strong> zelf, maar NIET de spanning over R<sub>a</sub>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Verificatie - waarom andere antwoorden fout zijn</div>
+
+<p><strong>Antwoord b:</strong> <math><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub></math></p>
+<ul>
+<li>Fout: Het minteken zou alleen kloppen als de spanningsreferentie omgekeerd is</li>
+<li>Meestal wordt de spanning gedefinieerd in de richting van de stroom (positief waar stroom binnenkomt)</li>
+</ul>
+
+<p><strong>Antwoord c & d:</strong> Bevatten U₁ en (I₁ - I₂) termen</p>
+<ul>
+<li>Fout: Suggereren dat de spanning over R<sub>a</sub> afhangt van andere netwerkgrootheid</li>
+<li>Dit zou alleen kloppen als R<sub>a</sub> NIET in serie met een ideale stroombron staat</li>
+<li>De term (I₁ - I₂) zou alleen relevant zijn als er een knooppunt tussen I₁ en R<sub>a</sub> is waar I₂ vertakt - wat hier niet het geval is</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>U</mi><mi>a</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>·</mo>
+    <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>V</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel I₁ = 5A en R<sub>a</sub> = 10Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><mi>a</mi></msub>
+    <mo>=</mo>
+    <mn>5</mn>
+    <mo>·</mo>
+    <mn>10</mn>
+    <mo>=</mo>
+    <mn>50</mn>
+    <mtext> V</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Deze spanning is constant, zelfs als andere stromen in het netwerk veranderen!</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Het principe van stroombron-dominantie:</strong></p>
+
+<p>Net zoals een <em>spanningsbron</em> de spanning over parallelle componenten afdwingt, dwingt een <em>stroombron</em> de stroom door seriecomponenten af:</p>
+
+<table style="width:100%; margin: 15px 0;">
+<thead>
+<tr>
+  <th>Type bron</th>
+  <th>Dwingt af</th>
+  <th>Voor configuratie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron</td>
+  <td>Spanning</td>
+  <td>Parallel componenten</td>
+</tr>
+<tr>
+  <td>Stroombron</td>
+  <td>Stroom</td>
+  <td>Serie componenten</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Praktische toepassing:</strong></p>
+<p>Stroombronnen worden gebruikt in:</p>
+<ul>
+<li><strong>LED-drivers:</strong> Constante stroom door LED ongeacht spanningsval</li>
+<li><strong>Batterij-laders:</strong> Gecontroleerde laadstroom</li>
+<li><strong>Meetinstrumenten:</strong> Stabiele stroomreferenties</li>
+</ul>
+
+<p><strong>Verschil met reële stroombron:</strong></p>
+<p>Een <strong>reële</strong> stroombron heeft een parallelle weerstand R<sub>i</sub> (uitgangsimpedantie). Dan hangt de stroom door R<sub>a</sub> wél af van de spanning over de bron:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><msub><mi>R</mi><mi>a</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>·</mo>
+    <mfrac>
+      <msub><mi>R</mi><mi>i</mi></msub>
+      <mrow>
+        <msub><mi>R</mi><mi>i</mi></msub>
+        <mo>+</mo>
+        <msub><mi>R</mi><mi>a</mi></msub>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Maar voor een <strong>ideale</strong> bron (R<sub>i</sub> → ∞) geldt: I<sub>Ra</sub> = I₁ exact!</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> a</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>a</mi></msub><mo>=</mo><msub><mi>I</mi><mn>1</mn></msub><mo>·</mo><msub><mi>R</mi><mi>a</mi></msub></mrow></math></p>
+
+<p><em>Een ideale stroombron in serie met een weerstand dwingt de stroom (en daarmee de spanning) over die weerstand af.</em></p>
+</div>
+
+</div>
+
+
+</div>
+
+<div class="opgave" id="opgave-15">
+<div class="opgave-header">Opgave 15</div>
+<div class="chapter-ref">H 1.9 blz. 13 (Holmes - Elektrische Netwerken)</div>
+
+<!-- OPGAVE 15 - ENHANCED VERSION (Stroom door weerstand parallel aan spanningsbron) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de weerstand R<sub>b</sub> gelijk aan:</p>
+
+<p><img src="media/media/image25.PNG" style="max-width:700px;" alt="Opgave 15 network diagram"></p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub></mrow></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub></mrow></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></mrow></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub></mrow></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag combineert twee principes: <strong>ideale spanningsbronnen</strong> en <strong>onafhankelijkheid van paralleltakken</strong>.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron U₁</td>
+  <td>Ideale spanningsbron</td>
+</tr>
+<tr>
+  <td>Weerstand R<sub>b</sub></td>
+  <td>Direct parallel aan U₁</td>
+</tr>
+<tr>
+  <td>Stroombronnen I₂, I₃</td>
+  <td>Andere takken in het netwerk</td>
+</tr>
+<tr>
+  <td>Gezochte stroom</td>
+  <td>I<sub>b</sub> door R<sub>b</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong></p>
+<ul>
+<li><strong>Ideale spanningsbron:</strong> Dwingt spanning af over parallelle componenten</li>
+<li><strong>Wet van Ohm:</strong> I = U/R</li>
+<li><strong>Onafhankelijkheid:</strong> Stroom door één paralleltak hangt NIET af van stromen in andere paralleltakken</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal de spanning over R<sub>b</sub></div>
+
+<p>R<sub>b</sub> staat <strong>direct parallel</strong> aan de ideale spanningsbron U₁. Dit betekent:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><msub><mi>R</mi><mi>b</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Waarom?</strong> Een ideale spanningsbron "dwingt" zijn spanning af over alle parallelle componenten, onafhankelijk van de stromen die door die componenten vloeien.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Pas de wet van Ohm toe</div>
+
+<p>Nu we de spanning over R<sub>b</sub> kennen, gebruiken we de <strong>wet van Ohm</strong>:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><msub><mi>R</mi><mi>b</mi></msub></msub>
+      <msub><mi>R</mi><mi>b</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer U<sub>Rb</sub> = U₁)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mn>1</mn></msub>
+      <msub><mi>R</mi><mi>b</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Of in de notatie van de vraag:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mi>/</mi>
+    <msub><mi>R</mi><mi>b</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>a</strong>.</p>
+
+<p><strong>Belangrijke observatie:</strong> I<sub>b</sub> hangt <strong>NIET</strong> af van I₂, I₃, I<sub>c</sub> of I<sub>d</sub>!</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Verificatie - waarom andere antwoorden fout zijn</div>
+
+<p><strong>Antwoord b, c en d:</strong> Voegen stromen I₂, I₃, I<sub>c</sub>, I<sub>d</sub> toe aan (U₁/R<sub>b</sub>)</p>
+
+<p>Dit zou alleen kloppen als deze stromen <strong>samenvoegen</strong> met de stroom door R<sub>b</sub> VOORDAT ze door R<sub>b</sub> stromen. Bijvoorbeeld:</p>
+
+<ul>
+<li>Als er een knooppunt is waar I₂ en (U₁/R<sub>b</sub>) samenkomen, en de totale stroom door R<sub>b</sub> stroomt</li>
+<li>Maar in een <strong>parallelschakeling</strong> stromen de takken <strong>onafhankelijk</strong></li>
+</ul>
+
+<p><strong>Misconceptie:</strong> Veel studenten denken dat stromen in een netwerk "optellen". Maar stromen tellen alleen op in <strong>knooppunten</strong>, niet binnen <strong>takken</strong>.</p>
+
+<p>De stroommen I₂, I₃, etc. kunnen wél de <strong>totale stroom uit de spanningsbron</strong> beïnvloeden, maar NIET de stroom door R<sub>b</sub> individueel.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>I</mi><mi>b</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mo>[</mo><mi>V</mi><mo>]</mo>
+      <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel U₁ = 12V, R<sub>b</sub> = 6Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>12</mn><mtext> V</mtext></mrow>
+      <mrow><mn>6</mn><mtext> Ω</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Deze 2A blijft constant, zelfs als I₂ = 0A of I₂ = 100A!</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Superpositie methode (alternatieve aanpak):</strong></p>
+
+<p>Je kunt dit probleem ook oplossen met het <strong>superpositieprincipe</strong>:</p>
+
+<ol>
+<li><strong>Stap 1:</strong> Zet alle <strong>stroombronnen op nul</strong> (open circuit)</li>
+<li><strong>Stap 2:</strong> Bereken de stroom door R<sub>b</sub> alleen vanwege U₁</li>
+<li><strong>Stap 3:</strong> Zet U₁ op nul (kortsluiting) en bereken de bijdrage van elke stroombron</li>
+<li><strong>Stap 4:</strong> Tel alle bijdragen op</li>
+</ol>
+
+<p><strong>Resultaat:</strong></p>
+<ul>
+<li>Bijdrage van U₁: I<sub>b,U1</sub> = U₁/R<sub>b</sub></li>
+<li>Bijdrage van I₂ (met U₁ kort): I<sub>b,I2</sub> = 0 (want stroom gaat door de kortsluiting!)</li>
+<li>Bijdrage van I₃ (met U₁ kort): I<sub>b,I3</sub> = 0 (zelfde reden)</li>
+</ul>
+
+<p>Totaal:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mrow><mi>b</mi><mo>,</mo><mi>U</mi><mn>1</mn></mrow></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mrow><mi>b</mi><mo>,</mo><mi>I</mi><mn>2</mn></mrow></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mrow><mi>b</mi><mo>,</mo><mi>I</mi><mn>3</mn></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mi>/</mi>
+    <msub><mi>R</mi><mi>b</mi></msub>
+    <mo>+</mo>
+    <mn>0</mn>
+    <mo>+</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Dit bevestigt ons antwoord!</p>
+
+<p><strong>Waarom geven stroombronnen geen bijdrage?</strong></p>
+<p>Als je U₁ kortsluit, biedt die kortsluiting een pad met <strong>nul weerstand</strong>. Alle stroom van stroombronnen kiest dit pad (laagste weerstand), dus R<sub>b</sub> krijgt geen stroom van de stroombronnen.</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> a</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub></mrow></math></p>
+
+<p><em>Een weerstand direct parallel aan een ideale spanningsbron heeft een stroom die alleen afhangt van de spanning en weerstandswaarde.</em></p>
+</div>
+
+</div>
+
+
+</div>
+
+<div class="opgave" id="opgave-16">
+<div class="opgave-header">Opgave 16</div>
+<div class="chapter-ref">H 1.9 blz. 13 (Holmes - Elektrische Netwerken)</div>
+
+<!-- OPGAVE 16 - ENHANCED VERSION (Kirchhoff knooppunt B - complexe stroombalans) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de weerstand R<sub>c</sub> gelijk aan:</p>
+
+<p><img src="media/media/image25.PNG" style="max-width:700px;" alt="Opgave 16 network diagram"></p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>−</mo><msub><mi>I</mi><mn>3</mn></msub><mo>)</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>[</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>−</mo><msub><mi>I</mi><mn>3</mn></msub><mo>)</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo><mo>]</mo><mo>·</mo><mo>[</mo><msub><mi>R</mi><mi>d</mi></msub><mi>/</mi><mo>(</mo><msub><mi>R</mi><mi>c</mi></msub><mo>+</mo><msub><mi>R</mi><mi>d</mi></msub><mo>)</mo><mo>]</mo></mrow></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mn>3</mn></msub><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>)</mo></mrow></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>d</mi></msub></mrow></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag test de <strong>Kirchhoff knooppuntwet</strong> op een complex knooppunt met meerdere stromen.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Knooppunt B</td>
+  <td>Waar I₁, I₂, I<sub>c</sub> en I<sub>d</sub> samenkomen</td>
+</tr>
+<tr>
+  <td>Stroomen naar B</td>
+  <td>I₁ (van stroombron)</td>
+</tr>
+<tr>
+  <td>Stromen van B weg</td>
+  <td>I₂, I<sub>c</sub>, I<sub>d</sub></td>
+</tr>
+<tr>
+  <td>Gezochte stroom</td>
+  <td>I<sub>c</sub> door R<sub>c</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong> Kirchhoff knooppuntwet (KCL): <math><mo>Σ</mo><mi>I</mi><mo>=</mo><mn>0</mn></math> voor alle stromen naar/van een knooppunt (Holmes §1.8).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Identificeer alle stromen bij knooppunt B</div>
+
+<p>Bij knooppunt B zijn de volgende stromen aanwezig (let op de richting!):</p>
+
+<ul>
+<li><math><msub><mi>I</mi><mn>1</mn></msub></math>: stroomt <strong>naar</strong> B (positief)</li>
+<li><math><msub><mi>I</mi><mn>2</mn></msub></math>: stroomt <strong>weg van</strong> B (negatief)</li>
+<li><math><msub><mi>I</mi><mi>c</mi></msub></math>: stroomt <strong>weg van</strong> B (negatief)</li>
+<li><math><msub><mi>I</mi><mi>d</mi></msub></math>: stroomt <strong>weg van</strong> B (negatief)</li>
+</ul>
+
+<p><strong>Belangrijk:</strong> In dit netwerk is I₁ de stroom van de stroombron die naar knooppunt B stroomt. De stromen I₂, I<sub>c</sub> en I<sub>d</sub> zijn de uitgaande stromen.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Pas Kirchhoff knooppuntwet toe</div>
+
+<p>De Kirchhoff knooppuntwet zegt dat de som van alle stromen naar een knooppunt nul is:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Waarbij I₂, I<sub>c</sub> en I<sub>d</sub> negatief zijn (weggaand).</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Los op naar I<sub>c</sub></div>
+
+<p>Isoleer I<sub>c</sub> in de vergelijking:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>d</strong>.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>I</mi><mi>c</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>−</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>−</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Waarom andere antwoorden fout zijn:</strong></p>
+
+<p><strong>Antwoord a:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>−</mo><msub><mi>I</mi><mn>3</mn></msub><mo>)</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></math></p>
+<ul>
+<li>Fout: Gebruikt I<sub>b</sub> en I₃ die niet bij knooppunt B aansluiten</li>
+<li>Dit zou mogelijk een uitdrukking zijn na substitutie van andere knooppuntvergelijkingen, maar niet de directe toepassing van KCL op knooppunt B</li>
+</ul>
+
+<p><strong>Antwoord b:</strong> Bevat stroomdelingsformule</p>
+<ul>
+<li>Fout: Stroomdeling is niet relevant voor directe Kirchhoff toepassing</li>
+</ul>
+
+<p><strong>Antwoord c:</strong> <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>(</mo><msub><mi>I</mi><mn>3</mn></msub><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>)</mo></math></p>
+<ul>
+<li>Fout: Negeert I₁ en I<sub>d</sub></li>
+<li>Zou alleen kloppen als I₁ + I<sub>d</sub> = 0, wat niet algemeen geldt</li>
+</ul>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel I₁ = 10A (naar B), I₂ = -3A (van B weg), I<sub>d</sub> = -2A (van B weg):</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>10</mn>
+    <mo>−</mo>
+    <mo>(</mo>
+    <mo>−</mo>
+    <mn>3</mn>
+    <mo>)</mo>
+    <mo>−</mo>
+    <mo>(</mo>
+    <mo>−</mo>
+    <mn>2</mn>
+    <mo>)</mo>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>10</mn>
+    <mo>+</mo>
+    <mn>3</mn>
+    <mo>+</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mn>5</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Controle: 10A komt binnen, 3A + 2A + 5A = 10A gaat weg → balans klopt ✓</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Stroombalans in complexe netwerken:</strong></p>
+
+<p>De vergelijking <math><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>d</mi></msub></math> vertelt ons:</p>
+
+<blockquote style="border-left: 4px solid #3498db; padding-left: 15px; margin: 15px 0; font-style: italic;">
+"De stroom door R<sub>c</sub> is het restant van de binnenkomende stroom I₁ nadat I₂ en I<sub>d</sub> zijn afgetakt."
+</blockquote>
+
+<p>Of, herschreven als:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mn>1</mn></msub>
+    <mo>=</mo>
+    <mo>−</mo>
+    <msub><mi>I</mi><mn>2</mn></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>c</mi></msub>
+    <mo>−</mo>
+    <msub><mi>I</mi><mi>d</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p>Dit zegt: "De totale binnenkomende stroom I₁ splitst zich in drie uitgaande stromen."</p>
+
+<p><strong>Belang van tekenconventie:</strong></p>
+<p>Bij complexe netwerken is het cruciaal om een <strong>consistente tekenconventie</strong> te hanteren:</p>
+<ul>
+<li>Kies één richting als positief (bijv. "naar knooppunt")</li>
+<li>Houd deze conventie aan voor ALLE stromen</li>
+<li>Negatieve uitkomsten betekenen dat de werkelijke richting tegengesteld is</li>
+</ul>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> d</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>c</mi></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>1</mn></msub><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>d</mi></msub></mrow></math></p>
+
+<p><em>Directe toepassing van Kirchhoff knooppuntwet op knooppunt B.</em></p>
+</div>
+
+</div>
+
+
+</div>
 
 </body>
 </html>

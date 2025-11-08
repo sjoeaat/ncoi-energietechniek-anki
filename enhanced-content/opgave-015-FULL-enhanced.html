@@ -1,0 +1,252 @@
+<!-- OPGAVE 15 - ENHANCED VERSION (Stroom door weerstand parallel aan spanningsbron) -->
+
+<div class="question">
+<p>In dit netwerk is de stroom door de weerstand R<sub>b</sub> gelijk aan:</p>
+
+<p><img src="media/media/image25.PNG" style="max-width:700px;" alt="Opgave 15 network diagram"></p>
+
+<p><strong>a:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub></mrow></math></p>
+
+<p><strong>b:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub></mrow></math></p>
+
+<p><strong>c:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub></mrow></math></p>
+
+<p><strong>d:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><mo>(</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub><mo>)</mo><mo>+</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mn>3</mn></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub></mrow></math></p>
+</div>
+
+<div class="solution">
+<div class="solution-header">Uitwerking</div>
+
+<div class="step">
+<div class="step-header">Stap 1: Analyseer de schakeling en gegeven informatie</div>
+
+<p>Deze vraag combineert twee principes: <strong>ideale spanningsbronnen</strong> en <strong>onafhankelijkheid van paralleltakken</strong>.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Element</th>
+  <th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Spanningsbron U₁</td>
+  <td>Ideale spanningsbron</td>
+</tr>
+<tr>
+  <td>Weerstand R<sub>b</sub></td>
+  <td>Direct parallel aan U₁</td>
+</tr>
+<tr>
+  <td>Stroombronnen I₂, I₃</td>
+  <td>Andere takken in het netwerk</td>
+</tr>
+<tr>
+  <td>Gezochte stroom</td>
+  <td>I<sub>b</sub> door R<sub>b</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Theoretische basis:</strong></p>
+<ul>
+<li><strong>Ideale spanningsbron:</strong> Dwingt spanning af over parallelle componenten</li>
+<li><strong>Wet van Ohm:</strong> I = U/R</li>
+<li><strong>Onafhankelijkheid:</strong> Stroom door één paralleltak hangt NIET af van stromen in andere paralleltakken</li>
+</ul>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 2: Bepaal de spanning over R<sub>b</sub></div>
+
+<p>R<sub>b</sub> staat <strong>direct parallel</strong> aan de ideale spanningsbron U₁. Dit betekent:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>U</mi><msub><mi>R</mi><mi>b</mi></msub></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Waarom?</strong> Een ideale spanningsbron "dwingt" zijn spanning af over alle parallelle componenten, onafhankelijk van de stromen die door die componenten vloeien.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 3: Pas de wet van Ohm toe</div>
+
+<p>Nu we de spanning over R<sub>b</sub> kennen, gebruiken we de <strong>wet van Ohm</strong>:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><msub><mi>R</mi><mi>b</mi></msub></msub>
+      <msub><mi>R</mi><mi>b</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p style="text-align: center;">↓ (substitueer U<sub>Rb</sub> = U₁)</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <msub><mi>U</mi><mn>1</mn></msub>
+      <msub><mi>R</mi><mi>b</mi></msub>
+    </mfrac>
+  </mrow>
+</math>
+</div>
+
+<p>Of in de notatie van de vraag:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mi>/</mi>
+    <msub><mi>R</mi><mi>b</mi></msub>
+  </mrow>
+</math>
+</div>
+
+<p><strong>Conclusie:</strong> Het juiste antwoord is <strong>a</strong>.</p>
+
+<p><strong>Belangrijke observatie:</strong> I<sub>b</sub> hangt <strong>NIET</strong> af van I₂, I₃, I<sub>c</sub> of I<sub>d</sub>!</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 4: Verificatie - waarom andere antwoorden fout zijn</div>
+
+<p><strong>Antwoord b, c en d:</strong> Voegen stromen I₂, I₃, I<sub>c</sub>, I<sub>d</sub> toe aan (U₁/R<sub>b</sub>)</p>
+
+<p>Dit zou alleen kloppen als deze stromen <strong>samenvoegen</strong> met de stroom door R<sub>b</sub> VOORDAT ze door R<sub>b</sub> stromen. Bijvoorbeeld:</p>
+
+<ul>
+<li>Als er een knooppunt is waar I₂ en (U₁/R<sub>b</sub>) samenkomen, en de totale stroom door R<sub>b</sub> stroomt</li>
+<li>Maar in een <strong>parallelschakeling</strong> stromen de takken <strong>onafhankelijk</strong></li>
+</ul>
+
+<p><strong>Misconceptie:</strong> Veel studenten denken dat stromen in een netwerk "optellen". Maar stromen tellen alleen op in <strong>knooppunten</strong>, niet binnen <strong>takken</strong>.</p>
+
+<p>De stroommen I₂, I₃, etc. kunnen wél de <strong>totale stroom uit de spanningsbron</strong> beïnvloeden, maar NIET de stroom door R<sub>b</sub> individueel.</p>
+</div>
+
+<div class="step">
+<div class="step-header">Stap 5: Verificatie en fysische interpretatie</div>
+
+<p><strong>Dimensionale controle:</strong></p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo><msub><mi>I</mi><mi>b</mi></msub><mo>]</mo>
+    <mo>=</mo>
+    <mfrac>
+      <mo>[</mo><mi>V</mi><mo>]</mo>
+      <mo>[</mo><mi>Ω</mi><mo>]</mo>
+    </mfrac>
+    <mo>=</mo>
+    <mo>[</mo><mi>A</mi><mo>]</mo>
+  </mrow>
+</math>
+</div>
+<p>Dit klopt ✓</p>
+
+<p><strong>Praktijkvoorbeeld:</strong></p>
+<p>Stel U₁ = 12V, R<sub>b</sub> = 6Ω:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>12</mn><mtext> V</mtext></mrow>
+      <mrow><mn>6</mn><mtext> Ω</mtext></mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>2</mn>
+    <mtext> A</mtext>
+  </mrow>
+</math>
+</div>
+
+<p>Deze 2A blijft constant, zelfs als I₂ = 0A of I₂ = 100A!</p>
+
+<div class="interpretation">
+<div class="interpretation-header">Fysische interpretatie</div>
+
+<p><strong>Superpositie methode (alternatieve aanpak):</strong></p>
+
+<p>Je kunt dit probleem ook oplossen met het <strong>superpositieprincipe</strong>:</p>
+
+<ol>
+<li><strong>Stap 1:</strong> Zet alle <strong>stroombronnen op nul</strong> (open circuit)</li>
+<li><strong>Stap 2:</strong> Bereken de stroom door R<sub>b</sub> alleen vanwege U₁</li>
+<li><strong>Stap 3:</strong> Zet U₁ op nul (kortsluiting) en bereken de bijdrage van elke stroombron</li>
+<li><strong>Stap 4:</strong> Tel alle bijdragen op</li>
+</ol>
+
+<p><strong>Resultaat:</strong></p>
+<ul>
+<li>Bijdrage van U₁: I<sub>b,U1</sub> = U₁/R<sub>b</sub></li>
+<li>Bijdrage van I₂ (met U₁ kort): I<sub>b,I2</sub> = 0 (want stroom gaat door de kortsluiting!)</li>
+<li>Bijdrage van I₃ (met U₁ kort): I<sub>b,I3</sub> = 0 (zelfde reden)</li>
+</ul>
+
+<p>Totaal:</p>
+
+<div class="display-math">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub><mi>I</mi><mi>b</mi></msub>
+    <mo>=</mo>
+    <msub><mi>I</mi><mrow><mi>b</mi><mo>,</mo><mi>U</mi><mn>1</mn></mrow></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mrow><mi>b</mi><mo>,</mo><mi>I</mi><mn>2</mn></mrow></msub>
+    <mo>+</mo>
+    <msub><mi>I</mi><mrow><mi>b</mi><mo>,</mo><mi>I</mi><mn>3</mn></mrow></msub>
+    <mo>=</mo>
+    <msub><mi>U</mi><mn>1</mn></msub>
+    <mi>/</mi>
+    <msub><mi>R</mi><mi>b</mi></msub>
+    <mo>+</mo>
+    <mn>0</mn>
+    <mo>+</mo>
+    <mn>0</mn>
+  </mrow>
+</math>
+</div>
+
+<p>Dit bevestigt ons antwoord!</p>
+
+<p><strong>Waarom geven stroombronnen geen bijdrage?</strong></p>
+<p>Als je U₁ kortsluit, biedt die kortsluiting een pad met <strong>nul weerstand</strong>. Alle stroom van stroombronnen kiest dit pad (laagste weerstand), dus R<sub>b</sub> krijgt geen stroom van de stroombronnen.</p>
+</div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-left: 4px solid #2c3e50; border-radius: 4px;">
+<p><strong>Antwoord:</strong> a</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>=</mo><msub><mi>U</mi><mn>1</mn></msub><mi>/</mi><msub><mi>R</mi><mi>b</mi></msub></mrow></math></p>
+
+<p><em>Een weerstand direct parallel aan een ideale spanningsbron heeft een stroom die alleen afhangt van de spanning en weerstandswaarde.</em></p>
+</div>
+
+</div>
