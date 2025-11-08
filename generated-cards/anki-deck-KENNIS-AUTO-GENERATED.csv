@@ -1,0 +1,18 @@
+"Front","Back","Tags"
+"<b>Hoofdstuk 1.9</b><br>","Zie opgave voor volledige uitwerking","h19;kennis;ohm"
+"<b>Hoofdstuk 1.9</b><br>","Zie opgave voor volledige uitwerking","h19;kennis;kirchhoff"
+"<b>Hoofdstuk 2.6</b><br>","<b>🎯 ANTWOORD:</b><br>✓ CORRECT ANTWOORD: b (U a  = -I₁ · R a )<br><br>💡 <b>Inzicht:</b> 💡 Fysische betekenis:  
+                    De spanning over R a  is negatief omdat de gekozen polariteitsrichting (van + naar -)
+                    tegengesteld is aan de werkelijke spanningsval (van - naar + in stroomrichting).
+                    Dit is puur een kwestie van tekenconventie.<br>","h26;kennis;kirchhoff;multiple-choice"
+"<b>Hoofdstuk 2.6</b><br>","<b>🎯 ANTWOORD:</b><br>✓ CORRECT ANTWOORD: a (U a  = I₁ · R a )<br><br>💡 <b>Inzicht:</b> 💡 Eigenschap van ideale stroombron:  
+                    Een ideale stroombron forceert altijd een vaste stroom door zijn tak,
+                    ongeacht wat daarachter of daarvoor zit. Als R a  in serie staat met I₁,
+                    dan moet precies stroom I₁ door R a  vloeien.<br>","h26;kennis;kirchhoff;multiple-choice"
+"<b>Hoofdstuk 2.6</b><br>","Zie opgave voor volledige uitwerking","h26;kennis"
+"<b>Hoofdstuk 3.11</b><br>","<b>🎯 ANTWOORD:</b><br>✓ ANTWOORD: I x  = -400 mA = -0,4 A 
+                (Negatief = stroom loopt van rechts naar links)<br><br>💡 <b>Inzicht:</b> 💡 Superpositieprincipe:  
+                Bij meerdere bronnen kun je het effect van elke bron  apart  berekenen
+                en daarna alle bijdragen  optellen .  
+                Werkwijze: 
+                1. Bron 1 actief, andere bronnen ""uit"": spanningsbron = kortsluiting, stroombron = onder<br>","h311;kennis"
