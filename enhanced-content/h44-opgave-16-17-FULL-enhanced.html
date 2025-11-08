@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 4.4 Opgave 16, 17 - Norton Equivalenten & Vermogensaanpassing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .opgave {
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 3px solid #e0e0e0;
+        }
+
+        .opgave:last-child {
+            border-bottom: none;
+        }
+
+        .opgave-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .gegeven {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #2196F3;
+        }
+
+        .gevraagd {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .step {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #9c27b0;
+        }
+
+        .step-title {
+            color: #9c27b0;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            background: #9c27b0;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.1em;
+        }
+
+        .insight-box {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .insight-box::before {
+            content: "💡 ";
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .warning-box {
+            background: #ffebee;
+            border-left: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning-box::before {
+            content: "⚠️ ";
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .success-box {
+            background: #e0f2f1;
+            border-left: 5px solid #009688;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .success-box::before {
+            content: "✅ ";
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.2em;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .display-math {
+            margin: 20px 0;
+            padding: 15px;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        math {
+            font-size: 1.3em;
+        }
+
+        .method-box {
+            background: #fff8e1;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .method-title {
+            font-weight: bold;
+            color: #f57c00;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        .circuit-analysis {
+            background: #f3e5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #9c27b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Hoofdstuk 4.4 - Energie & Vermogen</h1>
+            <p>Opgave 16, 17 - Norton Equivalenten & Vermogensaanpassing</p>
+            <p><em>Elektrische Netwerken - Paul Holmes (3e editie)</em></p>
+        </div>
+
+        <div class="content">
+            <!-- OPGAVE 16 -->
+            <div class="opgave">
+                <div class="opgave-title">📌 Opgave 16: Norton Equivalent en Intern Vermogen</div>
+
+                <div class="gegeven">
+                    <h3>🔷 Gegeven:</h3>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li>Complex netwerk met:</li>
+                        <li style="margin-left: 20px;">Spanningsbron: <strong>10 V</strong></li>
+                        <li style="margin-left: 20px;">Stroombron: <strong>8 mA</strong></li>
+                        <li style="margin-left: 20px;">Weerstanden: <strong>1 kΩ, 2 kΩ, 5 kΩ, 10 kΩ</strong></li>
+                        <li>Uitgang tussen klemmen <strong>A en B</strong></li>
+                        <li>Intern: weerstand <strong>R = 1 kΩ</strong> in serie met stroombron</li>
+                    </ul>
+                </div>
+
+                <div class="gevraagd">
+                    <h3>❓ Gevraagd:</h3>
+                    <ol style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li>Bepaal <strong>R<sub>th</sub></strong> (Thévenin weerstand)</li>
+                        <li>Bepaal <strong>I<sub>N</sub></strong> (Norton kortsluitstroom)</li>
+                        <li>Bereken het <strong>vermogen in R = 1 kΩ</strong> (intern)</li>
+                    </ol>
+                </div>
+
+                <!-- Stap 1: Rth bepalen -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        <span>Bepaal R<sub>th</sub> - "Wat zie je vanaf de uitgang?"</span>
+                    </div>
+
+                    <div class="circuit-analysis">
+                        <p style="margin-bottom: 15px;"><strong>Analyse vanaf uitgang A-B:</strong></p>
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li>Spanningsbron 10V wordt <strong>kortgesloten</strong> → <strong>0 Ω</strong></li>
+                            <li>De 1 kΩ staat <strong>in serie met de stroombron</strong> → draagt <strong>niet bij</strong> aan R<sub>th</sub></li>
+                            <li>De 2 kΩ en 10V zitten <strong>achter de stroombron</strong> → doen <strong>niet mee</strong></li>
+                            <li>Alleen de <strong>5 kΩ</strong> is zichtbaar vanaf de uitgang</li>
+                        </ul>
+                    </div>
+
+                    <div class="insight-box">
+                        <strong>Kernregel:</strong> Een <strong>ideale stroombron</strong> heeft oneindige interne weerstand. Weerstanden in <strong>serie</strong> met een stroombron zijn <strong>"onzichtbaar"</strong> vanaf de uitgang. Componenten <strong>achter</strong> een stroombron (parallel aan de bron) doen <strong>niet mee</strong> met de rest van het circuit.
+                    </div>
+
+                    <div class="result-box" style="background: #4caf50;">
+                        R<sub>th</sub> = <strong>5 kΩ</strong>
+                    </div>
+                </div>
+
+                <!-- Stap 2: Norton stroom - Methode 1 -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">2A</span>
+                        <span>Bepaal I<sub>N</sub> - Methode 1: Via open klemspanning</span>
+                    </div>
+
+                    <p style="margin-bottom: 15px;">We berekenen eerst de <strong>open klemspanning U<sub>AB</sub></strong>, daarna I<sub>N</sub> = U<sub>AB</sub> / R<sub>th</sub></p>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <p><strong>Stroom door de 5 kΩ:</strong></p>
+                        <p style="margin: 10px 0;">De stroombron <strong>8 mA</strong> loopt door de serieschakeling van <strong>1 kΩ + 5 kΩ = 6 kΩ</strong></p>
+
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>U</mi><mrow><mn>5</mn><mi>k</mi></mrow></msub>
+                                    <mo>=</mo>
+                                    <mn>8</mn>
+                                    <mtext> mA</mtext>
+                                    <mo>×</mo>
+                                    <mn>5</mn>
+                                    <mtext> kΩ</mtext>
+                                    <mo>=</mo>
+                                    <mn>40</mn>
+                                    <mtext> V</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+
+                        <p style="margin-top: 15px;"><strong>Spanning op punt A (t.o.v. ground):</strong></p>
+                        <p style="margin: 10px 0;">Punt A ligt <strong>10 V lager</strong> dan de bovenkant van de 5 kΩ (vanwege de 10V bron)</p>
+
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>U</mi><mi>A</mi></msub>
+                                    <mo>=</mo>
+                                    <mn>40</mn>
+                                    <mtext> V</mtext>
+                                    <mo>−</mo>
+                                    <mn>10</mn>
+                                    <mtext> V</mtext>
+                                    <mo>=</mo>
+                                    <mn>30</mn>
+                                    <mtext> V</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+                    </div>
+
+                    <p style="margin: 20px 0;"><strong>Norton stroom:</strong></p>
+
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mi>N</mi></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <msub><mi>U</mi><mi>AB</mi></msub>
+                                    <msub><mi>R</mi><mi>th</mi></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mrow><mn>30</mn><mtext> V</mtext></mrow>
+                                    <mrow><mn>5</mn><mtext> kΩ</mtext></mrow>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mn>6</mn>
+                                <mtext> mA</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+
+                <!-- Stap 3: Norton stroom - Methode 2 -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">2B</span>
+                        <span>Bepaal I<sub>N</sub> - Methode 2: Direct via kortsluiting</span>
+                    </div>
+
+                    <p style="margin-bottom: 15px;">We <strong>kortsluiten A met B</strong> en berekenen de stroom direct:</p>
+
+                    <div class="circuit-analysis">
+                        <p style="margin-bottom: 10px;"><strong>Bij kortsluiting A-B:</strong></p>
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li>Op de <strong>+ van de 10V bron</strong> staat <strong>10V</strong> (t.o.v. ground)</li>
+                            <li>Door de <strong>onderste 5 kΩ</strong> loopt: I = 10V / 5kΩ = <strong>2 mA</strong></li>
+                            <li>Door de <strong>1 kΩ</strong> (en de stroombron) loopt: <strong>8 mA</strong></li>
+                            <li>De stroom van <strong>8 mA komt binnen</strong> bij het knooppunt</li>
+                            <li>De stroom van <strong>2 mA gaat onderaan retour</strong></li>
+                        </ul>
+                    </div>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <p><strong>Knooppuntregel bij A:</strong></p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>I</mi><mi>N</mi></msub>
+                                    <mo>=</mo>
+                                    <msub><mi>I</mi><mi>in</mi></msub>
+                                    <mo>−</mo>
+                                    <msub><mi>I</mi><mi>uit</mi></msub>
+                                    <mo>=</mo>
+                                    <mn>8</mn>
+                                    <mtext> mA</mtext>
+                                    <mo>−</mo>
+                                    <mn>2</mn>
+                                    <mtext> mA</mtext>
+                                    <mo>=</mo>
+                                    <mn>6</mn>
+                                    <mtext> mA</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <strong>Verificatie:</strong> Beide methoden leveren <strong>I<sub>N</sub> = 6 mA</strong>. De tweede methode is vaak <strong>sneller</strong> bij complexe netwerken met stroombronnen!
+                    </div>
+
+                    <div class="result-box" style="background: #4caf50;">
+                        I<sub>N</sub> = <strong>6 mA</strong>
+                    </div>
+                </div>
+
+                <!-- Stap 4: Vermogen in interne weerstand -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">3</span>
+                        <span>Bereken het vermogen in R = 1 kΩ (intern)</span>
+                    </div>
+
+                    <p style="margin-bottom: 15px;">De <strong>1 kΩ weerstand</strong> staat in <strong>serie met de 8 mA stroombron</strong>.</p>
+
+                    <div class="warning-box">
+                        <strong>Belangrijk:</strong> Het vermogen in deze weerstand wordt <strong>uitsluitend bepaald</strong> door de stroombron die er doorheen "jaagt". De rest van het circuit heeft <strong>geen invloed</strong> op de stroom door deze weerstand.
+                    </div>
+
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>P</mi>
+                                <mo>=</mo>
+                                <msup><mi>I</mi><mn>2</mn></msup>
+                                <mo>·</mo>
+                                <mi>R</mi>
+                                <mo>=</mo>
+                                <msup>
+                                    <mrow><mo>(</mo><mn>8</mn><mtext> mA</mtext><mo>)</mo></mrow>
+                                    <mn>2</mn>
+                                </msup>
+                                <mo>×</mo>
+                                <mn>1</mn>
+                                <mtext> kΩ</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <p><strong>Eenheden omrekenen:</strong></p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>P</mi>
+                                    <mo>=</mo>
+                                    <msup>
+                                        <mrow><mo>(</mo><mn>8</mn><mo>×</mo><msup><mn>10</mn><mn>-3</mn></msup><mo>)</mo></mrow>
+                                        <mn>2</mn>
+                                    </msup>
+                                    <mo>×</mo>
+                                    <mn>1000</mn>
+                                </mrow>
+                            </math>
+                        </div>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>P</mi>
+                                    <mo>=</mo>
+                                    <mn>64</mn>
+                                    <mo>×</mo>
+                                    <msup><mn>10</mn><mn>-6</mn></msup>
+                                    <mo>×</mo>
+                                    <mn>1000</mn>
+                                    <mo>=</mo>
+                                    <mn>64</mn>
+                                    <mo>×</mo>
+                                    <msup><mn>10</mn><mn>-3</mn></msup>
+                                    <mtext> W</mtext>
+                                    <mo>=</mo>
+                                    <mn>64</mn>
+                                    <mtext> mW</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <strong>Fysische interpretatie:</strong> De <strong>8 mA</strong> wordt door de stroombron <strong>geforceerd</strong> door de 1 kΩ. Dit dissipeert <strong>64 mW</strong> als warmte. Deze warmteontwikkeling is <strong>constant</strong>, onafhankelijk van wat er aan de uitgang A-B gebeurt.
+                    </div>
+
+                    <div class="result-box" style="background: #4caf50;">
+                        P<sub>1kΩ</sub> = <strong>64 mW</strong>
+                    </div>
+                </div>
+
+                <!-- Samenvatting -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">📊</span>
+                        <span>Samenvatting Norton Equivalent</span>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Waarde</th>
+                            <th>Betekenis</th>
+                        </tr>
+                        <tr>
+                            <td>R<sub>th</sub></td>
+                            <td><strong>5 kΩ</strong></td>
+                            <td>Interne weerstand gezien vanaf uitgang</td>
+                        </tr>
+                        <tr>
+                            <td>I<sub>N</sub></td>
+                            <td><strong>6 mA</strong></td>
+                            <td>Kortsluitstroom bij A-B kortsluiting</td>
+                        </tr>
+                        <tr>
+                            <td>U<sub>th</sub></td>
+                            <td><strong>30 V</strong></td>
+                            <td>Open klemspanning (U = I<sub>N</sub> · R<sub>th</sub>)</td>
+                        </tr>
+                        <tr style="background: #e8f5e9;">
+                            <td>P<sub>1kΩ intern</sub></td>
+                            <td><strong>64 mW</strong></td>
+                            <td>Constant intern verlies</td>
+                        </tr>
+                    </table>
+
+                    <div class="insight-box">
+                        <strong>Norton vs. Thévenin:</strong><br>
+                        • <strong>Norton:</strong> Stroombron I<sub>N</sub> = 6 mA parallel met R<sub>th</sub> = 5 kΩ<br>
+                        • <strong>Thévenin:</strong> Spanningsbron U<sub>th</sub> = 30 V in serie met R<sub>th</sub> = 5 kΩ<br>
+                        • Beide representaties zijn <strong>equivalent</strong> naar de buitenwereld
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPGAVE 17 -->
+            <div class="opgave">
+                <div class="opgave-title">📌 Opgave 17: Norton Schema en Vermogensaanpassing</div>
+
+                <div class="gegeven">
+                    <h3>🔷 Gegeven:</h3>
+                    <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li>Netwerk met:</li>
+                        <li style="margin-left: 20px;">Spanningsbron: <strong>50 V</strong></li>
+                        <li style="margin-left: 20px;">Vier weerstanden: <strong>10 Ω, 40 Ω, 10 Ω, 40 Ω</strong></li>
+                        <li style="margin-left: 20px;">Configuratie: <strong>spanningsdelers</strong> naar A en B</li>
+                        <li>Uitgang tussen klemmen <strong>A en B</strong></li>
+                        <li><em>Opmerking: Het linkerdeel doet niet mee (rechterdeel gevoed door 50V)</em></li>
+                    </ul>
+                </div>
+
+                <div class="gevraagd">
+                    <h3>❓ Gevraagd:</h3>
+                    <ol style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                        <li>Bepaal <strong>R<sub>AB</sub></strong> (weerstand tussen A en B)</li>
+                        <li>Bepaal <strong>U<sub>AB</sub></strong> (spanning tussen A en B)</li>
+                        <li>Bepaal <strong>I<sub>N</sub></strong> (Norton kortsluitstroom)</li>
+                        <li>Bereken <strong>P<sub>max</sub></strong> (maximaal vermogen bij aangepaste belasting)</li>
+                    </ol>
+                </div>
+
+                <!-- Stap 1: Weerstand bepalen -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        <span>Bepaal R<sub>AB</sub> - Weerstand gezien vanaf A-B</span>
+                    </div>
+
+                    <p style="margin-bottom: 15px;">We <strong>kortsluiten de spanningsbron</strong> (50V → 0V) en kijken wat we "zien" vanaf A-B:</p>
+
+                    <div class="circuit-analysis">
+                        <p style="margin-bottom: 10px;"><strong>Analyse van de configuratie:</strong></p>
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li>Naar punt A: <strong>10 Ω parallel met 40 Ω</strong></li>
+                            <li>Naar punt B: <strong>10 Ω parallel met 40 Ω</strong></li>
+                            <li>Deze twee parallelle combinaties staan <strong>in serie</strong></li>
+                        </ul>
+                    </div>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <p><strong>Parallelle combinatie berekenen:</strong></p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>R</mi><mi>parallel</mi></msub>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mrow><mn>10</mn><mo>×</mo><mn>40</mn></mrow>
+                                        <mrow><mn>10</mn><mo>+</mo><mn>40</mn></mrow>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mn>400</mn>
+                                        <mn>50</mn>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mn>8</mn>
+                                    <mtext> Ω</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+
+                        <p style="margin-top: 20px;"><strong>Totale weerstand (beide in serie):</strong></p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>R</mi><mi>AB</mi></msub>
+                                    <mo>=</mo>
+                                    <mn>8</mn>
+                                    <mo>+</mo>
+                                    <mn>8</mn>
+                                    <mo>=</mo>
+                                    <mn>16</mn>
+                                    <mtext> Ω</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <strong>Snelle methode:</strong> R<sub>parallel</sub> = <strong>40/5 = 8 Ω</strong> (product/som regel)<br>
+                        Dan: 2 × 8 Ω = <strong>16 Ω</strong>
+                    </div>
+
+                    <div class="result-box" style="background: #4caf50;">
+                        R<sub>AB</sub> = <strong>16 Ω</strong>
+                    </div>
+                </div>
+
+                <!-- Stap 2: Spanning bepalen -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">2</span>
+                        <span>Bepaal U<sub>AB</sub> - Spanning via spanningsdelers</span>
+                    </div>
+
+                    <p style="margin-bottom: 15px;">We gebruiken de <strong>spanningsdeler formule</strong> voor beide takken:</p>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <p><strong>Spanning op punt A (t.o.v. ground):</strong></p>
+                        <p style="margin: 10px 0;">De spanningsdeler heeft 10 Ω (boven) en 40 Ω (onder):</p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>U</mi><mi>A</mi></msub>
+                                    <mo>=</mo>
+                                    <mn>50</mn>
+                                    <mo>×</mo>
+                                    <mfrac>
+                                        <mn>40</mn>
+                                        <mrow><mn>10</mn><mo>+</mo><mn>40</mn></mrow>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mn>50</mn>
+                                    <mo>×</mo>
+                                    <mfrac>
+                                        <mn>40</mn>
+                                        <mn>50</mn>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mn>50</mn>
+                                    <mo>×</mo>
+                                    <mfrac>
+                                        <mn>4</mn>
+                                        <mn>5</mn>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mn>40</mn>
+                                    <mtext> V</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+
+                        <p style="margin-top: 20px;"><strong>Spanning op punt B (t.o.v. ground):</strong></p>
+                        <p style="margin: 10px 0;">De spanningsdeler heeft 10 Ω (boven) en 40 Ω (onder):</p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>U</mi><mi>B</mi></msub>
+                                    <mo>=</mo>
+                                    <mn>50</mn>
+                                    <mo>×</mo>
+                                    <mfrac>
+                                        <mn>10</mn>
+                                        <mrow><mn>10</mn><mo>+</mo><mn>40</mn></mrow>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mn>50</mn>
+                                    <mo>×</mo>
+                                    <mfrac>
+                                        <mn>1</mn>
+                                        <mn>5</mn>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mn>10</mn>
+                                    <mtext> V</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <p><strong>Spanning tussen A en B:</strong></p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>U</mi><mi>AB</mi></msub>
+                                    <mo>=</mo>
+                                    <msub><mi>U</mi><mi>A</mi></msub>
+                                    <mo>−</mo>
+                                    <msub><mi>U</mi><mi>B</mi></msub>
+                                    <mo>=</mo>
+                                    <mn>40</mn>
+                                    <mo>−</mo>
+                                    <mn>10</mn>
+                                    <mo>=</mo>
+                                    <mn>30</mn>
+                                    <mtext> V</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <strong>Fysische betekenis:</strong> Punt A ligt op <strong>4/5</strong> van de voedingsspanning (40V), punt B op <strong>1/5</strong> (10V). Het verschil is dus <strong>3/5 × 50V = 30V</strong>.
+                    </div>
+
+                    <div class="result-box" style="background: #4caf50;">
+                        U<sub>AB</sub> = <strong>+30 V</strong>
+                    </div>
+                </div>
+
+                <!-- Stap 3: Norton stroom -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">3</span>
+                        <span>Bepaal I<sub>N</sub> - Norton kortsluitstroom</span>
+                    </div>
+
+                    <p style="margin-bottom: 15px;">De <strong>Norton stroom</strong> is de kortsluitstroom die zou vloeien als we A en B kortsluitten:</p>
+
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mi>N</mi></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <msub><mi>U</mi><mi>AB</mi></msub>
+                                    <msub><mi>R</mi><mi>AB</mi></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mrow><mn>30</mn><mtext> V</mtext></mrow>
+                                    <mrow><mn>16</mn><mtext> Ω</mtext></mrow>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mn>1,875</mn>
+                                <mtext> A</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <div class="result-box" style="background: #4caf50;">
+                        I<sub>N</sub> = <strong>1,875 A</strong>
+                    </div>
+                </div>
+
+                <!-- Stap 4: Maximaal vermogen -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">4</span>
+                        <span>Bereken P<sub>max</sub> - Vermogensaanpassing</span>
+                    </div>
+
+                    <p style="margin-bottom: 15px;">Voor <strong>maximaal vermogen</strong> in de belasting geldt de <strong>vermogensaanpassingstheorema</strong>:</p>
+
+                    <div class="method-box">
+                        <div class="method-title">📐 Vermogensaanpassingstheorema</div>
+                        <p style="line-height: 1.8;">
+                            Het <strong>maximale vermogen</strong> wordt overgedragen aan een belasting wanneer:<br>
+                            <strong>R<sub>belasting</sub> = R<sub>th</sub></strong> (impedantie-matching)
+                        </p>
+                        <p style="margin-top: 10px; font-style: italic;">
+                            Bij aangepaste belasting is het rendement altijd <strong>50%</strong> (helft in bron, helft in last)
+                        </p>
+                    </div>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                        <p><strong>Bij R<sub>belasting</sub> = 16 Ω:</strong></p>
+
+                        <p style="margin: 15px 0;">De spanning wordt <strong>gelijk verdeeld</strong> over R<sub>th</sub> en R<sub>belasting</sub>:</p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>U</mi><mi>belasting</mi></msub>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <msub><mi>U</mi><mi>AB</mi></msub>
+                                        <mn>2</mn>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mn>30</mn>
+                                        <mn>2</mn>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mn>15</mn>
+                                    <mtext> V</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+
+                        <p style="margin: 15px 0;">De stroom door de belasting:</p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>I</mi>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <msub><mi>U</mi><mi>belasting</mi></msub>
+                                        <msub><mi>R</mi><mi>belasting</mi></msub>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mn>15</mn>
+                                        <mn>16</mn>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mn>0,9375</mn>
+                                    <mtext> A</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+
+                        <p style="margin: 15px 0;"><strong>Maximaal vermogen:</strong></p>
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>P</mi><mi>max</mi></msub>
+                                    <mo>=</mo>
+                                    <msub><mi>U</mi><mi>belasting</mi></msub>
+                                    <mo>×</mo>
+                                    <mi>I</mi>
+                                    <mo>=</mo>
+                                    <mn>15</mn>
+                                    <mo>×</mo>
+                                    <mn>0,9375</mn>
+                                    <mo>=</mo>
+                                    <mn>14,0625</mn>
+                                    <mtext> W</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>Alternatieve formule (sneller):</strong><br>
+                        <div class="display-math">
+                            <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>P</mi><mi>max</mi></msub>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <msubsup><mi>U</mi><mi>th</mi><mn>2</mn></msubsup>
+                                        <mrow><mn>4</mn><msub><mi>R</mi><mi>th</mi></msub></mrow>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <msup><mn>30</mn><mn>2</mn></msup>
+                                        <mrow><mn>4</mn><mo>×</mo><mn>16</mn></mrow>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mn>900</mn>
+                                        <mn>64</mn>
+                                    </mfrac>
+                                    <mo>=</mo>
+                                    <mn>14,0625</mn>
+                                    <mtext> W</mtext>
+                                </mrow>
+                            </math>
+                        </div>
+                    </div>
+
+                    <div class="result-box" style="background: #4caf50;">
+                        P<sub>max</sub> = <strong>14,0625 W</strong> ≈ <strong>14,1 W</strong>
+                    </div>
+                </div>
+
+                <!-- Verificatie en inzicht -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">✓</span>
+                        <span>Verificatie en rendement</span>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <th>Locatie</th>
+                            <th>Berekening</th>
+                            <th>Vermogen</th>
+                        </tr>
+                        <tr>
+                            <td>In R<sub>belasting</sub></td>
+                            <td>I² · R = 0,9375² × 16</td>
+                            <td><strong>14,0625 W</strong></td>
+                        </tr>
+                        <tr>
+                            <td>In R<sub>th</sub> (intern)</td>
+                            <td>I² · R = 0,9375² × 16</td>
+                            <td>14,0625 W</td>
+                        </tr>
+                        <tr style="background: #e8f5e9; font-weight: bold;">
+                            <td>Totaal van bron</td>
+                            <td>2 × 14,0625</td>
+                            <td>28,125 W</td>
+                        </tr>
+                    </table>
+
+                    <p style="margin: 20px 0;"><strong>Rendement bij vermogensaanpassing:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>η</mi>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <msub><mi>P</mi><mi>belasting</mi></msub>
+                                    <msub><mi>P</mi><mi>totaal</mi></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>14,0625</mn>
+                                    <mn>28,125</mn>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mn>0,5</mn>
+                                <mo>=</mo>
+                                <mn>50</mn>
+                                <mo>%</mo>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <div class="insight-box">
+                        <strong>Belangrijke conclusies:</strong><br>
+                        • Bij <strong>vermogensaanpassing</strong> is het rendement altijd <strong>50%</strong><br>
+                        • <strong>Helft van het vermogen</strong> gaat verloren in de interne weerstand<br>
+                        • Dit is <strong>acceptabel</strong> bij toepassingen waar <strong>maximaal vermogen</strong> belangrijker is dan rendement (bijv. audio-eindtrappen, RF-systemen)<br>
+                        • Voor <strong>hoog rendement</strong>: R<sub>belasting</sub> >> R<sub>th</sub> (maar dan <strong>minder vermogen</strong>)
+                    </div>
+                </div>
+
+                <!-- Samenvatting -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">📊</span>
+                        <span>Complete Samenvatting</span>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Waarde</th>
+                            <th>Methode</th>
+                        </tr>
+                        <tr>
+                            <td>R<sub>AB</sub></td>
+                            <td><strong>16 Ω</strong></td>
+                            <td>(10||40) + (10||40) = 8 + 8 Ω</td>
+                        </tr>
+                        <tr>
+                            <td>U<sub>AB</sub></td>
+                            <td><strong>+30 V</strong></td>
+                            <td>Spanningsdelers: (4/5 - 1/5) × 50V</td>
+                        </tr>
+                        <tr>
+                            <td>I<sub>N</sub></td>
+                            <td><strong>1,875 A</strong></td>
+                            <td>U<sub>AB</sub> / R<sub>AB</sub> = 30/16</td>
+                        </tr>
+                        <tr style="background: #e8f5e9;">
+                            <td>P<sub>max</sub></td>
+                            <td><strong>14,0625 W</strong></td>
+                            <td>U²/(4R) bij R<sub>last</sub> = R<sub>th</sub> = 16 Ω</td>
+                        </tr>
+                        <tr>
+                            <td>Rendement bij P<sub>max</sub></td>
+                            <td><strong>50%</strong></td>
+                            <td>Altijd 50% bij vermogensaanpassing</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 9.7 Opgave 13 - Oscilloscoop Probe Belasting (Complexe Impedantie)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .opgave-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .gegeven {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #2196F3;
+        }
+
+        .gevraagd {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .step {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #9c27b0;
+        }
+
+        .step-title {
+            color: #9c27b0;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            background: #9c27b0;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.1em;
+        }
+
+        .insight-box {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .insight-box::before {
+            content: "💡 ";
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .warning-box {
+            background: #ffebee;
+            border-left: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning-box::before {
+            content: "⚠️ ";
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.2em;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .display-math {
+            margin: 20px 0;
+            padding: 15px;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        math {
+            font-size: 1.3em;
+        }
+
+        .circuit-box {
+            background: #f3e5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #9c27b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Hoofdstuk 9.7 - RLC Netwerken</h1>
+            <p>Opgave 13 - Oscilloscoop Probe Belasting bij Hoge Frequentie</p>
+            <p><em>Elektrische Netwerken - Paul Holmes (3e editie)</em></p>
+        </div>
+
+        <div class="content">
+            <div class="opgave-title">📌 Opgave 13: Scope van 20pF en 1MΩ op een 50Ω Bron</div>
+
+            <div class="gegeven">
+                <h3>🔷 Gegeven:</h3>
+                <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                    <li>Bronimpedantie: <strong>R<sub>bron</sub> = 50 Ω</strong></li>
+                    <li>Oscilloscoop probe:
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Capaciteit: <strong>C = 20 pF</strong></li>
+                            <li>Weerstand: <strong>R = 1 MΩ</strong> (parallel aan C)</li>
+                        </ul>
+                    </li>
+                    <li>Frequentie: <strong>f = 100 MHz</strong></li>
+                    <li>Belaste uitgang: <strong>u<sub>u</sub> = 1 V<sub>pk</sub></strong> (gemeten met probe)</li>
+                </ul>
+            </div>
+
+            <div class="gevraagd">
+                <h3>❓ Gevraagd:</h3>
+                <p style="margin-top: 10px; font-size: 1.1em;">
+                    Wat is de <strong>onbelaste uitgangsspanning u<sub>i</sub></strong> (zonder probe)?
+                </p>
+            </div>
+
+            <div class="circuit-box">
+                <h3 style="margin-bottom: 15px;">⚡ Schakeling:</h3>
+                <p style="line-height: 1.8;">
+                    Dit is een <strong>spanningsdeler</strong> met:<br>
+                    • Bovenste weerstand: <strong>R<sub>bron</sub> = 50 Ω</strong><br>
+                    • Onderste impedantie: <strong>Z<sub>probe</sub> = R || C = 1 MΩ || 20 pF</strong>
+                </p>
+            </div>
+
+            <!-- Stap 1 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    <span>Bereken de capacitieve reactantie bij 100 MHz</span>
+                </div>
+
+                <p style="margin-bottom: 15px;">De <strong>impedantie van de condensator</strong> bij f = 100 MHz:</p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>Z</mi><mi>C</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mrow><mn>2</mn><mi>π</mi><mi>f</mi><mi>C</mi><mi>j</mi></mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mrow><mn>2</mn><mi>π</mi><mo>×</mo><mn>100</mn><mo>×</mo><msup><mn>10</mn><mn>6</mn></msup><mo>×</mo><mn>20</mn><mo>×</mo><msup><mn>10</mn><mn>-12</mn></msup><mo>×</mo><mi>j</mi></mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <p><strong>Tussenberekening:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mn>2</mn><mi>π</mi><mo>×</mo><mn>100</mn><mo>×</mo><msup><mn>10</mn><mn>6</mn></msup><mo>×</mo><mn>20</mn><mo>×</mo><msup><mn>10</mn><mn>-12</mn></msup>
+                                <mo>=</mo>
+                                <mn>6,28</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup><mo>×</mo><mn>20</mn><mo>×</mo><msup><mn>10</mn><mn>-12</mn></msup>
+                            </mrow>
+                        </math>
+                    </div>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mo>=</mo>
+                                <mn>125,6</mn><mo>×</mo><msup><mn>10</mn><mn>-4</mn></msup>
+                                <mo>=</mo>
+                                <mn>0,01256</mn>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>Z</mi><mi>C</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mrow><mn>0,01256</mn><mi>j</mi></mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mo>−</mo>
+                            <mn>79,6</mn><mi>j</mi>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="insight-box">
+                    <strong>Belangrijk inzicht:</strong> Bij <strong>100 MHz</strong> is de capacitieve reactantie <strong>−79,6j Ω</strong>, wat veel <strong>lager</strong> is dan de 1 MΩ weerstand. De condensator domineert dus de impedantie!
+                </div>
+            </div>
+
+            <!-- Stap 2 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    <span>Analyseer de parallelle combinatie R || C</span>
+                </div>
+
+                <p style="margin-bottom: 15px;">De <strong>probe impedantie</strong> is de parallelle combinatie:</p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>Z</mi><mi>probe</mi></msub>
+                            <mo>=</mo>
+                            <mn>1</mn><mtext> MΩ</mtext>
+                            <mo>||</mo>
+                            <mo>(</mo><mo>−</mo><mn>79,6</mn><mi>j</mi><mtext> Ω</mtext><mo>)</mo>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Vereenvoudiging:</strong><br>
+                    Omdat |Z<sub>C</sub>| = 79,6 Ω << R = 1.000.000 Ω (factor <strong>~12.000 kleiner</strong>),<br>
+                    kan de <strong>1 MΩ weerstand worden verwaarloosd</strong> bij deze frequentie.<br><br>
+                    <strong>Conclusie:</strong> Z<sub>probe</sub> ≈ Z<sub>C</sub> = −79,6j Ω
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <p><strong>Verificatie (voor de nauwkeurigheid):</strong></p>
+                    <p style="margin: 10px 0;">Als we de parallelle combinatie exact berekenen:</p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>Z</mi><mi>probe</mi></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mrow><msup><mn>10</mn><mn>6</mn></msup><mo>×</mo><mo>(</mo><mo>−</mo><mn>79,6</mn><mi>j</mi><mo>)</mo></mrow>
+                                    <mrow><msup><mn>10</mn><mn>6</mn></msup><mo>−</mo><mn>79,6</mn><mi>j</mi></mrow>
+                                </mfrac>
+                                <mo>≈</mo>
+                                <mo>−</mo>
+                                <mn>79,6</mn><mi>j</mi>
+                                <mtext> Ω</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+                    <p style="margin-top: 10px; font-style: italic;">
+                        Het verschil is verwaarloosbaar (<< 0,01%)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stap 3 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    <span>Bepaal de spanningsdeler verhouding</span>
+                </div>
+
+                <p style="margin-bottom: 15px;">De <strong>spanningsdeler</strong> heeft:</p>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li>Bovenste impedantie: <strong>R<sub>bron</sub> = 50 Ω</strong> (reëel)</li>
+                        <li>Onderste impedantie: <strong>Z<sub>probe</sub> = −79,6j Ω</strong> (imaginair)</li>
+                    </ul>
+                </div>
+
+                <p style="margin: 20px 0;"><strong>Verzwakkingsfactor:</strong></p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <msub><mi>u</mi><mi>u</mi></msub>
+                                <msub><mi>u</mi><mi>i</mi></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <msub><mi>Z</mi><mi>probe</mi></msub>
+                                <mrow><msub><mi>Z</mi><mi>probe</mi></msub><mo>+</mo><msub><mi>R</mi><mi>bron</mi></msub></mrow>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow><mo>−</mo><mn>79,6</mn><mi>j</mi></mrow>
+                                <mrow><mn>50</mn><mo>−</mo><mn>79,6</mn><mi>j</mi></mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p style="margin-top: 20px;"><strong>Vermenigvuldigen met complex geconjugeerde:</strong></p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <msub><mi>u</mi><mi>u</mi></msub>
+                                <msub><mi>u</mi><mi>i</mi></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow><mo>−</mo><mn>79,6</mn><mi>j</mi></mrow>
+                                <mrow><mn>50</mn><mo>−</mo><mn>79,6</mn><mi>j</mi></mrow>
+                            </mfrac>
+                            <mo>×</mo>
+                            <mfrac>
+                                <mrow><mn>50</mn><mo>+</mo><mn>79,6</mn><mi>j</mi></mrow>
+                                <mrow><mn>50</mn><mo>+</mo><mn>79,6</mn><mi>j</mi></mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <p><strong>Teller:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mo>(</mo><mo>−</mo><mn>79,6</mn><mi>j</mi><mo>)</mo>
+                                <mo>×</mo>
+                                <mo>(</mo><mn>50</mn><mo>+</mo><mn>79,6</mn><mi>j</mi><mo>)</mo>
+                                <mo>=</mo>
+                                <mo>−</mo><mn>3980</mn><mi>j</mi>
+                                <mo>−</mo>
+                                <mn>6336,16</mn><msup><mi>j</mi><mn>2</mn></msup>
+                            </mrow>
+                        </math>
+                    </div>
+                    <p style="margin: 10px 0;">Omdat j² = −1:</p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mo>=</mo>
+                                <mn>6336,16</mn>
+                                <mo>−</mo>
+                                <mn>3980</mn><mi>j</mi>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Noemer:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mo>(</mo><mn>50</mn><mo>−</mo><mn>79,6</mn><mi>j</mi><mo>)</mo>
+                                <mo>×</mo>
+                                <mo>(</mo><mn>50</mn><mo>+</mo><mn>79,6</mn><mi>j</mi><mo>)</mo>
+                                <mo>=</mo>
+                                <msup><mn>50</mn><mn>2</mn></msup>
+                                <mo>+</mo>
+                                <msup><mn>79,6</mn><mn>2</mn></msup>
+                            </mrow>
+                        </math>
+                    </div>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mo>=</mo>
+                                <mn>2500</mn>
+                                <mo>+</mo>
+                                <mn>6336,16</mn>
+                                <mo>=</mo>
+                                <mn>8836,16</mn>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+
+                <p style="margin-top: 20px;"><strong>Verzwakkingsfactor (complex):</strong></p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <msub><mi>u</mi><mi>u</mi></msub>
+                                <msub><mi>u</mi><mi>i</mi></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow><mn>6336,16</mn><mo>−</mo><mn>3980</mn><mi>j</mi></mrow>
+                                <mn>8836,16</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>0,717</mn>
+                            <mo>−</mo>
+                            <mn>0,450</mn><mi>j</mi>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- Stap 4 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    <span>Bereken de modulus (amplitude verzwakking)</span>
+                </div>
+
+                <p style="margin-bottom: 15px;">De <strong>amplitude verzwakking</strong> is de modulus van de complexe verhouding:</p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mrow><mo>|</mo>
+                            <mfrac>
+                                <msub><mi>u</mi><mi>u</mi></msub>
+                                <msub><mi>u</mi><mi>i</mi></msub>
+                            </mfrac>
+                            <mo>|</mo></mrow>
+                            <mo>=</mo>
+                            <msqrt>
+                                <mrow>
+                                    <msup><mn>0,717</mn><mn>2</mn></msup>
+                                    <mo>+</mo>
+                                    <msup><mn>0,450</mn><mn>2</mn></msup>
+                                </mrow>
+                            </msqrt>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mo>=</mo>
+                            <msqrt>
+                                <mrow>
+                                    <mn>0,514</mn>
+                                    <mo>+</mo>
+                                    <mn>0,203</mn>
+                                </mrow>
+                            </msqrt>
+                            <mo>=</mo>
+                            <msqrt><mn>0,717</mn></msqrt>
+                            <mo>=</mo>
+                            <mn>0,847</mn>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="insight-box">
+                    <strong>Fysische betekenis:</strong> De probe <strong>verzwakt</strong> de spanning met een factor <strong>0,847</strong>. Dit betekent dat de belaste spanning <strong>84,7%</strong> is van de onbelaste spanning.
+                </div>
+            </div>
+
+            <!-- Stap 5 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    <span>Bereken de onbelaste spanning</span>
+                </div>
+
+                <p style="margin-bottom: 15px;">We weten dat de <strong>belaste spanning</strong> u<sub>u</sub> = 1 V<sub>pk</sub> is.</p>
+
+                <p style="margin: 15px 0;">De relatie is:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>u</mi><mi>u</mi></msub>
+                            <mo>=</mo>
+                            <mn>0,847</mn>
+                            <mo>×</mo>
+                            <msub><mi>u</mi><mi>i</mi></msub>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p style="margin: 15px 0;">Dus:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>u</mi><mi>i</mi></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <msub><mi>u</mi><mi>u</mi></msub>
+                                <mn>0,847</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow><mn>1</mn><mtext> V</mtext><sub>pk</sub></mrow>
+                                <mn>0,847</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>1,18</mn>
+                            <mtext> V</mtext><sub>pk</sub>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Belangrijk praktijkinzicht:</strong><br>
+                    Bij <strong>100 MHz</strong> veroorzaakt de probe een <strong>belastingsfout van 18%</strong>!<br>
+                    De werkelijke spanning (zonder probe) is <strong>1,18 V<sub>pk</sub></strong>, maar we meten slechts <strong>1,0 V<sub>pk</sub></strong>.<br><br>
+                    Dit komt door de <strong>lage capacitieve reactantie</strong> bij hoge frequenties, die een spanningsdeler vormt met de bronimpedantie.
+                </div>
+            </div>
+
+            <!-- Verificatie -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">✓</span>
+                    <span>Fysische interpretatie & Praktijktoepassingen</span>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h3 style="margin-bottom: 15px;">📊 Frequentie-afhankelijkheid</h3>
+                    <p style="line-height: 1.8;">
+                        • Bij <strong>lage frequenties</strong>: Z<sub>C</sub> → ∞, dus Z<sub>probe</sub> ≈ 1 MΩ >> 50 Ω<br>
+                        • Verzwakking is <strong>minimaal</strong>, probe heeft bijna geen invloed<br><br>
+
+                        • Bij <strong>100 MHz</strong>: Z<sub>C</sub> = −79,6j Ω ≈ 50 Ω<br>
+                        • Verzwakking is <strong>significant</strong> (factor 0,847)<br><br>
+
+                        • Bij <strong>nog hogere frequenties</strong>: Z<sub>C</sub> wordt steeds kleiner<br>
+                        • Belastingsfout wordt <strong>nog groter</strong>
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h3 style="margin-bottom: 15px;">🔧 Praktische consequenties</h3>
+                    <p style="line-height: 1.8;">
+                        <strong>1. Compensatie nodig:</strong> Bij RF-metingen gebruik <strong>gecompenseerde probes</strong> (10:1 of 100:1)<br>
+                        <strong>2. Bronimpedantie belangrijk:</strong> Bij 50 Ω bronnen (RF) is belasting kritisch<br>
+                        <strong>3. Bandbreedte:</strong> Standard probes (20pF) hebben beperkte bandbreedte bij lage impedanties<br>
+                        <strong>4. Actieve probes:</strong> Voor hoge frequenties: gebruik probes met <strong><< 1 pF</strong> input capaciteit
+                    </p>
+                </div>
+
+                <div class="insight-box">
+                    <strong>Fasehoek van de verzwakking:</strong><br>
+                    φ = arctan(−0,450 / 0,717) = arctan(−0,628) = <strong>−32,1°</strong><br><br>
+                    De gemeten spanning <strong>loopt 32,1° achter</strong> op de werkelijke spanning. Dit is belangrijk bij <strong>fasegevoelige metingen</strong> (bijv. bij oscillatoren, filters).
+                </div>
+            </div>
+
+            <div class="result-box">
+                <strong>ANTWOORD:</strong> u<sub>i</sub> (onbelast) = <strong>1,18 V<sub>pk</sub></strong><br>
+                <span style="font-size: 0.9em; margin-top: 10px; display: block;">
+                    Belastingsfout: 18% | Verzwakkingsfactor: 0,847 | Fasehoek: −32,1°
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
