@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>H 1.9 - Opgave 1, 2, 5: Ohm's Wet Basis (FULL-enhanced)</title>
+    <style>
+        body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; max-width: 1000px; margin: 0 auto; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);}
+        .container {background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1);}
+        h1 {color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px;}
+        h2 {color: #e74c3c; margin-top: 30px; border-left: 4px solid #e74c3c; padding-left: 10px;}
+        h3 {color: #16a085; margin-top: 20px;}
+        .step {background: #ecf0f1; padding: 15px; margin: 15px 0; border-left: 4px solid #3498db; border-radius: 5px;}
+        .theory {background: #fff3cd; padding: 15px; margin: 15px 0; border-left: 4px solid #f39c12; border-radius: 5px;}
+        .verification {background: #d4edda; padding: 15px; margin: 15px 0; border-left: 4px solid #28a745; border-radius: 5px;}
+        .display-math {text-align: center; margin: 20px 0; font-size: 1.1em;}
+        .highlight {background-color: #ffeb3b; padding: 2px 5px; border-radius: 3px;}
+        table {border-collapse: collapse; width: 100%; margin: 20px 0;}
+        th, td {border: 1px solid #ddd; padding: 12px; text-align: left;}
+        th {background-color: #3498db; color: white;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ H 1.9 - Opgave 1, 2, 5: Wet van Ohm - Basisprincipes</h1>
+        <p><strong>Bron:</strong> Elektrische Netwerken (Paul Holmes) - Hoofdstuk 1.9, blz. 13</p>
+        <p><strong>Onderwerp:</strong> Wet van Ohm, Spanning, Stroom, Weerstand</p>
+
+        <!-- OPGAVE 1 -->
+        <h2>🎯 Opgave 1: Zaklantaarn</h2>
+        <p><strong>Vraag:</strong> In een zaklantaarn zit een 4,5V-batterij. Door het lampje loopt een stroom van 0,3 A.</p>
+        <p>Hoe groot is de weerstand van het lampje? Teken het netwerkschema.</p>
+
+        <h3>📋 Stap 1: Analyseer gegeven informatie</h3>
+        <div class="step">
+            <p><strong>Gegeven:</strong></p>
+            <ul>
+                <li>U = 4.5 V (batterijspanning)</li>
+                <li>I = 0.3 A (stroom door lampje)</li>
+            </ul>
+            <p><strong>Gevraagd:</strong> R = ? (weerstand lampje)</p>
+        </div>
+
+        <h3>📖 Stap 2: Theoretische basis</h3>
+        <div class="theory">
+            <p><strong>Wet van Ohm:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>U</mi>
+                        <mo>=</mo>
+                        <mi>I</mi>
+                        <mo>·</mo>
+                        <mi>R</mi>
+                        <mspace width="2em"/>
+                        <mo>⇒</mo>
+                        <mspace width="2em"/>
+                        <mi>R</mi>
+                        <mo>=</mo>
+                        <mfrac><mi>U</mi><mi>I</mi></mfrac>
+                    </mrow>
+                </math>
+            </div>
+            <p><strong>Fysische betekenis:</strong> De weerstand is de verhouding tussen spanning en stroom.</p>
+        </div>
+
+        <h3>🔢 Stap 3: Algebraïsche afleiding</h3>
+        <div class="step">
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>R</mi>
+                        <mo>=</mo>
+                        <mfrac><mi>U</mi><mi>I</mi></mfrac>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🧮 Stap 4: Numerieke substitutie</h3>
+        <div class="step">
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>R</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow><mn>4.5</mn></mrow>
+                            <mrow><mn>0.3</mn></mrow>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn class="highlight">15</mn>
+                        <mtext> Ω</mtext>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>✅ Stap 5: Verificatie en fysische interpretatie</h3>
+        <div class="verification">
+            <p><strong>Verificatie 1 — Dimensionale analyse:</strong></p>
+            <ul>
+                <li>[V]/[A] = [Ω] ✓</li>
+            </ul>
+            <p><strong>Fysische interpretatie:</strong></p>
+            <p>• 15Ω is een typische weerstand voor een kleine gloeilamp</p>
+            <p>• Bij 4.5V dissipeert het lampje: P = U·I = 4.5 × 0.3 = <strong>1.35W</strong></p>
+        </div>
+
+        <!-- OPGAVE 2 -->
+        <h2>🎯 Opgave 2: Straalkachel</h2>
+        <p><strong>Vraag:</strong> Een straalkachel is aangesloten op een spanning van 230 V. De weerstand van het verwarmingselement is 51 Ω. Hoeveel stroom wordt er opgenomen?</p>
+
+        <h3>📋 Stap 1: Analyseer gegeven informatie</h3>
+        <div class="step">
+            <p><strong>Gegeven:</strong></p>
+            <ul>
+                <li>U = 230 V (netspanning)</li>
+                <li>R = 51 Ω (weerstand verwarmingselement)</li>
+            </ul>
+            <p><strong>Gevraagd:</strong> I = ? (stroom)</p>
+        </div>
+
+        <h3>📖 Stap 2: Theoretische basis</h3>
+        <div class="theory">
+            <p><strong>Wet van Ohm herschreven voor I:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>U</mi>
+                        <mo>=</mo>
+                        <mi>I</mi>
+                        <mo>·</mo>
+                        <mi>R</mi>
+                        <mspace width="2em"/>
+                        <mo>⇒</mo>
+                        <mspace width="2em"/>
+                        <mi>I</mi>
+                        <mo>=</mo>
+                        <mfrac><mi>U</mi><mi>R</mi></mfrac>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🔢 Stap 3: Algebraïsche afleiding</h3>
+        <div class="step">
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>I</mi>
+                        <mo>=</mo>
+                        <mfrac><mi>U</mi><mi>R</mi></mfrac>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>🧮 Stap 4: Numerieke substitutie</h3>
+        <div class="step">
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>I</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mn>230</mn>
+                            <mn>51</mn>
+                        </mfrac>
+                        <mo>=</mo>
+                        <mn class="highlight">4.51</mn>
+                        <mtext> A</mtext>
+                    </mrow>
+                </math>
+            </div>
+        </div>
+
+        <h3>✅ Stap 5: Verificatie en fysische interpretatie</h3>
+        <div class="verification">
+            <p><strong>Verificatie 1 — Vermogen:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>P</mi>
+                        <mo>=</mo>
+                        <mi>U</mi>
+                        <mo>·</mo>
+                        <mi>I</mi>
+                        <mo>=</mo>
+                        <mn>230</mn>
+                        <mo>×</mo>
+                        <mn>4.51</mn>
+                        <mo>=</mo>
+                        <mn>1037</mn>
+                        <mtext> W</mtext>
+                        <mo>≈</mo>
+                        <mn>1kW</mn>
+                    </mrow>
+                </math>
+            </div>
+            <p><strong>Fysische interpretatie:</strong></p>
+            <p>• Ongeveer 1kW vermogen is typisch voor een kleine straalkachel</p>
+            <p>• Stroom van 4.5A vereist minimaal 10A zekering (standaard 16A stopcontact is voldoende)</p>
+        </div>
+
+        <!-- OPGAVE 5 -->
+        <h2>🎯 Opgave 5: "Er staat spanning op de wandcontactdoos"</h2>
+        <p><strong>Vraag:</strong> "Er staat stroom op de wandcontactdoos" is onzin. Is de bewering "Er staat spanning op de wandcontactdoos" technisch wèl helemaal juist? Zo niet, wat moet het dan zijn?</p>
+
+        <h3>📋 Stap 1: Analyseer de vraag</h3>
+        <div class="step">
+            <p><strong>Te beoordelen uitspraak:</strong> "Er staat spanning op de wandcontactdoos"</p>
+            <p><strong>Vraag:</strong> Is dit technisch correct?</p>
+        </div>
+
+        <h3>📖 Stap 2: Theoretische basis</h3>
+        <div class="theory">
+            <p><strong>Spanningsdefinitie:</strong> Spanning is altijd een <em>potentiaalverschil</em> tussen twee punten.</p>
+            <p><strong>Correcte terminologie:</strong></p>
+            <ul>
+                <li><strong>Tussen twee polen:</strong> spanningsverschil</li>
+                <li><strong>Ten opzichte van referentie (aarde):</strong> potentiaal</li>
+            </ul>
+        </div>
+
+        <h3>🔢 Stap 3: Correcte formulering</h3>
+        <div class="step">
+            <p><strong>Beter is:</strong></p>
+            <p>✓ <em>"Tussen de twee polen van het stopcontact staat een wisselspanning van 230V<sub>eff</sub>"</em></p>
+
+            <p><strong>Nog preciezer:</strong></p>
+            <ul>
+                <li>Op de <strong>blauwe</strong> draad (nuldraad): 0V t.o.v. aarde</li>
+                <li>Op de <strong>bruine</strong> draad (fasedraad): ~230V t.o.v. aarde (wisselend!)</li>
+                <li>Op de <strong>geel/groene</strong> draad (aarde): 0V t.o.v. aarde (doorverbonden met aardpen)</li>
+            </ul>
+        </div>
+
+        <h3>🧮 Stap 4: Praktische context</h3>
+        <div class="step">
+            <p><strong>Waarom is dit belangrijk?</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Draad</th>
+                        <th>Kleur</th>
+                        <th>Spanning t.o.v. aarde</th>
+                        <th>Gevaar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nul (N)</td>
+                        <td>Blauw</td>
+                        <td>~0V</td>
+                        <td>✓ Veilig (normaal)</td>
+                    </tr>
+                    <tr>
+                        <td>Fase (L)</td>
+                        <td>Bruin</td>
+                        <td>~230V AC</td>
+                        <td>⚡ LEVENSGEVAARLIJK!</td>
+                    </tr>
+                    <tr>
+                        <td>Aarde (PE)</td>
+                        <td>Geel/Groen</td>
+                        <td>0V (per definitie)</td>
+                        <td>✓ Veilig</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>✅ Stap 5: Fysische interpretatie en veiligheid</h3>
+        <div class="verification">
+            <p><strong>Waarom "er staat spanning op" onvolledig is:</strong></p>
+            <ul>
+                <li>Spanning is altijd <em>relatief</em> — tussen twee punten</li>
+                <li>"Op de wandcontactdoos" suggereert één punt, maar je hebt twee polen nodig</li>
+                <li>Correct: "Er staat 230V <em>tussen</em> de fase en nul"</li>
+            </ul>
+
+            <p><strong>Praktische veiligheid:</strong></p>
+            <p>⚡ <strong>Als je de bruine draad aanraakt terwijl je geaard bent:</strong></p>
+            <ul>
+                <li>Je vormt een pad van 230V (fase) naar 0V (aarde)</li>
+                <li>Door je lichaam (~1kΩ) loopt I ≈ 230mA → <strong>DODELIJK!</strong></li>
+                <li>Vanaf ~30mA kan hartfalen optreden</li>
+            </ul>
+
+            <p><strong>Aarding werking:</strong></p>
+            <p>De aarde (PE-draad) is doorverbonden met:</p>
+            <ul>
+                <li>Metalen behuizingen van apparaten</li>
+                <li>Waterleiding en CV-installatie</li>
+                <li>Metalen vloermatten in douche/keuken</li>
+                <li>Aardpen in de grond (via hoofdaansluiting)</li>
+            </ul>
+            <p>→ Bij een fout slaat de aardlekschakelaar af (binnen 30ms bij >30mA)</p>
+        </div>
+
+        <h2>🎓 Samenvatting</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Opgave</th>
+                    <th>Formule</th>
+                    <th>Resultaat</th>
+                    <th>Les</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1: Zaklantaarn</td>
+                    <td>R = U/I</td>
+                    <td>15 Ω</td>
+                    <td>Wet van Ohm: weerstand bepalen</td>
+                </tr>
+                <tr>
+                    <td>2: Straalkachel</td>
+                    <td>I = U/R</td>
+                    <td>4.51 A</td>
+                    <td>Wet van Ohm: stroom bepalen</td>
+                </tr>
+                <tr>
+                    <td>5: Spanning "staat op"</td>
+                    <td>—</td>
+                    <td>Onnauwkeurig</td>
+                    <td>Spanning is altijd <em>tussen</em> twee punten</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="theory">
+            <p><strong>🔑 Belangrijkste formule:</strong></p>
+            <div class="display-math">
+                <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>U</mi>
+                        <mo>=</mo>
+                        <mi>I</mi>
+                        <mo>·</mo>
+                        <mi>R</mi>
+                    </mrow>
+                </math>
+            </div>
+            <p>Hieruit volgen alle andere vormen:</p>
+            <ul>
+                <li>I = U/R</li>
+                <li>R = U/I</li>
+                <li>P = U·I = I²·R = U²/R</li>
+            </ul>
+        </div>
+
+        <hr>
+        <p><em>Gegenereerd: 2025-11-08 | FULL-enhanced met 5-stappen methodologie</em></p>
+    </div>
+</body>
+</html>

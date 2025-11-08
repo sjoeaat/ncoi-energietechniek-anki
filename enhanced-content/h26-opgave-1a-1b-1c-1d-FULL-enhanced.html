@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 2.6 - Opgave 1a, 1b, 1c, 1d - Vervangingsweerstand FULL Enhanced</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+            font-size: 2em;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 35px;
+            font-size: 1.6em;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+        .exercise {
+            background: #f8f9ff;
+            border-left: 6px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border: 2px solid #667eea;
+        }
+        .step {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+        .step-title {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .step-number {
+            background: #764ba2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+        .formula-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        .insight-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .result-box {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            color: #155724;
+        }
+        .display-math {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        math {
+            font-size: 1.3em;
+        }
+        .inline-math {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 2px solid #667eea;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f8f9ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 H 2.6 - Serie- en Parallelschakelingen</h1>
+        <h2>Opgave 1: Vervangingsweerstand Berekenen</h2>
+
+        <p><strong>Algemene opdracht:</strong> Schat eerst en bereken daarna de vervangingsweerstand tussen de punten A en B voor de volgende schakelingen.</p>
+
+        <!-- OPGAVE 1a: SERIESCHAKELING -->
+        <div class="exercise">
+            <h2>Opgave 1a: Serieschakeling (2000Ω + 300Ω + 200Ω)</h2>
+
+            <div class="question">
+                Bereken de vervangingsweerstand R<sub>AB</sub> van drie weerstanden in serie:<br>
+                R₁ = 2000Ω, R₂ = 300Ω, R₃ = 200Ω
+            </div>
+
+            <!-- STAP 1: GEGEVEN ANALYSEREN -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GEGEVEN INFORMATIE ANALYSEREN
+                </div>
+                <p><strong>Gegeven:</strong></p>
+                <ul>
+                    <li>R₁ = 2000Ω (eerste weerstand)</li>
+                    <li>R₂ = 300Ω (tweede weerstand)</li>
+                    <li>R₃ = 200Ω (derde weerstand)</li>
+                    <li>Configuratie: serieschakeling (stroom loopt achter elkaar door alle weerstanden)</li>
+                </ul>
+                <p><strong>Gevraagd:</strong></p>
+                <ul>
+                    <li>R<sub>AB</sub> = vervangingsweerstand tussen punten A en B</li>
+                </ul>
+            </div>
+
+            <!-- STAP 2: THEORETISCHE BASIS -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    THEORETISCHE BASIS
+                </div>
+                <p><strong>Wet voor serieschakeling:</strong></p>
+                <div class="formula-box">
+                    Bij een serieschakeling telt je de weerstanden bij elkaar op:
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>R</mi><mi>totaal</mi></msub>
+                                <mo>=</mo>
+                                <msub><mi>R</mi><mn>1</mn></msub>
+                                <mo>+</mo>
+                                <msub><mi>R</mi><mn>2</mn></msub>
+                                <mo>+</mo>
+                                <msub><mi>R</mi><mn>3</mn></msub>
+                                <mo>+</mo>
+                                <mo>…</mo>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 Fysische betekenis:</strong><br>
+                    In een serieschakeling loopt dezelfde stroom door alle weerstanden. Elke weerstand voegt extra "belemmering" toe aan de stroomstroom, dus de totale weerstand is de som van alle individuele weerstanden.
+                </div>
+            </div>
+
+            <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    ALGEBRAÏSCHE AFLEIDING
+                </div>
+                <p>Voor drie weerstanden in serie:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            <mo>=</mo>
+                            <msub><mi>R</mi><mn>1</mn></msub>
+                            <mo>+</mo>
+                            <msub><mi>R</mi><mn>2</mn></msub>
+                            <mo>+</mo>
+                            <msub><mi>R</mi><mn>3</mn></msub>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 4: NUMERIEKE SUBSTITUTIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    NUMERIEKE SUBSTITUTIE
+                </div>
+                <p>Invullen van de waarden:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mn>2000</mn>
+                            <mo>+</mo>
+                            <mn>300</mn>
+                            <mo>+</mo>
+                            <mn>200</mn>
+                        </mrow>
+                    </math>
+                </div>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mn>2500</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 5: VERIFICATIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    VERIFICATIE & FYSISCHE INTERPRETATIE
+                </div>
+
+                <p><strong>Dimensiecontrole:</strong></p>
+                <p>Ω + Ω + Ω = Ω ✓ (eenheid klopt)</p>
+
+                <p><strong>Realiteitscontrole:</strong></p>
+                <ul>
+                    <li>R<sub>AB</sub> = 2500Ω > R₁ (grootste weerstand) ✓</li>
+                    <li>Bij serie is totale weerstand altijd groter dan elke individuele weerstand ✓</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische interpretatie:</strong><br>
+                    De totale weerstand (2500Ω) is groter dan de grootste individuele weerstand (2000Ω). Dit is kenmerkend voor serieschakelingen: elke extra weerstand vergroot de totale weerstand.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: R<sub>AB</sub> = 2500 Ω (= 2,5 kΩ)
+            </div>
+        </div>
+
+        <!-- OPGAVE 1b: PARALLELSCHAKELING -->
+        <div class="exercise">
+            <h2>Opgave 1b: Parallelschakeling (500Ω ∥ 1000Ω)</h2>
+
+            <div class="question">
+                Bereken de vervangingsweerstand R<sub>AB</sub> van twee weerstanden parallel:<br>
+                R₁ = 500Ω, R₂ = 1000Ω
+            </div>
+
+            <!-- STAP 1: GEGEVEN ANALYSEREN -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GEGEVEN INFORMATIE ANALYSEREN
+                </div>
+                <p><strong>Gegeven:</strong></p>
+                <ul>
+                    <li>R₁ = 500Ω</li>
+                    <li>R₂ = 1000Ω</li>
+                    <li>Configuratie: parallelschakeling (beide weerstanden tussen dezelfde twee punten)</li>
+                </ul>
+                <p><strong>Gevraagd:</strong></p>
+                <ul>
+                    <li>R<sub>AB</sub> = vervangingsweerstand</li>
+                </ul>
+            </div>
+
+            <!-- STAP 2: THEORETISCHE BASIS -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    THEORETISCHE BASIS
+                </div>
+                <p><strong>Wet voor twee weerstanden parallel:</strong></p>
+                <div class="formula-box">
+                    Product-som formule (handigste voor 2 weerstanden):
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>R</mi><mi>parallel</mi></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <msub><mi>R</mi><mn>1</mn></msub>
+                                        <mo>·</mo>
+                                        <msub><mi>R</mi><mn>2</mn></msub>
+                                    </mrow>
+                                    <mrow>
+                                        <msub><mi>R</mi><mn>1</mn></msub>
+                                        <mo>+</mo>
+                                        <msub><mi>R</mi><mn>2</mn></msub>
+                                    </mrow>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 Fysische betekenis:</strong><br>
+                    Bij een parallelschakeling verdeel je de stroom over meerdere "paden". Meer paden betekent lagere totale weerstand. De vervangingsweerstand is altijd <strong>kleiner</strong> dan de kleinste individuele weerstand.
+                </div>
+            </div>
+
+            <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    ALGEBRAÏSCHE AFLEIDING
+                </div>
+                <p>Voor twee weerstanden parallel geldt:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>·</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mrow>
+                                <mrow>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                    <mo>+</mo>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 4: NUMERIEKE SUBSTITUTIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    NUMERIEKE SUBSTITUTIE
+                </div>
+                <p>Invullen van de waarden:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>500</mn>
+                                    <mo>·</mo>
+                                    <mn>1000</mn>
+                                </mrow>
+                                <mrow>
+                                    <mn>500</mn>
+                                    <mo>+</mo>
+                                    <mn>1000</mn>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>500000</mn>
+                                <mn>1500</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>333,33</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 5: VERIFICATIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    VERIFICATIE & FYSISCHE INTERPRETATIE
+                </div>
+
+                <p><strong>Dimensiecontrole:</strong></p>
+                <p>(Ω · Ω) / Ω = Ω² / Ω = Ω ✓</p>
+
+                <p><strong>Realiteitscontrole:</strong></p>
+                <ul>
+                    <li>R<sub>AB</sub> = 333,33Ω < 500Ω (kleinste weerstand) ✓</li>
+                    <li>Bij parallel is totale weerstand altijd kleiner dan de kleinste individuele weerstand ✓</li>
+                    <li>333,33Ω ≈ ⅓ van 1000Ω (logisch, want 500Ω is helft van 1000Ω) ✓</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische interpretatie:</strong><br>
+                    Door twee weerstanden parallel te plaatsen, bieden we de stroom twee paden aan. Het resultaat (333,33Ω) is veel lager dan beide individuele weerstanden. Dit is de kracht van parallelschakelingen: lagere totale weerstand betekent meer stroom bij dezelfde spanning.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: R<sub>AB</sub> = 333,33 Ω
+            </div>
+        </div>
+
+        <!-- OPGAVE 1c: SERIE-PARALLEL COMBINATIE -->
+        <div class="exercise">
+            <h2>Opgave 1c: Serie-Parallel Combinatie</h2>
+
+            <div class="question">
+                Bereken de vervangingsweerstand R<sub>AB</sub> van een gecombineerde schakeling:<br>
+                Bovenste tak: 150Ω + 300Ω (serie)<br>
+                Onderste tak: 450Ω<br>
+                Beide takken parallel
+            </div>
+
+            <!-- STAP 1: GEGEVEN ANALYSEREN -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GEGEVEN INFORMATIE ANALYSEREN
+                </div>
+                <p><strong>Gegeven:</strong></p>
+                <ul>
+                    <li>Bovenste tak: R₁ = 150Ω in serie met R₂ = 300Ω</li>
+                    <li>Onderste tak: R₃ = 450Ω</li>
+                    <li>Beide takken zijn parallel geschakeld tussen A en B</li>
+                </ul>
+                <p><strong>Gevraagd:</strong></p>
+                <ul>
+                    <li>R<sub>AB</sub> = vervangingsweerstand tussen A en B</li>
+                </ul>
+                <div class="warning-box">
+                    <strong>⚠️ Strategie:</strong><br>
+                    Bij gecombineerde schakelingen werk je van "binnen naar buiten":<br>
+                    1. Eerst de serie-combinatie oplossen<br>
+                    2. Daarna de parallel-combinatie berekenen
+                </div>
+            </div>
+
+            <!-- STAP 2: THEORETISCHE BASIS -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    THEORETISCHE BASIS
+                </div>
+                <p><strong>Stap 1: Serie-combinatie:</strong></p>
+                <div class="formula-box">
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>R</mi><mi>serie</mi></msub>
+                                <mo>=</mo>
+                                <msub><mi>R</mi><mn>1</mn></msub>
+                                <mo>+</mo>
+                                <msub><mi>R</mi><mn>2</mn></msub>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+                <p><strong>Stap 2: Parallel-combinatie:</strong></p>
+                <div class="formula-box">
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>R</mi><mi>parallel</mi></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <msub><mi>R</mi><mi>serie</mi></msub>
+                                        <mo>·</mo>
+                                        <msub><mi>R</mi><mn>3</mn></msub>
+                                    </mrow>
+                                    <mrow>
+                                        <msub><mi>R</mi><mi>serie</mi></msub>
+                                        <mo>+</mo>
+                                        <msub><mi>R</mi><mn>3</mn></msub>
+                                    </mrow>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    ALGEBRAÏSCHE AFLEIDING
+                </div>
+                <p><strong>Stap A: Bereken bovenste tak (serie):</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mi>boven</mi></msub>
+                            <mo>=</mo>
+                            <mn>150</mn>
+                            <mo>+</mo>
+                            <mn>300</mn>
+                            <mo>=</mo>
+                            <mn>450</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+                <p><strong>Stap B: Nu parallel: 450Ω ∥ 450Ω:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>450</mn>
+                                    <mo>·</mo>
+                                    <mn>450</mn>
+                                </mrow>
+                                <mrow>
+                                    <mn>450</mn>
+                                    <mo>+</mo>
+                                    <mn>450</mn>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 4: NUMERIEKE SUBSTITUTIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    NUMERIEKE SUBSTITUTIE
+                </div>
+                <p>Berekening van de parallel-combinatie:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>202500</mn>
+                                <mn>900</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>225</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 Snelle methode:</strong><br>
+                    Bij twee <em>gelijke</em> weerstanden parallel is de vervangingsweerstand altijd de helft:<br>
+                    R<sub>parallel</sub> = R / 2 = 450 / 2 = 225Ω
+                </div>
+            </div>
+
+            <!-- STAP 5: VERIFICATIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    VERIFICATIE & FYSISCHE INTERPRETATIE
+                </div>
+
+                <p><strong>Controle met "helft-regel":</strong></p>
+                <p>450Ω ∥ 450Ω = 450 / 2 = 225Ω ✓</p>
+
+                <p><strong>Realiteitscontrole:</strong></p>
+                <ul>
+                    <li>R<sub>AB</sub> = 225Ω < 450Ω (individuele takken) ✓</li>
+                    <li>Bovenste tak (150+300 = 450Ω) is gelijk aan onderste tak (450Ω) ✓</li>
+                    <li>Twee identieke parallelle takken geven exact de helft ✓</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische interpretatie:</strong><br>
+                    Hoewel de bovenste tak uit twee weerstanden bestaat (150Ω + 300Ω), gedraagt deze zich als één weerstand van 450Ω. Samen met de onderste tak van 450Ω krijgen we twee identieke parallelle paden, wat de totale weerstand halveert.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: R<sub>AB</sub> = 225 Ω
+            </div>
+        </div>
+
+        <!-- OPGAVE 1d: DRIE WEERSTANDEN PARALLEL (GELEIDINGSMETHODE) -->
+        <div class="exercise">
+            <h2>Opgave 1d: Drie Weerstanden Parallel (8kΩ ∥ 6kΩ ∥ 3kΩ)</h2>
+
+            <div class="question">
+                Bereken de vervangingsweerstand R<sub>AB</sub> van drie weerstanden parallel:<br>
+                R₁ = 8kΩ, R₂ = 6kΩ, R₃ = 3kΩ<br>
+                Gebruik de <strong>geleidingsmethode</strong> (conductantie G = 1/R)
+            </div>
+
+            <!-- STAP 1: GEGEVEN ANALYSEREN -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GEGEVEN INFORMATIE ANALYSEREN
+                </div>
+                <p><strong>Gegeven:</strong></p>
+                <ul>
+                    <li>R₁ = 8kΩ = 8000Ω</li>
+                    <li>R₂ = 6kΩ = 6000Ω</li>
+                    <li>R₃ = 3kΩ = 3000Ω</li>
+                    <li>Configuratie: drie weerstanden parallel</li>
+                </ul>
+                <p><strong>Gevraagd:</strong></p>
+                <ul>
+                    <li>R<sub>AB</sub> = vervangingsweerstand</li>
+                </ul>
+                <div class="warning-box">
+                    <strong>⚠️ Methode-keuze:</strong><br>
+                    Bij 3 of meer parallelle weerstanden is de <strong>geleidingsmethode</strong> vaak handiger dan de product-som formule. Geleiding G = 1/R (eenheid: Siemens, S).
+                </div>
+            </div>
+
+            <!-- STAP 2: THEORETISCHE BASIS -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    THEORETISCHE BASIS
+                </div>
+                <p><strong>Geleidingsmethode voor parallelle weerstanden:</strong></p>
+                <div class="formula-box">
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                </mfrac>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mfrac>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 Fysische betekenis:</strong><br>
+                    Geleiding (G) meet hoe <em>gemakkelijk</em> stroom kan vloeien (tegengesteld aan weerstand). Bij parallelle weerstanden tellen de geleidingen op, want je creëert meer "paden" voor de stroom.
+                </div>
+            </div>
+
+            <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    ALGEBRAÏSCHE AFLEIDING
+                </div>
+                <p><strong>Stap A: Vul de waarden in:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <mn>1</mn>
+                                <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mn>8</mn>
+                            </mfrac>
+                            <mo>+</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mn>6</mn>
+                            </mfrac>
+                            <mo>+</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mn>3</mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+                <p><strong>Stap B: Gelijkmaken van noemers (kleinst gemeen veelvoud = 24):</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <mn>1</mn>
+                                <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mn>8</mn>
+                            </mfrac>
+                            <mo>·</mo>
+                            <mfrac>
+                                <mn>3</mn>
+                                <mn>3</mn>
+                            </mfrac>
+                            <mo>+</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mn>6</mn>
+                            </mfrac>
+                            <mo>·</mo>
+                            <mfrac>
+                                <mn>4</mn>
+                                <mn>4</mn>
+                            </mfrac>
+                            <mo>+</mo>
+                            <mfrac>
+                                <mn>1</mn>
+                                <mn>3</mn>
+                            </mfrac>
+                            <mo>·</mo>
+                            <mfrac>
+                                <mn>8</mn>
+                                <mn>8</mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <mn>1</mn>
+                                <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>3</mn>
+                                <mn>24</mn>
+                            </mfrac>
+                            <mo>+</mo>
+                            <mfrac>
+                                <mn>4</mn>
+                                <mn>24</mn>
+                            </mfrac>
+                            <mo>+</mo>
+                            <mfrac>
+                                <mn>8</mn>
+                                <mn>24</mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 4: NUMERIEKE SUBSTITUTIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    NUMERIEKE SUBSTITUTIE
+                </div>
+                <p><strong>Stap C: Tel de tellers op:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mfrac>
+                                <mn>1</mn>
+                                <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mn>3</mn>
+                                    <mo>+</mo>
+                                    <mn>4</mn>
+                                    <mo>+</mo>
+                                    <mn>8</mn>
+                                </mrow>
+                                <mn>24</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>15</mn>
+                                <mn>24</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>5</mn>
+                                <mn>8</mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+                <p><strong>Stap D: Neem de inverse om R<sub>AB</sub> te vinden:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>R</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>8</mn>
+                                <mn>5</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>1,6</mn>
+                            <mtext> kΩ</mtext>
+                            <mo>=</mo>
+                            <mn>1600</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 5: VERIFICATIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    VERIFICATIE & FYSISCHE INTERPRETATIE
+                </div>
+
+                <p><strong>Dimensiecontrole:</strong></p>
+                <p>1/R heeft eenheid S (Siemens), R heeft eenheid Ω ✓</p>
+
+                <p><strong>Realiteitscontrole:</strong></p>
+                <ul>
+                    <li>R<sub>AB</sub> = 1600Ω < 3000Ω (kleinste weerstand) ✓</li>
+                    <li>Bij parallel is totaal altijd kleiner dan kleinste component ✓</li>
+                    <li>1,6kΩ is ongeveer ⅕ van 8kΩ (grootste weerstand) ✓</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische interpretatie:</strong><br>
+                    Door drie weerstanden parallel te schakelen, creëren we drie paden voor de stroom. Het resultaat (1,6kΩ) is veel lager dan zelfs de kleinste individuele weerstand (3kΩ). Dit laat zien hoe krachtig parallelschakelingen zijn voor het verlagen van de totale weerstand.
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Rekenmachine-tip:</strong><br>
+                    Je kunt ook direct berekenen: 1 ÷ (1÷8 + 1÷6 + 1÷3) = 1,6
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: R<sub>AB</sub> = 1,6 kΩ = 1600 Ω
+            </div>
+        </div>
+
+        <!-- SAMENVATTING -->
+        <div class="exercise" style="background: #e8f5e9;">
+            <h2>📋 Samenvatting Opgave 1</h2>
+            <table>
+                <tr>
+                    <th>Opgave</th>
+                    <th>Type schakeling</th>
+                    <th>Methode</th>
+                    <th>Resultaat</th>
+                </tr>
+                <tr>
+                    <td>1a</td>
+                    <td>Serie (3 weerstanden)</td>
+                    <td>R<sub>totaal</sub> = R₁ + R₂ + R₃</td>
+                    <td><strong>2500 Ω</strong></td>
+                </tr>
+                <tr>
+                    <td>1b</td>
+                    <td>Parallel (2 weerstanden)</td>
+                    <td>Product-som formule</td>
+                    <td><strong>333,33 Ω</strong></td>
+                </tr>
+                <tr>
+                    <td>1c</td>
+                    <td>Serie-parallel combinatie</td>
+                    <td>Eerst serie, dan parallel</td>
+                    <td><strong>225 Ω</strong></td>
+                </tr>
+                <tr>
+                    <td>1d</td>
+                    <td>Parallel (3 weerstanden)</td>
+                    <td>Geleidingsmethode (1/R)</td>
+                    <td><strong>1600 Ω (1,6 kΩ)</strong></td>
+                </tr>
+            </table>
+
+            <div class="insight-box" style="margin-top: 20px;">
+                <strong>🎓 Belangrijke lessen:</strong>
+                <ul>
+                    <li><strong>Serie:</strong> R<sub>totaal</sub> = som (altijd groter dan grootste component)</li>
+                    <li><strong>Parallel:</strong> R<sub>totaal</sub> = kleiner dan kleinste component</li>
+                    <li><strong>Twee gelijke parallel:</strong> R<sub>totaal</sub> = R / 2</li>
+                    <li><strong>Drie+ parallel:</strong> Gebruik geleidingsmethode (1/R)</li>
+                    <li><strong>Gecombineerd:</strong> Werk van binnen naar buiten</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

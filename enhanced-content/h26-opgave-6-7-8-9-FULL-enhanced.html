@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 2.6 - Opgave 6, 7, 8, 9 - Stroomberekeningen & Netwerkontwerp FULL Enhanced</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+            font-size: 2em;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 35px;
+            font-size: 1.6em;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+        .exercise {
+            background: #f8f9ff;
+            border-left: 6px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border: 2px solid #667eea;
+        }
+        .step {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+        .step-title {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .step-number {
+            background: #764ba2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+        .formula-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .insight-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .result-box {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            color: #155724;
+        }
+        .display-math {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        math {
+            font-size: 1.25em;
+        }
+        .method-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .alternative-method {
+            background: #fff9e6;
+            border: 2px dashed #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 H 2.6 - Stroomberekeningen & Netwerkontwerp</h1>
+
+        <!-- OPGAVE 6: STROOMBEREKENINGEN IN PARALLEL NETWERK -->
+        <div class="exercise">
+            <h2>Opgave 6: Stroomberekening in Parallel Netwerk (met variatie)</h2>
+
+            <div class="question">
+                Bereken de stromen I₁, I₂ en I₃ in deze schakeling met drie parallelle weerstanden:<br>
+                • R₁ = 10Ω, R₂ = 20Ω, R₃ = 30Ω<br>
+                • Totale stroom I<sub>totaal</sub> = 12mA<br><br>
+                <strong>Deel a:</strong> Bereken de stromen (let op tekens!)<br>
+                <strong>Deel b:</strong> Wat worden de stromen als R₂ = 15Ω?
+            </div>
+
+            <!-- DEEL A -->
+            <div class="method-box">
+                <h3>DEEL A: R₁=10Ω, R₂=20Ω, R₃=30Ω</h3>
+
+                <!-- STAP 1: GEGEVEN ANALYSEREN -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        GEGEVEN INFORMATIE ANALYSEREN
+                    </div>
+                    <p><strong>Gegeven:</strong></p>
+                    <ul>
+                        <li>R₁ = 10Ω (stroom gaat naar links, dus negatief)</li>
+                        <li>R₂ = 20Ω (stroom gaat naar rechts, positief)</li>
+                        <li>R₃ = 30Ω (stroom gaat naar rechts, positief)</li>
+                        <li>I<sub>totaal</sub> = 12mA (inkomende stroom)</li>
+                        <li>Configuratie: drie weerstanden parallel (zelfde spanning)</li>
+                    </ul>
+                    <div class="warning-box">
+                        <strong>⚠️ Cruciale observatie - Stroomrichting!</strong><br>
+                        I₁ loopt TEGENGESTELD aan I₂ en I₃. Volgens Kirchhoff's stroomwet:<br>
+                        I<sub>totaal</sub> = I₂ + I₃ - I₁ (of: I₁ + I₂ + I₃ = 0 met juiste tekens)
+                    </div>
+                </div>
+
+                <!-- STAP 2: THEORETISCHE BASIS -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">2</span>
+                        THEORETISCHE BASIS: STROOMVERDELING
+                    </div>
+                    <p><strong>Kernprincipe:</strong></p>
+                    <p>Bij parallelle weerstanden verdelen stromen zich <strong>omgekeerd evenredig</strong> met de weerstanden.</p>
+
+                    <div class="formula-box">
+                        Stroomverhoudingen bij parallel:
+                        <div class="display-math">
+                            <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <msub><mi>I</mi><mn>1</mn></msub>
+                                    <mo>:</mo>
+                                    <msub><mi>I</mi><mn>2</mn></msub>
+                                    <mo>:</mo>
+                                    <msub><mi>I</mi><mn>3</mn></msub>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mn>1</mn>
+                                        <msub><mi>R</mi><mn>1</mn></msub>
+                                    </mfrac>
+                                    <mo>:</mo>
+                                    <mfrac>
+                                        <mn>1</mn>
+                                        <msub><mi>R</mi><mn>2</mn></msub>
+                                    </mfrac>
+                                    <mo>:</mo>
+                                    <mfrac>
+                                        <mn>1</mn>
+                                        <msub><mi>R</mi><mn>3</mn></msub>
+                                    </mfrac>
+                                </mrow>
+                            </math>
+                        </div>
+                    </div>
+
+                    <div class="insight-box">
+                        <strong>💡 Snelle methode - Stroomverhoudingen:</strong><br>
+                        In plaats van spanning berekenen, kun je direct stroomverhoudingen gebruiken:<br>
+                        • Bereken 1/R voor elke weerstand<br>
+                        • Maak verhoudingen met kleinst gemeen veelvoud (KGV)<br>
+                        • Verdeel totale stroom volgens deze verhoudingen
+                    </div>
+                </div>
+
+                <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING (SNELLE METHODE) -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">3</span>
+                        ALGEBRAÏSCHE AFLEIDING - SNELLE METHODE
+                    </div>
+                    <p><strong>Stap 1: Bereken stroomverhoudingen (geleidingen):</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>1</mn></msub>
+                                </mfrac>
+                                <mo>:</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>2</mn></msub>
+                                </mfrac>
+                                <mo>:</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <msub><mi>R</mi><mn>3</mn></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>10</mn>
+                                </mfrac>
+                                <mo>:</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>20</mn>
+                                </mfrac>
+                                <mo>:</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>30</mn>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Stap 2: Vermenigvuldig met KGV=60 om gehele getallen te krijgen:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mn>60</mn>
+                                <mo>×</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>10</mn>
+                                </mfrac>
+                                <mo>:</mo>
+                                <mn>60</mn>
+                                <mo>×</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>20</mn>
+                                </mfrac>
+                                <mo>:</mo>
+                                <mn>60</mn>
+                                <mo>×</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>30</mn>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mn>6</mn>
+                                <mo>:</mo>
+                                <mn>3</mn>
+                                <mo>:</mo>
+                                <mn>2</mn>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Stap 3: Som van verhoudingsgetallen:</strong></p>
+                    <p>Som = 6 + 3 + 2 = 11</p>
+
+                    <p><strong>Stap 4: Verdeel totale stroom (12mA) volgens verhoudingen:</strong></p>
+                    <ul>
+                        <li>I₁ = -6/11 × 12mA (negatief vanwege richting)</li>
+                        <li>I₂ = +3/11 × 12mA</li>
+                        <li>I₃ = +2/11 × 12mA</li>
+                    </ul>
+                </div>
+
+                <!-- STAP 4: NUMERIEKE SUBSTITUTIE -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">4</span>
+                        NUMERIEKE SUBSTITUTIE
+                    </div>
+                    <p><strong>Berekening van de stromen:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mn>1</mn></msub>
+                                <mo>=</mo>
+                                <mo>-</mo>
+                                <mfrac>
+                                    <mn>6</mn>
+                                    <mn>11</mn>
+                                </mfrac>
+                                <mo>×</mo>
+                                <mn>12</mn>
+                                <mtext> mA</mtext>
+                                <mo>=</mo>
+                                <mo>-</mo>
+                                <mn>6,54</mn>
+                                <mtext> mA</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mn>2</mn></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>3</mn>
+                                    <mn>11</mn>
+                                </mfrac>
+                                <mo>×</mo>
+                                <mn>12</mn>
+                                <mtext> mA</mtext>
+                                <mo>=</mo>
+                                <mn>3,27</mn>
+                                <mtext> mA</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mn>3</mn></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>2</mn>
+                                    <mn>11</mn>
+                                </mfrac>
+                                <mo>×</mo>
+                                <mn>12</mn>
+                                <mtext> mA</mtext>
+                                <mo>=</mo>
+                                <mn>2,18</mn>
+                                <mtext> mA</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+
+                <!-- STAP 5: VERIFICATIE -->
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">5</span>
+                        VERIFICATIE & FYSISCHE INTERPRETATIE
+                    </div>
+
+                    <p><strong>Controle met Kirchhoff's stroomwet:</strong></p>
+                    <p>I<sub>totaal</sub> = I₂ + I₃ - I₁ = 3,27 + 2,18 - (-6,54) = 3,27 + 2,18 + 6,54 = 12,0mA ✓</p>
+
+                    <p><strong>Realiteitscontrole:</strong></p>
+                    <ul>
+                        <li>|I₁| = 6,54mA is grootste (kleinste R) ✓</li>
+                        <li>|I₃| = 2,18mA is kleinste (grootste R) ✓</li>
+                        <li>Verhouding I₁:I₂:I₃ = 6:3:2 zoals berekend ✓</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <strong>⚠️ VEELGEMAAKTE FOUT:</strong><br>
+                        Studenten denken vaak dat stromen zich verhouden als R₁:R₂:R₃ = 10:20:30 = 1:2:3.<br>
+                        Dit is FOUT! Het is omgekeerd evenredig: 1/R₁ : 1/R₂ : 1/R₃ = 1/10 : 1/20 : 1/30 = 6:3:2
+                    </div>
+
+                    <div class="insight-box">
+                        <strong>🔍 Fysische interpretatie:</strong><br>
+                        De kleinste weerstand (R₁=10Ω) trekt de meeste stroom (6,54mA), terwijl de grootste weerstand (R₃=30Ω)
+                        de minste stroom krijgt (2,18mA). Dit is logisch: stroom kiest het pad van minste weerstand!
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    ✓ DEEL A: I₁ = -6,54 mA, I₂ = 3,27 mA, I₃ = 2,18 mA
+                </div>
+            </div>
+
+            <!-- DEEL B -->
+            <div class="method-box">
+                <h3>DEEL B: Als R₂ = 15Ω (in plaats van 20Ω)</h3>
+
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        NIEUWE STROOMVERHOUDINGEN
+                    </div>
+                    <p><strong>Nieuwe situatie:</strong></p>
+                    <ul>
+                        <li>R₁ = 10Ω (ongewijzigd)</li>
+                        <li>R₂ = 15Ω (was 20Ω)</li>
+                        <li>R₃ = 30Ω (ongewijzigd)</li>
+                    </ul>
+
+                    <p><strong>Nieuwe verhoudingen:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>10</mn>
+                                </mfrac>
+                                <mo>:</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>15</mn>
+                                </mfrac>
+                                <mo>:</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>30</mn>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p>Met KGV=30:</p>
+                    <p>3 : 2 : 1 (som = 6)</p>
+
+                    <p><strong>Nieuwe stromen:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mn>1</mn></msub>
+                                <mo>=</mo>
+                                <mo>-</mo>
+                                <mfrac>
+                                    <mn>3</mn>
+                                    <mn>6</mn>
+                                </mfrac>
+                                <mo>×</mo>
+                                <mn>12</mn>
+                                <mo>=</mo>
+                                <mo>-</mo>
+                                <mn>6</mn>
+                                <mtext> mA</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mn>2</mn></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>2</mn>
+                                    <mn>6</mn>
+                                </mfrac>
+                                <mo>×</mo>
+                                <mn>12</mn>
+                                <mo>=</mo>
+                                <mn>4</mn>
+                                <mtext> mA</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mn>3</mn></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>1</mn>
+                                    <mn>6</mn>
+                                </mfrac>
+                                <mo>×</mo>
+                                <mn>12</mn>
+                                <mo>=</mo>
+                                <mn>2</mn>
+                                <mtext> mA</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Controle:</strong> -6 + 4 + 2 = 0, dus I<sub>totaal</sub> = 4 + 2 - (-6) = 12mA ✓</p>
+                </div>
+
+                <div class="result-box">
+                    ✓ DEEL B: I₁ = -6 mA, I₂ = 4 mA, I₃ = 2 mA
+                </div>
+            </div>
+
+            <!-- ALTERNATIEVE METHODE -->
+            <div class="alternative-method">
+                <h3>🔄 Alternatieve Methode: Via Spanning</h3>
+                <p><strong>Stap 1:</strong> Bereken vervangingsweerstand R<sub>v</sub></p>
+                <p><strong>Stap 2:</strong> Bereken spanning: U = I<sub>totaal</sub> × R<sub>v</sub></p>
+                <p><strong>Stap 3:</strong> Bereken elke stroom: I = U / R</p>
+                <p>Deze methode geeft hetzelfde resultaat, maar is minder efficiënt voor deze opgave.</p>
+            </div>
+        </div>
+
+        <!-- OPGAVE 7: SPANNINGSDELING -->
+        <div class="exercise">
+            <h2>Opgave 7: Spanningsdeling (met aandacht voor polariteit)</h2>
+
+            <div class="question">
+                Bepaal de spanningen U₁ en U₂ in deze serieschakeling:<br>
+                • Totale spanning: 9V<br>
+                • R₁ = 50Ω (met tegengestelde polariteit getekend)<br>
+                • R₂ = 100Ω<br><br>
+                <strong>Let op het teken van U₁!</strong>
+            </div>
+
+            <!-- STAP 1: GEGEVEN ANALYSEREN -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GEGEVEN INFORMATIE ANALYSEREN
+                </div>
+                <p><strong>Gegeven:</strong></p>
+                <ul>
+                    <li>U<sub>totaal</sub> = 9V</li>
+                    <li>R₁ = 50Ω</li>
+                    <li>R₂ = 100Ω</li>
+                    <li>Configuratie: serieschakeling (spanningsdeling)</li>
+                </ul>
+                <div class="warning-box">
+                    <strong>⚠️ Polariteitsconventie:</strong><br>
+                    In het schema is U₁ TEGENGESTELD gepolariseerd ten opzichte van de standaard stroomrichting.
+                    Dit betekent dat U₁ een negatieve waarde zal hebben.
+                </div>
+            </div>
+
+            <!-- STAP 2: THEORETISCHE BASIS -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    THEORETISCHE BASIS: SPANNINGSDELING
+                </div>
+                <div class="formula-box">
+                    Spanningsdeling in serieschakeling:
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>U</mi><mi>i</mi></msub>
+                                <mo>=</mo>
+                                <msub><mi>U</mi><mi>totaal</mi></msub>
+                                <mo>×</mo>
+                                <mfrac>
+                                    <msub><mi>R</mi><mi>i</mi></msub>
+                                    <msub><mi>R</mi><mi>totaal</mi></msub>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+                <div class="insight-box">
+                    <strong>💡 Spanningsdeling:</strong><br>
+                    In een serieschakeling verdelen spanningen zich EVENREDIG met de weerstanden.
+                    De grootste weerstand krijgt de grootste spanning.
+                </div>
+            </div>
+
+            <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    ALGEBRAÏSCHE AFLEIDING
+                </div>
+                <p><strong>Bereken U₂ (100Ω weerstand):</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mn>2</mn></msub>
+                            <mo>=</mo>
+                            <mn>9</mn>
+                            <mo>×</mo>
+                            <mfrac>
+                                <mn>100</mn>
+                                <mrow>
+                                    <mn>100</mn>
+                                    <mo>+</mo>
+                                    <mn>50</mn>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 4: NUMERIEKE SUBSTITUTIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    NUMERIEKE SUBSTITUTIE
+                </div>
+                <p><strong>Berekening U₂:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mn>2</mn></msub>
+                            <mo>=</mo>
+                            <mn>9</mn>
+                            <mo>×</mo>
+                            <mfrac>
+                                <mn>100</mn>
+                                <mn>150</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>9</mn>
+                            <mo>×</mo>
+                            <mfrac>
+                                <mn>2</mn>
+                                <mn>3</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>6</mn>
+                            <mtext> V</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Berekening U₁ (via spanningswet):</strong></p>
+                <p>U<sub>totaal</sub> = U₁ + U₂ (met correcte tekens)</p>
+                <p>Omdat R₁ de spanning 9V - 6V = 3V krijgt, maar de polariteit tegengesteld is:</p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mn>1</mn></msub>
+                            <mo>=</mo>
+                            <mo>-</mo>
+                            <mn>3</mn>
+                            <mtext> V</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 5: VERIFICATIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    VERIFICATIE & FYSISCHE INTERPRETATIE
+                </div>
+
+                <p><strong>Controle met spanningswet van Kirchhoff:</strong></p>
+                <p>Let op tekens! Als we rondlopen in de richting van de stroom:</p>
+                <p>+9V (bron) - 3V (over R₁) - 6V (over R₂) = 0 ✓</p>
+                <p>Of: U<sub>bron</sub> = |U₁| + U₂ = 3 + 6 = 9V ✓</p>
+
+                <p><strong>Realiteitscontrole:</strong></p>
+                <ul>
+                    <li>U₂ = 6V is groter dan |U₁| = 3V (R₂ = 100Ω > R₁ = 50Ω) ✓</li>
+                    <li>Verhouding U₂:U₁ = 6:3 = 2:1 = 100:50 (evenredig met weerstanden) ✓</li>
+                    <li>Som van absoluten: 6 + 3 = 9V (totale spanning) ✓</li>
+                </ul>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische interpretatie:</strong><br>
+                    De grootste weerstand (100Ω) krijgt 2/3 van de totale spanning (6V), de kleinste (50Ω) krijgt 1/3 (3V).
+                    De negatieve waarde voor U₁ komt puur door de tekenconventie in het schema - de spanning over R₁ is in werkelijkheid 3V,
+                    maar is tegengesteld aan de gekozen richting.
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Belangrijk voor examen:</strong><br>
+                    Let altijd goed op de polariteitspijlen in schema's! Een spanning kan positief of negatief zijn
+                    afhankelijk van hoe de pijlen getekend zijn. De absolute waarde is hetzelfde, maar het teken verschilt.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: U₁ = -3 V, U₂ = 6 V
+            </div>
+        </div>
+
+        <!-- OPGAVE 8: ONBEKENDE WEERSTAND BEPALEN -->
+        <div class="exercise">
+            <h2>Opgave 8: Onbekende Weerstand in Gemengd Netwerk</h2>
+
+            <div class="question">
+                Bereken de onbekende weerstand R in dit netwerk:<br>
+                • Totale stroom: I = 2A<br>
+                • Serieschakeling: 1Ω weerstand met daarachter (10Ω ∥ R)<br>
+                • Totale spanning: 12V
+            </div>
+
+            <!-- STAP 1: GEGEVEN ANALYSEREN -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GEGEVEN INFORMATIE ANALYSEREN
+                </div>
+                <p><strong>Gegeven:</strong></p>
+                <ul>
+                    <li>I<sub>totaal</sub> = 2A (door de 1Ω weerstand)</li>
+                    <li>R<sub>serie</sub> = 1Ω</li>
+                    <li>R<sub>parallel-1</sub> = 10Ω</li>
+                    <li>R<sub>parallel-2</sub> = R (onbekend)</li>
+                    <li>U<sub>totaal</sub> = 12V</li>
+                </ul>
+                <p><strong>Gevraagd:</strong></p>
+                <ul>
+                    <li>Waarde van R</li>
+                </ul>
+            </div>
+
+            <!-- STAP 2: THEORETISCHE BASIS -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    THEORETISCHE BASIS: SLIMME AANPAK
+                </div>
+                <div class="insight-box">
+                    <strong>💡 Slimme observatie:</strong><br>
+                    In plaats van een complexe vergelijking op te stellen, kunnen we eerst de spanning over de parallelle combinatie berekenen.
+                    Die spanning is voor BEIDE weerstanden (10Ω en R) hetzelfde!
+                </div>
+                <div class="formula-box">
+                    Wet van Ohm:
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mi>U</mi>
+                                <mo>=</mo>
+                                <mi>I</mi>
+                                <mo>·</mo>
+                                <mi>R</mi>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+                <div class="formula-box">
+                    Kirchhoff's spanningswet:
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>U</mi><mi>totaal</mi></msub>
+                                <mo>=</mo>
+                                <msub><mi>U</mi><mrow><mn>1</mn><mi mathvariant="normal">Ω</mi></mrow></msub>
+                                <mo>+</mo>
+                                <msub><mi>U</mi><mi>parallel</mi></msub>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAP 3: ALGEBRAÏSCHE AFLEIDING -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    ALGEBRAÏSCHE AFLEIDING
+                </div>
+                <p><strong>Stap 1: Bereken spanningsval over 1Ω weerstand:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mrow><mn>1</mn><mi mathvariant="normal">Ω</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mi>I</mi>
+                            <mo>·</mo>
+                            <mi>R</mi>
+                            <mo>=</mo>
+                            <mn>2</mn>
+                            <mo>·</mo>
+                            <mn>1</mn>
+                            <mo>=</mo>
+                            <mn>2</mn>
+                            <mtext> V</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stap 2: Bereken spanning over parallelle combinatie (10Ω ∥ R):</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>U</mi><mi>parallel</mi></msub>
+                            <mo>=</mo>
+                            <msub><mi>U</mi><mi>totaal</mi></msub>
+                            <mo>-</mo>
+                            <msub><mi>U</mi><mrow><mn>1</mn><mi mathvariant="normal">Ω</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mn>12</mn>
+                            <mo>-</mo>
+                            <mn>2</mn>
+                            <mo>=</mo>
+                            <mn>10</mn>
+                            <mtext> V</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stap 3: Bereken stroom door 10Ω weerstand:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mrow><mn>10</mn><mi mathvariant="normal">Ω</mi></mrow></msub>
+                            <mo>=</mo>
+                            <mfrac>
+                                <msub><mi>U</mi><mi>parallel</mi></msub>
+                                <mn>10</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>10</mn>
+                                <mn>10</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>1</mn>
+                            <mtext> A</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p><strong>Stap 4: Bereken stroom door R (Kirchhoff's stroomwet):</strong></p>
+                <p>I<sub>totaal</sub> = I<sub>10Ω</sub> + I<sub>R</sub></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mi>R</mi></msub>
+                            <mo>=</mo>
+                            <mn>2</mn>
+                            <mo>-</mo>
+                            <mn>1</mn>
+                            <mo>=</mo>
+                            <mn>1</mn>
+                            <mtext> A</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 4: NUMERIEKE SUBSTITUTIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    NUMERIEKE SUBSTITUTIE
+                </div>
+                <p><strong>Stap 5: Bereken R met wet van Ohm:</strong></p>
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>R</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <msub><mi>U</mi><mi>parallel</mi></msub>
+                                <msub><mi>I</mi><mi>R</mi></msub>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>10</mn>
+                                <mn>1</mn>
+                            </mfrac>
+                            <mo>=</mo>
+                            <mn>10</mn>
+                            <mtext> Ω</mtext>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+
+            <!-- STAP 5: VERIFICATIE -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    VERIFICATIE & FYSISCHE INTERPRETATIE
+                </div>
+
+                <p><strong>Controle - Bereken totale weerstand:</strong></p>
+                <p>R<sub>parallel</sub> = (10 × 10) / (10 + 10) = 100/20 = 5Ω</p>
+                <p>R<sub>totaal</sub> = 1Ω (serie) + 5Ω (parallel) = 6Ω</p>
+                <p>I = U/R = 12/6 = 2A ✓ (klopt met gegeven!)</p>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische interpretatie:</strong><br>
+                    De onbekende weerstand R blijkt 10Ω te zijn - exact gelijk aan de bekende parallelle weerstand!
+                    Dit betekent dat de totale stroom (2A) gelijk verdeeld wordt: 1A door elk van de twee identieke weerstanden.
+                    De symmetrie in dit netwerk maakt de oplossing elegant: 10Ω ∥ 10Ω = 5Ω.
+                </div>
+
+                <div class="success-box">
+                    <strong>✓ Slimme aanpak werkt!</strong><br>
+                    Door eerst de spanning over de parallelle combinatie te berekenen (10V), konden we eenvoudig de stromen
+                    en uiteindelijk R bepalen. Dit vermijdt complexe vergelijkingen met meerdere onbekenden.
+                </div>
+            </div>
+
+            <div class="result-box">
+                ✓ ANTWOORD: R = 10 Ω
+            </div>
+        </div>
+
+        <!-- OPGAVE 9: NETWERKONTWERP (ZEER UITGEBREID) -->
+        <div class="exercise" style="background: #fff9f0;">
+            <h2>Opgave 9: Netwerkontwerp met Specificaties</h2>
+
+            <div class="question">
+                <strong>Ontwerpopgave:</strong> Een schakeling bestaat uit:<br>
+                • Parallelschakeling: R₁ = 5kΩ en onbekende R<sub>x</sub><br>
+                • In serie daarmee: onbekende R<sub>y</sub><br>
+                • Aangesloten op: U<sub>bron</sub> = 100V<br><br>
+                <strong>Specificaties:</strong><br>
+                • Bron moet leveren: I<sub>totaal</sub> = 10mA<br>
+                • Stroom door 5kΩ: I₁ = 2mA<br><br>
+                <strong>Gevraagd:</strong> Bepaal R<sub>x</sub> en R<sub>y</sub>
+            </div>
+
+            <p style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ff9800;">
+                <strong>💡 Systematische aanpak (zoals gevraagd in de hint):</strong><br>
+                1. Analyse (lezen, schema, verwachting, formules)<br>
+                2. Oplossingsmethode (maak een plan)<br>
+                3. Uitwerking<br>
+                4. Controle<br><br>
+                Hieronder worden <strong>DRIE verschillende methoden</strong> gepresenteerd. Kies de methode die jou het beste ligt!
+            </p>
+
+            <!-- METHODE 1: INTUÏTIEVE AANPAK -->
+            <div class="method-box" style="background: #e8f5e9;">
+                <h3>🚀 METHODE 1: Intuïtieve Aanpak (SNELSTE)</h3>
+
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        ANALYSE & SCHEMA
+                    </div>
+                    <p><strong>Gegeven:</strong></p>
+                    <ul>
+                        <li>R₁ = 5kΩ, I₁ = 2mA → U<sub>parallel</sub> = ?</li>
+                        <li>I<sub>totaal</sub> = 10mA → I<sub>Rx</sub> = ?</li>
+                        <li>U<sub>bron</sub> = 100V, dus U<sub>Ry</sub> = ?</li>
+                    </ul>
+                    <p><strong>Schema (mentaal):</strong></p>
+                    <pre>
+    U_bron = 100V
+         |
+        R_y (serie)
+         |
+     ----+----
+     |       |
+    R₁=5k   R_x
+    2mA     ?
+     |       |
+     ----+----
+         |
+        GND
+                    </pre>
+                </div>
+
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">2</span>
+                        DIRECTE BEREKENING
+                    </div>
+                    <p><strong>Stap 1: Spanning over parallelle combinatie</strong></p>
+                    <p>R₁ heeft 2mA bij 5kΩ:</p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>U</mi><mi>parallel</mi></msub>
+                                <mo>=</mo>
+                                <msub><mi>I</mi><mn>1</mn></msub>
+                                <mo>×</mo>
+                                <msub><mi>R</mi><mn>1</mn></msub>
+                                <mo>=</mo>
+                                <mn>2</mn>
+                                <mo>×</mo>
+                                <msup>
+                                    <mn>10</mn>
+                                    <mrow><mo>-</mo><mn>3</mn></mrow>
+                                </msup>
+                                <mo>×</mo>
+                                <mn>5</mn>
+                                <mo>×</mo>
+                                <msup>
+                                    <mn>10</mn>
+                                    <mn>3</mn>
+                                </msup>
+                                <mo>=</mo>
+                                <mn>10</mn>
+                                <mtext> V</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Stap 2: Stroom door R<sub>x</sub></strong></p>
+                    <p>Kirchhoff's stroomwet: I<sub>totaal</sub> = I₁ + I<sub>x</sub></p>
+                    <p>I<sub>x</sub> = 10 - 2 = 8 mA</p>
+
+                    <p><strong>Stap 3: Bereken R<sub>x</sub></strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>R</mi><mi>x</mi></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <msub><mi>U</mi><mi>parallel</mi></msub>
+                                    <msub><mi>I</mi><mi>x</mi></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>10</mn>
+                                    <mrow>
+                                        <mn>8</mn>
+                                        <mo>×</mo>
+                                        <msup>
+                                            <mn>10</mn>
+                                            <mrow><mo>-</mo><mn>3</mn></mrow>
+                                        </msup>
+                                    </mrow>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mn>1250</mn>
+                                <mtext> Ω</mtext>
+                                <mo>=</mo>
+                                <mn>1,25</mn>
+                                <mtext> kΩ</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Stap 4: Spanning over R<sub>y</sub></strong></p>
+                    <p>U<sub>y</sub> = U<sub>bron</sub> - U<sub>parallel</sub> = 100 - 10 = 90V</p>
+
+                    <p><strong>Stap 5: Bereken R<sub>y</sub></strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>R</mi><mi>y</mi></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <msub><mi>U</mi><mi>y</mi></msub>
+                                    <msub><mi>I</mi><mi>totaal</mi></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>90</mn>
+                                    <mrow>
+                                        <mn>10</mn>
+                                        <mo>×</mo>
+                                        <msup>
+                                            <mn>10</mn>
+                                            <mrow><mo>-</mo><mn>3</mn></mrow>
+                                        </msup>
+                                    </mrow>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mn>9000</mn>
+                                <mtext> Ω</mtext>
+                                <mo>=</mo>
+                                <mn>9</mn>
+                                <mtext> kΩ</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">3</span>
+                        CONTROLE
+                    </div>
+                    <p><strong>Verificatie totale weerstand:</strong></p>
+                    <p>R<sub>parallel</sub> = (5k × 1,25k) / (5k + 1,25k) = 6250 / 6,25 = 1000Ω = 1kΩ</p>
+                    <p>R<sub>totaal</sub> = R<sub>y</sub> + R<sub>parallel</sub> = 9k + 1k = 10kΩ</p>
+                    <p>I = U / R = 100V / 10kΩ = 10mA ✓</p>
+                </div>
+
+                <div class="result-box">
+                    ✓ METHODE 1: R<sub>x</sub> = 1,25 kΩ, R<sub>y</sub> = 9 kΩ
+                </div>
+            </div>
+
+            <!-- METHODE 2: ANALYTISCH (vergelijkingen) -->
+            <div class="method-box" style="background: #e3f2fd;">
+                <h3>📐 METHODE 2: Analytische Aanpak (met vergelijkingen)</h3>
+
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        VERGELIJKINGEN OPSTELLEN
+                    </div>
+                    <p><strong>Bekende spanning over parallel:</strong></p>
+                    <p>U<sub>parallel</sub> = I₁ × R₁ = 2mA × 5kΩ = 10V</p>
+
+                    <p><strong>Vergelijking 1 (spanningswet):</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mn>100</mn>
+                                <mo>=</mo>
+                                <msub><mi>R</mi><mi>y</mi></msub>
+                                <mo>·</mo>
+                                <msub><mi>I</mi><mi>y</mi></msub>
+                                <mo>+</mo>
+                                <mn>10</mn>
+                                <mo>=</mo>
+                                <msub><mi>R</mi><mi>y</mi></msub>
+                                <mo>·</mo>
+                                <mn>10</mn>
+                                <mtext>mA</mtext>
+                                <mo>+</mo>
+                                <mn>10</mn>
+                            </mrow>
+                        </math>
+                    </div>
+
+                    <p><strong>Vergelijking 2 (stroom door R<sub>x</sub>):</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>I</mi><mi>x</mi></msub>
+                                <mo>=</mo>
+                                <mn>10</mn>
+                                <mo>-</mo>
+                                <mn>2</mn>
+                                <mo>=</mo>
+                                <mn>8</mn>
+                                <mtext> mA</mtext>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <msub><mi>U</mi><mi>parallel</mi></msub>
+                                    <msub><mi>R</mi><mi>x</mi></msub>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>10</mn>
+                                    <msub><mi>R</mi><mi>x</mi></msub>
+                                </mfrac>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">2</span>
+                        OPLOSSEN VERGELIJKINGEN
+                    </div>
+                    <p><strong>Uit vergelijking 1:</strong></p>
+                    <p>90 = R<sub>y</sub> · 10mA</p>
+                    <p>R<sub>y</sub> = 90 / 0,01 = 9000Ω = 9kΩ</p>
+
+                    <p><strong>Uit vergelijking 2:</strong></p>
+                    <p>R<sub>x</sub> = 10 / 0,008 = 1250Ω = 1,25kΩ</p>
+                </div>
+
+                <div class="result-box">
+                    ✓ METHODE 2: R<sub>x</sub> = 1,25 kΩ, R<sub>y</sub> = 9 kΩ
+                </div>
+            </div>
+
+            <!-- METHODE 3: VIA TOTALE WEERSTAND -->
+            <div class="method-box" style="background: #fce4ec;">
+                <h3>⚙️ METHODE 3: Via Totale Weerstand</h3>
+
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        TOTALE WEERSTAND BEPALEN
+                    </div>
+                    <p><strong>Gegeven U en I voor totale schakeling:</strong></p>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <msub><mi>R</mi><mi>totaal</mi></msub>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mi>U</mi>
+                                    <mi>I</mi>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mn>100</mn>
+                                    <mn>0,01</mn>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mn>10</mn>
+                                <mtext> kΩ</mtext>
+                            </mrow>
+                        </math>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">2</span>
+                        PARALLELLE COMBINATIE
+                    </div>
+                    <p>U<sub>parallel</sub> = 2mA × 5kΩ = 10V (zoals eerder)</p>
+                    <p>I<sub>x</sub> = 10mA - 2mA = 8mA</p>
+                    <p>R<sub>x</sub> = 10V / 8mA = 1,25kΩ</p>
+                    <p>R<sub>parallel</sub> = (5k × 1,25k) / 6,25k = 1kΩ</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">3</span>
+                        SERIEWEERSTAND R<sub>y</sub>
+                    </div>
+                    <p>R<sub>totaal</sub> = R<sub>y</sub> + R<sub>parallel</sub></p>
+                    <p>10k = R<sub>y</sub> + 1k</p>
+                    <p>R<sub>y</sub> = 9kΩ</p>
+                </div>
+
+                <div class="result-box">
+                    ✓ METHODE 3: R<sub>x</sub> = 1,25 kΩ, R<sub>y</sub> = 9 kΩ
+                </div>
+            </div>
+
+            <!-- ALGEMENE VERIFICATIE -->
+            <div class="step" style="background: #fff3e0; border-left: 4px solid #ff9800;">
+                <div class="step-title" style="color: #e65100;">
+                    <span class="step-number" style="background: #e65100;">✓</span>
+                    ALGEMENE VERIFICATIE (alle methoden)
+                </div>
+
+                <p><strong>Dimensiecontrole:</strong></p>
+                <ul>
+                    <li>R<sub>x</sub> = V / A = Ω ✓</li>
+                    <li>R<sub>y</sub> = V / A = Ω ✓</li>
+                </ul>
+
+                <p><strong>Volledige controle van het ontwerp:</strong></p>
+                <table style="width: 100%; margin: 20px 0;">
+                    <tr style="background: #ff9800; color: white;">
+                        <th>Parameter</th>
+                        <th>Specificatie</th>
+                        <th>Berekend</th>
+                        <th>Check</th>
+                    </tr>
+                    <tr>
+                        <td>I<sub>totaal</sub></td>
+                        <td>10 mA</td>
+                        <td>100V / 10kΩ = 10mA</td>
+                        <td style="color: green; font-weight: bold;">✓</td>
+                    </tr>
+                    <tr>
+                        <td>I₁ (door 5kΩ)</td>
+                        <td>2 mA</td>
+                        <td>10V / 5kΩ = 2mA</td>
+                        <td style="color: green; font-weight: bold;">✓</td>
+                    </tr>
+                    <tr>
+                        <td>U<sub>parallel</sub></td>
+                        <td>(afgeleid)</td>
+                        <td>10V</td>
+                        <td style="color: green; font-weight: bold;">✓</td>
+                    </tr>
+                    <tr>
+                        <td>U<sub>y</sub></td>
+                        <td>(afgeleid)</td>
+                        <td>90V</td>
+                        <td style="color: green; font-weight: bold;">✓</td>
+                    </tr>
+                    <tr>
+                        <td>U<sub>totaal</sub></td>
+                        <td>100V</td>
+                        <td>90V + 10V = 100V</td>
+                        <td style="color: green; font-weight: bold;">✓</td>
+                    </tr>
+                </table>
+
+                <div class="insight-box">
+                    <strong>🔍 Fysische interpretatie:</strong><br>
+                    Het ontworpen netwerk heeft:<br>
+                    • <strong>Serieweerstand R<sub>y</sub> = 9kΩ:</strong> Deze draagt 90% van de totale spanning (90V van 100V)<br>
+                    • <strong>Parallelcombinatie = 1kΩ:</strong> Deze draagt 10% van de totale spanning (10V)<br>
+                    • <strong>Stroomverdeling:</strong> Van de 10mA totaal gaat 2mA door de 5kΩ en 8mA door de 1,25kΩ<br>
+                    • <strong>Verhouding:</strong> De 1,25kΩ is 1/4 van de 5kΩ, dus trekt 4× meer stroom (8mA vs 2mA) ✓
+                </div>
+
+                <div class="success-box">
+                    <strong>🎓 Belangrijke les:</strong><br>
+                    Alle drie de methoden geven hetzelfde antwoord! Kies de methode die jij het beste begrijpt:<br>
+                    • <strong>Methode 1 (intuïtief):</strong> Snelst en meest direct<br>
+                    • <strong>Methode 2 (analytisch):</strong> Systematisch met vergelijkingen<br>
+                    • <strong>Methode 3 (via R<sub>totaal</sub>):</strong> Handig als je eerst totaal overzicht wilt<br><br>
+                    Bij het examen: gebruik de methode die jou het minste kans op fouten geeft!
+                </div>
+            </div>
+
+            <div class="result-box" style="font-size: 1.4em;">
+                ✓ DEFINITIEF ANTWOORD: R<sub>x</sub> = 1,25 kΩ, R<sub>y</sub> = 9 kΩ
+            </div>
+        </div>
+
+        <!-- SAMENVATTING -->
+        <div class="exercise" style="background: #fff3e0;">
+            <h2>📋 Samenvatting Opgaven 6, 7, 8, 9</h2>
+
+            <table style="width: 100%;">
+                <tr>
+                    <th>Opgave</th>
+                    <th>Type Probleem</th>
+                    <th>Kernmethode</th>
+                    <th>Resultaat</th>
+                </tr>
+                <tr>
+                    <td>6a</td>
+                    <td>Stroomverdeling parallel (3R)</td>
+                    <td>Verhoudingsmethode 1/R</td>
+                    <td>I₁=-6,54mA, I₂=3,27mA, I₃=2,18mA</td>
+                </tr>
+                <tr>
+                    <td>6b</td>
+                    <td>Stroomverdeling (R₂ gewijzigd)</td>
+                    <td>Nieuwe verhoudingen 3:2:1</td>
+                    <td>I₁=-6mA, I₂=4mA, I₃=2mA</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Spanningsdeling + polariteit</td>
+                    <td>Spanningsdeler-formule</td>
+                    <td>U₁=-3V, U₂=6V</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Onbekende R in gemengd netwerk</td>
+                    <td>Spanning parallel → I → R</td>
+                    <td>R = 10Ω</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Netwerkontwerp (2 onbekenden)</td>
+                    <td>3 methoden mogelijk!</td>
+                    <td>R<sub>x</sub>=1,25kΩ, R<sub>y</sub>=9kΩ</td>
+                </tr>
+            </table>
+
+            <div class="insight-box" style="margin-top: 20px;">
+                <strong>🎓 Belangrijkste leerpunten:</strong>
+                <ul>
+                    <li><strong>Stroomverdeling parallel:</strong> Omgekeerd evenredig met R (gebruik 1/R verhoudingen)</li>
+                    <li><strong>Spanningsdeling serie:</strong> Evenredig met R</li>
+                    <li><strong>Polariteit:</strong> Let altijd op de pijlrichting in schema's!</li>
+                    <li><strong>Slimme aanpak:</strong> Bereken eerst spanning over parallel, dan stromen</li>
+                    <li><strong>Meerdere wegen naar Rome:</strong> Kies de methode die jou het beste ligt</li>
+                    <li><strong>Verificatie:</strong> Controleer altijd met Kirchhoff's wetten</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
