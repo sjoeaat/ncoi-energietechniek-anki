@@ -365,11 +365,11 @@ def main():
 
     # Pad naar bestanden
     base_dir = Path(__file__).parent.parent
-    input_kennis = base_dir / 'generated-cards' / 'anki-deck-KENNIS-v1.csv'
-    input_rekenen = base_dir / 'generated-cards' / 'anki-deck-REKENEN-v1.csv'
+    input_kennis = base_dir / 'generated-cards' / 'anki-deck-KENNIS-v3-FINAL.csv'
+    input_rekenen = base_dir / 'generated-cards' / 'anki-deck-REKENEN-v3-FINAL.csv'
 
-    output_kennis = base_dir / 'generated-cards' / 'anki-deck-KENNIS-v2-WITH-IMAGES.csv'
-    output_rekenen = base_dir / 'generated-cards' / 'anki-deck-REKENEN-v2-WITH-IMAGES.csv'
+    output_kennis = base_dir / 'generated-cards' / 'anki-deck-KENNIS-v3-WITH-IMAGES.csv'
+    output_rekenen = base_dir / 'generated-cards' / 'anki-deck-REKENEN-v3-WITH-IMAGES.csv'
 
     # Check of bestanden bestaan
     if not input_kennis.exists():

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 500">
+  <!-- Background -->
+  <rect width="550" height="500" fill="white"/>
+
+  <!-- Title -->
+  <text x="275" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Eenheidscirkel - Goniometrie voor AC-rekenen</text>
+
+  <g transform="translate(275, 250)">
+    <!-- Unit circle -->
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#95a5a6" stroke-width="2"/>
+
+    <!-- Axes -->
+    <line x1="-150" y1="0" x2="150" y2="0" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowaxis)"/>
+    <line x1="0" y1="150" x2="0" y2="-150" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowaxis)"/>
+    <defs>
+      <marker id="arrowaxis" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L6,3 z" fill="#2c3e50"/>
+      </marker>
+    </defs>
+
+    <!-- Axis labels -->
+    <text x="140" y="20" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">Re (cos)</text>
+    <text x="10" y="-135" font-family="Arial, sans-serif" font-size="13" fill="#2c3e50">Im (sin)</text>
+
+    <!-- Example angle: 35° -->
+    <g>
+      <!-- Radius line (hypotenuse = 1) -->
+      <line x1="0" y1="0" x2="98.3" y2="-57.4" stroke="#e74c3c" stroke-width="3"/>
+      <circle cx="98.3" cy="-57.4" r="4" fill="#e74c3c"/>
+
+      <!-- Angle arc -->
+      <path d="M 40 0 A 40 40 0 0 0 32.8 -19.2" fill="none" stroke="#f39c12" stroke-width="2"/>
+      <text x="55" y="-8" font-family="Arial, sans-serif" font-size="13" fill="#f39c12">φ = 35°</text>
+
+      <!-- cos (adjacent / x-component) -->
+      <line x1="0" y1="0" x2="98.3" y2="0" stroke="#27ae60" stroke-width="2.5" stroke-dasharray="4,4"/>
+      <text x="49" y="18" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">cos φ = 0.82</text>
+
+      <!-- sin (opposite / y-component) -->
+      <line x1="98.3" y1="0" x2="98.3" y2="-57.4" stroke="#3498db" stroke-width="2.5" stroke-dasharray="4,4"/>
+      <text x="115" y="-28" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">sin φ = 0.57</text>
+
+      <!-- Right angle indicator -->
+      <rect x="88.3" y="-10" width="10" height="10" fill="none" stroke="#95a5a6" stroke-width="1"/>
+
+      <!-- tan line (extended) -->
+      <line x1="120" y1="0" x2="120" y2="-84" stroke="#9b59b6" stroke-width="2" stroke-dasharray="2,3"/>
+      <line x1="0" y1="0" x2="120" y2="-84" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="2,3"/>
+      <text x="135" y="-42" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">tan φ = 0.70</text>
+    </g>
+
+    <!-- Key angles marked on circle -->
+    <!-- 0° -->
+    <circle cx="120" cy="0" r="3" fill="#7f8c8d"/>
+    <text x="135" y="5" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">0°</text>
+
+    <!-- 90° -->
+    <circle cx="0" cy="-120" r="3" fill="#7f8c8d"/>
+    <text x="5" y="-125" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">90°</text>
+
+    <!-- 180° -->
+    <circle cx="-120" cy="0" r="3" fill="#7f8c8d"/>
+    <text x="-145" y="5" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">180°</text>
+
+    <!-- 270° -->
+    <circle cx="0" cy="120" r="3" fill="#7f8c8d"/>
+    <text x="5" y="130" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">270°</text>
+
+    <!-- Radius = 1 label -->
+    <text x="45" y="-35" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">r = 1</text>
+  </g>
+
+  <!-- Formulas box -->
+  <g transform="translate(20, 380)">
+    <rect x="0" y="0" width="250" height="100" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
+    <text x="125" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Basis Goniometrie:</text>
+
+    <text x="10" y="40" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">cos φ = aanliggend / hypotenusa</text>
+    <text x="10" y="56" font-family="Arial, sans-serif" font-size="11" fill="#3498db">sin φ = overstaand / hypotenusa</text>
+    <text x="10" y="72" font-family="Arial, sans-serif" font-size="11" fill="#9b59b6">tan φ = sin φ / cos φ = y / x</text>
+    <text x="10" y="88" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">sin² φ + cos² φ = 1</text>
+  </g>
+
+  <!-- AC applications box -->
+  <g transform="translate(290, 380)">
+    <rect x="0" y="0" width="240" height="100" fill="#fff9e6" stroke="#f39c12" stroke-width="1" rx="5"/>
+    <text x="120" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#f39c12">Toepassing bij AC:</text>
+
+    <text x="10" y="40" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">Fasor: A∠φ = A·cos(φ) + j·A·sin(φ)</text>
+    <text x="10" y="56" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">P = S × cos φ (werkzaam)</text>
+    <text x="10" y="72" font-family="Arial, sans-serif" font-size="11" fill="#3498db">Q = S × sin φ (blind)</text>
+    <text x="10" y="88" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">φ = fasehoek tussen U en I</text>
+  </g>
+
+  <!-- Bottom annotation -->
+  <text x="275" y="495" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d" font-style="italic">Hoek linksom = positief (voorijlen), rechtsom = negatief (achterijlen)</text>
+</svg>

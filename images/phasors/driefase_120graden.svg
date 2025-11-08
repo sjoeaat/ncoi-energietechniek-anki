@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 550">
+  <!-- Background -->
+  <rect width="700" height="550" fill="white"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">Driefasensysteem - 120° Faseverschuiving</text>
+
+  <!-- Sine waves (time domain) -->
+  <g transform="translate(50, 100)">
+    <text x="300" y="-15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Tijdsdomein</text>
+
+    <!-- Axes -->
+    <line x1="0" y1="80" x2="600" y2="80" stroke="#95a5a6" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="0" y2="160" stroke="#95a5a6" stroke-width="1.5"/>
+
+    <!-- Time markers -->
+    <text x="150" y="100" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">120°</text>
+    <text x="300" y="100" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">240°</text>
+    <text x="450" y="100" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">360°</text>
+    <line x1="150" y1="75" x2="150" y2="85" stroke="#95a5a6" stroke-width="1"/>
+    <line x1="300" y1="75" x2="300" y2="85" stroke="#95a5a6" stroke-width="1"/>
+    <line x1="450" y1="75" x2="450" y2="85" stroke="#95a5a6" stroke-width="1"/>
+
+    <!-- L1 (red - 0°) -->
+    <path d="M 0 80 Q 37.5 20, 75 20 T 150 80 Q 187.5 140, 225 140 T 300 80 Q 337.5 20, 375 20 T 450 80 Q 487.5 140, 525 140 T 600 80"
+          fill="none" stroke="#e74c3c" stroke-width="3"/>
+    <text x="610" y="85" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#e74c3c">L1</text>
+
+    <!-- L2 (orange - 120° lag) -->
+    <path d="M 0 80 Q 37.5 140, 75 140 T 150 80 Q 187.5 20, 225 20 T 300 80 Q 337.5 140, 375 140 T 450 80 Q 487.5 20, 525 20 T 600 80"
+          fill="none" stroke="#f39c12" stroke-width="3" stroke-dasharray="8,4"/>
+    <text x="610" y="105" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#f39c12">L2</text>
+
+    <!-- L3 (blue - 240° lag) -->
+    <path d="M 0 80 Q 37.5 20, 75 20 T 150 80 Q 187.5 140, 225 140 T 300 80 Q 337.5 20, 375 20 T 450 80"
+          fill="none" stroke="#3498db" stroke-width="3" stroke-dasharray="3,3"/>
+    <text x="610" y="125" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#3498db">L3</text>
+
+    <!-- Phase shift indicators -->
+    <line x1="75" y1="165" x2="75" y2="175" stroke="#e74c3c" stroke-width="2"/>
+    <line x1="225" y1="165" x2="225" y2="175" stroke="#f39c12" stroke-width="2"/>
+    <line x1="75" y1="170" x2="225" y2="170" stroke="#f39c12" stroke-width="2"/>
+    <text x="150" y="190" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#f39c12">120°</text>
+  </g>
+
+  <!-- Phasor diagram (vector domain) -->
+  <g transform="translate(380, 380)">
+    <text x="0" y="-100" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Fasordiagram</text>
+
+    <!-- Circle for reference -->
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#ecf0f1" stroke-width="2"/>
+
+    <!-- Axes -->
+    <line x1="-120" y1="0" x2="120" y2="0" stroke="#95a5a6" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="0" y1="-120" x2="0" y2="120" stroke="#95a5a6" stroke-width="1" stroke-dasharray="2,2"/>
+
+    <!-- Phasors -->
+    <defs>
+      <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="#e74c3c"/>
+      </marker>
+      <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="#f39c12"/>
+      </marker>
+      <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="#3498db"/>
+      </marker>
+    </defs>
+
+    <!-- L1 at 0° (pointing right) -->
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#e74c3c" stroke-width="4" marker-end="url(#arrow-red)"/>
+    <text x="110" y="5" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e74c3c">L1</text>
+    <text x="110" y="20" font-family="Arial, sans-serif" font-size="12" fill="#e74c3c">0°</text>
+
+    <!-- L2 at -120° (240° CCW = 120° CW) -->
+    <line x1="0" y1="0" x2="-50" y2="86.6" stroke="#f39c12" stroke-width="4" marker-end="url(#arrow-orange)"/>
+    <text x="-65" y="100" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f39c12">L2</text>
+    <text x="-75" y="115" font-family="Arial, sans-serif" font-size="12" fill="#f39c12">-120°</text>
+
+    <!-- L3 at +120° (120° CCW) -->
+    <line x1="0" y1="0" x2="-50" y2="-86.6" stroke="#3498db" stroke-width="4" marker-end="url(#arrow-blue)"/>
+    <text x="-65" y="-85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3498db">L3</text>
+    <text x="-75" y="-70" font-family="Arial, sans-serif" font-size="12" fill="#3498db">+120°</text>
+
+    <!-- Angle arcs -->
+    <path d="M 40 0 A 40 40 0 0 0 20 -34.6" fill="none" stroke="#3498db" stroke-width="1.5"/>
+    <path d="M 40 0 A 40 40 0 0 1 20 34.6" fill="none" stroke="#f39c12" stroke-width="1.5"/>
+  </g>
+
+  <!-- Info box -->
+  <g transform="translate(50, 420)">
+    <rect x="0" y="0" width="280" height="110" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="5"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#2c3e50">Fasevolgorde:</text>
+
+    <text x="15" y="50" font-family="Arial, sans-serif" font-size="14" fill="#2c3e50">L1 → L2 → L3</text>
+    <text x="15" y="70" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d">Elke fase 120° na vorige</text>
+    <text x="15" y="90" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d">Totaal: 3 × 120° = 360°</text>
+  </g>
+</svg>

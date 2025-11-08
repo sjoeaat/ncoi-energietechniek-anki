@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280">
+  <!-- Background -->
+  <rect width="600" height="280" fill="white"/>
+
+  <!-- Title -->
+  <text x="300" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Blindvermogen Compensatie</text>
+
+  <!-- LEFT: Voor compensatie -->
+  <g transform="translate(80, 180)">
+    <text x="80" y="-125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e74c3c">Voor compensatie</text>
+
+    <!-- P -->
+    <line x1="0" y1="0" x2="160" y2="0" stroke="#27ae60" stroke-width="2.5"/>
+    <text x="80" y="18" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#27ae60">P</text>
+
+    <!-- Q1 (large) -->
+    <line x1="160" y1="0" x2="160" y2="-100" stroke="#3498db" stroke-width="2.5"/>
+    <text x="175" y="-50" font-family="Arial, sans-serif" font-size="13" text-anchor="start" fill="#3498db">Q1</text>
+
+    <!-- S1 (large) -->
+    <line x1="0" y1="0" x2="160" y2="-100" stroke="#e74c3c" stroke-width="2.5"/>
+    <text x="65" y="-65" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#e74c3c">S1</text>
+
+    <!-- Angle φ1 -->
+    <path d="M 40 0 A 40 40 0 0 0 25 -15.5" fill="none" stroke="#f39c12" stroke-width="2"/>
+    <text x="50" y="-8" font-family="Arial, sans-serif" font-size="13" fill="#f39c12">φ1</text>
+
+    <!-- Right angle -->
+    <rect x="150" y="-10" width="10" height="10" fill="none" stroke="#95a5a6" stroke-width="1"/>
+
+    <!-- cos φ1 -->
+    <text x="80" y="-105" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">cos φ1 = 0.6 (slecht!)</text>
+
+    <!-- Dots -->
+    <circle cx="0" cy="0" r="3" fill="#2c3e50"/>
+    <circle cx="160" cy="0" r="3" fill="#2c3e50"/>
+    <circle cx="160" cy="-100" r="3" fill="#2c3e50"/>
+  </g>
+
+  <!-- Arrow between diagrams -->
+  <g transform="translate(300, 140)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#16a085" stroke-width="3" marker-end="url(#arrowgreen)"/>
+    <defs>
+      <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="#16a085"/>
+      </marker>
+    </defs>
+    <text x="25" y="-8" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#16a085" font-weight="bold">+ Qc</text>
+  </g>
+
+  <!-- RIGHT: Na compensatie -->
+  <g transform="translate(380, 180)">
+    <text x="80" y="-125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#27ae60">Na compensatie</text>
+
+    <!-- P (same) -->
+    <line x1="0" y1="0" x2="160" y2="0" stroke="#27ae60" stroke-width="2.5"/>
+    <text x="80" y="18" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#27ae60">P</text>
+
+    <!-- Q2 (smaller!) -->
+    <line x1="160" y1="0" x2="160" y2="-40" stroke="#3498db" stroke-width="2.5"/>
+    <text x="175" y="-20" font-family="Arial, sans-serif" font-size="13" text-anchor="start" fill="#3498db">Q2</text>
+
+    <!-- S2 (smaller!) -->
+    <line x1="0" y1="0" x2="160" y2="-40" stroke="#27ae60" stroke-width="2.5"/>
+    <text x="70" y="-30" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#27ae60">S2</text>
+
+    <!-- Angle φ2 (smaller) -->
+    <path d="M 40 0 A 40 40 0 0 0 34 -8.5" fill="none" stroke="#f39c12" stroke-width="2"/>
+    <text x="50" y="-5" font-family="Arial, sans-serif" font-size="13" fill="#f39c12">φ2</text>
+
+    <!-- Right angle -->
+    <rect x="150" y="-10" width="10" height="10" fill="none" stroke="#95a5a6" stroke-width="1"/>
+
+    <!-- cos φ2 -->
+    <text x="80" y="-105" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">cos φ2 = 0.97 (goed!)</text>
+
+    <!-- Dots -->
+    <circle cx="0" cy="0" r="3" fill="#2c3e50"/>
+    <circle cx="160" cy="0" r="3" fill="#2c3e50"/>
+    <circle cx="160" cy="-40" r="3" fill="#2c3e50"/>
+
+    <!-- Qc indicator (compensated reactive power) -->
+    <line x1="160" y1="-40" x2="160" y2="-100" stroke="#16a085" stroke-width="2" stroke-dasharray="4,4"/>
+    <text x="178" y="-70" font-family="Arial, sans-serif" font-size="11" text-anchor="start" fill="#16a085">Qc (gecompenseerd)</text>
+  </g>
+
+  <!-- Bottom annotation -->
+  <text x="300" y="260" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d" font-style="italic">Condensatoren leveren capacitief blindvermogen (Qc) → cos φ stijgt, S daalt</text>
+</svg>
