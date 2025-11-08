@@ -444,6 +444,225 @@
                 chapterLabel: 'H 2.6',
                 question: 'Waarom worden twee 100Ω weerstanden parallel vaak gebruikt in plaats van één 50Ω?',
                 answer: '<b>Praktische redenen:</b><br>1. <b>Vermogenspreiding:</b> Elke weerstand draagt helft van het vermogen<br>2. <b>Beschikbaarheid:</b> 100Ω is een standaard waarde<br>3. <b>Redundantie:</b> Als één kapot gaat, werkt circuit nog (100Ω ipv 50Ω)<br>4. <b>Dissipatie:</b> Betere warmteafvoer met twee componenten'
+            },
+            // Additional questions H 1.9
+            {
+                chapter: 'h19',
+                chapterLabel: 'H 1.9',
+                question: 'Een batterij levert 12V aan een weerstand van 4Ω. Bereken het vermogen.',
+                answer: 'P = U²/R<br>P = 12² / 4<br>P = 144 / 4 = <b>36 W</b><br><br>Alternatief: P = U×I = 12×3 = 36W (waarbij I = U/R = 12/4 = 3A)'
+            },
+            {
+                chapter: 'h19',
+                chapterLabel: 'H 1.9',
+                question: 'Een stroom van 2,5A vloeit door een weerstand van 20Ω. Wat is de spanningsval?',
+                answer: 'U = I × R<br>U = 2,5 × 20<br>U = <b>50 V</b><br><br>Dit is directe toepassing van de wet van Ohm.'
+            },
+            {
+                chapter: 'h19',
+                chapterLabel: 'H 1.9',
+                question: 'Wat zegt Kirchhoffs spanningswet (KVL)?',
+                answer: '<b>Kirchhoff Spanningswet (KVL):</b><br>De som van alle spanningen in een gesloten maas = 0<br><br>Σ U_maas = 0<br><br>Dit volgt uit <b>behoud van energie</b>: als je een rondje loopt, eindig je op hetzelfde potentiaal.'
+            },
+            {
+                chapter: 'h19',
+                chapterLabel: 'H 1.9',
+                question: 'Een LED met 2,1V en 20mA. Bereken de voorschakelweerstand voor 9V batterij.',
+                answer: 'Spanningsval over R: U_R = 9V - 2,1V = 6,9V<br>R = U/I = 6,9 / 0,02<br>R = <b>345 Ω</b><br><br>Praktijk: gebruik 330Ω (standaard waarde) of 390Ω'
+            },
+            // Additional questions H 2.6
+            {
+                chapter: 'h26',
+                chapterLabel: 'H 2.6',
+                question: 'Drie weerstanden (100Ω, 200Ω, 300Ω) in serie. Bereken totaal.',
+                answer: 'R_serie = R₁ + R₂ + R₃<br>R_totaal = 100 + 200 + 300<br>R_totaal = <b>600 Ω</b><br><br>Serie: weerstanden tellen gewoon op!'
+            },
+            {
+                chapter: 'h26',
+                chapterLabel: 'H 2.6',
+                question: 'Een spanningsdeler: 12V over 3kΩ en 1kΩ in serie. Spanning over 1kΩ?',
+                answer: 'U_1kΩ = U_totaal × (R₁/R_totaal)<br>U_1kΩ = 12 × (1000/4000)<br>U_1kΩ = 12 × 0,25 = <b>3 V</b><br><br>Let op: R_totaal = 3kΩ + 1kΩ = 4kΩ'
+            },
+            {
+                chapter: 'h26',
+                chapterLabel: 'H 2.6',
+                question: 'Drie gelijke weerstanden (R) parallel. Wat is R_totaal?',
+                answer: '1/R_totaal = 1/R + 1/R + 1/R = 3/R<br>R_totaal = R/3<br><br><b>Regel:</b> n gelijke weerstanden parallel → R_totaal = R/n<br><br>Voorbeeld: 3×60Ω parallel = 20Ω'
+            },
+            {
+                chapter: 'h26',
+                chapterLabel: 'H 2.6',
+                question: 'Wat is geleidbaarheid (G) en wat is de eenheid?',
+                answer: '<b>Geleidbaarheid (conductance):</b><br>G = 1/R<br><br>Eenheid: <b>Siemens (S)</b> of mho (Ʊ)<br><br>Bij parallel schakeling: G_totaal = G₁ + G₂ + G₃<br><br>Dit is makkelijker dan reciproke optellen!'
+            },
+            // Additional questions H 3.11
+            {
+                chapter: 'h311',
+                chapterLabel: 'H 3.11',
+                question: 'Een netwerk heeft open-klem spanning 10V en kortsluitstroom 2A. Bereken R_Thévenin.',
+                answer: 'R_th = U_open / I_kortsluit<br>R_th = 10 / 2<br>R_th = <b>5 Ω</b><br><br>Thévenin weerstand is de <b>interne weerstand</b> van het equivalent.'
+            },
+            {
+                chapter: 'h311',
+                chapterLabel: 'H 3.11',
+                question: 'Wat is het verschil tussen Thévenin en Norton equivalent?',
+                answer: '<b>Thévenin:</b> Spanningsbron U_th in serie met R_th<br><b>Norton:</b> Stroombron I_N parallel met R_N<br><br>Relaties:<br>• R_th = R_N<br>• U_th = I_N × R_th<br><br>Beide equivalenten beschrijven hetzelfde netwerk!'
+            },
+            {
+                chapter: 'h311',
+                chapterLabel: 'H 3.11',
+                question: 'Wanneer gebruik je superpositie ipv Thévenin?',
+                answer: '<b>Superpositie:</b><br>✓ Meerdere bronnen<br>✓ Stroom/spanning door specifiek element vinden<br>✓ Lineair netwerk<br><br><b>Thévenin:</b><br>✓ Belasting verandert vaak<br>✓ Maximaal vermogen berekenen<br>✓ Netwerk vereenvoudigen'
+            },
+            {
+                chapter: 'h311',
+                chapterLabel: 'H 3.11',
+                question: 'Wat is een gecontroleerde (afhankelijke) bron?',
+                answer: '<b>Gecontroleerde bron:</b> Output hangt af van stroom/spanning elders in circuit.<br><br>Types:<br>• VCVS: spanning-gestuurde spanningsbron<br>• VCCS: spanning-gestuurde stroombron<br>• CCVS: stroom-gestuurde spanningsbron<br>• CCCS: stroom-gestuurde stroombron<br><br>Veel gebruikt in transistor/opamp modellen!'
+            },
+            // Additional questions H 4.4
+            {
+                chapter: 'h44',
+                chapterLabel: 'H 4.4',
+                question: 'Een apparaat van 1500W draait 3 uur per dag. Energieverbruik per maand (30 dagen)?',
+                answer: 'E = P × t<br>E_dag = 1500W × 3h = 4500 Wh = 4,5 kWh<br>E_maand = 4,5 × 30 = <b>135 kWh</b><br><br>Kosten (€0,30/kWh): 135 × 0,30 = €40,50'
+            },
+            {
+                chapter: 'h44',
+                chapterLabel: 'H 4.4',
+                question: 'Wat is rendement en hoe bereken je het?',
+                answer: '<b>Rendement (η):</b><br>η = P_nuttig / P_totaal<br><br>Of: η = P_totaal - P_verlies / P_totaal<br><br>Eenheid: - (tussen 0 en 1) of % (0-100%)<br><br>Voorbeeld: 90% rendement → 10% verlies'
+            },
+            {
+                chapter: 'h44',
+                chapterLabel: 'H 4.4',
+                question: 'Motor trekt 2300W uit het net, levert 2000W mechanisch. Bereken rendement.',
+                answer: 'η = P_nuttig / P_totaal<br>η = 2000 / 2300<br>η = 0,87 = <b>87%</b><br><br>Verlies: 2300 - 2000 = 300W (warmte)'
+            },
+            {
+                chapter: 'h44',
+                chapterLabel: 'H 4.4',
+                question: 'Waarom is rendement bij vermogensaanpassing altijd 50%?',
+                answer: 'Bij R_last = R_bron:<br>• Helft spanning over R_bron<br>• Helft spanning over R_last<br>• P_bron = P_last (gelijk!)<br><br>η = P_last / (P_bron + P_last) = P / 2P = 50%<br><br>Maximaal vermogen ≠ maximaal rendement!'
+            },
+            // Additional questions H 5.5
+            {
+                chapter: 'h55',
+                chapterLabel: 'H 5.5',
+                question: 'Een sinusvormige spanning heeft topwaarde 325V. Bereken effectieve waarde.',
+                answer: 'U_eff = U_top / √2<br>U_eff = 325 / 1,414<br>U_eff = <b>230 V</b><br><br>Dit is de Nederlandse netspanning!'
+            },
+            {
+                chapter: 'h55',
+                chapterLabel: 'H 5.5',
+                question: 'Wat is de frequentie van netspanning in Europa?',
+                answer: '<b>50 Hz</b><br><br>Periode: T = 1/f = 1/50 = 0,02 s = 20 ms<br><br>VS/Canada: 60 Hz<br>Hoekfrequentie: ω = 2πf = 314 rad/s'
+            },
+            {
+                chapter: 'h55',
+                chapterLabel: 'H 5.5',
+                question: 'Wat is het verschil tussen top-, effectieve en gemiddelde waarde?',
+                answer: '<b>Topwaarde (U_top):</b> Maximale waarde<br><b>Effectieve waarde (U_eff):</b> U_top/√2 → vermogen equiv. DC<br><b>Gemiddelde waarde (U_gem):</b> 2×U_top/π → gelijkrichtwaarde<br><br>Voor sinus: U_eff/U_gem = π/(2√2) ≈ 1,11 (vormfactor)'
+            },
+            {
+                chapter: 'h55',
+                chapterLabel: 'H 5.5',
+                question: 'Een signaal heeft periode van 25 ms. Wat is de frequentie?',
+                answer: 'f = 1/T<br>f = 1 / 0,025<br>f = <b>40 Hz</b><br><br>Let op eenheden: 25 ms = 0,025 s'
+            },
+            // Additional questions H 6.8
+            {
+                chapter: 'h68',
+                chapterLabel: 'H 6.8',
+                question: 'Condensator van 100μF wordt geladen naar 12V. Hoeveel lading (Q)?',
+                answer: 'Q = C × U<br>Q = 100×10⁻⁶ × 12<br>Q = 1,2×10⁻³ = <b>1,2 mC</b><br><br>Coulomb (C) is eenheid van lading.'
+            },
+            {
+                chapter: 'h68',
+                chapterLabel: 'H 6.8',
+                question: 'Hoeveel energie in condensator van 470μF bij 400V?',
+                answer: 'E = ½ × C × U²<br>E = 0,5 × 470×10⁻⁶ × 400²<br>E = 0,5 × 470×10⁻⁶ × 160000<br>E = <b>37,6 J</b><br><br>⚠️ Gevaarlijk! Kan schok geven.'
+            },
+            {
+                chapter: 'h68',
+                chapterLabel: 'H 6.8',
+                question: 'Waarom blokkeert een condensator DC maar laat AC door?',
+                answer: '<b>DC (f=0):</b><br>X_C = 1/(2πfC) → oneindig → open circuit<br><br><b>AC (f>0):</b><br>X_C heeft eindige waarde → stroom kan vloeien<br><br>Hogere frequentie → lagere impedantie → meer stroom!'
+            },
+            {
+                chapter: 'h68',
+                chapterLabel: 'H 6.8',
+                question: 'Spoel van 50mH, stroom stijgt met 100A/s. Bereken geïnduceerde spanning.',
+                answer: 'U = L × dI/dt<br>U = 50×10⁻³ × 100<br>U = <b>5 V</b><br><br>Spoel verzet zich tegen stroomverandering (Lenz wet).'
+            },
+            // Additional questions H 7.8
+            {
+                chapter: 'h78',
+                chapterLabel: 'H 7.8',
+                question: 'Serie RLC: R=10Ω, X_L=20Ω, X_C=15Ω. Bereken impedantie.',
+                answer: 'Z = R + j(X_L - X_C)<br>Z = 10 + j(20 - 15)<br>Z = 10 + j5<br><br>|Z| = √(R² + X²) = √(100 + 25) = √125 = <b>11,2 Ω</b><br>φ = arctan(5/10) = 26,6° (inductief)'
+            },
+            {
+                chapter: 'h78',
+                chapterLabel: 'H 7.8',
+                question: 'Bij welke frequentie treedt resonantie op in serie RLC?',
+                answer: '<b>Resonantiefrequentie:</b><br>f_res = 1 / (2π√(LC))<br><br>Bij resonantie:<br>• X_L = X_C<br>• Z = R (minimaal!)<br>• cos φ = 1 (in fase)<br>• Maximale stroom'
+            },
+            {
+                chapter: 'h78',
+                chapterLabel: 'H 7.8',
+                question: 'Wat is de fasehoek bij zuiver capacitieve belasting?',
+                answer: '<b>Zuiver capacitief (alleen C, geen R):</b><br>φ = -90° = -π/2 rad<br><br>Stroom <b>loopt voor</b> op spanning.<br><br>Onthouden: "ICE" → In Capacitor, I leads (stroom voorop)'
+            },
+            {
+                chapter: 'h78',
+                chapterLabel: 'H 7.8',
+                question: 'Wat gebeurt met impedantie van spoel bij hogere frequentie?',
+                answer: 'X_L = 2πfL<br><br>Hogere f → hogere X_L → hogere impedantie!<br><br>Bij DC (f=0): X_L = 0 (kortsluiting)<br>Bij hoge f: X_L → oneindig (open)<br><br>Spoel is <b>hoogdoorlaatfilter</b>'
+            },
+            // Additional questions H 9.7
+            {
+                chapter: 'h97',
+                chapterLabel: 'H 9.7',
+                question: 'Complexe impedantie Z = 30 + j40 Ω. Bereken magnitude en fase.',
+                answer: '|Z| = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = <b>50 Ω</b><br><br>φ = arctan(X/R) = arctan(40/30) = <b>53,1°</b> (inductief)<br><br>Polair: Z = 50∠53,1°'
+            },
+            {
+                chapter: 'h97',
+                chapterLabel: 'H 9.7',
+                question: 'Twee impedanties parallel: Z1=20∠30° en Z2=40∠-45°. Hoe bereken je Z_totaal?',
+                answer: '<b>Parallel in complex:</b><br>1/Z_totaal = 1/Z₁ + 1/Z₂<br><br>Stappen:<br>1. Converteer naar rechthoekig<br>2. Bereken 1/Z₁ en 1/Z₂<br>3. Tel admittanties op<br>4. Neem reciproke<br><br>Of: Z_totaal = (Z₁×Z₂)/(Z₁+Z₂) in polair'
+            },
+            {
+                chapter: 'h97',
+                chapterLabel: 'H 9.7',
+                question: 'Wat betekent de imaginaire eenheid j in elektrotechniek?',
+                answer: '<b>j = √(-1)</b> (wiskunde gebruikt i)<br><br>j² = -1<br><br>Gebruikt om <b>faserotatie</b> aan te geven:<br>• ×j → 90° vooruit (tegen klok in)<br>• ÷j = ×(-j) → 90° achteruit<br><br>Capaciteit: Z_C = -j×X_C (90° achter)<br>Inductie: Z_L = +j×X_L (90° voor)'
+            },
+            {
+                chapter: 'h97',
+                chapterLabel: 'H 9.7',
+                question: 'Bereken 5∠30° × 4∠60° in polaire vorm.',
+                answer: '<b>Vermenigvuldigen in polair:</b><br>Magnitude: 5 × 4 = 20<br>Fase: 30° + 60° = 90°<br><br>Resultaat: <b>20∠90°</b> = 0 + j20<br><br>Regel: (r₁∠θ₁) × (r₂∠θ₂) = (r₁×r₂)∠(θ₁+θ₂)'
+            },
+            // Additional questions H 11.7
+            {
+                chapter: 'h117',
+                chapterLabel: 'H 11.7',
+                question: 'Motor: U=400V, I=10A, cos φ=0,8. Bereken P, Q, S.',
+                answer: '<b>Schijnbaar vermogen:</b> S = U×I = 400×10 = 4000 VA = 4 kVA<br><b>Werkelijk vermogen:</b> P = S×cos φ = 4000×0,8 = 3200 W = 3,2 kW<br><b>Blindvermogen:</b> Q = S×sin φ = 4000×0,6 = 2400 VAR = 2,4 kVAR<br><br>Verificatie: S² = P² + Q² ✓'
+            },
+            {
+                chapter: 'h117',
+                chapterLabel: 'H 11.7',
+                question: 'Waarom compenseer je blindvermogen?',
+                answer: '<b>Redenen:</b><br>1. Lagere stroombelasting kabels/transformator<br>2. Lagere I²R verliezen<br>3. Betere spanningsregulatie<br>4. Vermijd boetes energiebedrijf<br>5. Lagere tarieven<br><br>Methode: Condensator parallel → Q_capacitief compenseert Q_inductief'
+            },
+            {
+                chapter: 'h117',
+                chapterLabel: 'H 11.7',
+                question: 'Installatie: P=50kW, cos φ₁=0,7. Doel: cos φ₂=0,95. Bereken benodigde Q_C.',
+                answer: 'Q₁ = P × tan(arccos(0,7)) = 50 × 1,02 = 51 kVAR<br>Q₂ = P × tan(arccos(0,95)) = 50 × 0,33 = 16,5 kVAR<br><br>Q_C = Q₁ - Q₂ = 51 - 16,5 = <b>34,5 kVAR</b> condensator nodig<br><br>Bij 400V driefase: C ≈ 310 μF'
             }
         ];
 
