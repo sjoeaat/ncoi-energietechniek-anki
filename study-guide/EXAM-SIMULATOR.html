@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⏱️ Exam Simulator - NCOI Energietechniek</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .setup-screen, .exam-screen, .results-screen {
+            display: none;
+        }
+
+        .setup-screen.active, .exam-screen.active, .results-screen.active {
+            display: block;
+        }
+
+        .timer-display {
+            background: linear-gradient(135deg, #f44336 0%, #e91e63 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(244,67,54,0.3);
+        }
+
+        .timer-display.warning {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .question-counter {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .question-box {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .answer-options {
+            display: grid;
+            gap: 15px;
+        }
+
+        .answer-btn {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        .answer-btn:hover {
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .answer-btn.selected {
+            border-color: #667eea;
+            background: #e3f2fd;
+        }
+
+        .setup-options {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .setup-option {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .setup-option label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .setup-option select, .setup-option input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 20px 40px;
+            font-size: 1.3em;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .grade-box {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .grade-box.fail {
+            background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+        }
+
+        .review-list {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .review-item {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+        }
+
+        .review-question {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .review-answer {
+            color: #666;
+            margin-left: 20px;
+        }
+
+        .review-answer.correct {
+            color: #4caf50;
+        }
+
+        .review-answer.incorrect {
+            color: #f44336;
+        }
+
+        .info-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⏱️ Exam Simulator</h1>
+        <div class="subtitle">Simuleer examen condities met timing & druk</div>
+
+        <!-- Setup Screen -->
+        <div class="setup-screen active" id="setupScreen">
+            <div class="info-box">
+                <strong>📋 Exam Condities:</strong><br>
+                • Tijdsdruk zoals echte examen<br>
+                • Multiple choice vragen<br>
+                • Geen antwoorden tijdens exam<br>
+                • Resultaten na afloop<br>
+                • Aanbevolen: 2 minuten per vraag
+            </div>
+
+            <div class="setup-options">
+                <div class="setup-option">
+                    <label>Aantal Vragen:</label>
+                    <select id="questionCount">
+                        <option value="10">10 vragen (20 min - kort)</option>
+                        <option value="16" selected>16 vragen (32 min - realistisch)</option>
+                        <option value="20">20 vragen (40 min - uitgebreid)</option>
+                        <option value="30">30 vragen (60 min - volledig)</option>
+                    </select>
+                </div>
+
+                <div class="setup-option">
+                    <label>Tijd per Vraag:</label>
+                    <select id="timePerQuestion">
+                        <option value="60">1 minuut (sprint mode)</option>
+                        <option value="120" selected>2 minuten (examen tempo)</option>
+                        <option value="180">3 minuten (rustig tempo)</option>
+                    </select>
+                </div>
+
+                <div class="setup-option">
+                    <label>Moeilijkheidsgraad:</label>
+                    <select id="difficulty">
+                        <option value="easy">Basis (H 1.9, H 2.6)</option>
+                        <option value="medium" selected>Gemiddeld (Mix)</option>
+                        <option value="hard">Gevorderd (H 3.11, H 7.8, H 9.7)</option>
+                        <option value="all">Alle levels</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-large" onclick="startExam()">🚀 Start Exam</button>
+        </div>
+
+        <!-- Exam Screen -->
+        <div class="exam-screen" id="examScreen">
+            <div class="timer-display" id="timerDisplay">--:--</div>
+
+            <div class="question-counter" id="questionCounter">Vraag 1 / 16</div>
+
+            <div class="question-box">
+                <div class="question-text" id="questionText"></div>
+                <div class="answer-options" id="answerOptions"></div>
+            </div>
+
+            <div class="control-buttons">
+                <button class="btn" onclick="previousQuestion()" id="prevBtn">⬅️ Vorige</button>
+                <button class="btn" onclick="nextQuestion()" id="nextBtn">Volgende ➡️</button>
+                <button class="btn" onclick="finishExam()" id="finishBtn" style="display: none;">✅ Afronden</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="results-screen" id="resultsScreen">
+            <div class="grade-box" id="gradeBox"></div>
+
+            <div class="results-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="scoreNumber">0</div>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="correctNumber">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="percentageNumber">0%</div>
+                    <div class="stat-label">Percentage</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="timeUsed">0:00</div>
+                    <div class="stat-label">Tijd Gebruikt</div>
+                </div>
+            </div>
+
+            <div class="review-list" id="reviewList"></div>
+
+            <button class="btn btn-large" onclick="resetExam()">🔄 Nieuw Examen</button>
+        </div>
+    </div>
+
+    <script>
+        // Sample questions database (expandable)
+        const questionDatabase = {
+            easy: [
+                { q: "Wat is de wet van Ohm?", a: ["U = I × R", "P = U × I", "R = ρ × l/A", "I = C × dU/dt"], correct: 0 },
+                { q: "Bij serie schakeling is de totale weerstand:", a: ["R_tot = R1 + R2 + R3", "1/R_tot = 1/R1 + 1/R2", "R_tot = R1 || R2", "R_tot = √(R1² + R2²)"], correct: 0 },
+                { q: "Kirchhoff's knooppuntwet (KCL) stelt:", a: ["Σ I_in = Σ I_uit", "Σ U_maas = 0", "U = I × R", "P = I² × R"], correct: 0 },
+                { q: "Vermogen bereken je met:", a: ["P = U × I", "E = P × t", "U = I × R", "Q = C × U"], correct: 0 },
+                { q: "Parallel weerstanden bereken je met:", a: ["1/R_tot = 1/R1 + 1/R2", "R_tot = R1 + R2", "R_tot = R1 × R2", "R_tot = (R1 + R2)/2"], correct: 0 },
+            ],
+            medium: [
+                { q: "Thévenin equivalent bestaat uit:", a: ["U_th in serie met R_th", "I_N parallel met R_N", "Alleen U_th", "Alleen R_th"], correct: 0 },
+                { q: "Norton stroom (I_N) is gelijk aan:", a: ["Kortsluitstroom", "Open-klem stroom", "U_th / R_th", "Geen van deze"], correct: 0 },
+                { q: "Bij vermogensaanpassing geldt:", a: ["R_last = R_th", "R_last = 2×R_th", "R_last = 0.5×R_th", "R_last = ∞"], correct: 0 },
+                { q: "Effectieve waarde van sinusvormige spanning:", a: ["U_eff = U_top / √2", "U_eff = U_top / 2", "U_eff = U_top × √2", "U_eff = 2 × U_top / π"], correct: 0 },
+                { q: "Capacitieve reactantie bereken je met:", a: ["X_C = 1/(2πfC)", "X_C = 2πfC", "X_C = 1/(ωC)", "X_C = ωC"], correct: 0 },
+            ],
+            hard: [
+                { q: "Bij RLC serie resonantie is:", a: ["X_L = X_C", "Z minimaal", "cos φ = 1", "Alle opties correct"], correct: 3 },
+                { q: "Schijnbaar vermogen (S) bereken je met:", a: ["S = U × I", "S = P / cos φ", "S² = P² + Q²", "Alle opties correct"], correct: 3 },
+                { q: "Blindvermogen compensatie doe je met:", a: ["Condensator parallel", "Spoel parallel", "Weerstand serie", "Transformator"], correct: 0 },
+                { q: "Faseverschuiving bereken je met:", a: ["φ = arctan(X/R)", "φ = arctan(R/X)", "φ = arccos(P/S)", "Opties 1 en 3"], correct: 3 },
+                { q: "Bij complexe impedantie geldt:", a: ["|Z| = √(R² + X²)", "Z = R + jX", "φ = arg(Z)", "Alle opties correct"], correct: 3 },
+            ]
+        };
+
+        let currentExamConfig = {};
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let timerInterval = null;
+        let timeRemaining = 0;
+        let startTime = 0;
+
+        function startExam() {
+            // Get configuration
+            const numQuestions = parseInt(document.getElementById('questionCount').value);
+            const timePerQ = parseInt(document.getElementById('timePerQuestion').value);
+            const difficulty = document.getElementById('difficulty').value;
+
+            currentExamConfig = {
+                numQuestions,
+                timePerQuestion: timePerQ,
+                totalTime: numQuestions * timePerQ,
+                difficulty
+            };
+
+            // Generate questions
+            generateQuestions(numQuestions, difficulty);
+
+            // Initialize
+            currentQuestionIndex = 0;
+            userAnswers = new Array(numQuestions).fill(null);
+            timeRemaining = currentExamConfig.totalTime;
+            startTime = Date.now();
+
+            // Show exam screen
+            document.getElementById('setupScreen').classList.remove('active');
+            document.getElementById('examScreen').classList.add('active');
+
+            // Start timer
+            startTimer();
+
+            // Load first question
+            loadQuestion();
+        }
+
+        function generateQuestions(num, difficulty) {
+            let pool = [];
+
+            if (difficulty === 'easy') {
+                pool = questionDatabase.easy;
+            } else if (difficulty === 'medium') {
+                pool = [...questionDatabase.easy, ...questionDatabase.medium];
+            } else if (difficulty === 'hard') {
+                pool = questionDatabase.hard;
+            } else { // all
+                pool = [...questionDatabase.easy, ...questionDatabase.medium, ...questionDatabase.hard];
+            }
+
+            // Shuffle and select
+            const shuffled = pool.sort(() => Math.random() - 0.5);
+            currentQuestions = shuffled.slice(0, num);
+        }
+
+        function startTimer() {
+            updateTimerDisplay();
+
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    finishExam();
+                }
+
+                updateTimerDisplay();
+
+                // Warning animation when < 2 minutes
+                if (timeRemaining < 120) {
+                    document.getElementById('timerDisplay').classList.add('warning');
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timerDisplay').textContent =
+                `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function loadQuestion() {
+            const q = currentQuestions[currentQuestionIndex];
+
+            // Update counter
+            document.getElementById('questionCounter').textContent =
+                `Vraag ${currentQuestionIndex + 1} / ${currentQuestions.length}`;
+
+            // Update question text
+            document.getElementById('questionText').textContent = q.q;
+
+            // Update answer options
+            const optionsHtml = q.a.map((answer, index) => `
+                <button class="answer-btn ${userAnswers[currentQuestionIndex] === index ? 'selected' : ''}"
+                        onclick="selectAnswer(${index})">
+                    <strong>${String.fromCharCode(65 + index)}:</strong> ${answer}
+                </button>
+            `).join('');
+
+            document.getElementById('answerOptions').innerHTML = optionsHtml;
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').style.display = currentQuestionIndex > 0 ? 'block' : 'none';
+            document.getElementById('nextBtn').style.display = currentQuestionIndex < currentQuestions.length - 1 ? 'block' : 'none';
+            document.getElementById('finishBtn').style.display = currentQuestionIndex === currentQuestions.length - 1 ? 'block' : 'none';
+        }
+
+        function selectAnswer(answerIndex) {
+            userAnswers[currentQuestionIndex] = answerIndex;
+            loadQuestion(); // Refresh to show selection
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < currentQuestions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            }
+        }
+
+        function finishExam() {
+            clearInterval(timerInterval);
+
+            // Calculate results
+            let correct = 0;
+            currentQuestions.forEach((q, i) => {
+                if (userAnswers[i] === q.correct) {
+                    correct++;
+                }
+            });
+
+            const percentage = Math.round((correct / currentQuestions.length) * 100);
+            const timeUsed = currentExamConfig.totalTime - timeRemaining;
+            const grade = percentage >= 55 ? 'GESLAAGD' : 'NIET GESLAAGD';
+            const pass = percentage >= 55;
+
+            // Show results screen
+            document.getElementById('examScreen').classList.remove('active');
+            document.getElementById('resultsScreen').classList.add('active');
+
+            // Update stats
+            document.getElementById('scoreNumber').textContent = `${correct}/${currentQuestions.length}`;
+            document.getElementById('correctNumber').textContent = correct;
+            document.getElementById('percentageNumber').textContent = percentage + '%';
+
+            const mins = Math.floor(timeUsed / 60);
+            const secs = timeUsed % 60;
+            document.getElementById('timeUsed').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+
+            // Update grade box
+            const gradeBox = document.getElementById('gradeBox');
+            gradeBox.textContent = `${grade} - ${percentage}%`;
+            gradeBox.className = pass ? 'grade-box' : 'grade-box fail';
+
+            // Generate review list
+            let reviewHtml = '<h3 style="margin-bottom: 15px;">📝 Review van Antwoorden:</h3>';
+            currentQuestions.forEach((q, i) => {
+                const userAns = userAnswers[i];
+                const isCorrect = userAns === q.correct;
+
+                reviewHtml += `
+                    <div class="review-item">
+                        <div class="review-question">Vraag ${i + 1}: ${q.q}</div>
+                        <div class="review-answer ${isCorrect ? 'correct' : 'incorrect'}">
+                            ${isCorrect ? '✅' : '❌'} Jouw antwoord: ${userAns !== null ? q.a[userAns] : 'Niet beantwoord'}
+                        </div>
+                        ${!isCorrect ? `<div class="review-answer correct">✓ Correct antwoord: ${q.a[q.correct]}</div>` : ''}
+                    </div>
+                `;
+            });
+
+            document.getElementById('reviewList').innerHTML = reviewHtml;
+        }
+
+        function resetExam() {
+            // Reset all state
+            clearInterval(timerInterval);
+            currentQuestionIndex = 0;
+            userAnswers = [];
+            timeRemaining = 0;
+
+            // Show setup screen
+            document.getElementById('resultsScreen').classList.remove('active');
+            document.getElementById('setupScreen').classList.add('active');
+        }
+    </script>
+</body>
+</html>
