@@ -1,0 +1,669 @@
+"Front","Back","Tags"
+"<b>Bij serie schakeling is de stroom:</b><br><br><b>A:</b> Overal gelijk<br><b>B:</b> Verschillend per weerstand<br><b>C:</b> Nul<br><b>D:</b> Afhankelijk van spanning<br>","<b>✅ CORRECT ANTWOORD: Overal gelijk</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Overal gelijk</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Verschillend per weerstand</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Nul</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Afhankelijk van spanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Bij parallel schakeling is de spanning:</b><br><br><b>A:</b> Overal gelijk<br><b>B:</b> Verschillend per tak<br><b>C:</b> Nul<br><b>D:</b> Som van alle spanningen<br>","<b>✅ CORRECT ANTWOORD: Overal gelijk</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Overal gelijk</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Verschillend per tak</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Nul</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Som van alle spanningen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Bij een weerstand wordt elektrische energie omgezet in:</b><br><br><b>A:</b> Warmte<br><b>B:</b> Licht<br><b>C:</b> Magnetisch veld<br><b>D:</b> Elektrisch veld<br>","<b>✅ CORRECT ANTWOORD: Warmte</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 10 - Energie<br>
+<b>📖 Holmes:</b> Hoofdstuk 1 §1.9<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( E = P \cdot t \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Licht</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Magnetisch veld</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Elektrisch veld</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","type::begrip;prioriteit::hoog"
+"<b>Een condensator slaat energie op in:</b><br><br><b>A:</b> Elektrisch veld<br><b>B:</b> Magnetisch veld<br><b>C:</b> Warmte<br><b>D:</b> Licht<br>","<b>✅ CORRECT ANTWOORD: Elektrisch veld</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 10 - Energie<br>
+<b>📖 Holmes:</b> Hoofdstuk 1 §1.9<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( E = P \cdot t \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Magnetisch veld</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Warmte</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Licht</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::condensator;type::begrip;prioriteit::hoog"
+"<b>Een spoel slaat energie op in:</b><br><br><b>A:</b> Magnetisch veld<br><b>B:</b> Elektrisch veld<br><b>C:</b> Warmte<br><b>D:</b> Licht<br>","<b>✅ CORRECT ANTWOORD: Magnetisch veld</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 10 - Energie<br>
+<b>📖 Holmes:</b> Hoofdstuk 1 §1.9<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( E = P \cdot t \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Elektrisch veld</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Warmte</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Licht</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::spoel;type::begrip;prioriteit::hoog"
+"<b>Spanningsdeling gebruik je bij:</b><br><br><b>A:</b> Serie weerstanden<br><b>B:</b> Parallel weerstanden<br><b>C:</b> Alleen condensatoren<br><b>D:</b> Alleen spoelen<br>","<b>✅ CORRECT ANTWOORD: Serie weerstanden</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Serie weerstanden</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Parallel weerstanden</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Alleen condensatoren</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Alleen spoelen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::condensator;topic::spoel;type::begrip;prioriteit::hoog"
+"<b>Stroomdeling gebruik je bij:</b><br><br><b>A:</b> Parallel weerstanden<br><b>B:</b> Serie weerstanden<br><b>C:</b> Alleen condensatoren<br><b>D:</b> Alleen spoelen<br>","<b>✅ CORRECT ANTWOORD: Parallel weerstanden</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Parallel weerstanden</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Serie weerstanden</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Alleen condensatoren</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Alleen spoelen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::condensator;topic::spoel;type::begrip;prioriteit::hoog"
+"<b>Bij een kortsluiting is de weerstand:</b><br><br><b>A:</b> 0 Ω (nul)<br><b>B:</b> ∞ (oneindig)<br><b>C:</b> 1 Ω<br><b>D:</b> 100 Ω<br>","<b>✅ CORRECT ANTWOORD: 0 Ω (nul)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 4 - Hoekfrequentie<br>
+<b>📖 Holmes:</b> Hoofdstuk 7 §7.3<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( \omega = 2\pi f \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: ∞ (oneindig)</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: 1 Ω</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: 100 Ω</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","type::begrip;prioriteit::hoog"
+"<b>Bij een open klem is de weerstand:</b><br><br><b>A:</b> ∞ (oneindig)<br><b>B:</b> 0 Ω (nul)<br><b>C:</b> 1 Ω<br><b>D:</b> 100 Ω<br>","<b>✅ CORRECT ANTWOORD: ∞ (oneindig)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>∞ (oneindig)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>0 Ω (nul)</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>1 Ω</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>100 Ω</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>De effectieve waarde (RMS) van een sinusgolf is:</b><br><br><b>A:</b> U_top / √2<br><b>B:</b> U_top / 2<br><b>C:</b> U_top × √2<br><b>D:</b> 2 × U_top<br>","<b>✅ CORRECT ANTWOORD: U_top / √2</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 5 - Effectieve waarde<br>
+<b>📖 Holmes:</b> Hoofdstuk 7 §7.2<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( U_{eff} = \frac{U_{top}}{\sqrt{2}} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: U_top / 2</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: U_top × √2</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: 2 × U_top</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","type::begrip;prioriteit::hoog"
+"<b>De frequentie van het Nederlandse elektriciteitsnet is:</b><br><br><b>A:</b> 50 Hz<br><b>B:</b> 60 Hz<br><b>C:</b> 100 Hz<br><b>D:</b> 25 Hz<br>","<b>✅ CORRECT ANTWOORD: 50 Hz</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>50 Hz</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>60 Hz</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>100 Hz</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>25 Hz</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>De netspanning in Nederland is (effectief):</b><br><br><b>A:</b> 230 V<br><b>B:</b> 220 V<br><b>C:</b> 325 V<br><b>D:</b> 400 V<br>","<b>✅ CORRECT ANTWOORD: 230 V</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>230 V</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>220 V</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>325 V</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>400 V</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Bij een condensator ijlt de stroom:</b><br><br><b>A:</b> 90° voor op de spanning<br><b>B:</b> 90° achter op de spanning<br><b>C:</b> 180° op de spanning<br><b>D:</b> In fase met spanning<br>","<b>✅ CORRECT ANTWOORD: 90° voor op de spanning</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>90° voor op de spanning</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>90° achter op de spanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>180° op de spanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>In fase met spanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::condensator;type::begrip;prioriteit::hoog"
+"<b>Bij een spoel ijlt de stroom:</b><br><br><b>A:</b> 90° achter op de spanning<br><b>B:</b> 90° voor op de spanning<br><b>C:</b> 180° op de spanning<br><b>D:</b> In fase met spanning<br>","<b>✅ CORRECT ANTWOORD: 90° achter op de spanning</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>90° achter op de spanning</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>90° voor op de spanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>180° op de spanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>In fase met spanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::spoel;type::begrip;prioriteit::hoog"
+"<b>Thévenin equivalent bestaat uit:</b><br><br><b>A:</b> U_th in serie met R_th<br><b>B:</b> I_N parallel met R_N<br><b>C:</b> Alleen U_th<br><b>D:</b> Alleen R_th<br>","<b>✅ CORRECT ANTWOORD: U_th in serie met R_th</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 9 - Thévenin<br>
+<b>📖 Holmes:</b> Hoofdstuk 3 §3.11<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+U_{th} serie met R_{th}<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: I_N parallel met R_N</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Alleen U_th</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Alleen R_th</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::thevenin;type::begrip;prioriteit::examen-kritisch"
+"<b>Norton equivalent bestaat uit:</b><br><br><b>A:</b> I_N parallel met R_N<br><b>B:</b> U_th in serie met R_th<br><b>C:</b> Alleen I_N<br><b>D:</b> Alleen R_N<br>","<b>✅ CORRECT ANTWOORD: I_N parallel met R_N</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 9 - Norton<br>
+<b>📖 Holmes:</b> Hoofdstuk 3 §3.11<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+I_N parallel met R_N<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: U_th in serie met R_th</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Alleen I_N</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Alleen R_N</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","domain::netwerk-analyse;topic::norton;type::begrip;prioriteit::hoog"
+"<b>Norton stroom (I_N) is gelijk aan:</b><br><br><b>A:</b> Kortsluitstroom<br><b>B:</b> Open-klem stroom<br><b>C:</b> Helft van kortsluitstroom<br><b>D:</b> Gemiddelde stroom<br>","<b>✅ CORRECT ANTWOORD: Kortsluitstroom</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 9 - Norton<br>
+<b>📖 Holmes:</b> Hoofdstuk 3 §3.11<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+I_N parallel met R_N<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Open-klem stroom</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Helft van kortsluitstroom</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Gemiddelde stroom</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","domain::netwerk-analyse;topic::norton;type::begrip;prioriteit::hoog"
+"<b>Thévenin spanning (U_th) is gelijk aan:</b><br><br><b>A:</b> Open-klem spanning<br><b>B:</b> Kortsluitspanning<br><b>C:</b> Helft van open-klem spanning<br><b>D:</b> Gemiddelde spanning<br>","<b>✅ CORRECT ANTWOORD: Open-klem spanning</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 9 - Thévenin<br>
+<b>📖 Holmes:</b> Hoofdstuk 3 §3.11<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+U_{th} serie met R_{th}<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Kortsluitspanning</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Helft van open-klem spanning</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Gemiddelde spanning</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::thevenin;type::begrip;prioriteit::examen-kritisch"
+"<b>Het rendement bij vermogensaanpassing is:</b><br><br><b>A:</b> 50%<br><b>B:</b> 100%<br><b>C:</b> 75%<br><b>D:</b> 25%<br>","<b>✅ CORRECT ANTWOORD: 50%</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 10 - Rendement<br>
+<b>📖 Holmes:</b> Hoofdstuk 1 §1.9<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( \eta = \frac{P_{uit}}{P_{in}} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: 100%</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: 75%</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: 25%</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","domain::vermogen;topic::vermogen;type::begrip;prioriteit::examen-kritisch"
+"<b>Bij hogere frequentie wordt X_C:</b><br><br><b>A:</b> Kleiner<br><b>B:</b> Groter<br><b>C:</b> Blijft gelijk<br><b>D:</b> Eerst groter, dan kleiner<br>","<b>✅ CORRECT ANTWOORD: Kleiner</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 3 - Capacitieve reactantie<br>
+<b>📖 Holmes:</b> Hoofdstuk 6 §6.7<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( X_C = \frac{1}{2\pi f C} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Groter</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Blijft gelijk</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Eerst groter, dan kleiner</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","type::begrip;prioriteit::hoog"
+"<b>Bij hogere frequentie wordt X_L:</b><br><br><b>A:</b> Groter<br><b>B:</b> Kleiner<br><b>C:</b> Blijft gelijk<br><b>D:</b> Eerst kleiner, dan groter<br>","<b>✅ CORRECT ANTWOORD: Groter</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 3 - Inductieve reactantie<br>
+<b>📖 Holmes:</b> Hoofdstuk 5 §5.8<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( X_L = 2\pi f L \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Kleiner</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Blijft gelijk</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Eerst kleiner, dan groter</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","type::begrip;prioriteit::hoog"
+"<b>Bij een puur resistieve belasting is cos φ:</b><br><br><b>A:</b> 1<br><b>B:</b> 0<br><b>C:</b> 0.5<br><b>D:</b> ∞<br>","<b>✅ CORRECT ANTWOORD: 1</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 6 - Arbeidsfactor<br>
+<b>📖 Holmes:</b> Hoofdstuk 7 §7.8<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( \cos\varphi = \frac{P}{S} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: 0</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: 0.5</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: ∞</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::arbeidsfactor;type::begrip;prioriteit::examen-kritisch"
+"<b>Bij een puur reactieve belasting is cos φ:</b><br><br><b>A:</b> 0<br><b>B:</b> 1<br><b>C:</b> 0.5<br><b>D:</b> ∞<br>","<b>✅ CORRECT ANTWOORD: 0</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 6 - Arbeidsfactor<br>
+<b>📖 Holmes:</b> Hoofdstuk 7 §7.8<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( \cos\varphi = \frac{P}{S} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: 1</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: 0.5</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: ∞</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::arbeidsfactor;type::begrip;prioriteit::examen-kritisch"
+"<b>Blindvermogencompensatie doe je met:</b><br><br><b>A:</b> Condensator parallel<br><b>B:</b> Spoel parallel<br><b>C:</b> Weerstand serie<br><b>D:</b> Transformator<br>","<b>✅ CORRECT ANTWOORD: Condensator parallel</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Condensator parallel</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Spoel parallel</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Weerstand serie</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Transformator</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::vermogen;topic::vermogen;topic::compensatie;topic::condensator;topic::spoel;topic::transformator;type::begrip;prioriteit::examen-kritisch"
+"<b>Na perfecte compensatie is cos φ:</b><br><br><b>A:</b> 1<br><b>B:</b> 0<br><b>C:</b> 0.5<br><b>D:</b> Onveranderd<br>","<b>✅ CORRECT ANTWOORD: 1</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 6 - Arbeidsfactor<br>
+<b>📖 Holmes:</b> Hoofdstuk 7 §7.8<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( \cos\varphi = \frac{P}{S} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: 0</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: 0.5</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Onveranderd</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::arbeidsfactor;topic::compensatie;type::begrip;prioriteit::examen-kritisch"
+"<b>Bij een symmetrisch driefasesysteem is het faseverschil:</b><br><br><b>A:</b> 120°<br><b>B:</b> 90°<br><b>C:</b> 180°<br><b>D:</b> 60°<br>","<b>✅ CORRECT ANTWOORD: 120°</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>120°</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>90°</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>180°</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>60°</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::driefase;type::begrip;prioriteit::examen-kritisch"
+"<b>De lijnspanning in Nederland is:</b><br><br><b>A:</b> 400 V<br><b>B:</b> 230 V<br><b>C:</b> 325 V<br><b>D:</b> 690 V<br>","<b>✅ CORRECT ANTWOORD: 400 V</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>400 V</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>230 V</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>325 V</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>690 V</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>De fasespanning in Nederland is:</b><br><br><b>A:</b> 230 V<br><b>B:</b> 400 V<br><b>C:</b> 325 V<br><b>D:</b> 133 V<br>","<b>✅ CORRECT ANTWOORD: 230 V</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>230 V</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>400 V</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>325 V</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>133 V</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Bij serie-resonantie kan de spanning over L of C:</b><br><br><b>A:</b> Groter zijn dan bronspanning<br><b>B:</b> Kleiner zijn dan bronspanning<br><b>C:</b> Altijd gelijk aan bronspanning<br><b>D:</b> Nul zijn<br>","<b>✅ CORRECT ANTWOORD: Groter zijn dan bronspanning</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Groter zijn dan bronspanning</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Kleiner zijn dan bronspanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Altijd gelijk aan bronspanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Nul zijn</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::resonantie;topic::resonantie;type::begrip;prioriteit::hoog"
+"<b>Bij hogere Q is de bandbreedte:</b><br><br><b>A:</b> Kleiner (selectiever)<br><b>B:</b> Groter (minder selectief)<br><b>C:</b> Gelijk<br><b>D:</b> Onbepaald<br>","<b>✅ CORRECT ANTWOORD: Kleiner (selectiever)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Kleiner (selectiever)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Groter (minder selectief)</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Gelijk</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Onbepaald</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Serie RLC gebruik je als:</b><br><br><b>A:</b> Bandfilter (doorlaten f₀)<br><b>B:</b> Sperfilter (blokkeren f₀)<br><b>C:</b> Hoogdoorlaatfilter<br><b>D:</b> Laagdoorlaatfilter<br>","<b>✅ CORRECT ANTWOORD: Bandfilter (doorlaten f₀)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Bandfilter (doorlaten f₀)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Sperfilter (blokkeren f₀)</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Hoogdoorlaatfilter</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Laagdoorlaatfilter</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::rlc-netwerken;type::begrip;prioriteit::hoog"
+"<b>Parallel RLC gebruik je als:</b><br><br><b>A:</b> Sperfilter (blokkeren f₀)<br><b>B:</b> Bandfilter (doorlaten f₀)<br><b>C:</b> Hoogdoorlaatfilter<br><b>D:</b> Laagdoorlaatfilter<br>","<b>✅ CORRECT ANTWOORD: Sperfilter (blokkeren f₀)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Sperfilter (blokkeren f₀)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Bandfilter (doorlaten f₀)</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Hoogdoorlaatfilter</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Laagdoorlaatfilter</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::rlc-netwerken;type::begrip;prioriteit::hoog"
+"<b>Bij inductieve belasting (spoel) is φ:</b><br><br><b>A:</b> Positief (stroom ijlt achter)<br><b>B:</b> Negatief (stroom ijlt voor)<br><b>C:</b> Nul<br><b>D:</b> ±180°<br>","<b>✅ CORRECT ANTWOORD: Positief (stroom ijlt achter)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Positief (stroom ijlt achter)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Negatief (stroom ijlt voor)</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Nul</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>±180°</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::spoel;type::begrip;prioriteit::hoog"
+"<b>Bij capacitieve belasting (condensator) is φ:</b><br><br><b>A:</b> Negatief (stroom ijlt voor)<br><b>B:</b> Positief (stroom ijlt achter)<br><b>C:</b> Nul<br><b>D:</b> ±180°<br>","<b>✅ CORRECT ANTWOORD: Negatief (stroom ijlt voor)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Negatief (stroom ijlt voor)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Positief (stroom ijlt achter)</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Nul</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>±180°</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::condensator;type::begrip;prioriteit::hoog"
+"<b>Waarom gebruikt men hoogspanning voor transmissie?</b><br><br><b>A:</b> Lagere verliezen (I²R) bij lage stroom<br><b>B:</b> Hogere verliezen<br><b>C:</b> Goedkopere kabels<br><b>D:</b> Betere veiligheid<br>","<b>✅ CORRECT ANTWOORD: Lagere verliezen (I²R) bij lage stroom</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Lagere verliezen (I²R) bij lage stroom</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Hogere verliezen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Goedkopere kabels</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Betere veiligheid</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Waarom kan spanning over condensator niet springen?</b><br><br><b>A:</b> Zou oneindige stroom vereisen<br><b>B:</b> Zou oneindige spanning vereisen<br><b>C:</b> Fysica staat het toe<br><b>D:</b> Is wel mogelijk<br>","<b>✅ CORRECT ANTWOORD: Zou oneindige stroom vereisen</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Zou oneindige stroom vereisen</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Zou oneindige spanning vereisen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Fysica staat het toe</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Is wel mogelijk</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::condensator;type::begrip;prioriteit::hoog"
+"<b>Waarom kan stroom door spoel niet springen?</b><br><br><b>A:</b> Zou oneindige spanning vereisen<br><b>B:</b> Zou oneindige stroom vereisen<br><b>C:</b> Fysica staat het toe<br><b>D:</b> Is wel mogelijk<br>","<b>✅ CORRECT ANTWOORD: Zou oneindige spanning vereisen</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Zou oneindige spanning vereisen</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Zou oneindige stroom vereisen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Fysica staat het toe</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Is wel mogelijk</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::spoel;type::begrip;prioriteit::hoog"
+"<b>Waarom wordt blindvermogen gecompenseerd met condensatoren?</b><br><br><b>A:</b> Condensatoren dissiperen geen vermogen<br><b>B:</b> Condensatoren zijn goedkoper<br><b>C:</b> Condensatoren zijn kleiner<br><b>D:</b> Condensatoren zijn veiliger<br>","<b>✅ CORRECT ANTWOORD: Condensatoren dissiperen geen vermogen</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Condensatoren dissiperen geen vermogen</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Condensatoren zijn goedkoper</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Condensatoren zijn kleiner</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Condensatoren zijn veiliger</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::vermogen;topic::vermogen;topic::condensator;type::begrip;prioriteit::examen-kritisch"
+"<b>Bij transformator met kern is koppelfactor k:</b><br><br><b>A:</b> ≈ 1 (bijna perfect)<br><b>B:</b> ≈ 0.5<br><b>C:</b> ≈ 0<br><b>D:</b> Zeer variabel<br>","<b>✅ CORRECT ANTWOORD: ≈ 1 (bijna perfect)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>≈ 1 (bijna perfect)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>≈ 0.5</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>≈ 0</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Zeer variabel</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::transformator;topic::transformator;type::begrip;prioriteit::hoog"
+"<b>Hystereseverliezen in transformatorkern ontstaan door:</b><br><br><b>A:</b> Magnetisatie-omkering<br><b>B:</b> Stroomgeleiding<br><b>C:</b> Warmteontwikkeling<br><b>D:</b> Mechanische wrijving<br>","<b>✅ CORRECT ANTWOORD: Magnetisatie-omkering</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Magnetisatie-omkering</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Stroomgeleiding</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Warmteontwikkeling</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Mechanische wrijving</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::transformator;topic::ster-driehoek;topic::transformator;type::begrip;prioriteit::hoog"
+"<b>Bij driefase motor bepaalt de fasevolgorde:</b><br><br><b>A:</b> Draairichting<br><b>B:</b> Toerental<br><b>C:</b> Vermogen<br><b>D:</b> Rendement<br>","<b>✅ CORRECT ANTWOORD: Draairichting</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Draairichting</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Toerental</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Vermogen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Rendement</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::vermogen;topic::vermogen;type::begrip;prioriteit::examen-kritisch"
+"<b>Effectieve waarde (RMS) geeft aan:</b><br><br><b>A:</b> Equivalent DC-waarde voor vermogen<br><b>B:</b> Gemiddelde waarde<br><b>C:</b> Topwaarde<br><b>D:</b> Minimale waarde<br>","<b>✅ CORRECT ANTWOORD: Equivalent DC-waarde voor vermogen</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 5 - Effectieve waarde<br>
+<b>📖 Holmes:</b> Hoofdstuk 7 §7.2<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( U_{eff} = \frac{U_{top}}{\sqrt{2}} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Gemiddelde waarde</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Topwaarde</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Minimale waarde</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","domain::vermogen;topic::vermogen;type::begrip;prioriteit::examen-kritisch"
+"<b>Skin-effect betekent:</b><br><br><b>A:</b> Stroom concentreert aan oppervlak<br><b>B:</b> Stroom verdeelt uniform<br><b>C:</b> Gelijkstroom fenomeen<br><b>D:</b> Alleen bij DC<br>","<b>✅ CORRECT ANTWOORD: Stroom concentreert aan oppervlak</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Stroom concentreert aan oppervlak</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Stroom verdeelt uniform</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Gelijkstroom fenomeen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Alleen bij DC</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Bij een blokgolf is de effectieve waarde:</b><br><br><b>A:</b> Gelijk aan topwaarde<br><b>B:</b> Topwaarde / √2<br><b>C:</b> Topwaarde / √3<br><b>D:</b> Topwaarde / 2<br>","<b>✅ CORRECT ANTWOORD: Gelijk aan topwaarde</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 5 - Effectieve waarde<br>
+<b>📖 Holmes:</b> Hoofdstuk 7 §7.2<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( U_{eff} = \frac{U_{top}}{\sqrt{2}} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Topwaarde / √2</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Topwaarde / √3</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Topwaarde / 2</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","type::begrip;prioriteit::hoog"
+"<b>Als condensator C3 in serie met C2 doorslaat, wat gebeurt er?</b><br><br><b>A:</b> C3 wordt kortsluiting → vervangingscapaciteit neemt toe<br><b>B:</b> C3 wordt open → vervangingscapaciteit neemt af<br><b>C:</b> Geen verandering<br><b>D:</b> Alle condensatoren slaan door<br>","<b>✅ CORRECT ANTWOORD: C3 wordt kortsluiting → vervangingscapaciteit neemt toe</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>C3 wordt kortsluiting → vervangingscapaciteit neemt toe</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>C3 wordt open → vervangingscapaciteit neemt af</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Geen verandering</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Alle condensatoren slaan door</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::condensator;type::begrip;prioriteit::hoog"
+"<b>Bij condensatoren in serie + parallel geldt altijd:</b><br><br><b>A:</b> Serie vermindert Cv, parallel verhoogt Cv<br><b>B:</b> Serie verhoogt Cv, parallel vermindert Cv<br><b>C:</b> Beide verhogen Cv<br><b>D:</b> Beide verminderen Cv<br>","<b>✅ CORRECT ANTWOORD: Serie vermindert Cv, parallel verhoogt Cv</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Serie vermindert Cv, parallel verhoogt Cv</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Serie verhoogt Cv, parallel vermindert Cv</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Beide verhogen Cv</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Beide verminderen Cv</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::condensator;type::begrip;prioriteit::hoog"
+"<b>Waarom neemt Cv toe als een serie-condensator kortsluit?</b><br><br><b>A:</b> Serie-schakeling wordt parallel-schakeling<br><b>B:</b> Meer platen beschikbaar<br><b>C:</b> Hogere spanning<br><b>D:</b> Lagere weerstand<br>","<b>✅ CORRECT ANTWOORD: Serie-schakeling wordt parallel-schakeling</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Serie-schakeling wordt parallel-schakeling</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Meer platen beschikbaar</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Hogere spanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Lagere weerstand</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::condensator;type::begrip;prioriteit::hoog"
+"<b>In een toroïde met luchtspleet is de flux φ:</b><br><br><b>A:</b> Overal gelijk (serieschakeling R_mag)<br><b>B:</b> Groter in luchtspleet<br><b>C:</b> Kleiner in kernmateriaal<br><b>D:</b> Alleen in kern<br>","<b>✅ CORRECT ANTWOORD: Overal gelijk (serieschakeling R_mag)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Overal gelijk (serieschakeling R_mag)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Groter in luchtspleet</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Kleiner in kernmateriaal</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Alleen in kern</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Waarom is flux φ overal gelijk in toroïde?</b><br><br><b>A:</b> Magnetische weerstanden in serie<br><b>B:</b> Symmetrie veldlijnen<br><b>C:</b> Wet van behoud<br><b>D:</b> Opties 1 en 2<br>","<b>✅ CORRECT ANTWOORD: Opties 1 en 2</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Opties 1 en 2</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Magnetische weerstanden in serie</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Symmetrie veldlijnen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Wet van behoud</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Bij toroïde blijft magnetisch veld:</b><br><br><b>A:</b> Binnen de spoel (weinig strooiveld)<br><b>B:</b> Ver buiten spoel<br><b>C:</b> Symmetrisch verdeeld<br><b>D:</b> Onbepaald<br>","<b>✅ CORRECT ANTWOORD: Binnen de spoel (weinig strooiveld)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Binnen de spoel (weinig strooiveld)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Ver buiten spoel</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Symmetrisch verdeeld</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Onbepaald</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::spoel;type::begrip;prioriteit::hoog"
+"<b>Bij zelfinductie is de spanning tegengesteld aan:</b><br><br><b>A:</b> Stroomverandering di/dt<br><b>B:</b> Stroom i<br><b>C:</b> Weerstand R<br><b>D:</b> Vermogen P<br>","<b>✅ CORRECT ANTWOORD: Stroomverandering di/dt</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Stroomverandering di/dt</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Stroom i</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Weerstand R</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Vermogen P</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::vermogen;topic::vermogen;type::begrip;prioriteit::examen-kritisch"
+"<b>Bij gelijkspanning (DC) heeft een spoel:</b><br><br><b>A:</b> Alleen ohmse weerstand R<br><b>B:</b> Hoge impedantie<br><b>C:</b> Oneindige weerstand<br><b>D:</b> Reactantie X_L<br>","<b>✅ CORRECT ANTWOORD: Alleen ohmse weerstand R</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Alleen ohmse weerstand R</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Hoge impedantie</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Oneindige weerstand</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Reactantie X_L</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","topic::ohm;topic::spoel;topic::impedantie;topic::reactantie;type::begrip;prioriteit::examen-kritisch"
+"<b>Thévenin spanning U_th is gelijk aan:</b><br><br><b>A:</b> Open-klem spanning U_AB<br><b>B:</b> Kortsluitspanning<br><b>C:</b> Helft van U_bron<br><b>D:</b> Gemiddelde spanning<br>","<b>✅ CORRECT ANTWOORD: Open-klem spanning U_AB</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 9 - Thévenin<br>
+<b>📖 Holmes:</b> Hoofdstuk 3 §3.11<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+U_{th} serie met R_{th}<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Kortsluitspanning</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Helft van U_bron</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Gemiddelde spanning</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::thevenin;type::begrip;prioriteit::examen-kritisch"
+"<b>Thévenin weerstand R_th bepaal je door:</b><br><br><b>A:</b> Bronnen kortsluiten + vervangingsweerstand<br><b>B:</b> U_open / I_kort<br><b>C:</b> R1 + R2<br><b>D:</b> Opties 1 en 2<br>","<b>✅ CORRECT ANTWOORD: Opties 1 en 2</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 9 - Thévenin<br>
+<b>📖 Holmes:</b> Hoofdstuk 3 §3.11<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+U_{th} serie met R_{th}<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Bronnen kortsluiten + vervangingsweerstand</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: U_open / I_kort</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: R1 + R2</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::thevenin;type::begrip;prioriteit::examen-kritisch"
+"<b>Bij maaswet zijn bronnen in serie:</b><br><br><b>A:</b> Spanningen optellen (let op polariteit!)<br><b>B:</b> Spanningen aftrekken<br><b>C:</b> Geen invloed<br><b>D:</b> Altijd kortsluiting<br>","<b>✅ CORRECT ANTWOORD: Spanningen optellen (let op polariteit!)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Spanningen optellen (let op polariteit!)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Spanningen aftrekken</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Geen invloed</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Altijd kortsluiting</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Zonnepaneel 2m² bij 140 kWh/m²/jaar levert:</b><br><br><b>A:</b> 280 kWh/jaar<br><b>B:</b> 140 kWh/jaar<br><b>C:</b> 70 kWh/jaar<br><b>D:</b> 560 kWh/jaar<br>","<b>✅ CORRECT ANTWOORD: 280 kWh/jaar</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>280 kWh/jaar</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>140 kWh/jaar</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>70 kWh/jaar</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>560 kWh/jaar</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>Als 120 panelen (2m²) 33,6 MWh leveren, maar behoefte is 40 MWh, hoeveel extra panelen?</b><br><br><b>A:</b> 23 panelen (voor 6,4 MWh)<br><b>B:</b> 12 panelen<br><b>C:</b> 46 panelen<br><b>D:</b> 60 panelen<br>","<b>✅ CORRECT ANTWOORD: 23 panelen (voor 6,4 MWh)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>23 panelen (voor 6,4 MWh)</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>12 panelen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>46 panelen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>60 panelen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","type::begrip;prioriteit::hoog"
+"<b>kWh/m²/jaar is een maat voor:</b><br><br><b>A:</b> Energie-opbrengst per oppervlak<br><b>B:</b> Vermogen<br><b>C:</b> Rendement<br><b>D:</b> Efficiency<br>","<b>✅ CORRECT ANTWOORD: Energie-opbrengst per oppervlak</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 10 - Energie<br>
+<b>📖 Holmes:</b> Hoofdstuk 1 §1.9<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( E = P \cdot t \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Vermogen</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Rendement</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Efficiency</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","domain::vermogen;topic::vermogen;type::begrip;prioriteit::examen-kritisch"
+"<b>Bij cos φ verbetering van 0,75 naar 0,92 neemt S:</b><br><br><b>A:</b> Af (minder schijnbaar vermogen)<br><b>B:</b> Toe<br><b>C:</b> Blijft gelijk<br><b>D:</b> Wordt negatief<br>","<b>✅ CORRECT ANTWOORD: Af (minder schijnbaar vermogen)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 6 - Arbeidsfactor<br>
+<b>📖 Holmes:</b> Hoofdstuk 7 §7.8<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( \cos\varphi = \frac{P}{S} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Toe</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Blijft gelijk</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Wordt negatief</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","domain::vermogen;topic::vermogen;topic::arbeidsfactor;type::begrip;prioriteit::examen-kritisch"
+"<b>Doel blindvermogencompensatie is:</b><br><br><b>A:</b> Lagere I bij zelfde P → minder verlies<br><b>B:</b> Hogere spanning<br><b>C:</b> Meer vermogen<br><b>D:</b> Betere veiligheid<br>","<b>✅ CORRECT ANTWOORD: Lagere I bij zelfde P → minder verlies</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Lagere I bij zelfde P → minder verlies</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Hogere spanning</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Meer vermogen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Betere veiligheid</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::vermogen;topic::vermogen;topic::compensatie;type::begrip;prioriteit::examen-kritisch"
+"<b>Na compensatie met condensator wordt cos φ:</b><br><br><b>A:</b> Hoger (richting 1)<br><b>B:</b> Lager<br><b>C:</b> Negatief<br><b>D:</b> Onveranderd<br>","<b>✅ CORRECT ANTWOORD: Hoger (richting 1)</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 6 - Arbeidsfactor<br>
+<b>📖 Holmes:</b> Hoofdstuk 7 §7.8<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( \cos\varphi = \frac{P}{S} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Lager</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Negatief</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Onveranderd</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","topic::arbeidsfactor;topic::compensatie;topic::condensator;type::begrip;prioriteit::examen-kritisch"
+"<b>Max. spanningsverlies bij driefase is vaak:</b><br><br><b>A:</b> 2% van U_fase<br><b>B:</b> 5% van U_lijn<br><b>C:</b> 10% van U_fase<br><b>D:</b> 1% van U_lijn<br>","<b>✅ CORRECT ANTWOORD: 2% van U_fase</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>2% van U_fase</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>5% van U_lijn</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>10% van U_fase</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>1% van U_lijn</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::driefase;type::begrip;prioriteit::examen-kritisch"
+"<b>Voordeel van ijzeren transformatorkern:</b><br><br><b>A:</b> Koppelfactor k ≈ 1, hoger rendement<br><b>B:</b> Goedkoper<br><b>C:</b> Lichter<br><b>D:</b> Geen verliezen<br>","<b>✅ CORRECT ANTWOORD: Koppelfactor k ≈ 1, hoger rendement</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Sectie 10 - Rendement<br>
+<b>📖 Holmes:</b> Hoofdstuk 1 §1.9<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+De correcte formule is:<br>
+\( \eta = \frac{P_{uit}}{P_{in}} \)<br><br>
+Deze formule komt direct van het <b>formuleblad</b> dat je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>B: Goedkoper</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>C: Lichter</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br><b>D: Geen verliezen</b><br>→ Dit is een andere formule (niet wat gevraagd wordt)<br><br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>🎯 EXAM TIP:</b><br>
+Leer de formules op het formuleblad uit je hoofd, inclusief wanneer je welke gebruikt.<br>
+","domain::transformator;topic::transformator;type::begrip;prioriteit::hoog"
+"<b>Nadeel van ijzeren transformatorkern:</b><br><br><b>A:</b> Hystereseverliezen + wervelstromen<br><b>B:</b> Geen nadelen<br><b>C:</b> Lager rendement<br><b>D:</b> Instabiliteit<br>","<b>✅ CORRECT ANTWOORD: Hystereseverliezen + wervelstromen</b><br><br>
+<b>📘 Formuleblad v3 2023:</b> Zie relevante sectie<br>
+<b>📖 Holmes:</b> Zie cursusmateriaal<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>💡 UITLEG:</b><br><br>
+Het juiste antwoord is: <b>Hystereseverliezen + wervelstromen</b><br><br>
+Dit volgt uit de theorie en formules die je op het examen krijgt.<br><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br><br>
+<b>❌ WAAROM ANDERE ANTWOORDEN FOUT:</b><br><br><b>Geen nadelen</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Lager rendement</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br><b>Instabiliteit</b><br>→ Dit antwoord is niet correct volgens de theorie<br><br>","domain::transformator;topic::ster-driehoek;topic::transformator;type::begrip;prioriteit::hoog"

@@ -1,0 +1,1476 @@
+{
+  "metadata": {
+    "total_questions": 120,
+    "extraction_date": "2025-11-09",
+    "source_file": "study-guide/EXAM-SIMULATOR.html"
+  },
+  "questions": [
+    {
+      "question": "Wat is de wet van Ohm?",
+      "answers": [
+        "U = I × R",
+        "P = U × I",
+        "R = ρ × l/A",
+        "I = C × dU/dt"
+      ],
+      "correct_index": 0,
+      "correct_answer": "U = I × R"
+    },
+    {
+      "question": "Bij serie schakeling is de totale weerstand:",
+      "answers": [
+        "R_tot = R1 + R2 + R3",
+        "1/R_tot = 1/R1 + 1/R2",
+        "R_tot = R1 || R2",
+        "R_tot = √(R1² + R2²)"
+      ],
+      "correct_index": 0,
+      "correct_answer": "R_tot = R1 + R2 + R3"
+    },
+    {
+      "question": "Kirchhoff's knooppuntwet (KCL) stelt:",
+      "answers": [
+        "Σ I_in = Σ I_uit",
+        "Σ U_maas = 0",
+        "U = I × R",
+        "P = I² × R"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Σ I_in = Σ I_uit"
+    },
+    {
+      "question": "Kirchhoff's maaswet (KVL) stelt:",
+      "answers": [
+        "Σ U_maas = 0",
+        "Σ I_in = Σ I_uit",
+        "U = I × R",
+        "P = U × I"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Σ U_maas = 0"
+    },
+    {
+      "question": "Vermogen bereken je met:",
+      "answers": [
+        "P = U × I",
+        "E = P × t",
+        "U = I × R",
+        "Q = C × U"
+      ],
+      "correct_index": 0,
+      "correct_answer": "P = U × I"
+    },
+    {
+      "question": "Parallel weerstanden bereken je met:",
+      "answers": [
+        "1/R_tot = 1/R1 + 1/R2",
+        "R_tot = R1 + R2",
+        "R_tot = R1 × R2",
+        "R_tot = (R1 + R2)/2"
+      ],
+      "correct_index": 0,
+      "correct_answer": "1/R_tot = 1/R1 + 1/R2"
+    },
+    {
+      "question": "Energie bereken je met:",
+      "answers": [
+        "E = P × t",
+        "P = U × I",
+        "W = ½LI²",
+        "Q = CV"
+      ],
+      "correct_index": 0,
+      "correct_answer": "E = P × t"
+    },
+    {
+      "question": "Bij serie schakeling is de stroom:",
+      "answers": [
+        "Overal gelijk",
+        "Verschillend per weerstand",
+        "Nul",
+        "Afhankelijk van spanning"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Overal gelijk"
+    },
+    {
+      "question": "Bij parallel schakeling is de spanning:",
+      "answers": [
+        "Overal gelijk",
+        "Verschillend per tak",
+        "Nul",
+        "Som van alle spanningen"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Overal gelijk"
+    },
+    {
+      "question": "Rendement bereken je met:",
+      "answers": [
+        "η = P_uit / P_in",
+        "η = P_in / P_uit",
+        "η = P_uit × P_in",
+        "η = P_in - P_uit"
+      ],
+      "correct_index": 0,
+      "correct_answer": "η = P_uit / P_in"
+    },
+    {
+      "question": "Bij een weerstand wordt elektrische energie omgezet in:",
+      "answers": [
+        "Warmte",
+        "Licht",
+        "Magnetisch veld",
+        "Elektrisch veld"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Warmte"
+    },
+    {
+      "question": "Een condensator slaat energie op in:",
+      "answers": [
+        "Elektrisch veld",
+        "Magnetisch veld",
+        "Warmte",
+        "Licht"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Elektrisch veld"
+    },
+    {
+      "question": "Een spoel slaat energie op in:",
+      "answers": [
+        "Magnetisch veld",
+        "Elektrisch veld",
+        "Warmte",
+        "Licht"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Magnetisch veld"
+    },
+    {
+      "question": "Spanningsdeling gebruik je bij:",
+      "answers": [
+        "Serie weerstanden",
+        "Parallel weerstanden",
+        "Alleen condensatoren",
+        "Alleen spoelen"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Serie weerstanden"
+    },
+    {
+      "question": "Stroomdeling gebruik je bij:",
+      "answers": [
+        "Parallel weerstanden",
+        "Serie weerstanden",
+        "Alleen condensatoren",
+        "Alleen spoelen"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Parallel weerstanden"
+    },
+    {
+      "question": "Bij een kortsluiting is de weerstand:",
+      "answers": [
+        "0 Ω (nul)",
+        "∞ (oneindig)",
+        "1 Ω",
+        "100 Ω"
+      ],
+      "correct_index": 0,
+      "correct_answer": "0 Ω (nul)"
+    },
+    {
+      "question": "Bij een open klem is de weerstand:",
+      "answers": [
+        "∞ (oneindig)",
+        "0 Ω (nul)",
+        "1 Ω",
+        "100 Ω"
+      ],
+      "correct_index": 0,
+      "correct_answer": "∞ (oneindig)"
+    },
+    {
+      "question": "Een ideale spanningsbron heeft:",
+      "answers": [
+        "R_binnen = 0 Ω",
+        "R_binnen = ∞",
+        "R_binnen = 50 Ω",
+        "R_binnen variabel"
+      ],
+      "correct_index": 0,
+      "correct_answer": "R_binnen = 0 Ω"
+    },
+    {
+      "question": "De effectieve waarde (RMS) van een sinusgolf is:",
+      "answers": [
+        "U_top / √2",
+        "U_top / 2",
+        "U_top × √2",
+        "2 × U_top"
+      ],
+      "correct_index": 0,
+      "correct_answer": "U_top / √2"
+    },
+    {
+      "question": "De frequentie van het Nederlandse elektriciteitsnet is:",
+      "answers": [
+        "50 Hz",
+        "60 Hz",
+        "100 Hz",
+        "25 Hz"
+      ],
+      "correct_index": 0,
+      "correct_answer": "50 Hz"
+    },
+    {
+      "question": "De netspanning in Nederland is (effectief):",
+      "answers": [
+        "230 V",
+        "220 V",
+        "325 V",
+        "400 V"
+      ],
+      "correct_index": 0,
+      "correct_answer": "230 V"
+    },
+    {
+      "question": "Hoekfrequentie ω bereken je met:",
+      "answers": [
+        "ω = 2πf",
+        "ω = f/2π",
+        "ω = πf",
+        "ω = f²"
+      ],
+      "correct_index": 0,
+      "correct_answer": "ω = 2πf"
+    },
+    {
+      "question": "Bij een condensator ijlt de stroom:",
+      "answers": [
+        "90° voor op de spanning",
+        "90° achter op de spanning",
+        "180° op de spanning",
+        "In fase met spanning"
+      ],
+      "correct_index": 0,
+      "correct_answer": "90° voor op de spanning"
+    },
+    {
+      "question": "Bij een spoel ijlt de stroom:",
+      "answers": [
+        "90° achter op de spanning",
+        "90° voor op de spanning",
+        "180° op de spanning",
+        "In fase met spanning"
+      ],
+      "correct_index": 0,
+      "correct_answer": "90° achter op de spanning"
+    },
+    {
+      "question": "Thévenin equivalent bestaat uit:",
+      "answers": [
+        "U_th in serie met R_th",
+        "I_N parallel met R_N",
+        "Alleen U_th",
+        "Alleen R_th"
+      ],
+      "correct_index": 0,
+      "correct_answer": "U_th in serie met R_th"
+    },
+    {
+      "question": "Norton equivalent bestaat uit:",
+      "answers": [
+        "I_N parallel met R_N",
+        "U_th in serie met R_th",
+        "Alleen I_N",
+        "Alleen R_N"
+      ],
+      "correct_index": 0,
+      "correct_answer": "I_N parallel met R_N"
+    },
+    {
+      "question": "Norton stroom (I_N) is gelijk aan:",
+      "answers": [
+        "Kortsluitstroom",
+        "Open-klem stroom",
+        "Helft van kortsluitstroom",
+        "Gemiddelde stroom"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Kortsluitstroom"
+    },
+    {
+      "question": "Thévenin spanning (U_th) is gelijk aan:",
+      "answers": [
+        "Open-klem spanning",
+        "Kortsluitspanning",
+        "Helft van open-klem spanning",
+        "Gemiddelde spanning"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Open-klem spanning"
+    },
+    {
+      "question": "Bij vermogensaanpassing geldt:",
+      "answers": [
+        "R_last = R_th",
+        "R_last = 2×R_th",
+        "R_last = 0.5×R_th",
+        "R_last = 0"
+      ],
+      "correct_index": 0,
+      "correct_answer": "R_last = R_th"
+    },
+    {
+      "question": "Het rendement bij vermogensaanpassing is:",
+      "answers": [
+        "50%",
+        "100%",
+        "75%",
+        "25%"
+      ],
+      "correct_index": 0,
+      "correct_answer": "50%"
+    },
+    {
+      "question": "R_th bereken je met:",
+      "answers": [
+        "U_open / I_kort",
+        "U_kort / I_open",
+        "U_open × I_kort",
+        "U_kort + I_open"
+      ],
+      "correct_index": 0,
+      "correct_answer": "U_open / I_kort"
+    },
+    {
+      "question": "Omrekenen van Thévenin naar Norton: I_N =",
+      "answers": [
+        "U_th / R_th",
+        "U_th × R_th",
+        "R_th / U_th",
+        "U_th + R_th"
+      ],
+      "correct_index": 0,
+      "correct_answer": "U_th / R_th"
+    },
+    {
+      "question": "Capacitieve reactantie bereken je met:",
+      "answers": [
+        "X_C = 1/(2πfC)",
+        "X_C = 2πfC",
+        "X_C = 2πf/C",
+        "X_C = C/(2πf)"
+      ],
+      "correct_index": 0,
+      "correct_answer": "X_C = 1/(2πfC)"
+    },
+    {
+      "question": "Inductieve reactantie bereken je met:",
+      "answers": [
+        "X_L = 2πfL",
+        "X_L = 1/(2πfL)",
+        "X_L = 2πf/L",
+        "X_L = L/(2πf)"
+      ],
+      "correct_index": 0,
+      "correct_answer": "X_L = 2πfL"
+    },
+    {
+      "question": "Bij hogere frequentie wordt X_C:",
+      "answers": [
+        "Kleiner",
+        "Groter",
+        "Blijft gelijk",
+        "Eerst groter, dan kleiner"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Kleiner"
+    },
+    {
+      "question": "Bij hogere frequentie wordt X_L:",
+      "answers": [
+        "Groter",
+        "Kleiner",
+        "Blijft gelijk",
+        "Eerst kleiner, dan groter"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Groter"
+    },
+    {
+      "question": "Bij DC (f=0) gedraagt een spoel zich als:",
+      "answers": [
+        "Kortsluiting (R=0)",
+        "Open klem (R=∞)",
+        "Weerstand",
+        "Condensator"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Kortsluiting (R=0)"
+    },
+    {
+      "question": "Bij DC (f=0) gedraagt een condensator zich als:",
+      "answers": [
+        "Open klem (R=∞)",
+        "Kortsluiting (R=0)",
+        "Weerstand",
+        "Spoel"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Open klem (R=∞)"
+    },
+    {
+      "question": "Bij zeer hoge frequentie gedraagt een spoel zich als:",
+      "answers": [
+        "Open klem (R=∞)",
+        "Kortsluiting (R=0)",
+        "Weerstand",
+        "Condensator"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Open klem (R=∞)"
+    },
+    {
+      "question": "Bij zeer hoge frequentie gedraagt een condensator zich als:",
+      "answers": [
+        "Kortsluiting (R=0)",
+        "Open klem (R=∞)",
+        "Weerstand",
+        "Spoel"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Kortsluiting (R=0)"
+    },
+    {
+      "question": "Arbeidsfactor cos φ is altijd:",
+      "answers": [
+        "≤ 1",
+        "≥ 1",
+        "= 1",
+        "> 1"
+      ],
+      "correct_index": 0,
+      "correct_answer": "≤ 1"
+    },
+    {
+      "question": "Bij een puur resistieve belasting is cos φ:",
+      "answers": [
+        "1",
+        "0",
+        "0.5",
+        "∞"
+      ],
+      "correct_index": 0,
+      "correct_answer": "1"
+    },
+    {
+      "question": "Bij een puur reactieve belasting is cos φ:",
+      "answers": [
+        "0",
+        "1",
+        "0.5",
+        "∞"
+      ],
+      "correct_index": 0,
+      "correct_answer": "0"
+    },
+    {
+      "question": "Blindvermogencompensatie doe je met:",
+      "answers": [
+        "Condensator parallel",
+        "Spoel parallel",
+        "Weerstand serie",
+        "Transformator"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Condensator parallel"
+    },
+    {
+      "question": "Na perfecte compensatie is cos φ:",
+      "answers": [
+        "1",
+        "0",
+        "0.5",
+        "Onveranderd"
+      ],
+      "correct_index": 0,
+      "correct_answer": "1"
+    },
+    {
+      "question": "Bij een symmetrisch driefasesysteem is het faseverschil:",
+      "answers": [
+        "120°",
+        "90°",
+        "180°",
+        "60°"
+      ],
+      "correct_index": 0,
+      "correct_answer": "120°"
+    },
+    {
+      "question": "Bij ster-schakeling geldt: U_lijn =",
+      "answers": [
+        "√3 × U_fase",
+        "U_fase / √3",
+        "U_fase",
+        "3 × U_fase"
+      ],
+      "correct_index": 0,
+      "correct_answer": "√3 × U_fase"
+    },
+    {
+      "question": "Bij driehoek-schakeling geldt: I_lijn =",
+      "answers": [
+        "√3 × I_fase",
+        "I_fase / √3",
+        "I_fase",
+        "3 × I_fase"
+      ],
+      "correct_index": 0,
+      "correct_answer": "√3 × I_fase"
+    },
+    {
+      "question": "De lijnspanning in Nederland is:",
+      "answers": [
+        "400 V",
+        "230 V",
+        "325 V",
+        "690 V"
+      ],
+      "correct_index": 0,
+      "correct_answer": "400 V"
+    },
+    {
+      "question": "De fasespanning in Nederland is:",
+      "answers": [
+        "230 V",
+        "400 V",
+        "325 V",
+        "133 V"
+      ],
+      "correct_index": 0,
+      "correct_answer": "230 V"
+    },
+    {
+      "question": "Bij driefase met cos φ = 1 is P =",
+      "answers": [
+        "√3 × U_lijn × I_lijn",
+        "U_lijn × I_lijn",
+        "3 × U_fase × I_fase",
+        "Opties 1 en 3"
+      ],
+      "correct_index": 3,
+      "correct_answer": "Opties 1 en 3"
+    },
+    {
+      "question": "Bij RLC serie resonantie is:",
+      "answers": [
+        "Alle opties correct",
+        "X_L = X_C",
+        "Z minimaal",
+        "cos φ = 1"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Alle opties correct"
+    },
+    {
+      "question": "Bij RLC parallel resonantie is:",
+      "answers": [
+        "Alle opties correct",
+        "X_L = X_C",
+        "Z maximaal",
+        "I minimaal"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Alle opties correct"
+    },
+    {
+      "question": "Resonantiefrequentie bereken je met:",
+      "answers": [
+        "f₀ = 1/(2π√LC)",
+        "f₀ = 2π√LC",
+        "f₀ = 1/√LC",
+        "f₀ = √LC"
+      ],
+      "correct_index": 0,
+      "correct_answer": "f₀ = 1/(2π√LC)"
+    },
+    {
+      "question": "Bij serie-resonantie kan de spanning over L of C:",
+      "answers": [
+        "Groter zijn dan bronspanning",
+        "Kleiner zijn dan bronspanning",
+        "Altijd gelijk aan bronspanning",
+        "Nul zijn"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Groter zijn dan bronspanning"
+    },
+    {
+      "question": "Kwaliteitsfactor Q bij resonantie is:",
+      "answers": [
+        "X_L / R = X_C / R",
+        "R / X_L",
+        "X_L × R",
+        "R + X_L"
+      ],
+      "correct_index": 0,
+      "correct_answer": "X_L / R = X_C / R"
+    },
+    {
+      "question": "Bij hogere Q is de bandbreedte:",
+      "answers": [
+        "Kleiner (selectiever)",
+        "Groter (minder selectief)",
+        "Gelijk",
+        "Onbepaald"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Kleiner (selectiever)"
+    },
+    {
+      "question": "Serie RLC gebruik je als:",
+      "answers": [
+        "Bandfilter (doorlaten f₀)",
+        "Sperfilter (blokkeren f₀)",
+        "Hoogdoorlaatfilter",
+        "Laagdoorlaatfilter"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Bandfilter (doorlaten f₀)"
+    },
+    {
+      "question": "Parallel RLC gebruik je als:",
+      "answers": [
+        "Sperfilter (blokkeren f₀)",
+        "Bandfilter (doorlaten f₀)",
+        "Hoogdoorlaatfilter",
+        "Laagdoorlaatfilter"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Sperfilter (blokkeren f₀)"
+    },
+    {
+      "question": "Impedantie Z bereken je met:",
+      "answers": [
+        "Alle opties correct",
+        "|Z| = √(R² + X²)",
+        "Z = R + jX",
+        "Z = U / I"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Alle opties correct"
+    },
+    {
+      "question": "Fasehoek φ bereken je met:",
+      "answers": [
+        "Alle opties correct",
+        "φ = arctan(X/R)",
+        "φ = arccos(R/Z)",
+        "φ = arg(Z)"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Alle opties correct"
+    },
+    {
+      "question": "Bij inductieve belasting (spoel) is φ:",
+      "answers": [
+        "Positief (stroom ijlt achter)",
+        "Negatief (stroom ijlt voor)",
+        "Nul",
+        "±180°"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Positief (stroom ijlt achter)"
+    },
+    {
+      "question": "Bij capacitieve belasting (condensator) is φ:",
+      "answers": [
+        "Negatief (stroom ijlt voor)",
+        "Positief (stroom ijlt achter)",
+        "Nul",
+        "±180°"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Negatief (stroom ijlt voor)"
+    },
+    {
+      "question": "Complex vermogen S bereken je met:",
+      "answers": [
+        "S = U × I* (geconjugeerd)",
+        "S = U × I",
+        "S = P + jQ",
+        "Opties 1 en 3"
+      ],
+      "correct_index": 3,
+      "correct_answer": "Opties 1 en 3"
+    },
+    {
+      "question": "In de vermogensdriehoek geldt:",
+      "answers": [
+        "S² = P² + Q²",
+        "P² = S² + Q²",
+        "Q² = P² + S²",
+        "S = P + Q"
+      ],
+      "correct_index": 0,
+      "correct_answer": "S² = P² + Q²"
+    },
+    {
+      "question": "Waarom gebruikt men hoogspanning voor transmissie?",
+      "answers": [
+        "Lagere verliezen (I²R) bij lage stroom",
+        "Hogere verliezen",
+        "Goedkopere kabels",
+        "Betere veiligheid"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Lagere verliezen (I²R) bij lage stroom"
+    },
+    {
+      "question": "Waarom kan spanning over condensator niet springen?",
+      "answers": [
+        "Zou oneindige stroom vereisen",
+        "Zou oneindige spanning vereisen",
+        "Fysica staat het toe",
+        "Is wel mogelijk"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Zou oneindige stroom vereisen"
+    },
+    {
+      "question": "Waarom kan stroom door spoel niet springen?",
+      "answers": [
+        "Zou oneindige spanning vereisen",
+        "Zou oneindige stroom vereisen",
+        "Fysica staat het toe",
+        "Is wel mogelijk"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Zou oneindige spanning vereisen"
+    },
+    {
+      "question": "Waarom wordt blindvermogen gecompenseerd met condensatoren?",
+      "answers": [
+        "Condensatoren dissiperen geen vermogen",
+        "Condensatoren zijn goedkoper",
+        "Condensatoren zijn kleiner",
+        "Condensatoren zijn veiliger"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Condensatoren dissiperen geen vermogen"
+    },
+    {
+      "question": "Bij transformator met kern is koppelfactor k:",
+      "answers": [
+        "≈ 1 (bijna perfect)",
+        "≈ 0.5",
+        "≈ 0",
+        "Zeer variabel"
+      ],
+      "correct_index": 0,
+      "correct_answer": "≈ 1 (bijna perfect)"
+    },
+    {
+      "question": "Hystereseverliezen in transformatorkern ontstaan door:",
+      "answers": [
+        "Magnetisatie-omkering",
+        "Stroomgeleiding",
+        "Warmteontwikkeling",
+        "Mechanische wrijving"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Magnetisatie-omkering"
+    },
+    {
+      "question": "Bij driefase motor bepaalt de fasevolgorde:",
+      "answers": [
+        "Draairichting",
+        "Toerental",
+        "Vermogen",
+        "Rendement"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Draairichting"
+    },
+    {
+      "question": "Effectieve waarde (RMS) geeft aan:",
+      "answers": [
+        "Equivalent DC-waarde voor vermogen",
+        "Gemiddelde waarde",
+        "Topwaarde",
+        "Minimale waarde"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Equivalent DC-waarde voor vermogen"
+    },
+    {
+      "question": "Skin-effect betekent:",
+      "answers": [
+        "Stroom concentreert aan oppervlak",
+        "Stroom verdeelt uniform",
+        "Gelijkstroom fenomeen",
+        "Alleen bij DC"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Stroom concentreert aan oppervlak"
+    },
+    {
+      "question": "Bij een blokgolf is de effectieve waarde:",
+      "answers": [
+        "Gelijk aan topwaarde",
+        "Topwaarde / √2",
+        "Topwaarde / √3",
+        "Topwaarde / 2"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Gelijk aan topwaarde"
+    },
+    {
+      "question": "Als condensator C3 in serie met C2 doorslaat, wat gebeurt er?",
+      "answers": [
+        "C3 wordt kortsluiting → vervangingscapaciteit neemt toe",
+        "C3 wordt open → vervangingscapaciteit neemt af",
+        "Geen verandering",
+        "Alle condensatoren slaan door"
+      ],
+      "correct_index": 0,
+      "correct_answer": "C3 wordt kortsluiting → vervangingscapaciteit neemt toe"
+    },
+    {
+      "question": "Bij condensatoren in serie + parallel geldt altijd:",
+      "answers": [
+        "Serie vermindert Cv, parallel verhoogt Cv",
+        "Serie verhoogt Cv, parallel vermindert Cv",
+        "Beide verhogen Cv",
+        "Beide verminderen Cv"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Serie vermindert Cv, parallel verhoogt Cv"
+    },
+    {
+      "question": "Waarom neemt Cv toe als een serie-condensator kortsluit?",
+      "answers": [
+        "Serie-schakeling wordt parallel-schakeling",
+        "Meer platen beschikbaar",
+        "Hogere spanning",
+        "Lagere weerstand"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Serie-schakeling wordt parallel-schakeling"
+    },
+    {
+      "question": "Bij Kirchhoff knooppuntwet (KCL) geldt:",
+      "answers": [
+        "Σ I_in = Σ I_uit (stroomsom = 0)",
+        "Σ U = 0",
+        "P_in = P_uit",
+        "Alle opties"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Σ I_in = Σ I_uit (stroomsom = 0)"
+    },
+    {
+      "question": "Als Σ I_in = 5A en Σ I_uit = 15A + I_meter, dan is I_meter:",
+      "answers": [
+        "-10A (stroomrichting omgekeerd)",
+        "+10A",
+        "0A",
+        "Onbepaald"
+      ],
+      "correct_index": 0,
+      "correct_answer": "-10A (stroomrichting omgekeerd)"
+    },
+    {
+      "question": "Negatieve stroom bij knooppuntanalyse betekent:",
+      "answers": [
+        "Gekozen richting is omgekeerd",
+        "Fout in berekening",
+        "Kortsluiting",
+        "Open klem"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Gekozen richting is omgekeerd"
+    },
+    {
+      "question": "In een toroïde met luchtspleet is de flux φ:",
+      "answers": [
+        "Overal gelijk (serieschakeling R_mag)",
+        "Groter in luchtspleet",
+        "Kleiner in kernmateriaal",
+        "Alleen in kern"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Overal gelijk (serieschakeling R_mag)"
+    },
+    {
+      "question": "Waarom is flux φ overal gelijk in toroïde?",
+      "answers": [
+        "Magnetische weerstanden in serie",
+        "Symmetrie veldlijnen",
+        "Wet van behoud",
+        "Opties 1 en 2"
+      ],
+      "correct_index": 3,
+      "correct_answer": "Opties 1 en 2"
+    },
+    {
+      "question": "Bij toroïde blijft magnetisch veld:",
+      "answers": [
+        "Binnen de spoel (weinig strooiveld)",
+        "Ver buiten spoel",
+        "Symmetrisch verdeeld",
+        "Onbepaald"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Binnen de spoel (weinig strooiveld)"
+    },
+    {
+      "question": "Zelfinductie L bereken je uit e = -L·di/dt als:",
+      "answers": [
+        "L = -e·dt/di",
+        "L = e/i",
+        "L = di/dt",
+        "L = e·i"
+      ],
+      "correct_index": 0,
+      "correct_answer": "L = -e·dt/di"
+    },
+    {
+      "question": "Bij zelfinductie is de spanning tegengesteld aan:",
+      "answers": [
+        "Stroomverandering di/dt",
+        "Stroom i",
+        "Weerstand R",
+        "Vermogen P"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Stroomverandering di/dt"
+    },
+    {
+      "question": "Als di/dt = -0,4 A/300ms en e = 800µV, dan L =:",
+      "answers": [
+        "600 µH",
+        "0,6 mH",
+        "60 mH",
+        "6 H"
+      ],
+      "correct_index": 0,
+      "correct_answer": "600 µH"
+    },
+    {
+      "question": "Bij gelijkspanning (DC) heeft een spoel:",
+      "answers": [
+        "Alleen ohmse weerstand R",
+        "Hoge impedantie",
+        "Oneindige weerstand",
+        "Reactantie X_L"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Alleen ohmse weerstand R"
+    },
+    {
+      "question": "Bij wisselspanning (AC) wordt stroomsterkte bepaald door:",
+      "answers": [
+        "Impedantie Z = √(R²+X²)",
+        "Alleen R",
+        "Alleen X",
+        "R + X"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Impedantie Z = √(R²+X²)"
+    },
+    {
+      "question": "Fasehoek φ bereken je bij RL-kring met:",
+      "answers": [
+        "tan φ = X_L/R",
+        "tan φ = R/X_L",
+        "cos φ = X_L/Z",
+        "sin φ = R/Z"
+      ],
+      "correct_index": 0,
+      "correct_answer": "tan φ = X_L/R"
+    },
+    {
+      "question": "Bij Z1 = (10-20j)Ω en Z2 = (10+20j)Ω parallel geldt:",
+      "answers": [
+        "Z_v = Z1·Z2/(Z1+Z2) = 25Ω",
+        "Z_v = Z1 + Z2",
+        "Z_v = 0",
+        "Z_v = ∞"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Z_v = Z1·Z2/(Z1+Z2) = 25Ω"
+    },
+    {
+      "question": "In complexe rekening is j² =:",
+      "answers": [
+        "-1",
+        "+1",
+        "0",
+        "j"
+      ],
+      "correct_index": 0,
+      "correct_answer": "-1"
+    },
+    {
+      "question": "Bij (10-20j)(10+20j) krijg je:",
+      "answers": [
+        "100 - 400j² = 100 + 400 = 500",
+        "100 - 400 = -300",
+        "20 - 40j",
+        "0"
+      ],
+      "correct_index": 0,
+      "correct_answer": "100 - 400j² = 100 + 400 = 500"
+    },
+    {
+      "question": "Thévenin spanning U_th is gelijk aan:",
+      "answers": [
+        "Open-klem spanning U_AB",
+        "Kortsluitspanning",
+        "Helft van U_bron",
+        "Gemiddelde spanning"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Open-klem spanning U_AB"
+    },
+    {
+      "question": "Thévenin weerstand R_th bepaal je door:",
+      "answers": [
+        "Bronnen kortsluiten + vervangingsweerstand",
+        "U_open / I_kort",
+        "R1 + R2",
+        "Opties 1 en 2"
+      ],
+      "correct_index": 3,
+      "correct_answer": "Opties 1 en 2"
+    },
+    {
+      "question": "Bij Thévenin-vervangingsschema bereken je stroom I met:",
+      "answers": [
+        "I = U_th / (R_th + R_last)",
+        "I = U_th / R_th",
+        "I = U_th / R_last",
+        "I = kortsluitstroom"
+      ],
+      "correct_index": 0,
+      "correct_answer": "I = U_th / (R_th + R_last)"
+    },
+    {
+      "question": "Als U_th = 0,6V, R_th = 11kΩ, R5 = 5kΩ, dan I_R5 =:",
+      "answers": [
+        "37,5 µA",
+        "54,5 µA",
+        "120 µA",
+        "60 mA"
+      ],
+      "correct_index": 0,
+      "correct_answer": "37,5 µA"
+    },
+    {
+      "question": "Kirchhoff maaswet (KVL) stelt:",
+      "answers": [
+        "Σ U_maas = 0",
+        "Σ I = 0",
+        "Σ P = 0",
+        "Σ R = 0"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Σ U_maas = 0"
+    },
+    {
+      "question": "In een lus met U1=12V, U2=9V, dan U3 =:",
+      "answers": [
+        "-21V (polariteit omgekeerd)",
+        "+21V",
+        "3V",
+        "-3V"
+      ],
+      "correct_index": 0,
+      "correct_answer": "-21V (polariteit omgekeerd)"
+    },
+    {
+      "question": "Bij maaswet zijn bronnen in serie:",
+      "answers": [
+        "Spanningen optellen (let op polariteit!)",
+        "Spanningen aftrekken",
+        "Geen invloed",
+        "Altijd kortsluiting"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Spanningen optellen (let op polariteit!)"
+    },
+    {
+      "question": "Als P = 60kW en S = 68kVA, dan Q =:",
+      "answers": [
+        "32 kvar (uit √(S²-P²))",
+        "8 kvar",
+        "128 kvar",
+        "Onbepaald"
+      ],
+      "correct_index": 0,
+      "correct_answer": "32 kvar (uit √(S²-P²))"
+    },
+    {
+      "question": "Blindvermogen Q bereken je uit P en cos φ met:",
+      "answers": [
+        "Q = P · tan φ",
+        "Q = P · sin φ",
+        "Q = P / cos φ",
+        "Q = S - P"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Q = P · tan φ"
+    },
+    {
+      "question": "De relatie S² = P² + Q² geldt:",
+      "answers": [
+        "Altijd (Pythagoras)",
+        "Alleen bij cos φ = 1",
+        "Alleen bij sinusoïde",
+        "Nooit"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Altijd (Pythagoras)"
+    },
+    {
+      "question": "Bij transformator geldt N1/N2 =:",
+      "answers": [
+        "U1/U2 = I2/I1",
+        "U1/U2 = I1/I2",
+        "U1·U2",
+        "N1·N2"
+      ],
+      "correct_index": 0,
+      "correct_answer": "U1/U2 = I2/I1"
+    },
+    {
+      "question": "Als U_prim = 6000V, U_sec = 800V, N_prim = 300, dan N_sec =:",
+      "answers": [
+        "40 windingen",
+        "300 windingen",
+        "2250 windingen",
+        "240 windingen"
+      ],
+      "correct_index": 0,
+      "correct_answer": "40 windingen"
+    },
+    {
+      "question": "Zonnepaneel 2m² bij 140 kWh/m²/jaar levert:",
+      "answers": [
+        "280 kWh/jaar",
+        "140 kWh/jaar",
+        "70 kWh/jaar",
+        "560 kWh/jaar"
+      ],
+      "correct_index": 0,
+      "correct_answer": "280 kWh/jaar"
+    },
+    {
+      "question": "Als 120 panelen (2m²) 33,6 MWh leveren, maar behoefte is 40 MWh, hoeveel extra panelen?",
+      "answers": [
+        "23 panelen (voor 6,4 MWh)",
+        "12 panelen",
+        "46 panelen",
+        "60 panelen"
+      ],
+      "correct_index": 0,
+      "correct_answer": "23 panelen (voor 6,4 MWh)"
+    },
+    {
+      "question": "kWh/m²/jaar is een maat voor:",
+      "answers": [
+        "Energie-opbrengst per oppervlak",
+        "Vermogen",
+        "Rendement",
+        "Efficiency"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Energie-opbrengst per oppervlak"
+    },
+    {
+      "question": "Bij cos φ verbetering van 0,75 naar 0,92 neemt S:",
+      "answers": [
+        "Af (minder schijnbaar vermogen)",
+        "Toe",
+        "Blijft gelijk",
+        "Wordt negatief"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Af (minder schijnbaar vermogen)"
+    },
+    {
+      "question": "Als P = 50kW, cos φ_oud = 0,75, cos φ_nieuw = 0,92, dan Q_compensatie =:",
+      "answers": [
+        "≈ 23 kvar",
+        "≈ 11 kvar",
+        "≈ 44 kvar",
+        "≈ 5 kvar"
+      ],
+      "correct_index": 0,
+      "correct_answer": "≈ 23 kvar"
+    },
+    {
+      "question": "Doel blindvermogencompensatie is:",
+      "answers": [
+        "Lagere I bij zelfde P → minder verlies",
+        "Hogere spanning",
+        "Meer vermogen",
+        "Betere veiligheid"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Lagere I bij zelfde P → minder verlies"
+    },
+    {
+      "question": "Na compensatie met condensator wordt cos φ:",
+      "answers": [
+        "Hoger (richting 1)",
+        "Lager",
+        "Negatief",
+        "Onveranderd"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Hoger (richting 1)"
+    },
+    {
+      "question": "Bij symmetrische driefase belasting vloeit door nulleider:",
+      "answers": [
+        "Geen stroom (I_N = 0)",
+        "Fasestroom",
+        "√3 × I_fase",
+        "Lijnstroom"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Geen stroom (I_N = 0)"
+    },
+    {
+      "question": "Spanningsverlies per ader bij kabel: ΔU =:",
+      "answers": [
+        "I_fase × R_ader",
+        "I_lijn × R_totaal",
+        "U / R",
+        "P / U"
+      ],
+      "correct_index": 0,
+      "correct_answer": "I_fase × R_ader"
+    },
+    {
+      "question": "Max. spanningsverlies bij driefase is vaak:",
+      "answers": [
+        "2% van U_fase",
+        "5% van U_lijn",
+        "10% van U_fase",
+        "1% van U_lijn"
+      ],
+      "correct_index": 0,
+      "correct_answer": "2% van U_fase"
+    },
+    {
+      "question": "Bij ster-geschakelde generator en driehoek-belasting geldt:",
+      "answers": [
+        "U_belasting = U_lijn = √3 · U_fase_gen",
+        "U_belasting = U_fase",
+        "U_belasting = 3 · U_fase",
+        "U_belasting = U_fase / √3"
+      ],
+      "correct_index": 0,
+      "correct_answer": "U_belasting = U_lijn = √3 · U_fase_gen"
+    },
+    {
+      "question": "Als generator ster: U_fase = 400V, dan U_lijn =:",
+      "answers": [
+        "693 V",
+        "400 V",
+        "231 V",
+        "800 V"
+      ],
+      "correct_index": 0,
+      "correct_answer": "693 V"
+    },
+    {
+      "question": "Voordeel van ijzeren transformatorkern:",
+      "answers": [
+        "Koppelfactor k ≈ 1, hoger rendement",
+        "Goedkoper",
+        "Lichter",
+        "Geen verliezen"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Koppelfactor k ≈ 1, hoger rendement"
+    },
+    {
+      "question": "Nadeel van ijzeren transformatorkern:",
+      "answers": [
+        "Hystereseverliezen + wervelstromen",
+        "Geen nadelen",
+        "Lager rendement",
+        "Instabiliteit"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Hystereseverliezen + wervelstromen"
+    },
+    {
+      "question": "Welke bewering is JUIST?",
+      "answers": [
+        "Bij resonantie: X_L = X_C",
+        "Condensator ijlt 90° achter",
+        "cos φ kan > 1",
+        "DC heeft reactantie"
+      ],
+      "correct_index": 0,
+      "correct_answer": "Bij resonantie: X_L = X_C"
+    }
+  ],
+  "categorized": {
+    "basiswetten": [
+      "Wat is de wet van Ohm?",
+      "Bij serie schakeling is de totale weerstand:",
+      "Kirchhoff's knooppuntwet (KCL) stelt:",
+      "Kirchhoff's maaswet (KVL) stelt:",
+      "Parallel weerstanden bereken je met:",
+      "Bij serie schakeling is de stroom:",
+      "Bij parallel schakeling is de spanning:",
+      "Spanningsdeling gebruik je bij:",
+      "Stroomdeling gebruik je bij:",
+      "Thévenin equivalent bestaat uit:",
+      "Norton equivalent bestaat uit:",
+      "Blindvermogencompensatie doe je met:",
+      "Bij RLC serie resonantie is:",
+      "Bij RLC parallel resonantie is:",
+      "Bij serie-resonantie kan de spanning over L of C:",
+      "Serie RLC gebruik je als:",
+      "Parallel RLC gebruik je als:",
+      "Als condensator C3 in serie met C2 doorslaat, wat gebeurt er?",
+      "Bij condensatoren in serie + parallel geldt altijd:",
+      "Waarom neemt Cv toe als een serie-condensator kortsluit?",
+      "Bij Kirchhoff knooppuntwet (KCL) geldt:",
+      "Negatieve stroom bij knooppuntanalyse betekent:",
+      "In een toroïde met luchtspleet is de flux φ:",
+      "Waarom is flux φ overal gelijk in toroïde?",
+      "Bij gelijkspanning (DC) heeft een spoel:",
+      "Bij Z1 = (10-20j)Ω en Z2 = (10+20j)Ω parallel geldt:",
+      "Kirchhoff maaswet (KVL) stelt:",
+      "Bij maaswet zijn bronnen in serie:"
+    ],
+    "vermogen": [
+      "Vermogen bereken je met:",
+      "Energie bereken je met:",
+      "Rendement bereken je met:",
+      "Bij een weerstand wordt elektrische energie omgezet in:",
+      "Een condensator slaat energie op in:",
+      "Een spoel slaat energie op in:",
+      "Bij vermogensaanpassing geldt:",
+      "Het rendement bij vermogensaanpassing is:",
+      "Bij driefase met cos φ = 1 is P =",
+      "Complex vermogen S bereken je met:",
+      "In de vermogensdriehoek geldt:",
+      "Waarom wordt blindvermogen gecompenseerd met condensatoren?",
+      "Bij driefase motor bepaalt de fasevolgorde:",
+      "Effectieve waarde (RMS) geeft aan:",
+      "Zelfinductie L bereken je uit e = -L·di/dt als:",
+      "Bij zelfinductie is de spanning tegengesteld aan:",
+      "Als di/dt = -0,4 A/300ms en e = 800µV, dan L =:",
+      "Als P = 60kW en S = 68kVA, dan Q =:",
+      "Blindvermogen Q bereken je uit P en cos φ met:",
+      "kWh/m²/jaar is een maat voor:",
+      "Bij cos φ verbetering van 0,75 naar 0,92 neemt S:",
+      "Als P = 50kW, cos φ_oud = 0,75, cos φ_nieuw = 0,92, dan Q_compensatie =:",
+      "Doel blindvermogencompensatie is:",
+      "Als generator ster: U_fase = 400V, dan U_lijn =:",
+      "Voordeel van ijzeren transformatorkern:",
+      "Nadeel van ijzeren transformatorkern:"
+    ],
+    "thevenin_norton": [
+      "Norton stroom (I_N) is gelijk aan:",
+      "Thévenin spanning (U_th) is gelijk aan:",
+      "R_th bereken je met:",
+      "Omrekenen van Thévenin naar Norton: I_N =",
+      "Thévenin spanning U_th is gelijk aan:",
+      "Thévenin weerstand R_th bepaal je door:",
+      "Bij Thévenin-vervangingsschema bereken je stroom I met:",
+      "Als U_th = 0,6V, R_th = 11kΩ, R5 = 5kΩ, dan I_R5 =:",
+      "Bij symmetrische driefase belasting vloeit door nulleider:"
+    ],
+    "rlc_componenten": [
+      "Bij een condensator ijlt de stroom:",
+      "Bij een spoel ijlt de stroom:",
+      "Capacitieve reactantie bereken je met:",
+      "Inductieve reactantie bereken je met:",
+      "Bij hogere frequentie wordt X_C:",
+      "Bij hogere frequentie wordt X_L:",
+      "Bij DC (f=0) gedraagt een spoel zich als:",
+      "Bij DC (f=0) gedraagt een condensator zich als:",
+      "Bij zeer hoge frequentie gedraagt een spoel zich als:",
+      "Bij zeer hoge frequentie gedraagt een condensator zich als:",
+      "Kwaliteitsfactor Q bij resonantie is:",
+      "Bij inductieve belasting (spoel) is φ:",
+      "Bij capacitieve belasting (condensator) is φ:",
+      "Waarom kan spanning over condensator niet springen?",
+      "Waarom kan stroom door spoel niet springen?",
+      "Bij toroïde blijft magnetisch veld:",
+      "Fasehoek φ bereken je bij RL-kring met:",
+      "Na compensatie met condensator wordt cos φ:",
+      "Welke bewering is JUIST?"
+    ],
+    "ac_begrippen": [
+      "De effectieve waarde (RMS) van een sinusgolf is:",
+      "De frequentie van het Nederlandse elektriciteitsnet is:",
+      "Hoekfrequentie ω bereken je met:",
+      "Resonantiefrequentie bereken je met:",
+      "Bij een blokgolf is de effectieve waarde:"
+    ],
+    "vermogen_ac": [
+      "Arbeidsfactor cos φ is altijd:",
+      "Bij een puur resistieve belasting is cos φ:",
+      "Bij een puur reactieve belasting is cos φ:",
+      "Na perfecte compensatie is cos φ:",
+      "De relatie S² = P² + Q² geldt:"
+    ],
+    "driefase": [
+      "Bij een symmetrisch driefasesysteem is het faseverschil:",
+      "Bij ster-schakeling geldt: U_lijn =",
+      "Bij driehoek-schakeling geldt: I_lijn =",
+      "De lijnspanning in Nederland is:",
+      "De fasespanning in Nederland is:",
+      "Fasehoek φ bereken je met:",
+      "Hystereseverliezen in transformatorkern ontstaan door:",
+      "Bij wisselspanning (AC) wordt stroomsterkte bepaald door:",
+      "Spanningsverlies per ader bij kabel: ΔU =:",
+      "Max. spanningsverlies bij driefase is vaak:",
+      "Bij ster-geschakelde generator en driehoek-belasting geldt:"
+    ],
+    "resonantie": [
+      "Bij hogere Q is de bandbreedte:"
+    ],
+    "complexe_rekening": [
+      "Impedantie Z bereken je met:",
+      "In complexe rekening is j² =:"
+    ],
+    "transformator": [
+      "Bij transformator met kern is koppelfactor k:",
+      "Bij transformator geldt N1/N2 =:"
+    ],
+    "magnetisme": [],
+    "praktijk": [
+      "Waarom gebruikt men hoogspanning voor transmissie?",
+      "Skin-effect betekent:",
+      "Zonnepaneel 2m² bij 140 kWh/m²/jaar levert:"
+    ]
+  },
+  "statistics": {
+    "total": 120,
+    "by_difficulty": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+    },
+    "needs_calculation": 59,
+    "needs_image": 13,
+    "formula_questions": 61
+  }
+}
