@@ -355,28 +355,112 @@
     </div>
 
     <script>
-        // Sample questions database (expandable)
+        // Comprehensive knowledge questions database (80+ questions)
         const questionDatabase = {
             easy: [
+                // Basis - Wet van Ohm & Kirchhoff (H 1.9, H 2.6)
                 { q: "Wat is de wet van Ohm?", a: ["U = I × R", "P = U × I", "R = ρ × l/A", "I = C × dU/dt"], correct: 0 },
                 { q: "Bij serie schakeling is de totale weerstand:", a: ["R_tot = R1 + R2 + R3", "1/R_tot = 1/R1 + 1/R2", "R_tot = R1 || R2", "R_tot = √(R1² + R2²)"], correct: 0 },
                 { q: "Kirchhoff's knooppuntwet (KCL) stelt:", a: ["Σ I_in = Σ I_uit", "Σ U_maas = 0", "U = I × R", "P = I² × R"], correct: 0 },
+                { q: "Kirchhoff's maaswet (KVL) stelt:", a: ["Σ U_maas = 0", "Σ I_in = Σ I_uit", "U = I × R", "P = U × I"], correct: 0 },
                 { q: "Vermogen bereken je met:", a: ["P = U × I", "E = P × t", "U = I × R", "Q = C × U"], correct: 0 },
                 { q: "Parallel weerstanden bereken je met:", a: ["1/R_tot = 1/R1 + 1/R2", "R_tot = R1 + R2", "R_tot = R1 × R2", "R_tot = (R1 + R2)/2"], correct: 0 },
+                { q: "Energie bereken je met:", a: ["E = P × t", "P = U × I", "W = ½LI²", "Q = CV"], correct: 0 },
+                { q: "Bij serie schakeling is de stroom:", a: ["Overal gelijk", "Verschillend per weerstand", "Nul", "Afhankelijk van spanning"], correct: 0 },
+                { q: "Bij parallel schakeling is de spanning:", a: ["Overal gelijk", "Verschillend per tak", "Nul", "Som van alle spanningen"], correct: 0 },
+                { q: "Rendement bereken je met:", a: ["η = P_uit / P_in", "η = P_in / P_uit", "η = P_uit × P_in", "η = P_in - P_uit"], correct: 0 },
+
+                // Basis begrippen - Vermogen
+                { q: "Wat is de eenheid van vermogen?", a: ["Watt [W]", "Joule [J]", "Volt [V]", "Ampère [A]"], correct: 0 },
+                { q: "Wat is de eenheid van energie?", a: ["Joule [J] of Wattuur [Wh]", "Watt [W]", "Volt-ampère [VA]", "Var [VAR]"], correct: 0 },
+                { q: "Bij een weerstand wordt elektrische energie omgezet in:", a: ["Warmte", "Licht", "Magnetisch veld", "Elektrisch veld"], correct: 0 },
+                { q: "Een condensator slaat energie op in:", a: ["Elektrisch veld", "Magnetisch veld", "Warmte", "Licht"], correct: 0 },
+                { q: "Een spoel slaat energie op in:", a: ["Magnetisch veld", "Elektrisch veld", "Warmte", "Licht"], correct: 0 },
+
+                // DC Netwerken basis
+                { q: "Spanningsdeling gebruik je bij:", a: ["Serie weerstanden", "Parallel weerstanden", "Alleen condensatoren", "Alleen spoelen"], correct: 0 },
+                { q: "Stroomdeling gebruik je bij:", a: ["Parallel weerstanden", "Serie weerstanden", "Alleen condensatoren", "Alleen spoelen"], correct: 0 },
+                { q: "Bij een kortsluiting is de weerstand:", a: ["0 Ω (nul)", "∞ (oneindig)", "1 Ω", "100 Ω"], correct: 0 },
+                { q: "Bij een open klem is de weerstand:", a: ["∞ (oneindig)", "0 Ω (nul)", "1 Ω", "100 Ω"], correct: 0 },
+                { q: "Een ideale spanningsbron heeft:", a: ["R_binnen = 0 Ω", "R_binnen = ∞", "R_binnen = 50 Ω", "R_binnen variabel"], correct: 0 },
+
+                // AC Basis begrippen
+                { q: "De effectieve waarde (RMS) van een sinusgolf is:", a: ["U_top / √2", "U_top / 2", "U_top × √2", "2 × U_top"], correct: 0 },
+                { q: "De frequentie van het Nederlandse elektriciteitsnet is:", a: ["50 Hz", "60 Hz", "100 Hz", "25 Hz"], correct: 0 },
+                { q: "De netspanning in Nederland is (effectief):", a: ["230 V", "220 V", "325 V", "400 V"], correct: 0 },
+                { q: "Hoekfrequentie ω bereken je met:", a: ["ω = 2πf", "ω = f/2π", "ω = πf", "ω = f²"], correct: 0 },
+                { q: "Bij een condensator ijlt de stroom:", a: ["90° voor op de spanning", "90° achter op de spanning", "180° op de spanning", "In fase met spanning"], correct: 0 },
+                { q: "Bij een spoel ijlt de stroom:", a: ["90° achter op de spanning", "90° voor op de spanning", "180° op de spanning", "In fase met spanning"], correct: 0 },
             ],
             medium: [
+                // Thévenin & Norton (H 3.11)
                 { q: "Thévenin equivalent bestaat uit:", a: ["U_th in serie met R_th", "I_N parallel met R_N", "Alleen U_th", "Alleen R_th"], correct: 0 },
-                { q: "Norton stroom (I_N) is gelijk aan:", a: ["Kortsluitstroom", "Open-klem stroom", "U_th / R_th", "Geen van deze"], correct: 0 },
-                { q: "Bij vermogensaanpassing geldt:", a: ["R_last = R_th", "R_last = 2×R_th", "R_last = 0.5×R_th", "R_last = ∞"], correct: 0 },
-                { q: "Effectieve waarde van sinusvormige spanning:", a: ["U_eff = U_top / √2", "U_eff = U_top / 2", "U_eff = U_top × √2", "U_eff = 2 × U_top / π"], correct: 0 },
-                { q: "Capacitieve reactantie bereken je met:", a: ["X_C = 1/(2πfC)", "X_C = 2πfC", "X_C = 1/(ωC)", "X_C = ωC"], correct: 0 },
+                { q: "Norton equivalent bestaat uit:", a: ["I_N parallel met R_N", "U_th in serie met R_th", "Alleen I_N", "Alleen R_N"], correct: 0 },
+                { q: "Norton stroom (I_N) is gelijk aan:", a: ["Kortsluitstroom", "Open-klem stroom", "Helft van kortsluitstroom", "Gemiddelde stroom"], correct: 0 },
+                { q: "Thévenin spanning (U_th) is gelijk aan:", a: ["Open-klem spanning", "Kortsluitspanning", "Helft van open-klem spanning", "Gemiddelde spanning"], correct: 0 },
+                { q: "Bij vermogensaanpassing geldt:", a: ["R_last = R_th", "R_last = 2×R_th", "R_last = 0.5×R_th", "R_last = 0"], correct: 0 },
+                { q: "Het rendement bij vermogensaanpassing is:", a: ["50%", "100%", "75%", "25%"], correct: 0 },
+                { q: "R_th bereken je met:", a: ["U_open / I_kort", "U_kort / I_open", "U_open × I_kort", "U_kort + I_open"], correct: 0 },
+                { q: "Omrekenen van Thévenin naar Norton: I_N =", a: ["U_th / R_th", "U_th × R_th", "R_th / U_th", "U_th + R_th"], correct: 0 },
+
+                // AC & RLC componenten
+                { q: "Capacitieve reactantie bereken je met:", a: ["X_C = 1/(2πfC)", "X_C = 2πfC", "X_C = 2πf/C", "X_C = C/(2πf)"], correct: 0 },
+                { q: "Inductieve reactantie bereken je met:", a: ["X_L = 2πfL", "X_L = 1/(2πfL)", "X_L = 2πf/L", "X_L = L/(2πf)"], correct: 0 },
+                { q: "Bij hogere frequentie wordt X_C:", a: ["Kleiner", "Groter", "Blijft gelijk", "Eerst groter, dan kleiner"], correct: 0 },
+                { q: "Bij hogere frequentie wordt X_L:", a: ["Groter", "Kleiner", "Blijft gelijk", "Eerst kleiner, dan groter"], correct: 0 },
+                { q: "Bij DC (f=0) gedraagt een spoel zich als:", a: ["Kortsluiting (R=0)", "Open klem (R=∞)", "Weerstand", "Condensator"], correct: 0 },
+                { q: "Bij DC (f=0) gedraagt een condensator zich als:", a: ["Open klem (R=∞)", "Kortsluiting (R=0)", "Weerstand", "Spoel"], correct: 0 },
+                { q: "Bij zeer hoge frequentie gedraagt een spoel zich als:", a: ["Open klem (R=∞)", "Kortsluiting (R=0)", "Weerstand", "Condensator"], correct: 0 },
+                { q: "Bij zeer hoge frequentie gedraagt een condensator zich als:", a: ["Kortsluiting (R=0)", "Open klem (R=∞)", "Weerstand", "Spoel"], correct: 0 },
+
+                // Vermogen AC
+                { q: "Werkzaam vermogen (P) heeft als eenheid:", a: ["Watt [W]", "Volt-ampère [VA]", "Var [VAR]", "Joule [J]"], correct: 0 },
+                { q: "Blindvermogen (Q) heeft als eenheid:", a: ["Var [VAR]", "Watt [W]", "Volt-ampère [VA]", "Joule [J]"], correct: 0 },
+                { q: "Schijnbaar vermogen (S) heeft als eenheid:", a: ["Volt-ampère [VA]", "Watt [W]", "Var [VAR]", "Joule [J]"], correct: 0 },
+                { q: "Arbeidsfactor cos φ is altijd:", a: ["≤ 1", "≥ 1", "= 1", "> 1"], correct: 0 },
+                { q: "Bij een puur resistieve belasting is cos φ:", a: ["1", "0", "0.5", "∞"], correct: 0 },
+                { q: "Bij een puur reactieve belasting is cos φ:", a: ["0", "1", "0.5", "∞"], correct: 0 },
+                { q: "Blindvermogencompensatie doe je met:", a: ["Condensator parallel", "Spoel parallel", "Weerstand serie", "Transformator"], correct: 0 },
+                { q: "Na perfecte compensatie is cos φ:", a: ["1", "0", "0.5", "Onveranderd"], correct: 0 },
+
+                // Driefase basis
+                { q: "Bij een symmetrisch driefasesysteem is het faseverschil:", a: ["120°", "90°", "180°", "60°"], correct: 0 },
+                { q: "Bij ster-schakeling geldt: U_lijn =", a: ["√3 × U_fase", "U_fase / √3", "U_fase", "3 × U_fase"], correct: 0 },
+                { q: "Bij driehoek-schakeling geldt: I_lijn =", a: ["√3 × I_fase", "I_fase / √3", "I_fase", "3 × I_fase"], correct: 0 },
+                { q: "De lijnspanning in Nederland is:", a: ["400 V", "230 V", "325 V", "690 V"], correct: 0 },
+                { q: "De fasespanning in Nederland is:", a: ["230 V", "400 V", "325 V", "133 V"], correct: 0 },
+                { q: "Bij driefase met cos φ = 1 is P =", a: ["√3 × U_lijn × I_lijn", "U_lijn × I_lijn", "3 × U_fase × I_fase", "Opties 1 en 3"], correct: 3 },
             ],
             hard: [
-                { q: "Bij RLC serie resonantie is:", a: ["X_L = X_C", "Z minimaal", "cos φ = 1", "Alle opties correct"], correct: 3 },
-                { q: "Schijnbaar vermogen (S) bereken je met:", a: ["S = U × I", "S = P / cos φ", "S² = P² + Q²", "Alle opties correct"], correct: 3 },
-                { q: "Blindvermogen compensatie doe je met:", a: ["Condensator parallel", "Spoel parallel", "Weerstand serie", "Transformator"], correct: 0 },
-                { q: "Faseverschuiving bereken je met:", a: ["φ = arctan(X/R)", "φ = arctan(R/X)", "φ = arccos(P/S)", "Opties 1 en 3"], correct: 3 },
-                { q: "Bij complexe impedantie geldt:", a: ["|Z| = √(R² + X²)", "Z = R + jX", "φ = arg(Z)", "Alle opties correct"], correct: 3 },
+                // Resonantie & RLC (H 7.8, H 9.7)
+                { q: "Bij RLC serie resonantie is:", a: ["Alle opties correct", "X_L = X_C", "Z minimaal", "cos φ = 1"], correct: 0 },
+                { q: "Bij RLC parallel resonantie is:", a: ["Alle opties correct", "X_L = X_C", "Z maximaal", "I minimaal"], correct: 0 },
+                { q: "Resonantiefrequentie bereken je met:", a: ["f₀ = 1/(2π√LC)", "f₀ = 2π√LC", "f₀ = 1/√LC", "f₀ = √LC"], correct: 0 },
+                { q: "Bij serie-resonantie kan de spanning over L of C:", a: ["Groter zijn dan bronspanning", "Kleiner zijn dan bronspanning", "Altijd gelijk aan bronspanning", "Nul zijn"], correct: 0 },
+                { q: "Kwaliteitsfactor Q bij resonantie is:", a: ["X_L / R = X_C / R", "R / X_L", "X_L × R", "R + X_L"], correct: 0 },
+                { q: "Bij hogere Q is de bandbreedte:", a: ["Kleiner (selectiever)", "Groter (minder selectief)", "Gelijk", "Onbepaald"], correct: 0 },
+                { q: "Serie RLC gebruik je als:", a: ["Bandfilter (doorlaten f₀)", "Sperfilter (blokkeren f₀)", "Hoogdoorlaatfilter", "Laagdoorlaatfilter"], correct: 0 },
+                { q: "Parallel RLC gebruik je als:", a: ["Sperfilter (blokkeren f₀)", "Bandfilter (doorlaten f₀)", "Hoogdoorlaatfilter", "Laagdoorlaatfilter"], correct: 0 },
+
+                // Complexe Rekening (H 9.7, H 10.6)
+                { q: "Impedantie Z bereken je met:", a: ["Alle opties correct", "|Z| = √(R² + X²)", "Z = R + jX", "Z = U / I"], correct: 0 },
+                { q: "Fasehoek φ bereken je met:", a: ["Alle opties correct", "φ = arctan(X/R)", "φ = arccos(R/Z)", "φ = arg(Z)"], correct: 0 },
+                { q: "Bij inductieve belasting (spoel) is φ:", a: ["Positief (stroom ijlt achter)", "Negatief (stroom ijlt voor)", "Nul", "±180°"], correct: 0 },
+                { q: "Bij capacitieve belasting (condensator) is φ:", a: ["Negatief (stroom ijlt voor)", "Positief (stroom ijlt achter)", "Nul", "±180°"], correct: 0 },
+                { q: "Complex vermogen S bereken je met:", a: ["S = U × I* (geconjugeerd)", "S = U × I", "S = P + jQ", "Opties 1 en 3"], correct: 3 },
+                { q: "In de vermogensdriehoek geldt:", a: ["S² = P² + Q²", "P² = S² + Q²", "Q² = P² + S²", "S = P + Q"], correct: 0 },
+
+                // Fysische betekenis - Conceptueel
+                { q: "Waarom gebruikt men hoogspanning voor transmissie?", a: ["Lagere verliezen (I²R) bij lage stroom", "Hogere verliezen", "Goedkopere kabels", "Betere veiligheid"], correct: 0 },
+                { q: "Waarom kan spanning over condensator niet springen?", a: ["Zou oneindige stroom vereisen", "Zou oneindige spanning vereisen", "Fysica staat het toe", "Is wel mogelijk"], correct: 0 },
+                { q: "Waarom kan stroom door spoel niet springen?", a: ["Zou oneindige spanning vereisen", "Zou oneindige stroom vereisen", "Fysica staat het toe", "Is wel mogelijk"], correct: 0 },
+                { q: "Waarom wordt blindvermogen gecompenseerd met condensatoren?", a: ["Condensatoren dissiperen geen vermogen", "Condensatoren zijn goedkoper", "Condensatoren zijn kleiner", "Condensatoren zijn veiliger"], correct: 0 },
+                { q: "Bij transformator met kern is koppelfactor k:", a: ["≈ 1 (bijna perfect)", "≈ 0.5", "≈ 0", "Zeer variabel"], correct: 0 },
+                { q: "Hystereseverliezen in transformatorkern ontstaan door:", a: ["Magnetisatie-omkering", "Stroomgeleiding", "Warmteontwikkeling", "Mechanische wrijving"], correct: 0 },
+                { q: "Bij driefase motor bepaalt de fasevolgorde:", a: ["Draairichting", "Toerental", "Vermogen", "Rendement"], correct: 0 },
+                { q: "Effectieve waarde (RMS) geeft aan:", a: ["Equivalent DC-waarde voor vermogen", "Gemiddelde waarde", "Topwaarde", "Minimale waarde"], correct: 0 },
+                { q: "Skin-effect betekent:", a: ["Stroom concentreert aan oppervlak", "Stroom verdeelt uniform", "Gelijkstroom fenomeen", "Alleen bij DC"], correct: 0 },
+                { q: "Bij een blokgolf is de effectieve waarde:", a: ["Gelijk aan topwaarde", "Topwaarde / √2", "Topwaarde / √3", "Topwaarde / 2"], correct: 0 },
             ]
         };
 
