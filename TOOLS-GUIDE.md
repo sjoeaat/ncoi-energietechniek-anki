@@ -1,12 +1,12 @@
 # 🛠️ Study Tools Guide - NCOI Energietechniek
 
-> **Complete documentatie van alle 9 interactieve study tools**
+> **Complete documentatie van alle 11 interactieve study tools**
 
 ---
 
 ## 📖 Overzicht
 
-Deze studiegids bevat een **complete ecosysteem van 9 interactieve tools** om je optimaal voor te bereiden op het NCOI Energietechniek examen.
+Deze studiegids bevat een **complete ecosysteem van 11 interactieve tools** om je optimaal voor te bereiden op het NCOI Energietechniek examen.
 
 ### Quick Navigation
 
@@ -21,6 +21,8 @@ Deze studiegids bevat een **complete ecosysteem van 9 interactieve tools** om je
 | [Study Schedule](#-study-schedule) | Plan je studie | 10 minuten (1x setup) |
 | [Formuleblad](#-formuleblad) | Reference & memorisatie | Dagelijks 5-10 minuten |
 | [PDF Export](#-pdf-export) | Print studiegids | 1x printen |
+| [Quick Reference](#-quick-reference-card) | Formule cheat sheet | 5 minuten (exam prep) |
+| [Practice Worksheets](#-practice-worksheets) | Offline oefenen | 30-45 minuten per blad |
 
 ---
 
@@ -34,7 +36,7 @@ De **centrale hub** voor toegang tot alle tools. Dit is je startpunt elke studie
 
 ### Features
 
-✅ **Quick Links** naar alle 9 tools
+✅ **Quick Links** naar alle 11 tools
 ✅ **Exam Countdown Timer** (configureerbaar)
 ✅ **Repository Statistieken** (84 opgaven, 11 hoofdstukken, 52 formules)
 ✅ **Hoofdstuk Overzicht** met difficulty ratings
@@ -477,6 +479,137 @@ Examen dag:
 
 ---
 
+## 📄 Quick Reference Card
+
+**Locatie:** `study-guide/QUICK-REFERENCE-CARD.html`
+
+### Wat is het?
+
+**Compacte cheat sheet (A4)** met alle essentiële formules in 3-kolom layout, perfect voor last-minute exam prep.
+
+### Features
+
+✅ **Alle Essentiële Formules:**
+  - Basis (Ohm, Kirchhoff, Serie/Parallel)
+  - AC (RLC, Impedantie, Resonantie)
+  - Driefase (Ster/Delta, Lijnspanning)
+  - Complex Rekenen (Fasoren, Vermogen)
+
+✅ **3-Kolom Layout:**
+  - Kolom 1: Basis & DC
+  - Kolom 2: AC & RLC
+  - Kolom 3: Driefase & Complex
+
+✅ **Print-Optimized:**
+  - A4 formaat (perfect voor exam)
+  - Compacte presentatie
+  - Geen verspilde ruimte
+  - Clear formule notatie
+
+### Gebruik
+
+**Exam Prep (laatste week):**
+
+```
+Week -1:
+  - Print Quick Reference Card
+  - Review 2x per dag (morning + evening)
+  - Highlight moeilijke formules
+  - Practice schrijven zonder kijken
+
+Dag -1:
+  - Final review (15 min)
+  - Neem mee naar examen (check NCOI regels!)
+
+Exam Dag:
+  - Review 10 min voor examen
+  - Gebruik als reference tijdens exam (indien toegestaan)
+```
+
+**Tips:**
+
+- **Compact:** Alle formules op 1 pagina
+- **Quick Lookup:** Sneller dan door boek bladeren
+- **Exam-Safe:** Print op wit papier, geen annotations (check NCOI regels)
+- **Memorization:** Use als checklist (welke formules ken je uit hoofd?)
+
+---
+
+## 📝 Practice Worksheets
+
+**Locatie:** `study-guide/worksheets/INDEX.html`
+
+### Wat is het?
+
+**7 print-ready oefenbladen** (15 practice vragen totaal) voor offline studie en handmatige berekeningen.
+
+### Features
+
+✅ **7 Worksheets:**
+  - H 1.9 - Wet van Ohm & Kirchhoff (3 vragen)
+  - H 2.6 - Serie & Parallel (2 vragen)
+  - H 3.11 - Thévenin & Norton (2 vragen)
+  - H 4.4 - Energie & Vermogen (2 vragen)
+  - H 7.8 - RLC Schakelingen (2 vragen)
+  - H 9.7 - Complexe Impedantie (2 vragen)
+  - H 11.7 - Vermogensleer (2 vragen)
+
+✅ **Per Worksheet:**
+  - Student info velden (naam, datum, klas)
+  - Gegeven + Gevraagd voor elke vraag
+  - Grid-lined answer spaces
+  - Adequate ruimte voor berekeningen
+  - Print-friendly formatting
+
+✅ **Offline Study:**
+  - Geen computer nodig
+  - Practice handmatig rekenen
+  - Exam-realistic (pen & papier)
+  - Perfect voor klassikale oefening
+
+### Gebruik
+
+**Study Workflow:**
+
+```
+1. Open worksheets/INDEX.html
+2. Print gewenste hoofdstuk worksheet(s)
+3. Vul student info in
+4. Los vragen op (zonder computer!)
+5. Check antwoorden in opgaven bestanden
+6. Noteer fouten & weak spots
+```
+
+**Best Practices:**
+
+- **Handmatig:** Schrijf alle stappen uit (zoals op examen)
+- **No Calculator First:** Try without rekenmachine eerst
+- **Time Yourself:** 10-15 min per vraag
+- **Review:** Check antwoorden in enhanced opgaven
+- **Archive:** Bewaar voltooide worksheets (track improvement)
+
+**Use Cases:**
+
+| Scenario | Waarom Worksheets? |
+|----------|-------------------|
+| **Klassikaal** | Print voor hele klas, gezamenlijk oefenen |
+| **Examen Practice** | Simuleer echte exam condities (pen & papier) |
+| **Groepsstudie** | Elk persoon lost op, vergelijk antwoorden |
+| **Offline Studie** | Geen internet/computer nodig |
+| **Handmatig Rekenen** | Practice zonder calculator dependency |
+
+**Example Usage (Study Group):**
+
+```
+1. Print worksheet voor iedereen
+2. 30 min: Iedereen lost individueel op
+3. 15 min: Vergelijk antwoorden
+4. 10 min: Bespreek fouten & begrip
+5. 5 min: Note weak spots voor iedereen
+```
+
+---
+
 ## 🎴 Anki Decks
 
 **Locatie:** `generated-cards/`
@@ -633,6 +766,8 @@ Exam Day:
 | Study Schedule | Plan study | 1x setup | 10 min | 🟡 |
 | Formuleblad | Memorization | Daily | 5-10 min | 🟢 |
 | PDF Export | Archive/print | 1x | 5 min | 🟡 |
+| Quick Reference | Cheat sheet | Exam week | 5 min | 🟡 |
+| Worksheets | Offline practice | 2x/week | 30-45 min | 🟡 |
 | Anki | Spaced repetition | Daily | 15-20 min | 🟢 |
 
 **Legend:**

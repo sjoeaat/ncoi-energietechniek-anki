@@ -24,11 +24,13 @@ Deze repository bevat een uitgebreide studiegids voor het NCOI vak **Energietech
 | Metric | Waarde |
 |--------|--------|
 | **Totaal opgaven** | 84 HTML bestanden |
-| **Regels code** | ~29.000+ |
+| **Regels code** | ~48.000+ |
 | **Hoofdstukken** | 11 (H 1.9 t/m H 11.7) |
+| **Quiz vragen** | 50+ comprehensive questions |
 | **Anki kaarten** | 15 (auto-generated) |
-| **Interactive Tools** | 9 (Dashboard, Index, Quiz, Exam, Progress, Analyzer, Schedule, Formula, PDF) |
-| **Scripts** | 4 (index, Anki, PDF, formula) |
+| **Interactive Tools** | 11 complete applications |
+| **Practice Worksheets** | 7 print-ready bladen (15 vragen) |
+| **Scripts** | 5 automation tools |
 
 ### Coverage per Hoofdstuk
 
@@ -138,7 +140,7 @@ Dit creëert:
 
 ---
 
-## 🛠️ Interactive Study Tools (9 tools)
+## 🛠️ Interactive Study Tools (11 tools)
 
 **Volledige documentatie:** Zie [TOOLS-GUIDE.md](TOOLS-GUIDE.md) voor complete gebruiksaanwijzingen.
 
@@ -146,7 +148,7 @@ Dit creëert:
 **Locatie:** `study-guide/STUDY-DASHBOARD.html`
 
 Centrale hub met:
-- Quick links naar alle 9 tools
+- Quick links naar alle 11 tools
 - Exam countdown timer (configureerbaar)
 - Repository statistieken
 - Hoofdstuk overzicht met difficulty ratings
@@ -229,6 +231,25 @@ Centrale hub met:
 - Print-optimized CSS
 - Page-break optimization
 - Ready voor PDF generatie
+
+### 📄 Quick Reference Card
+**Locatie:** `study-guide/QUICK-REFERENCE-CARD.html`
+
+- Compacte cheat sheet (A4 format)
+- Alle essentiële formules in 3-kolom layout
+- Basis, AC, Driefase & Complexe Rekening
+- Print-friendly (perfect voor examen voorbereiding)
+- Snelle formule lookup zonder door boek te bladeren
+
+### 📝 Practice Worksheets
+**Locatie:** `study-guide/worksheets/INDEX.html`
+
+- 7 print-ready oefenbladen (15 vragen totaal)
+- Georganiseerd per hoofdstuk
+- Grid-lined answer spaces voor handmatige berekeningen
+- Student info velden (naam, datum)
+- Offline studie zonder computer
+- Perfect voor klassikale oefening
 
 ---
 
@@ -636,15 +657,27 @@ Open een issue met:
 
 ## 🔮 Roadmap
 
-### Gepland
+### ✅ Voltooid
 
-- [ ] PDF export functionaliteit
-- [ ] Quiz modus (self-testing)
-- [ ] Progress tracking system
-- [ ] Mobile app (PWA)
-- [ ] Video explanations (links)
-- [ ] Formula sheet generator
-- [ ] Exam simulator
+- [x] PDF export functionaliteit → `PRINT-READY-COMPLETE-GUIDE.html`
+- [x] Quiz modus (self-testing) → `QUIZ-MODE.html` (50+ vragen)
+- [x] Progress tracking system → `PROGRESS-TRACKER.html`
+- [x] Formula sheet generator → `FORMULEBLAD-AUTO.html` (52 formules)
+- [x] Exam simulator → `EXAM-SIMULATOR.html`
+- [x] Weak spots analyzer → `WEAK-SPOTS-ANALYZER.html`
+- [x] Study schedule planner → `STUDY-SCHEDULE.html`
+- [x] Quick reference card → `QUICK-REFERENCE-CARD.html`
+- [x] Practice worksheets → `worksheets/` (7 bladen, 15 vragen)
+
+### 📋 Mogelijke Toekomstige Features
+
+- [ ] Mobile app (PWA) - Offline capability
+- [ ] Video explanations (embedded links)
+- [ ] Spaced repetition analytics
+- [ ] Collaborative features (groep studie)
+- [ ] AI-powered study recommendations
+- [ ] Adaptive difficulty testing
+- [ ] Performance analytics dashboard
 
 ### Ideas Welcome!
 
