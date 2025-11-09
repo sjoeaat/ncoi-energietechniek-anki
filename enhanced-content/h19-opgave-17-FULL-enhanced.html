@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H 1.9 Opgave 17 - Kirchhoff Knooppuntwet bij Spanningsbron</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .opgave-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .gegeven {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #2196F3;
+        }
+
+        .gevraagd {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .step {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #9c27b0;
+        }
+
+        .step-title {
+            color: #9c27b0;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            background: #9c27b0;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.1em;
+        }
+
+        .insight-box {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .insight-box::before {
+            content: "💡 ";
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .warning-box {
+            background: #ffebee;
+            border-left: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning-box::before {
+            content: "⚠️ ";
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.2em;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .display-math {
+            margin: 20px 0;
+            padding: 15px;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        math {
+            font-size: 1.3em;
+        }
+
+        .choice {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        .choice.correct {
+            border-color: #4caf50;
+            background: #e8f5e9;
+        }
+
+        .choice.incorrect {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Hoofdstuk 1.9 - Wet van Ohm & Kirchhoff</h1>
+            <p>Opgave 17 - Kirchhoff Knooppuntwet bij Spanningsbron (Multiple Choice)</p>
+            <p><em>Elektrische Netwerken - Paul Holmes (3e editie)</em></p>
+        </div>
+
+        <div class="content">
+            <div class="opgave-title">📌 Opgave 17: Stroom door Spanningsbron via KCL</div>
+
+            <div class="gegeven">
+                <h3>🔷 Gegeven:</h3>
+                <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                    <li>Netwerk met spanningsbron <strong>U<sub>1</sub></strong></li>
+                    <li>Knooppunt met stromen: <strong>I<sub>1</sub></strong> (door spanningsbron), <strong>I<sub>2</sub></strong>, <strong>I<sub>c</sub></strong>, <strong>I<sub>d</sub></strong> (door weerstanden)</li>
+                    <li>Alle stromen I<sub>2</sub>, I<sub>c</sub>, I<sub>d</sub> lopen <strong>weg van</strong> het knooppunt</li>
+                </ul>
+            </div>
+
+            <div class="gevraagd">
+                <h3>❓ Gevraagd:</h3>
+                <p style="margin-top: 10px; font-size: 1.1em;">
+                    Bepaal de uitdrukking voor de stroom <strong>I<sub>1</sub></strong> door de spanningsbron:
+                </p>
+
+                <div style="margin-top: 20px;">
+                    <div class="choice">
+                        <strong>a:</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>c</mi></msub></mrow></math>
+                    </div>
+
+                    <div class="choice">
+                        <strong>b:</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></math>
+                    </div>
+
+                    <div class="choice">
+                        <strong>c:</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>+</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></math>
+                    </div>
+
+                    <div class="choice">
+                        <strong>d:</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></math>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stap 1 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    <span>Analyseer de schakeling en gegeven informatie</span>
+                </div>
+
+                <p style="margin-bottom: 15px;">Deze vraag test de <strong>Kirchhoff knooppuntwet (KCL)</strong> toegepast op een knooppunt met een spanningsbron.</p>
+
+                <table>
+                    <tr>
+                        <th>Element</th>
+                        <th>Beschrijving</th>
+                    </tr>
+                    <tr>
+                        <td>Spanningsbron U₁</td>
+                        <td>Ideale spanningsbron met stroom I₁</td>
+                    </tr>
+                    <tr>
+                        <td>Knooppunt</td>
+                        <td>Waar spanningsbron en weerstanden samenkomen</td>
+                    </tr>
+                    <tr>
+                        <td>Uitgaande stromen</td>
+                        <td>I₂, I<sub>c</sub>, I<sub>d</sub> door de weerstanden</td>
+                    </tr>
+                    <tr>
+                        <td>Gezochte stroom</td>
+                        <td>I₁ door de spanningsbron</td>
+                    </tr>
+                </table>
+
+                <div class="insight-box">
+                    <strong>Theoretische basis:</strong> Kirchhoff knooppuntwet (KCL) stelt dat de <strong>som van alle stromen naar/van een knooppunt nul is</strong> (Holmes §1.8). Dit volgt uit het behoud van lading.
+                </div>
+
+                <div class="warning-box">
+                    <strong>Belangrijk:</strong> De stroom door een spanningsbron wordt <strong>niet</strong> door de spanningsbron zelf bepaald, maar door de rest van het netwerk via KCL. Een ideale spanningsbron heeft <strong>geen interne weerstand</strong>, dus de stroom is volledig afhankelijk van de externe schakeling.
+                </div>
+            </div>
+
+            <!-- Stap 2 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    <span>Identificeer alle stromen bij het knooppunt</span>
+                </div>
+
+                <p style="margin-bottom: 15px;">Bij het knooppunt waar U₁ aansluit zijn de volgende stromen aanwezig:</p>
+
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>I</mi><mn>1</mn></msub></math>: stroom <strong>door</strong> de spanningsbron (richting nog te bepalen)</li>
+                    <li><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>I</mi><mn>2</mn></msub></math>: stroom door R₂ (weg van knooppunt)</li>
+                    <li><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>I</mi><mi>c</mi></msub></math>: stroom door R<sub>c</sub> (weg van knooppunt)</li>
+                    <li><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>I</mi><mi>d</mi></msub></math>: stroom door R<sub>d</sub> (weg van knooppunt)</li>
+                </ul>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <h4 style="margin-bottom: 10px;">🔄 Tekenconventie:</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li>Stromen <strong>naar</strong> het knooppunt: <strong>positief</strong></li>
+                        <li>Stromen <strong>weg van</strong> het knooppunt: <strong>negatief</strong></li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 15px;">Als we aannemen dat I₂, I<sub>c</sub> en I<sub>d</sub> <strong>weggaan</strong> van het knooppunt, dan moet I₁ <strong>naar</strong> het knooppunt stromen om de balans te behouden.</p>
+            </div>
+
+            <!-- Stap 3 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    <span>Pas Kirchhoff knooppuntwet toe</span>
+                </div>
+
+                <p style="margin-bottom: 15px;">De som van alle stromen naar een knooppunt is nul. Stel dat I₁ <strong>naar</strong> het knooppunt stroomt (positief) en I₂, I<sub>c</sub>, I<sub>d</sub> <strong>weg van</strong> het knooppunt (negatief):</p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>−</mo>
+                            <msub><mi>I</mi><mn>2</mn></msub>
+                            <mo>−</mo>
+                            <msub><mi>I</mi><mi>c</mi></msub>
+                            <mo>−</mo>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p style="margin-top: 20px;">Of anders geschreven met de conventie dat <strong>uitgaande stromen positief</strong> zijn:</p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mn>2</mn></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>c</mi></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p style="margin-top: 15px; font-style: italic;">waarbij I₁ de ingaande stroom is (dus negatief als stroom <strong>uit</strong> de bron komt).</p>
+            </div>
+
+            <!-- Stap 4 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    <span>Los op naar I₁</span>
+                </div>
+
+                <p style="margin-bottom: 15px;">Isoleer I₁ in de vergelijking:</p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>=</mo>
+                            <mo>−</mo>
+                            <msub><mi>I</mi><mn>2</mn></msub>
+                            <mo>−</mo>
+                            <msub><mi>I</mi><mi>c</mi></msub>
+                            <mo>−</mo>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p style="margin: 20px 0;">Of <strong>compacter geschreven</strong>:</p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>=</mo>
+                            <mo>−</mo>
+                            <mo>(</mo>
+                            <msub><mi>I</mi><mn>2</mn></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>c</mi></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                            <mo>)</mo>
+                        </mrow>
+                    </math>
+                </div>
+
+                <div class="result-box" style="background: #4caf50;">
+                    <strong>CONCLUSIE:</strong> Het juiste antwoord is <strong>b</strong>
+                </div>
+            </div>
+
+            <!-- Stap 5: Verificatie -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    <span>Verificatie en analyse van foute antwoorden</span>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>✓ Dimensionale controle:</h4>
+                    <div class="display-math">
+                        <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                            <mrow>
+                                <mo>[</mo><msub><mi>I</mi><mn>1</mn></msub><mo>]</mo>
+                                <mo>=</mo>
+                                <mo>[</mo><mi>A</mi><mo>]</mo>
+                                <mo>+</mo>
+                                <mo>[</mo><mi>A</mi><mo>]</mo>
+                                <mo>+</mo>
+                                <mo>[</mo><mi>A</mi><mo>]</mo>
+                                <mo>=</mo>
+                                <mo>[</mo><mi>A</mi><mo>]</mo>
+                            </mrow>
+                        </math>
+                    </div>
+                    <p style="margin-top: 10px;">Dit klopt ✓</p>
+                </div>
+
+                <h4 style="margin: 20px 0;">❌ Waarom andere antwoorden fout zijn:</h4>
+
+                <div class="choice incorrect">
+                    <strong>Antwoord a:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><msub><mi>I</mi><mn>2</mn></msub><mo>−</mo><msub><mi>I</mi><mi>c</mi></msub></mrow></math>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Fout:</strong> Negeert de stroom I<sub>d</sub></li>
+                        <li>Dit zou alleen kloppen als I<sub>d</sub> = 0, wat niet algemeen geldt</li>
+                        <li>Schendt behoud van lading bij het knooppunt</li>
+                    </ul>
+                </div>
+
+                <div class="choice incorrect">
+                    <strong>Antwoord c:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>+</mo><mo>(</mo><msub><mi>I</mi><mn>2</mn></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></math>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Fout:</strong> Positief teken suggereert dat I₁ in dezelfde richting stroomt als I₂, I<sub>c</sub>, I<sub>d</sub></li>
+                        <li>Dit zou betekenen dat stroom uit het "niets" verschijnt - <strong>geen conservatie van lading!</strong></li>
+                        <li>Er zou 4× de stroom uit het knooppunt komen als erin gaat</li>
+                    </ul>
+                </div>
+
+                <div class="choice incorrect">
+                    <strong>Antwoord d:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mo>(</mo><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><msub><mi>I</mi><mi>c</mi></msub><mo>+</mo><msub><mi>I</mi><mi>d</mi></msub><mo>)</mo></mrow></math>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Fout:</strong> Gebruikt I<sub>b</sub> in plaats van I₂</li>
+                        <li>I<sub>b</sub> is <strong>niet gedefinieerd</strong> bij dit knooppunt</li>
+                        <li>Dit is een "foute variabele" - klassieke examen-valkuil!</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin: 30px 0 15px 0;">🔢 Praktijkvoorbeeld:</h4>
+                <p>Stel I₂ = 3A, I<sub>c</sub> = 2A, I<sub>d</sub> = 1A (alle weggaand van het knooppunt):</p>
+
+                <div class="display-math">
+                    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>=</mo>
+                            <mo>−</mo>
+                            <mo>(</mo>
+                            <mn>3</mn>
+                            <mo>+</mo>
+                            <mn>2</mn>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                            <mo>)</mo>
+                            <mo>=</mo>
+                            <mo>−</mo>
+                            <mn>6</mn>
+                            <mtext> A</mtext>
+                        </mrow>
+                    </math>
+                </div>
+
+                <p style="margin-top: 15px;">Het negatieve teken betekent: I₁ stroomt <strong>naar</strong> het knooppunt (als we de conventie gebruiken dat uitgaande stromen positief zijn).</p>
+
+                <p style="margin-top: 15px;"><strong>Controle:</strong> 6A komt binnen (van U₁), 3A + 2A + 1A = 6A gaat weg → balans klopt ✓</p>
+            </div>
+
+            <!-- Fysische interpretatie -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">💡</span>
+                    <span>Fysische interpretatie</span>
+                </div>
+
+                <h4 style="margin-bottom: 15px;">⚡ Spanningsbron versus stroombron:</h4>
+
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Wat is vast?</th>
+                        <th>Wat wordt bepaald door netwerk?</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Spanningsbron</strong></td>
+                        <td>Spanning U (constant)</td>
+                        <td><strong>Stroom I</strong> (via KCL en Ohm)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stroombron</strong></td>
+                        <td>Stroom I (constant)</td>
+                        <td><strong>Spanning U</strong> (via KVL en Ohm)</td>
+                    </tr>
+                </table>
+
+                <div class="insight-box">
+                    <strong>Kernbegrip:</strong><br>
+                    • Een <strong>ideale spanningsbron</strong> handhaaft altijd dezelfde spanning, ongeacht de stroom<br>
+                    • De <strong>stroom</strong> door de spanningsbron wordt volledig bepaald door de <strong>externe belasting</strong><br>
+                    • Dit is anders dan bij een weerstand, waar U = I·R geldt (beide variabel)<br>
+                    • Bij een spanningsbron is U <strong>constant</strong>, I <strong>variabel</strong>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Veelgemaakte fout:</strong> Studenten denken soms dat een spanningsbron "zelf" zijn stroom bepaalt. Dit is <strong>niet waar</strong>! De stroom wordt bepaald door wat het netwerk "vraagt" via de wetten van Kirchhoff en Ohm.
+                </div>
+
+                <h4 style="margin: 30px 0 15px 0;">🌟 Praktische toepassingen:</h4>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Batterij in auto:</strong> De 12V accu levert verschillende stromen afhankelijk van of de radio aan staat (klein) of de starter draait (honderden ampères)</li>
+                    <li><strong>USB-voeding:</strong> De 5V voeding levert stroom volgens behoefte van de aangesloten apparaten (KCL bepaalt totale stroom)</li>
+                    <li><strong>Netwerkveiligheid:</strong> Zekeringen/stroomonderbrekers beschermen tegen te hoge stromen door spanningsbron</li>
+                </ul>
+            </div>
+
+            <div class="result-box">
+                <strong>ANTWOORD: b</strong><br>
+                <span style="font-size: 0.9em; margin-top: 10px; display: block;">
+                    <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <msub><mi>I</mi><mn>1</mn></msub>
+                            <mo>=</mo>
+                            <mo>−</mo>
+                            <mo>(</mo>
+                            <msub><mi>I</mi><mn>2</mn></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>c</mi></msub>
+                            <mo>+</mo>
+                            <msub><mi>I</mi><mi>d</mi></msub>
+                            <mo>)</mo>
+                        </mrow>
+                    </math>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

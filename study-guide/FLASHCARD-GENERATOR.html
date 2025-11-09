@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Generator - NCOI Energietechniek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .config-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .config-item {
+            margin-bottom: 20px;
+        }
+
+        .config-item label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .preview-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .preview-panel.active {
+            display: block;
+        }
+
+        .instructions {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            color: #856404;
+        }
+
+        .instructions h3 {
+            margin-bottom: 15px;
+            color: #856404;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            header, .config-panel, .instructions, .no-print {
+                display: none !important;
+            }
+
+            .preview-panel {
+                display: block !important;
+                padding: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .flashcard-page {
+                page-break-after: always;
+            }
+
+            .flashcard-page:last-child {
+                page-break-after: auto;
+            }
+        }
+
+        /* Flashcard Layout */
+        .flashcard-page {
+            margin-bottom: 40px;
+            background: white;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .flashcard {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #fafafa;
+            position: relative;
+        }
+
+        .flashcard.front {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8ecff 100%);
+        }
+
+        .flashcard.back {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5d6 100%);
+        }
+
+        .card-type {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.8em;
+            color: #999;
+            font-weight: 600;
+        }
+
+        .card-chapter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.8em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .card-content {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .card-content.formula {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .card-hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .button-secondary {
+            background: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🃏 Flashcard Generator</h1>
+            <p class="subtitle">Print-ready fysieke flashcards voor formules</p>
+        </header>
+
+        <!-- Configuration Panel -->
+        <div class="config-panel">
+            <h3 style="margin-bottom: 20px; color: #667eea;">📋 Flashcard Opties</h3>
+
+            <div class="config-item">
+                <label for="chapterSelect">Selecteer Hoofdstuk:</label>
+                <select id="chapterSelect">
+                    <option value="all">Alle Hoofdstukken (52 flashcards)</option>
+                    <option value="h19">H 1.9 - Wet van Ohm & Kirchhoff (7 cards)</option>
+                    <option value="h26">H 2.6 - Serie & Parallel (6 cards)</option>
+                    <option value="h311">H 3.11 - Netwerk Analyse (6 cards)</option>
+                    <option value="h44">H 4.4 - Energie & Vermogen (6 cards)</option>
+                    <option value="h55">H 5.5 - Wisselspanning (6 cards)</option>
+                    <option value="h68">H 6.8 - C & L (5 cards)</option>
+                    <option value="h78">H 7.8 & H 9.7 - RLC & Complex (10 cards)</option>
+                    <option value="h117">H 11.7 - Vermogen (AC) (6 cards)</option>
+                </select>
+            </div>
+
+            <button class="button" onclick="generateFlashcards()">Genereer Flashcards</button>
+        </div>
+
+        <!-- Preview Panel -->
+        <div class="preview-panel" id="previewPanel">
+            <div class="instructions no-print">
+                <h3>📌 Print Instructies:</h3>
+                <ol>
+                    <li>Klik op "Print / PDF" hieronder</li>
+                    <li>Selecteer printer of "Save as PDF"</li>
+                    <li>Instellingen: A4, Marges "Normaal"</li>
+                    <li>Print beide pagina's (voorkant & achterkant)</li>
+                    <li>Knip langs de stippellijnen</li>
+                    <li>Vouw of lamineer voor duurzaamheid</li>
+                </ol>
+            </div>
+
+            <div id="flashcardsContainer"></div>
+
+            <div class="button-group no-print">
+                <button class="button button-secondary" onclick="backToConfig()">← Terug</button>
+                <button class="button" onclick="window.print()">🖨️ Print / PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Formula Database (same as Formula Quiz)
+        const formulas = {
+            'h19': [
+                { name: 'Wet van Ohm', formula: 'U = I × R', hint: 'Spanning = Stroom × Weerstand', chapter: 'H 1.9' },
+                { name: 'Vermogen (DC)', formula: 'P = U × I', hint: 'Vermogen = Spanning × Stroom', chapter: 'H 1.9' },
+                { name: 'Vermogen (R)', formula: 'P = I² × R', hint: 'Vermogen via weerstand', chapter: 'H 1.9' },
+                { name: 'Vermogen (U)', formula: 'P = U² / R', hint: 'Vermogen via spanning', chapter: 'H 1.9' },
+                { name: 'Kirchhoff Knooppunt', formula: 'ΣI_in = ΣI_uit', hint: 'Som van stromen', chapter: 'H 1.9' },
+                { name: 'Kirchhoff Maas', formula: 'ΣU = 0', hint: 'Som van spanningen', chapter: 'H 1.9' },
+                { name: 'Spanningsdeling', formula: 'U_x = (R_x / R_tot) × U_bron', hint: 'Deelspanning', chapter: 'H 1.9' }
+            ],
+            'h26': [
+                { name: 'Serie Weerstand', formula: 'R_tot = R₁ + R₂ + R₃', hint: 'Optellen in serie', chapter: 'H 2.6' },
+                { name: 'Parallel Weerstand', formula: '1/R_tot = 1/R₁ + 1/R₂', hint: 'Omgekeerde in parallel', chapter: 'H 2.6' },
+                { name: 'Parallel (2R)', formula: 'R_tot = (R₁ × R₂) / (R₁ + R₂)', hint: 'Product / som', chapter: 'H 2.6' },
+                { name: 'Serie Capaciteit', formula: '1/C_tot = 1/C₁ + 1/C₂', hint: 'Zoals parallel R', chapter: 'H 2.6' },
+                { name: 'Parallel Capaciteit', formula: 'C_tot = C₁ + C₂ + C₃', hint: 'Zoals serie R', chapter: 'H 2.6' },
+                { name: 'Serie Inductie', formula: 'L_tot = L₁ + L₂ + L₃', hint: 'Inducties optellen', chapter: 'H 2.6' }
+            ],
+            'h311': [
+                { name: 'Thévenin Spanning', formula: 'U_th = U_open', hint: 'Open klemspanning', chapter: 'H 3.11' },
+                { name: 'Thévenin Weerstand', formula: 'R_th = U_open / I_kort', hint: 'Verhouding open/kort', chapter: 'H 3.11' },
+                { name: 'Norton Stroom', formula: 'I_N = I_kortsluit', hint: 'Kortsluitstroom', chapter: 'H 3.11' },
+                { name: 'Norton Weerstand', formula: 'R_N = R_th', hint: 'Gelijk aan Thévenin', chapter: 'H 3.11' },
+                { name: 'Omzetting Thévenin-Norton', formula: 'U_th = I_N × R_N', hint: 'U = I × R', chapter: 'H 3.11' },
+                { name: 'Superpositie', formula: 'I_tot = I₁ + I₂ + I₃', hint: 'Som van deelstromen', chapter: 'H 3.11' }
+            ],
+            'h44': [
+                { name: 'Energie', formula: 'W = P × t', hint: 'Vermogen × tijd', chapter: 'H 4.4' },
+                { name: 'Energie (Wh)', formula: 'W = U × I × t', hint: 'In wattuur', chapter: 'H 4.4' },
+                { name: 'Rendement', formula: 'η = P_uit / P_in', hint: 'Uitgangsvermogen / ingangsvermogen', chapter: 'H 4.4' },
+                { name: 'Rendement (%)', formula: 'η% = (P_uit / P_in) × 100%', hint: 'In procenten', chapter: 'H 4.4' },
+                { name: 'Verliesvermogen', formula: 'P_verlies = P_in - P_uit', hint: 'Verschil in-uit', chapter: 'H 4.4' },
+                { name: 'Spanningsval', formula: 'ΔU = I × R_kabel', hint: 'Verloren in kabel', chapter: 'H 4.4' }
+            ],
+            'h55': [
+                { name: 'Topwaarde', formula: 'U_top = √2 × U_eff', hint: '1.414 × effectief', chapter: 'H 5.5' },
+                { name: 'Effectieve waarde', formula: 'U_eff = U_top / √2', hint: 'Top / √2', chapter: 'H 5.5' },
+                { name: 'Frequentie', formula: 'f = 1 / T', hint: 'Omgekeerde periode', chapter: 'H 5.5' },
+                { name: 'Hoekfrequentie', formula: 'ω = 2πf', hint: '2π × frequentie', chapter: 'H 5.5' },
+                { name: 'Fase verschil', formula: 'φ = ωt', hint: 'Hoek = hoeksnelheid × tijd', chapter: 'H 5.5' },
+                { name: 'RMS Stroom', formula: 'I_eff = I_top / √2', hint: 'Zoals spanning', chapter: 'H 5.5' }
+            ],
+            'h68': [
+                { name: 'Capacitieve Reactantie', formula: 'X_C = 1 / (ωC)', hint: 'Omgekeerd evenredig', chapter: 'H 6.8' },
+                { name: 'Inductieve Reactantie', formula: 'X_L = ωL', hint: 'Recht evenredig', chapter: 'H 6.8' },
+                { name: 'Capaciteit Energie', formula: 'W_C = ½ C U²', hint: 'Energie in C', chapter: 'H 6.8' },
+                { name: 'Inductie Energie', formula: 'W_L = ½ L I²', hint: 'Energie in L', chapter: 'H 6.8' },
+                { name: 'Tijdconstante RC', formula: 'τ = R × C', hint: 'Laad/ontlaadtijd', chapter: 'H 6.8' }
+            ],
+            'h78': [
+                { name: 'Impedantie (Z)', formula: 'Z = √(R² + X²)', hint: 'Pythagoras', chapter: 'H 7.8' },
+                { name: 'Impedantie Serie', formula: 'Z = R + jX', hint: 'Complexe vorm', chapter: 'H 7.8' },
+                { name: 'Fasehoek', formula: 'φ = arctan(X/R)', hint: 'Arctangens', chapter: 'H 9.7' },
+                { name: 'Totale Reactantie', formula: 'X_tot = X_L - X_C', hint: 'Verschil L-C', chapter: 'H 7.8' },
+                { name: 'Resonantie', formula: 'f₀ = 1 / (2π√(LC))', hint: 'X_L = X_C', chapter: 'H 7.8' },
+                { name: 'Kwaliteitsfactor', formula: 'Q = X_L / R', hint: 'Of X_C / R', chapter: 'H 7.8' },
+                { name: 'Bandbreedte', formula: 'B = f₀ / Q', hint: 'Resonantie / Q', chapter: 'H 7.8' },
+                { name: 'Complex Vermogen', formula: 'S = U × I*', hint: 'Geconjugeerde', chapter: 'H 9.7' },
+                { name: 'Magnitude Z', formula: '|Z| = U / I', hint: 'Ohm voor AC', chapter: 'H 9.7' },
+                { name: 'Faseverschil', formula: 'cos φ = R / Z', hint: 'Arbeidsfactor', chapter: 'H 9.7' }
+            ],
+            'h117': [
+                { name: 'Schijnbaar Vermogen', formula: 'S = U × I', hint: 'In VA', chapter: 'H 11.7' },
+                { name: 'Werkelijk Vermogen', formula: 'P = U × I × cos φ', hint: 'In W', chapter: 'H 11.7' },
+                { name: 'Blindvermogen', formula: 'Q = U × I × sin φ', hint: 'In VAR', chapter: 'H 11.7' },
+                { name: 'Vermogensdriehoek', formula: 'S² = P² + Q²', hint: 'Pythagoras', chapter: 'H 11.7' },
+                { name: 'Arbeidsfactor', formula: 'cos φ = P / S', hint: 'Werkelijk / schijnbaar', chapter: 'H 11.7' },
+                { name: 'Compensatie', formula: 'Q_C = P × (tan φ₁ - tan φ₂)', hint: 'Benodigde Q', chapter: 'H 11.7' }
+            ]
+        };
+
+        function generateFlashcards() {
+            const chapter = document.getElementById('chapterSelect').value;
+            let selectedFormulas = [];
+
+            if (chapter === 'all') {
+                for (let ch in formulas) {
+                    selectedFormulas = selectedFormulas.concat(formulas[ch]);
+                }
+            } else {
+                selectedFormulas = formulas[chapter] || [];
+            }
+
+            if (selectedFormulas.length === 0) {
+                alert('Geen formules gevonden voor dit hoofdstuk!');
+                return;
+            }
+
+            const container = document.getElementById('flashcardsContainer');
+            container.innerHTML = '';
+
+            // Generate front side (question side)
+            const frontPage = document.createElement('div');
+            frontPage.className = 'flashcard-page';
+            frontPage.innerHTML = '<div class="page-title">📄 VOORKANT (vraag) - Print deze pagina eerst</div>';
+
+            const frontGrid = document.createElement('div');
+            frontGrid.className = 'cards-grid';
+
+            selectedFormulas.forEach((f, idx) => {
+                const card = document.createElement('div');
+                card.className = 'flashcard front';
+                card.innerHTML = `
+                    <div class="card-chapter">${f.chapter}</div>
+                    <div class="card-type">VRAAG</div>
+                    <div class="card-content">${f.name}</div>
+                    <div class="card-hint">${f.hint}</div>
+                `;
+                frontGrid.appendChild(card);
+
+                // 4 cards per page
+                if ((idx + 1) % 4 === 0 && idx < selectedFormulas.length - 1) {
+                    frontPage.appendChild(frontGrid.cloneNode(true));
+                    container.appendChild(frontPage.cloneNode(true));
+                    frontGrid.innerHTML = '';
+                }
+            });
+
+            // Add remaining cards
+            if (frontGrid.children.length > 0) {
+                frontPage.appendChild(frontGrid);
+                container.appendChild(frontPage);
+            }
+
+            // Generate back side (answer side) - REVERSED order for correct alignment
+            const backPage = document.createElement('div');
+            backPage.className = 'flashcard-page';
+            backPage.innerHTML = '<div class="page-title">📄 ACHTERKANT (antwoord) - Draai pagina en print op achterkant</div>';
+
+            const backGrid = document.createElement('div');
+            backGrid.className = 'cards-grid';
+
+            // Reverse for correct print alignment
+            const reversedFormulas = [...selectedFormulas].reverse();
+
+            reversedFormulas.forEach((f, idx) => {
+                const card = document.createElement('div');
+                card.className = 'flashcard back';
+                card.innerHTML = `
+                    <div class="card-chapter">${f.chapter}</div>
+                    <div class="card-type">ANTWOORD</div>
+                    <div class="card-content formula">${f.formula}</div>
+                `;
+                backGrid.appendChild(card);
+
+                // 4 cards per page
+                if ((idx + 1) % 4 === 0 && idx < reversedFormulas.length - 1) {
+                    backPage.appendChild(backGrid.cloneNode(true));
+                    container.appendChild(backPage.cloneNode(true));
+                    backGrid.innerHTML = '';
+                }
+            });
+
+            // Add remaining cards
+            if (backGrid.children.length > 0) {
+                backPage.appendChild(backGrid);
+                container.appendChild(backPage);
+            }
+
+            // Show preview
+            document.querySelector('.config-panel').style.display = 'none';
+            document.getElementById('previewPanel').classList.add('active');
+        }
+
+        function backToConfig() {
+            document.querySelector('.config-panel').style.display = 'block';
+            document.getElementById('previewPanel').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

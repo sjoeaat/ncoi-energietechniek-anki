@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oefenblad - H 9.7 - Complexe Impedantie</title>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                padding: 0;
+                margin: 0;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .question {
+                page-break-inside: avoid;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .worksheet {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .student-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .info-field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-field label {
+            font-weight: bold;
+            min-width: 60px;
+        }
+
+        .info-field .line {
+            flex: 1;
+            border-bottom: 1px solid #333;
+            height: 25px;
+        }
+
+        .question {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .question-number {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .question-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .given-find {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 15px;
+        }
+
+        .given-find strong {
+            color: #667eea;
+        }
+
+        .answer-space {
+            border: 2px dashed #ddd;
+            min-height: 150px;
+            padding: 15px;
+            background: #fafafa;
+        }
+
+        .answer-label {
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .grid-lines {
+            background-image: linear-gradient(#ddd 1px, transparent 1px);
+            background-size: 100% 25px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+        }
+
+        .print-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .print-btn:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Print Oefenblad</button>
+
+    <div class="worksheet">
+        <div class="header">
+            <h1>📝 Oefenblad</h1>
+            <div class="subtitle">H 9.7 - Complexe Impedantie</div>
+        </div>
+
+        <div class="student-info">
+            <div class="info-field">
+                <label>Naam:</label>
+                <div class="line"></div>
+            </div>
+            <div class="info-field">
+                <label>Datum:</label>
+                <div class="line"></div>
+            </div>
+        </div>
+
+
+        <div class="question">
+            <div class="question-number">Vraag 1</div>
+
+            <div class="question-text">Complexe impedantie Z = 30 + j40 Ω. Bereken de magnitude en fasehoek.</div>
+
+            <div class="given-find">
+                <div><strong>Gegeven:</strong> Z = 30 + j40 Ω</div>
+                <div style="margin-top: 8px;"><strong>Gevraagd:</strong> |Z| = ?, φ = ?</div>
+            </div>
+
+            <div class="answer-label">Uitwerking:</div>
+            <div class="answer-space grid-lines" style="min-height: 150px;"></div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Vraag 2</div>
+
+            <div class="question-text">Vermenigvuldig 5∠30° × 4∠60° in polaire vorm.</div>
+
+            <div class="given-find">
+                <div><strong>Gegeven:</strong> Z₁ = 5∠30°, Z₂ = 4∠60°</div>
+                <div style="margin-top: 8px;"><strong>Gevraagd:</strong> Z₁ × Z₂ = ?</div>
+            </div>
+
+            <div class="answer-label">Uitwerking:</div>
+            <div class="answer-space grid-lines" style="min-height: 125px;"></div>
+        </div>
+
+        <div class="footer">
+            NCOI Energietechniek Oefenblad | H 9.7 - Complexe Impedantie | © 2025<br>
+            <small>Voor antwoorden, zie de opgaven in de study guide</small>
+        </div>
+    </div>
+</body>
+</html>

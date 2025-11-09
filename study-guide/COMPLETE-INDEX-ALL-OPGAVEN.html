@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Index - Alle Energietechniek Opgaven</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        .stats {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #4caf50;
+        }
+        .stats h2 { color: #2e7d32; margin-bottom: 10px; }
+        .chapter {
+            margin: 30px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+        }
+        .chapter-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .opgave-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .opgave-card {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            transition: all 0.3s;
+        }
+        .opgave-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102,126,234,0.3);
+        }
+        .opgave-card a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        .opgave-number {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        .opgave-title {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .search-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 2px solid #667eea;
+        }
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102,126,234,0.2);
+        }
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .filter-btn {
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+        .filter-btn:hover {
+            background: #e0e0e0;
+        }
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .search-stats {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Complete Index</h1>
+        <div class="subtitle">Alle Energietechniek Opgaven - NCOI Studiegids</div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Zoek opgaven... (bijv: 'Ohm', 'Kirchhoff', 'vermogen', 'H 2.6')">
+            <div class="filter-buttons">
+                <button class="filter-btn" data-filter="all">Alle Hoofdstukken</button>
+                <button class="filter-btn" data-filter="h19">H 1.9</button>
+                <button class="filter-btn" data-filter="h26">H 2.6</button>
+                <button class="filter-btn" data-filter="h311">H 3.11</button>
+                <button class="filter-btn" data-filter="h44">H 4.4</button>
+                <button class="filter-btn" data-filter="h55">H 5.5</button>
+                <button class="filter-btn" data-filter="h68">H 6.8</button>
+                <button class="filter-btn" data-filter="h78">H 7.8</button>
+                <button class="filter-btn" data-filter="h97">H 9.7</button>
+            </div>
+            <div class="search-stats" id="searchStats"></div>
+        </div>
+
+        <div class="stats">
+            <h2>📊 Statistieken</h2>
+            <p><strong>Totaal opgaven:</strong> 84</p>
+            <p><strong>Hoofdstukken:</strong> 10</p>
+            <p><strong>Format:</strong> FULL-enhanced met 5-staps methodologie</p>
+            <p><strong>Features:</strong> MathML formules, Nederlandse terminologie, fysische interpretaties</p>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 1.9 (3 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h19-opgave-1-2-5-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 1-2-5</div>
+                        <div class="opgave-title">H 1.9 - Opgave 1, 2, 5: Ohm's Wet Basis (FULL-enhanced)...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h19-opgave-17-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 17</div>
+                        <div class="opgave-title">H 1.9 Opgave 17 - Kirchhoff Knooppuntwet bij Spanningsbron...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h19-opgave-6-7-8-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 6-7-8</div>
+                        <div class="opgave-title">H 1.9 - Opgave 6, 7, 8: Kirchhoff Meerkeuze (FULL-enhanced)...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 2.6 (7 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h26-opgave-10-11-12-13-multipleChoice-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 10-11-12-13-multipleChoice</div>
+                        <div class="opgave-title">H 2.6 - Opgave 10-13 - Kirchhoff Multiple Choice Network 1 F...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h26-opgave-14-15-16-17-multipleChoice-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 14-15-16-17-multipleChoice</div>
+                        <div class="opgave-title">H 2.6 - Opgave 14-17 - Kirchhoff Multiple Choice Network 2 F...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h26-opgave-1a-1b-1c-1d-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 1a-1b-1c-1d</div>
+                        <div class="opgave-title">H 2.6 - Opgave 1a, 1b, 1c, 1d - Vervangingsweerstand FULL En...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h26-opgave-1e-1f-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 1e-1f</div>
+                        <div class="opgave-title">H 2.6 - Opgave 1e & 1f: Vervangingsweerstanden (FULL-enhance...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h26-opgave-2-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 2</div>
+                        <div class="opgave-title">H 2.6 - Opgave 2: Lampen met Kabelverlies (FULL-enhanced)...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h26-opgave-3-4-5-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 3-4-5</div>
+                        <div class="opgave-title">H 2.6 - Opgave 3, 4, 5 - Bewijzen & Shunt-weerstand FULL Enh...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h26-opgave-6-7-8-9-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 6-7-8-9</div>
+                        <div class="opgave-title">H 2.6 - Opgave 6, 7, 8, 9 - Stroomberekeningen & Netwerkontw...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 4.4 (3 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h44-opgave-16-17-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 16-17</div>
+                        <div class="opgave-title">H 4.4 Opgave 16, 17 - Norton Equivalenten & Vermogensaanpass...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h44-opgave-2-6-8-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 2-6-8</div>
+                        <div class="opgave-title">H 4.4 - Opgave 2, 6, 8: Energie & Vermogen (FULL-enhanced)...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h44-opgave-3-7-9-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 3-7-9</div>
+                        <div class="opgave-title">H 4.4 Opgave 3, 7, 9 - Energie & Vermogen (Praktische Toepas...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 5.5 (3 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h55-opgave-1-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 1</div>
+                        <div class="opgave-title">h55-opgave-1-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h55-opgave-12-13-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 12-13</div>
+                        <div class="opgave-title">h55-opgave-12-13-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h55-opgave-7-9-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 7-9</div>
+                        <div class="opgave-title">h55-opgave-7-9-FULL-enhanced...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 6.8 (2 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h68-opgave-1-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 1</div>
+                        <div class="opgave-title">h68-opgave-1-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h68-opgave-2-3-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 2-3</div>
+                        <div class="opgave-title">h68-opgave-2-3-FULL-enhanced...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 7.8 (7 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h78-opgave-12-13-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 12-13</div>
+                        <div class="opgave-title">h78-opgave-12-13-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h78-opgave-2-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 2</div>
+                        <div class="opgave-title">h78-opgave-2-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h78-opgave-3-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 3</div>
+                        <div class="opgave-title">h78-opgave-3-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h78-opgave-5-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 5</div>
+                        <div class="opgave-title">h78-opgave-5-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h78-opgave-7-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 7</div>
+                        <div class="opgave-title">h78-opgave-7-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h78-opgave-8-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 8</div>
+                        <div class="opgave-title">h78-opgave-8-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h78-opgave-9-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 9</div>
+                        <div class="opgave-title">h78-opgave-9-FULL-enhanced...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 9.7 (4 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h97-opgave-10-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 10</div>
+                        <div class="opgave-title">h97-opgave-10-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h97-opgave-11-12-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 11-12</div>
+                        <div class="opgave-title">h97-opgave-11-12-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h97-opgave-13-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 13</div>
+                        <div class="opgave-title">H 9.7 Opgave 13 - Oscilloscoop Probe Belasting (Complexe Imp...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h97-opgave-9-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 9</div>
+                        <div class="opgave-title">h97-opgave-9-FULL-enhanced...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 1.06 (1 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h106-opgave-5-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 5</div>
+                        <div class="opgave-title">h106-opgave-5-FULL-enhanced...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 1.17 (1 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h117-opgave-3-5-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 3-5</div>
+                        <div class="opgave-title">h117-opgave-3-5-FULL-enhanced...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">H 3.11 (13 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-1a-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 1a</div>
+                        <div class="opgave-title">h311-opgave-1a-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-1b-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 1b</div>
+                        <div class="opgave-title">h311-opgave-1b-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-1c-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 1c</div>
+                        <div class="opgave-title">h311-opgave-1c-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-1d-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 1d</div>
+                        <div class="opgave-title">h311-opgave-1d-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-2a-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 2a</div>
+                        <div class="opgave-title">h311-opgave-2a-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-2b-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 2b</div>
+                        <div class="opgave-title">h311-opgave-2b-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-2c-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 2c</div>
+                        <div class="opgave-title">h311-opgave-2c-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-2d-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 2d</div>
+                        <div class="opgave-title">h311-opgave-2d-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-2e-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 2e</div>
+                        <div class="opgave-title">h311-opgave-2e-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-3-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 3</div>
+                        <div class="opgave-title">h311-opgave-3-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-4-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 4</div>
+                        <div class="opgave-title">h311-opgave-4-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-5-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 5</div>
+                        <div class="opgave-title">h311-opgave-5-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/h311-opgave-6-7-8-9-15-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 6-7-8-9-15</div>
+                        <div class="opgave-title">H 3.11 - Opgave 6-9, 15 - Geavanceerde Netwerktechnieken FUL...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">Algemeen (40 opgaven)</div>
+            <div class="opgave-list">
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-1b-enhanced.html">
+                        <div class="opgave-number">Opgave 1</div>
+                        <div class="opgave-title">opgave-1b-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-1e-enhanced.html">
+                        <div class="opgave-number">Opgave 1</div>
+                        <div class="opgave-title">opgave-1e-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-1-enhanced.html">
+                        <div class="opgave-number">Opgave 1</div>
+                        <div class="opgave-title">opgave-1-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-1c-enhanced.html">
+                        <div class="opgave-number">Opgave 1</div>
+                        <div class="opgave-title">opgave-1c-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-1d-enhanced.html">
+                        <div class="opgave-number">Opgave 1</div>
+                        <div class="opgave-title">opgave-1d-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-1f-enhanced.html">
+                        <div class="opgave-number">Opgave 1</div>
+                        <div class="opgave-title">opgave-1f-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-1a-enhanced.html">
+                        <div class="opgave-number">Opgave 1</div>
+                        <div class="opgave-title">opgave-1a-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-001-enhanced.html">
+                        <div class="opgave-number">Opgave 001</div>
+                        <div class="opgave-title">opgave-001-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-2-enhanced.html">
+                        <div class="opgave-number">Opgave 2</div>
+                        <div class="opgave-title">opgave-2-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-002-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 002</div>
+                        <div class="opgave-title">opgave-002-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-003-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 003</div>
+                        <div class="opgave-title">opgave-003-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-3-enhanced.html">
+                        <div class="opgave-number">Opgave 3</div>
+                        <div class="opgave-title">opgave-3-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-4-enhanced.html">
+                        <div class="opgave-number">Opgave 4</div>
+                        <div class="opgave-title">opgave-4-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-004-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 004</div>
+                        <div class="opgave-title">opgave-004-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-5-enhanced.html">
+                        <div class="opgave-number">Opgave 5</div>
+                        <div class="opgave-title">opgave-5-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-005-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 005</div>
+                        <div class="opgave-title">opgave-005-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-006-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 006</div>
+                        <div class="opgave-title">opgave-006-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-6-enhanced.html">
+                        <div class="opgave-number">Opgave 6</div>
+                        <div class="opgave-title">opgave-6-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-7-enhanced.html">
+                        <div class="opgave-number">Opgave 7</div>
+                        <div class="opgave-title">opgave-7-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-007-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 007</div>
+                        <div class="opgave-title">opgave-007-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-008-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 008</div>
+                        <div class="opgave-title">opgave-008-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-8-enhanced.html">
+                        <div class="opgave-number">Opgave 8</div>
+                        <div class="opgave-title">opgave-8-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-9-enhanced.html">
+                        <div class="opgave-number">Opgave 9</div>
+                        <div class="opgave-title">opgave-9-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-009-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 009</div>
+                        <div class="opgave-title">opgave-009-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-010-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 010</div>
+                        <div class="opgave-title">opgave-010-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-10-enhanced.html">
+                        <div class="opgave-number">Opgave 10</div>
+                        <div class="opgave-title">opgave-10-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-011-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 011</div>
+                        <div class="opgave-title">opgave-011-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-11-enhanced.html">
+                        <div class="opgave-number">Opgave 11</div>
+                        <div class="opgave-title">opgave-11-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-12-enhanced.html">
+                        <div class="opgave-number">Opgave 12</div>
+                        <div class="opgave-title">opgave-12-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-012-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 012</div>
+                        <div class="opgave-title">opgave-012-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-013-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 013</div>
+                        <div class="opgave-title">opgave-013-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-13-enhanced.html">
+                        <div class="opgave-number">Opgave 13</div>
+                        <div class="opgave-title">opgave-13-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-014-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 014</div>
+                        <div class="opgave-title">opgave-014-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-14-enhanced.html">
+                        <div class="opgave-number">Opgave 14</div>
+                        <div class="opgave-title">opgave-14-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-015-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 015</div>
+                        <div class="opgave-title">opgave-015-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-15-enhanced.html">
+                        <div class="opgave-number">Opgave 15</div>
+                        <div class="opgave-title">opgave-15-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-016-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 016</div>
+                        <div class="opgave-title">opgave-016-FULL-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-16-enhanced.html">
+                        <div class="opgave-number">Opgave 16</div>
+                        <div class="opgave-title">opgave-16-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-17-enhanced.html">
+                        <div class="opgave-number">Opgave 17</div>
+                        <div class="opgave-title">opgave-17-enhanced...</div>
+                    </a>
+                </div>
+                <div class="opgave-card">
+                    <a href="../enhanced-content/opgave-017-FULL-enhanced.html">
+                        <div class="opgave-number">Opgave 017</div>
+                        <div class="opgave-title">opgave-017-FULL-enhanced...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Search and filter functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchStats = document.getElementById('searchStats');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const chapters = document.querySelectorAll('.chapter');
+        const opgaveCards = document.querySelectorAll('.opgave-card');
+
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        // Search input handler
+        searchInput.addEventListener('input', function(e) {
+            currentSearch = e.target.value.toLowerCase();
+            applyFilters();
+        });
+
+        // Filter button handlers
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(b => b.classList.remove('active'));
+
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                // Update current filter
+                currentFilter = this.getAttribute('data-filter');
+                applyFilters();
+            });
+        });
+
+        function applyFilters() {
+            let visibleCount = 0;
+            let totalCount = 0;
+
+            chapters.forEach(chapter => {
+                const chapterTitle = chapter.querySelector('.chapter-title').textContent.toLowerCase();
+                const cards = chapter.querySelectorAll('.opgave-card');
+                let visibleCardsInChapter = 0;
+
+                cards.forEach(card => {
+                    totalCount++;
+                    const cardText = card.textContent.toLowerCase();
+                    const cardLink = card.querySelector('a').getAttribute('href');
+
+                    // Extract chapter prefix from filename (h19, h26, etc.)
+                    const chapterMatch = cardLink.match(/\/(h\d+)-/);
+                    const cardChapter = chapterMatch ? chapterMatch[1] : 'algemeen';
+
+                    // Check if card matches current filter and search
+                    const matchesFilter = (currentFilter === 'all' || cardChapter === currentFilter);
+                    const matchesSearch = (currentSearch === '' || cardText.includes(currentSearch));
+
+                    if (matchesFilter && matchesSearch) {
+                        card.classList.remove('hidden');
+                        visibleCardsInChapter++;
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                // Hide chapter if no visible cards
+                if (visibleCardsInChapter === 0) {
+                    chapter.classList.add('hidden');
+                } else {
+                    chapter.classList.remove('hidden');
+                }
+            });
+
+            // Update search stats
+            if (currentSearch !== '' || currentFilter !== 'all') {
+                searchStats.textContent = `📊 ${visibleCount} van ${totalCount} opgaven gevonden`;
+            } else {
+                searchStats.textContent = '';
+            }
+        }
+
+        // Initialize - show all
+        applyFilters();
+    </script>
+</body>
+</html>

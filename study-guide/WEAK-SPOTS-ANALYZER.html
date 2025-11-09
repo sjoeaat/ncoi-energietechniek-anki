@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Weak Spots Analyzer - NCOI Energietechniek</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .intro-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .assessment-grid {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .chapter-assessment {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .chapter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .chapter-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .chapter-difficulty {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .rating-buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        .rating-btn {
+            flex: 1;
+            padding: 8px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .rating-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .rating-btn.weak {
+            background: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+
+        .rating-btn.okay {
+            background: #ff9800;
+            color: white;
+            border-color: #ff9800;
+        }
+
+        .rating-btn.strong {
+            background: #4caf50;
+            color: white;
+            border-color: #4caf50;
+        }
+
+        .results-section {
+            display: none;
+            margin-top: 40px;
+        }
+
+        .results-section.active {
+            display: block;
+        }
+
+        .priority-box {
+            background: linear-gradient(135deg, #f44336 0%, #e91e63 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .priority-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .priority-list {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .priority-item {
+            padding: 10px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .recommendations {
+            background: #e8f5e9;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #4caf50;
+        }
+
+        .recommendations h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .recommendation-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .heatmap {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .heatmap-cell {
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .strength-1 { background: #f44336; }
+        .strength-2 { background: #ff9800; }
+        .strength-3 { background: #4caf50; }
+
+        .study-plan-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .study-plan-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .week-plan {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .day-row {
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Weak Spots Analyzer</h1>
+        <div class="subtitle">Identificeer je zwakke punten en krijg gepersonaliseerde studieadviezen</div>
+
+        <div class="intro-box">
+            <strong>📊 Hoe werkt het?</strong><br>
+            Beoordeel jezelf per onderwerp op een schaal van 1-3:<br>
+            • <strong style="color: #f44336;">❌ Zwak</strong> - Begrijp het niet goed, moeite mee<br>
+            • <strong style="color: #ff9800;">⚠️ Gemiddeld</strong> - Basis begrip, maar onzeker<br>
+            • <strong style="color: #4caf50;">✅ Sterk</strong> - Goed begrip, vertrouwen<br><br>
+            Wees eerlijk! Dit helpt je om gericht te studeren waar het het meest nodig is.
+        </div>
+
+        <div class="assessment-grid" id="assessmentGrid"></div>
+
+        <button class="btn" onclick="analyzeResults()">🔍 Analyseer Resultaten</button>
+
+        <div class="results-section" id="resultsSection">
+            <div class="priority-box">
+                <div class="priority-title">🚨 Hoogste Prioriteit - Focus Hier!</div>
+                <div class="priority-list" id="priorityList"></div>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #667eea; margin-bottom: 15px;">📈 Overzicht per Hoofdstuk:</h3>
+                <div class="heatmap" id="heatmap"></div>
+            </div>
+
+            <div class="recommendations">
+                <h3>💡 Gepersonaliseerde Aanbevelingen</h3>
+                <div id="recommendationsList"></div>
+            </div>
+
+            <div class="study-plan-box">
+                <div class="study-plan-title">📅 Aanbevolen Week Planning</div>
+                <div id="weekPlan"></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn" onclick="exportAnalysis()">💾 Exporteer Analyse</button>
+                <button class="btn" onclick="resetAssessment()">🔄 Nieuwe Beoordeling</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const skillsData = {
+            'H 1.9 - Wet van Ohm & Kirchhoff': {
+                difficulty: 1,
+                skills: [
+                    'Wet van Ohm toepassen (U=I×R)',
+                    'Kirchhoff Knooppuntwet (KCL)',
+                    'Kirchhoff Spanningswet (KVL)',
+                    'Vermogen berekenen (P=U×I)'
+                ]
+            },
+            'H 2.6 - Serie & Parallel': {
+                difficulty: 2,
+                skills: [
+                    'Serie weerstanden berekenen',
+                    'Parallel weerstanden berekenen',
+                    'Spanningsdeler toepassen',
+                    'Stroomdeler toepassen',
+                    'Gemengde schakelingen'
+                ]
+            },
+            'H 3.11 - Netwerk Analyse': {
+                difficulty: 3,
+                skills: [
+                    'Thévenin equivalent bepalen',
+                    'Norton equivalent bepalen',
+                    'Superpositie techniek',
+                    'Maasstromen methode',
+                    'Knooppuntspanningen'
+                ]
+            },
+            'H 4.4 - Energie & Vermogen': {
+                difficulty: 2,
+                skills: [
+                    'Energie berekenen (E=P×t)',
+                    'Rendement bepalen',
+                    'Vermogensaanpassing',
+                    'Spanningsverlies in kabels'
+                ]
+            },
+            'H 5.5 - Wisselspanning': {
+                difficulty: 2,
+                skills: [
+                    'Effectieve waarde berekenen',
+                    'Top/gemiddelde waarde',
+                    'Frequentie en periode',
+                    'Sinusvorm analyse'
+                ]
+            },
+            'H 6.8 - Capaciteit & Inductie': {
+                difficulty: 2,
+                skills: [
+                    'Capaciteit (Q=C×U)',
+                    'Inductie (U=L×dI/dt)',
+                    'Energie in C en L'
+                ]
+            },
+            'H 7.8 - RLC Schakelingen': {
+                difficulty: 3,
+                skills: [
+                    'Reactantie berekenen (X_C, X_L)',
+                    'Impedantie (Z) bepalen',
+                    'Serie RLC analyse',
+                    'Parallel RLC analyse',
+                    'Resonantie',
+                    'Fasehoek berekenen'
+                ]
+            },
+            'H 9.7 - Complexe Impedantie': {
+                difficulty: 3,
+                skills: [
+                    'Complexe getallen rekenen',
+                    'Impedantie in complex vlak',
+                    'Fasoren',
+                    'Polaire/rechthoekige vorm'
+                ]
+            },
+            'H 10.6 - Complex Rekenen': {
+                difficulty: 3,
+                skills: [
+                    'Complexe algebra',
+                    'Magnitude en fase',
+                    'Bewerkingen in complex vlak'
+                ]
+            },
+            'H 11.7 - Vermogen (AC)': {
+                difficulty: 3,
+                skills: [
+                    'Schijnbaar vermogen (S)',
+                    'Werkelijk vermogen (P)',
+                    'Blindvermogen (Q)',
+                    'Arbeidsfactor (cos φ)',
+                    'Compensatie'
+                ]
+            }
+        };
+
+        let ratings = {};
+
+        // Initialize assessment grid
+        function initializeAssessment() {
+            const grid = document.getElementById('assessmentGrid');
+            let html = '';
+
+            Object.keys(skillsData).forEach(chapter => {
+                const data = skillsData[chapter];
+                const diffStars = '⭐'.repeat(data.difficulty);
+
+                html += `
+                    <div class="chapter-assessment">
+                        <div class="chapter-header">
+                            <div class="chapter-title">${chapter}</div>
+                            <div class="chapter-difficulty">${diffStars}</div>
+                        </div>
+                        <div class="skill-grid">
+                `;
+
+                data.skills.forEach((skill, index) => {
+                    const skillId = `${chapter}|${index}`;
+                    html += `
+                        <div class="skill-item">
+                            <div class="skill-name">${skill}</div>
+                            <div class="rating-buttons">
+                                <button class="rating-btn" onclick="rate('${skillId}', 1)" data-skill="${skillId}" data-rating="1">
+                                    ❌ Zwak
+                                </button>
+                                <button class="rating-btn" onclick="rate('${skillId}', 2)" data-skill="${skillId}" data-rating="2">
+                                    ⚠️ OK
+                                </button>
+                                <button class="rating-btn" onclick="rate('${skillId}', 3)" data-skill="${skillId}" data-rating="3">
+                                    ✅ Sterk
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            grid.innerHTML = html;
+        }
+
+        function rate(skillId, rating) {
+            ratings[skillId] = rating;
+
+            // Update button states
+            document.querySelectorAll(`[data-skill="${skillId}"]`).forEach(btn => {
+                btn.classList.remove('weak', 'okay', 'strong');
+                const btnRating = parseInt(btn.getAttribute('data-rating'));
+                if (btnRating === rating) {
+                    if (rating === 1) btn.classList.add('weak');
+                    else if (rating === 2) btn.classList.add('okay');
+                    else btn.classList.add('strong');
+                }
+            });
+
+            // Save to localStorage
+            localStorage.setItem('ncoi_weak_spots', JSON.stringify(ratings));
+        }
+
+        function analyzeResults() {
+            if (Object.keys(ratings).length === 0) {
+                alert('⚠️ Beoordeel eerst minimaal enkele skills voordat je analyseert!');
+                return;
+            }
+
+            // Analyze weak spots
+            const weakSkills = [];
+            const okaySkills = [];
+            const strongSkills = [];
+
+            Object.keys(ratings).forEach(skillId => {
+                const rating = ratings[skillId];
+                const [chapter, index] = skillId.split('|');
+                const skillName = skillsData[chapter].skills[parseInt(index)];
+
+                const item = { chapter, skillName, rating };
+
+                if (rating === 1) weakSkills.push(item);
+                else if (rating === 2) okaySkills.push(item);
+                else strongSkills.push(item);
+            });
+
+            // Display priority list
+            displayPriorityList(weakSkills, okaySkills);
+
+            // Display heatmap
+            displayHeatmap();
+
+            // Display recommendations
+            displayRecommendations(weakSkills, okaySkills, strongSkills);
+
+            // Display week plan
+            displayWeekPlan(weakSkills, okaySkills);
+
+            // Show results section
+            document.getElementById('resultsSection').classList.add('active');
+
+            // Scroll to results
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function displayPriorityList(weakSkills, okaySkills) {
+            const list = document.getElementById('priorityList');
+
+            if (weakSkills.length === 0) {
+                list.innerHTML = '<div class="priority-item">🎉 Geen zwakke punten! Je bent goed voorbereid!</div>';
+                return;
+            }
+
+            let html = '<div style="margin-bottom: 10px; font-size: 1.1em;">Focus op deze onderwerpen deze week:</div>';
+
+            weakSkills.slice(0, 5).forEach((item, index) => {
+                html += `
+                    <div class="priority-item">
+                        ${index + 1}. ${item.chapter}: <strong>${item.skillName}</strong>
+                    </div>
+                `;
+            });
+
+            if (weakSkills.length > 5) {
+                html += `<div style="margin-top: 10px; opacity: 0.8;">+ ${weakSkills.length - 5} meer zwakke punten</div>`;
+            }
+
+            list.innerHTML = html;
+        }
+
+        function displayHeatmap() {
+            const heatmap = document.getElementById('heatmap');
+            let html = '';
+
+            Object.keys(skillsData).forEach(chapter => {
+                const chapterRatings = [];
+
+                skillsData[chapter].skills.forEach((skill, index) => {
+                    const skillId = `${chapter}|${index}`;
+                    if (ratings[skillId]) {
+                        chapterRatings.push(ratings[skillId]);
+                    }
+                });
+
+                if (chapterRatings.length === 0) {
+                    html += `
+                        <div class="heatmap-cell" style="background: #ccc;">
+                            ${chapter.split(' - ')[0]}<br>
+                            <small>Niet beoordeeld</small>
+                        </div>
+                    `;
+                } else {
+                    const avg = chapterRatings.reduce((a, b) => a + b, 0) / chapterRatings.length;
+                    const strengthClass = avg < 1.7 ? 'strength-1' : avg < 2.3 ? 'strength-2' : 'strength-3';
+                    const label = avg < 1.7 ? 'Zwak' : avg < 2.3 ? 'OK' : 'Sterk';
+
+                    html += `
+                        <div class="heatmap-cell ${strengthClass}">
+                            ${chapter.split(' - ')[0]}<br>
+                            <small>${label} (${avg.toFixed(1)})</small>
+                        </div>
+                    `;
+                }
+            });
+
+            heatmap.innerHTML = html;
+        }
+
+        function displayRecommendations(weakSkills, okaySkills, strongSkills) {
+            const list = document.getElementById('recommendationsList');
+            let html = '';
+
+            // Personalized recommendations based on weak spots
+            if (weakSkills.length > 5) {
+                html += `
+                    <div class="recommendation-item">
+                        <strong>🎯 Focus Strategie:</strong> Je hebt ${weakSkills.length} zwakke punten. Verdeel deze over 2-3 weken.
+                        Begin met de basis (H 1.9, H 2.6) voordat je naar complexe hoofdstukken gaat.
+                    </div>
+                `;
+            }
+
+            // Check for foundational weaknesses
+            const hasBasicWeakness = weakSkills.some(s => s.chapter.includes('H 1.9') || s.chapter.includes('H 2.6'));
+            if (hasBasicWeakness) {
+                html += `
+                    <div class="recommendation-item">
+                        <strong>⚠️ Fundament Eerst:</strong> Je hebt zwakke punten in basis hoofdstukken (H 1.9/H 2.6).
+                        Begin HIER! Deze zijn cruciaal voor alles wat volgt.
+                    </div>
+                `;
+            }
+
+            // Check for advanced weaknesses
+            const hasAdvancedWeakness = weakSkills.some(s =>
+                s.chapter.includes('H 3.11') || s.chapter.includes('H 7.8') || s.chapter.includes('H 9.7')
+            );
+            if (hasAdvancedWeakness) {
+                html += `
+                    <div class="recommendation-item">
+                        <strong>📚 Complexe Onderwerpen:</strong> Thévenin/Norton (H 3.11) en RLC/Complexe rekening (H 7.8, H 9.7) zijn examen-kritisch.
+                        Besteed hier extra tijd aan. Maak ALLE opgaven in deze hoofdstukken.
+                    </div>
+                `;
+            }
+
+            // Study tools recommendation
+            html += `
+                <div class="recommendation-item">
+                    <strong>🛠️ Gebruik Tools:</strong>
+                    • <a href="COMPLETE-INDEX-ALL-OPGAVEN.html">Complete Index</a> - Zoek opgaven voor specifieke onderwerpen<br>
+                    • <a href="QUIZ-MODE.html">Quiz Mode</a> - Test jezelf zonder antwoorden<br>
+                    • <a href="FORMULEBLAD-AUTO.html">Formuleblad</a> - Oefen met formules<br>
+                    • <a href="EXAM-SIMULATOR.html">Exam Simulator</a> - Practice onder tijdsdruk
+                </div>
+            `;
+
+            // Time management
+            if (weakSkills.length + okaySkills.length > 20) {
+                html += `
+                    <div class="recommendation-item">
+                        <strong>⏰ Tijd Management:</strong> Met ${weakSkills.length + okaySkills.length} verbeterpunten heb je minimaal
+                        ${Math.ceil((weakSkills.length + okaySkills.length) / 3)} dagen nodig (3 per dag). Plan dit in!
+                    </div>
+                `;
+            }
+
+            list.innerHTML = html || '<div class="recommendation-item">🎉 Je bent goed voorbereid! Blijf herhalen met Anki.</div>';
+        }
+
+        function displayWeekPlan(weakSkills, okaySkills) {
+            const plan = document.getElementById('weekPlan');
+
+            if (weakSkills.length === 0) {
+                plan.innerHTML = `
+                    <div class="week-plan">
+                        <div style="font-size: 1.2em; text-align: center;">
+                            🎉 Geen zwakke punten! Gebruik deze week voor algemene herhaling en practice exams.
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            // Distribute weak skills over 7 days
+            const perDay = Math.ceil(weakSkills.length / 5); // Spread over 5 study days
+            const days = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'];
+
+            let html = '<div class="week-plan">';
+
+            for (let i = 0; i < 7; i++) {
+                const daySkills = weakSkills.slice(i * perDay, (i + 1) * perDay);
+
+                if (i === 5) { // Saturday
+                    html += `<div class="day-row"><strong>${days[i]}:</strong> Herhaal week + Anki review</div>`;
+                } else if (i === 6) { // Sunday
+                    html += `<div class="day-row"><strong>${days[i]}:</strong> Rust of lichte herhaling</div>`;
+                } else if (daySkills.length > 0) {
+                    html += `<div class="day-row"><strong>${days[i]}:</strong> ${daySkills.map(s => s.skillName).join(', ')}</div>`;
+                } else {
+                    html += `<div class="day-row"><strong>${days[i]}:</strong> Herhaal moeilijke opgaven</div>`;
+                }
+            }
+
+            html += '</div>';
+            plan.innerHTML = html;
+        }
+
+        function exportAnalysis() {
+            const analysis = {
+                date: new Date().toISOString(),
+                ratings: ratings,
+                totalSkills: Object.keys(ratings).length,
+                weakCount: Object.values(ratings).filter(r => r === 1).length,
+                okayCount: Object.values(ratings).filter(r => r === 2).length,
+                strongCount: Object.values(ratings).filter(r => r === 3).length
+            };
+
+            const blob = new Blob([JSON.stringify(analysis, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ncoi-weak-spots-analysis.json';
+            a.click();
+            URL.revokeObjectURL(url);
+
+            alert('✅ Analyse geëxporteerd!\n\nJe kunt dit bestand later importeren om je voortgang te vergelijken.');
+        }
+
+        function resetAssessment() {
+            if (confirm('⚠️ Weet je zeker dat je opnieuw wilt beginnen? Huidige beoordelingen worden gewist.')) {
+                ratings = {};
+                localStorage.removeItem('ncoi_weak_spots');
+                document.getElementById('resultsSection').classList.remove('active');
+                initializeAssessment();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Load saved ratings
+        function loadSavedRatings() {
+            const saved = localStorage.getItem('ncoi_weak_spots');
+            if (saved) {
+                ratings = JSON.parse(saved);
+
+                // Apply ratings to UI
+                Object.keys(ratings).forEach(skillId => {
+                    rate(skillId, ratings[skillId]);
+                });
+            }
+        }
+
+        // Initialize
+        initializeAssessment();
+        loadSavedRatings();
+    </script>
+</body>
+</html>
