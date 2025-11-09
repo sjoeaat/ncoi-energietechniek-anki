@@ -1,12 +1,12 @@
 # 🛠️ Study Tools Guide - NCOI Energietechniek
 
-> **Complete documentatie van alle 11 interactieve study tools**
+> **Complete documentatie van alle 14 interactieve study tools**
 
 ---
 
 ## 📖 Overzicht
 
-Deze studiegids bevat een **complete ecosysteem van 11 interactieve tools** om je optimaal voor te bereiden op het NCOI Energietechniek examen.
+Deze studiegids bevat een **complete ecosysteem van 14 interactieve tools** om je optimaal voor te bereiden op het NCOI Energietechniek examen.
 
 ### Quick Navigation
 
@@ -23,6 +23,9 @@ Deze studiegids bevat een **complete ecosysteem van 11 interactieve tools** om j
 | [PDF Export](#-pdf-export) | Print studiegids | 1x printen |
 | [Quick Reference](#-quick-reference-card) | Formule cheat sheet | 5 minuten (exam prep) |
 | [Practice Worksheets](#-practice-worksheets) | Offline oefenen | 30-45 minuten per blad |
+| [Formula Quiz](#-formula-quiz) | Formule memorisatie | 10-20 minuten |
+| [Study Timer](#%EF%B8%8F-study-timer-pomodoro) | Pomodoro sessies | 25-55 minuten/sessie |
+| [Flashcard Generator](#-flashcard-generator) | Fysieke flashcards | 1x printen |
 
 ---
 
@@ -36,7 +39,7 @@ De **centrale hub** voor toegang tot alle tools. Dit is je startpunt elke studie
 
 ### Features
 
-✅ **Quick Links** naar alle 11 tools
+✅ **Quick Links** naar alle 14 tools
 ✅ **Exam Countdown Timer** (configureerbaar)
 ✅ **Repository Statistieken** (84 opgaven, 11 hoofdstukken, 52 formules)
 ✅ **Hoofdstuk Overzicht** met difficulty ratings
@@ -610,6 +613,279 @@ Exam Dag:
 
 ---
 
+## 🎯 Formula Quiz
+
+**Locatie:** `study-guide/FORMULA-QUIZ.html`
+
+### Wat is het?
+
+**Interactieve formule memorisatie tool** met 52 formules en 3 quiz modi voor effectief leren.
+
+### Features
+
+✅ **52 Formules Database** (alle hoofdstukken)
+✅ **3 Quiz Modi:**
+  - Naam → Formule (gegeven naam, type formule)
+  - Formule → Naam (gegeven formule, herken naam)
+  - Mixed (afwisselend beide)
+
+✅ **Chapter Filtering** (per hoofdstuk oefenen)
+✅ **Real-time Feedback** (juist/fout direct)
+✅ **Hint Systeem** (optionele hints per formule)
+✅ **Progress Tracking** (X/Y correct, percentage)
+✅ **Configureerbaar** (10-52 vragen)
+
+### Gebruik
+
+**Daily Practice (10-15 min):**
+
+```
+1. Open Formula Quiz
+2. Selecteer hoofdstuk (of "Alle")
+3. Kies modus: "Naam → Formule" (moeilijkst)
+4. Start met 10-20 vragen
+5. Type antwoord ZONDER hint eerst
+6. Review fouten en herhaal
+```
+
+**Recommended Workflow:**
+
+```
+Week 1-2: Naam → Formule (20 vragen/dag)
+Week 3-4: Formule → Naam (20 vragen/dag)
+Week 5-6: Mixed Mode (30 vragen/dag)
+Week 7-8: Alle 52 formules (daily drill)
+```
+
+**Tips:**
+
+- **No Hints:** Probeer eerst zonder hints (active recall)
+- **Spaced Repetition:** Focus op foute formules de volgende dag
+- **Type Completely:** Type hele formule, niet alleen delen
+- **Speed:** Build up snelheid (< 30 sec per formule)
+- **Target:** 90%+ accuracy before exam
+
+**Example Session:**
+
+```
+1. Select: H 7.8 & H 9.7 (RLC & Complex)
+2. Mode: Naam → Formule
+3. Count: 10 vragen
+4. Goal: 8/10 correct (80%)
+5. Review: Note foute formules
+6. Repeat: Same questions next day
+```
+
+---
+
+## ⏱️ Study Timer (Pomodoro)
+
+**Locatie:** `study-guide/STUDY-TIMER.html`
+
+### Wat is het?
+
+**Pomodoro Technique timer** voor gestructureerde studie met focus sessies en pauzes.
+
+### Features
+
+✅ **Pomodoro Technique:**
+  - Werk sessies (default 25 min, configureerbaar)
+  - Korte pauzes (default 5 min)
+  - Lange pauze (default 15 min na 4 sessies)
+
+✅ **Configureerbaar:**
+  - Werk duur (1-60 min)
+  - Pauze duur (1-30 min)
+  - Lange pauze duur (1-60 min)
+  - Sessies tot lange pauze (2-10)
+
+✅ **Task Tracking:**
+  - Noteer huidige opgave
+  - Blijft zichtbaar tijdens timer
+
+✅ **Statistics (Daily):**
+  - Completed pomodoros (aantal)
+  - Total minuten studied
+  - Sessies vandaag
+
+✅ **Notifications:**
+  - Visual notifications (on-screen)
+  - Sound alerts (optioneel, 🔔 toggle)
+  - Browser title updates (zie tijd in tab)
+
+✅ **Keyboard Shortcuts:**
+  - Space: Start/Pause
+  - Ctrl+R: Reset
+
+✅ **LocalStorage** (auto-save daily stats)
+
+### Gebruik
+
+**Setup (eenmalig):**
+
+```
+1. Open Study Timer
+2. Configureer durations (default = 25/5/15)
+3. Enable sound (optioneel)
+4. Test 1 sessie
+```
+
+**Daily Study Session:**
+
+```
+1. Open timer
+2. Type huidige taak: "H 2.6 Opgave 18"
+3. Klik "Start"
+4. Werk FOCUS (geen telefoon, geen tabs)
+5. Timer loopt af → PAUZE (mandatory!)
+6. Herhaal voor volgende opgave
+```
+
+**Recommended Schedule:**
+
+```
+Morning Session (2 pomodoros = 1 uur):
+- 25 min: Opgave 1
+- 5 min: Pauze (stretch, water)
+- 25 min: Opgave 2
+- 15 min: Lange pauze
+
+Evening Session (2 pomodoros = 1 uur):
+- 25 min: Review + Anki
+- 5 min: Pauze
+- 25 min: Practice quiz
+- Done for the day!
+```
+
+**Tips:**
+
+- **Strict Breaks:** ALWAYS neem pauze (geen "ik ga door")
+- **Single Task:** 1 opgave per pomodoro (focus)
+- **Track Daily:** Aim for 4-6 pomodoros/dag (2-3 uur)
+- **Statistics:** Review stats weekly (ben je consistent?)
+- **Long Breaks:** Use voor walk, meal, refresh
+
+**Common Patterns:**
+
+| Study Style | Pomodoros/Day | Total Time | Results |
+|-------------|---------------|------------|---------|
+| **Licht** | 2-3 | 50-75 min | Steady progress |
+| **Gemiddeld** | 4-6 | 100-150 min | Good coverage |
+| **Intensief** | 8-10 | 200-250 min | Fast completion |
+
+---
+
+## 🃏 Flashcard Generator
+
+**Locatie:** `study-guide/FLASHCARD-GENERATOR.html`
+
+### Wat is het?
+
+**Print-ready fysieke flashcard generator** voor 52 formules in traditioneel flashcard formaat.
+
+### Features
+
+✅ **52 Formules** (complete database)
+✅ **Chapter Selection:**
+  - Alle hoofdstukken (52 cards)
+  - Of specifiek hoofdstuk (5-10 cards)
+
+✅ **2-Sided Design:**
+  - Voorkant: Formula naam + hint
+  - Achterkant: Formula zelf
+
+✅ **Print Optimized:**
+  - 4 cards per A4 pagina
+  - Dashed cutout guides
+  - Color-coded (blauw voorkant, geel achterkant)
+  - Perfect alignment front/back
+
+✅ **Easy Printing:**
+  - Print voorkant eerste
+  - Draai papier
+  - Print achterkant (auto-reversed voor correcte alignment)
+
+### Gebruik
+
+**Generate & Print:**
+
+```
+1. Open Flashcard Generator
+2. Select Chapter (of "Alle Hoofdstukken")
+3. Klik "Genereer Flashcards"
+4. Review preview
+5. Klik "Print / PDF"
+6. Print Settings:
+   - A4 paper
+   - Marges: Normaal
+   - Background graphics: ON (belangrijk!)
+   - Print BEIDE pagina's
+7. Snij langs stippellijnen
+8. Optioneel: Lamineer voor duurzaamheid
+```
+
+**Print Instructions (Duplex):**
+
+```
+Page 1 (VOORKANT):
+- Print normaal
+- Laat drogen (inkjet)
+
+Page 2 (ACHTERKANT):
+- Draai papier 180° (short edge flip)
+- Print op achterkant
+- Formules staan nu correct aligned
+
+Knip:
+- Langs stippellijnen
+- 4 flashcards per vel
+```
+
+**Study with Flashcards:**
+
+```
+Daily Routine (15 min):
+1. Shuffle deck (52 cards)
+2. Read voorkant (naam + hint)
+3. Try to recall formule
+4. Flip to check achterkant
+5. Correct → "Ja" stapel
+6. Fout → "Nee" stapel (herhaal deze)
+7. Repeat "Nee" stapel until 100%
+```
+
+**Leitner System (spaced repetition):**
+
+```
+Box 1 (daily): Nieuwe + foute cards
+Box 2 (om de dag): 1x correct
+Box 3 (weekly): 2x correct achter elkaar
+Box 4 (monthly): 3x+ correct
+Box 5 (archived): Mastered (100%)
+
+Move cards based on performance!
+```
+
+**Tips:**
+
+- **Laminate:** Flashcards gaan langer mee
+- **Color Code:** Use gekleurde markers voor moeilijke formules
+- **Mobile:** Neem mee in tas voor "dead time" studie
+- **Study Partner:** Quiz elkaar met flashcards
+- **Mix:** Combine met digital Formula Quiz voor variatie
+
+**Use Cases:**
+
+| Scenario | Waarom Flashcards? |
+|----------|-------------------|
+| **Pendelen** | Studie in bus/trein (geen screen needed) |
+| **Groepsstudie** | Fysiek delen met groep |
+| **No Screen Time** | Avoid screen fatigue |
+| **Tactile Learning** | Hands-on memory boost |
+| **Exam Day** | Last-minute review (geen laptop nodig) |
+
+---
+
 ## 🎴 Anki Decks
 
 **Locatie:** `generated-cards/`
@@ -768,6 +1044,9 @@ Exam Day:
 | PDF Export | Archive/print | 1x | 5 min | 🟡 |
 | Quick Reference | Cheat sheet | Exam week | 5 min | 🟡 |
 | Worksheets | Offline practice | 2x/week | 30-45 min | 🟡 |
+| Formula Quiz | Formula drill | Daily | 10-20 min | 🟢 |
+| Study Timer | Pomodoro focus | Daily | 25-55 min | 🟢 |
+| Flashcards | Physical cards | 1x print | 5 min setup | 🟡 |
 | Anki | Spaced repetition | Daily | 15-20 min | 🟢 |
 
 **Legend:**

@@ -24,12 +24,13 @@ Deze repository bevat een uitgebreide studiegids voor het NCOI vak **Energietech
 | Metric | Waarde |
 |--------|--------|
 | **Totaal opgaven** | 84 HTML bestanden |
-| **Regels code** | ~48.000+ |
+| **Regels code** | ~51.000+ |
 | **Hoofdstukken** | 11 (H 1.9 t/m H 11.7) |
 | **Quiz vragen** | 50+ comprehensive questions |
 | **Anki kaarten** | 15 (auto-generated) |
-| **Interactive Tools** | 11 complete applications |
+| **Interactive Tools** | 14 complete applications |
 | **Practice Worksheets** | 7 print-ready bladen (15 vragen) |
+| **Flashcards** | 52 formules (print-ready) |
 | **Scripts** | 5 automation tools |
 
 ### Coverage per Hoofdstuk
@@ -140,7 +141,7 @@ Dit creëert:
 
 ---
 
-## 🛠️ Interactive Study Tools (11 tools)
+## 🛠️ Interactive Study Tools (14 tools)
 
 **Volledige documentatie:** Zie [TOOLS-GUIDE.md](TOOLS-GUIDE.md) voor complete gebruiksaanwijzingen.
 
@@ -250,6 +251,37 @@ Centrale hub met:
 - Student info velden (naam, datum)
 - Offline studie zonder computer
 - Perfect voor klassikale oefening
+
+### 🎯 Formula Quiz
+**Locatie:** `study-guide/FORMULA-QUIZ.html`
+
+- Interactieve formule memorisatie (52 formules)
+- 3 quiz modi (naam→formule, formule→naam, mixed)
+- Chapter filtering per hoofdstuk
+- Real-time feedback met hints
+- Progress tracking & statistieken
+- Perfect voor formule memorisatie
+
+### ⏱️ Study Timer (Pomodoro)
+**Locatie:** `study-guide/STUDY-TIMER.html`
+
+- Pomodoro Technique timer (configureerbaar)
+- Werk sessies (25 min) & pauzes (5 min)
+- Long break na 4 sessies (15 min)
+- Task tracking (welke opgave)
+- Daily statistics (pomodoros, minuten, sessies)
+- Sound notifications (optional)
+- LocalStorage persistence
+
+### 🃏 Flashcard Generator
+**Locatie:** `study-guide/FLASHCARD-GENERATOR.html`
+
+- Generate print-ready fysieke flashcards
+- 52 formules in flashcard formaat
+- 2-sided (voorkant: naam, achterkant: formule)
+- 4 cards per A4 pagina
+- Print-optimized met cutout guides
+- Perfect voor tactile learning
 
 ---
 

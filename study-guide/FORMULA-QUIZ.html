@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula Quiz - NCOI Energietechniek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .config-panel {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .config-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .config-item label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .quiz-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .quiz-card.active {
+            display: block;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            transition: width 0.3s;
+        }
+
+        .question-number {
+            color: #667eea;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .formula-display {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            text-align: center;
+            margin: 30px 0;
+            border: 2px solid #667eea;
+            font-family: 'Courier New', monospace;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .feedback {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+        }
+
+        .correct-answer {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .hint-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #856404;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button-secondary {
+            background: #6c757d;
+            flex: 1;
+        }
+
+        .button-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            flex: 2;
+        }
+
+        .stats-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .stats-panel.active {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .performance-message {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            .config-panel, .quiz-card, .stats-panel {
+                padding: 20px;
+            }
+
+            .formula-display {
+                font-size: 1.2em;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Formula Quiz</h1>
+            <p class="subtitle">Memoriseer de 52 formules interactief</p>
+        </header>
+
+        <!-- Configuration Panel -->
+        <div class="config-panel" id="configPanel">
+            <div class="config-grid">
+                <div class="config-item">
+                    <label for="quizMode">Quiz Modus:</label>
+                    <select id="quizMode">
+                        <option value="name-to-formula">Naam → Formule</option>
+                        <option value="formula-to-name">Formule → Naam</option>
+                        <option value="mixed">Mixed (Afwisselend)</option>
+                    </select>
+                </div>
+
+                <div class="config-item">
+                    <label for="chapterFilter">Hoofdstuk:</label>
+                    <select id="chapterFilter">
+                        <option value="all">Alle Hoofdstukken</option>
+                        <option value="h19">H 1.9 - Ohm & Kirchhoff</option>
+                        <option value="h26">H 2.6 - Serie & Parallel</option>
+                        <option value="h311">H 3.11 - Netwerk Analyse</option>
+                        <option value="h44">H 4.4 - Energie & Vermogen</option>
+                        <option value="h55">H 5.5 - Wisselspanning</option>
+                        <option value="h68">H 6.8 - C & L</option>
+                        <option value="h78">H 7.8 & H 9.7 - RLC & Complex</option>
+                        <option value="h117">H 11.7 - Vermogen (AC)</option>
+                    </select>
+                </div>
+
+                <div class="config-item">
+                    <label for="questionCount">Aantal Vragen:</label>
+                    <select id="questionCount">
+                        <option value="10">10 formules</option>
+                        <option value="20" selected>20 formules</option>
+                        <option value="30">30 formules</option>
+                        <option value="52">Alle 52 formules</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="button" onclick="startQuiz()">Start Formula Quiz</button>
+        </div>
+
+        <!-- Quiz Card -->
+        <div class="quiz-card" id="quizCard">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="question-number" id="questionNumber">Vraag 1 van 20</div>
+
+            <div class="question-text" id="questionText"></div>
+
+            <div class="formula-display" id="formulaDisplay" style="display:none;"></div>
+
+            <input type="text" class="answer-input" id="answerInput" placeholder="Type je antwoord hier...">
+
+            <div class="hint-box" id="hintBox" style="display:none;">
+                💡 <strong>Hint:</strong> <span id="hintText"></span>
+            </div>
+
+            <div class="feedback" id="feedback">
+                <div id="feedbackText"></div>
+                <div class="correct-answer" id="correctAnswer"></div>
+            </div>
+
+            <div class="button-group">
+                <button class="button button-secondary" onclick="showHint()" id="hintButton">Toon Hint</button>
+                <button class="button button-primary" onclick="checkAnswer()" id="checkButton">Controleer Antwoord</button>
+                <button class="button button-primary" onclick="nextQuestion()" id="nextButton" style="display:none;">Volgende →</button>
+            </div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="stats-panel" id="statsPanel">
+            <h2 style="text-align: center; color: #667eea; margin-bottom: 30px;">📊 Resultaten</h2>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value" id="statCorrect">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="statIncorrect">0</div>
+                    <div class="stat-label">Fout</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="statPercentage">0%</div>
+                    <div class="stat-label">Score</div>
+                </div>
+            </div>
+
+            <div class="performance-message" id="performanceMessage"></div>
+
+            <button class="button" onclick="restartQuiz()">Opnieuw Starten</button>
+        </div>
+    </div>
+
+    <script>
+        // Formula Database (52 formulas from formuleblad)
+        const formulas = {
+            'h19': [
+                { name: 'Wet van Ohm', formula: 'U = I × R', hint: 'Spanning = Stroom × Weerstand' },
+                { name: 'Vermogen (DC)', formula: 'P = U × I', hint: 'Vermogen = Spanning × Stroom' },
+                { name: 'Vermogen (R)', formula: 'P = I² × R', hint: 'Vermogen via weerstand' },
+                { name: 'Vermogen (U)', formula: 'P = U² / R', hint: 'Vermogen via spanning' },
+                { name: 'Kirchhoff Knooppunt', formula: 'ΣI_in = ΣI_uit', hint: 'Som van stromen in = som van stromen uit' },
+                { name: 'Kirchhoff Maas', formula: 'ΣU = 0', hint: 'Som van spanningen in maas is nul' },
+                { name: 'Spanningsdeling', formula: 'U_x = (R_x / R_tot) × U_bron', hint: 'Spanning over deelweerstand' }
+            ],
+            'h26': [
+                { name: 'Serie Weerstand', formula: 'R_tot = R₁ + R₂ + R₃', hint: 'Weerstanden optellen in serie' },
+                { name: 'Parallel Weerstand', formula: '1/R_tot = 1/R₁ + 1/R₂', hint: 'Omgekeerde optellen in parallel' },
+                { name: 'Parallel (2R)', formula: 'R_tot = (R₁ × R₂) / (R₁ + R₂)', hint: 'Product gedeeld door som' },
+                { name: 'Serie Capaciteit', formula: '1/C_tot = 1/C₁ + 1/C₂', hint: 'Zoals parallel R' },
+                { name: 'Parallel Capaciteit', formula: 'C_tot = C₁ + C₂ + C₃', hint: 'Zoals serie R' },
+                { name: 'Serie Inductie', formula: 'L_tot = L₁ + L₂ + L₃', hint: 'Inducties optellen' }
+            ],
+            'h311': [
+                { name: 'Thévenin Spanning', formula: 'U_th = U_open', hint: 'Open klemspanning' },
+                { name: 'Thévenin Weerstand', formula: 'R_th = U_open / I_kort', hint: 'Verhouding open/kort' },
+                { name: 'Norton Stroom', formula: 'I_N = I_kortsluit', hint: 'Kortsluitstroom' },
+                { name: 'Norton Weerstand', formula: 'R_N = R_th', hint: 'Gelijk aan Thévenin' },
+                { name: 'Omzetting Thévenin-Norton', formula: 'U_th = I_N × R_N', hint: 'Spanning = Stroom × Weerstand' },
+                { name: 'Superpositie', formula: 'I_tot = I₁ + I₂ + I₃', hint: 'Som van deelstromen' }
+            ],
+            'h44': [
+                { name: 'Energie', formula: 'W = P × t', hint: 'Energie = Vermogen × tijd' },
+                { name: 'Energie (Wh)', formula: 'W = U × I × t', hint: 'In wattuur' },
+                { name: 'Rendement', formula: 'η = P_uit / P_in', hint: 'Uitgangsvermogen / ingangsvermogen' },
+                { name: 'Rendement (%)', formula: 'η% = (P_uit / P_in) × 100%', hint: 'In procenten' },
+                { name: 'Verliesvermogen', formula: 'P_verlies = P_in - P_uit', hint: 'Verschil in-uit' },
+                { name: 'Spanningsval', formula: 'ΔU = I × R_kabel', hint: 'Spanning verloren in kabel' }
+            ],
+            'h55': [
+                { name: 'Topwaarde', formula: 'U_top = √2 × U_eff', hint: '1.414 × effectieve waarde' },
+                { name: 'Effectieve waarde', formula: 'U_eff = U_top / √2', hint: 'Top gedeeld door √2' },
+                { name: 'Frequentie', formula: 'f = 1 / T', hint: 'Omgekeerde van periode' },
+                { name: 'Hoekfrequentie', formula: 'ω = 2πf', hint: '2π × frequentie' },
+                { name: 'Fase verschil', formula: 'φ = ωt', hint: 'Hoek = hoeksnelheid × tijd' },
+                { name: 'RMS Stroom', formula: 'I_eff = I_top / √2', hint: 'Zoals spanning' }
+            ],
+            'h68': [
+                { name: 'Capacitieve Reactantie', formula: 'X_C = 1 / (ωC)', hint: 'Omgekeerd evenredig met C' },
+                { name: 'Inductieve Reactantie', formula: 'X_L = ωL', hint: 'Recht evenredig met L' },
+                { name: 'Capaciteit Energie', formula: 'W_C = ½ C U²', hint: 'Energie in condensator' },
+                { name: 'Inductie Energie', formula: 'W_L = ½ L I²', hint: 'Energie in spoel' },
+                { name: 'Tijdconstante RC', formula: 'τ = R × C', hint: 'Laad/ontlaadtijd' }
+            ],
+            'h78': [
+                { name: 'Impedantie (Z)', formula: 'Z = √(R² + X²)', hint: 'Pythagoras voor AC' },
+                { name: 'Impedantie Serie', formula: 'Z = R + jX', hint: 'Complexe vorm' },
+                { name: 'Fasehoek', formula: 'φ = arctan(X/R)', hint: 'Arctangens reactantie/weerstand' },
+                { name: 'Totale Reactantie', formula: 'X_tot = X_L - X_C', hint: 'Verschil inductief-capacitief' },
+                { name: 'Resonantie', formula: 'f₀ = 1 / (2π√(LC))', hint: 'X_L = X_C' },
+                { name: 'Kwaliteitsfactor', formula: 'Q = X_L / R', hint: 'Of X_C / R bij resonantie' },
+                { name: 'Bandbreedte', formula: 'B = f₀ / Q', hint: 'Resonantiefrequentie / Q' },
+                { name: 'Complex Vermogen', formula: 'S = U × I*', hint: 'Spanning × geconjugeerde stroom' },
+                { name: 'Magnitude Z', formula: '|Z| = U / I', hint: 'Wet van Ohm voor AC' },
+                { name: 'Faseverschil', formula: 'cos φ = R / Z', hint: 'Arbeidsfactor' }
+            ],
+            'h117': [
+                { name: 'Schijnbaar Vermogen', formula: 'S = U × I', hint: 'In VA (volt-ampère)' },
+                { name: 'Werkelijk Vermogen', formula: 'P = U × I × cos φ', hint: 'In W (watt)' },
+                { name: 'Blindvermogen', formula: 'Q = U × I × sin φ', hint: 'In VAR (volt-ampère reactief)' },
+                { name: 'Vermogensdriehoek', formula: 'S² = P² + Q²', hint: 'Pythagoras' },
+                { name: 'Arbeidsfactor', formula: 'cos φ = P / S', hint: 'Werkelijk / schijnbaar' },
+                { name: 'Compensatie', formula: 'Q_C = P × (tan φ₁ - tan φ₂)', hint: 'Benodigde blindvermogen' }
+            ]
+        };
+
+        let currentQuiz = [];
+        let currentQuestion = 0;
+        let correctCount = 0;
+        let incorrectCount = 0;
+        let quizMode = 'name-to-formula';
+        let hintUsed = false;
+
+        function startQuiz() {
+            // Get configuration
+            quizMode = document.getElementById('quizMode').value;
+            const chapter = document.getElementById('chapterFilter').value;
+            const count = parseInt(document.getElementById('questionCount').value);
+
+            // Build question pool
+            let pool = [];
+            if (chapter === 'all') {
+                for (let ch in formulas) {
+                    pool = pool.concat(formulas[ch]);
+                }
+            } else {
+                pool = formulas[chapter] || [];
+            }
+
+            // Shuffle and select
+            pool = pool.sort(() => Math.random() - 0.5);
+            currentQuiz = pool.slice(0, Math.min(count, pool.length));
+
+            // Reset
+            currentQuestion = 0;
+            correctCount = 0;
+            incorrectCount = 0;
+
+            // Show quiz
+            document.getElementById('configPanel').style.display = 'none';
+            document.getElementById('quizCard').classList.add('active');
+            document.getElementById('statsPanel').classList.remove('active');
+
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            if (currentQuestion >= currentQuiz.length) {
+                showResults();
+                return;
+            }
+
+            const q = currentQuiz[currentQuestion];
+            hintUsed = false;
+
+            // Update progress
+            const progress = ((currentQuestion / currentQuiz.length) * 100).toFixed(0);
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('questionNumber').textContent =
+                `Vraag ${currentQuestion + 1} van ${currentQuiz.length}`;
+
+            // Determine question type
+            const currentMode = quizMode === 'mixed'
+                ? (Math.random() > 0.5 ? 'name-to-formula' : 'formula-to-name')
+                : quizMode;
+
+            if (currentMode === 'name-to-formula') {
+                document.getElementById('questionText').textContent =
+                    `Wat is de formule voor: ${q.name}?`;
+                document.getElementById('formulaDisplay').style.display = 'none';
+            } else {
+                document.getElementById('questionText').textContent =
+                    'Wat is de naam van deze formule?';
+                document.getElementById('formulaDisplay').textContent = q.formula;
+                document.getElementById('formulaDisplay').style.display = 'block';
+            }
+
+            // Reset input and feedback
+            document.getElementById('answerInput').value = '';
+            document.getElementById('answerInput').disabled = false;
+            document.getElementById('feedback').classList.remove('show', 'correct', 'incorrect');
+            document.getElementById('hintBox').style.display = 'none';
+            document.getElementById('checkButton').style.display = 'inline-block';
+            document.getElementById('nextButton').style.display = 'none';
+            document.getElementById('hintButton').style.display = 'inline-block';
+
+            // Focus input
+            document.getElementById('answerInput').focus();
+        }
+
+        function showHint() {
+            const q = currentQuiz[currentQuestion];
+            document.getElementById('hintText').textContent = q.hint;
+            document.getElementById('hintBox').style.display = 'block';
+            hintUsed = true;
+        }
+
+        function checkAnswer() {
+            const q = currentQuiz[currentQuestion];
+            const userAnswer = document.getElementById('answerInput').value.trim();
+
+            if (!userAnswer) {
+                alert('Vul eerst een antwoord in!');
+                return;
+            }
+
+            const currentMode = quizMode === 'mixed'
+                ? (document.getElementById('formulaDisplay').style.display === 'block' ? 'formula-to-name' : 'name-to-formula')
+                : quizMode;
+
+            const correctAnswer = currentMode === 'name-to-formula' ? q.formula : q.name;
+
+            // Simple matching (case-insensitive, whitespace-insensitive)
+            const userNormalized = userAnswer.toLowerCase().replace(/\s+/g, '');
+            const correctNormalized = correctAnswer.toLowerCase().replace(/\s+/g, '');
+
+            const isCorrect = userNormalized === correctNormalized ||
+                              userAnswer.toLowerCase().includes(correctAnswer.toLowerCase()) ||
+                              correctAnswer.toLowerCase().includes(userAnswer.toLowerCase());
+
+            // Show feedback
+            const feedback = document.getElementById('feedback');
+            feedback.classList.add('show');
+
+            if (isCorrect) {
+                feedback.classList.add('correct');
+                document.getElementById('feedbackText').textContent = '✅ Correct!';
+                correctCount++;
+            } else {
+                feedback.classList.add('incorrect');
+                document.getElementById('feedbackText').textContent = '❌ Helaas, niet helemaal correct.';
+                document.getElementById('correctAnswer').innerHTML =
+                    `<strong>Juiste antwoord:</strong> ${correctAnswer}`;
+                incorrectCount++;
+            }
+
+            // Disable input and show next button
+            document.getElementById('answerInput').disabled = true;
+            document.getElementById('checkButton').style.display = 'none';
+            document.getElementById('nextButton').style.display = 'inline-block';
+            document.getElementById('hintButton').style.display = 'none';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+
+        function showResults() {
+            document.getElementById('quizCard').classList.remove('active');
+            document.getElementById('statsPanel').classList.add('active');
+
+            const total = currentQuiz.length;
+            const percentage = ((correctCount / total) * 100).toFixed(0);
+
+            document.getElementById('statCorrect').textContent = correctCount;
+            document.getElementById('statIncorrect').textContent = incorrectCount;
+            document.getElementById('statPercentage').textContent = percentage + '%';
+
+            let message = '';
+            if (percentage >= 90) {
+                message = '🏆 Uitstekend! Je beheerst de formules perfect!';
+            } else if (percentage >= 75) {
+                message = '🎯 Goed gedaan! Nog een paar formules oefenen en je bent er!';
+            } else if (percentage >= 60) {
+                message = '👍 Redelijk! Blijf oefenen met de formules die je fout had.';
+            } else {
+                message = '📚 Nog even doorzetten! Review het formuleblad en probeer opnieuw.';
+            }
+
+            document.getElementById('performanceMessage').textContent = message;
+        }
+
+        function restartQuiz() {
+            document.getElementById('statsPanel').classList.remove('active');
+            document.getElementById('configPanel').style.display = 'block';
+        }
+
+        // Enter key to check answer
+        document.getElementById('answerInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                if (document.getElementById('checkButton').style.display !== 'none') {
+                    checkAnswer();
+                } else {
+                    nextQuestion();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
