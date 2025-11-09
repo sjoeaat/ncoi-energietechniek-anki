@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📄 Quick Reference Card - NCOI Energietechniek</title>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                padding: 0;
+                margin: 0;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .reference-card {
+                page-break-inside: avoid;
+                margin: 0;
+                padding: 10mm;
+            }
+            .column {
+                break-inside: avoid;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .print-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            display: block;
+            margin: 20px auto;
+            transition: all 0.3s;
+        }
+
+        .print-btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .reference-card {
+            background: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .column {
+            border-right: 1px solid #ddd;
+            padding-right: 15px;
+        }
+
+        .column:last-child {
+            border-right: none;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-radius: 3px;
+        }
+
+        .formula-item {
+            margin-bottom: 8px;
+            padding: 5px;
+            border-left: 3px solid #667eea;
+            padding-left: 8px;
+            font-size: 0.85em;
+        }
+
+        .formula-name {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .formula-math {
+            font-family: "Courier New", monospace;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .tip-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 0.8em;
+        }
+
+        .constant {
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 0;
+            font-size: 0.85em;
+            border-bottom: 1px dotted #ddd;
+        }
+
+        .symbol-table {
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        .symbol-row {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 5px;
+            padding: 2px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .symbol {
+            font-weight: bold;
+            font-family: "Times New Roman", serif;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.7em;
+            color: #999;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Quick Reference Card</h1>
+        <div class="subtitle">Compacte cheat sheet voor NCOI Energietechniek examen</div>
+
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Reference Card (A4)</button>
+
+        <div class="reference-card">
+            <div class="card-header">
+                <div class="card-title">⚡ NCOI ENERGIETECHNIEK</div>
+                <div class="card-subtitle">Quick Reference Guide - Alle essentiële formules & concepten</div>
+            </div>
+
+            <div class="columns">
+                <!-- Column 1: Basis + DC -->
+                <div class="column">
+                    <div class="section">
+                        <div class="section-title">⚡ Wet van Ohm & Basiswetten</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Wet van Ohm</span>
+                            <span class="formula-math">U = I × R</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Vermogen</span>
+                            <span class="formula-math">P = U × I = I²R = U²/R</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Energie</span>
+                            <span class="formula-math">E = P × t (Joule of Wh)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Rendement</span>
+                            <span class="formula-math">η = P_nuttig / P_totaal</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">🔌 Kirchhoff</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">KCL (Knooppunt)</span>
+                            <span class="formula-math">Σ I_in = Σ I_uit</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">KVL (Maas)</span>
+                            <span class="formula-math">Σ U_maas = 0</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">🔗 Serie & Parallel</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Serie R</span>
+                            <span class="formula-math">R_tot = R₁ + R₂ + R₃</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Parallel R</span>
+                            <span class="formula-math">1/R_tot = 1/R₁ + 1/R₂</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Spanningsdeler</span>
+                            <span class="formula-math">U_x = U_tot × (R_x/R_tot)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Stroomdeler</span>
+                            <span class="formula-math">I_x = I_tot × (R_ander/R_tot)</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">🔄 Thévenin & Norton</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">R_th berekening</span>
+                            <span class="formula-math">R_th = U_open / I_kort</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Conversie</span>
+                            <span class="formula-math">U_th = I_N × R_th</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Vermogensaanpassing</span>
+                            <span class="formula-math">R_last = R_th (P_max)</span>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>💡 Tip:</strong> Bij vermogensaanpassing is rendement altijd 50%!
+                    </div>
+                </div>
+
+                <!-- Column 2: AC + RLC -->
+                <div class="column">
+                    <div class="section">
+                        <div class="section-title">〜 Wisselspanning</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Effectieve waarde</span>
+                            <span class="formula-math">U_eff = U_top / √2</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Gemiddelde waarde</span>
+                            <span class="formula-math">U_gem = 2×U_top / π</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Frequentie</span>
+                            <span class="formula-math">f = 1/T (Hz)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Hoekfrequentie</span>
+                            <span class="formula-math">ω = 2πf (rad/s)</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">💾 Capaciteit & Inductie</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Lading</span>
+                            <span class="formula-math">Q = C × U</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Energie C</span>
+                            <span class="formula-math">E = ½ × C × U²</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Inductie spanning</span>
+                            <span class="formula-math">U = L × dI/dt</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Energie L</span>
+                            <span class="formula-math">E = ½ × L × I²</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">⚡ Reactantie & Impedantie</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">X_C (capacitief)</span>
+                            <span class="formula-math">X_C = 1/(2πfC)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">X_L (inductief)</span>
+                            <span class="formula-math">X_L = 2πfL</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Impedantie</span>
+                            <span class="formula-math">|Z| = √(R² + X²)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Fasehoek</span>
+                            <span class="formula-math">φ = arctan(X/R)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Serie RLC</span>
+                            <span class="formula-math">Z = R + j(X_L - X_C)</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">🎯 Resonantie</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Resonantiefrequentie</span>
+                            <span class="formula-math">f_res = 1/(2π√(LC))</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Bij resonantie</span>
+                            <span class="formula-math">X_L = X_C, Z = R</span>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>💡 ICE regel:</strong> In Capacitor, I leads (stroom voorop bij C)<br>
+                        <strong>ELI regel:</strong> In inductor, E leads I (spanning voorop bij L)
+                    </div>
+                </div>
+
+                <!-- Column 3: Vermogen AC + Complex -->
+                <div class="column">
+                    <div class="section">
+                        <div class="section-title">⚡ Vermogen (AC)</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Schijnbaar (S)</span>
+                            <span class="formula-math">S = U × I (VA)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Werkelijk (P)</span>
+                            <span class="formula-math">P = S × cos φ (W)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Blindvermogen (Q)</span>
+                            <span class="formula-math">Q = S × sin φ (VAR)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Relatie</span>
+                            <span class="formula-math">S² = P² + Q²</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Arbeidsfactor</span>
+                            <span class="formula-math">cos φ = P/S</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Compensatie C</span>
+                            <span class="formula-math">Q_C = ω×C×U²</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">🔢 Complex Rekenen</div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Rechthoekig</span>
+                            <span class="formula-math">Z = R + jX</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Polair</span>
+                            <span class="formula-math">Z = |Z|∠φ</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Conversie</span>
+                            <span class="formula-math">|Z| = √(R² + X²)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">Fase</span>
+                            <span class="formula-math">φ = arctan(X/R)</span>
+                        </div>
+
+                        <div class="formula-item">
+                            <span class="formula-name">j-operator</span>
+                            <span class="formula-math">j² = -1, ×j = 90° voor</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">📊 Constanten & Waarden</div>
+
+                        <div class="constant">
+                            <span>Netspanning NL:</span>
+                            <span><strong>230V (eff)</strong></span>
+                        </div>
+                        <div class="constant">
+                            <span>Netfrequentie:</span>
+                            <span><strong>50 Hz</strong></span>
+                        </div>
+                        <div class="constant">
+                            <span>π (pi):</span>
+                            <span><strong>3,14159</strong></span>
+                        </div>
+                        <div class="constant">
+                            <span>√2:</span>
+                            <span><strong>1,414</strong></span>
+                        </div>
+                        <div class="constant">
+                            <span>√3:</span>
+                            <span><strong>1,732</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">🔤 Symbolen</div>
+
+                        <div class="symbol-table">
+                            <div class="symbol-row">
+                                <span class="symbol">U</span>
+                                <span>Spanning (Volt)</span>
+                            </div>
+                            <div class="symbol-row">
+                                <span class="symbol">I</span>
+                                <span>Stroom (Ampère)</span>
+                            </div>
+                            <div class="symbol-row">
+                                <span class="symbol">R</span>
+                                <span>Weerstand (Ohm)</span>
+                            </div>
+                            <div class="symbol-row">
+                                <span class="symbol">P</span>
+                                <span>Vermogen (Watt)</span>
+                            </div>
+                            <div class="symbol-row">
+                                <span class="symbol">Z</span>
+                                <span>Impedantie (Ohm)</span>
+                            </div>
+                            <div class="symbol-row">
+                                <span class="symbol">φ</span>
+                                <span>Fasehoek (graden)</span>
+                            </div>
+                            <div class="symbol-row">
+                                <span class="symbol">ω</span>
+                                <span>Hoekfrequentie (rad/s)</span>
+                            </div>
+                            <div class="symbol-row">
+                                <span class="symbol">η</span>
+                                <span>Rendement (-)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>⚠️ Let op:</strong><br>
+                        • Effectieve waarden voor AC vermogen!<br>
+                        • Fasehoek in radialen voor sin/cos<br>
+                        • Eenheden altijd controleren
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                NCOI Energietechniek Quick Reference Card | Elektrische Netwerken (3e ed.) - Paul Holmes | 2025
+            </div>
+        </div>
+
+        <div class="no-print" style="text-align: center; margin-top: 30px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
+            <h3 style="color: #667eea; margin-bottom: 15px;">📋 Gebruik Tips</h3>
+            <p style="color: #666; margin-bottom: 10px;">
+                <strong>Print naar PDF:</strong> Ctrl+P → "Save as PDF" → Zet "Background graphics" AAN
+            </p>
+            <p style="color: #666; margin-bottom: 10px;">
+                <strong>Formaat:</strong> A4 landscape werkt het beste (3 kolommen naast elkaar)
+            </p>
+            <p style="color: #666;">
+                <strong>Tijdens examen:</strong> Check of je deze mag gebruiken (meestal alleen officieel formuleblad)
+            </p>
+        </div>
+    </div>
+</body>
+</html>
