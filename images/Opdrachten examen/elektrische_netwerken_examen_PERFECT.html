@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examen Elektrische Netwerken – NCOI Energietechniek 2023</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #111;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  }
+  h1, h2, h3 { text-align: center; }
+  h1 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 32px;
+  }
+  h3 {
+    color: #7f8c8d;
+    font-weight: normal;
+    margin-bottom: 30px;
+  }
+  .opgave {
+    background: #f8f9fa;
+    border-left: 5px solid #667eea;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .opgave h2 {
+    color: #667eea;
+    margin-top: 0;
+    text-align: left;
+  }
+  .vraag { margin: 10px 0; }
+  .circuit-box {
+    background: white;
+    border: 2px solid #e1e8ed;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .circuit-box img {
+    max-width: 100%;
+    height: auto;
+  }
+  .placeholder {
+    background: #fff9e6;
+    border: 2px dashed #ffc107;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-align: center;
+    color: #856404;
+    font-style: italic;
+  }
+  code, pre {
+    background: #e8f4f8;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #2c3e50;
+  }
+  .punten {
+    float: right;
+    background: #27ae60;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .antwoordruimte {
+    border: 2px dashed #bdc3c7;
+    min-height: 150px;
+    margin-top: 20px;
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .uitleg {
+    color: #555;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    background: #e8f4f8;
+    padding: 12px;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+  }
+  ol, ul {
+    margin: 10px 0;
+    padding-left: 25px;
+  }
+  li {
+    margin: 8px 0;
+  }
+  .exam-info {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  .exam-info table {
+    width: 100%;
+    color: white;
+  }
+  .exam-info td {
+    padding: 5px;
+  }
+  .exam-info td:first-child {
+    font-weight: bold;
+    width: 200px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Examen Elektrische Netwerken</h1>
+<h3>NCOI Energietechniek 2023 - Gebaseerd op Paul Holmes (3e editie)</h3>
+
+<div class="exam-info">
+  <table>
+    <tr>
+      <td>Aantal opgaven:</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>Totaal aantal punten:</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Tijdsduur:</td>
+      <td>3 uur (180 minuten)</td>
+    </tr>
+    <tr>
+      <td>Hulpmiddelen:</td>
+      <td>Formuleblad Energietechniek, niet-programmeerbare rekenmachine</td>
+    </tr>
+  </table>
+</div>
+
+<section class="opgave">
+  <h2>Opgave 1 – Weerstand en aderdikte <span class="punten">5 punten</span></h2>
+  <p><strong>Gegeven:</strong> R<sub>max</sub> = 0,05 Ω, ρ (koper) = 1,72×10⁻⁸ Ωm, L = 50 m.</p>
+  <p class="uitleg">Gebruik de formule <code>R = ρ·L/A</code> om de vereiste aderdikte te bepalen.</p>
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Schrijf de formule om naar A.</li>
+    <li>Bereken de minimale aderdikte A in mm².</li>
+    <li>Kies de juiste standaard aderdikte (1,5 / 2,5 / 4 / 6 / 10 mm²).</li>
+  </ol>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 2 – Brugschakeling met condensatoren <span class="punten">7 punten</span></h2>
+  <p>Een Wheatstone-brug bestaat uit vijf identieke condensatoren van <strong>C = 10 μF</strong>, gevoed met <strong>U = 10 V</strong> bij <strong>f = 50 Hz</strong>.</p>
+
+  <div class="circuit-box">
+    <img src="opdracht2.drawio.svg" alt="Wheatstone bridge met 5 condensatoren">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 2: Wheatstone-brug met condensatoren</em></p>
+  </div>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Bereken de capacitieve reactantie X<sub>C</sub> van één condensator.</li>
+    <li>Bepaal de totale stroom I<sub>tot</sub> door de bron.</li>
+    <li>Geef aan of de brug in balans is of niet (motiveer je antwoord).</li>
+  </ol>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 3 – Niet-ideale spanningsbron <span class="punten">6 punten</span></h2>
+  <p>Een accu heeft een bronspanning U₀ = 12 V. Bij een kortsluitstroom van I = 50 A meet je nog een klemspanning van U = 8 V.</p>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Bereken de inwendige weerstand R<sub>i</sub> van de bron.</li>
+    <li>Bepaal het werkpunt (I<sub>w</sub>, U<sub>w</sub>) bij een belasting van R<sub>L</sub> = 0,33 Ω.</li>
+    <li>Teken het U–I-diagram van de bron en de belasting en markeer het werkpunt.</li>
+  </ol>
+
+  <div class="circuit-box">
+    <img src="ui_karakteristiek_werkpunt.svg" alt="U-I karakteristiek met werkpunt">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 3: U-I karakteristiek niet-ideale bron met werkpunt</em></p>
+  </div>
+
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 4 – Resonantiekring (serie en parallel) <span class="punten">8 punten</span></h2>
+  <p>Gegeven is een L–C kring met <strong>L = 10 mH</strong> en <strong>C = 10 μF</strong>, gevoed door een AC-bron met variabele frequentie.</p>
+
+  <div class="circuit-box">
+    <img src="opdracht4.drawio.svg" alt="LC resonantie circuit">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 4: LC-kring (parallel en serie configuratie)</em></p>
+  </div>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li><strong>Serie-resonantie:</strong> Bij welke frequentie ontstaat een kortsluitstroom (maximale stroom)?</li>
+    <li><strong>Parallel-resonantie:</strong> Bij welke frequentie loopt er GEEN stroom vanuit de bron?</li>
+    <li>Verklaar het fysische verschil tussen beide resonantievormen.</li>
+  </ol>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 5 – Ster–driehoektransformatie <span class="punten">7 punten</span></h2>
+  <p>Gegeven is een driehoek (Δ) configuratie met drie weerstanden:</p>
+  <ul>
+    <li>R<sub>a</sub> = 20 Ω</li>
+    <li>R<sub>b</sub> = 20 Ω</li>
+    <li>R<sub>c</sub> = 2 Ω</li>
+  </ul>
+
+  <div class="circuit-box">
+    <img src="opdracht5.drawio.svg" alt="Delta naar ster transformatie">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 5: Driehoek-configuratie</em></p>
+  </div>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Transformeer de driehoek naar een equivalente ster (Y) configuratie.</li>
+    <li>Bereken alle drie de ster-weerstanden R₁, R₂ en R₃.</li>
+    <li>Bepaal de totale weerstand tussen twee willekeurige klemmen.</li>
+  </ol>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 6 – R–L schakeling met faseverschuiving <span class="punten">7 punten</span></h2>
+  <p>Een serieschakeling bevat een spoel <strong>L = 10 mH</strong> en een onbekende weerstand R.</p>
+  <p><strong>Meetgegevens:</strong> U = 10 V, I = 125 mA, fasehoek φ = 45°</p>
+
+  <div class="circuit-box">
+    <img src="opdracht6.drawio.svg" alt="RL circuit">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 6: RL-serieschakeling</em></p>
+  </div>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Bereken de totale impedantie Z.</li>
+    <li>Bepaal de waarde van R en X<sub>L</sub> (gebruik φ = 45°).</li>
+    <li>Bereken de frequentie f van de wisselspanningsbron.</li>
+  </ol>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 7 – Condensator: stroom- en spanningsverloop <span class="punten">5 punten</span></h2>
+  <p>Een condensator van <strong>C = 100 μF</strong> wordt gevoed door een blokvormige stroombron die schakelt tussen <strong>+1 mA</strong> en <strong>−1 mA</strong> met een periode T = 8 s.</p>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Teken het verloop van de spanning u(t) over de condensator gedurende één volledige periode.</li>
+    <li>Verklaar de faseverschuiving tussen i(t) en u(t).</li>
+    <li>Bereken de maximale spanning over de condensator.</li>
+  </ol>
+
+  <div class="circuit-box">
+    <img src="condensator_i_u_verloop.svg" alt="Stroom en spanning bij condensator">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 7: Stroom i(t) en spanning u(t) bij condensator</em></p>
+  </div>
+
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 8 – Cos φ-correctie (arbeidsfactorverbetering) <span class="punten">6 punten</span></h2>
+  <p>Een driefasenmotor neemt een actief vermogen op van <strong>P = 50 kW</strong> bij een arbeidsfactor <strong>cos φ₁ = 0,75</strong>.</p>
+  <p>Het energiebedrijf eist dat de arbeidsfactor verbeterd wordt naar minimaal <strong>cos φ₂ = 0,92</strong>.</p>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Bereken het oorspronkelijke blindvermogen Q₁.</li>
+    <li>Bereken het gewenste blindvermogen Q₂ bij cos φ₂ = 0,92.</li>
+    <li>Bepaal het vereiste condensatorblindvermogen Q<sub>c</sub> in kVAr.</li>
+  </ol>
+
+  <div class="circuit-box">
+    <img src="vermogensdriehoek_compensatie.svg" alt="Vermogensdriehoek cos phi compensatie">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 8: Vermogensdriehoek voor en na cos φ compensatie</em></p>
+  </div>
+
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 9 – Complexe admittantie (parallel RLC) <span class="punten">8 punten</span></h2>
+  <p>Het onderstaande netwerk bestaat uit meerdere takken met verschillende complexe impedanties, parallel geschakeld.</p>
+
+  <div class="circuit-box">
+    <img src="opdracht9.drawio.svg" alt="Complex parallel RLC netwerk">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 9: Complex parallel netwerk</em></p>
+  </div>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Bereken de admittantie Y van elke tak afzonderlijk.</li>
+    <li>Bepaal de totale admittantie Y<sub>tot</sub>.</li>
+    <li>Geef aan of het netwerk capacitief of inductief is (motiveer).</li>
+    <li>Bereken de totale stroom I<sub>tot</sub> bij een bronspanning van 230 V.</li>
+  </ol>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 10 – Driefasen-transformator Y–Δ <span class="punten">7 punten</span></h2>
+  <p>Een driefasentransformator is Y–Δ geschakeld. De primaire zijde (Y) ontvangt een lijnspanning van <strong>10 kV</strong>.</p>
+  <p>De wikkelverhouding is <strong>N₁/N₂ = 20</strong>.</p>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Bereken de fasespanning aan de primaire zijde.</li>
+    <li>Bereken de fasespanning en lijnspanning aan de secundaire zijde (Δ).</li>
+    <li>Bij een vermogen van 100 kVA en cos φ = 1: bereken de secundaire lijnstroom.</li>
+    <li>Controleer of de secundaire spanning geschikt is voor een 230/400 V installatie.</li>
+  </ol>
+
+  <div class="circuit-box">
+    <img src="examen_afbeeldingen/transformator_y_delta.png" alt="Y-Delta transformator">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 10: Y-Δ transformator schakeling</em></p>
+  </div>
+
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 11 – Ster–driehoek motorvermogen <span class="punten">6 punten</span></h2>
+  <p>Een driefasenmotor levert een vermogen van <strong>P<sub>Y</sub> = 1 kW</strong> wanneer deze in ster (Y) is geschakeld bij een vaste lijnspanning.</p>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Bepaal het vermogen P<sub>Δ</sub> wanneer dezelfde motor wordt omgeschakeld naar driehoek (Δ).</li>
+    <li>Leg uit waarom het vermogen verandert (ondanks gelijke lijnspanning).</li>
+    <li>Wat gebeurt er met de fasestroom en de lijnstroom bij deze omschakeling?</li>
+  </ol>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 12 – Modulatieprincipes in motorregeling <span class="punten">4 punten</span></h2>
+  <p>Bij moderne elektromotoren worden verschillende modulatietechnieken toegepast om het toerental en koppel te regelen.</p>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Noem <strong>twee</strong> veelgebruikte modulatieprincipes bij elektromotoren.</li>
+    <li>Licht per principe kort de werking toe (max. 3 zinnen per principe).</li>
+  </ol>
+
+  <p class="uitleg"><strong>Hint:</strong> Denk aan PWM (Pulse Width Modulation) en frequentiemodulatie (VFD).</p>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 13 – Thévenin/Norton-equivalent <span class="punten">6 punten</span></h2>
+  <p>Gegeven is een lineair netwerk met spannings- en stroombronnen.</p>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Bepaal de Thévenin-bronspanning U<sub>th</sub> en de Thévenin-weerstand R<sub>th</sub>.</li>
+    <li>Bepaal de Norton-kortsluitstroom I<sub>k</sub> en de Norton-weerstand R<sub>i</sub>.</li>
+    <li>Toon aan dat geldt: U<sub>th</sub> = I<sub>k</sub> · R<sub>i</sub> en R<sub>th</sub> = R<sub>i</sub>.</li>
+  </ol>
+
+  <div class="circuit-box">
+    <img src="thevenin_norton_equivalent.svg" alt="Thévenin en Norton equivalenten">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 13: Thévenin en Norton equivalente schakelingen</em></p>
+  </div>
+
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 14 – Effectieve waarde (U<sub>eff</sub>) <span class="punten">7 punten</span></h2>
+  <p>Een spanningsvorm heeft het volgende verloop:</p>
+  <ul>
+    <li>t = 0 tot 5 ms: spanning stijgt <strong>lineair</strong> van 0 V naar 10 V</li>
+    <li>t = 5 tot 10 ms: spanning blijft <strong>constant</strong> op 10 V</li>
+    <li>t = 10 tot 15 ms: spanning daalt <strong>lineair</strong> van 10 V naar 0 V</li>
+  </ul>
+  <p>De periode is T = 15 ms, waarna het patroon zich herhaalt.</p>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Schets de spanningsvorm u(t) over één volledige periode.</li>
+    <li>Bereken de effectieve waarde U<sub>eff</sub> van deze spanning.</li>
+    <li>Vergelijk met een vierkantgolf van 10 V en verklaar het verschil.</li>
+  </ol>
+
+  <div class="circuit-box">
+    <img src="trapezium_spanning_ueff.svg" alt="Trapeziumvormige spanning">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 14: Trapeziumvormige spanning voor U<sub>eff</sub> berekening</em></p>
+  </div>
+
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 15 – Parallelschakeling (complex netwerk) <span class="punten">8 punten</span></h2>
+  <p>Gegeven is een complex parallelnetwerk met meerdere takken bestaande uit weerstanden, spoelen en condensatoren.</p>
+
+  <div class="circuit-box">
+    <img src="opdracht15.drawio.svg" alt="Complex parallel netwerk">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 15: Complex parallel netwerk (Holmes p.119)</em></p>
+  </div>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Bereken de totale admittantie Y<sub>tot</sub> van het netwerk.</li>
+    <li>Bepaal de totale stroom I<sub>tot</sub> bij een bronspanning van 230 V.</li>
+    <li>Geef aan of het netwerk globaal inductief of capacitief gedrag vertoont.</li>
+    <li>Bereken de arbeidsfactor (cos φ) van het totale netwerk.</li>
+  </ol>
+  <div class="antwoordruimte"></div>
+</section>
+
+<section class="opgave">
+  <h2>Opgave 16 – Knooppuntanalyse <span class="punten">8 punten</span></h2>
+  <p>Gebruik de knooppuntmethode (Kirchhoff Knooppuntwet) om de onbekende stroom I<sub>x</sub> in het onderstaande netwerk te bepalen.</p>
+
+  <div class="circuit-box">
+    <img src="Opdracht16.drawio.svg" alt="Knooppuntanalyse netwerk">
+    <p style="margin-top: 10px; color: #666;"><em>Figuur 16: Netwerk voor knooppuntanalyse</em></p>
+  </div>
+
+  <p><strong>Gevraagd:</strong></p>
+  <ol>
+    <li>Identificeer alle knooppunten en kies een referentieknooppunt (massa).</li>
+    <li>Stel de knooppuntvergelijkingen op voor de relevante knooppunten.</li>
+    <li>Los het stelsel vergelijkingen op en bepaal I<sub>x</sub>.</li>
+    <li>Verifieer je antwoord door een controleberekening (bijvoorbeeld via maswet).</li>
+  </ol>
+  <div class="antwoordruimte"></div>
+</section>
+
+<div style="margin-top: 40px; padding: 20px; background: #ecf0f1; border-radius: 8px; text-align: center;">
+  <p style="margin: 0; color: #7f8c8d;"><strong>Einde examen</strong></p>
+  <p style="margin: 5px 0; color: #7f8c8d;">Controleer al je antwoorden voordat je inlevert</p>
+  <p style="margin: 5px 0; color: #7f8c8d;">Veel succes! 🎓</p>
+</div>
+
+</div>
+</body>
+</html>

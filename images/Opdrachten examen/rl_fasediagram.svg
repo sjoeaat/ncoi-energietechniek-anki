@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" width="400" height="350">
+  <title>RL Fasediagram met φ = 45°</title>
+  <desc>Fasordiagram voor RL-serieschakeling met 45° fasehoek tussen spanning en stroom</desc>
+
+  <!-- Background -->
+  <rect width="400" height="350" fill="#ffffff"/>
+
+  <!-- Grid (subtle) -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="350" fill="url(#grid)" opacity="0.5"/>
+
+  <!-- Axes -->
+  <g id="axes">
+    <!-- X-axis (Real) -->
+    <line x1="50" y1="250" x2="350" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="360" y="255" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#333">Re</text>
+
+    <!-- Y-axis (Imaginary) -->
+    <line x1="50" y1="300" x2="50" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="30" y="40" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#333">Im</text>
+  </g>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#cc0000"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00aa00"/>
+    </marker>
+  </defs>
+
+  <!-- UR vector (horizontal, resistance voltage) -->
+  <line x1="50" y1="250" x2="220" y2="250" stroke="#0066cc" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <text x="130" y="240" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0066cc">U<tspan baseline-shift="sub" font-size="12">R</tspan></text>
+
+  <!-- UL vector (vertical, inductance voltage) -->
+  <line x1="220" y1="250" x2="220" y2="80" stroke="#cc0000" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <text x="230" y="160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#cc0000">U<tspan baseline-shift="sub" font-size="12">L</tspan></text>
+
+  <!-- Utot vector (hypotenuse, total voltage) -->
+  <line x1="50" y1="250" x2="220" y2="80" stroke="#00aa00" stroke-width="4" marker-end="url(#arrow-green)"/>
+  <text x="105" y="140" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#00aa00">U<tspan baseline-shift="sub" font-size="14">tot</tspan></text>
+
+  <!-- Phase angle arc -->
+  <path d="M 100 250 A 50 50 0 0 1 85.36 214.64" fill="none" stroke="#ff6600" stroke-width="2"/>
+
+  <!-- Phase angle label -->
+  <text x="115" y="230" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ff6600">φ = 45°</text>
+
+  <!-- Dashed helper lines -->
+  <line x1="220" y1="250" x2="220" y2="80" stroke="#999" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <line x1="50" y1="80" x2="220" y2="80" stroke="#999" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+
+  <!-- Reference current vector (along real axis) -->
+  <line x1="50" y1="290" x2="150" y2="290" stroke="#9900ff" stroke-width="2.5" marker-end="url(#arrow-purple)"/>
+  <defs>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#9900ff"/>
+    </marker>
+  </defs>
+  <text x="90" y="310" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#9900ff">I (ref)</text>
+
+  <!-- Legend box -->
+  <rect x="250" y="270" width="140" height="70" fill="#f9f9f9" stroke="#999" stroke-width="1" rx="5"/>
+  <text x="260" y="290" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    <tspan x="260" dy="0" font-weight="bold">Gegeven:</tspan>
+    <tspan x="260" dy="16">U = 10 V</tspan>
+    <tspan x="260" dy="14">I = 125 mA</tspan>
+    <tspan x="260" dy="14">φ = 45°</tspan>
+  </text>
+
+  <!-- Title -->
+  <text x="200" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">RL-kring Fasordiagram</text>
+
+  <!-- Formula annotation -->
+  <text x="60" y="330" font-family="Arial, sans-serif" font-size="12" fill="#666" font-style="italic">tan(φ) = U<tspan baseline-shift="sub" font-size="10">L</tspan>/U<tspan baseline-shift="sub" font-size="10">R</tspan> = X<tspan baseline-shift="sub" font-size="10">L</tspan>/R</text>
+</svg>
