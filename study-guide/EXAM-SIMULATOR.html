@@ -461,6 +461,83 @@
                 { q: "Effectieve waarde (RMS) geeft aan:", a: ["Equivalent DC-waarde voor vermogen", "Gemiddelde waarde", "Topwaarde", "Minimale waarde"], correct: 0 },
                 { q: "Skin-effect betekent:", a: ["Stroom concentreert aan oppervlak", "Stroom verdeelt uniform", "Gelijkstroom fenomeen", "Alleen bij DC"], correct: 0 },
                 { q: "Bij een blokgolf is de effectieve waarde:", a: ["Gelijk aan topwaarde", "Topwaarde / √2", "Topwaarde / √3", "Topwaarde / 2"], correct: 0 },
+
+                // NIEUWE VRAGEN uit Antwoorden Oefenvragen (43 extra vragen!)
+
+                // Condensatornetwerken & doorslag (Antwoord 1)
+                { q: "Als condensator C3 in serie met C2 doorslaat, wat gebeurt er?", a: ["C3 wordt kortsluiting → vervangingscapaciteit neemt toe", "C3 wordt open → vervangingscapaciteit neemt af", "Geen verandering", "Alle condensatoren slaan door"], correct: 0 },
+                { q: "Bij condensatoren in serie + parallel geldt altijd:", a: ["Serie vermindert Cv, parallel verhoogt Cv", "Serie verhoogt Cv, parallel vermindert Cv", "Beide verhogen Cv", "Beide verminderen Cv"], correct: 0 },
+                { q: "Waarom neemt Cv toe als een serie-condensator kortsluit?", a: ["Serie-schakeling wordt parallel-schakeling", "Meer platen beschikbaar", "Hogere spanning", "Lagere weerstand"], correct: 0 },
+
+                // Kirchhoff knooppuntanalyse (Antwoord 2)
+                { q: "Bij Kirchhoff knooppuntwet (KCL) geldt:", a: ["Σ I_in = Σ I_uit (stroomsom = 0)", "Σ U = 0", "P_in = P_uit", "Alle opties"], correct: 0 },
+                { q: "Als Σ I_in = 5A en Σ I_uit = 15A + I_meter, dan is I_meter:", a: ["-10A (stroomrichting omgekeerd)", "+10A", "0A", "Onbepaald"], correct: 0 },
+                { q: "Negatieve stroom bij knooppuntanalyse betekent:", a: ["Gekozen richting is omgekeerd", "Fout in berekening", "Kortsluiting", "Open klem"], correct: 0 },
+
+                // Magnetische flux & toroïde (Antwoord 3)
+                { q: "In een toroïde met luchtspleet is de flux φ:", a: ["Overal gelijk (serieschakeling R_mag)", "Groter in luchtspleet", "Kleiner in kernmateriaal", "Alleen in kern"], correct: 0 },
+                { q: "Waarom is flux φ overal gelijk in toroïde?", a: ["Magnetische weerstanden in serie", "Symmetrie veldlijnen", "Wet van behoud", "Opties 1 en 2"], correct: 3 },
+                { q: "Bij toroïde blijft magnetisch veld:", a: ["Binnen de spoel (weinig strooiveld)", "Ver buiten spoel", "Symmetrisch verdeeld", "Onbepaald"], correct: 0 },
+
+                // Zelfinductie & energie opslag (Antwoord 4)
+                { q: "Zelfinductie L bereken je uit e = -L·di/dt als:", a: ["L = -e·dt/di", "L = e/i", "L = di/dt", "L = e·i"], correct: 0 },
+                { q: "Bij zelfinductie is de spanning tegengesteld aan:", a: ["Stroomverandering di/dt", "Stroom i", "Weerstand R", "Vermogen P"], correct: 0 },
+                { q: "Als di/dt = -0,4 A/300ms en e = 800µV, dan L =:", a: ["600 µH", "0,6 mH", "60 mH", "6 H"], correct: 0 },
+
+                // DC vs AC impedantie (Antwoord 5)
+                { q: "Bij gelijkspanning (DC) heeft een spoel:", a: ["Alleen ohmse weerstand R", "Hoge impedantie", "Oneindige weerstand", "Reactantie X_L"], correct: 0 },
+                { q: "Bij wisselspanning (AC) wordt stroomsterkte bepaald door:", a: ["Impedantie Z = √(R²+X²)", "Alleen R", "Alleen X", "R + X"], correct: 0 },
+                { q: "Fasehoek φ bereken je bij RL-kring met:", a: ["tan φ = X_L/R", "tan φ = R/X_L", "cos φ = X_L/Z", "sin φ = R/Z"], correct: 0 },
+
+                // Complexe impedantie parallel (Antwoord 6)
+                { q: "Bij Z1 = (10-20j)Ω en Z2 = (10+20j)Ω parallel geldt:", a: ["Z_v = Z1·Z2/(Z1+Z2) = 25Ω", "Z_v = Z1 + Z2", "Z_v = 0", "Z_v = ∞"], correct: 0 },
+                { q: "In complexe rekening is j² =:", a: ["-1", "+1", "0", "j"], correct: 0 },
+                { q: "Bij (10-20j)(10+20j) krijg je:", a: ["100 - 400j² = 100 + 400 = 500", "100 - 400 = -300", "20 - 40j", "0"], correct: 0 },
+
+                // Thévenin equivalent (Antwoord 7) - EXAM-KRITISCH!
+                { q: "Thévenin spanning U_th is gelijk aan:", a: ["Open-klem spanning U_AB", "Kortsluitspanning", "Helft van U_bron", "Gemiddelde spanning"], correct: 0 },
+                { q: "Thévenin weerstand R_th bepaal je door:", a: ["Bronnen kortsluiten + vervangingsweerstand", "U_open / I_kort", "R1 + R2", "Opties 1 en 2"], correct: 3 },
+                { q: "Bij Thévenin-vervangingsschema bereken je stroom I met:", a: ["I = U_th / (R_th + R_last)", "I = U_th / R_th", "I = U_th / R_last", "I = kortsluitstroom"], correct: 0 },
+                { q: "Als U_th = 0,6V, R_th = 11kΩ, R5 = 5kΩ, dan I_R5 =:", a: ["37,5 µA", "54,5 µA", "120 µA", "60 mA"], correct: 0 },
+
+                // Kirchhoff maaswet (Antwoord 8)
+                { q: "Kirchhoff maaswet (KVL) stelt:", a: ["Σ U_maas = 0", "Σ I = 0", "Σ P = 0", "Σ R = 0"], correct: 0 },
+                { q: "In een lus met U1=12V, U2=9V, dan U3 =:", a: ["-21V (polariteit omgekeerd)", "+21V", "3V", "-3V"], correct: 0 },
+                { q: "Bij maaswet zijn bronnen in serie:", a: ["Spanningen optellen (let op polariteit!)", "Spanningen aftrekken", "Geen invloed", "Altijd kortsluiting"], correct: 0 },
+
+                // Vermogensdriehoek P/Q/S (Antwoord 9)
+                { q: "Als P = 60kW en S = 68kVA, dan Q =:", a: ["32 kvar (uit √(S²-P²))", "8 kvar", "128 kvar", "Onbepaald"], correct: 0 },
+                { q: "Blindvermogen Q bereken je uit P en cos φ met:", a: ["Q = P · tan φ", "Q = P · sin φ", "Q = P / cos φ", "Q = S - P"], correct: 0 },
+                { q: "De relatie S² = P² + Q² geldt:", a: ["Altijd (Pythagoras)", "Alleen bij cos φ = 1", "Alleen bij sinusoïde", "Nooit"], correct: 0 },
+
+                // Transformator wikkelverhouding (Antwoord 10)
+                { q: "Bij transformator geldt N1/N2 =:", a: ["U1/U2 = I2/I1", "U1/U2 = I1/I2", "U1·U2", "N1·N2"], correct: 0 },
+                { q: "Als U_prim = 6000V, U_sec = 800V, N_prim = 300, dan N_sec =:", a: ["40 windingen", "300 windingen", "2250 windingen", "240 windingen"], correct: 0 },
+
+                // Praktische toepassingen - Zonnepanelen (Antwoord 11)
+                { q: "Zonnepaneel 2m² bij 140 kWh/m²/jaar levert:", a: ["280 kWh/jaar", "140 kWh/jaar", "70 kWh/jaar", "560 kWh/jaar"], correct: 0 },
+                { q: "Als 120 panelen (2m²) 33,6 MWh leveren, maar behoefte is 40 MWh, hoeveel extra panelen?", a: ["23 panelen (voor 6,4 MWh)", "12 panelen", "46 panelen", "60 panelen"], correct: 0 },
+                { q: "kWh/m²/jaar is een maat voor:", a: ["Energie-opbrengst per oppervlak", "Vermogen", "Rendement", "Efficiency"], correct: 0 },
+
+                // Blindvermogencompensatie (Antwoord 12) - EXAM-KRITISCH!
+                { q: "Bij cos φ verbetering van 0,75 naar 0,92 neemt S:", a: ["Af (minder schijnbaar vermogen)", "Toe", "Blijft gelijk", "Wordt negatief"], correct: 0 },
+                { q: "Als P = 50kW, cos φ_oud = 0,75, cos φ_nieuw = 0,92, dan Q_compensatie =:", a: ["≈ 23 kvar", "≈ 11 kvar", "≈ 44 kvar", "≈ 5 kvar"], correct: 0 },
+                { q: "Doel blindvermogencompensatie is:", a: ["Lagere I bij zelfde P → minder verlies", "Hogere spanning", "Meer vermogen", "Betere veiligheid"], correct: 0 },
+                { q: "Na compensatie met condensator wordt cos φ:", a: ["Hoger (richting 1)", "Lager", "Negatief", "Onveranderd"], correct: 0 },
+
+                // Driefase spanningsverlies & kabels (Antwoord 13)
+                { q: "Bij symmetrische driefase belasting vloeit door nulleider:", a: ["Geen stroom (I_N = 0)", "Fasestroom", "√3 × I_fase", "Lijnstroom"], correct: 0 },
+                { q: "Spanningsverlies per ader bij kabel: ΔU =:", a: ["I_fase × R_ader", "I_lijn × R_totaal", "U / R", "P / U"], correct: 0 },
+                { q: "Max. spanningsverlies bij driefase is vaak:", a: ["2% van U_fase", "5% van U_lijn", "10% van U_fase", "1% van U_lijn"], correct: 0 },
+
+                // Ster vs Driehoek (Antwoord 14)
+                { q: "Bij ster-geschakelde generator en driehoek-belasting geldt:", a: ["U_belasting = U_lijn = √3 · U_fase_gen", "U_belasting = U_fase", "U_belasting = 3 · U_fase", "U_belasting = U_fase / √3"], correct: 0 },
+                { q: "Als generator ster: U_fase = 400V, dan U_lijn =:", a: ["693 V", "400 V", "231 V", "800 V"], correct: 0 },
+
+                // Transformator fysica (Antwoorden 15-16)
+                { q: "Voordeel van ijzeren transformatorkern:", a: ["Koppelfactor k ≈ 1, hoger rendement", "Goedkoper", "Lichter", "Geen verliezen"], correct: 0 },
+                { q: "Nadeel van ijzeren transformatorkern:", a: ["Hystereseverliezen + wervelstromen", "Geen nadelen", "Lager rendement", "Instabiliteit"], correct: 0 },
+                { q: "Welke bewering is JUIST?", a: ["Bij resonantie: X_L = X_C", "Condensator ijlt 90° achter", "cos φ kan > 1", "DC heeft reactantie"], correct: 0 }
             ]
         };
 
